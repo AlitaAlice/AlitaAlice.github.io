@@ -1,6 +1,300 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>JAVA中的输入与输出</title>
+    <url>/2020/05/06/JAVA%E4%B8%AD%E7%9A%84%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA/</url>
+    <content><![CDATA[<h1 id="JAVA中的输入"><a href="#JAVA中的输入" class="headerlink" title="JAVA中的输入"></a>JAVA中的输入</h1><h2 id="读取输入"><a href="#读取输入" class="headerlink" title="读取输入"></a>读取输入</h2><p>  要想通过输入台进行输入，首先需要构造一个与“标准输入流”System.in关联的Scanner对象。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Scanner scanner=<span class="keyword">new</span> Scanner(System.in);</span><br></pre></td></tr></table></figure>
+
+<p>Scanner类中的方法：</p>
+<p>API  JAVA.util.Scanner</p>
+<table>
+<thead>
+<tr>
+<th>String nextLine()</th>
+<th>读取输入的下一行内容  以enter作为结束符  能得到带空格的字符串</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>String next()</td>
+<td>读取输入的下一个单词（以空格作为分隔符）空格视而不见</td>
+</tr>
+<tr>
+<td>int nextInt()</td>
+<td>只读取int值</td>
+</tr>
+<tr>
+<td>double nextDouble()</td>
+<td>只读取double值</td>
+</tr>
+<tr>
+<td>boolean hasNext()</td>
+<td>检测输入中是否还有其他的单词</td>
+</tr>
+<tr>
+<td>boolean hasNextInt()</td>
+<td>检测输入中是否还有表示整数</td>
+</tr>
+<tr>
+<td>boolean hasNextDouble()</td>
+<td>检测输入中是否还有表示浮点数</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>JAVASE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JAVA的静态方法不能被重写</title>
+    <url>/2020/05/06/JAVA%E7%9A%84%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95%E4%B8%8D%E8%83%BD%E8%A2%AB%E9%87%8D%E5%86%99/</url>
+    <content><![CDATA[<h1 id="JAVA的静态方法不能被重写"><a href="#JAVA的静态方法不能被重写" class="headerlink" title="JAVA的静态方法不能被重写"></a>JAVA的静态方法不能被重写</h1><p>堆区：</p>
+<ul>
+<li>存储的全部都是对象，每个对象都包含一个与之对应的class信息。</li>
+</ul>
+<p>栈区:</p>
+<p>方法区：</p>
+<ul>
+<li>方法区包含所有的class和static变量  class可以直接调用static</li>
+</ul>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>JAVASE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JAVA_String_API</title>
+    <url>/2020/05/06/JAVA-String-API/</url>
+    <content><![CDATA[<p>String API</p>
+<ul>
+<li><p>append()</p>
+<p>在由许多小段的字符串构建一个字符串时，则使用StringBuilder类（字符串构造器）</p>
+<p>首先构造一个空的字符串构造器：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">StringBuilder builder =<span class="keyword">new</span> StringBuilder();</span><br></pre></td></tr></table></figure>
+
+<p>当需要添加一部分内容时，调用append()方法</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">builder.append(ch);</span><br><span class="line">builder.append(str);</span><br><span class="line">String completedString=builder.toString(); <span class="comment">/*调用toString()方法，得到String对象。*/</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>char charAt(int index)</p>
+<p>返回给定位置的代码单元。</p>
+</li>
+<li><p>int length()</p>
+</li>
+</ul>
+<p>​         返回字符串代码单元的个数</p>
+<ul>
+<li><p>String repeat(int count)</p>
+<p>返回一个字符串，将当前字符重复count次</p>
+</li>
+<li><p>boolean equals() </p>
+<p>用来检测俩个字符串是否相等</p>
+<p>boolean equalsIgnoreCase() </p>
+<p>用来检测俩个字符串是否相等（不区分大小写）</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="string">"hello"</span>.equals(greeting);</span><br><span class="line"><span class="string">"HELLO"</span>.equalsIgnoreCase(<span class="string">"hello"</span>); <span class="comment">/* 不区分大小写 */</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注意：</p>
+<p><strong>不要用==运算符检测是否相等。</strong></p>
+<p><strong>这个运算符只能够确定俩个字符串是否存放在同一个位置上。</strong>当然如果字符串存放在同一个位置上，它们必然相等，但是完全有可能把内容相同的多个字符串副本放置在不同的位置上。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String greeting=<span class="string">"Hello"</span>;</span><br><span class="line"><span class="keyword">if</span>(greeting ==<span class="string">"Hello"</span>)</span><br><span class="line">  -- <span class="keyword">true</span></span><br><span class="line"> <span class="keyword">if</span>(greeting.substring(<span class="number">0</span>,<span class="number">3</span>)==<span class="string">"Hel"</span>)</span><br><span class="line">  --<span class="keyword">false</span></span><br></pre></td></tr></table></figure>
+
+<p>实际上只有字符串字面量共享，而+或者substring操作得到的字符串并不共享。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>JAVASE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JAVA多态</title>
+    <url>/2020/05/06/JAVA%E5%A4%9A%E6%80%81/</url>
+    <content><![CDATA[<h1 id="JAVA多态"><a href="#JAVA多态" class="headerlink" title="JAVA多态"></a>JAVA多态</h1><p>JAVA的三大特性为：</p>
+<ul>
+<li><p>封装</p>
+</li>
+<li><p>继承</p>
+</li>
+<li><p>多态</p>
+<p>今天我们就来说一说到底什么是多态，以及多态到底有什么用。</p>
+<h2 id="多态的定义"><a href="#多态的定义" class="headerlink" title="多态的定义"></a>多态的定义</h2><p>定义： <strong>事物的不同形态。</strong>多态多应用在向上转型。</p>
+<p>多态的用处：在实际开发中，如果发现某个类的方法可以做出改进，但工程已经交付给用户使用，但是不想影响其他部分对于该方法的调用。那么通过创建子类对象，对于父类方法进行<strong>重写</strong>（Override）。<strong>但是此时父类的其他成员方法和成员属性却不能进行利用</strong>。此时就需要用到<strong>向上转型</strong>，将子类向上转换为父类，此时程序的相应方法做出了改进，程序的其他地方也不会受此影响。</p>
+</li>
+</ul>
+<h2 id="多态的三个前提："><a href="#多态的三个前提：" class="headerlink" title="多态的三个前提："></a>多态的三个前提：</h2><ul>
+<li><p>存在继承关系，子类继承父类</p>
+</li>
+<li><p>子类要重写父类的方法 </p>
+<p>子类重写父类的成员方法。</p>
+</li>
+<li><p>父类数据类型的引用要指向子类对象 （向上转型）</p>
+<p>如 Animal am=new Cat();</p>
+<h2 id="多态的弊端"><a href="#多态的弊端" class="headerlink" title="多态的弊端"></a>多态的弊端</h2><p>向上转型之后，<strong>不能够引用子类特有的成员属性和子类特有的成员方法</strong>。</p>
+</li>
+</ul>
+<p>  <strong>注意：静态方法不能被重写，所以也不存在多态，即使向上转型，子类重写了父类的静态方法，子类调用父类的静态方法，输出依然是父类静态方法中的值。</strong></p>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>JAVASE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JAVA容器分类</title>
+    <url>/2020/05/06/JAVA%E5%AE%B9%E5%99%A8%E5%88%86%E7%B1%BB/</url>
+    <content><![CDATA[<h2 id="Java容器可分为两大类："><a href="#Java容器可分为两大类：" class="headerlink" title="Java容器可分为两大类："></a>Java容器可分为两大类：</h2><ul>
+<li><p>Collection接口 继承JAVA.lang.Object</p>
+<ul>
+<li>List接口<ul>
+<li><strong>ArrayList</strong></li>
+<li>LinkedList</li>
+<li>Vector(了解，已过时)</li>
+</ul>
+</li>
+<li>Set接口<ul>
+<li>HashSet<ul>
+<li>LinkedHashSet</li>
+</ul>
+</li>
+<li>TreeSet</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Map接口  继承JAVA.lang.Object</p>
+<ul>
+<li><p><strong>HashMap</strong></p>
+<ul>
+<li>LinkedHashMap</li>
+</ul>
+</li>
+<li><p>TreeMap</p>
+</li>
+<li><p>ConcurrentHashMap</p>
+</li>
+<li><p>Hashtable(了解，，已过时)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Collection接口："><a href="#Collection接口：" class="headerlink" title="Collection接口："></a>Collection接口：</h2><ul>
+<li><p>Collection接口的常用方法</p>
+</li>
+<li><p>添加功能</p>
+<ul>
+<li><table>
+<thead>
+<tr>
+<th>boolean add(Object obj)</th>
+<th>添加一个元素</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>boolean  addAll(Collection c)</td>
+<td>添加一个集合的元素</td>
+</tr>
+</tbody></table>
+<p>示例：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">   <span class="keyword">static</span> Collection c = <span class="keyword">new</span> ArrayList();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"add:"</span>+c.add(<span class="string">"hello"</span>));</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">/* 输出为 add:true */</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<p>​             </p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> Collection c1 = <span class="keyword">new</span> ArrayList();</span><br><span class="line">    <span class="keyword">static</span> Collection c2 = <span class="keyword">new</span> ArrayList();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        c1.add(<span class="string">"xxxx"</span>);</span><br><span class="line">        System.out.println(<span class="string">"add:"</span> + c1.add(<span class="string">"hello"</span>));</span><br><span class="line">        System.out.println(<span class="string">"addAll:"</span> + c2.addAll(c1));</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">/* 输出add:true</span></span><br><span class="line"><span class="comment">addAll:true */</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>删除功能</p>
+<ul>
+<li><table>
+<thead>
+<tr>
+<th>void clear()</th>
+<th>移除所有元素</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>boolean remove(Object o)</td>
+<td>移除一个元素</td>
+</tr>
+<tr>
+<td>boolean removeAll(Object o)</td>
+<td>移除一个集合的所有元素</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>判断功能</p>
+<ul>
+<li><table>
+<thead>
+<tr>
+<th>boolean contains(Object o)</th>
+<th>判断集合中是否包含指定的元素</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>boolean containsAll(Object o)</td>
+<td>判断集合中是否包含指定的集合元素（一个集合中的所有元素</td>
+</tr>
+<tr>
+<td>boolean isEmpty()</td>
+<td>判断集合是否为空</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+<li><p><strong>获取功能</strong></p>
+<p>重点：迭代器（Iterator） 下一篇中我们详细解释。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>JAVASE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>char可以存储汉字吗？</title>
+    <url>/2020/05/06/char%E5%8F%AF%E4%BB%A5%E5%AD%98%E5%82%A8%E6%B1%89%E5%AD%97%E5%90%97%EF%BC%9F/</url>
+    <content><![CDATA[<h2 id="char存储汉字"><a href="#char存储汉字" class="headerlink" title="char存储汉字"></a>char存储汉字</h2><ul>
+<li><p>char是按照字符存储的，不管是英文还是中文，JAVA中固定占用2个字符，用来存储Unicode字符，范围在0-65535.</p>
+</li>
+<li><p>Unicode编码字符集中包含了汉字，所以char类型变量当然可以存储汉字拉。</p>
+<h2 id="char和String的区别"><a href="#char和String的区别" class="headerlink" title="char和String的区别"></a>char和String的区别</h2><ul>
+<li>char表示字符，定义时用单引号，只能存储一个字符。如char c=‘x’ ;</li>
+<li>String表示的是字符串，可以存储一个或多个字符 如String name=”tom”;</li>
+<li>char是基本数据类型，但是String是一个类，具有面向对象的特征,可以调用方法</li>
+</ul>
+</li>
+</ul>
+<p>如name.length();</p>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>JAVASE</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>mysql必知必会</title>
     <url>/2020/05/03/mysql%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/</url>
     <content><![CDATA[<p> 登录mysql -h localhost -u root -p<br> Show databases;<br> Use databasename;<br>Show tables;  //显示行<br> Show columns from xxx;   //显示列<br>SELECT DISTINCT  published FROM t_blog ;  DISTINCT此关键字指示只返回不同的值。<br> SELECT id FROM t_blog LIMIT 5;<br> SELECT id FROM t_blog LIMIT 3,3; //从第三行开始的后三行<br> SELECT t_blog.id FROM blog.t_blog;   完全限定的列名和表名 和之前的用法一样。<br> SELECT id,type_id,user_id FROM t_blog ORDER BY type_id,id;  先对type_id排序 再对id进行排序。<br> DESC 降序 ASC 升序  没多大用处<br> SELECT id FROM t_blog ORDER BY type_id LIMIT 1; 此种方式找到了数值最大的一行。<br> 在使用where 过滤时 ，order by 排序要在where的后面<br>  SELECT id FROM t_blog  where id &lt;&gt;10;   &lt;&gt; 不匹配检查<br> 范围值检查<br>  SELECT ID FROM T_BLOG WHERE ID BETWEEN 10 AND 20 :<br> Select id from t_blog where id is null;  空值检查<br> Select id,user_id from t_blog where id &lt;=10 and user_id &lt;=1;<br> Select prod_name,prod_price from products where vend_id=1002 or vend_id =1003 and<br>  Prod_price&gt;=10; SQL处理OR操作符和AND操作符时，优先处理AND操作符。<br> 故先处理 vend_id =1003 and prod_price&gt;=10  或者  vend_id=1002  ；<br>解决方法是<br>Select prod_name,prod_price from products where (vend_id =1002 or vend_id =1003) and prod_price &gt;=10    用( )来明确分组操作符。DBMS 首先过滤圆括号内的OR条件。<br>NOT 在MYSQL中的NOT中 MYSQL支持使用NOT 对IN,BETWEEN 和EXISTS子句取反。这与多数其他DBMS允许使用NOT对各种条件取反有很大区别。<br>######<br>通配符<br>用来匹配值的一部分的特殊字符<br>LIKE 指示MYSQL 后跟的搜索模式利用通配符匹配而不是直接相等匹配比较<br>SELECT prod_name FROM products WHERE prod_name REGEXP ‘[123] Ton’<br>ORDER BY prod_name;<br>正则表达式 [123]Ton 其中[123]定义一组字符<br>它的意思是匹配1或2或3  因此 1ton 和2ton 都匹配且返回了<br>[] 其实是另一种形式的OR语句<br>[1|2|3]Ton 的缩写 为 [123]Ton<br>1|2|3 Ton 的意思是检索出1或2或3 ton<br>[^123] 匹配除这些字符除外的任何东西<br> ^ 是REGEXP的否定符号<br>在匹配范围中<br>0到9  将由[0123456789] 等同于 [0-9]<br>.表示匹配一个字符<br>输入 SELECT vend_name FROM vendors WHERE vend_name REGEXP ‘.’ ORDER BY vend_name<br>.匹配任意字符  这时每一行都被检索出来 为了匹配特殊字符 必须用\ 作为前导<br>如<br>SELECT vend_name FROM vendors WHERE vend_name REGEXP ‘\.’ ORDER BY vend_name<br>这才是期望的输出 \.匹配. 这种处理就是所谓的转义。<br>？ 字符 ？匹配它前面的任何字符的0次或者1次出现。<br> 如 SELECT prod_name FROM products WHERE prod_name REGEXP ‘\([0-9] sticks?\)’<br> ORDER BY prod_name ;<br>Sticks 匹配 stick 和sticks s后的?使s可选<br>另外例如<br>SELECT prod_name FROM products WHERE prod_name REGEXP ‘[[:digit:]]{4}<br>ORDER BY prod_name；<br>[:digit:]匹配任意数字<br>因而它作为数字的一个集合<br>{4} 确切的要求它前面的字符 出现4次<br>匹配特定位置的文本，需要使用表9-4列出的定位符<br>^ 文本的开始<br>$ 文本的结尾<br>[[:&lt;:]] 词的开始<br>[[:&gt;;]] 词的结尾<br>‘^[0-9\.]’ 找出一个数 包括以小数点开始的数开始的所有产品。<br>SELECT prod_name FROM products WHERE prod_name REGEXP ‘^[0-9\.]’<br>ORDER BY prod_name;<br>在第10章 中 创建计算字段<br>MySQL 使用Concat() 函数来实现<br>SELECT Concat(vend_name,’（‘，vend_country,’）’)<br>FROM vendors ORDER BY vend_name;<br>拼接  将值联结到一起构成单个值<br>比如以上的输出为<br>ACME (USA)<br>删除数据右侧多余的空格来整理数据<br>MySQL 的RTrim()可以去掉值右边的所有的空格<br>SELECT Concat(RTrim(vend_name),’(‘,RTrim(vend_country),’)’)<br>FROM vendors<br>ORDER BY vend_name;<br>LTrim() 去掉串左边的空格<br>Trim()去掉左右俩边的空格<br>SELECT Concat (RTrim(vend_name),’(‘,RTrim(vend_country),’)’)AS vend_title FROM vendors ORDER BY vend_name;<br>一个未命名的列不能用于客户机的应用中，因为客户机没有办法去引用它。<br>所以才出现了别名。AS 关键字来赋予别名 任何客户机应用都可以按名来引用这个列，就像它是一个实际的表列一样。</p>
@@ -152,300 +446,6 @@ p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数�
       </categories>
       <tags>
         <tag>DataStructure</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JAVA的静态方法不能被重写</title>
-    <url>/2020/05/06/JAVA%E7%9A%84%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95%E4%B8%8D%E8%83%BD%E8%A2%AB%E9%87%8D%E5%86%99/</url>
-    <content><![CDATA[<h1 id="JAVA的静态方法不能被重写"><a href="#JAVA的静态方法不能被重写" class="headerlink" title="JAVA的静态方法不能被重写"></a>JAVA的静态方法不能被重写</h1><p>堆区：</p>
-<ul>
-<li>存储的全部都是对象，每个对象都包含一个与之对应的class信息。</li>
-</ul>
-<p>栈区:</p>
-<p>方法区：</p>
-<ul>
-<li>方法区包含所有的class和static变量  class可以直接调用static</li>
-</ul>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>JAVASE</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JAVA容器分类</title>
-    <url>/2020/05/06/JAVA%E5%AE%B9%E5%99%A8%E5%88%86%E7%B1%BB/</url>
-    <content><![CDATA[<h2 id="Java容器可分为两大类："><a href="#Java容器可分为两大类：" class="headerlink" title="Java容器可分为两大类："></a>Java容器可分为两大类：</h2><ul>
-<li><p>Collection接口 继承JAVA.lang.Object</p>
-<ul>
-<li>List接口<ul>
-<li><strong>ArrayList</strong></li>
-<li>LinkedList</li>
-<li>Vector(了解，已过时)</li>
-</ul>
-</li>
-<li>Set接口<ul>
-<li>HashSet<ul>
-<li>LinkedHashSet</li>
-</ul>
-</li>
-<li>TreeSet</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Map接口  继承JAVA.lang.Object</p>
-<ul>
-<li><p><strong>HashMap</strong></p>
-<ul>
-<li>LinkedHashMap</li>
-</ul>
-</li>
-<li><p>TreeMap</p>
-</li>
-<li><p>ConcurrentHashMap</p>
-</li>
-<li><p>Hashtable(了解，，已过时)</p>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="Collection接口："><a href="#Collection接口：" class="headerlink" title="Collection接口："></a>Collection接口：</h2><ul>
-<li><p>Collection接口的常用方法</p>
-</li>
-<li><p>添加功能</p>
-<ul>
-<li><table>
-<thead>
-<tr>
-<th>boolean add(Object obj)</th>
-<th>添加一个元素</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>boolean  addAll(Collection c)</td>
-<td>添加一个集合的元素</td>
-</tr>
-</tbody></table>
-<p>示例：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">   <span class="keyword">static</span> Collection c = <span class="keyword">new</span> ArrayList();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"add:"</span>+c.add(<span class="string">"hello"</span>));</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">/* 输出为 add:true */</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-</li>
-</ul>
-<p>​             </p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> Collection c1 = <span class="keyword">new</span> ArrayList();</span><br><span class="line">    <span class="keyword">static</span> Collection c2 = <span class="keyword">new</span> ArrayList();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        c1.add(<span class="string">"xxxx"</span>);</span><br><span class="line">        System.out.println(<span class="string">"add:"</span> + c1.add(<span class="string">"hello"</span>));</span><br><span class="line">        System.out.println(<span class="string">"addAll:"</span> + c2.addAll(c1));</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">/* 输出add:true</span></span><br><span class="line"><span class="comment">addAll:true */</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>删除功能</p>
-<ul>
-<li><table>
-<thead>
-<tr>
-<th>void clear()</th>
-<th>移除所有元素</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>boolean remove(Object o)</td>
-<td>移除一个元素</td>
-</tr>
-<tr>
-<td>boolean removeAll(Object o)</td>
-<td>移除一个集合的所有元素</td>
-</tr>
-</tbody></table>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>判断功能</p>
-<ul>
-<li><table>
-<thead>
-<tr>
-<th>boolean contains(Object o)</th>
-<th>判断集合中是否包含指定的元素</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>boolean containsAll(Object o)</td>
-<td>判断集合中是否包含指定的集合元素（一个集合中的所有元素</td>
-</tr>
-<tr>
-<td>boolean isEmpty()</td>
-<td>判断集合是否为空</td>
-</tr>
-</tbody></table>
-</li>
-</ul>
-</li>
-<li><p><strong>获取功能</strong></p>
-<p>重点：迭代器（Iterator） 下一篇中我们详细解释。</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>JAVASE</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JAVA多态</title>
-    <url>/2020/05/06/JAVA%E5%A4%9A%E6%80%81/</url>
-    <content><![CDATA[<h1 id="JAVA多态"><a href="#JAVA多态" class="headerlink" title="JAVA多态"></a>JAVA多态</h1><p>JAVA的三大特性为：</p>
-<ul>
-<li><p>封装</p>
-</li>
-<li><p>继承</p>
-</li>
-<li><p>多态</p>
-<p>今天我们就来说一说到底什么是多态，以及多态到底有什么用。</p>
-<h2 id="多态的定义"><a href="#多态的定义" class="headerlink" title="多态的定义"></a>多态的定义</h2><p>定义： <strong>事物的不同形态。</strong>多态多应用在向上转型。</p>
-<p>多态的用处：在实际开发中，如果发现某个类的方法可以做出改进，但工程已经交付给用户使用，但是不想影响其他部分对于该方法的调用。那么通过创建子类对象，对于父类方法进行<strong>重写</strong>（Override）。<strong>但是此时父类的其他成员方法和成员属性却不能进行利用</strong>。此时就需要用到<strong>向上转型</strong>，将子类向上转换为父类，此时程序的相应方法做出了改进，程序的其他地方也不会受此影响。</p>
-</li>
-</ul>
-<h2 id="多态的三个前提："><a href="#多态的三个前提：" class="headerlink" title="多态的三个前提："></a>多态的三个前提：</h2><ul>
-<li><p>存在继承关系，子类继承父类</p>
-</li>
-<li><p>子类要重写父类的方法 </p>
-<p>子类重写父类的成员方法。</p>
-</li>
-<li><p>父类数据类型的引用要指向子类对象 （向上转型）</p>
-<p>如 Animal am=new Cat();</p>
-<h2 id="多态的弊端"><a href="#多态的弊端" class="headerlink" title="多态的弊端"></a>多态的弊端</h2><p>向上转型之后，<strong>不能够引用子类特有的成员属性和子类特有的成员方法</strong>。</p>
-</li>
-</ul>
-<p>  <strong>注意：静态方法不能被重写，所以也不存在多态，即使向上转型，子类重写了父类的静态方法，子类调用父类的静态方法，输出依然是父类静态方法中的值。</strong></p>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>JAVASE</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>char可以存储汉字吗？</title>
-    <url>/2020/05/06/char%E5%8F%AF%E4%BB%A5%E5%AD%98%E5%82%A8%E6%B1%89%E5%AD%97%E5%90%97%EF%BC%9F/</url>
-    <content><![CDATA[<h2 id="char存储汉字"><a href="#char存储汉字" class="headerlink" title="char存储汉字"></a>char存储汉字</h2><ul>
-<li><p>char是按照字符存储的，不管是英文还是中文，JAVA中固定占用2个字符，用来存储Unicode字符，范围在0-65535.</p>
-</li>
-<li><p>Unicode编码字符集中包含了汉字，所以char类型变量当然可以存储汉字拉。</p>
-<h2 id="char和String的区别"><a href="#char和String的区别" class="headerlink" title="char和String的区别"></a>char和String的区别</h2><ul>
-<li>char表示字符，定义时用单引号，只能存储一个字符。如char c=‘x’ ;</li>
-<li>String表示的是字符串，可以存储一个或多个字符 如String name=”tom”;</li>
-<li>char是基本数据类型，但是String是一个类，具有面向对象的特征,可以调用方法</li>
-</ul>
-</li>
-</ul>
-<p>如name.length();</p>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>JAVASE</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JAVA中的输入与输出</title>
-    <url>/2020/05/06/JAVA%E4%B8%AD%E7%9A%84%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA/</url>
-    <content><![CDATA[<h1 id="JAVA中的输入"><a href="#JAVA中的输入" class="headerlink" title="JAVA中的输入"></a>JAVA中的输入</h1><h2 id="读取输入"><a href="#读取输入" class="headerlink" title="读取输入"></a>读取输入</h2><p>  要想通过输入台进行输入，首先需要构造一个与“标准输入流”System.in关联的Scanner对象。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Scanner scanner=<span class="keyword">new</span> Scanner(System.in);</span><br></pre></td></tr></table></figure>
-
-<p>Scanner类中的方法：</p>
-<p>API  JAVA.util.Scanner</p>
-<table>
-<thead>
-<tr>
-<th>String nextLine()</th>
-<th>读取输入的下一行内容  以enter作为结束符  能得到带空格的字符串</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>String next()</td>
-<td>读取输入的下一个单词（以空格作为分隔符）空格视而不见</td>
-</tr>
-<tr>
-<td>int nextInt()</td>
-<td>只读取int值</td>
-</tr>
-<tr>
-<td>double nextDouble()</td>
-<td>只读取double值</td>
-</tr>
-<tr>
-<td>boolean hasNext()</td>
-<td>检测输入中是否还有其他的单词</td>
-</tr>
-<tr>
-<td>boolean hasNextInt()</td>
-<td>检测输入中是否还有表示整数</td>
-</tr>
-<tr>
-<td>boolean hasNextDouble()</td>
-<td>检测输入中是否还有表示浮点数</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>JAVASE</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JAVA_String_API</title>
-    <url>/2020/05/06/JAVA-String-API/</url>
-    <content><![CDATA[<p>String API</p>
-<ul>
-<li><p>append()</p>
-<p>在由许多小段的字符串构建一个字符串时，则使用StringBuilder类（字符串构造器）</p>
-<p>首先构造一个空的字符串构造器：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">StringBuilder builder =<span class="keyword">new</span> StringBuilder();</span><br></pre></td></tr></table></figure>
-
-<p>当需要添加一部分内容时，调用append()方法</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">builder.append(ch);</span><br><span class="line">builder.append(str);</span><br><span class="line">String completedString=builder.toString(); <span class="comment">/*调用toString()方法，得到String对象。*/</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>char charAt(int index)</p>
-<p>返回给定位置的代码单元。</p>
-</li>
-<li><p>int length()</p>
-</li>
-</ul>
-<p>​         返回字符串代码单元的个数</p>
-<ul>
-<li><p>String repeat(int count)</p>
-<p>返回一个字符串，将当前字符重复count次</p>
-</li>
-<li><p>boolean equals() </p>
-<p>用来检测俩个字符串是否相等</p>
-<p>boolean equalsIgnoreCase() </p>
-<p>用来检测俩个字符串是否相等（不区分大小写）</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="string">"hello"</span>.equals(greeting);</span><br><span class="line"><span class="string">"HELLO"</span>.equalsIgnoreCase(<span class="string">"hello"</span>); <span class="comment">/* 不区分大小写 */</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>注意：</p>
-<p><strong>不要用==运算符检测是否相等。</strong></p>
-<p><strong>这个运算符只能够确定俩个字符串是否存放在同一个位置上。</strong>当然如果字符串存放在同一个位置上，它们必然相等，但是完全有可能把内容相同的多个字符串副本放置在不同的位置上。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String greeting=<span class="string">"Hello"</span>;</span><br><span class="line"><span class="keyword">if</span>(greeting ==<span class="string">"Hello"</span>)</span><br><span class="line">  -- <span class="keyword">true</span></span><br><span class="line"> <span class="keyword">if</span>(greeting.substring(<span class="number">0</span>,<span class="number">3</span>)==<span class="string">"Hel"</span>)</span><br><span class="line">  --<span class="keyword">false</span></span><br></pre></td></tr></table></figure>
-
-<p>实际上只有字符串字面量共享，而+或者substring操作得到的字符串并不共享。</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>JAVASE</tag>
       </tags>
   </entry>
 </search>
