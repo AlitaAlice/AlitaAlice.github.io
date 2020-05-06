@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="算法时间复杂度算法时间复杂度定义 O()来体现算法时间复杂度的记法 推导大O阶的方法 用常数1代替所有加法常数  在修改后的运行次数函数中，只保留最高阶项  如果最高阶项存在且不是1，则去除这个项相乘的常熟数 得到的结果就是大O阶. 举例说明：常数阶1234567int sum&#x3D;0,n&#x3D;100; &#x2F;&#x2F;执行1次sum&#x3D;(1+n)*n&#x2F;2; &#x2F;&#x2F;执行2次sum&#x3D;(1+n)*n&#x2F;2; &#x2F;&#x2F;sum&#x3D;(1+">
+<meta name="description" content="算法时间复杂度算法时间复杂度定义 O()来体现算法时间复杂度的记法 推导大O阶的方法 用常数1代替所有加法常数  在修改后的运行次数函数中，只保留最高阶项  如果最高阶项存在且不是1，则去除这个项相乘的常数 得到的结果就是大O阶. 举例说明：常数阶1234567int sum&#x3D;0,n&#x3D;100; &#x2F;&#x2F;执行1次sum&#x3D;(1+n)*n&#x2F;2; &#x2F;&#x2F;执行2次sum&#x3D;(1+n)*n&#x2F;2; &#x2F;&#x2F;sum&#x3D;(1+n">
 <meta property="og:type" content="article">
 <meta property="og:title" content="时间复杂度">
 <meta property="og:url" content="http://yoursite.com/2020/05/05/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/index.html">
 <meta property="og:site_name" content="Alita&#39;s blog">
-<meta property="og:description" content="算法时间复杂度算法时间复杂度定义 O()来体现算法时间复杂度的记法 推导大O阶的方法 用常数1代替所有加法常数  在修改后的运行次数函数中，只保留最高阶项  如果最高阶项存在且不是1，则去除这个项相乘的常熟数 得到的结果就是大O阶. 举例说明：常数阶1234567int sum&#x3D;0,n&#x3D;100; &#x2F;&#x2F;执行1次sum&#x3D;(1+n)*n&#x2F;2; &#x2F;&#x2F;执行2次sum&#x3D;(1+n)*n&#x2F;2; &#x2F;&#x2F;sum&#x3D;(1+">
+<meta property="og:description" content="算法时间复杂度算法时间复杂度定义 O()来体现算法时间复杂度的记法 推导大O阶的方法 用常数1代替所有加法常数  在修改后的运行次数函数中，只保留最高阶项  如果最高阶项存在且不是1，则去除这个项相乘的常数 得到的结果就是大O阶. 举例说明：常数阶1234567int sum&#x3D;0,n&#x3D;100; &#x2F;&#x2F;执行1次sum&#x3D;(1+n)*n&#x2F;2; &#x2F;&#x2F;执行2次sum&#x3D;(1+n)*n&#x2F;2; &#x2F;&#x2F;sum&#x3D;(1+n">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-05-05T03:43:55.000Z">
-<meta property="article:modified_time" content="2020-05-05T04:23:50.474Z">
+<meta property="article:modified_time" content="2020-05-06T00:45:23.917Z">
 <meta property="article:author" content="Alita Alice">
 <meta property="article:tag" content="DataStructure">
 <meta name="twitter:card" content="summary">
@@ -381,7 +381,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  375
+                  441
                 </span>
               
     
@@ -425,7 +425,7 @@
 </li>
 <li><p>在修改后的运行次数函数中，只保留最高阶项</p>
 </li>
-<li><p>如果最高阶项存在且不是1，则去除这个项相乘的常熟数</p>
+<li><p>如果最高阶项存在且不是1，则去除这个项相乘的常数</p>
 <p>得到的结果就是大O阶.</p>
 <h3 id="举例说明："><a href="#举例说明：" class="headerlink" title="举例说明："></a>举例说明：</h3><h4 id="常数阶"><a href="#常数阶" class="headerlink" title="常数阶"></a>常数阶</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> sum=<span class="number">0</span>,n=<span class="number">100</span>; <span class="comment">//执行1次</span></span><br><span class="line">sum=(<span class="number">1</span>+n)*n/<span class="number">2</span>; <span class="comment">//执行2次</span></span><br><span class="line">sum=(<span class="number">1</span>+n)*n/<span class="number">2</span>; <span class="comment">//</span></span><br><span class="line">sum=(<span class="number">1</span>+n)*n/<span class="number">2</span>; <span class="comment">//</span></span><br><span class="line">sum=(<span class="number">1</span>+n)*n/<span class="number">2</span>; <span class="comment">//</span></span><br><span class="line">...</span><br><span class="line">sum=(<span class="number">1</span>+n)*n/<span class="number">2</span>; <span class="comment">//执行10次</span></span><br></pre></td></tr></table></figure>
 
@@ -442,8 +442,11 @@
 <p>2^x=n  x=log2 n   所以这个循环的时间复杂度为O(log n).</p>
 <h4 id="平方阶"><a href="#平方阶" class="headerlink" title="平方阶"></a>平方阶</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i,j;</span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;m;i++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;n;j++)</span><br><span class="line">&#123;</span><br><span class="line">   <span class="comment">/*时间复杂度为O(1)的程序步骤序列      */</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p>时间复杂度为O(m*n)</p>
+<p>又如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i,j;</span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">for</span>(j=i;j&lt;n;j++)</span><br><span class="line">&#123;</span><br><span class="line"> <span class="comment">/* 时间复杂度为O(1)的程序*/</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-
+<p>执行总次数 n+n-1+(n-2)+…+1=n(n+1)/2   时间复杂度为O(n^2) </p>
 <h4 id="常见的时间复杂度"><a href="#常见的时间复杂度" class="headerlink" title="常见的时间复杂度"></a>常见的时间复杂度</h4><p>常用时间复杂度耗费时间比对：</p>
 <p>O(1)&lt;O(log n)&lt;O(n)&lt;O(nlogn)&lt;O(n^2)&lt;O(n^3)&lt;O(2^n)&lt;O(n!)&lt;O(n^n)</p>
 
@@ -503,6 +506,10 @@
           <span class="post-nav-divider"></span>
     
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/05/06/JAVA%E5%A4%9A%E6%80%81/" rel="prev" title="JAVA多态">
+                JAVA多态 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -586,7 +593,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -608,7 +615,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -698,7 +705,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">4.6k</span>
+    <span title="Site words total count">5.6k</span>
   
 </div>
 
@@ -1299,5 +1306,6 @@
 
   
 
+    <!-- 代码块复制功能 -->
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/haru01.model.json"},"display":{"position":"left","width":220,"height":440},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
 </html>
