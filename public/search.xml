@@ -1,54 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>JAVA_String_API</title>
-    <url>/2020/05/06/JAVA-String-API/</url>
-    <content><![CDATA[<p>String API</p>
-<ul>
-<li>append()</li>
-</ul>
-<p>  在由许多小段的字符串构建一个字符串时，则使用StringBuilder类（字符串构造器）</p>
-<p>  首先构造一个空的字符串构造器：<br>  <a id="more"></a></p>
-  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">StringBuilder builder =<span class="keyword">new</span> StringBuilder();</span><br></pre></td></tr></table></figure>
-
-<p>  当需要添加一部分内容时，调用append()方法</p>
-  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">builder.append(ch);</span><br><span class="line">builder.append(str);</span><br><span class="line">String completedString=builder.toString(); <span class="comment">/*调用toString()方法，得到String对象。*/</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>char charAt(int index)</p>
-<p>返回给定位置的代码单元。</p>
-</li>
-<li><p>int length()</p>
-</li>
-</ul>
-<p>​         返回字符串代码单元的个数</p>
-<ul>
-<li><p>String repeat(int count)</p>
-<p>返回一个字符串，将当前字符重复count次</p>
-</li>
-<li><p>boolean equals() </p>
-<p>用来检测俩个字符串是否相等</p>
-<p>boolean equalsIgnoreCase() </p>
-<p>用来检测俩个字符串是否相等（不区分大小写）</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="string">"hello"</span>.equals(greeting);</span><br><span class="line"><span class="string">"HELLO"</span>.equalsIgnoreCase(<span class="string">"hello"</span>); <span class="comment">/* 不区分大小写 */</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>注意：</p>
-<p><strong>不要用==运算符检测是否相等。</strong></p>
-<p><strong>这个运算符只能够确定俩个字符串是否存放在同一个位置上。</strong>当然如果字符串存放在同一个位置上，它们必然相等，但是完全有可能把内容相同的多个字符串副本放置在不同的位置上。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String greeting=<span class="string">"Hello"</span>;</span><br><span class="line"><span class="keyword">if</span>(greeting ==<span class="string">"Hello"</span>)</span><br><span class="line">  -- <span class="keyword">true</span></span><br><span class="line"> <span class="keyword">if</span>(greeting.substring(<span class="number">0</span>,<span class="number">3</span>)==<span class="string">"Hel"</span>)</span><br><span class="line">  --<span class="keyword">false</span></span><br></pre></td></tr></table></figure>
-
-<p>实际上只有字符串字面量共享，而+或者substring操作得到的字符串并不共享。</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>JAVASE</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JAVA中的输入与输出</title>
     <url>/2020/05/06/JAVA%E4%B8%AD%E7%9A%84%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA/</url>
     <content><![CDATA[<h1 id="JAVA中的输入"><a href="#JAVA中的输入" class="headerlink" title="JAVA中的输入"></a>JAVA中的输入</h1><h2 id="读取输入"><a href="#读取输入" class="headerlink" title="读取输入"></a>读取输入</h2><p>  要想通过输入台进行输入，首先需要构造一个与“标准输入流”System.in关联的Scanner对象。<br>  <a id="more"></a></p>
@@ -88,6 +40,43 @@
 <td>检测输入中是否还有表示浮点数</td>
 </tr>
 </tbody></table>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>JAVASE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JAVA多态</title>
+    <url>/2020/05/06/JAVA%E5%A4%9A%E6%80%81/</url>
+    <content><![CDATA[<h1 id="JAVA多态"><a href="#JAVA多态" class="headerlink" title="JAVA多态"></a>JAVA多态</h1><p>JAVA的三大特性为：</p>
+<ul>
+<li><p>封装</p>
+</li>
+<li><p>继承</p>
+</li>
+<li><p>多态</p>
+<p>今天我们就来说一说到底什么是多态，以及多态到底有什么用。</p>
+<a id="more"></a>
+
+<h2 id="多态的定义"><a href="#多态的定义" class="headerlink" title="多态的定义"></a>多态的定义</h2><p>定义： <strong>事物的不同形态。</strong>多态多应用在向上转型。</p>
+<p>多态的用处：在实际开发中，如果发现某个类的方法可以做出改进，但工程已经交付给用户使用，但是不想影响其他部分对于该方法的调用。那么通过创建子类对象，对于父类方法进行<strong>重写</strong>（Override）。<strong>但是此时父类的其他成员方法和成员属性却不能进行利用</strong>。此时就需要用到<strong>向上转型</strong>，将子类向上转换为父类，此时程序的相应方法做出了改进，程序的其他地方也不会受此影响。</p>
+</li>
+</ul>
+<h2 id="多态的三个前提："><a href="#多态的三个前提：" class="headerlink" title="多态的三个前提："></a>多态的三个前提：</h2><ul>
+<li><p>存在继承关系，子类继承父类</p>
+</li>
+<li><p>子类要重写父类的方法 </p>
+<p>子类重写父类的成员方法。</p>
+</li>
+<li><p>父类数据类型的引用要指向子类对象 （向上转型）</p>
+<p>如 Animal am=new Cat();</p>
+<h2 id="多态的弊端"><a href="#多态的弊端" class="headerlink" title="多态的弊端"></a>多态的弊端</h2><p>向上转型之后，<strong>不能够引用子类特有的成员属性和子类特有的成员方法</strong>。</p>
+</li>
+</ul>
+<p>  <strong>注意：静态方法不能被重写，所以也不存在多态，即使向上转型，子类重写了父类的静态方法，子类调用父类的静态方法，输出依然是父类静态方法中的值。</strong></p>
 ]]></content>
       <categories>
         <category>后端</category>
@@ -222,6 +211,54 @@
       </tags>
   </entry>
   <entry>
+    <title>JAVA_String_API</title>
+    <url>/2020/05/06/JAVA-String-API/</url>
+    <content><![CDATA[<p>String API</p>
+<ul>
+<li>append()</li>
+</ul>
+<p>  在由许多小段的字符串构建一个字符串时，则使用StringBuilder类（字符串构造器）</p>
+<p>  首先构造一个空的字符串构造器：<br>  <a id="more"></a></p>
+  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">StringBuilder builder =<span class="keyword">new</span> StringBuilder();</span><br></pre></td></tr></table></figure>
+
+<p>  当需要添加一部分内容时，调用append()方法</p>
+  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">builder.append(ch);</span><br><span class="line">builder.append(str);</span><br><span class="line">String completedString=builder.toString(); <span class="comment">/*调用toString()方法，得到String对象。*/</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>char charAt(int index)</p>
+<p>返回给定位置的代码单元。</p>
+</li>
+<li><p>int length()</p>
+</li>
+</ul>
+<p>​         返回字符串代码单元的个数</p>
+<ul>
+<li><p>String repeat(int count)</p>
+<p>返回一个字符串，将当前字符重复count次</p>
+</li>
+<li><p>boolean equals() </p>
+<p>用来检测俩个字符串是否相等</p>
+<p>boolean equalsIgnoreCase() </p>
+<p>用来检测俩个字符串是否相等（不区分大小写）</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="string">"hello"</span>.equals(greeting);</span><br><span class="line"><span class="string">"HELLO"</span>.equalsIgnoreCase(<span class="string">"hello"</span>); <span class="comment">/* 不区分大小写 */</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注意：</p>
+<p><strong>不要用==运算符检测是否相等。</strong></p>
+<p><strong>这个运算符只能够确定俩个字符串是否存放在同一个位置上。</strong>当然如果字符串存放在同一个位置上，它们必然相等，但是完全有可能把内容相同的多个字符串副本放置在不同的位置上。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String greeting=<span class="string">"Hello"</span>;</span><br><span class="line"><span class="keyword">if</span>(greeting ==<span class="string">"Hello"</span>)</span><br><span class="line">  -- <span class="keyword">true</span></span><br><span class="line"> <span class="keyword">if</span>(greeting.substring(<span class="number">0</span>,<span class="number">3</span>)==<span class="string">"Hel"</span>)</span><br><span class="line">  --<span class="keyword">false</span></span><br></pre></td></tr></table></figure>
+
+<p>实际上只有字符串字面量共享，而+或者substring操作得到的字符串并不共享。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>JAVASE</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JAVA的静态方法不能被重写</title>
     <url>/2020/05/06/JAVA%E7%9A%84%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95%E4%B8%8D%E8%83%BD%E8%A2%AB%E9%87%8D%E5%86%99/</url>
     <content><![CDATA[<h1 id="JAVA的静态方法不能被重写"><a href="#JAVA的静态方法不能被重写" class="headerlink" title="JAVA的静态方法不能被重写"></a>JAVA的静态方法不能被重写</h1><p>堆区：</p>
@@ -235,43 +272,6 @@
 <ul>
 <li>方法区包含所有的class和static变量  class可以直接调用static</li>
 </ul>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>JAVASE</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JAVA多态</title>
-    <url>/2020/05/06/JAVA%E5%A4%9A%E6%80%81/</url>
-    <content><![CDATA[<h1 id="JAVA多态"><a href="#JAVA多态" class="headerlink" title="JAVA多态"></a>JAVA多态</h1><p>JAVA的三大特性为：</p>
-<ul>
-<li><p>封装</p>
-</li>
-<li><p>继承</p>
-</li>
-<li><p>多态</p>
-<p>今天我们就来说一说到底什么是多态，以及多态到底有什么用。</p>
-<a id="more"></a>
-
-<h2 id="多态的定义"><a href="#多态的定义" class="headerlink" title="多态的定义"></a>多态的定义</h2><p>定义： <strong>事物的不同形态。</strong>多态多应用在向上转型。</p>
-<p>多态的用处：在实际开发中，如果发现某个类的方法可以做出改进，但工程已经交付给用户使用，但是不想影响其他部分对于该方法的调用。那么通过创建子类对象，对于父类方法进行<strong>重写</strong>（Override）。<strong>但是此时父类的其他成员方法和成员属性却不能进行利用</strong>。此时就需要用到<strong>向上转型</strong>，将子类向上转换为父类，此时程序的相应方法做出了改进，程序的其他地方也不会受此影响。</p>
-</li>
-</ul>
-<h2 id="多态的三个前提："><a href="#多态的三个前提：" class="headerlink" title="多态的三个前提："></a>多态的三个前提：</h2><ul>
-<li><p>存在继承关系，子类继承父类</p>
-</li>
-<li><p>子类要重写父类的方法 </p>
-<p>子类重写父类的成员方法。</p>
-</li>
-<li><p>父类数据类型的引用要指向子类对象 （向上转型）</p>
-<p>如 Animal am=new Cat();</p>
-<h2 id="多态的弊端"><a href="#多态的弊端" class="headerlink" title="多态的弊端"></a>多态的弊端</h2><p>向上转型之后，<strong>不能够引用子类特有的成员属性和子类特有的成员方法</strong>。</p>
-</li>
-</ul>
-<p>  <strong>注意：静态方法不能被重写，所以也不存在多态，即使向上转型，子类重写了父类的静态方法，子类调用父类的静态方法，输出依然是父类静态方法中的值。</strong></p>
 ]]></content>
       <categories>
         <category>后端</category>
@@ -305,7 +305,8 @@
 <li><p>ArrayList</p>
 <p>实现了可变的数组，允许保存所有元素包括null </p>
 </li>
-<li><p>LinkedList</p>
+<li><p>LinkedList </p>
+<p>采用链表的结构保存对象</p>
 </li>
 </ul>
 ]]></content>
@@ -458,17 +459,6 @@ p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数�
       </tags>
   </entry>
   <entry>
-    <title>test</title>
-    <url>/2020/05/07/test/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本文。</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><img src="/2020/05/07/test/alita.jpg" alt="alita"></p>
-]]></content>
-  </entry>
-  <entry>
     <title>线性表</title>
     <url>/2020/05/05/%E7%BA%BF%E6%80%A7%E8%A1%A8/</url>
     <content><![CDATA[<h1 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h1><h2 id="线性表的定义："><a href="#线性表的定义：" class="headerlink" title="线性表的定义："></a>线性表的定义：</h2><ul>
@@ -518,5 +508,15 @@ p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数�
       <tags>
         <tag>DataStructure</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>链表</title>
+    <url>/2020/05/07/%E9%93%BE%E8%A1%A8/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本文。</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
   </entry>
 </search>
