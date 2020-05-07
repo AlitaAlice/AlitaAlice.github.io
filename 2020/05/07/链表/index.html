@@ -28,8 +28,10 @@
 <meta property="og:description" content="概述 线性表的链式存储结构详解">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://www.alitaalice.cn/2020/05/07/%E9%93%BE%E8%A1%A8/%E9%93%BE%E8%A1%A801.png">
+<meta property="og:image" content="https://www.alitaalice.cn/2020/05/07/%E9%93%BE%E8%A1%A8/%E9%93%BE%E8%A1%A802.png">
+<meta property="og:image" content="https://www.alitaalice.cn/2020/05/07/%E9%93%BE%E8%A1%A8/%E9%93%BE%E8%A1%A803.png">
 <meta property="article:published_time" content="2020-05-07T03:53:07.000Z">
-<meta property="article:modified_time" content="2020-05-07T07:17:22.434Z">
+<meta property="article:modified_time" content="2020-05-07T11:17:13.158Z">
 <meta property="article:author" content="Alita Alice">
 <meta property="article:tag" content="DataStructure">
 <meta name="twitter:card" content="summary">
@@ -186,7 +188,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-05-07 11:53:07 / Modified: 15:17:22" itemprop="dateCreated datePublished" datetime="2020-05-07T11:53:07+08:00">2020-05-07</time>
+              <time title="Created: 2020-05-07 11:53:07 / Modified: 19:17:13" itemprop="dateCreated datePublished" datetime="2020-05-07T11:53:07+08:00">2020-05-07</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -225,7 +227,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>314</span>
+              <span>1.5k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -258,7 +260,39 @@
 <p>结点ai的指针域用p-&gt;next来表示。p-&gt;next指向第i-1个元素，即指向ai+1的指针。即p-&gt;data=ai</p>
 <p>那么p-&gt;next-&gt;data=ai+1</p>
 <p><img src="/2020/05/07/%E9%93%BE%E8%A1%A8/%E9%93%BE%E8%A1%A801.png" alt></p>
-<h2 id="单链表的读取"><a href="#单链表的读取" class="headerlink" title="单链表的读取"></a>单链表的读取</h2>
+<h2 id="单链表的读取"><a href="#单链表的读取" class="headerlink" title="单链表的读取"></a>单链表的读取</h2><p>算法思路：<br>从第一个头结点开始，指针域p-&gt; next一直向下指向第i个元素的指针域。</p>
+<ol>
+<li>声明指针p指向链表的第一个结点 ，初始化从1开始</li>
+<li>当j&lt;i时就遍历链表，p不断向后移动，j++</li>
+<li>当链表末尾p为空时，则说明第i个结点不存在</li>
+<li>若查找成功，那么返回结点p的数据。</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Status <span class="title">GetElem</span><span class="params">(LinkList L,<span class="keyword">int</span> i,ElemType *e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> j;</span><br><span class="line">  LinkList p;</span><br><span class="line">  p=L-&gt;next;</span><br><span class="line">  j=<span class="number">1</span>;</span><br><span class="line">  <span class="keyword">while</span>(p&amp;&amp;j&lt;i)</span><br><span class="line">  &#123;</span><br><span class="line">  p=p-&gt;next;</span><br><span class="line">  j++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span>(!p || j&gt;<span class="number">1</span>)</span><br><span class="line">  &#123;</span><br><span class="line">  <span class="keyword">return</span> ERROR；</span><br><span class="line">  *e=p-&gt;data;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="单链表的插入与删除"><a href="#单链表的插入与删除" class="headerlink" title="单链表的插入与删除"></a>单链表的插入与删除</h2><h3 id="单链表插入"><a href="#单链表插入" class="headerlink" title="单链表插入"></a>单链表插入</h3><p>思路：在俩节点之间再插入一个结点</p>
+<p>图示：</p>
+<p><img src="/2020/05/07/%E9%93%BE%E8%A1%A8/%E9%93%BE%E8%A1%A802.png" alt></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s-&gt;next=p-&gt;next;</span><br><span class="line">p-next=s;   <span class="comment">/*单链表插入标准语句 */</span></span><br></pre></td></tr></table></figure>
+
+<p>实现插入操作的具体思路：</p>
+<ol>
+<li></li>
+<li></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Status <span class="title">ListInsert</span><span class="params">(LinkList *L,<span class="keyword">int</span> i,ElemType e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(p&amp;&amp;j&lt;i)</span><br><span class="line">    &#123;</span><br><span class="line">        p=p-&gt;next;</span><br><span class="line">        ++j;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(!p||j&gt;i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> ERROR;</span><br><span class="line">    &#125;</span><br><span class="line">    s=(LinkList)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(Node));</span><br><span class="line">    s-&gt;data=e;</span><br><span class="line">    s-&gt;next=p-&gt;next;</span><br><span class="line">    p-&gt;next=s;</span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>malloc  函数，生成一个新的结点，其类型与Node一样的，其实质就是在内存中找一小块空地，准备用来存放数据e的s结点。</p>
+<h2 id="单链表的删除："><a href="#单链表的删除：" class="headerlink" title="单链表的删除："></a>单链表的删除：</h2><p>图示：</p>
+<p><img src="/2020/05/07/%E9%93%BE%E8%A1%A8/%E9%93%BE%E8%A1%A803.png" alt></p>
+<p>实际上就是p-&gt;next=p-&gt;next-&gt;next;</p>
+<p>如果用q来表示p-&gt;next即</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">q=p-&gt;next;</span><br><span class="line">p-&gt;next=q-&gt;next;</span><br></pre></td></tr></table></figure>
+
+<p>思路：</p>
+<p>具体实现代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Status <span class="title">ListDelete</span><span class="params">(LinkList *L,<span class="keyword">int</span> i,ElemType *e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> j;</span><br><span class="line">LinkList p,q;</span><br><span class="line">p=*L;</span><br><span class="line">j=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">while</span>(p-&gt;next &amp;&amp; j&lt;i)</span><br><span class="line">&#123;</span><br><span class="line">p=p-&gt;next;</span><br><span class="line">j++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(!(p-&gt;next)||j&gt;i)</span><br><span class="line"><span class="keyword">return</span> ERROR;</span><br><span class="line">q=p-&gt;next;</span><br><span class="line">p-&gt;next=q-&gt;next;</span><br><span class="line">*e=q-&gt;data;</span><br><span class="line"><span class="built_in">free</span>(q);<span class="comment">/* 回收一个Node结点 */</span></span><br><span class="line"><span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
     </div>
 
     
@@ -279,7 +313,10 @@
     <a href="/2020/05/07/List%E9%9B%86%E5%90%88/" rel="prev" title="List集合">
       <i class="fa fa-chevron-left"></i> List集合
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/05/07/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/" rel="next" title="学习方法">
+      学习方法 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -339,7 +376,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单链表的读取"><span class="nav-number">3.</span> <span class="nav-text">单链表的读取</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单链表的读取"><span class="nav-number">3.</span> <span class="nav-text">单链表的读取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单链表的插入与删除"><span class="nav-number">4.</span> <span class="nav-text">单链表的插入与删除</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单链表插入"><span class="nav-number">4.1.</span> <span class="nav-text">单链表插入</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单链表的删除："><span class="nav-number">5.</span> <span class="nav-text">单链表的删除：</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -363,7 +400,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -416,12 +453,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">15k</span>
+    <span title="Symbols count total">16k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">13 mins.</span>
+    <span title="Reading time total">15 mins.</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
   </div>
