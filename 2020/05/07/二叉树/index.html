@@ -28,7 +28,7 @@
 <meta property="og:description" content="概述 本文。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-05-07T13:06:03.000Z">
-<meta property="article:modified_time" content="2020-05-08T02:44:24.639Z">
+<meta property="article:modified_time" content="2020-05-08T07:19:13.555Z">
 <meta property="article:author" content="Alita Alice">
 <meta property="article:tag" content="DataStructure">
 <meta name="twitter:card" content="summary">
@@ -190,7 +190,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-05-08 10:44:24" itemprop="dateModified" datetime="2020-05-08T10:44:24+08:00">2020-05-08</time>
+                <time title="Modified: 2020-05-08 15:19:13" itemprop="dateModified" datetime="2020-05-08T15:19:13+08:00">2020-05-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -229,7 +229,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>630</span>
+              <span>729</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -285,10 +285,12 @@
 <h3 id="二叉树性质2"><a href="#二叉树性质2" class="headerlink" title="二叉树性质2"></a>二叉树性质2</h3><p>性质2：深度为k的二叉树至多有2^k -1个结点 （k&gt;=1)</p>
 <h3 id="二叉树性质3"><a href="#二叉树性质3" class="headerlink" title="二叉树性质3"></a>二叉树性质3</h3><p>性质3：对于任何一颗二叉树T，如果其终端结点数为n0，度为2的结点数为n2，则n0=n2+1</p>
 <h3 id="二叉树性质4"><a href="#二叉树性质4" class="headerlink" title="二叉树性质4"></a>二叉树性质4</h3><p>性质4： 具有n个结点的完全二叉树的深度为[log2 n]+1 ([x]表示不大于x的最大整数)</p>
-<h3 id="二叉树性质5"><a href="#二叉树性质5" class="headerlink" title="二叉树性质5"></a>二叉树性质5</h3><p>性质5： 如果对一颗有n个结点的完全二叉树（其深度为[log2 n]+1)的结点按层序编号，，对任一结点i（1&lt;=i&lt;=n)</p>
-<p>有</p>
+<h3 id="二叉树性质5"><a href="#二叉树性质5" class="headerlink" title="二叉树性质5"></a>二叉树性质5</h3><p><strong>性质5： 如果对一颗有n个结点的完全二叉树（其深度为[log2 n]+1)的结点按层序编号，对任一结点i（1&lt;=i&lt;=n)</strong></p>
+<p><strong>有</strong></p>
 <ol>
-<li>如果i=1,则结点i是二叉树的根</li>
+<li><strong>如果i=1,则结点i是二叉树的根，无双亲;如果i&gt;1,则其双亲是结点[i/2]</strong></li>
+<li><strong>如果2i&gt;n,则结点i无左孩子（结点i为叶子结点）；否则其左孩子是结点2i</strong></li>
+<li><strong>如果2i+1&gt;n,则结点i无右孩子；否则其右孩子是结点2i+1</strong></li>
 </ol>
 <h2 id="二叉树的存储结构"><a href="#二叉树的存储结构" class="headerlink" title="二叉树的存储结构"></a>二叉树的存储结构</h2><h2 id="二叉树的遍历"><a href="#二叉树的遍历" class="headerlink" title="二叉树的遍历"></a>二叉树的遍历</h2>
     </div>
@@ -451,7 +453,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">22k</span>
+    <span title="Symbols count total">23k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
