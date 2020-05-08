@@ -28,7 +28,7 @@
 <meta property="og:description" content="概述 本文。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-05-07T13:06:03.000Z">
-<meta property="article:modified_time" content="2020-05-07T13:46:17.725Z">
+<meta property="article:modified_time" content="2020-05-08T02:44:24.639Z">
 <meta property="article:author" content="Alita Alice">
 <meta property="article:tag" content="DataStructure">
 <meta name="twitter:card" content="summary">
@@ -182,10 +182,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-05-07 21:06:03 / Modified: 21:46:17" itemprop="dateCreated datePublished" datetime="2020-05-07T21:06:03+08:00">2020-05-07</time>
+              <time title="Created: 2020-05-07 21:06:03" itemprop="dateCreated datePublished" datetime="2020-05-07T21:06:03+08:00">2020-05-07</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-05-08 10:44:24" itemprop="dateModified" datetime="2020-05-08T10:44:24+08:00">2020-05-08</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -223,7 +229,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>215</span>
+              <span>630</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -263,11 +269,27 @@
 </li>
 </ul>
 <h2 id="特殊二叉树"><a href="#特殊二叉树" class="headerlink" title="特殊二叉树"></a>特殊二叉树</h2><ol>
-<li>斜树</li>
-<li>满二叉树</li>
-<li>完全二叉树</li>
+<li><p>斜树</p>
+<p>所有结点都只有左子树的二叉树叫做左斜树</p>
+<p>所有结点都只有右子树的二叉树叫做右斜树</p>
+<p>俩者统称为斜树</p>
+</li>
+<li><p>满二叉树</p>
+<p>在一颗二叉树中，如果所有分支结点都存在左子树和右子树，并且所有叶子都在同一层上，这样的二叉树叫做满二叉树</p>
+</li>
+<li><p>完全二叉树</p>
+<p>对一颗具有n个结点的二叉树按照层序编号，如果编号为i（1&lt;=i&lt;=n)的结点与同样深度的满二叉树中编号为i的结点在二叉树中位置完全相同，则这颗二叉树称为完全二叉树。</p>
+</li>
 </ol>
 <h2 id="二叉树的性质"><a href="#二叉树的性质" class="headerlink" title="二叉树的性质"></a>二叉树的性质</h2><h3 id="二叉树性质1"><a href="#二叉树性质1" class="headerlink" title="二叉树性质1"></a>二叉树性质1</h3><p>性质1：在二叉树的第i层上至多有2^i-1 个结点。（i&gt;=1)</p>
+<h3 id="二叉树性质2"><a href="#二叉树性质2" class="headerlink" title="二叉树性质2"></a>二叉树性质2</h3><p>性质2：深度为k的二叉树至多有2^k -1个结点 （k&gt;=1)</p>
+<h3 id="二叉树性质3"><a href="#二叉树性质3" class="headerlink" title="二叉树性质3"></a>二叉树性质3</h3><p>性质3：对于任何一颗二叉树T，如果其终端结点数为n0，度为2的结点数为n2，则n0=n2+1</p>
+<h3 id="二叉树性质4"><a href="#二叉树性质4" class="headerlink" title="二叉树性质4"></a>二叉树性质4</h3><p>性质4： 具有n个结点的完全二叉树的深度为[log2 n]+1 ([x]表示不大于x的最大整数)</p>
+<h3 id="二叉树性质5"><a href="#二叉树性质5" class="headerlink" title="二叉树性质5"></a>二叉树性质5</h3><p>性质5： 如果对一颗有n个结点的完全二叉树（其深度为[log2 n]+1)的结点按层序编号，，对任一结点i（1&lt;=i&lt;=n)</p>
+<p>有</p>
+<ol>
+<li>如果i=1,则结点i是二叉树的根</li>
+</ol>
 <h2 id="二叉树的存储结构"><a href="#二叉树的存储结构" class="headerlink" title="二叉树的存储结构"></a>二叉树的存储结构</h2><h2 id="二叉树的遍历"><a href="#二叉树的遍历" class="headerlink" title="二叉树的遍历"></a>二叉树的遍历</h2>
     </div>
 
@@ -352,7 +374,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二叉树的特点"><span class="nav-number">3.</span> <span class="nav-text">二叉树的特点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#二叉树的5种形态"><span class="nav-number">3.1.</span> <span class="nav-text">二叉树的5种形态</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特殊二叉树"><span class="nav-number">4.</span> <span class="nav-text">特殊二叉树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二叉树的性质"><span class="nav-number">5.</span> <span class="nav-text">二叉树的性质</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#二叉树性质1"><span class="nav-number">5.1.</span> <span class="nav-text">二叉树性质1</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二叉树的存储结构"><span class="nav-number">6.</span> <span class="nav-text">二叉树的存储结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二叉树的遍历"><span class="nav-number">7.</span> <span class="nav-text">二叉树的遍历</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二叉树的特点"><span class="nav-number">3.</span> <span class="nav-text">二叉树的特点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#二叉树的5种形态"><span class="nav-number">3.1.</span> <span class="nav-text">二叉树的5种形态</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特殊二叉树"><span class="nav-number">4.</span> <span class="nav-text">特殊二叉树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二叉树的性质"><span class="nav-number">5.</span> <span class="nav-text">二叉树的性质</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#二叉树性质1"><span class="nav-number">5.1.</span> <span class="nav-text">二叉树性质1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二叉树性质2"><span class="nav-number">5.2.</span> <span class="nav-text">二叉树性质2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二叉树性质3"><span class="nav-number">5.3.</span> <span class="nav-text">二叉树性质3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二叉树性质4"><span class="nav-number">5.4.</span> <span class="nav-text">二叉树性质4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二叉树性质5"><span class="nav-number">5.5.</span> <span class="nav-text">二叉树性质5</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二叉树的存储结构"><span class="nav-number">6.</span> <span class="nav-text">二叉树的存储结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二叉树的遍历"><span class="nav-number">7.</span> <span class="nav-text">二叉树的遍历</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -376,7 +398,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -429,12 +451,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">19k</span>
+    <span title="Symbols count total">22k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">18 mins.</span>
+    <span title="Reading time total">20 mins.</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
   </div>
