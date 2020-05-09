@@ -28,7 +28,7 @@
 <meta property="og:description" content="概述 本章介绍Map">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-05-08T11:57:52.000Z">
-<meta property="article:modified_time" content="2020-05-08T12:03:28.180Z">
+<meta property="article:modified_time" content="2020-05-09T15:24:57.466Z">
 <meta property="article:author" content="Alita Alice">
 <meta property="article:tag" content="JAVA源码">
 <meta name="twitter:card" content="summary">
@@ -182,10 +182,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-05-08 19:57:52 / Modified: 20:03:28" itemprop="dateCreated datePublished" datetime="2020-05-08T19:57:52+08:00">2020-05-08</time>
+              <time title="Created: 2020-05-08 19:57:52" itemprop="dateCreated datePublished" datetime="2020-05-08T19:57:52+08:00">2020-05-08</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-05-09 23:24:57" itemprop="dateModified" datetime="2020-05-09T23:24:57+08:00">2020-05-09</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -223,14 +229,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>11</span>
+              <span>5.4k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
+              <span>5 mins.</span>
             </span>
 
         </div>
@@ -247,7 +253,104 @@
 </blockquote>
 <a id="more"></a>
 
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="一-Map的定义"><a href="#一-Map的定义" class="headerlink" title="一.Map的定义"></a>一.Map的定义</h2><p>Map是一种依照键（key）存储元素的容器，键（key）很像下标。在List里下标是整数，而在Map中键（key）可以是任意类型的对象。Map中不能有重复的键（key），每个键都有一个对应的值（value)</p>
+<p>一个键（key）和它对应的值（value)构成Map集合中的一个元素。</p>
+<p>Map中的元素是俩个对象，一个对象作为键，一个对象作为值，<strong>键不可以重复，但是值可以重复。</strong></p>
+<h2 id="二-Map常用方法"><a href="#二-Map常用方法" class="headerlink" title="二.Map常用方法"></a>二.Map常用方法</h2><ul>
+<li><p>添加</p>
+<table>
+<thead>
+<tr>
+<th>put(key,Value)</th>
+<th>可以添加相同的key值，但是添加的value值会覆盖前面的value值。返回的是oldValue（返回被覆盖的值）,如果没有就返回null</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>putAll</td>
+<td>从指定映射中将所有映射关系复制到此映射中去。</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>删除</p>
+<table>
+<thead>
+<tr>
+<th>remove(key)</th>
+<th>删除指定key的键值对，返回被删除的key关联的value，不存在返回null</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>remove(key,value)</td>
+<td>删除指定键值对，成功返回true</td>
+</tr>
+<tr>
+<td>clear()</td>
+<td>删除map中所有的键值对</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>获取</p>
+<table>
+<thead>
+<tr>
+<th>get(key)</th>
+<th>返回指定key所对应的value，不存在则返回null</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Int size()</td>
+<td>获取长度</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>判断</p>
+<table>
+<thead>
+<tr>
+<th>boolean isEmpty()</th>
+<th>长度为0返回true，否则false</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>boolean containsKey(Object key)</td>
+<td>判断集合中是否包含指定的key</td>
+</tr>
+<tr>
+<td>boolean containsValue(Object value)</td>
+<td>判断集合中是否包含指定的value</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<p>示例：</p>
+<p>添加：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Set;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * This program demonstrates</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Alita Alice</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span>: Created in 13:48 2020/5/9</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo7</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Map&lt;String, Integer&gt; map1 = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        map1.put(<span class="string">"jack"</span>, <span class="number">20</span>);</span><br><span class="line">        map1.put(<span class="string">"rose"</span>, <span class="number">18</span>);</span><br><span class="line">        map1.put(<span class="string">"lucy"</span>, <span class="number">17</span>);</span><br><span class="line">        map1.put(<span class="string">"java"</span>, <span class="number">25</span>);</span><br><span class="line">        System.out.println(<span class="string">"map11"</span>+map1);</span><br><span class="line"></span><br><span class="line">        Map&lt;String,Integer&gt; map2=<span class="keyword">new</span> HashMap();</span><br><span class="line">        map2.put(<span class="string">"张三丰"</span>, <span class="number">100</span>);</span><br><span class="line">        map2.put(<span class="string">"虚竹"</span>, <span class="number">20</span>);</span><br><span class="line">        System.out.println(<span class="string">"map2"</span>+map2);</span><br><span class="line">        <span class="comment">//从指定映射种将所有的映射关系复制到此映射种</span></span><br><span class="line">        map1.putAll(map2);</span><br><span class="line">        System.out.println(<span class="string">"map1"</span>+map1);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* out</span></span><br><span class="line"><span class="comment">map11&#123;java=25, rose=18, lucy=17, jack=20&#125;</span></span><br><span class="line"><span class="comment">map2&#123;张三丰=100, 虚竹=20&#125;</span></span><br><span class="line"><span class="comment">map1&#123;java=25, 张三丰=100, rose=18, lucy=17, jack=20, 虚竹=20&#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<p>删除：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Set;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * This program demonstrates</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Alita Alice</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span>: Created in 13:48 2020/5/9</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo7</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Map&lt;String, Integer&gt; map1 = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        map1.put(<span class="string">"jack"</span>, <span class="number">20</span>);</span><br><span class="line">        map1.put(<span class="string">"rose"</span>, <span class="number">18</span>);</span><br><span class="line">        map1.put(<span class="string">"lucy"</span>, <span class="number">17</span>);</span><br><span class="line">        map1.put(<span class="string">"java"</span>, <span class="number">25</span>);</span><br><span class="line">        System.out.println(map1);</span><br><span class="line">        System.out.println(<span class="string">"delete value:"</span>+map1.remove(<span class="string">"java"</span>));</span><br><span class="line">        map1.clear();</span><br><span class="line">        System.out.println(<span class="string">"map1"</span>+map1);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* out</span></span><br><span class="line"><span class="comment">&#123;java=25, rose=18, lucy=17, jack=20&#125;</span></span><br><span class="line"><span class="comment">delete value:25</span></span><br><span class="line"><span class="comment">map1&#123;&#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<p>获取：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Set;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * This program demonstrates</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Alita Alice</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span>: Created in 13:48 2020/5/9</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo7</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Map&lt;String, Integer&gt; map1 = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        map1.put(<span class="string">"jack"</span>, <span class="number">20</span>);</span><br><span class="line">        map1.put(<span class="string">"rose"</span>, <span class="number">18</span>);</span><br><span class="line">        map1.put(<span class="string">"lucy"</span>, <span class="number">17</span>);</span><br><span class="line">        map1.put(<span class="string">"java"</span>, <span class="number">25</span>);</span><br><span class="line">        System.out.println(map1);</span><br><span class="line">        System.out.println(<span class="string">"value:"</span>+map1.get(<span class="string">"jack"</span>));</span><br><span class="line">        System.out.println(<span class="string">"map.size:"</span>+map1.size());</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* out</span></span><br><span class="line"><span class="comment">&#123;java=25, rose=18, lucy=17, jack=20&#125;</span></span><br><span class="line"><span class="comment">value:20</span></span><br><span class="line"><span class="comment">map.size:4</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<p>判断：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Set;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * This program demonstrates</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Alita Alice</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span>: Created in 13:48 2020/5/9</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo7</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Map&lt;String, Integer&gt; map1 = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        map1.put(<span class="string">"jack"</span>, <span class="number">20</span>);</span><br><span class="line">        map1.put(<span class="string">"rose"</span>, <span class="number">18</span>);</span><br><span class="line">        map1.put(<span class="string">"lucy"</span>, <span class="number">17</span>);</span><br><span class="line">        map1.put(<span class="string">"java"</span>, <span class="number">25</span>);</span><br><span class="line">        System.out.println(map1);</span><br><span class="line">        System.out.println(<span class="string">"isEmpty"</span>+map1.isEmpty());</span><br><span class="line">        System.out.println(<span class="string">"containskey"</span>+map1.containsKey(<span class="string">"jack"</span>));</span><br><span class="line">        System.out.println(<span class="string">"containsvaluse"</span>+map1.containsValue(<span class="number">100</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* out</span></span><br><span class="line"><span class="comment">&#123;java=25, rose=18, lucy=17, jack=20&#125;</span></span><br><span class="line"><span class="comment">isEmptyfalse</span></span><br><span class="line"><span class="comment">containskeytrue</span></span><br><span class="line"><span class="comment">containsvalusefalse</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="三-遍历Map的方式"><a href="#三-遍历Map的方式" class="headerlink" title="三.遍历Map的方式"></a>三.遍历Map的方式</h3><ul>
+<li><p><strong>使用KeySet</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Set;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Iterator;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"><span class="keyword">import</span> java.util.Set;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * This program demonstrates</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Alita Alice</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span>: Created in 13:48 2020/5/9</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo7</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Map&lt;String, Integer&gt; map1 = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        map1.put(<span class="string">"jack"</span>, <span class="number">20</span>);</span><br><span class="line">        map1.put(<span class="string">"rose"</span>, <span class="number">18</span>);</span><br><span class="line">        map1.put(<span class="string">"lucy"</span>, <span class="number">17</span>);</span><br><span class="line">        map1.put(<span class="string">"java"</span>, <span class="number">25</span>);</span><br><span class="line">        System.out.println(map1);</span><br><span class="line">        Set&lt;String&gt; ks=map1.keySet();</span><br><span class="line">        Iterator&lt;String&gt; it=ks.iterator();</span><br><span class="line">        <span class="keyword">while</span> (it.hasNext())</span><br><span class="line">        &#123;</span><br><span class="line">            String key=it.next();</span><br><span class="line">            Integer value = map1.get(key);</span><br><span class="line">            System.out.println(<span class="string">"key="</span>+key+<span class="string">" value="</span>+value);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* out</span></span><br><span class="line"><span class="comment">&#123;java=25, rose=18, lucy=17, jack=20&#125;</span></span><br><span class="line"><span class="comment">key=java value=25</span></span><br><span class="line"><span class="comment">key=rose value=18</span></span><br><span class="line"><span class="comment">key=lucy value=17</span></span><br><span class="line"><span class="comment">key=jack value=20</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<p>将Map转换成Set集合，通过Set的迭代器取出Set集合中的每一个元素（Iterator)就是Map集合中所有的键，再通过get方法获取键对应的值。</p>
+</li>
+<li><p>通过values获取所有的值，不能获取到key对象</p>
+<p>Collection<V> values()</V></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo7</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Map&lt;String, Integer&gt; map1 = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        map1.put(<span class="string">"jack"</span>, <span class="number">20</span>);</span><br><span class="line">        map1.put(<span class="string">"rose"</span>, <span class="number">18</span>);</span><br><span class="line">        map1.put(<span class="string">"lucy"</span>, <span class="number">17</span>);</span><br><span class="line">        map1.put(<span class="string">"java"</span>, <span class="number">25</span>);</span><br><span class="line">        Collection&lt;Integer&gt; vs=map1.values();  <span class="comment">//values方法获取所有的值但是不能获取到KEY对象。</span></span><br><span class="line">        Iterator&lt;Integer&gt; it = vs.iterator();</span><br><span class="line">        <span class="keyword">while</span> (it.hasNext())</span><br><span class="line">        &#123;</span><br><span class="line">            Integer value=it.next();</span><br><span class="line">            System.out.println(<span class="string">"valuse="</span> +value);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Map.Entry</p>
+<p>面向对象的思想将Map集合中的键和值映射关系打包成一个对象，就是Map.Entry</p>
+<p>将该对象存入Set集合，Map.Entry是一个对象，那么该对象具备的getKey ，getValue获得键和值。（<strong>通过Map中的entrySet()方法获取存放Map.Entry&lt;K,V&gt;对象的Set集合</strong>。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo7</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Map&lt;Integer,String&gt; map=<span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        map.put(<span class="number">1</span>,<span class="string">"aaaa"</span>);</span><br><span class="line">        map.put(<span class="number">2</span>,<span class="string">"bbb"</span>);</span><br><span class="line">        map.put(<span class="number">3</span>, <span class="string">"cccc"</span>);</span><br><span class="line">        System.out.println(map);</span><br><span class="line"></span><br><span class="line">        Set&lt;Map.Entry&lt;Integer,String&gt;&gt; es=map.entrySet();</span><br><span class="line">        Iterator&lt;Map.Entry&lt;Integer,String&gt;&gt; it=es.iterator();</span><br><span class="line">        <span class="keyword">while</span> (it.hasNext())</span><br><span class="line">        &#123;</span><br><span class="line">            Map.Entry&lt;Integer,String&gt; en =it.next();</span><br><span class="line">            Integer key=en.getKey();</span><br><span class="line">            String value=en.getValue();</span><br><span class="line">            System.out.println(<span class="string">"key="</span>+key+<span class="string">"value="</span>+value);</span><br><span class="line">        &#125;a</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* out</span></span><br><span class="line"><span class="comment">&#123;1=aaaa, 2=bbb, 3=cccc&#125;</span></span><br><span class="line"><span class="comment">key=1value=aaaa</span></span><br><span class="line"><span class="comment">key=2value=bbb</span></span><br><span class="line"><span class="comment">key=3value=cccc</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+
     </div>
 
     
@@ -331,7 +434,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一-Map的定义"><span class="nav-number">3.</span> <span class="nav-text">一.Map的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-Map常用方法"><span class="nav-number">4.</span> <span class="nav-text">二.Map常用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三-遍历Map的方式"><span class="nav-number">4.1.</span> <span class="nav-text">三.遍历Map的方式</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -355,7 +458,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-count">30</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -408,12 +511,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">38k</span>
+    <span title="Symbols count total">45k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">34 mins.</span>
+    <span title="Reading time total">41 mins.</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
   </div>
