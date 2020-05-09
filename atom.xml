@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.alitaalice.cn/"/>
-  <updated>2020-05-08T07:30:29.974Z</updated>
+  <updated>2020-05-09T04:16:02.742Z</updated>
   <id>https://www.alitaalice.cn/</id>
   
   <author>
@@ -15,6 +15,178 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JDK和JRE</title>
+    <link href="https://www.alitaalice.cn/2020/05/09/JDK%E5%92%8CJRE/"/>
+    <id>https://www.alitaalice.cn/2020/05/09/JDK%E5%92%8CJRE/</id>
+    <published>2020-05-09T03:11:39.000Z</published>
+    <updated>2020-05-09T04:16:02.742Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;本章介绍JDK和JRE的区别，他们的作用分别是什么？&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="后端" scheme="https://www.alitaalice.cn/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="JAVASE" scheme="https://www.alitaalice.cn/tags/JAVASE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JAVA中this和super的用法总结</title>
+    <link href="https://www.alitaalice.cn/2020/05/09/JAVA%E4%B8%ADthis%E5%92%8Csuper%E7%9A%84%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/"/>
+    <id>https://www.alitaalice.cn/2020/05/09/JAVA%E4%B8%ADthis%E5%92%8Csuper%E7%9A%84%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/</id>
+    <published>2020-05-09T02:37:34.000Z</published>
+    <updated>2020-05-09T02:40:57.943Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;本章介绍这几天看到类在继承时会用到&lt;strong&gt;this&lt;/strong&gt;和&lt;strong&gt;super&lt;/strong&gt;，这里就做了一点总结，与各位共同交流，有错误请各位指正~&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="后端" scheme="https://www.alitaalice.cn/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="JAVASE" scheme="https://www.alitaalice.cn/tags/JAVASE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Set</title>
+    <link href="https://www.alitaalice.cn/2020/05/08/Set/"/>
+    <id>https://www.alitaalice.cn/2020/05/08/Set/</id>
+    <published>2020-05-08T12:04:00.000Z</published>
+    <updated>2020-05-09T03:06:50.481Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;本章介绍Set&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="后端" scheme="https://www.alitaalice.cn/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="JAVASE" scheme="https://www.alitaalice.cn/tags/JAVASE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Map</title>
+    <link href="https://www.alitaalice.cn/2020/05/08/Map/"/>
+    <id>https://www.alitaalice.cn/2020/05/08/Map/</id>
+    <published>2020-05-08T11:57:52.000Z</published>
+    <updated>2020-05-08T12:03:28.180Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;本章介绍Map&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="后端" scheme="https://www.alitaalice.cn/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="JAVA源码" scheme="https://www.alitaalice.cn/tags/JAVA%E6%BA%90%E7%A0%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式</title>
+    <link href="https://www.alitaalice.cn/2020/05/08/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    <id>https://www.alitaalice.cn/2020/05/08/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</id>
+    <published>2020-05-08T09:06:48.000Z</published>
+    <updated>2020-05-08T09:06:48.036Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;本章介绍&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>设计原则</title>
+    <link href="https://www.alitaalice.cn/2020/05/08/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/"/>
+    <id>https://www.alitaalice.cn/2020/05/08/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/</id>
+    <published>2020-05-08T09:00:49.000Z</published>
+    <updated>2020-05-08T09:06:38.509Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;本章介绍设计原则&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="后端" scheme="https://www.alitaalice.cn/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="设计模式" scheme="https://www.alitaalice.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>内部类</title>
+    <link href="https://www.alitaalice.cn/2020/05/08/%E5%86%85%E9%83%A8%E7%B1%BB/"/>
+    <id>https://www.alitaalice.cn/2020/05/08/%E5%86%85%E9%83%A8%E7%B1%BB/</id>
+    <published>2020-05-08T08:07:18.000Z</published>
+    <updated>2020-05-08T09:00:14.657Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;本章介绍JAVA内部类&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>实习</title>
+    <link href="https://www.alitaalice.cn/2020/05/08/%E5%AE%9E%E4%B9%A0/"/>
+    <id>https://www.alitaalice.cn/2020/05/08/%E5%AE%9E%E4%B9%A0/</id>
+    <published>2020-05-08T07:45:05.000Z</published>
+    <updated>2020-05-08T07:46:51.096Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;本章介绍实习&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>mysql联结表</title>
@@ -282,194 +454,6 @@
     
     
       <category term="JAVASE" scheme="https://www.alitaalice.cn/tags/JAVASE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JAVA容器分类</title>
-    <link href="https://www.alitaalice.cn/2020/05/06/JAVA%E5%AE%B9%E5%99%A8%E5%88%86%E7%B1%BB/"/>
-    <id>https://www.alitaalice.cn/2020/05/06/JAVA%E5%AE%B9%E5%99%A8%E5%88%86%E7%B1%BB/</id>
-    <published>2020-05-06T02:30:29.000Z</published>
-    <updated>2020-05-07T03:11:18.661Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Java容器可分为两大类：&quot;&gt;&lt;a href=&quot;#Java容器可分为两大类：&quot; class=&quot;headerlink&quot; title=&quot;Java容器可分为两大类：&quot;&gt;&lt;/a&gt;Java容器可分为两大类：&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Collection接口 继承JAVA.lang.Object&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;List接口&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;ArrayList&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;LinkedList&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;
-    
-    </summary>
-    
-    
-      <category term="后端" scheme="https://www.alitaalice.cn/categories/%E5%90%8E%E7%AB%AF/"/>
-    
-    
-      <category term="JAVASE" scheme="https://www.alitaalice.cn/tags/JAVASE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>char可以存储汉字吗？</title>
-    <link href="https://www.alitaalice.cn/2020/05/06/char%E5%8F%AF%E4%BB%A5%E5%AD%98%E5%82%A8%E6%B1%89%E5%AD%97%E5%90%97%EF%BC%9F/"/>
-    <id>https://www.alitaalice.cn/2020/05/06/char%E5%8F%AF%E4%BB%A5%E5%AD%98%E5%82%A8%E6%B1%89%E5%AD%97%E5%90%97%EF%BC%9F/</id>
-    <published>2020-05-06T01:51:17.000Z</published>
-    <updated>2020-05-06T16:11:11.746Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;char存储汉字&quot;&gt;&lt;a href=&quot;#char存储汉字&quot; class=&quot;headerlink&quot; title=&quot;char存储汉字&quot;&gt;&lt;/a&gt;char存储汉字&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;char是按照字符存储的，不管是英文还是中文，JAVA中固定占用2个字符，用来存储Unicode字符，范围在0-65535.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Unicode编码字符集中包含了汉字，所以char类型变量当然可以存储汉字拉。&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;
-    
-    </summary>
-    
-    
-      <category term="后端" scheme="https://www.alitaalice.cn/categories/%E5%90%8E%E7%AB%AF/"/>
-    
-    
-      <category term="JAVASE" scheme="https://www.alitaalice.cn/tags/JAVASE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JAVA的静态方法不能被重写</title>
-    <link href="https://www.alitaalice.cn/2020/05/06/JAVA%E7%9A%84%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95%E4%B8%8D%E8%83%BD%E8%A2%AB%E9%87%8D%E5%86%99/"/>
-    <id>https://www.alitaalice.cn/2020/05/06/JAVA%E7%9A%84%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95%E4%B8%8D%E8%83%BD%E8%A2%AB%E9%87%8D%E5%86%99/</id>
-    <published>2020-05-06T01:35:55.000Z</published>
-    <updated>2020-05-06T16:11:39.753Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;JAVA的静态方法不能被重写&quot;&gt;&lt;a href=&quot;#JAVA的静态方法不能被重写&quot; class=&quot;headerlink&quot; title=&quot;JAVA的静态方法不能被重写&quot;&gt;&lt;/a&gt;JAVA的静态方法不能被重写&lt;/h1&gt;&lt;p&gt;堆区：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;存储的全部都是对象，每个对象都包含一个与之对应的class信息。&lt;/li&gt;&lt;/ul&gt;
-    
-    </summary>
-    
-    
-      <category term="后端" scheme="https://www.alitaalice.cn/categories/%E5%90%8E%E7%AB%AF/"/>
-    
-    
-      <category term="JAVASE" scheme="https://www.alitaalice.cn/tags/JAVASE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JAVA多态</title>
-    <link href="https://www.alitaalice.cn/2020/05/06/JAVA%E5%A4%9A%E6%80%81/"/>
-    <id>https://www.alitaalice.cn/2020/05/06/JAVA%E5%A4%9A%E6%80%81/</id>
-    <published>2020-05-06T00:54:39.000Z</published>
-    <updated>2020-05-06T16:11:46.235Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;JAVA多态&quot;&gt;&lt;a href=&quot;#JAVA多态&quot; class=&quot;headerlink&quot; title=&quot;JAVA多态&quot;&gt;&lt;/a&gt;JAVA多态&lt;/h1&gt;&lt;p&gt;JAVA的三大特性为：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;封装&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;继承&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;多态&lt;/p&gt;
-&lt;p&gt;今天我们就来说一说到底什么是多态，以及多态到底有什么用。&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;
-    
-    </summary>
-    
-    
-      <category term="后端" scheme="https://www.alitaalice.cn/categories/%E5%90%8E%E7%AB%AF/"/>
-    
-    
-      <category term="JAVASE" scheme="https://www.alitaalice.cn/tags/JAVASE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>时间复杂度</title>
-    <link href="https://www.alitaalice.cn/2020/05/05/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/"/>
-    <id>https://www.alitaalice.cn/2020/05/05/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/</id>
-    <published>2020-05-05T03:43:55.000Z</published>
-    <updated>2020-05-06T16:12:13.859Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;算法时间复杂度&quot;&gt;&lt;a href=&quot;#算法时间复杂度&quot; class=&quot;headerlink&quot; title=&quot;算法时间复杂度&quot;&gt;&lt;/a&gt;算法时间复杂度&lt;/h1&gt;&lt;h2 id=&quot;算法时间复杂度定义&quot;&gt;&lt;a href=&quot;#算法时间复杂度定义&quot; class=&quot;headerlink&quot; title=&quot;算法时间复杂度定义&quot;&gt;&lt;/a&gt;算法时间复杂度定义&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;O()来体现算法时间复杂度的记法&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;
-    
-    </summary>
-    
-    
-      <category term="算法" scheme="https://www.alitaalice.cn/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="DataStructure" scheme="https://www.alitaalice.cn/tags/DataStructure/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>线性表</title>
-    <link href="https://www.alitaalice.cn/2020/05/05/%E7%BA%BF%E6%80%A7%E8%A1%A8/"/>
-    <id>https://www.alitaalice.cn/2020/05/05/%E7%BA%BF%E6%80%A7%E8%A1%A8/</id>
-    <published>2020-05-05T03:23:19.000Z</published>
-    <updated>2020-05-07T03:11:51.947Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;线性表&quot;&gt;&lt;a href=&quot;#线性表&quot; class=&quot;headerlink&quot; title=&quot;线性表&quot;&gt;&lt;/a&gt;线性表&lt;/h1&gt;&lt;h2 id=&quot;线性表的定义：&quot;&gt;&lt;a href=&quot;#线性表的定义：&quot; class=&quot;headerlink&quot; title=&quot;线性表的定义：&quot;&gt;&lt;/a&gt;线性表的定义：&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;线性表：零个或多个数据元素的有限序列&lt;/li&gt;
-&lt;li&gt;线性表元素的个数n 定义为线性表的长度，当n=0时，称为空表&lt;/li&gt;&lt;/ul&gt;
-    
-    </summary>
-    
-    
-      <category term="算法" scheme="https://www.alitaalice.cn/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="DataStructure" scheme="https://www.alitaalice.cn/tags/DataStructure/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>指针</title>
-    <link href="https://www.alitaalice.cn/2020/05/04/%E6%8C%87%E9%92%88/"/>
-    <id>https://www.alitaalice.cn/2020/05/04/%E6%8C%87%E9%92%88/</id>
-    <published>2020-05-04T14:16:42.000Z</published>
-    <updated>2020-05-06T16:12:26.705Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;10-1-指针变量&quot;&gt;&lt;a href=&quot;#10-1-指针变量&quot; class=&quot;headerlink&quot; title=&quot;10.1 指针变量&quot;&gt;&lt;/a&gt;10.1 指针变量&lt;/h1&gt;&lt;p&gt; 由于通过地址能访问指定的内存存储单元。可以说地址“指向”该内存单元。地址可以形象地称为指针，意思是通过指针能够找到内存单元。&lt;br&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="后端" scheme="https://www.alitaalice.cn/categories/%E5%90%8E%E7%AB%AF/"/>
-    
-    
-      <category term="C" scheme="https://www.alitaalice.cn/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>mysql必知必会</title>
-    <link href="https://www.alitaalice.cn/2020/05/03/mysql%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/"/>
-    <id>https://www.alitaalice.cn/2020/05/03/mysql%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/</id>
-    <published>2020-05-03T01:59:42.000Z</published>
-    <updated>2020-05-06T16:12:07.898Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt; 登录mysql -h localhost -u root -p&lt;br&gt; Show databases;&lt;br&gt; Use databasename;&lt;br&gt;Show tables;  //显示行&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="后端" scheme="https://www.alitaalice.cn/categories/%E5%90%8E%E7%AB%AF/"/>
-    
-    
-      <category term="mysql" scheme="https://www.alitaalice.cn/tags/mysql/"/>
     
   </entry>
   
