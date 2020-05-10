@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.alitaalice.cn/"/>
-  <updated>2020-05-09T15:04:42.932Z</updated>
+  <updated>2020-05-10T02:32:42.624Z</updated>
   <id>https://www.alitaalice.cn/</id>
   
   <author>
@@ -17,11 +17,30 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>使用存储过程</title>
+    <link href="https://www.alitaalice.cn/2020/05/10/%E4%BD%BF%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/"/>
+    <id>https://www.alitaalice.cn/2020/05/10/%E4%BD%BF%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/</id>
+    <published>2020-05-10T02:31:56.000Z</published>
+    <updated>2020-05-10T02:32:42.624Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;本章介绍&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>mysql视图</title>
     <link href="https://www.alitaalice.cn/2020/05/09/mysql%E8%A7%86%E5%9B%BE/"/>
     <id>https://www.alitaalice.cn/2020/05/09/mysql%E8%A7%86%E5%9B%BE/</id>
     <published>2020-05-09T14:42:36.000Z</published>
-    <updated>2020-05-09T15:04:42.932Z</updated>
+    <updated>2020-05-10T02:32:18.692Z</updated>
     
     <summary type="html">
     
@@ -32,6 +51,10 @@
     </summary>
     
     
+      <category term="后端" scheme="https://www.alitaalice.cn/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="mysql" scheme="https://www.alitaalice.cn/tags/mysql/"/>
     
   </entry>
   
@@ -132,7 +155,7 @@
     <link href="https://www.alitaalice.cn/2020/05/08/Map/"/>
     <id>https://www.alitaalice.cn/2020/05/08/Map/</id>
     <published>2020-05-08T11:57:52.000Z</published>
-    <updated>2020-05-09T15:24:57.466Z</updated>
+    <updated>2020-05-09T16:19:50.969Z</updated>
     
     <summary type="html">
     
@@ -426,29 +449,6 @@
     
     
       <category term="DataStructure" scheme="https://www.alitaalice.cn/tags/DataStructure/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>List集合</title>
-    <link href="https://www.alitaalice.cn/2020/05/07/List%E9%9B%86%E5%90%88/"/>
-    <id>https://www.alitaalice.cn/2020/05/07/List%E9%9B%86%E5%90%88/</id>
-    <published>2020-05-07T03:12:17.000Z</published>
-    <updated>2020-05-07T11:22:39.446Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;List集合包括List接口和List接口所有的实现类&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="后端" scheme="https://www.alitaalice.cn/categories/%E5%90%8E%E7%AB%AF/"/>
-    
-    
-      <category term="JAVASE" scheme="https://www.alitaalice.cn/tags/JAVASE/"/>
     
   </entry>
   
