@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.alitaalice.cn/"/>
-  <updated>2020-05-11T09:43:17.535Z</updated>
+  <updated>2020-05-11T12:55:34.285Z</updated>
   <id>https://www.alitaalice.cn/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JAVA面试</title>
+    <link href="https://www.alitaalice.cn/2020/05/11/JAVA%E9%9D%A2%E8%AF%95/"/>
+    <id>https://www.alitaalice.cn/2020/05/11/JAVA%E9%9D%A2%E8%AF%95/</id>
+    <published>2020-05-11T12:54:07.000Z</published>
+    <updated>2020-05-11T12:55:34.285Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;本章介绍&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>两数之和</title>
@@ -426,29 +445,6 @@
     </summary>
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>实习</title>
-    <link href="https://www.alitaalice.cn/2020/05/08/%E5%AE%9E%E4%B9%A0/"/>
-    <id>https://www.alitaalice.cn/2020/05/08/%E5%AE%9E%E4%B9%A0/</id>
-    <published>2020-05-08T07:45:05.000Z</published>
-    <updated>2020-05-11T11:21:40.517Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;本章介绍实习&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="杂谈" scheme="https://www.alitaalice.cn/categories/%E6%9D%82%E8%B0%88/"/>
-    
-    
-      <category term="杂谈" scheme="https://www.alitaalice.cn/tags/%E6%9D%82%E8%B0%88/"/>
     
   </entry>
   
