@@ -1,54 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>JAVA中的输入与输出</title>
-    <url>/2020/05/06/JAVA%E4%B8%AD%E7%9A%84%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA/</url>
-    <content><![CDATA[<h1 id="JAVA中的输入"><a href="#JAVA中的输入" class="headerlink" title="JAVA中的输入"></a>JAVA中的输入</h1><h2 id="读取输入"><a href="#读取输入" class="headerlink" title="读取输入"></a>读取输入</h2><p>  要想通过输入台进行输入，首先需要构造一个与“标准输入流”System.in关联的Scanner对象。<br>  <a id="more"></a></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Scanner scanner=<span class="keyword">new</span> Scanner(System.in);</span><br></pre></td></tr></table></figure>
-
-<p>Scanner类中的方法：</p>
-<p>API  JAVA.util.Scanner</p>
-<table>
-<thead>
-<tr>
-<th>String nextLine()</th>
-<th>读取输入的下一行内容  以enter作为结束符  能得到带空格的字符串</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>String next()</td>
-<td>读取输入的下一个单词（以空格作为分隔符）空格视而不见</td>
-</tr>
-<tr>
-<td>int nextInt()</td>
-<td>只读取int值</td>
-</tr>
-<tr>
-<td>double nextDouble()</td>
-<td>只读取double值</td>
-</tr>
-<tr>
-<td>boolean hasNext()</td>
-<td>检测输入中是否还有其他的单词</td>
-</tr>
-<tr>
-<td>boolean hasNextInt()</td>
-<td>检测输入中是否还有表示整数</td>
-</tr>
-<tr>
-<td>boolean hasNextDouble()</td>
-<td>检测输入中是否还有表示浮点数</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>JAVASE</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JAVA_String_API</title>
     <url>/2020/05/06/JAVA-String-API/</url>
     <content><![CDATA[<p>String API</p>
@@ -97,82 +49,48 @@
       </tags>
   </entry>
   <entry>
-    <title>JAVA中this和super的用法总结</title>
-    <url>/2020/05/09/JAVA%E4%B8%ADthis%E5%92%8Csuper%E7%9A%84%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍这几天看到类在继承时会用到<strong>this</strong>和<strong>super</strong>，这里就做了一点总结，与各位共同交流，有错误请各位指正~</p>
-</blockquote>
-<a id="more"></a>
+    <title>JAVA中的输入与输出</title>
+    <url>/2020/05/06/JAVA%E4%B8%AD%E7%9A%84%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA/</url>
+    <content><![CDATA[<h1 id="JAVA中的输入"><a href="#JAVA中的输入" class="headerlink" title="JAVA中的输入"></a>JAVA中的输入</h1><h2 id="读取输入"><a href="#读取输入" class="headerlink" title="读取输入"></a>读取输入</h2><p>  要想通过输入台进行输入，首先需要构造一个与“标准输入流”System.in关联的Scanner对象。<br>  <a id="more"></a></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Scanner scanner=<span class="keyword">new</span> Scanner(System.in);</span><br></pre></td></tr></table></figure>
 
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><strong>this</strong></p>
-<p>this是自身的一个对象，代表对象本身，可以理解为：指向对象本身的一个指针。</p>
-<h2 id="this的用法在java中大体可以分为3种："><a href="#this的用法在java中大体可以分为3种：" class="headerlink" title="this的用法在java中大体可以分为3种："></a>this的用法在java中大体可以分为3种：</h2><p><strong>1.普通的直接引用</strong></p>
-<p>这种就不用讲了，this相当于是指向当前对象本身。</p>
-<p><strong>2.形参与成员名字重名，用this来区分：</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age = <span class="number">10</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">()</span></span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"初始化年龄："</span>+age);</span><br><span class="line">&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">GetAge</span><span class="params">(<span class="keyword">int</span> age)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">test1</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Person Harry = <span class="keyword">new</span> Person();</span><br><span class="line">        System.out.println(<span class="string">"Harry's age is "</span>+Harry.GetAge(<span class="number">12</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>运行结果：</strong></p>
-<p><strong>初始化年龄：10</strong><br><strong>Harry’s age is 12</strong></p>
-<p>可以看到，这里age是GetAge成员方法的形参，this.age是Person类的成员变量。</p>
-<p><strong>3.引用构造函数</strong></p>
-<p>这个和super放在一起讲，见下面。</p>
-<h2 id="super"><a href="#super" class="headerlink" title="super"></a><strong>super</strong></h2><p>super可以理解为是指向自己超（父）类对象的一个指针，而这个超类指的是离自己最近的一个父类。</p>
-<h3 id="super也有三种用法："><a href="#super也有三种用法：" class="headerlink" title="super也有三种用法："></a>super也有三种用法：</h3><p>1.普通的直接引用</p>
-<p>与this类似，super相当于是指向当前对象的父类，这样就可以用super.xxx来引用父类的成员。</p>
-<p>2.子类中的成员变量或方法与父类中的成员变量或方法同名</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Country</span> </span>&#123;</span><br><span class="line">    String name;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">value</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       name = <span class="string">"China"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">City</span> <span class="keyword">extends</span> <span class="title">Country</span> </span>&#123;</span><br><span class="line">    String name;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">value</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    name = <span class="string">"Shanghai"</span>;</span><br><span class="line">    <span class="keyword">super</span>.value();      <span class="comment">//调用父类的方法</span></span><br><span class="line">    System.out.println(name);</span><br><span class="line">    System.out.println(<span class="keyword">super</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">       City c=<span class="keyword">new</span> City();</span><br><span class="line">       c.value();</span><br><span class="line">       &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>运行结果：</strong></p>
-<p><strong>Shanghai</strong><br><strong>China</strong></p>
-<p>可以看到，这里既调用了父类的方法，也调用了父类的变量。若不调用父类方法value()，只调用父类变量name的话，则父类name值为默认值null。</p>
-<p>3.引用构造函数</p>
-<p>super（参数）：调用父类中的某一个构造函数（应该为构造函数中的第一条语句）。</p>
-<p>this（参数）：调用本类中另一种形式的构造函数（应该为构造函数中的第一条语句）。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">prt</span><span class="params">(String s)</span> </span>&#123; </span><br><span class="line">       System.out.println(s); </span><br><span class="line">    &#125; </span><br><span class="line">   </span><br><span class="line">    Person() &#123; </span><br><span class="line">       prt(<span class="string">"父类·无参数构造方法： "</span>+<span class="string">"A Person."</span>); </span><br><span class="line">    &#125;<span class="comment">//构造方法(1) </span></span><br><span class="line">    </span><br><span class="line">    Person(String name) &#123; </span><br><span class="line">       prt(<span class="string">"父类·含一个参数的构造方法： "</span>+<span class="string">"A person's name is "</span> + name); </span><br><span class="line">    &#125;<span class="comment">//构造方法(2) </span></span><br><span class="line">&#125; </span><br><span class="line">    </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Chinese</span> <span class="keyword">extends</span> <span class="title">Person</span> </span>&#123; </span><br><span class="line">    Chinese() &#123; </span><br><span class="line">       <span class="keyword">super</span>(); <span class="comment">// 调用父类构造方法（1） </span></span><br><span class="line">       prt(<span class="string">"子类·调用父类”无参数构造方法“： "</span>+<span class="string">"A chinese coder."</span>); </span><br><span class="line">    &#125; </span><br><span class="line">    </span><br><span class="line">    Chinese(String name) &#123; </span><br><span class="line">       <span class="keyword">super</span>(name);<span class="comment">// 调用父类具有相同形参的构造方法（2） </span></span><br><span class="line">       prt(<span class="string">"子类·调用父类”含一个参数的构造方法“： "</span>+<span class="string">"his name is "</span> + name); </span><br><span class="line">    &#125; </span><br><span class="line">    </span><br><span class="line">    Chinese(String name, <span class="keyword">int</span> age) &#123; </span><br><span class="line">       <span class="keyword">this</span>(name);<span class="comment">// 调用具有相同形参的构造方法（3） </span></span><br><span class="line">       prt(<span class="string">"子类：调用子类具有相同形参的构造方法：his age is "</span> + age); </span><br><span class="line">    &#125; </span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123; </span><br><span class="line">       Chinese cn = <span class="keyword">new</span> Chinese(); </span><br><span class="line">       cn = <span class="keyword">new</span> Chinese(<span class="string">"codersai"</span>); </span><br><span class="line">       cn = <span class="keyword">new</span> Chinese(<span class="string">"codersai"</span>, <span class="number">18</span>); </span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>运行结果：</strong></p>
-<p><strong>父类·无参数构造方法： A Person.</strong><br><strong>子类·调用父类”无参数构造方法“： A chinese coder.</strong><br><strong>父类·含一个参数的构造方法： A person’s name is codersai</strong><br><strong>子类·调用父类”含一个参数的构造方法“： his name is codersai</strong><br><strong>父类·含一个参数的构造方法： A person’s name is codersai</strong><br><strong>子类·调用父类”含一个参数的构造方法“： his name is codersai</strong><br><strong>子类：调用子类具有相同形参的构造方法：his age is 18</strong></p>
-<p>从本例可以看到，可以用super和this分别调用父类的构造方法和本类中其他形式的构造方法。</p>
-<p>例子中Chinese类第三种构造方法调用的是本类中第二种构造方法，而第二种构造方法是调用父类的，因此也要先调用父类的构造方法，再调用本类中第二种，最后是重写第三种构造方法。</p>
-<p><strong>super和this的异同：</strong></p>
-<ul>
-<li>super（参数）：调用基类中的某一个构造函数（应该为构造函数中的第一条语句） </li>
-<li>this（参数）：调用本类中另一种形成的构造函数（应该为构造函数中的第一条语句）</li>
-<li>super:　它引用当前对象的直接父类中的成员（用来访问直接父类中被隐藏的父类中成员数据或函数，基类与派生类中有相同成员定义时如：super.变量名  super.成员函数据名（实参）</li>
-<li>this：它代表当前对象名（在程序中易产生二义性之处，应使用this来指明当前对象；如果函数的形参与类中的成员数据同名，这时需用this来指明成员变量名）</li>
-<li>调用super()必须写在子类构造方法的第一行，否则编译不通过。每个子类构造方法的第一条语句，都是隐含地调用super()，如果父类没有这种形式的构造函数，那么在编译的时候就会报错。</li>
-<li>super()和this()类似,区别是，super()从子类中调用父类的构造方法，this()在同一类内调用其它方法。</li>
-<li>super()和this()均需放在构造方法内第一行。</li>
-<li>尽管可以用this调用一个构造器，但却不能调用两个。</li>
-<li>this和super不能同时出现在一个构造函数里面，因为this必然会调用其它的构造函数，其它的构造函数必然也会有super语句的存在，所以在同一个构造函数里面有相同的语句，就失去了语句的意义，编译器也不会通过。</li>
-<li>this()和super()都指的是对象，所以，均不可以在static环境中使用。包括：static变量,static方法，static语句块。</li>
-<li>从本质上讲，this是一个指向本对象的指针, 然而super是一个Java关键字。</li>
-</ul>
+<p>Scanner类中的方法：</p>
+<p>API  JAVA.util.Scanner</p>
+<table>
+<thead>
+<tr>
+<th>String nextLine()</th>
+<th>读取输入的下一行内容  以enter作为结束符  能得到带空格的字符串</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>String next()</td>
+<td>读取输入的下一个单词（以空格作为分隔符）空格视而不见</td>
+</tr>
+<tr>
+<td>int nextInt()</td>
+<td>只读取int值</td>
+</tr>
+<tr>
+<td>double nextDouble()</td>
+<td>只读取double值</td>
+</tr>
+<tr>
+<td>boolean hasNext()</td>
+<td>检测输入中是否还有其他的单词</td>
+</tr>
+<tr>
+<td>boolean hasNextInt()</td>
+<td>检测输入中是否还有表示整数</td>
+</tr>
+<tr>
+<td>boolean hasNextDouble()</td>
+<td>检测输入中是否还有表示浮点数</td>
+</tr>
+</tbody></table>
 ]]></content>
       <categories>
         <category>后端</category>
-      </categories>
-      <tags>
-        <tag>JAVASE</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JAVA和C++的区别</title>
-    <url>/2020/05/11/JAVA%E5%92%8CC++%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍JAVA和C++的区别</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="JAVA和C-的区别"><a href="#JAVA和C-的区别" class="headerlink" title="JAVA和C++的区别"></a>JAVA和C++的区别</h2><ul>
-<li>都是面向对象的语言，并且都支持封装，继承和多态</li>
-<li>指针：JAVA不提供指针来直接访问内存，程序更加安全。</li>
-<li>继承：JAVA中的类是单继承的，但是C++允许多继承，JAVA中允许一个类实现多个接口来实现C++中的多冲继承。</li>
-<li>内存：JAVA有自动内存管理机制，不需要程序员手动释放无用内存。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>面试</category>
       </categories>
       <tags>
         <tag>JAVASE</tag>
@@ -341,6 +259,88 @@
       </tags>
   </entry>
   <entry>
+    <title>JAVA中this和super的用法总结</title>
+    <url>/2020/05/09/JAVA%E4%B8%ADthis%E5%92%8Csuper%E7%9A%84%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍这几天看到类在继承时会用到<strong>this</strong>和<strong>super</strong>，这里就做了一点总结，与各位共同交流，有错误请各位指正~</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><strong>this</strong></p>
+<p>this是自身的一个对象，代表对象本身，可以理解为：指向对象本身的一个指针。</p>
+<h2 id="this的用法在java中大体可以分为3种："><a href="#this的用法在java中大体可以分为3种：" class="headerlink" title="this的用法在java中大体可以分为3种："></a>this的用法在java中大体可以分为3种：</h2><p><strong>1.普通的直接引用</strong></p>
+<p>这种就不用讲了，this相当于是指向当前对象本身。</p>
+<p><strong>2.形参与成员名字重名，用this来区分：</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age = <span class="number">10</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">()</span></span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"初始化年龄："</span>+age);</span><br><span class="line">&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">GetAge</span><span class="params">(<span class="keyword">int</span> age)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">test1</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Person Harry = <span class="keyword">new</span> Person();</span><br><span class="line">        System.out.println(<span class="string">"Harry's age is "</span>+Harry.GetAge(<span class="number">12</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>运行结果：</strong></p>
+<p><strong>初始化年龄：10</strong><br><strong>Harry’s age is 12</strong></p>
+<p>可以看到，这里age是GetAge成员方法的形参，this.age是Person类的成员变量。</p>
+<p><strong>3.引用构造函数</strong></p>
+<p>这个和super放在一起讲，见下面。</p>
+<h2 id="super"><a href="#super" class="headerlink" title="super"></a><strong>super</strong></h2><p>super可以理解为是指向自己超（父）类对象的一个指针，而这个超类指的是离自己最近的一个父类。</p>
+<h3 id="super也有三种用法："><a href="#super也有三种用法：" class="headerlink" title="super也有三种用法："></a>super也有三种用法：</h3><p>1.普通的直接引用</p>
+<p>与this类似，super相当于是指向当前对象的父类，这样就可以用super.xxx来引用父类的成员。</p>
+<p>2.子类中的成员变量或方法与父类中的成员变量或方法同名</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Country</span> </span>&#123;</span><br><span class="line">    String name;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">value</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       name = <span class="string">"China"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">City</span> <span class="keyword">extends</span> <span class="title">Country</span> </span>&#123;</span><br><span class="line">    String name;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">value</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    name = <span class="string">"Shanghai"</span>;</span><br><span class="line">    <span class="keyword">super</span>.value();      <span class="comment">//调用父类的方法</span></span><br><span class="line">    System.out.println(name);</span><br><span class="line">    System.out.println(<span class="keyword">super</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">       City c=<span class="keyword">new</span> City();</span><br><span class="line">       c.value();</span><br><span class="line">       &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>运行结果：</strong></p>
+<p><strong>Shanghai</strong><br><strong>China</strong></p>
+<p>可以看到，这里既调用了父类的方法，也调用了父类的变量。若不调用父类方法value()，只调用父类变量name的话，则父类name值为默认值null。</p>
+<p>3.引用构造函数</p>
+<p>super（参数）：调用父类中的某一个构造函数（应该为构造函数中的第一条语句）。</p>
+<p>this（参数）：调用本类中另一种形式的构造函数（应该为构造函数中的第一条语句）。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">prt</span><span class="params">(String s)</span> </span>&#123; </span><br><span class="line">       System.out.println(s); </span><br><span class="line">    &#125; </span><br><span class="line">   </span><br><span class="line">    Person() &#123; </span><br><span class="line">       prt(<span class="string">"父类·无参数构造方法： "</span>+<span class="string">"A Person."</span>); </span><br><span class="line">    &#125;<span class="comment">//构造方法(1) </span></span><br><span class="line">    </span><br><span class="line">    Person(String name) &#123; </span><br><span class="line">       prt(<span class="string">"父类·含一个参数的构造方法： "</span>+<span class="string">"A person's name is "</span> + name); </span><br><span class="line">    &#125;<span class="comment">//构造方法(2) </span></span><br><span class="line">&#125; </span><br><span class="line">    </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Chinese</span> <span class="keyword">extends</span> <span class="title">Person</span> </span>&#123; </span><br><span class="line">    Chinese() &#123; </span><br><span class="line">       <span class="keyword">super</span>(); <span class="comment">// 调用父类构造方法（1） </span></span><br><span class="line">       prt(<span class="string">"子类·调用父类”无参数构造方法“： "</span>+<span class="string">"A chinese coder."</span>); </span><br><span class="line">    &#125; </span><br><span class="line">    </span><br><span class="line">    Chinese(String name) &#123; </span><br><span class="line">       <span class="keyword">super</span>(name);<span class="comment">// 调用父类具有相同形参的构造方法（2） </span></span><br><span class="line">       prt(<span class="string">"子类·调用父类”含一个参数的构造方法“： "</span>+<span class="string">"his name is "</span> + name); </span><br><span class="line">    &#125; </span><br><span class="line">    </span><br><span class="line">    Chinese(String name, <span class="keyword">int</span> age) &#123; </span><br><span class="line">       <span class="keyword">this</span>(name);<span class="comment">// 调用具有相同形参的构造方法（3） </span></span><br><span class="line">       prt(<span class="string">"子类：调用子类具有相同形参的构造方法：his age is "</span> + age); </span><br><span class="line">    &#125; </span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123; </span><br><span class="line">       Chinese cn = <span class="keyword">new</span> Chinese(); </span><br><span class="line">       cn = <span class="keyword">new</span> Chinese(<span class="string">"codersai"</span>); </span><br><span class="line">       cn = <span class="keyword">new</span> Chinese(<span class="string">"codersai"</span>, <span class="number">18</span>); </span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>运行结果：</strong></p>
+<p><strong>父类·无参数构造方法： A Person.</strong><br><strong>子类·调用父类”无参数构造方法“： A chinese coder.</strong><br><strong>父类·含一个参数的构造方法： A person’s name is codersai</strong><br><strong>子类·调用父类”含一个参数的构造方法“： his name is codersai</strong><br><strong>父类·含一个参数的构造方法： A person’s name is codersai</strong><br><strong>子类·调用父类”含一个参数的构造方法“： his name is codersai</strong><br><strong>子类：调用子类具有相同形参的构造方法：his age is 18</strong></p>
+<p>从本例可以看到，可以用super和this分别调用父类的构造方法和本类中其他形式的构造方法。</p>
+<p>例子中Chinese类第三种构造方法调用的是本类中第二种构造方法，而第二种构造方法是调用父类的，因此也要先调用父类的构造方法，再调用本类中第二种，最后是重写第三种构造方法。</p>
+<p><strong>super和this的异同：</strong></p>
+<ul>
+<li>super（参数）：调用基类中的某一个构造函数（应该为构造函数中的第一条语句） </li>
+<li>this（参数）：调用本类中另一种形成的构造函数（应该为构造函数中的第一条语句）</li>
+<li>super:　它引用当前对象的直接父类中的成员（用来访问直接父类中被隐藏的父类中成员数据或函数，基类与派生类中有相同成员定义时如：super.变量名  super.成员函数据名（实参）</li>
+<li>this：它代表当前对象名（在程序中易产生二义性之处，应使用this来指明当前对象；如果函数的形参与类中的成员数据同名，这时需用this来指明成员变量名）</li>
+<li>调用super()必须写在子类构造方法的第一行，否则编译不通过。每个子类构造方法的第一条语句，都是隐含地调用super()，如果父类没有这种形式的构造函数，那么在编译的时候就会报错。</li>
+<li>super()和this()类似,区别是，super()从子类中调用父类的构造方法，this()在同一类内调用其它方法。</li>
+<li>super()和this()均需放在构造方法内第一行。</li>
+<li>尽管可以用this调用一个构造器，但却不能调用两个。</li>
+<li>this和super不能同时出现在一个构造函数里面，因为this必然会调用其它的构造函数，其它的构造函数必然也会有super语句的存在，所以在同一个构造函数里面有相同的语句，就失去了语句的意义，编译器也不会通过。</li>
+<li>this()和super()都指的是对象，所以，均不可以在static环境中使用。包括：static变量,static方法，static语句块。</li>
+<li>从本质上讲，this是一个指向本对象的指针, 然而super是一个Java关键字。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>JAVASE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JAVA和C++的区别</title>
+    <url>/2020/05/11/JAVA%E5%92%8CC++%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍JAVA和C++的区别</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="JAVA和C-的区别"><a href="#JAVA和C-的区别" class="headerlink" title="JAVA和C++的区别"></a>JAVA和C++的区别</h2><ul>
+<li>都是面向对象的语言，并且都支持封装，继承和多态</li>
+<li>指针：JAVA不提供指针来直接访问内存，程序更加安全。</li>
+<li>继承：JAVA中的类是单继承的，但是C++允许多继承，JAVA中允许一个类实现多个接口来实现C++中的多冲继承。</li>
+<li>内存：JAVA有自动内存管理机制，不需要程序员手动释放无用内存。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>面试</category>
+      </categories>
+      <tags>
+        <tag>JAVASE</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JAVA泛型</title>
     <url>/2020/05/12/JAVA%E6%B3%9B%E5%9E%8B/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -484,49 +484,6 @@
       </tags>
   </entry>
   <entry>
-    <title>JAVA集合面试</title>
-    <url>/2020/05/12/JAVA%E9%9B%86%E5%90%88%E9%9D%A2%E8%AF%95/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍JAVA集合面试</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><strong>1）说说常见的集合有哪些吧？</strong></p>
-<p>答：Map 接口和 Collection 接口是所有集合框架的父接口：</p>
-<ol>
-<li>Collection 接口的子接口包括：Set 接口和 List 接口；</li>
-<li>Map 接口的实现类主要有：HashMap、TreeMap、Hashtable、ConcurrentHashMap 以及 Properties 等；</li>
-<li>Set 接口的实现类主要有：HashSet、TreeSet、LinkedHashSet 等；</li>
-<li>List 接口的实现类主要有：ArrayList、LinkedList、Stack 以及 Vector 等。</li>
-</ol>
-<p><strong>（2）HashMap 和 Hashtable 的区别有哪些？（必问）</strong></p>
-<p>答：</p>
-<ol>
-<li>HashMap 没有考虑同步，是线程不安全的；Hashtable 使用了 synchronized 关键字，是线程安全的；</li>
-<li>前者允许 null 作为 Key；后者不允许 null 作为 Key。</li>
-</ol>
-<p><strong>6）List 和 Set 的区别是啥？</strong></p>
-<p>答：List 元素是有序的，可以重复；Set 元素是无序的，不可以重复。</p>
-]]></content>
-      <categories>
-        <category>面试</category>
-      </categories>
-      <tags>
-        <tag>JAVASE</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JAVA面试</title>
-    <url>/2020/05/11/JAVA%E9%9D%A2%E8%AF%95/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><img src="/2020/05/11/JAVA%E9%9D%A2%E8%AF%95/E:%5Cdev%5CMYBLOG%5Cblog%5Csource_posts%5CJAVA%E9%9D%A2%E8%AF%95%5C2020-05-11_205422.png" alt></p>
-]]></content>
-  </entry>
-  <entry>
     <title>JDK中常用的包有哪些？</title>
     <url>/2020/05/11/JDK%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E5%8C%85%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -553,36 +510,15 @@
       </tags>
   </entry>
   <entry>
-    <title>JDK和JRE</title>
-    <url>/2020/05/09/JDK%E5%92%8CJRE/</url>
+    <title>JAVA面试</title>
+    <url>/2020/05/11/JAVA%E9%9D%A2%E8%AF%95/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍JDK和JRE的区别，他们的作用分别是什么？</p>
+<p>本章介绍</p>
 </blockquote>
 <a id="more"></a>
 
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h2><p>JDK是JAVA Development Kit (JAVA开发套件) ，是JAVA的开发工具包。主要包含了类库和工具。</p>
-<p>JDK中包含了JRE 而且在JDK安装目录/JRE/bin/server 文件夹下包含jvm.dll</p>
-<p><img src="/2020/05/09/JDK%E5%92%8CJRE/QQ20200509115538.png" alt></p>
-<p>这说明JDK提供了一个虚拟机。</p>
-<p>另外JDK的bin目录下有各种JAVA程序需要用到的命令。</p>
-<p>与JRE明显的区别就饿死JDK文件下才会有javac</p>
-<p><img src="/2020/05/09/JDK%E5%92%8CJRE/QQ20200509115836.png" alt></p>
-<p>因为JRE只是一个运行环境，与开发无关。</p>
-<h2 id="JRE"><a href="#JRE" class="headerlink" title="JRE"></a>JRE</h2><p>JRE是JAVA Runtime Environment的缩写。是JAVA程序的运行环境。既然是运行，那么当然要包含JVM,也就是JAVA虚拟机，还有所有JAVA类库的class文件，都在lib下，并且被打包成了jar </p>
-<p><img src="/2020/05/09/JDK%E5%92%8CJRE/Screenshot.png" alt></p>
-<h2 id="问题：jdk里的jre与外面jre的区别"><a href="#问题：jdk里的jre与外面jre的区别" class="headerlink" title="问题：jdk里的jre与外面jre的区别"></a>问题：jdk里的jre与外面jre的区别</h2><p>分析：如果我们安装了JDK，那么我们的电脑中将会有C:\Program Files (x86)\Java\jdk1.8.0_05文件夹 ，这个文件夹里面有一个jre文件夹。然后我们再安装jre，此时我们的电脑中有C:\Program Files (x86)\Java\jre8文件夹。</p>
-<p>通过对比jre和jre8文件夹中的东西，我们发现基本是一样的，那么这俩文件夹到底有啥区别呢？</p>
-<p>我们暂且称jre为自带jdk-jre，jre8为公共jre。</p>
-<p>jdk-jre与公共jre的主要区别在于jdk-jre多了一个server的vm执行选项。</p>
-<p>sever与client使用不同的vm虚拟机。如果电脑运行一个java程序的时候，会自动调用client vm。但是如果开发java程序时使用的就是server vm（server vm启动时间较长，占用内存较多，但是启动后执行性能更高，适合开发）。</p>
-<p><strong>换句话说：公共jre是给普通电脑用户使用的，假如你安装了一个java程序，这个java程序启动运行的时候就会调用jre（java runtime environment）；如果你是一个java开发者，那么你就需要安装jdk（java development kit），这时你开发调试java程序的时候就会调用jdk里面的jre。</strong></p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><img src="/2020/05/11/JAVA%E9%9D%A2%E8%AF%95/E:%5Cdev%5CMYBLOG%5Cblog%5Csource_posts%5CJAVA%E9%9D%A2%E8%AF%95%5C2020-05-11_205422.png" alt></p>
 ]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>JAVASE</tag>
-      </tags>
   </entry>
   <entry>
     <title>Java值传递和引用传递基础分析</title>
@@ -630,6 +566,38 @@
       </tags>
   </entry>
   <entry>
+    <title>JAVA集合面试</title>
+    <url>/2020/05/12/JAVA%E9%9B%86%E5%90%88%E9%9D%A2%E8%AF%95/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍JAVA集合面试</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><strong>1）说说常见的集合有哪些吧？</strong></p>
+<p>答：Map 接口和 Collection 接口是所有集合框架的父接口：</p>
+<ol>
+<li>Collection 接口的子接口包括：Set 接口和 List 接口；</li>
+<li>Map 接口的实现类主要有：HashMap、TreeMap、Hashtable、ConcurrentHashMap 以及 Properties 等；</li>
+<li>Set 接口的实现类主要有：HashSet、TreeSet、LinkedHashSet 等；</li>
+<li>List 接口的实现类主要有：ArrayList、LinkedList、Stack 以及 Vector 等。</li>
+</ol>
+<p><strong>（2）HashMap 和 Hashtable 的区别有哪些？（必问）</strong></p>
+<p>答：</p>
+<ol>
+<li>HashMap 没有考虑同步，是线程不安全的；Hashtable 使用了 synchronized 关键字，是线程安全的；</li>
+<li>前者允许 null 作为 Key；后者不允许 null 作为 Key。</li>
+</ol>
+<p><strong>6）List 和 Set 的区别是啥？</strong></p>
+<p>答：List 元素是有序的，可以重复；Set 元素是无序的，不可以重复。</p>
+]]></content>
+      <categories>
+        <category>面试</category>
+      </categories>
+      <tags>
+        <tag>JAVASE</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>List集合</title>
     <url>/2020/05/07/List%E9%9B%86%E5%90%88/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -660,6 +628,104 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;E&gt; list=<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">List&lt;E&gt; list=<span class="keyword">new</span> LinkedList&lt;&gt;();</span><br></pre></td></tr></table></figure>
 
 <p>E是合法的JAVA数据类型，也可以是字符串String</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>JAVASE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JDK和JRE</title>
+    <url>/2020/05/09/JDK%E5%92%8CJRE/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍JDK和JRE的区别，他们的作用分别是什么？</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h2><p>JDK是JAVA Development Kit (JAVA开发套件) ，是JAVA的开发工具包。主要包含了类库和工具。</p>
+<p>JDK中包含了JRE 而且在JDK安装目录/JRE/bin/server 文件夹下包含jvm.dll</p>
+<p><img src="/2020/05/09/JDK%E5%92%8CJRE/QQ20200509115538.png" alt></p>
+<p>这说明JDK提供了一个虚拟机。</p>
+<p>另外JDK的bin目录下有各种JAVA程序需要用到的命令。</p>
+<p>与JRE明显的区别就饿死JDK文件下才会有javac</p>
+<p><img src="/2020/05/09/JDK%E5%92%8CJRE/QQ20200509115836.png" alt></p>
+<p>因为JRE只是一个运行环境，与开发无关。</p>
+<h2 id="JRE"><a href="#JRE" class="headerlink" title="JRE"></a>JRE</h2><p>JRE是JAVA Runtime Environment的缩写。是JAVA程序的运行环境。既然是运行，那么当然要包含JVM,也就是JAVA虚拟机，还有所有JAVA类库的class文件，都在lib下，并且被打包成了jar </p>
+<p><img src="/2020/05/09/JDK%E5%92%8CJRE/Screenshot.png" alt></p>
+<h2 id="问题：jdk里的jre与外面jre的区别"><a href="#问题：jdk里的jre与外面jre的区别" class="headerlink" title="问题：jdk里的jre与外面jre的区别"></a>问题：jdk里的jre与外面jre的区别</h2><p>分析：如果我们安装了JDK，那么我们的电脑中将会有C:\Program Files (x86)\Java\jdk1.8.0_05文件夹 ，这个文件夹里面有一个jre文件夹。然后我们再安装jre，此时我们的电脑中有C:\Program Files (x86)\Java\jre8文件夹。</p>
+<p>通过对比jre和jre8文件夹中的东西，我们发现基本是一样的，那么这俩文件夹到底有啥区别呢？</p>
+<p>我们暂且称jre为自带jdk-jre，jre8为公共jre。</p>
+<p>jdk-jre与公共jre的主要区别在于jdk-jre多了一个server的vm执行选项。</p>
+<p>sever与client使用不同的vm虚拟机。如果电脑运行一个java程序的时候，会自动调用client vm。但是如果开发java程序时使用的就是server vm（server vm启动时间较长，占用内存较多，但是启动后执行性能更高，适合开发）。</p>
+<p><strong>换句话说：公共jre是给普通电脑用户使用的，假如你安装了一个java程序，这个java程序启动运行的时候就会调用jre（java runtime environment）；如果你是一个java开发者，那么你就需要安装jdk（java development kit），这时你开发调试java程序的时候就会调用jdk里面的jre。</strong></p>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>JAVASE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Set</title>
+    <url>/2020/05/08/Set/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍Set</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h2><p><strong>SET:注重独一无二的性质，该体系集合知道某物是否已经存在于集合中，不会存储重复的元素。</strong></p>
+<p>用于存储无序（存入和取出的顺序不一定相同）元素，值不能重复</p>
+<p>Set集合继承了Collection接口。</p>
+<h2 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h2><p>哈希表里面存放的是哈希值。HashSet存储元素的顺序并不是按照存入时的顺序（和List 显然不同）是按照哈希值来存，所以取也是按照哈希值来取得。</p>
+<p><strong>元素的哈希值是通过元素的hashcode方法来获取的，HashSet首先判断俩个元素的哈希值，如果哈希值一样，那么接着比较equals方法，如果equals结果为true。HashSet就会视作同一个元素。如果equals为false 就不是同一个元素。</strong></p>
+<h3 id="哈希值相同equals为flase的元素是怎么存储的呢？"><a href="#哈希值相同equals为flase的元素是怎么存储的呢？" class="headerlink" title="哈希值相同equals为flase的元素是怎么存储的呢？"></a>哈希值相同equals为flase的元素是怎么存储的呢？</h3><p>就是在同样的哈希值下顺延。也就是哈希值一样的存一列。</p>
+<p>HashTable</p>
+<p><img src="/2020/05/08/Set/hashtable.png" alt></p>
+<p>图1：hashCode值不相同的情况</p>
+<p>图2：hashCode值相同，但equals不相同的情况。</p>
+<h3 id="HashSet到底是如何判断俩个元素重复"><a href="#HashSet到底是如何判断俩个元素重复" class="headerlink" title="HashSet到底是如何判断俩个元素重复"></a>HashSet到底是如何判断俩个元素重复</h3><p>通过hashCode方法和equals方法来保证元素的唯一性，add()返回的是boolean类型</p>
+<p>判断两个元素是否相同，先要判断元素的hashCode值是否一致，只有在该值一致的情况下，才会判断equals方法，如果存储在HashSet中的两个对象hashCode方法的值相同equals方法返回的结果是true，那么HashSet认为这两个元素是相同元素，只存储一个（重复元素无法存入）。</p>
+<p>注意：HashSet集合在判断元素是否相同先判断hashCode方法，如果相同才会判断equals。如果不相同，是不会调用equals方法的。</p>
+<h3 id="HashSet-和ArrayList集合都有判断元素是否相同的方法"><a href="#HashSet-和ArrayList集合都有判断元素是否相同的方法" class="headerlink" title="HashSet 和ArrayList集合都有判断元素是否相同的方法"></a>HashSet 和ArrayList集合都有判断元素是否相同的方法</h3><p>boolean contains(Object o)</p>
+<p>HashSet使用hashCode和equals方法，ArrayList使用了equals方法</p>
+<p>示例：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo1</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Set hs=<span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">        hs.add(<span class="string">"jack"</span>);</span><br><span class="line">        hs.add(<span class="string">"rose"</span>);</span><br><span class="line">        hs.add(<span class="string">"2020"</span>);</span><br><span class="line">        hs.add(<span class="string">"trip"</span>);</span><br><span class="line">        System.out.println(hs.size());</span><br><span class="line">        <span class="keyword">boolean</span> add=hs.add(<span class="string">"jack"</span>); <span class="comment">/* 如果set尚未包含指定元素，那么 返回true 此时返回false; */</span></span><br><span class="line">        System.out.println(add);</span><br><span class="line">        Iterator it=hs.iterator();</span><br><span class="line">        <span class="keyword">while</span> (it.hasNext())</span><br><span class="line">        &#123;</span><br><span class="line">            System.out.println(it.next());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.HashSet;</span><br><span class="line"><span class="keyword">import</span> java.util.Iterator;</span><br><span class="line"><span class="keyword">import</span> java.util.Objects;</span><br><span class="line"><span class="keyword">import</span> java.util.Set;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * This program demonstrates</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Alita Alice</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span>: Created in 21:13 2020/5/8</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo1</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        HashSet hs = <span class="keyword">new</span> HashSet();</span><br><span class="line">        hs.add(<span class="keyword">new</span> Person(<span class="string">"jack"</span>, <span class="number">20</span>));</span><br><span class="line">        hs.add(<span class="keyword">new</span> Person(<span class="string">"rose"</span>,<span class="number">20</span>));</span><br><span class="line">        hs.add(<span class="keyword">new</span> Person(<span class="string">"rose"</span>,<span class="number">20</span>));</span><br><span class="line">        Iterator it= hs.iterator();</span><br><span class="line">        <span class="keyword">while</span>(it.hasNext())</span><br><span class="line">        &#123;</span><br><span class="line">            System.out.println(it.next());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">    Person()&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name,<span class="keyword">int</span> age)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age=age;</span><br><span class="line">        <span class="keyword">this</span>.name=name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object o)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span> == o) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">if</span> (!(o <span class="keyword">instanceof</span> Person)) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        Person person = (Person) o;</span><br><span class="line">        <span class="keyword">return</span> getAge() == person.getAge() &amp;&amp;</span><br><span class="line">                getName().equals(person.getName());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> Objects.hash(getName(), getAge());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Person&#123;"</span> +</span><br><span class="line">                <span class="string">"name='"</span> + name + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">", age="</span> + age +</span><br><span class="line">                <span class="string">'&#125;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>其中在HashSet中存储自定义的对象，并尝试添加重复元素，需要override hashCode()和equls()方法。</strong></p>
+<h2 id="TreeSet"><a href="#TreeSet" class="headerlink" title="TreeSet"></a>TreeSet</h2><p>现在有一批数据，要求不能重复存储元素，而且要排序。</p>
+<p>ArrayList ，LinkList不能去除重复数据，HashSet可以去除重复，但是无序。</p>
+<p>示例：使用TreeSet集合存储字符串元素，并且遍历。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo5</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        TreeSet treeSet=<span class="keyword">new</span> TreeSet();</span><br><span class="line">        treeSet.add(<span class="string">"aaa"</span>);</span><br><span class="line">        treeSet.add(<span class="string">"bbb"</span>);</span><br><span class="line">        treeSet.add(<span class="string">"ccc"</span>);</span><br><span class="line">        treeSet.add(<span class="string">"ddd"</span>);</span><br><span class="line">        System.out.println(treeSet);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 输出</span></span><br><span class="line"><span class="comment">[aaa, bbb, ccc, ddd]</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="俩种比较器接口"><a href="#俩种比较器接口" class="headerlink" title="俩种比较器接口"></a>俩种比较器接口</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Comparable </span><br><span class="line">         compareTo(Object o)  元素自身具备比较性</span><br><span class="line">Comparator</span><br><span class="line">         compare(Object o1,Object o2) 给容器传入比较器</span><br></pre></td></tr></table></figure>
+
+<h3 id="TreeSet集合排序的俩种方式"><a href="#TreeSet集合排序的俩种方式" class="headerlink" title="TreeSet集合排序的俩种方式"></a>TreeSet集合排序的俩种方式</h3><ul>
+<li><p>让元素自身具备比较性</p>
+<p>元素需要实现Comparable接口，覆盖compareTo(Object o) 方法</p>
+<p>这种方式也被称为元素的自然排序，也可以称为默认排序</p>
+<p>年龄按照首要条件，年龄相同再比姓名</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> Set;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> sun.reflect.generics.tree.Tree;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Objects;</span><br><span class="line"><span class="keyword">import</span> java.util.TreeSet;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * This program demonstrates</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Alita Alice</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span>: Created in 10:23 2020/5/9</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo4</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        TreeSet ts=<span class="keyword">new</span> TreeSet();</span><br><span class="line">        ts.add(<span class="keyword">new</span> Person(<span class="string">"aa"</span>, <span class="number">20</span>, <span class="string">"男"</span>));</span><br><span class="line">        ts.add(<span class="keyword">new</span> Person(<span class="string">"bb"</span>, <span class="number">18</span>, <span class="string">"女"</span>));</span><br><span class="line">        ts.add(<span class="keyword">new</span> Person(<span class="string">"cc"</span>, <span class="number">17</span>, <span class="string">"男"</span>));</span><br><span class="line">        ts.add(<span class="keyword">new</span> Person(<span class="string">"dd"</span>, <span class="number">17</span>, <span class="string">"女"</span>));</span><br><span class="line">        ts.add(<span class="keyword">new</span> Person(<span class="string">"dd"</span>, <span class="number">15</span>, <span class="string">"女"</span>));</span><br><span class="line">        ts.add(<span class="keyword">new</span> Person(<span class="string">"dd"</span>, <span class="number">15</span>, <span class="string">"女"</span>));</span><br><span class="line">        System.out.println(ts);</span><br><span class="line">        System.out.println(ts.size());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> <span class="keyword">implements</span> <span class="title">Comparable</span></span></span><br><span class="line"><span class="class"> </span>&#123;</span><br><span class="line">     <span class="keyword">private</span> String name;</span><br><span class="line">     <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">     <span class="keyword">private</span> String gender;</span><br><span class="line"></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name, <span class="keyword">int</span> age, String gender)</span> </span>&#123;</span><br><span class="line">         <span class="keyword">this</span>.name = name;</span><br><span class="line">         <span class="keyword">this</span>.age = age;</span><br><span class="line">         <span class="keyword">this</span>.gender = gender;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">         <span class="keyword">return</span> name;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">         <span class="keyword">this</span>.name = name;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">         <span class="keyword">return</span> age;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">         <span class="keyword">this</span>.age = age;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="function"><span class="keyword">public</span> String <span class="title">getGender</span><span class="params">()</span> </span>&#123;</span><br><span class="line">         <span class="keyword">return</span> gender;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setGender</span><span class="params">(String gender)</span> </span>&#123;</span><br><span class="line">         <span class="keyword">this</span>.gender = gender;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="meta">@Override</span></span><br><span class="line">     <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">         <span class="keyword">return</span> <span class="string">"Person&#123;"</span> +</span><br><span class="line">                 <span class="string">"name='"</span> + name + <span class="string">'\''</span> +</span><br><span class="line">                 <span class="string">", age="</span> + age +</span><br><span class="line">                 <span class="string">", gender='"</span> + gender + <span class="string">'\''</span> +</span><br><span class="line">                 <span class="string">'&#125;'</span>;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="meta">@Override</span></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object o)</span> </span>&#123;</span><br><span class="line">         <span class="keyword">if</span> (<span class="keyword">this</span> == o) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">         <span class="keyword">if</span> (!(o <span class="keyword">instanceof</span> Person)) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">         Person person = (Person) o;</span><br><span class="line">         <span class="keyword">return</span> getAge() == person.getAge() &amp;&amp;</span><br><span class="line">                 getName().equals(person.getName()) &amp;&amp;</span><br><span class="line">                 getGender().equals(person.getGender());</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="meta">@Override</span></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">         <span class="keyword">return</span> Objects.hash(getName(), getAge(), getGender());</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="meta">@Override</span></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(Object o)</span> </span>&#123;</span><br><span class="line">         Person p = (Person) o;</span><br><span class="line">         System.out.println(<span class="keyword">this</span> + <span class="string">"compareTo:"</span> + p);</span><br><span class="line">         <span class="keyword">if</span> (<span class="keyword">this</span>.age &gt; p.age) &#123;</span><br><span class="line">             <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">         &#125;</span><br><span class="line">         <span class="keyword">if</span> (<span class="keyword">this</span>.age &lt; p.age) &#123;</span><br><span class="line">             <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">         &#125;</span><br><span class="line">         <span class="keyword">return</span> <span class="keyword">this</span>.name.compareTo(p.name);</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line"><span class="comment">/* out</span></span><br><span class="line"><span class="comment">Person&#123;name='aa', age=20, gender='男'&#125;compareTo:Person&#123;name='aa', age=20, gender='男'&#125;</span></span><br><span class="line"><span class="comment">Person&#123;name='bb', age=18, gender='女'&#125;compareTo:Person&#123;name='aa', age=20, gender='男'&#125;</span></span><br><span class="line"><span class="comment">Person&#123;name='cc', age=17, gender='男'&#125;compareTo:Person&#123;name='aa', age=20, gender='男'&#125;</span></span><br><span class="line"><span class="comment">Person&#123;name='cc', age=17, gender='男'&#125;compareTo:Person&#123;name='bb', age=18, gender='女'&#125;</span></span><br><span class="line"><span class="comment">Person&#123;name='dd', age=17, gender='女'&#125;compareTo:Person&#123;name='bb', age=18, gender='女'&#125;</span></span><br><span class="line"><span class="comment">Person&#123;name='dd', age=17, gender='女'&#125;compareTo:Person&#123;name='cc', age=17, gender='男'&#125;</span></span><br><span class="line"><span class="comment">Person&#123;name='dd', age=15, gender='女'&#125;compareTo:Person&#123;name='bb', age=18, gender='女'&#125;</span></span><br><span class="line"><span class="comment">Person&#123;name='dd', age=15, gender='女'&#125;compareTo:Person&#123;name='cc', age=17, gender='男'&#125;</span></span><br><span class="line"><span class="comment">Person&#123;name='dd', age=15, gender='女'&#125;compareTo:Person&#123;name='bb', age=18, gender='女'&#125;</span></span><br><span class="line"><span class="comment">Person&#123;name='dd', age=15, gender='女'&#125;compareTo:Person&#123;name='cc', age=17, gender='男'&#125;</span></span><br><span class="line"><span class="comment">Person&#123;name='dd', age=15, gender='女'&#125;compareTo:Person&#123;name='dd', age=15, gender='女'&#125;</span></span><br><span class="line"><span class="comment">[Person&#123;name='dd', age=15, gender='女'&#125;, Person&#123;name='cc', age=17, gender='男'&#125;, Person&#123;name='dd', age=17, gender='女'&#125;, Person&#123;name='bb', age=18, gender='女'&#125;, Person&#123;name='aa', age=20, gender='男'&#125;]</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="二-让容器自身具备比较性，自定义比较器"><a href="#二-让容器自身具备比较性，自定义比较器" class="headerlink" title="二 让容器自身具备比较性，自定义比较器"></a>二 让容器自身具备比较性，自定义比较器</h3><p>需求：当元素自身不具备比较性，或者元素自身具备的比较性不是所需。</p>
+<p>那么这时只能让容器自身具备</p>
+<p>定义一个类实现Comparetor接口，覆盖compare方法</p>
+<p>并将该接口的子类对象作为参数传递给TreeSet集合的构造函数。</p>
+<p>当Comparable 比较方式及Comparator比较方式同时存在， 以Com[arator比较方式为主。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> Set;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Comparator;</span><br><span class="line"><span class="keyword">import</span> java.util.Objects;</span><br><span class="line"><span class="keyword">import</span> java.util.TreeSet;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * This program demonstrates</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Alita Alice</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span>: Created in 10:54 2020/5/9</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo6</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        TreeSet ts=<span class="keyword">new</span> TreeSet(<span class="keyword">new</span> MyComparator());</span><br><span class="line">        ts.add(<span class="keyword">new</span> Book(<span class="string">"think in java"</span>, <span class="number">100</span>));</span><br><span class="line">        ts.add(<span class="keyword">new</span> Book(<span class="string">"java 核心技术"</span>, <span class="number">75</span>));</span><br><span class="line">        ts.add(<span class="keyword">new</span> Book(<span class="string">"现代操作系统"</span>, <span class="number">50</span>));</span><br><span class="line">        ts.add(<span class="keyword">new</span> Book(<span class="string">"java就业教程"</span>, <span class="number">35</span>));</span><br><span class="line">        ts.add(<span class="keyword">new</span> Book(<span class="string">"think in java"</span>, <span class="number">100</span>));</span><br><span class="line">        ts.add(<span class="keyword">new</span> Book(<span class="string">"ccc in java"</span>, <span class="number">100</span>));</span><br><span class="line"></span><br><span class="line">        System.out.println(ts);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyComparator</span> <span class="keyword">implements</span> <span class="title">Comparator</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Object o1, Object o2)</span> </span>&#123;</span><br><span class="line">                    Book b1=(Book) o1;</span><br><span class="line">                    Book b2=(Book) o2;</span><br><span class="line">        System.out.println(b1+<span class="string">"comparator"</span>+b2);</span><br><span class="line">        <span class="keyword">if</span>(b1.getPrice()&gt;b2.getPrice())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(b1.getPrice()&lt;b2.getPrice())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> b1.getName().compareTo(b2.getName());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Book</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">double</span> price;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Book</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Book</span><span class="params">(String name, <span class="keyword">double</span> price)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.price = price;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getPrice</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> price;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setPrice</span><span class="params">(<span class="keyword">double</span> price)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.price = price;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object o)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span> == o) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">if</span> (!(o <span class="keyword">instanceof</span> Book)) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        Book book = (Book) o;</span><br><span class="line">        <span class="keyword">return</span> Double.compare(book.getPrice(), getPrice()) == <span class="number">0</span> &amp;&amp;</span><br><span class="line">                getName().equals(book.getName());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> Objects.hash(getName(), getPrice());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Book&#123;"</span> +</span><br><span class="line">                <span class="string">"name='"</span> + name + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">", price="</span> + price +</span><br><span class="line">                <span class="string">'&#125;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* out</span></span><br><span class="line"><span class="comment">Book&#123;name='think in java', price=100.0&#125;comparatorBook&#123;name='think in java', price=100.0&#125;</span></span><br><span class="line"><span class="comment">Book&#123;name='java 核心技术', price=75.0&#125;comparatorBook&#123;name='think in java', price=100.0&#125;</span></span><br><span class="line"><span class="comment">Book&#123;name='现代操作系统', price=50.0&#125;comparatorBook&#123;name='think in java', price=100.0&#125;</span></span><br><span class="line"><span class="comment">Book&#123;name='现代操作系统', price=50.0&#125;comparatorBook&#123;name='java 核心技术', price=75.0&#125;</span></span><br><span class="line"><span class="comment">Book&#123;name='java就业教程', price=35.0&#125;comparatorBook&#123;name='java 核心技术', price=75.0&#125;</span></span><br><span class="line"><span class="comment">Book&#123;name='java就业教程', price=35.0&#125;comparatorBook&#123;name='现代操作系统', price=50.0&#125;</span></span><br><span class="line"><span class="comment">Book&#123;name='think in java', price=100.0&#125;comparatorBook&#123;name='java 核心技术', price=75.0&#125;</span></span><br><span class="line"><span class="comment">Book&#123;name='think in java', price=100.0&#125;comparatorBook&#123;name='think in java', price=100.0&#125;</span></span><br><span class="line"><span class="comment">Book&#123;name='ccc in java', price=100.0&#125;comparatorBook&#123;name='java 核心技术', price=75.0&#125;</span></span><br><span class="line"><span class="comment">Book&#123;name='ccc in java', price=100.0&#125;comparatorBook&#123;name='think in java', price=100.0&#125;</span></span><br><span class="line"><span class="comment">[Book&#123;name='java就业教程', price=35.0&#125;, Book&#123;name='现代操作系统', price=50.0&#125;, Book&#123;name='java 核心技术', price=75.0&#125;, Book&#123;name='ccc in java', price=100.0&#125;, Book&#123;name='think in java', price=100.0&#125;]</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-LinkedHashSet"><a href="#4-LinkedHashSet" class="headerlink" title="4.LinkedHashSet"></a>4.LinkedHashSet</h3><p>会保存插入的顺序</p>
+<p>看到array，就要想到角标</p>
+<p>看到link ，就要想到first,last</p>
+<p>看到hash,就要想到hashCode，equals</p>
+<p>看到tree，就要想到俩个接口。Comparable,Comparator </p>
 </li>
 </ul>
 ]]></content>
@@ -803,72 +869,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Set</title>
-    <url>/2020/05/08/Set/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍Set</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h2><p><strong>SET:注重独一无二的性质，该体系集合知道某物是否已经存在于集合中，不会存储重复的元素。</strong></p>
-<p>用于存储无序（存入和取出的顺序不一定相同）元素，值不能重复</p>
-<p>Set集合继承了Collection接口。</p>
-<h2 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h2><p>哈希表里面存放的是哈希值。HashSet存储元素的顺序并不是按照存入时的顺序（和List 显然不同）是按照哈希值来存，所以取也是按照哈希值来取得。</p>
-<p><strong>元素的哈希值是通过元素的hashcode方法来获取的，HashSet首先判断俩个元素的哈希值，如果哈希值一样，那么接着比较equals方法，如果equals结果为true。HashSet就会视作同一个元素。如果equals为false 就不是同一个元素。</strong></p>
-<h3 id="哈希值相同equals为flase的元素是怎么存储的呢？"><a href="#哈希值相同equals为flase的元素是怎么存储的呢？" class="headerlink" title="哈希值相同equals为flase的元素是怎么存储的呢？"></a>哈希值相同equals为flase的元素是怎么存储的呢？</h3><p>就是在同样的哈希值下顺延。也就是哈希值一样的存一列。</p>
-<p>HashTable</p>
-<p><img src="/2020/05/08/Set/hashtable.png" alt></p>
-<p>图1：hashCode值不相同的情况</p>
-<p>图2：hashCode值相同，但equals不相同的情况。</p>
-<h3 id="HashSet到底是如何判断俩个元素重复"><a href="#HashSet到底是如何判断俩个元素重复" class="headerlink" title="HashSet到底是如何判断俩个元素重复"></a>HashSet到底是如何判断俩个元素重复</h3><p>通过hashCode方法和equals方法来保证元素的唯一性，add()返回的是boolean类型</p>
-<p>判断两个元素是否相同，先要判断元素的hashCode值是否一致，只有在该值一致的情况下，才会判断equals方法，如果存储在HashSet中的两个对象hashCode方法的值相同equals方法返回的结果是true，那么HashSet认为这两个元素是相同元素，只存储一个（重复元素无法存入）。</p>
-<p>注意：HashSet集合在判断元素是否相同先判断hashCode方法，如果相同才会判断equals。如果不相同，是不会调用equals方法的。</p>
-<h3 id="HashSet-和ArrayList集合都有判断元素是否相同的方法"><a href="#HashSet-和ArrayList集合都有判断元素是否相同的方法" class="headerlink" title="HashSet 和ArrayList集合都有判断元素是否相同的方法"></a>HashSet 和ArrayList集合都有判断元素是否相同的方法</h3><p>boolean contains(Object o)</p>
-<p>HashSet使用hashCode和equals方法，ArrayList使用了equals方法</p>
-<p>示例：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo1</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Set hs=<span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">        hs.add(<span class="string">"jack"</span>);</span><br><span class="line">        hs.add(<span class="string">"rose"</span>);</span><br><span class="line">        hs.add(<span class="string">"2020"</span>);</span><br><span class="line">        hs.add(<span class="string">"trip"</span>);</span><br><span class="line">        System.out.println(hs.size());</span><br><span class="line">        <span class="keyword">boolean</span> add=hs.add(<span class="string">"jack"</span>); <span class="comment">/* 如果set尚未包含指定元素，那么 返回true 此时返回false; */</span></span><br><span class="line">        System.out.println(add);</span><br><span class="line">        Iterator it=hs.iterator();</span><br><span class="line">        <span class="keyword">while</span> (it.hasNext())</span><br><span class="line">        &#123;</span><br><span class="line">            System.out.println(it.next());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.HashSet;</span><br><span class="line"><span class="keyword">import</span> java.util.Iterator;</span><br><span class="line"><span class="keyword">import</span> java.util.Objects;</span><br><span class="line"><span class="keyword">import</span> java.util.Set;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * This program demonstrates</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Alita Alice</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span>: Created in 21:13 2020/5/8</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo1</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        HashSet hs = <span class="keyword">new</span> HashSet();</span><br><span class="line">        hs.add(<span class="keyword">new</span> Person(<span class="string">"jack"</span>, <span class="number">20</span>));</span><br><span class="line">        hs.add(<span class="keyword">new</span> Person(<span class="string">"rose"</span>,<span class="number">20</span>));</span><br><span class="line">        hs.add(<span class="keyword">new</span> Person(<span class="string">"rose"</span>,<span class="number">20</span>));</span><br><span class="line">        Iterator it= hs.iterator();</span><br><span class="line">        <span class="keyword">while</span>(it.hasNext())</span><br><span class="line">        &#123;</span><br><span class="line">            System.out.println(it.next());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">    Person()&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name,<span class="keyword">int</span> age)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age=age;</span><br><span class="line">        <span class="keyword">this</span>.name=name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object o)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span> == o) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">if</span> (!(o <span class="keyword">instanceof</span> Person)) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        Person person = (Person) o;</span><br><span class="line">        <span class="keyword">return</span> getAge() == person.getAge() &amp;&amp;</span><br><span class="line">                getName().equals(person.getName());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> Objects.hash(getName(), getAge());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Person&#123;"</span> +</span><br><span class="line">                <span class="string">"name='"</span> + name + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">", age="</span> + age +</span><br><span class="line">                <span class="string">'&#125;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>其中在HashSet中存储自定义的对象，并尝试添加重复元素，需要override hashCode()和equls()方法。</strong></p>
-<h2 id="TreeSet"><a href="#TreeSet" class="headerlink" title="TreeSet"></a>TreeSet</h2><p>现在有一批数据，要求不能重复存储元素，而且要排序。</p>
-<p>ArrayList ，LinkList不能去除重复数据，HashSet可以去除重复，但是无序。</p>
-<p>示例：使用TreeSet集合存储字符串元素，并且遍历。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo5</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        TreeSet treeSet=<span class="keyword">new</span> TreeSet();</span><br><span class="line">        treeSet.add(<span class="string">"aaa"</span>);</span><br><span class="line">        treeSet.add(<span class="string">"bbb"</span>);</span><br><span class="line">        treeSet.add(<span class="string">"ccc"</span>);</span><br><span class="line">        treeSet.add(<span class="string">"ddd"</span>);</span><br><span class="line">        System.out.println(treeSet);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 输出</span></span><br><span class="line"><span class="comment">[aaa, bbb, ccc, ddd]</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="俩种比较器接口"><a href="#俩种比较器接口" class="headerlink" title="俩种比较器接口"></a>俩种比较器接口</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Comparable </span><br><span class="line">         compareTo(Object o)  元素自身具备比较性</span><br><span class="line">Comparator</span><br><span class="line">         compare(Object o1,Object o2) 给容器传入比较器</span><br></pre></td></tr></table></figure>
-
-<h3 id="TreeSet集合排序的俩种方式"><a href="#TreeSet集合排序的俩种方式" class="headerlink" title="TreeSet集合排序的俩种方式"></a>TreeSet集合排序的俩种方式</h3><ul>
-<li><p>让元素自身具备比较性</p>
-<p>元素需要实现Comparable接口，覆盖compareTo(Object o) 方法</p>
-<p>这种方式也被称为元素的自然排序，也可以称为默认排序</p>
-<p>年龄按照首要条件，年龄相同再比姓名</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> Set;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> sun.reflect.generics.tree.Tree;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Objects;</span><br><span class="line"><span class="keyword">import</span> java.util.TreeSet;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * This program demonstrates</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Alita Alice</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span>: Created in 10:23 2020/5/9</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo4</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        TreeSet ts=<span class="keyword">new</span> TreeSet();</span><br><span class="line">        ts.add(<span class="keyword">new</span> Person(<span class="string">"aa"</span>, <span class="number">20</span>, <span class="string">"男"</span>));</span><br><span class="line">        ts.add(<span class="keyword">new</span> Person(<span class="string">"bb"</span>, <span class="number">18</span>, <span class="string">"女"</span>));</span><br><span class="line">        ts.add(<span class="keyword">new</span> Person(<span class="string">"cc"</span>, <span class="number">17</span>, <span class="string">"男"</span>));</span><br><span class="line">        ts.add(<span class="keyword">new</span> Person(<span class="string">"dd"</span>, <span class="number">17</span>, <span class="string">"女"</span>));</span><br><span class="line">        ts.add(<span class="keyword">new</span> Person(<span class="string">"dd"</span>, <span class="number">15</span>, <span class="string">"女"</span>));</span><br><span class="line">        ts.add(<span class="keyword">new</span> Person(<span class="string">"dd"</span>, <span class="number">15</span>, <span class="string">"女"</span>));</span><br><span class="line">        System.out.println(ts);</span><br><span class="line">        System.out.println(ts.size());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> <span class="keyword">implements</span> <span class="title">Comparable</span></span></span><br><span class="line"><span class="class"> </span>&#123;</span><br><span class="line">     <span class="keyword">private</span> String name;</span><br><span class="line">     <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">     <span class="keyword">private</span> String gender;</span><br><span class="line"></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name, <span class="keyword">int</span> age, String gender)</span> </span>&#123;</span><br><span class="line">         <span class="keyword">this</span>.name = name;</span><br><span class="line">         <span class="keyword">this</span>.age = age;</span><br><span class="line">         <span class="keyword">this</span>.gender = gender;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">         <span class="keyword">return</span> name;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">         <span class="keyword">this</span>.name = name;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">         <span class="keyword">return</span> age;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">         <span class="keyword">this</span>.age = age;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="function"><span class="keyword">public</span> String <span class="title">getGender</span><span class="params">()</span> </span>&#123;</span><br><span class="line">         <span class="keyword">return</span> gender;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setGender</span><span class="params">(String gender)</span> </span>&#123;</span><br><span class="line">         <span class="keyword">this</span>.gender = gender;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="meta">@Override</span></span><br><span class="line">     <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">         <span class="keyword">return</span> <span class="string">"Person&#123;"</span> +</span><br><span class="line">                 <span class="string">"name='"</span> + name + <span class="string">'\''</span> +</span><br><span class="line">                 <span class="string">", age="</span> + age +</span><br><span class="line">                 <span class="string">", gender='"</span> + gender + <span class="string">'\''</span> +</span><br><span class="line">                 <span class="string">'&#125;'</span>;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="meta">@Override</span></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object o)</span> </span>&#123;</span><br><span class="line">         <span class="keyword">if</span> (<span class="keyword">this</span> == o) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">         <span class="keyword">if</span> (!(o <span class="keyword">instanceof</span> Person)) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">         Person person = (Person) o;</span><br><span class="line">         <span class="keyword">return</span> getAge() == person.getAge() &amp;&amp;</span><br><span class="line">                 getName().equals(person.getName()) &amp;&amp;</span><br><span class="line">                 getGender().equals(person.getGender());</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="meta">@Override</span></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">         <span class="keyword">return</span> Objects.hash(getName(), getAge(), getGender());</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="meta">@Override</span></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(Object o)</span> </span>&#123;</span><br><span class="line">         Person p = (Person) o;</span><br><span class="line">         System.out.println(<span class="keyword">this</span> + <span class="string">"compareTo:"</span> + p);</span><br><span class="line">         <span class="keyword">if</span> (<span class="keyword">this</span>.age &gt; p.age) &#123;</span><br><span class="line">             <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">         &#125;</span><br><span class="line">         <span class="keyword">if</span> (<span class="keyword">this</span>.age &lt; p.age) &#123;</span><br><span class="line">             <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">         &#125;</span><br><span class="line">         <span class="keyword">return</span> <span class="keyword">this</span>.name.compareTo(p.name);</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line"><span class="comment">/* out</span></span><br><span class="line"><span class="comment">Person&#123;name='aa', age=20, gender='男'&#125;compareTo:Person&#123;name='aa', age=20, gender='男'&#125;</span></span><br><span class="line"><span class="comment">Person&#123;name='bb', age=18, gender='女'&#125;compareTo:Person&#123;name='aa', age=20, gender='男'&#125;</span></span><br><span class="line"><span class="comment">Person&#123;name='cc', age=17, gender='男'&#125;compareTo:Person&#123;name='aa', age=20, gender='男'&#125;</span></span><br><span class="line"><span class="comment">Person&#123;name='cc', age=17, gender='男'&#125;compareTo:Person&#123;name='bb', age=18, gender='女'&#125;</span></span><br><span class="line"><span class="comment">Person&#123;name='dd', age=17, gender='女'&#125;compareTo:Person&#123;name='bb', age=18, gender='女'&#125;</span></span><br><span class="line"><span class="comment">Person&#123;name='dd', age=17, gender='女'&#125;compareTo:Person&#123;name='cc', age=17, gender='男'&#125;</span></span><br><span class="line"><span class="comment">Person&#123;name='dd', age=15, gender='女'&#125;compareTo:Person&#123;name='bb', age=18, gender='女'&#125;</span></span><br><span class="line"><span class="comment">Person&#123;name='dd', age=15, gender='女'&#125;compareTo:Person&#123;name='cc', age=17, gender='男'&#125;</span></span><br><span class="line"><span class="comment">Person&#123;name='dd', age=15, gender='女'&#125;compareTo:Person&#123;name='bb', age=18, gender='女'&#125;</span></span><br><span class="line"><span class="comment">Person&#123;name='dd', age=15, gender='女'&#125;compareTo:Person&#123;name='cc', age=17, gender='男'&#125;</span></span><br><span class="line"><span class="comment">Person&#123;name='dd', age=15, gender='女'&#125;compareTo:Person&#123;name='dd', age=15, gender='女'&#125;</span></span><br><span class="line"><span class="comment">[Person&#123;name='dd', age=15, gender='女'&#125;, Person&#123;name='cc', age=17, gender='男'&#125;, Person&#123;name='dd', age=17, gender='女'&#125;, Person&#123;name='bb', age=18, gender='女'&#125;, Person&#123;name='aa', age=20, gender='男'&#125;]</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="二-让容器自身具备比较性，自定义比较器"><a href="#二-让容器自身具备比较性，自定义比较器" class="headerlink" title="二 让容器自身具备比较性，自定义比较器"></a>二 让容器自身具备比较性，自定义比较器</h3><p>需求：当元素自身不具备比较性，或者元素自身具备的比较性不是所需。</p>
-<p>那么这时只能让容器自身具备</p>
-<p>定义一个类实现Comparetor接口，覆盖compare方法</p>
-<p>并将该接口的子类对象作为参数传递给TreeSet集合的构造函数。</p>
-<p>当Comparable 比较方式及Comparator比较方式同时存在， 以Com[arator比较方式为主。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> Set;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Comparator;</span><br><span class="line"><span class="keyword">import</span> java.util.Objects;</span><br><span class="line"><span class="keyword">import</span> java.util.TreeSet;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * This program demonstrates</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Alita Alice</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span>: Created in 10:54 2020/5/9</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo6</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        TreeSet ts=<span class="keyword">new</span> TreeSet(<span class="keyword">new</span> MyComparator());</span><br><span class="line">        ts.add(<span class="keyword">new</span> Book(<span class="string">"think in java"</span>, <span class="number">100</span>));</span><br><span class="line">        ts.add(<span class="keyword">new</span> Book(<span class="string">"java 核心技术"</span>, <span class="number">75</span>));</span><br><span class="line">        ts.add(<span class="keyword">new</span> Book(<span class="string">"现代操作系统"</span>, <span class="number">50</span>));</span><br><span class="line">        ts.add(<span class="keyword">new</span> Book(<span class="string">"java就业教程"</span>, <span class="number">35</span>));</span><br><span class="line">        ts.add(<span class="keyword">new</span> Book(<span class="string">"think in java"</span>, <span class="number">100</span>));</span><br><span class="line">        ts.add(<span class="keyword">new</span> Book(<span class="string">"ccc in java"</span>, <span class="number">100</span>));</span><br><span class="line"></span><br><span class="line">        System.out.println(ts);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyComparator</span> <span class="keyword">implements</span> <span class="title">Comparator</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Object o1, Object o2)</span> </span>&#123;</span><br><span class="line">                    Book b1=(Book) o1;</span><br><span class="line">                    Book b2=(Book) o2;</span><br><span class="line">        System.out.println(b1+<span class="string">"comparator"</span>+b2);</span><br><span class="line">        <span class="keyword">if</span>(b1.getPrice()&gt;b2.getPrice())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(b1.getPrice()&lt;b2.getPrice())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> b1.getName().compareTo(b2.getName());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Book</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">double</span> price;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Book</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Book</span><span class="params">(String name, <span class="keyword">double</span> price)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.price = price;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getPrice</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> price;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setPrice</span><span class="params">(<span class="keyword">double</span> price)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.price = price;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object o)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span> == o) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">if</span> (!(o <span class="keyword">instanceof</span> Book)) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        Book book = (Book) o;</span><br><span class="line">        <span class="keyword">return</span> Double.compare(book.getPrice(), getPrice()) == <span class="number">0</span> &amp;&amp;</span><br><span class="line">                getName().equals(book.getName());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> Objects.hash(getName(), getPrice());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Book&#123;"</span> +</span><br><span class="line">                <span class="string">"name='"</span> + name + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">", price="</span> + price +</span><br><span class="line">                <span class="string">'&#125;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* out</span></span><br><span class="line"><span class="comment">Book&#123;name='think in java', price=100.0&#125;comparatorBook&#123;name='think in java', price=100.0&#125;</span></span><br><span class="line"><span class="comment">Book&#123;name='java 核心技术', price=75.0&#125;comparatorBook&#123;name='think in java', price=100.0&#125;</span></span><br><span class="line"><span class="comment">Book&#123;name='现代操作系统', price=50.0&#125;comparatorBook&#123;name='think in java', price=100.0&#125;</span></span><br><span class="line"><span class="comment">Book&#123;name='现代操作系统', price=50.0&#125;comparatorBook&#123;name='java 核心技术', price=75.0&#125;</span></span><br><span class="line"><span class="comment">Book&#123;name='java就业教程', price=35.0&#125;comparatorBook&#123;name='java 核心技术', price=75.0&#125;</span></span><br><span class="line"><span class="comment">Book&#123;name='java就业教程', price=35.0&#125;comparatorBook&#123;name='现代操作系统', price=50.0&#125;</span></span><br><span class="line"><span class="comment">Book&#123;name='think in java', price=100.0&#125;comparatorBook&#123;name='java 核心技术', price=75.0&#125;</span></span><br><span class="line"><span class="comment">Book&#123;name='think in java', price=100.0&#125;comparatorBook&#123;name='think in java', price=100.0&#125;</span></span><br><span class="line"><span class="comment">Book&#123;name='ccc in java', price=100.0&#125;comparatorBook&#123;name='java 核心技术', price=75.0&#125;</span></span><br><span class="line"><span class="comment">Book&#123;name='ccc in java', price=100.0&#125;comparatorBook&#123;name='think in java', price=100.0&#125;</span></span><br><span class="line"><span class="comment">[Book&#123;name='java就业教程', price=35.0&#125;, Book&#123;name='现代操作系统', price=50.0&#125;, Book&#123;name='java 核心技术', price=75.0&#125;, Book&#123;name='ccc in java', price=100.0&#125;, Book&#123;name='think in java', price=100.0&#125;]</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="4-LinkedHashSet"><a href="#4-LinkedHashSet" class="headerlink" title="4.LinkedHashSet"></a>4.LinkedHashSet</h3><p>会保存插入的顺序</p>
-<p>看到array，就要想到角标</p>
-<p>看到link ，就要想到first,last</p>
-<p>看到hash,就要想到hashCode，equals</p>
-<p>看到tree，就要想到俩个接口。Comparable,Comparator </p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>JAVASE</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>char可以存储汉字吗？</title>
     <url>/2020/05/06/char%E5%8F%AF%E4%BB%A5%E5%AD%98%E5%82%A8%E6%B1%89%E5%AD%97%E5%90%97%EF%BC%9F/</url>
     <content><![CDATA[<h2 id="char存储汉字"><a href="#char存储汉字" class="headerlink" title="char存储汉字"></a>char存储汉字</h2><ul>
@@ -1005,6 +1005,42 @@
       </tags>
   </entry>
   <entry>
+    <title>mysql插入数据</title>
+    <url>/2020/05/07/mysql%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍如何利用SQL的INSERT语句将数据插入到表中</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="插入到完整的行"><a href="#插入到完整的行" class="headerlink" title="插入到完整的行"></a>插入到完整的行</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">INSERT INTO Customers</span><br><span class="line">VALUES(<span class="literal">NULL</span>,</span><br><span class="line">       'PEP E.LAPEW',</span><br><span class="line">       '100 MAIN STREET',</span><br><span class="line">        'Los Angeles',</span><br><span class="line">         'CA',</span><br><span class="line">        '90046',</span><br><span class="line">         'USA',</span><br><span class="line">          <span class="literal">NULL</span>,</span><br><span class="line">          <span class="literal">NULL</span>);</span><br></pre></td></tr></table></figure>
+
+<p>编写INSERT语句的更加安全（不过更加繁琐）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">INSERT INTO customers(cust_name,cust_address,cust_city,cust_state,cust_zip,cust_country,cust_contact,cust_email)</span><br><span class="line">VALUSES(&#39;PEP E.LAPEW&#39;,</span><br><span class="line">       &#39;100 MAIN STREET&#39;,</span><br><span class="line">        &#39;Los Angeles&#39;,</span><br><span class="line">         &#39;CA&#39;,</span><br><span class="line">        &#39;90046&#39;,</span><br><span class="line">         &#39;USA&#39;,</span><br><span class="line">          NULL,</span><br><span class="line">          NULL&#39;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="省略列"><a href="#省略列" class="headerlink" title="省略列"></a>省略列</h3><ul>
+<li>该列定义为允许null值</li>
+<li>在表定义中给出默认值</li>
+</ul>
+<h3 id="提高整体性能"><a href="#提高整体性能" class="headerlink" title="提高整体性能"></a>提高整体性能</h3><p>如果数据检索是最重要的，那你可以通过在INSERT INTO 之间添加关键字</p>
+<p>LOW_PRIORITY 指示Mysql降低INSERT语句的优先级</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">INSERT LOW_PRIORITY INTO</span><br></pre></td></tr></table></figure>
+
+<h2 id="插入多个行"><a href="#插入多个行" class="headerlink" title="插入多个行"></a>插入多个行</h2><figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="function">INSERT INTO <span class="title">customers</span><span class="params">(cust_name,cust_address,cust_city,cust_state,cust_zip,cust_country,cust_contact,cust_email)</span></span></span><br><span class="line">VALUSES('PEP E.LAPEW',</span><br><span class="line">       '100 MAIN STREET',</span><br><span class="line">        'Los Angeles',</span><br><span class="line">         'CA',</span><br><span class="line">        '90046',</span><br><span class="line">         'USA',</span><br><span class="line">          <span class="literal">NULL</span>,</span><br><span class="line">          NULL'),</span><br><span class="line">       ('PEP E.LAPEW',</span><br><span class="line">       '100 MAIN STREET',</span><br><span class="line">        'Los Angeles',</span><br><span class="line">         'CA',</span><br><span class="line">        '90046',</span><br><span class="line">         'USA',</span><br><span class="line">          <span class="literal">NULL</span>,</span><br><span class="line">          NULL');</span><br></pre></td></tr></table></figure>
+
+<p>其中单条INSERT语句有多组值，每组值用一对圆括号括起来，用逗号分隔。</p>
+<h3 id="插入检索出的数据"><a href="#插入检索出的数据" class="headerlink" title="插入检索出的数据"></a>插入检索出的数据</h3><figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="function">INSERT INTO <span class="title">customers</span><span class="params">(cust_id,cust_name,cust_address,cust_city,cust_state,cust_zip,cust_country,cust_contact,cust_email)</span></span></span><br><span class="line">SELECT cust_id,cust_name,cust_address,cust_city,cust_state,cust_zip,cust_country,cust_contact,cust_email FROM custnew;</span><br></pre></td></tr></table></figure>
+
+<p>这个例子中INSERT SELECT 从custnew中将所有数据导入到customer中。</p>
+<p><strong>其实MYSQL不关心SELECT返回的列名，它使用的是列的位置，因此SELECT中的第一列用来填充表列中指定的第一列</strong>。</p>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>mysql必知必会</title>
     <url>/2020/05/03/mysql%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/</url>
     <content><![CDATA[<p> 登录mysql -h localhost -u root -p<br> Show databases;<br> Use databasename;<br>Show tables;  //显示行</p>
@@ -1058,42 +1094,6 @@
 <h3 id="更快的删除"><a href="#更快的删除" class="headerlink" title="更快的删除"></a>更快的删除</h3><p>如果想删除所有行</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">TRUNCATE TABLE</span><br></pre></td></tr></table></figure>
 
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>mysql</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>mysql插入数据</title>
-    <url>/2020/05/07/mysql%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍如何利用SQL的INSERT语句将数据插入到表中</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="插入到完整的行"><a href="#插入到完整的行" class="headerlink" title="插入到完整的行"></a>插入到完整的行</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">INSERT INTO Customers</span><br><span class="line">VALUES(<span class="literal">NULL</span>,</span><br><span class="line">       'PEP E.LAPEW',</span><br><span class="line">       '100 MAIN STREET',</span><br><span class="line">        'Los Angeles',</span><br><span class="line">         'CA',</span><br><span class="line">        '90046',</span><br><span class="line">         'USA',</span><br><span class="line">          <span class="literal">NULL</span>,</span><br><span class="line">          <span class="literal">NULL</span>);</span><br></pre></td></tr></table></figure>
-
-<p>编写INSERT语句的更加安全（不过更加繁琐）</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">INSERT INTO customers(cust_name,cust_address,cust_city,cust_state,cust_zip,cust_country,cust_contact,cust_email)</span><br><span class="line">VALUSES(&#39;PEP E.LAPEW&#39;,</span><br><span class="line">       &#39;100 MAIN STREET&#39;,</span><br><span class="line">        &#39;Los Angeles&#39;,</span><br><span class="line">         &#39;CA&#39;,</span><br><span class="line">        &#39;90046&#39;,</span><br><span class="line">         &#39;USA&#39;,</span><br><span class="line">          NULL,</span><br><span class="line">          NULL&#39;);</span><br></pre></td></tr></table></figure>
-
-<h3 id="省略列"><a href="#省略列" class="headerlink" title="省略列"></a>省略列</h3><ul>
-<li>该列定义为允许null值</li>
-<li>在表定义中给出默认值</li>
-</ul>
-<h3 id="提高整体性能"><a href="#提高整体性能" class="headerlink" title="提高整体性能"></a>提高整体性能</h3><p>如果数据检索是最重要的，那你可以通过在INSERT INTO 之间添加关键字</p>
-<p>LOW_PRIORITY 指示Mysql降低INSERT语句的优先级</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">INSERT LOW_PRIORITY INTO</span><br></pre></td></tr></table></figure>
-
-<h2 id="插入多个行"><a href="#插入多个行" class="headerlink" title="插入多个行"></a>插入多个行</h2><figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="function">INSERT INTO <span class="title">customers</span><span class="params">(cust_name,cust_address,cust_city,cust_state,cust_zip,cust_country,cust_contact,cust_email)</span></span></span><br><span class="line">VALUSES('PEP E.LAPEW',</span><br><span class="line">       '100 MAIN STREET',</span><br><span class="line">        'Los Angeles',</span><br><span class="line">         'CA',</span><br><span class="line">        '90046',</span><br><span class="line">         'USA',</span><br><span class="line">          <span class="literal">NULL</span>,</span><br><span class="line">          NULL'),</span><br><span class="line">       ('PEP E.LAPEW',</span><br><span class="line">       '100 MAIN STREET',</span><br><span class="line">        'Los Angeles',</span><br><span class="line">         'CA',</span><br><span class="line">        '90046',</span><br><span class="line">         'USA',</span><br><span class="line">          <span class="literal">NULL</span>,</span><br><span class="line">          NULL');</span><br></pre></td></tr></table></figure>
-
-<p>其中单条INSERT语句有多组值，每组值用一对圆括号括起来，用逗号分隔。</p>
-<h3 id="插入检索出的数据"><a href="#插入检索出的数据" class="headerlink" title="插入检索出的数据"></a>插入检索出的数据</h3><figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="function">INSERT INTO <span class="title">customers</span><span class="params">(cust_id,cust_name,cust_address,cust_city,cust_state,cust_zip,cust_country,cust_contact,cust_email)</span></span></span><br><span class="line">SELECT cust_id,cust_name,cust_address,cust_city,cust_state,cust_zip,cust_country,cust_contact,cust_email FROM custnew;</span><br></pre></td></tr></table></figure>
-
-<p>这个例子中INSERT SELECT 从custnew中将所有数据导入到customer中。</p>
-<p><strong>其实MYSQL不关心SELECT返回的列名，它使用的是列的位置，因此SELECT中的第一列用来填充表列中指定的第一列</strong>。</p>
 ]]></content>
       <categories>
         <category>后端</category>
@@ -1242,84 +1242,6 @@
       </categories>
       <tags>
         <tag>mysql</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>二叉树</title>
-    <url>/2020/05/07/%E4%BA%8C%E5%8F%89%E6%A0%91/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本文。</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="二叉树的特点"><a href="#二叉树的特点" class="headerlink" title="二叉树的特点"></a>二叉树的特点</h2><ul>
-<li><p>每个结点最多有俩颗子树。所以二叉树中不存在大于2的结点。</p>
-</li>
-<li><p>左子树和右子树是有顺序的，次序不能随意颠倒。</p>
-</li>
-<li><p>即使树中某结点只有一颗子树，也要区分它是左子树还是右子树</p>
-<h3 id="二叉树的5种形态"><a href="#二叉树的5种形态" class="headerlink" title="二叉树的5种形态"></a>二叉树的5种形态</h3><ul>
-<li>空二叉树</li>
-<li>只有一个根结点</li>
-<li>根节点只有左子树</li>
-<li>根节点只有右子树</li>
-<li>根节点既有左子树又有右子树</li>
-</ul>
-</li>
-</ul>
-<h2 id="特殊二叉树"><a href="#特殊二叉树" class="headerlink" title="特殊二叉树"></a>特殊二叉树</h2><ol>
-<li><p>斜树</p>
-<p>所有结点都只有左子树的二叉树叫做左斜树</p>
-<p>所有结点都只有右子树的二叉树叫做右斜树</p>
-<p>俩者统称为斜树</p>
-</li>
-<li><p>满二叉树</p>
-<p>在一颗二叉树中，如果所有分支结点都存在左子树和右子树，并且所有叶子都在同一层上，这样的二叉树叫做满二叉树</p>
-</li>
-<li><p>完全二叉树</p>
-<p>对一颗具有n个结点的二叉树按照层序编号，如果编号为i（1&lt;=i&lt;=n)的结点与同样深度的满二叉树中编号为i的结点在二叉树中位置完全相同，则这颗二叉树称为完全二叉树。</p>
-</li>
-</ol>
-<h2 id="二叉树的性质"><a href="#二叉树的性质" class="headerlink" title="二叉树的性质"></a>二叉树的性质</h2><h3 id="二叉树性质1"><a href="#二叉树性质1" class="headerlink" title="二叉树性质1"></a>二叉树性质1</h3><p>性质1：在二叉树的第i层上至多有2^(i-1) 个结点。（i&gt;=1)</p>
-<h3 id="二叉树性质2"><a href="#二叉树性质2" class="headerlink" title="二叉树性质2"></a>二叉树性质2</h3><p>性质2：深度为k的二叉树至多有2^(k) -1个结点 （k&gt;=1)   (<strong>结点的总量</strong>)</p>
-<h3 id="二叉树性质3"><a href="#二叉树性质3" class="headerlink" title="二叉树性质3"></a>二叉树性质3</h3><p>性质3：对于任何一颗二叉树T，如果其终端结点数为n0，度为2的结点数为n2，则n0=n2+1</p>
-<h3 id="二叉树性质4"><a href="#二叉树性质4" class="headerlink" title="二叉树性质4"></a>二叉树性质4</h3><p>性质4： 具有n个结点的完全二叉树的深度为[log2 n]+1 ([x]表示不大于x的最大整数)</p>
-<h3 id="二叉树性质5"><a href="#二叉树性质5" class="headerlink" title="二叉树性质5"></a>二叉树性质5</h3><p><strong>性质5： 如果对一颗有n个结点的完全二叉树（其深度为[log2 n]+1)的结点按层序编号，对任一结点i（1&lt;=i&lt;=n)</strong></p>
-<p><strong>有</strong></p>
-<ol>
-<li><strong>如果i=1,则结点i是二叉树的根，无双亲;如果i&gt;1,则其双亲是结点[i/2]</strong></li>
-<li><strong>如果2i&gt;n,则结点i无左孩子（结点i为叶子结点）；否则其左孩子是结点2i</strong></li>
-<li><strong>如果2i+1&gt;n,则结点i无右孩子；否则其右孩子是结点2i+1</strong></li>
-</ol>
-<h2 id="二叉树的存储结构"><a href="#二叉树的存储结构" class="headerlink" title="二叉树的存储结构"></a>二叉树的存储结构</h2><h4 id="二叉树的顺序存储结构"><a href="#二叉树的顺序存储结构" class="headerlink" title="二叉树的顺序存储结构"></a>二叉树的顺序存储结构</h4><p>用一维数组存储二叉树的结点，并且结点的位置，也就是数组的下标要能体现结点之间的逻辑关系。</p>
-<p>一般来说顺序存储用于完全二叉树</p>
-<h4 id="二叉链表"><a href="#二叉链表" class="headerlink" title="二叉链表"></a>二叉链表</h4><p>二叉树的每个结点最多有俩个孩子。所以为它设计一个数据域，和俩个指针域是比较自然的想法。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">lchid -- data --rchild</span><br></pre></td></tr></table></figure>
-
-<p>lchild 和 rchild 都是指针域</p>
-<p><strong>二叉树的二叉链表结点结构定义</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">typedef struct BiTNode</span><br><span class="line">&#123;</span><br><span class="line">   TElemType data; &#x2F;&#x2F;结点数据</span><br><span class="line">   struct BiTNode *lchild ,*rchild;</span><br><span class="line">&#125; BiTNode, *BiTree;</span><br></pre></td></tr></table></figure>
-
-<p>图示：</p>
-<h2 id="二叉树的遍历"><a href="#二叉树的遍历" class="headerlink" title="二叉树的遍历"></a>二叉树的遍历</h2><p>二叉树的定义：</p>
-<p><strong>二叉树的遍历是指从根节点出发，按照某种次序依次访问二叉树中的所有结点，使得每个结点被访问且仅被访问一次。</strong></p>
-<h3 id="前序遍历"><a href="#前序遍历" class="headerlink" title="前序遍历"></a>前序遍历</h3><p>规则：若二叉树为空，则空操作返回，否则先访问根结点，然后前序遍历左子树，再前序遍历右子树。</p>
-<p>如图：</p>
-<p><img src="/2020/05/07/%E4%BA%8C%E5%8F%89%E6%A0%91/TIM%E5%9B%BE%E7%89%8720200510112558.png" alt></p>
-<h3 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h3><p>规则： 若树为空，则空操作返回，否则从根节点开始（注意并不是先访问根节点），中序遍历根节点的左子树，然后是访问根节点，最后中序遍历右子树。</p>
-<p><img src="/2020/05/07/%E4%BA%8C%E5%8F%89%E6%A0%91/TIM%E5%9B%BE%E7%89%8720200510113141.png" alt></p>
-<h3 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h3><p>规则： 若树为空，则空操作返回，否则从左到右先叶子后结点的方式遍历访问左右子树，最后是访问根结点。</p>
-<p>图示：</p>
-<p><img src="/2020/05/07/%E4%BA%8C%E5%8F%89%E6%A0%91/TIM%E5%9B%BE%E7%89%8720200510113343.png" alt></p>
-<h3 id="层序遍历"><a href="#层序遍历" class="headerlink" title="层序遍历"></a>层序遍历</h3><p>规则：若树为空，则空操作返回。</p>
-<p>否则从树的第一层，也就是根节点开始访问，从上而下逐层遍历，在同一层中，按从左到右的顺序对结点逐个访问。</p>
-<p><img src="/2020/05/07/%E4%BA%8C%E5%8F%89%E6%A0%91/TIM%E5%9B%BE%E7%89%8720200510113800.png" alt></p>
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>DataStructure</tag>
       </tags>
   </entry>
   <entry>
@@ -1610,59 +1532,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>内部类</title>
-    <url>/2020/05/08/%E5%86%85%E9%83%A8%E7%B1%BB/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍JAVA内部类</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h1 id="JAVA内部类"><a href="#JAVA内部类" class="headerlink" title="JAVA内部类"></a>JAVA内部类</h1><h2 id="为什么需要内部类"><a href="#为什么需要内部类" class="headerlink" title="为什么需要内部类"></a>为什么需要内部类</h2><ul>
-<li>内部类可以对同一个包中的其他类隐藏</li>
-<li>内部类方法可以访问定义这个类的作用域中的数据，包括原有私有的数据。</li>
-</ul>
-<p>内部类的特点：</p>
-<ul>
-<li><p>一个内部类方法可以访问自身的数据字段</p>
-</li>
-<li><p>可以访问创建它的外围类对象的数据字段</p>
-<p>示例：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TalkingClock</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> interval;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> beep;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">TalkingClock</span><span class="params">(<span class="keyword">int</span> interval ,<span class="keyword">boolean</span> beep)</span></span></span><br><span class="line"><span class="function">    </span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// an inner class</span></span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TimePrinter</span> <span class="keyword">implements</span> <span class="title">ActionListener</span></span></span><br><span class="line"><span class="class">    </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span>  <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent event)</span></span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            System.out.println(<span class="string">"at the tone,the time is"</span>+Insant.ofEpochMilli(event.getWhen()));</span><br><span class="line">            <span class="keyword">if</span>(beep) Toolkit.getDefaultToolkit().beep();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>TimePrinter类没有实例字段或者名为beep的对象。</p>
-<p>实际上为此，<strong>内部类对象总有一个隐式引用，指向创建它的外部类对象。</strong></p>
-</li>
-</ul>
-<p>​       但是这个引用在内部类的定义中是不可见的。我们将外围类对象的引用称为outer</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span>  <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent event)</span></span></span><br><span class="line"><span class="function">      </span>&#123;</span><br><span class="line">          System.out.println(<span class="string">"at the tone,the time is"</span>+Insant.ofEpochMilli(event.getWhen()));</span><br><span class="line">          <span class="keyword">if</span>(outer.beep) Toolkit.getDefaultToolkit().beep();</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="局部内部类"><a href="#局部内部类" class="headerlink" title="局部内部类"></a>局部内部类</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// an inner class</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">TimePrinter</span> <span class="keyword">implements</span> <span class="title">ActionListener</span></span></span><br><span class="line"><span class="class">    </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span>  <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent event)</span></span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            System.out.println(<span class="string">"at the tone,the time is"</span>+Insant.ofEpochMilli(event.getWhen()));</span><br><span class="line">            <span class="keyword">if</span>(beep) Toolkit.getDefaultToolkit().beep();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> listener =<span class="keyword">new</span> TimePrinter();</span><br><span class="line">    <span class="keyword">var</span> timer=<span class="keyword">new</span> Timer(interval,listener);</span><br><span class="line">    timer.start();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在示例代码中，只是在start方法中创建这个类型的对象时使用了一次。</p>
-<p>当遇到这类情况时，可以在一个方法中局部的定义这个类。</p>
-<ul>
-<li><p>声明局部类时不能有访问说明符（即public 或者private)</p>
-</li>
-<li><p>局部类的作用域被限定在声明这个局部类的块中</p>
-</li>
-<li><p>局部类的优点: 对外部世界完全隐藏。除了start()方法外，没有任何方法知道TimePrinter类的存在。</p>
-</li>
-<li><p>局部类不仅可以访问外部类的字段，还可以访问局部变量。（必须是事实最终变量）它们一旦赋值就绝对不会改变。</p>
-<h3 id="匿名内部类"><a href="#匿名内部类" class="headerlink" title="匿名内部类"></a>匿名内部类</h3></li>
-</ul>
-]]></content>
-  </entry>
-  <entry>
-    <title>使用存储过程</title>
-    <url>/2020/05/10/%E4%BD%BF%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
-  </entry>
-  <entry>
     <title>使用存储过程</title>
     <url>/2020/05/12/%E4%BD%BF%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B-1/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -1708,6 +1577,94 @@
       <tags>
         <tag>mysql</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>二叉树</title>
+    <url>/2020/05/07/%E4%BA%8C%E5%8F%89%E6%A0%91/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本文。</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="二叉树的特点"><a href="#二叉树的特点" class="headerlink" title="二叉树的特点"></a>二叉树的特点</h2><ul>
+<li><p>每个结点最多有俩颗子树。所以二叉树中不存在大于2的结点。</p>
+</li>
+<li><p>左子树和右子树是有顺序的，次序不能随意颠倒。</p>
+</li>
+<li><p>即使树中某结点只有一颗子树，也要区分它是左子树还是右子树</p>
+<h3 id="二叉树的5种形态"><a href="#二叉树的5种形态" class="headerlink" title="二叉树的5种形态"></a>二叉树的5种形态</h3><ul>
+<li>空二叉树</li>
+<li>只有一个根结点</li>
+<li>根节点只有左子树</li>
+<li>根节点只有右子树</li>
+<li>根节点既有左子树又有右子树</li>
+</ul>
+</li>
+</ul>
+<h2 id="特殊二叉树"><a href="#特殊二叉树" class="headerlink" title="特殊二叉树"></a>特殊二叉树</h2><ol>
+<li><p>斜树</p>
+<p>所有结点都只有左子树的二叉树叫做左斜树</p>
+<p>所有结点都只有右子树的二叉树叫做右斜树</p>
+<p>俩者统称为斜树</p>
+</li>
+<li><p>满二叉树</p>
+<p>在一颗二叉树中，如果所有分支结点都存在左子树和右子树，并且所有叶子都在同一层上，这样的二叉树叫做满二叉树</p>
+</li>
+<li><p>完全二叉树</p>
+<p>对一颗具有n个结点的二叉树按照层序编号，如果编号为i（1&lt;=i&lt;=n)的结点与同样深度的满二叉树中编号为i的结点在二叉树中位置完全相同，则这颗二叉树称为完全二叉树。</p>
+</li>
+</ol>
+<h2 id="二叉树的性质"><a href="#二叉树的性质" class="headerlink" title="二叉树的性质"></a>二叉树的性质</h2><h3 id="二叉树性质1"><a href="#二叉树性质1" class="headerlink" title="二叉树性质1"></a>二叉树性质1</h3><p>性质1：在二叉树的第i层上至多有2^(i-1) 个结点。（i&gt;=1)</p>
+<h3 id="二叉树性质2"><a href="#二叉树性质2" class="headerlink" title="二叉树性质2"></a>二叉树性质2</h3><p>性质2：深度为k的二叉树至多有2^(k) -1个结点 （k&gt;=1)   (<strong>结点的总量</strong>)</p>
+<h3 id="二叉树性质3"><a href="#二叉树性质3" class="headerlink" title="二叉树性质3"></a>二叉树性质3</h3><p>性质3：对于任何一颗二叉树T，如果其终端结点数为n0，度为2的结点数为n2，则n0=n2+1</p>
+<h3 id="二叉树性质4"><a href="#二叉树性质4" class="headerlink" title="二叉树性质4"></a>二叉树性质4</h3><p>性质4： 具有n个结点的完全二叉树的深度为[log2 n]+1 ([x]表示不大于x的最大整数)</p>
+<h3 id="二叉树性质5"><a href="#二叉树性质5" class="headerlink" title="二叉树性质5"></a>二叉树性质5</h3><p><strong>性质5： 如果对一颗有n个结点的完全二叉树（其深度为[log2 n]+1)的结点按层序编号，对任一结点i（1&lt;=i&lt;=n)</strong></p>
+<p><strong>有</strong></p>
+<ol>
+<li><strong>如果i=1,则结点i是二叉树的根，无双亲;如果i&gt;1,则其双亲是结点[i/2]</strong></li>
+<li><strong>如果2i&gt;n,则结点i无左孩子（结点i为叶子结点）；否则其左孩子是结点2i</strong></li>
+<li><strong>如果2i+1&gt;n,则结点i无右孩子；否则其右孩子是结点2i+1</strong></li>
+</ol>
+<h2 id="二叉树的存储结构"><a href="#二叉树的存储结构" class="headerlink" title="二叉树的存储结构"></a>二叉树的存储结构</h2><h4 id="二叉树的顺序存储结构"><a href="#二叉树的顺序存储结构" class="headerlink" title="二叉树的顺序存储结构"></a>二叉树的顺序存储结构</h4><p>用一维数组存储二叉树的结点，并且结点的位置，也就是数组的下标要能体现结点之间的逻辑关系。</p>
+<p>一般来说顺序存储用于完全二叉树</p>
+<h4 id="二叉链表"><a href="#二叉链表" class="headerlink" title="二叉链表"></a>二叉链表</h4><p>二叉树的每个结点最多有俩个孩子。所以为它设计一个数据域，和俩个指针域是比较自然的想法。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">lchid -- data --rchild</span><br></pre></td></tr></table></figure>
+
+<p>lchild 和 rchild 都是指针域</p>
+<p><strong>二叉树的二叉链表结点结构定义</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">typedef struct BiTNode</span><br><span class="line">&#123;</span><br><span class="line">   TElemType data; &#x2F;&#x2F;结点数据</span><br><span class="line">   struct BiTNode *lchild ,*rchild;</span><br><span class="line">&#125; BiTNode, *BiTree;</span><br></pre></td></tr></table></figure>
+
+<p>图示：</p>
+<h2 id="二叉树的遍历"><a href="#二叉树的遍历" class="headerlink" title="二叉树的遍历"></a>二叉树的遍历</h2><p>二叉树的定义：</p>
+<p><strong>二叉树的遍历是指从根节点出发，按照某种次序依次访问二叉树中的所有结点，使得每个结点被访问且仅被访问一次。</strong></p>
+<h3 id="前序遍历"><a href="#前序遍历" class="headerlink" title="前序遍历"></a>前序遍历</h3><p>规则：若二叉树为空，则空操作返回，否则先访问根结点，然后前序遍历左子树，再前序遍历右子树。</p>
+<p>如图：</p>
+<p><img src="/2020/05/07/%E4%BA%8C%E5%8F%89%E6%A0%91/TIM%E5%9B%BE%E7%89%8720200510112558.png" alt></p>
+<h3 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h3><p>规则： 若树为空，则空操作返回，否则从根节点开始（注意并不是先访问根节点），中序遍历根节点的左子树，然后是访问根节点，最后中序遍历右子树。</p>
+<p><img src="/2020/05/07/%E4%BA%8C%E5%8F%89%E6%A0%91/TIM%E5%9B%BE%E7%89%8720200510113141.png" alt></p>
+<h3 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h3><p>规则： 若树为空，则空操作返回，否则从左到右先叶子后结点的方式遍历访问左右子树，最后是访问根结点。</p>
+<p>图示：</p>
+<p><img src="/2020/05/07/%E4%BA%8C%E5%8F%89%E6%A0%91/TIM%E5%9B%BE%E7%89%8720200510113343.png" alt></p>
+<h3 id="层序遍历"><a href="#层序遍历" class="headerlink" title="层序遍历"></a>层序遍历</h3><p>规则：若树为空，则空操作返回。</p>
+<p>否则从树的第一层，也就是根节点开始访问，从上而下逐层遍历，在同一层中，按从左到右的顺序对结点逐个访问。</p>
+<p><img src="/2020/05/07/%E4%BA%8C%E5%8F%89%E6%A0%91/TIM%E5%9B%BE%E7%89%8720200510113800.png" alt></p>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>DataStructure</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用存储过程</title>
+    <url>/2020/05/10/%E4%BD%BF%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
   </entry>
   <entry>
     <title>创建和操纵表</title>
@@ -1796,6 +1753,49 @@
       </tags>
   </entry>
   <entry>
+    <title>内部类</title>
+    <url>/2020/05/08/%E5%86%85%E9%83%A8%E7%B1%BB/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍JAVA内部类</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h1 id="JAVA内部类"><a href="#JAVA内部类" class="headerlink" title="JAVA内部类"></a>JAVA内部类</h1><h2 id="为什么需要内部类"><a href="#为什么需要内部类" class="headerlink" title="为什么需要内部类"></a>为什么需要内部类</h2><ul>
+<li>内部类可以对同一个包中的其他类隐藏</li>
+<li>内部类方法可以访问定义这个类的作用域中的数据，包括原有私有的数据。</li>
+</ul>
+<p>内部类的特点：</p>
+<ul>
+<li><p>一个内部类方法可以访问自身的数据字段</p>
+</li>
+<li><p>可以访问创建它的外围类对象的数据字段</p>
+<p>示例：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TalkingClock</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> interval;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> beep;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">TalkingClock</span><span class="params">(<span class="keyword">int</span> interval ,<span class="keyword">boolean</span> beep)</span></span></span><br><span class="line"><span class="function">    </span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// an inner class</span></span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TimePrinter</span> <span class="keyword">implements</span> <span class="title">ActionListener</span></span></span><br><span class="line"><span class="class">    </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span>  <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent event)</span></span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            System.out.println(<span class="string">"at the tone,the time is"</span>+Insant.ofEpochMilli(event.getWhen()));</span><br><span class="line">            <span class="keyword">if</span>(beep) Toolkit.getDefaultToolkit().beep();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>TimePrinter类没有实例字段或者名为beep的对象。</p>
+<p>实际上为此，<strong>内部类对象总有一个隐式引用，指向创建它的外部类对象。</strong></p>
+</li>
+</ul>
+<p>​       但是这个引用在内部类的定义中是不可见的。我们将外围类对象的引用称为outer</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span>  <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent event)</span></span></span><br><span class="line"><span class="function">      </span>&#123;</span><br><span class="line">          System.out.println(<span class="string">"at the tone,the time is"</span>+Insant.ofEpochMilli(event.getWhen()));</span><br><span class="line">          <span class="keyword">if</span>(outer.beep) Toolkit.getDefaultToolkit().beep();</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="局部内部类"><a href="#局部内部类" class="headerlink" title="局部内部类"></a>局部内部类</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// an inner class</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">TimePrinter</span> <span class="keyword">implements</span> <span class="title">ActionListener</span></span></span><br><span class="line"><span class="class">    </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span>  <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent event)</span></span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            System.out.println(<span class="string">"at the tone,the time is"</span>+Insant.ofEpochMilli(event.getWhen()));</span><br><span class="line">            <span class="keyword">if</span>(beep) Toolkit.getDefaultToolkit().beep();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> listener =<span class="keyword">new</span> TimePrinter();</span><br><span class="line">    <span class="keyword">var</span> timer=<span class="keyword">new</span> Timer(interval,listener);</span><br><span class="line">    timer.start();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在示例代码中，只是在start方法中创建这个类型的对象时使用了一次。</p>
+<p>当遇到这类情况时，可以在一个方法中局部的定义这个类。</p>
+<ul>
+<li><p>声明局部类时不能有访问说明符（即public 或者private)</p>
+</li>
+<li><p>局部类的作用域被限定在声明这个局部类的块中</p>
+</li>
+<li><p>局部类的优点: 对外部世界完全隐藏。除了start()方法外，没有任何方法知道TimePrinter类的存在。</p>
+</li>
+<li><p>局部类不仅可以访问外部类的字段，还可以访问局部变量。（必须是事实最终变量）它们一旦赋值就绝对不会改变。</p>
+<h3 id="匿名内部类"><a href="#匿名内部类" class="headerlink" title="匿名内部类"></a>匿名内部类</h3></li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
     <title>创建表和操控表</title>
     <url>/2020/05/08/%E5%88%9B%E5%BB%BA%E8%A1%A8%E5%92%8C%E6%93%8D%E6%8E%A7%E8%A1%A8/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -1804,62 +1804,6 @@
 <a id="more"></a>
 
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
-  </entry>
-  <entry>
-    <title>初级排序算法</title>
-    <url>/2020/05/12/%E5%88%9D%E7%BA%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍排序算法</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>我们关注的主要对象是重新排列数组元素 的算法，其中每个元素都有一个主键 。排序算法的目标就是将所有元素的主键按照某种方式排列（通常是按照大小或是字母顺序）。排序后索引较大的主键大于等于索引较小的主键 . </p>
-<h2 id="一-初级排序算法"><a href="#一-初级排序算法" class="headerlink" title="一.初级排序算法"></a>一.初级排序算法</h2><p>排序算法类的模板</p>
-<p>排序算法类模版”中的 Example 类展示了我们的习惯约定：我们会将排序代码放在类的 sort() 方法中，该类还将包含辅助函数 less() 和 exch() （可能还有其他辅助函数）以及一个示例用例main() 。Example 类还包含了一些早期调试使用的代码：测试用例 main() 将标准输入得到的字符串排序，并用私有方法 show() 打印字符数组的内容。我们还会在本章中遇到各种用于比较不同算法并研究它们的性能的测试用例。为了区别不同的排序算法，我们为相应的类取了不同的名字，用例可以根据名字调用不同的实现，例如 Insertion.sort() 、Merge.sort() 、Quick.sort() 等。<br>大多数情况下，我们的排序代码只会通过两个方法操作数据：less() 方法对元素进行比较，exch()方法将元素交换位置。exch() 方法的实现很简单，通过 Comparable 接口实现 less() 方法也不困难。将数据操作限制在这两个方法中使得代码的可读性和可移植性更好，更容易验证代码的正确性、分析性能以及排序算法之间的比较。在学习具体的排序算法实现之前，我们先讨论几个对于所有排序算法都很<br>重要的问题。  </p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Example</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(Comparable[] a)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="comment">/* 请见算法2.1、算法2.2、算法2.3、算法2.4、算法2.5或算法2.7*/</span> &#125;<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">less</span><span class="params">(Comparable v, Comparable w)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="keyword">return</span> v.compareTo(w) &lt; <span class="number">0</span>; &#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">exch</span><span class="params">(Comparable[] a, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span></span></span><br><span class="line"><span class="function"></span>&#123; Comparable t = a[i]; a[i] = a[j]; a[j] = t; &#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">(Comparable[] a)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="comment">// 在单行中打印数组</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; a.length; i++)</span><br><span class="line">StdOut.print(a[i] + <span class="string">" "</span>);</span><br><span class="line">StdOut.println();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isSorted</span><span class="params">(Comparable[] a)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="comment">// 测试数组元素是否有序</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; a.length; i++)</span><br><span class="line"><span class="keyword">if</span> (less(a[i], a[i-<span class="number">1</span>])) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line"><span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="comment">// 从标准输入读取字符串，将它们排序并输出</span></span><br><span class="line">String[] a = In.readStrings();</span><br><span class="line">sort(a);</span><br><span class="line"><span class="function"><span class="keyword">assert</span> <span class="title">isSorted</span><span class="params">(a)</span></span>;</span><br><span class="line">show(a);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="1-java中compareTo-用法详解"><a href="#1-java中compareTo-用法详解" class="headerlink" title="1.java中compareTo()用法详解"></a>1.java中compareTo()用法详解</h2><p>一、字符串比较用compareTo()时:</p>
-<p>1，长度相同,从第一位开始比较，如果相同返回0，如果不同则马上返回这两个字符的ascii值的差值。</p>
-<p>2，长度不同,直接返回长度差值。</p>
-<p>二、Integer比较用compareTo()时：</p>
-<p>1，对比数字时相同，返回0。</p>
-<p>2，对比数字不同时，返回-1。</p>
-<p><strong>对于 v&lt;w 、v=w 和 v&gt;w 三种情况，Java 的习惯是在 v.compareTo(w) 被调用时分别返回一个负整数、零和一个正整数（一般是 -1、0 和 1）</strong></p>
-<p>我们接下来用 v&gt;w 来表示<br>v.compareTo(w)&gt;0  </p>
-<h2 id="2-实现-Comparable-接口"><a href="#2-实现-Comparable-接口" class="headerlink" title="2.实现 Comparable 接口"></a>2.实现 Comparable 接口</h2><p><strong>我们的排序算法模板适用于任何实现了 Comparable 接口的数据类型。遵守 Java 惯例的好处是很多你希望排序的数据都实现了 Comparable 接口。例如，Java 中封装数字的类型 Integer 和 Double，以及 String 和其他许多高级数据类型（如 File 和 URL ）都实现了 Comparable 接口。因此你可以直接用这些类型的数组作为参数调用我们的排序方法。</strong>  </p>
-<p>在创建自己的数据类型时，我们只要实现 Comparable 接口就能够保证用例代码可以将其排序。要做到这一点，只需要实现一个 compareTo() 方法来定义目标类型对象的自然次序  .</p>
-<p><img src="https://photos.alitaalice.cn/image/20200513001323.png" alt></p>
-<h2 id="二-选择排序"><a href="#二-选择排序" class="headerlink" title="二.选择排序"></a>二.选择排序</h2><p><strong>定义</strong>：一种最简单的排序算法是这样的：首先，找到数组中最小的那个元素，其次，将它和数组的第一个元素交换位置（如果第一个元素就是最小元素那么它就和自己交换）。再次，在剩下的元素中找到最小的元素，将它与数组的第二个元素交换位置。如此往复，直到将整个数组排序。这种方法叫做选择排序 ，因为它在不断地选择剩余元素之中的最小者。  </p>
-<p><strong>选择排序代码</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Selection</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(Comparable[] a)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="comment">// 将a[]按升序排列</span></span><br><span class="line"><span class="keyword">int</span> N = a.length; <span class="comment">// 数组长度</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++)</span><br><span class="line">&#123; <span class="comment">// 将a[i]和a[i+1..N]中最小的元素交换</span></span><br><span class="line"><span class="keyword">int</span> min = i; <span class="comment">// 最小元素的索引</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt; N; j++)</span><br><span class="line"><span class="keyword">if</span> (less(a[j], a[min])) min = j;</span><br><span class="line">exch(a, i, min);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// less()、exch()、isSorted()和main()方法见“排序算法类模板”</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>for循环i时，先找到最小a[0]的元素，再找到第二小的元素a[1]…一直进行下去</p>
-<p>该算法将第 i 小的元素放到 a[i] 之中。数组的第 i 个位置的左边是 i 个最小的元素且它们不会再被访问。  </p>
-<p><img src="https://photos.alitaalice.cn/image/20200513001448.png" alt></p>
-<h1 id="三-插入排序"><a href="#三-插入排序" class="headerlink" title="三.插入排序"></a>三.插入排序</h1><p>在计算机的实现中，为了给要插入的元素腾出空间，我们需要将其余所有元素在插入之前都向右移动一位。这种算法叫做<strong>插入排序</strong>   </p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Insertion</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(Comparable[] a)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="comment">// 将a[]按升序排列</span></span><br><span class="line"><span class="keyword">int</span> N = a.length;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; N; i++)</span><br><span class="line">&#123; <span class="comment">// 将 a[i] 插入到 a[i-1]、a[i-2]、a[i-3]...之中</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &gt; <span class="number">0</span> &amp;&amp; less(a[j], a[j-<span class="number">1</span>]); j--)</span><br><span class="line">exch(a, j, j-<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// less()、exch()、isSorted()和main()方法见“排序算法类模板”</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://photos.alitaalice.cn/image/20200513001419.png" alt></p>
-<p>插入排序原理很简单，讲一组数据分成两组，我分别将其称为有序组与待插入组。每次从待插入组中取出一个元素，与有序组的元素进行比较，并找到合适的位置，将该元素插到有序组当中。就这样，每次插入一个元素，有序组增加，待插入组减少。直到待插入组元素个数为0。当然，插入过程中涉及到了元素的移动。为了排序方便，我们一般将数据第一个元素视为有序组，其他均为待插入组。</p>
-<p><img src="https://photos.alitaalice.cn/image/20200513001521.png" alt>下面是几种典型的部分有序的数组：</p>
-<ul>
-<li><p>数组中每个元素距离它的最终位置都不远；</p>
-</li>
-<li><p>一个有序的大数组接一个小数组；</p>
-</li>
-<li><p>数组中只有几个元素的位置不正确。</p>
-<p>插入排序对这样的数组很有效，而选择排序则不然。事实上，当倒置的数量很少时，插入排序很可能比本章中的其他任何算法都要快。  </p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>DataStructure</tag>
-      </tags>
   </entry>
   <entry>
     <title>学习方法</title>
@@ -1916,6 +1860,62 @@
       </categories>
       <tags>
         <tag>杂谈</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>初级排序算法</title>
+    <url>/2020/05/12/%E5%88%9D%E7%BA%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍排序算法</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>我们关注的主要对象是重新排列数组元素 的算法，其中每个元素都有一个主键 。排序算法的目标就是将所有元素的主键按照某种方式排列（通常是按照大小或是字母顺序）。排序后索引较大的主键大于等于索引较小的主键 . </p>
+<h2 id="一-初级排序算法"><a href="#一-初级排序算法" class="headerlink" title="一.初级排序算法"></a>一.初级排序算法</h2><p>排序算法类的模板</p>
+<p>排序算法类模版”中的 Example 类展示了我们的习惯约定：我们会将排序代码放在类的 sort() 方法中，该类还将包含辅助函数 less() 和 exch() （可能还有其他辅助函数）以及一个示例用例main() 。Example 类还包含了一些早期调试使用的代码：测试用例 main() 将标准输入得到的字符串排序，并用私有方法 show() 打印字符数组的内容。我们还会在本章中遇到各种用于比较不同算法并研究它们的性能的测试用例。为了区别不同的排序算法，我们为相应的类取了不同的名字，用例可以根据名字调用不同的实现，例如 Insertion.sort() 、Merge.sort() 、Quick.sort() 等。<br>大多数情况下，我们的排序代码只会通过两个方法操作数据：less() 方法对元素进行比较，exch()方法将元素交换位置。exch() 方法的实现很简单，通过 Comparable 接口实现 less() 方法也不困难。将数据操作限制在这两个方法中使得代码的可读性和可移植性更好，更容易验证代码的正确性、分析性能以及排序算法之间的比较。在学习具体的排序算法实现之前，我们先讨论几个对于所有排序算法都很<br>重要的问题。  </p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Example</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(Comparable[] a)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="comment">/* 请见算法2.1、算法2.2、算法2.3、算法2.4、算法2.5或算法2.7*/</span> &#125;<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">less</span><span class="params">(Comparable v, Comparable w)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="keyword">return</span> v.compareTo(w) &lt; <span class="number">0</span>; &#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">exch</span><span class="params">(Comparable[] a, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span></span></span><br><span class="line"><span class="function"></span>&#123; Comparable t = a[i]; a[i] = a[j]; a[j] = t; &#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">(Comparable[] a)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="comment">// 在单行中打印数组</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; a.length; i++)</span><br><span class="line">StdOut.print(a[i] + <span class="string">" "</span>);</span><br><span class="line">StdOut.println();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isSorted</span><span class="params">(Comparable[] a)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="comment">// 测试数组元素是否有序</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; a.length; i++)</span><br><span class="line"><span class="keyword">if</span> (less(a[i], a[i-<span class="number">1</span>])) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line"><span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="comment">// 从标准输入读取字符串，将它们排序并输出</span></span><br><span class="line">String[] a = In.readStrings();</span><br><span class="line">sort(a);</span><br><span class="line"><span class="function"><span class="keyword">assert</span> <span class="title">isSorted</span><span class="params">(a)</span></span>;</span><br><span class="line">show(a);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="1-java中compareTo-用法详解"><a href="#1-java中compareTo-用法详解" class="headerlink" title="1.java中compareTo()用法详解"></a>1.java中compareTo()用法详解</h2><p>一、字符串比较用compareTo()时:</p>
+<p>1，长度相同,从第一位开始比较，如果相同返回0，如果不同则马上返回这两个字符的ascii值的差值。</p>
+<p>2，长度不同,直接返回长度差值。</p>
+<p>二、Integer比较用compareTo()时：</p>
+<p>1，对比数字时相同，返回0。</p>
+<p>2，对比数字不同时，返回-1。</p>
+<p><strong>对于 v&lt;w 、v=w 和 v&gt;w 三种情况，Java 的习惯是在 v.compareTo(w) 被调用时分别返回一个负整数、零和一个正整数（一般是 -1、0 和 1）</strong></p>
+<p>我们接下来用 v&gt;w 来表示<br>v.compareTo(w)&gt;0  </p>
+<h2 id="2-实现-Comparable-接口"><a href="#2-实现-Comparable-接口" class="headerlink" title="2.实现 Comparable 接口"></a>2.实现 Comparable 接口</h2><p><strong>我们的排序算法模板适用于任何实现了 Comparable 接口的数据类型。遵守 Java 惯例的好处是很多你希望排序的数据都实现了 Comparable 接口。例如，Java 中封装数字的类型 Integer 和 Double，以及 String 和其他许多高级数据类型（如 File 和 URL ）都实现了 Comparable 接口。因此你可以直接用这些类型的数组作为参数调用我们的排序方法。</strong>  </p>
+<p>在创建自己的数据类型时，我们只要实现 Comparable 接口就能够保证用例代码可以将其排序。要做到这一点，只需要实现一个 compareTo() 方法来定义目标类型对象的自然次序  .</p>
+<p><img src="https://photos.alitaalice.cn/image/20200513001323.png" alt></p>
+<h2 id="二-选择排序"><a href="#二-选择排序" class="headerlink" title="二.选择排序"></a>二.选择排序</h2><p><strong>定义</strong>：一种最简单的排序算法是这样的：首先，找到数组中最小的那个元素，其次，将它和数组的第一个元素交换位置（如果第一个元素就是最小元素那么它就和自己交换）。再次，在剩下的元素中找到最小的元素，将它与数组的第二个元素交换位置。如此往复，直到将整个数组排序。这种方法叫做选择排序 ，因为它在不断地选择剩余元素之中的最小者。  </p>
+<p><strong>选择排序代码</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Selection</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(Comparable[] a)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="comment">// 将a[]按升序排列</span></span><br><span class="line"><span class="keyword">int</span> N = a.length; <span class="comment">// 数组长度</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++)</span><br><span class="line">&#123; <span class="comment">// 将a[i]和a[i+1..N]中最小的元素交换</span></span><br><span class="line"><span class="keyword">int</span> min = i; <span class="comment">// 最小元素的索引</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt; N; j++)</span><br><span class="line"><span class="keyword">if</span> (less(a[j], a[min])) min = j;</span><br><span class="line">exch(a, i, min);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// less()、exch()、isSorted()和main()方法见“排序算法类模板”</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>for循环i时，先找到最小a[0]的元素，再找到第二小的元素a[1]…一直进行下去</p>
+<p>该算法将第 i 小的元素放到 a[i] 之中。数组的第 i 个位置的左边是 i 个最小的元素且它们不会再被访问。  </p>
+<p><img src="https://photos.alitaalice.cn/image/20200513001448.png" alt></p>
+<h1 id="三-插入排序"><a href="#三-插入排序" class="headerlink" title="三.插入排序"></a>三.插入排序</h1><p>在计算机的实现中，为了给要插入的元素腾出空间，我们需要将其余所有元素在插入之前都向右移动一位。这种算法叫做<strong>插入排序</strong>   </p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Insertion</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(Comparable[] a)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="comment">// 将a[]按升序排列</span></span><br><span class="line"><span class="keyword">int</span> N = a.length;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; N; i++)</span><br><span class="line">&#123; <span class="comment">// 将 a[i] 插入到 a[i-1]、a[i-2]、a[i-3]...之中</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &gt; <span class="number">0</span> &amp;&amp; less(a[j], a[j-<span class="number">1</span>]); j--)</span><br><span class="line">exch(a, j, j-<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// less()、exch()、isSorted()和main()方法见“排序算法类模板”</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://photos.alitaalice.cn/image/20200513001419.png" alt></p>
+<p>插入排序原理很简单，讲一组数据分成两组，我分别将其称为有序组与待插入组。每次从待插入组中取出一个元素，与有序组的元素进行比较，并找到合适的位置，将该元素插到有序组当中。就这样，每次插入一个元素，有序组增加，待插入组减少。直到待插入组元素个数为0。当然，插入过程中涉及到了元素的移动。为了排序方便，我们一般将数据第一个元素视为有序组，其他均为待插入组。</p>
+<p><img src="https://photos.alitaalice.cn/image/20200513001521.png" alt>下面是几种典型的部分有序的数组：</p>
+<ul>
+<li><p>数组中每个元素距离它的最终位置都不远；</p>
+</li>
+<li><p>一个有序的大数组接一个小数组；</p>
+</li>
+<li><p>数组中只有几个元素的位置不正确。</p>
+<p>插入排序对这样的数组很有效，而选择排序则不然。事实上，当倒置的数量很少时，插入排序很可能比本章中的其他任何算法都要快。  </p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>DataStructure</tag>
       </tags>
   </entry>
   <entry>
@@ -2003,6 +2003,34 @@ p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数�
       </tags>
   </entry>
   <entry>
+    <title>树</title>
+    <url>/2020/05/07/%E6%A0%91/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>树的相关概念</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="树的相关概念"><a href="#树的相关概念" class="headerlink" title="树的相关概念"></a>树的相关概念</h2><h3 id="度"><a href="#度" class="headerlink" title="度"></a>度</h3><ul>
+<li>结点拥有的子树树称为结点的度</li>
+<li>度为0的结点称为叶结点（Leaf）或者终端结点。</li>
+<li>度不为0的结点称为非终端结点或者分支结点</li>
+<li>树的度是树内各结点度的最大值</li>
+</ul>
+<h3 id="深度（Depth-或高度"><a href="#深度（Depth-或高度" class="headerlink" title="深度（Depth)或高度"></a>深度（Depth)或高度</h3><ul>
+<li>层次：结点的层次从根开始定义起，根为第一层，根的孩子为第二层，以此类推</li>
+<li>树中结点的最大层次被称为树的深度（Depth）或者高度。</li>
+</ul>
+<h3 id="有序树和无序树"><a href="#有序树和无序树" class="headerlink" title="有序树和无序树"></a>有序树和无序树</h3><p>如果将树中结点的各子树看成从左至右是由次序的，不能互换的，那么该树为有序树，否则为无序树。</p>
+<h3 id="森林"><a href="#森林" class="headerlink" title="森林"></a>森林</h3><p>森林是m（m&gt;=0)颗互不相交的树的集合。</p>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>DataStructure</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>时间复杂度</title>
     <url>/2020/05/05/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/</url>
     <content><![CDATA[<h1 id="算法时间复杂度"><a href="#算法时间复杂度" class="headerlink" title="算法时间复杂度"></a>算法时间复杂度</h1><h2 id="算法时间复杂度定义"><a href="#算法时间复杂度定义" class="headerlink" title="算法时间复杂度定义"></a>算法时间复杂度定义</h2><ul>
@@ -2038,34 +2066,6 @@ p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数�
 <p>执行总次数 n+n-1+(n-2)+…+1=n(n+1)/2   时间复杂度为O(n^2) </p>
 <h4 id="常见的时间复杂度"><a href="#常见的时间复杂度" class="headerlink" title="常见的时间复杂度"></a>常见的时间复杂度</h4><p>常用时间复杂度耗费时间比对：</p>
 <p>O(1)&lt;O(log n)&lt;O(n)&lt;O(nlogn)&lt;O(n^2)&lt;O(n^3)&lt;O(2^n)&lt;O(n!)&lt;O(n^n)</p>
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>DataStructure</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>树</title>
-    <url>/2020/05/07/%E6%A0%91/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>树的相关概念</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="树的相关概念"><a href="#树的相关概念" class="headerlink" title="树的相关概念"></a>树的相关概念</h2><h3 id="度"><a href="#度" class="headerlink" title="度"></a>度</h3><ul>
-<li>结点拥有的子树树称为结点的度</li>
-<li>度为0的结点称为叶结点（Leaf）或者终端结点。</li>
-<li>度不为0的结点称为非终端结点或者分支结点</li>
-<li>树的度是树内各结点度的最大值</li>
-</ul>
-<h3 id="深度（Depth-或高度"><a href="#深度（Depth-或高度" class="headerlink" title="深度（Depth)或高度"></a>深度（Depth)或高度</h3><ul>
-<li>层次：结点的层次从根开始定义起，根为第一层，根的孩子为第二层，以此类推</li>
-<li>树中结点的最大层次被称为树的深度（Depth）或者高度。</li>
-</ul>
-<h3 id="有序树和无序树"><a href="#有序树和无序树" class="headerlink" title="有序树和无序树"></a>有序树和无序树</h3><p>如果将树中结点的各子树看成从左至右是由次序的，不能互换的，那么该树为有序树，否则为无序树。</p>
-<h3 id="森林"><a href="#森林" class="headerlink" title="森林"></a>森林</h3><p>森林是m（m&gt;=0)颗互不相交的树的集合。</p>
 ]]></content>
       <categories>
         <category>算法</category>
@@ -2142,16 +2142,6 @@ p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数�
       </tags>
   </entry>
   <entry>
-    <title>设计模式</title>
-    <url>/2020/05/08/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
-  </entry>
-  <entry>
     <title>链表</title>
     <url>/2020/05/07/%E9%93%BE%E8%A1%A8/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -2207,5 +2197,15 @@ p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数�
       <tags>
         <tag>DataStructure</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>设计模式</title>
+    <url>/2020/05/08/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
   </entry>
 </search>
