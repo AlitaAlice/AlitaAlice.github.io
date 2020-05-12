@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://www.alitaalice.cn/2020/05/07/%E9%93%BE%E8%A1%A8/%E9%93%BE%E8%A1%A802.png">
 <meta property="og:image" content="https://www.alitaalice.cn/2020/05/07/%E9%93%BE%E8%A1%A8/%E9%93%BE%E8%A1%A803.png">
 <meta property="article:published_time" content="2020-05-07T03:53:07.000Z">
-<meta property="article:modified_time" content="2020-05-07T11:17:13.158Z">
+<meta property="article:modified_time" content="2020-05-12T06:52:24.431Z">
 <meta property="article:author" content="Alita Alice">
 <meta property="article:tag" content="DataStructure">
 <meta name="twitter:card" content="summary">
@@ -191,10 +191,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-05-07 11:53:07 / Modified: 19:17:13" itemprop="dateCreated datePublished" datetime="2020-05-07T11:53:07+08:00">2020-05-07</time>
+              <time title="Created: 2020-05-07 11:53:07" itemprop="dateCreated datePublished" datetime="2020-05-07T11:53:07+08:00">2020-05-07</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-05-12 14:52:24" itemprop="dateModified" datetime="2020-05-12T14:52:24+08:00">2020-05-12</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -272,7 +278,7 @@
 <li>当链表末尾p为空时，则说明第i个结点不存在</li>
 <li>若查找成功，那么返回结点p的数据。</li>
 </ol>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Status <span class="title">GetElem</span><span class="params">(LinkList L,<span class="keyword">int</span> i,ElemType *e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> j;</span><br><span class="line">  LinkList p;</span><br><span class="line">  p=L-&gt;next;</span><br><span class="line">  j=<span class="number">1</span>;</span><br><span class="line">  <span class="keyword">while</span>(p&amp;&amp;j&lt;i)</span><br><span class="line">  &#123;</span><br><span class="line">  p=p-&gt;next;</span><br><span class="line">  j++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span>(!p || j&gt;<span class="number">1</span>)</span><br><span class="line">  &#123;</span><br><span class="line">  <span class="keyword">return</span> ERROR；</span><br><span class="line">  *e=p-&gt;data;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Status <span class="title">GetElem</span><span class="params">(LinkList L,<span class="keyword">int</span> i,ElemType *e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> j;</span><br><span class="line">  LinkList p;</span><br><span class="line">  p=L-&gt;next;</span><br><span class="line">  j=<span class="number">1</span>;</span><br><span class="line">  <span class="keyword">while</span>(p&amp;&amp;j&lt;i)</span><br><span class="line">  &#123;</span><br><span class="line">  p=p-&gt;next;</span><br><span class="line">  j++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span>(!p || j&gt;i)</span><br><span class="line">  <span class="keyword">return</span> ERROR；</span><br><span class="line">  *e=p-&gt;data;</span><br><span class="line">  <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="单链表的插入与删除"><a href="#单链表的插入与删除" class="headerlink" title="单链表的插入与删除"></a>单链表的插入与删除</h2><h3 id="单链表插入"><a href="#单链表插入" class="headerlink" title="单链表插入"></a>单链表插入</h3><p>思路：在俩节点之间再插入一个结点</p>
 <p>图示：</p>
@@ -405,7 +411,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-count">44</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -458,12 +464,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">61k</span>
+    <span title="Symbols count total">63k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">55 mins.</span>
+    <span title="Reading time total">58 mins.</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
   </div>

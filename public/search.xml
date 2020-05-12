@@ -49,6 +49,28 @@
       </tags>
   </entry>
   <entry>
+    <title>JAVA和C++的区别</title>
+    <url>/2020/05/11/JAVA%E5%92%8CC++%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍JAVA和C++的区别</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="JAVA和C-的区别"><a href="#JAVA和C-的区别" class="headerlink" title="JAVA和C++的区别"></a>JAVA和C++的区别</h2><ul>
+<li>都是面向对象的语言，并且都支持封装，继承和多态</li>
+<li>指针：JAVA不提供指针来直接访问内存，程序更加安全。</li>
+<li>继承：JAVA中的类是单继承的，但是C++允许多继承，JAVA中允许一个类实现多个接口来实现C++中的多冲继承。</li>
+<li>内存：JAVA有自动内存管理机制，不需要程序员手动释放无用内存。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>面试</category>
+      </categories>
+      <tags>
+        <tag>JAVASE</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JAVA容器分类</title>
     <url>/2020/05/06/JAVA%E5%AE%B9%E5%99%A8%E5%88%86%E7%B1%BB/</url>
     <content><![CDATA[<h2 id="Java容器可分为两大类："><a href="#Java容器可分为两大类：" class="headerlink" title="Java容器可分为两大类："></a>Java容器可分为两大类：</h2><ul>
@@ -174,6 +196,123 @@
       </tags>
   </entry>
   <entry>
+    <title>JAVA泛型</title>
+    <url>/2020/05/12/JAVA%E6%B3%9B%E5%9E%8B/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
+  </entry>
+  <entry>
+    <title>JAVA中的输入与输出</title>
+    <url>/2020/05/06/JAVA%E4%B8%AD%E7%9A%84%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA/</url>
+    <content><![CDATA[<h1 id="JAVA中的输入"><a href="#JAVA中的输入" class="headerlink" title="JAVA中的输入"></a>JAVA中的输入</h1><h2 id="读取输入"><a href="#读取输入" class="headerlink" title="读取输入"></a>读取输入</h2><p>  要想通过输入台进行输入，首先需要构造一个与“标准输入流”System.in关联的Scanner对象。<br>  <a id="more"></a></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Scanner scanner=<span class="keyword">new</span> Scanner(System.in);</span><br></pre></td></tr></table></figure>
+
+<p>Scanner类中的方法：</p>
+<p>API  JAVA.util.Scanner</p>
+<table>
+<thead>
+<tr>
+<th>String nextLine()</th>
+<th>读取输入的下一行内容  以enter作为结束符  能得到带空格的字符串</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>String next()</td>
+<td>读取输入的下一个单词（以空格作为分隔符）空格视而不见</td>
+</tr>
+<tr>
+<td>int nextInt()</td>
+<td>只读取int值</td>
+</tr>
+<tr>
+<td>double nextDouble()</td>
+<td>只读取double值</td>
+</tr>
+<tr>
+<td>boolean hasNext()</td>
+<td>检测输入中是否还有其他的单词</td>
+</tr>
+<tr>
+<td>boolean hasNextInt()</td>
+<td>检测输入中是否还有表示整数</td>
+</tr>
+<tr>
+<td>boolean hasNextDouble()</td>
+<td>检测输入中是否还有表示浮点数</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>JAVASE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JAVA的静态方法不能被重写</title>
+    <url>/2020/05/06/JAVA%E7%9A%84%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95%E4%B8%8D%E8%83%BD%E8%A2%AB%E9%87%8D%E5%86%99/</url>
+    <content><![CDATA[<h1 id="JAVA的静态方法不能被重写"><a href="#JAVA的静态方法不能被重写" class="headerlink" title="JAVA的静态方法不能被重写"></a>JAVA的静态方法不能被重写</h1><p>堆区：</p>
+<ul>
+<li>存储的全部都是对象，每个对象都包含一个与之对应的class信息。<a id="more"></a>
+
+</li>
+</ul>
+<p>栈区:</p>
+<p>方法区：</p>
+<ul>
+<li>方法区包含所有的class和static变量  class可以直接调用static</li>
+</ul>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>JAVASE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JAVA多态</title>
+    <url>/2020/05/06/JAVA%E5%A4%9A%E6%80%81/</url>
+    <content><![CDATA[<h1 id="JAVA多态"><a href="#JAVA多态" class="headerlink" title="JAVA多态"></a>JAVA多态</h1><p>JAVA的三大特性为：</p>
+<ul>
+<li><p>封装</p>
+</li>
+<li><p>继承</p>
+</li>
+<li><p>多态</p>
+<p>今天我们就来说一说到底什么是多态，以及多态到底有什么用。</p>
+<a id="more"></a>
+
+<h2 id="多态的定义"><a href="#多态的定义" class="headerlink" title="多态的定义"></a>多态的定义</h2><p>定义： <strong>事物的不同形态。</strong>多态多应用在向上转型。</p>
+<p>多态的用处：在实际开发中，如果发现某个类的方法可以做出改进，但工程已经交付给用户使用，但是不想影响其他部分对于该方法的调用。那么通过创建子类对象，对于父类方法进行<strong>重写</strong>（Override）。<strong>但是此时父类的其他成员方法和成员属性却不能进行利用</strong>。此时就需要用到<strong>向上转型</strong>，将子类向上转换为父类，此时程序的相应方法做出了改进，程序的其他地方也不会受此影响。</p>
+</li>
+</ul>
+<h2 id="多态的三个前提："><a href="#多态的三个前提：" class="headerlink" title="多态的三个前提："></a>多态的三个前提：</h2><ul>
+<li><p>存在继承关系，子类继承父类</p>
+</li>
+<li><p>子类要重写父类的方法 </p>
+<p>子类重写父类的成员方法。</p>
+</li>
+<li><p>父类数据类型的引用要指向子类对象 （向上转型）</p>
+<p>如 Animal am=new Cat();</p>
+<h2 id="多态的弊端"><a href="#多态的弊端" class="headerlink" title="多态的弊端"></a>多态的弊端</h2><p>向上转型之后，<strong>不能够引用子类特有的成员属性和子类特有的成员方法</strong>。</p>
+</li>
+</ul>
+<p>  <strong>注意：静态方法不能被重写，所以也不存在多态，即使向上转型，子类重写了父类的静态方法，子类调用父类的静态方法，输出依然是父类静态方法中的值。</strong></p>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>JAVASE</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JAVA中this和super的用法总结</title>
     <url>/2020/05/09/JAVA%E4%B8%ADthis%E5%92%8Csuper%E7%9A%84%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -225,113 +364,6 @@
 <li>this()和super()都指的是对象，所以，均不可以在static环境中使用。包括：static变量,static方法，static语句块。</li>
 <li>从本质上讲，this是一个指向本对象的指针, 然而super是一个Java关键字。</li>
 </ul>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>JAVASE</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JAVA和C++的区别</title>
-    <url>/2020/05/11/JAVA%E5%92%8CC++%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍JAVA和C++的区别</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="JAVA和C-的区别"><a href="#JAVA和C-的区别" class="headerlink" title="JAVA和C++的区别"></a>JAVA和C++的区别</h2><ul>
-<li>都是面向对象的语言，并且都支持封装，继承和多态</li>
-<li>指针：JAVA不提供指针来直接访问内存，程序更加安全。</li>
-<li>继承：JAVA中的类是单继承的，但是C++允许多继承，JAVA中允许一个类实现多个接口来实现C++中的多冲继承。</li>
-<li>内存：JAVA有自动内存管理机制，不需要程序员手动释放无用内存。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>面试</category>
-      </categories>
-      <tags>
-        <tag>JAVASE</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JAVA多态</title>
-    <url>/2020/05/06/JAVA%E5%A4%9A%E6%80%81/</url>
-    <content><![CDATA[<h1 id="JAVA多态"><a href="#JAVA多态" class="headerlink" title="JAVA多态"></a>JAVA多态</h1><p>JAVA的三大特性为：</p>
-<ul>
-<li><p>封装</p>
-</li>
-<li><p>继承</p>
-</li>
-<li><p>多态</p>
-<p>今天我们就来说一说到底什么是多态，以及多态到底有什么用。</p>
-<a id="more"></a>
-
-<h2 id="多态的定义"><a href="#多态的定义" class="headerlink" title="多态的定义"></a>多态的定义</h2><p>定义： <strong>事物的不同形态。</strong>多态多应用在向上转型。</p>
-<p>多态的用处：在实际开发中，如果发现某个类的方法可以做出改进，但工程已经交付给用户使用，但是不想影响其他部分对于该方法的调用。那么通过创建子类对象，对于父类方法进行<strong>重写</strong>（Override）。<strong>但是此时父类的其他成员方法和成员属性却不能进行利用</strong>。此时就需要用到<strong>向上转型</strong>，将子类向上转换为父类，此时程序的相应方法做出了改进，程序的其他地方也不会受此影响。</p>
-</li>
-</ul>
-<h2 id="多态的三个前提："><a href="#多态的三个前提：" class="headerlink" title="多态的三个前提："></a>多态的三个前提：</h2><ul>
-<li><p>存在继承关系，子类继承父类</p>
-</li>
-<li><p>子类要重写父类的方法 </p>
-<p>子类重写父类的成员方法。</p>
-</li>
-<li><p>父类数据类型的引用要指向子类对象 （向上转型）</p>
-<p>如 Animal am=new Cat();</p>
-<h2 id="多态的弊端"><a href="#多态的弊端" class="headerlink" title="多态的弊端"></a>多态的弊端</h2><p>向上转型之后，<strong>不能够引用子类特有的成员属性和子类特有的成员方法</strong>。</p>
-</li>
-</ul>
-<p>  <strong>注意：静态方法不能被重写，所以也不存在多态，即使向上转型，子类重写了父类的静态方法，子类调用父类的静态方法，输出依然是父类静态方法中的值。</strong></p>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>JAVASE</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JAVA中的输入与输出</title>
-    <url>/2020/05/06/JAVA%E4%B8%AD%E7%9A%84%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA/</url>
-    <content><![CDATA[<h1 id="JAVA中的输入"><a href="#JAVA中的输入" class="headerlink" title="JAVA中的输入"></a>JAVA中的输入</h1><h2 id="读取输入"><a href="#读取输入" class="headerlink" title="读取输入"></a>读取输入</h2><p>  要想通过输入台进行输入，首先需要构造一个与“标准输入流”System.in关联的Scanner对象。<br>  <a id="more"></a></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Scanner scanner=<span class="keyword">new</span> Scanner(System.in);</span><br></pre></td></tr></table></figure>
-
-<p>Scanner类中的方法：</p>
-<p>API  JAVA.util.Scanner</p>
-<table>
-<thead>
-<tr>
-<th>String nextLine()</th>
-<th>读取输入的下一行内容  以enter作为结束符  能得到带空格的字符串</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>String next()</td>
-<td>读取输入的下一个单词（以空格作为分隔符）空格视而不见</td>
-</tr>
-<tr>
-<td>int nextInt()</td>
-<td>只读取int值</td>
-</tr>
-<tr>
-<td>double nextDouble()</td>
-<td>只读取double值</td>
-</tr>
-<tr>
-<td>boolean hasNext()</td>
-<td>检测输入中是否还有其他的单词</td>
-</tr>
-<tr>
-<td>boolean hasNextInt()</td>
-<td>检测输入中是否还有表示整数</td>
-</tr>
-<tr>
-<td>boolean hasNextDouble()</td>
-<td>检测输入中是否还有表示浮点数</td>
-</tr>
-</tbody></table>
 ]]></content>
       <categories>
         <category>后端</category>
@@ -452,22 +484,32 @@
       </tags>
   </entry>
   <entry>
-    <title>JAVA的静态方法不能被重写</title>
-    <url>/2020/05/06/JAVA%E7%9A%84%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95%E4%B8%8D%E8%83%BD%E8%A2%AB%E9%87%8D%E5%86%99/</url>
-    <content><![CDATA[<h1 id="JAVA的静态方法不能被重写"><a href="#JAVA的静态方法不能被重写" class="headerlink" title="JAVA的静态方法不能被重写"></a>JAVA的静态方法不能被重写</h1><p>堆区：</p>
-<ul>
-<li>存储的全部都是对象，每个对象都包含一个与之对应的class信息。<a id="more"></a>
+    <title>JAVA集合面试</title>
+    <url>/2020/05/12/JAVA%E9%9B%86%E5%90%88%E9%9D%A2%E8%AF%95/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍JAVA集合面试</p>
+</blockquote>
+<a id="more"></a>
 
-</li>
-</ul>
-<p>栈区:</p>
-<p>方法区：</p>
-<ul>
-<li>方法区包含所有的class和static变量  class可以直接调用static</li>
-</ul>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><strong>1）说说常见的集合有哪些吧？</strong></p>
+<p>答：Map 接口和 Collection 接口是所有集合框架的父接口：</p>
+<ol>
+<li>Collection 接口的子接口包括：Set 接口和 List 接口；</li>
+<li>Map 接口的实现类主要有：HashMap、TreeMap、Hashtable、ConcurrentHashMap 以及 Properties 等；</li>
+<li>Set 接口的实现类主要有：HashSet、TreeSet、LinkedHashSet 等；</li>
+<li>List 接口的实现类主要有：ArrayList、LinkedList、Stack 以及 Vector 等。</li>
+</ol>
+<p><strong>（2）HashMap 和 Hashtable 的区别有哪些？（必问）</strong></p>
+<p>答：</p>
+<ol>
+<li>HashMap 没有考虑同步，是线程不安全的；Hashtable 使用了 synchronized 关键字，是线程安全的；</li>
+<li>前者允许 null 作为 Key；后者不允许 null 作为 Key。</li>
+</ol>
+<p><strong>6）List 和 Set 的区别是啥？</strong></p>
+<p>答：List 元素是有序的，可以重复；Set 元素是无序的，不可以重复。</p>
 ]]></content>
       <categories>
-        <category>后端</category>
+        <category>面试</category>
       </categories>
       <tags>
         <tag>JAVASE</tag>
@@ -481,7 +523,7 @@
 </blockquote>
 <a id="more"></a>
 
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><img src="/2020/05/11/JAVA%E9%9D%A2%E8%AF%95/2020-05-11_205422.png" alt></p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><img src="/2020/05/11/JAVA%E9%9D%A2%E8%AF%95/E:%5Cdev%5CMYBLOG%5Cblog%5Csource_posts%5CJAVA%E9%9D%A2%E8%AF%95%5C2020-05-11_205422.png" alt></p>
 ]]></content>
   </entry>
   <entry>
@@ -502,83 +544,6 @@
 <li>java.applet 包含applet运行所需的类</li>
 <li>java.swing 用来建立图形用户界面</li>
 </ul>
-]]></content>
-      <categories>
-        <category>面试</category>
-      </categories>
-      <tags>
-        <tag>JAVASE</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JDK和JRE</title>
-    <url>/2020/05/09/JDK%E5%92%8CJRE/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍JDK和JRE的区别，他们的作用分别是什么？</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h2><p>JDK是JAVA Development Kit (JAVA开发套件) ，是JAVA的开发工具包。主要包含了类库和工具。</p>
-<p>JDK中包含了JRE 而且在JDK安装目录/JRE/bin/server 文件夹下包含jvm.dll</p>
-<p><img src="/2020/05/09/JDK%E5%92%8CJRE/QQ20200509115538.png" alt></p>
-<p>这说明JDK提供了一个虚拟机。</p>
-<p>另外JDK的bin目录下有各种JAVA程序需要用到的命令。</p>
-<p>与JRE明显的区别就饿死JDK文件下才会有javac</p>
-<p><img src="/2020/05/09/JDK%E5%92%8CJRE/QQ20200509115836.png" alt></p>
-<p>因为JRE只是一个运行环境，与开发无关。</p>
-<h2 id="JRE"><a href="#JRE" class="headerlink" title="JRE"></a>JRE</h2><p>JRE是JAVA Runtime Environment的缩写。是JAVA程序的运行环境。既然是运行，那么当然要包含JVM,也就是JAVA虚拟机，还有所有JAVA类库的class文件，都在lib下，并且被打包成了jar </p>
-<p><img src="/2020/05/09/JDK%E5%92%8CJRE/Screenshot.png" alt></p>
-<h2 id="问题：jdk里的jre与外面jre的区别"><a href="#问题：jdk里的jre与外面jre的区别" class="headerlink" title="问题：jdk里的jre与外面jre的区别"></a>问题：jdk里的jre与外面jre的区别</h2><p>分析：如果我们安装了JDK，那么我们的电脑中将会有C:\Program Files (x86)\Java\jdk1.8.0_05文件夹 ，这个文件夹里面有一个jre文件夹。然后我们再安装jre，此时我们的电脑中有C:\Program Files (x86)\Java\jre8文件夹。</p>
-<p>通过对比jre和jre8文件夹中的东西，我们发现基本是一样的，那么这俩文件夹到底有啥区别呢？</p>
-<p>我们暂且称jre为自带jdk-jre，jre8为公共jre。</p>
-<p>jdk-jre与公共jre的主要区别在于jdk-jre多了一个server的vm执行选项。</p>
-<p>sever与client使用不同的vm虚拟机。如果电脑运行一个java程序的时候，会自动调用client vm。但是如果开发java程序时使用的就是server vm（server vm启动时间较长，占用内存较多，但是启动后执行性能更高，适合开发）。</p>
-<p><strong>换句话说：公共jre是给普通电脑用户使用的，假如你安装了一个java程序，这个java程序启动运行的时候就会调用jre（java runtime environment）；如果你是一个java开发者，那么你就需要安装jdk（java development kit），这时你开发调试java程序的时候就会调用jdk里面的jre。</strong></p>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>JAVASE</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java值传递和引用传递基础分析</title>
-    <url>/2020/05/11/Java%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E5%9F%BA%E7%A1%80%E5%88%86%E6%9E%90/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍JAVA的值传递和引用传递</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="java内的基础类型数据传递都是值传递-java中实例对象的传递是引用传递。"><a href="#java内的基础类型数据传递都是值传递-java中实例对象的传递是引用传递。" class="headerlink" title="java内的基础类型数据传递都是值传递. java中实例对象的传递是引用传递。"></a>java内的基础类型数据传递都是值传递. java中实例对象的传递是引用传递。</h2><p><strong>值传递是对基本型变量而言的,传递的是该变量的一个副本,改变副本不影响原变量。引用传递一般是对于对象型变量而言的,传递的是该对象地址的一个副本, 并不是原对象本身 。</strong></p>
-<p>首先，不要纠结于 Pass By Value 和 Pass By Reference 的字面上的意义，否则很容易陷入所谓的“一切传引用其实本质上是传值”这种并不能解决问题无意义论战中。<br>更何况，要想知道Java到底是传值还是传引用，起码你要先知道传值和传引用的准确含义吧？可是如果你已经知道了这两个名字的准确含义，那么你自己就能判断Java到底是传值还是传引用。</p>
-<h2 id="一：搞清楚-基本类型-和-引用类型的不同之处"><a href="#一：搞清楚-基本类型-和-引用类型的不同之处" class="headerlink" title="一：搞清楚 基本类型 和 引用类型的不同之处"></a>一：搞清楚 基本类型 和 引用类型的不同之处</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> num = <span class="number">10</span>;</span><br><span class="line">String str = <span class="string">"hello"</span>;</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2020/05/11/Java%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E5%9F%BA%E7%A1%80%E5%88%86%E6%9E%90/2020-05-12_112353.png" alt></p>
-<p>如图所示，num是基本类型，值就直接保存在变量中。而str是引用类型，变量中保存的只是实际对象的地址。一般称这种变量为”引用”，引用指向实际对象，实际对象中保存着内容。</p>
-<p>二：搞清楚赋值运算符（=）的作用</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">num &#x3D; 20;</span><br><span class="line">str &#x3D; &quot;java&quot;;</span><br></pre></td></tr></table></figure>
-
-<p>对于基本类型 num ，赋值运算符会直接改变变量的值，原来的值被覆盖掉。<br>对于引用类型 str，赋值运算符会改变引用中所保存的地址，原来的地址被覆盖掉。但是原来的对象不会被改变（重要）。<br>如上图所示，”hello” 字符串对象没有被改变。（没有被任何引用所指向的对象是垃圾，会被垃圾回收器回收）</p>
-<p><img src="/2020/05/11/Java%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E5%9F%BA%E7%A1%80%E5%88%86%E6%9E%90/2020-05-12_112409.png" alt></p>
-<h2 id="三：调用方法时发生了什么？参数传递基本上就是赋值操作"><a href="#三：调用方法时发生了什么？参数传递基本上就是赋值操作" class="headerlink" title="三：调用方法时发生了什么？参数传递基本上就是赋值操作"></a>三：调用方法时发生了什么？参数传递基本上就是赋值操作</h2><p>第一个例子：基本类型</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">foo</span><span class="params">(<span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    value = <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">foo(num); <span class="comment">// num 没有被改变</span></span><br></pre></td></tr></table></figure>
-
-<p>第二个例子：没有提供改变自身方法的引用类型</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">foo</span><span class="params">(String text)</span> </span>&#123;</span><br><span class="line">    text = <span class="string">"windows"</span>;  <span class="comment">//String没改变是因为赋值新的字符串直接导致新new了一个String</span></span><br><span class="line">&#125;</span><br><span class="line">foo(str); <span class="comment">// str 也没有被改变</span></span><br></pre></td></tr></table></figure>
-
-<p>第三个例子：提供改变自身方法的引用类型</p>
-<p>builder的引用对象也是StringBuilder</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">StringBuilder sb = <span class="keyword">new</span> StringBuilder(<span class="string">"iphone"</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">foo</span><span class="params">(StringBuilder builder)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    builder.append(<span class="string">"4"</span>); <span class="comment">//没有生成新的stringBuilder对象</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">foo(sb); <span class="comment">// sb 被改变了，变成了"iphone4"。</span></span><br></pre></td></tr></table></figure>
-
-<p>第四个例子：提供了改变自身方法的引用类型，但是不使用，而是使用赋值运算符。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">StringBuilder sb = <span class="keyword">new</span> StringBuilder(<span class="string">"iphone"</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">foo</span><span class="params">(StringBuilder builder)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    builder = <span class="keyword">new</span> StringBuilder(<span class="string">"ipad"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(sb); <span class="comment">// sb 没有被改变，还是 "iphone"。</span></span><br></pre></td></tr></table></figure>
-
-<p>重点理解为什么，第三个例子和第四个例子结果不同？</p>
-<p>下面是第三个例子的图解：</p>
-<p><img src="/2020/05/11/Java%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E5%9F%BA%E7%A1%80%E5%88%86%E6%9E%90/2020-05-12_112424.png" alt></p>
-<p>builder = new StringBuilder(“ipad”); 之后</p>
-<p><img src="/2020/05/11/Java%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E5%9F%BA%E7%A1%80%E5%88%86%E6%9E%90/2020-05-12_112435.png" alt></p>
 ]]></content>
       <categories>
         <category>面试</category>
@@ -720,6 +685,38 @@
       </tags>
   </entry>
   <entry>
+    <title>JDK和JRE</title>
+    <url>/2020/05/09/JDK%E5%92%8CJRE/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍JDK和JRE的区别，他们的作用分别是什么？</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h2><p>JDK是JAVA Development Kit (JAVA开发套件) ，是JAVA的开发工具包。主要包含了类库和工具。</p>
+<p>JDK中包含了JRE 而且在JDK安装目录/JRE/bin/server 文件夹下包含jvm.dll</p>
+<p><img src="/2020/05/09/JDK%E5%92%8CJRE/QQ20200509115538.png" alt></p>
+<p>这说明JDK提供了一个虚拟机。</p>
+<p>另外JDK的bin目录下有各种JAVA程序需要用到的命令。</p>
+<p>与JRE明显的区别就饿死JDK文件下才会有javac</p>
+<p><img src="/2020/05/09/JDK%E5%92%8CJRE/QQ20200509115836.png" alt></p>
+<p>因为JRE只是一个运行环境，与开发无关。</p>
+<h2 id="JRE"><a href="#JRE" class="headerlink" title="JRE"></a>JRE</h2><p>JRE是JAVA Runtime Environment的缩写。是JAVA程序的运行环境。既然是运行，那么当然要包含JVM,也就是JAVA虚拟机，还有所有JAVA类库的class文件，都在lib下，并且被打包成了jar </p>
+<p><img src="/2020/05/09/JDK%E5%92%8CJRE/Screenshot.png" alt></p>
+<h2 id="问题：jdk里的jre与外面jre的区别"><a href="#问题：jdk里的jre与外面jre的区别" class="headerlink" title="问题：jdk里的jre与外面jre的区别"></a>问题：jdk里的jre与外面jre的区别</h2><p>分析：如果我们安装了JDK，那么我们的电脑中将会有C:\Program Files (x86)\Java\jdk1.8.0_05文件夹 ，这个文件夹里面有一个jre文件夹。然后我们再安装jre，此时我们的电脑中有C:\Program Files (x86)\Java\jre8文件夹。</p>
+<p>通过对比jre和jre8文件夹中的东西，我们发现基本是一样的，那么这俩文件夹到底有啥区别呢？</p>
+<p>我们暂且称jre为自带jdk-jre，jre8为公共jre。</p>
+<p>jdk-jre与公共jre的主要区别在于jdk-jre多了一个server的vm执行选项。</p>
+<p>sever与client使用不同的vm虚拟机。如果电脑运行一个java程序的时候，会自动调用client vm。但是如果开发java程序时使用的就是server vm（server vm启动时间较长，占用内存较多，但是启动后执行性能更高，适合开发）。</p>
+<p><strong>换句话说：公共jre是给普通电脑用户使用的，假如你安装了一个java程序，这个java程序启动运行的时候就会调用jre（java runtime environment）；如果你是一个java开发者，那么你就需要安装jdk（java development kit），这时你开发调试java程序的时候就会调用jdk里面的jre。</strong></p>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>JAVASE</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>List集合</title>
     <url>/2020/05/07/List%E9%9B%86%E5%90%88/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -755,6 +752,51 @@
 ]]></content>
       <categories>
         <category>后端</category>
+      </categories>
+      <tags>
+        <tag>JAVASE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java值传递和引用传递基础分析</title>
+    <url>/2020/05/11/Java%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E5%9F%BA%E7%A1%80%E5%88%86%E6%9E%90/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍JAVA的值传递和引用传递</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="java内的基础类型数据传递都是值传递-java中实例对象的传递是引用传递。"><a href="#java内的基础类型数据传递都是值传递-java中实例对象的传递是引用传递。" class="headerlink" title="java内的基础类型数据传递都是值传递. java中实例对象的传递是引用传递。"></a>java内的基础类型数据传递都是值传递. java中实例对象的传递是引用传递。</h2><p><strong>值传递是对基本型变量而言的,传递的是该变量的一个副本,改变副本不影响原变量。引用传递一般是对于对象型变量而言的,传递的是该对象地址的一个副本, 并不是原对象本身 。</strong></p>
+<p>首先，不要纠结于 Pass By Value 和 Pass By Reference 的字面上的意义，否则很容易陷入所谓的“一切传引用其实本质上是传值”这种并不能解决问题无意义论战中。<br>更何况，要想知道Java到底是传值还是传引用，起码你要先知道传值和传引用的准确含义吧？可是如果你已经知道了这两个名字的准确含义，那么你自己就能判断Java到底是传值还是传引用。</p>
+<h2 id="一：搞清楚-基本类型-和-引用类型的不同之处"><a href="#一：搞清楚-基本类型-和-引用类型的不同之处" class="headerlink" title="一：搞清楚 基本类型 和 引用类型的不同之处"></a>一：搞清楚 基本类型 和 引用类型的不同之处</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> num = <span class="number">10</span>;</span><br><span class="line">String str = <span class="string">"hello"</span>;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/05/11/Java%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E5%9F%BA%E7%A1%80%E5%88%86%E6%9E%90/2020-05-12_112353.png" alt></p>
+<p>如图所示，num是基本类型，值就直接保存在变量中。而str是引用类型，变量中保存的只是实际对象的地址。一般称这种变量为”引用”，引用指向实际对象，实际对象中保存着内容。</p>
+<p>二：搞清楚赋值运算符（=）的作用</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">num &#x3D; 20;</span><br><span class="line">str &#x3D; &quot;java&quot;;</span><br></pre></td></tr></table></figure>
+
+<p>对于基本类型 num ，赋值运算符会直接改变变量的值，原来的值被覆盖掉。<br>对于引用类型 str，赋值运算符会改变引用中所保存的地址，原来的地址被覆盖掉。但是原来的对象不会被改变（重要）。<br>如上图所示，”hello” 字符串对象没有被改变。（没有被任何引用所指向的对象是垃圾，会被垃圾回收器回收）</p>
+<p><img src="/2020/05/11/Java%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E5%9F%BA%E7%A1%80%E5%88%86%E6%9E%90/2020-05-12_112409.png" alt></p>
+<h2 id="三：调用方法时发生了什么？参数传递基本上就是赋值操作"><a href="#三：调用方法时发生了什么？参数传递基本上就是赋值操作" class="headerlink" title="三：调用方法时发生了什么？参数传递基本上就是赋值操作"></a>三：调用方法时发生了什么？参数传递基本上就是赋值操作</h2><p>第一个例子：基本类型</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">foo</span><span class="params">(<span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    value = <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">foo(num); <span class="comment">// num 没有被改变</span></span><br></pre></td></tr></table></figure>
+
+<p>第二个例子：没有提供改变自身方法的引用类型</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">foo</span><span class="params">(String text)</span> </span>&#123;</span><br><span class="line">    text = <span class="string">"windows"</span>;  <span class="comment">//String没改变是因为赋值新的字符串直接导致新new了一个String</span></span><br><span class="line">&#125;</span><br><span class="line">foo(str); <span class="comment">// str 也没有被改变</span></span><br></pre></td></tr></table></figure>
+
+<p>第三个例子：提供改变自身方法的引用类型</p>
+<p>builder的引用对象也是StringBuilder</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">StringBuilder sb = <span class="keyword">new</span> StringBuilder(<span class="string">"iphone"</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">foo</span><span class="params">(StringBuilder builder)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    builder.append(<span class="string">"4"</span>); <span class="comment">//没有生成新的stringBuilder对象</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">foo(sb); <span class="comment">// sb 被改变了，变成了"iphone4"。</span></span><br></pre></td></tr></table></figure>
+
+<p>第四个例子：提供了改变自身方法的引用类型，但是不使用，而是使用赋值运算符。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">StringBuilder sb = <span class="keyword">new</span> StringBuilder(<span class="string">"iphone"</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">foo</span><span class="params">(StringBuilder builder)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    builder = <span class="keyword">new</span> StringBuilder(<span class="string">"ipad"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(sb); <span class="comment">// sb 没有被改变，还是 "iphone"。</span></span><br></pre></td></tr></table></figure>
+
+<p>重点理解为什么，第三个例子和第四个例子结果不同？</p>
+<p>下面是第三个例子的图解：</p>
+<p><img src="/2020/05/11/Java%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E5%9F%BA%E7%A1%80%E5%88%86%E6%9E%90/2020-05-12_112424.png" alt></p>
+<p>builder = new StringBuilder(“ipad”); 之后</p>
+<p><img src="/2020/05/11/Java%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E5%9F%BA%E7%A1%80%E5%88%86%E6%9E%90/2020-05-12_112435.png" alt></p>
+]]></content>
+      <categories>
+        <category>面试</category>
       </categories>
       <tags>
         <tag>JAVASE</tag>
@@ -827,31 +869,6 @@
       </tags>
   </entry>
   <entry>
-    <title>char可以存储汉字吗？</title>
-    <url>/2020/05/06/char%E5%8F%AF%E4%BB%A5%E5%AD%98%E5%82%A8%E6%B1%89%E5%AD%97%E5%90%97%EF%BC%9F/</url>
-    <content><![CDATA[<h2 id="char存储汉字"><a href="#char存储汉字" class="headerlink" title="char存储汉字"></a>char存储汉字</h2><ul>
-<li><p>char是按照字符存储的，不管是英文还是中文，JAVA中固定占用2个字符，用来存储Unicode字符，范围在0-65535.</p>
-</li>
-<li><p>Unicode编码字符集中包含了汉字，所以char类型变量当然可以存储汉字拉。</p>
-<a id="more"></a>
-
-<h2 id="char和String的区别"><a href="#char和String的区别" class="headerlink" title="char和String的区别"></a>char和String的区别</h2><ul>
-<li>char表示字符，定义时用单引号，只能存储一个字符。如char c=‘x’ ;</li>
-<li>String表示的是字符串，可以存储一个或多个字符 如String name=”tom”;</li>
-<li>char是基本数据类型，但是String是一个类，具有面向对象的特征,可以调用方法</li>
-</ul>
-</li>
-</ul>
-<p>如name.length();</p>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>JAVASE</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Spring起步</title>
     <url>/2020/05/10/Spring%E8%B5%B7%E6%AD%A5/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -896,6 +913,129 @@
       </categories>
       <tags>
         <tag>Spring</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>char可以存储汉字吗？</title>
+    <url>/2020/05/06/char%E5%8F%AF%E4%BB%A5%E5%AD%98%E5%82%A8%E6%B1%89%E5%AD%97%E5%90%97%EF%BC%9F/</url>
+    <content><![CDATA[<h2 id="char存储汉字"><a href="#char存储汉字" class="headerlink" title="char存储汉字"></a>char存储汉字</h2><ul>
+<li><p>char是按照字符存储的，不管是英文还是中文，JAVA中固定占用2个字符，用来存储Unicode字符，范围在0-65535.</p>
+</li>
+<li><p>Unicode编码字符集中包含了汉字，所以char类型变量当然可以存储汉字拉。</p>
+<a id="more"></a>
+
+<h2 id="char和String的区别"><a href="#char和String的区别" class="headerlink" title="char和String的区别"></a>char和String的区别</h2><ul>
+<li>char表示字符，定义时用单引号，只能存储一个字符。如char c=‘x’ ;</li>
+<li>String表示的是字符串，可以存储一个或多个字符 如String name=”tom”;</li>
+<li>char是基本数据类型，但是String是一个类，具有面向对象的特征,可以调用方法</li>
+</ul>
+</li>
+</ul>
+<p>如name.length();</p>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>JAVASE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mysql插入数据</title>
+    <url>/2020/05/07/mysql%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍如何利用SQL的INSERT语句将数据插入到表中</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="插入到完整的行"><a href="#插入到完整的行" class="headerlink" title="插入到完整的行"></a>插入到完整的行</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">INSERT INTO Customers</span><br><span class="line">VALUES(<span class="literal">NULL</span>,</span><br><span class="line">       'PEP E.LAPEW',</span><br><span class="line">       '100 MAIN STREET',</span><br><span class="line">        'Los Angeles',</span><br><span class="line">         'CA',</span><br><span class="line">        '90046',</span><br><span class="line">         'USA',</span><br><span class="line">          <span class="literal">NULL</span>,</span><br><span class="line">          <span class="literal">NULL</span>);</span><br></pre></td></tr></table></figure>
+
+<p>编写INSERT语句的更加安全（不过更加繁琐）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">INSERT INTO customers(cust_name,cust_address,cust_city,cust_state,cust_zip,cust_country,cust_contact,cust_email)</span><br><span class="line">VALUSES(&#39;PEP E.LAPEW&#39;,</span><br><span class="line">       &#39;100 MAIN STREET&#39;,</span><br><span class="line">        &#39;Los Angeles&#39;,</span><br><span class="line">         &#39;CA&#39;,</span><br><span class="line">        &#39;90046&#39;,</span><br><span class="line">         &#39;USA&#39;,</span><br><span class="line">          NULL,</span><br><span class="line">          NULL&#39;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="省略列"><a href="#省略列" class="headerlink" title="省略列"></a>省略列</h3><ul>
+<li>该列定义为允许null值</li>
+<li>在表定义中给出默认值</li>
+</ul>
+<h3 id="提高整体性能"><a href="#提高整体性能" class="headerlink" title="提高整体性能"></a>提高整体性能</h3><p>如果数据检索是最重要的，那你可以通过在INSERT INTO 之间添加关键字</p>
+<p>LOW_PRIORITY 指示Mysql降低INSERT语句的优先级</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">INSERT LOW_PRIORITY INTO</span><br></pre></td></tr></table></figure>
+
+<h2 id="插入多个行"><a href="#插入多个行" class="headerlink" title="插入多个行"></a>插入多个行</h2><figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="function">INSERT INTO <span class="title">customers</span><span class="params">(cust_name,cust_address,cust_city,cust_state,cust_zip,cust_country,cust_contact,cust_email)</span></span></span><br><span class="line">VALUSES('PEP E.LAPEW',</span><br><span class="line">       '100 MAIN STREET',</span><br><span class="line">        'Los Angeles',</span><br><span class="line">         'CA',</span><br><span class="line">        '90046',</span><br><span class="line">         'USA',</span><br><span class="line">          <span class="literal">NULL</span>,</span><br><span class="line">          NULL'),</span><br><span class="line">       ('PEP E.LAPEW',</span><br><span class="line">       '100 MAIN STREET',</span><br><span class="line">        'Los Angeles',</span><br><span class="line">         'CA',</span><br><span class="line">        '90046',</span><br><span class="line">         'USA',</span><br><span class="line">          <span class="literal">NULL</span>,</span><br><span class="line">          NULL');</span><br></pre></td></tr></table></figure>
+
+<p>其中单条INSERT语句有多组值，每组值用一对圆括号括起来，用逗号分隔。</p>
+<h3 id="插入检索出的数据"><a href="#插入检索出的数据" class="headerlink" title="插入检索出的数据"></a>插入检索出的数据</h3><figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="function">INSERT INTO <span class="title">customers</span><span class="params">(cust_id,cust_name,cust_address,cust_city,cust_state,cust_zip,cust_country,cust_contact,cust_email)</span></span></span><br><span class="line">SELECT cust_id,cust_name,cust_address,cust_city,cust_state,cust_zip,cust_country,cust_contact,cust_email FROM custnew;</span><br></pre></td></tr></table></figure>
+
+<p>这个例子中INSERT SELECT 从custnew中将所有数据导入到customer中。</p>
+<p><strong>其实MYSQL不关心SELECT返回的列名，它使用的是列的位置，因此SELECT中的第一列用来填充表列中指定的第一列</strong>。</p>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mysql必知必会</title>
+    <url>/2020/05/03/mysql%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/</url>
+    <content><![CDATA[<p> 登录mysql -h localhost -u root -p<br> Show databases;<br> Use databasename;<br>Show tables;  //显示行</p>
+<a id="more"></a>
+<p> Show columns from xxx;   //显示列<br>SELECT DISTINCT  published FROM t_blog ;  DISTINCT此关键字指示只返回不同的值。<br> SELECT id FROM t_blog LIMIT 5;<br> SELECT id FROM t_blog LIMIT 3,3; //从第三行开始的后三行<br> SELECT t_blog.id FROM blog.t_blog;   完全限定的列名和表名 和之前的用法一样。<br> SELECT id,type_id,user_id FROM t_blog ORDER BY type_id,id;  先对type_id排序 再对id进行排序。<br> DESC 降序 ASC 升序  没多大用处<br> SELECT id FROM t_blog ORDER BY type_id LIMIT 1; 此种方式找到了数值最大的一行。<br> 在使用where 过滤时 ，order by 排序要在where的后面<br>  SELECT id FROM t_blog  where id &lt;&gt;10;   &lt;&gt; 不匹配检查<br> 范围值检查<br>  SELECT ID FROM T_BLOG WHERE ID BETWEEN 10 AND 20 :<br> Select id from t_blog where id is null;  空值检查<br> Select id,user_id from t_blog where id &lt;=10 and user_id &lt;=1;<br> Select prod_name,prod_price from products where vend_id=1002 or vend_id =1003 and<br>  Prod_price&gt;=10; SQL处理OR操作符和AND操作符时，优先处理AND操作符。<br> 故先处理 vend_id =1003 and prod_price&gt;=10  或者  vend_id=1002  ；<br>解决方法是<br>Select prod_name,prod_price from products where (vend_id =1002 or vend_id =1003) and prod_price &gt;=10    用( )来明确分组操作符。DBMS 首先过滤圆括号内的OR条件。<br>NOT 在MYSQL中的NOT中 MYSQL支持使用NOT 对IN,BETWEEN 和EXISTS子句取反。这与多数其他DBMS允许使用NOT对各种条件取反有很大区别。<br>######<br>通配符<br>用来匹配值的一部分的特殊字符<br>LIKE 指示MYSQL 后跟的搜索模式利用通配符匹配而不是直接相等匹配比较<br>SELECT prod_name FROM products WHERE prod_name REGEXP ‘[123] Ton’<br>ORDER BY prod_name;<br>正则表达式 [123]Ton 其中[123]定义一组字符<br>它的意思是匹配1或2或3  因此 1ton 和2ton 都匹配且返回了<br>[] 其实是另一种形式的OR语句<br>[1|2|3]Ton 的缩写 为 [123]Ton<br>1|2|3 Ton 的意思是检索出1或2或3 ton<br>[^123] 匹配除这些字符除外的任何东西<br> ^ 是REGEXP的否定符号<br>在匹配范围中<br>0到9  将由[0123456789] 等同于 [0-9]<br>.表示匹配一个字符<br>输入 SELECT vend_name FROM vendors WHERE vend_name REGEXP ‘.’ ORDER BY vend_name<br>.匹配任意字符  这时每一行都被检索出来 为了匹配特殊字符 必须用\ 作为前导<br>如<br>SELECT vend_name FROM vendors WHERE vend_name REGEXP ‘\.’ ORDER BY vend_name<br>这才是期望的输出 \.匹配. 这种处理就是所谓的转义。<br>？ 字符 ？匹配它前面的任何字符的0次或者1次出现。<br> 如 SELECT prod_name FROM products WHERE prod_name REGEXP ‘\([0-9] sticks?\)’<br> ORDER BY prod_name ;<br>Sticks 匹配 stick 和sticks s后的?使s可选<br>另外例如<br>SELECT prod_name FROM products WHERE prod_name REGEXP ‘[[:digit:]]{4}<br>ORDER BY prod_name；<br>[:digit:]匹配任意数字<br>因而它作为数字的一个集合<br>{4} 确切的要求它前面的字符 出现4次<br>匹配特定位置的文本，需要使用表9-4列出的定位符<br>^ 文本的开始<br>$ 文本的结尾<br>[[:&lt;:]] 词的开始<br>[[:&gt;;]] 词的结尾<br>‘^[0-9\.]’ 找出一个数 包括以小数点开始的数开始的所有产品。<br>SELECT prod_name FROM products WHERE prod_name REGEXP ‘^[0-9\.]’<br>ORDER BY prod_name;<br>在第10章 中 创建计算字段<br>MySQL 使用Concat() 函数来实现<br>SELECT Concat(vend_name,’（‘，vend_country,’）’)<br>FROM vendors ORDER BY vend_name;<br>拼接  将值联结到一起构成单个值<br>比如以上的输出为<br>ACME (USA)<br>删除数据右侧多余的空格来整理数据<br>MySQL 的RTrim()可以去掉值右边的所有的空格<br>SELECT Concat(RTrim(vend_name),’(‘,RTrim(vend_country),’)’)<br>FROM vendors<br>ORDER BY vend_name;<br>LTrim() 去掉串左边的空格<br>Trim()去掉左右俩边的空格<br>SELECT Concat (RTrim(vend_name),’(‘,RTrim(vend_country),’)’)AS vend_title FROM vendors ORDER BY vend_name;<br>一个未命名的列不能用于客户机的应用中，因为客户机没有办法去引用它。<br>所以才出现了别名。AS 关键字来赋予别名 任何客户机应用都可以按名来引用这个列，就像它是一个实际的表列一样。</p>
+<p>执行算数运算<br>SELECT pro_id,quantity,item_price FROM oderitems WHERE order order_num =20005;<br>在算数运算中 检索200005中的所有物品<br>如果要计算汇总物品的价格<br>SELECT prod_id ,quantity,item_price, quantity*item_price  AS expanded_price FROM oderitems WHERE order_num =20005;<br>此时客户机可以使用这个新计算的列，就像其他列一样。<br>MYSQL 支持基本算术运算符</p>
+<ul>
+<li><ul>
+<li>/ 圆括号可以用来区分优先顺序<br>第十一章 使用数据来处理函数<br>SELECT vend_name,Upper(vend_name) AS  vend_name_upcase FROM vendors ORDER BY vend_name;<br>Upper()将文本转换为大写<br>常用的文本处理函数：<br>Left() 返回串左边的字符<br>Length() 返回串的长度<br>Locate()返回串的一个子串<br>Lower()将串转换为小写<br>LTrim() 去掉左边的空格<br>Right()返回串右边的字符<br>RTrim() 去掉串右边的空格<br>Soundex()返回串的Soundex值<br>SubString() 返回子串的字符<br>Upper() 大写<br>Soundex（） 将任何文本串转换为描述其语音表示的字母数字模式的算法<br>如<br>SELECT cust_name ,cust_contact FROM customers WHERE cust_contact =’Y.Lie’;<br>其联系名是为Y.Lee 此时没办法搜索到<br>但是通过<br>SELECT cust_name,cust_contact FROM customers WHERE Soundex(cust_contact)=Soundex(‘Y.lie);<br>此时可以搜索到Y.Lee<br>日期和时间的处理函数<br>Date() 返回日期部分的日期部分<br>Year() 返回日期部分的年份部分<br>Day()<br>Month()</li>
+</ul>
+</li>
+</ul>
+<p>如：<br>SELECT cust_id,oder_num FROM oders WHERE Date(order_date)=’2005-09-01’;<br>SELECT cust_id,order_num FROM orders WHERE Date(order_date) BETWEEN ‘2005-09-01’AND’2005-03-30’;<br>数值处理函数<br>Abs() 返回数的绝对值</p>
+<p>Cos() 角度的余弦<br>Exp() 返回一个数的指数值<br>Mod() 操作数的余数<br>……<br>第12章 汇总数据<br>12.1 聚集函数  运行在行组上，计算和返回单个值得函数<br>AVG() 返回某列的平均值<br>COUNT()  返回某列的行数<br>MAX() 返回某列的最大值<br>MIN() 返回某列的最小值<br>SUM() 返回某列值之和<br>SELECT AVG(prod_price) AS avg_price FROM products;<br>AVG() 也可以用来确定列或行当平均值<br>SELECT AVG(prod_price) AS avg_price FROM products WHERE vend_id =1003;<br>COUNT () 函数<br>COUNT(<em>)对表中的行的数目进行技术<br>COUNT(column) 对特定列中具有值的行进行计数<br>例如SELECT COUNT(</em>) AS num_cust FROM customers;<br>利用COUNT(<em>)对所有行计数<br>SELECT COUNT(cust_email) AS num_cust FROM customers;<br>对于cust_email中所有有值的行进行计数<br>MAX() 指定列中的最大值 MAX()要求指定列名。<br>MIN()<br>SUM() 也可以用来合计计算值 用来得出总的订单金额<br>SELECT SUM(item_price  *quantity) AS total_price FROM oderitems WHERE order_num=20005;<br>SUM(item_price *quantity) 返回订单中所有物品价钱之和<br>第13章 分组数据<br>SELECT vend_id ,COUNT(</em>) AS num_prods FROM products GROUP BY vend_id;<br>Vend_id num_prods<br>1001        3<br>1002        2<br>1003        7<br>1005        2<br>上述语句将vend_id进行分组，GROUP BY 对于分组的整个结果集进行聚集<br>使用ROLLUP 使用WITH ROLLUP 关键字，将得到每个分组以及分组汇总级别的值<br>2如何过滤分组?<br>HAVING<br>如： SELECT cust_id ,COUNT(<em>)AS orders FROM orders GROUP BY cust_id<br>HAVING COUNT(</em>) &gt;=2<br>它过滤COUNT(<em>)&gt;=2 的那些分组<br>输入： SELECT vend_id,COUNT(</em>) AS num_prods FROM products WHERE prod_price &gt;=10<br>GROUP BY vend_id HAVING COUNT(<em>)&gt;=2;<br>13.4 分组和排序<br>GROUP BY 和ORDER BY<br>GROUP BY  是在ORDER BY 之前，在where 之后<br>第14章 子查询<br>子查询：嵌套在其他查询中的查询<br>1 检索包含物品TNT2 的所有订单的编号<br> SELECT order_num FROM orderitems WHERE prod_id =’TNT2’；<br>2 检索具有前一步骤列出的订单编号的所有客户的ID<br> SELECT cust_id FROM orders WHERE order_num IN (20005,20007);<br>3 现在把第一个查询变为子查询 组合成俩个查询：<br> SELECT cust_id FROM oders WHERE order_num IN (SELECT order_num FROM orderitems WHERE prod_id =’TNT2’);<br>在SELECT 语句中，子查询总是从内向外查询处理。<br>检索这些客户的ID的客户信息，检索俩列的SQL语句为：<br>SELECT cust_name, cust_contact FROM customers WHERE cust_id IN (10001,10004);<br>则可以转换为：<br>SELECT cust_name ,cust_contact FROM customers WHERE cust_id IN (SELECT cust_id FROM orders WHERE order_num IN (SELECT order_num FROM orderitems WHERE prod_Id =’TNT2’))；<br>计算结果子查询：<br>SELECT cust_name,cust_state,(SELECT COUNT(</em>) FROM oders WHERE orders.cust_id=customers.cust_id)AS orders FROM customers ORDER BY cust_name;<br>第15 章  联结表  join 表<br>外键位某个表中的一列 它包含另一个表的主键值定义了俩个表之间的关系。<br>SELECT vent_name,prod_name,prod_price<br>FROM vendors ,products<br>WHERE vendors.vend_id=products.vend_id;<br>ORDER BY vend_name,prod_name ;<br>此种方法通过WHERE子句来限定了列名 ，如果要给出 vend_id 那么mysql_id 并不知道是哪个<br>存在一种状况是<br>笛卡尔积：<br>在不指定where子句时<br>：<br>SELECT vend_name ,prod_name,prod_price<br>FROM vendors,products ORDER BY vend_name,prod_name;<br>15.2.2 内部联结<br>目前为止所使用的联结称为 等值联结  它基于俩个表之间的相等测试 这种联结也叫内部联结。<br>SELECT vend_name , prod_name , prod_price FROM vendors INNER JOIN products ON vendors.vend_id =products.vend_id ;<br>此时使用的是INNER JOIN  联结条件用的是ON<br>联结多个表：<br>SELECT prod_name,vend_name,prod_price,quantity FROM orderitems,products,vendors WHERE products.vend_id =vendors.vend_id AND orderitems.prod_id =products.prod_id AND order_num =20005;<br>第16章 创建高级联结<br>使用表别名<br>SELECT Concat(RTrim(vend_name)，‘（’，RTrim（vend_country）,’）’) AS vend_title FROM vendors ORDER BY vend_name;<br>内部联结：<br>它基于俩个表之间的相等测试<br>SELECT vend_name .prod_name,prod_price FROM vendors INNER JOIN products ON vendors.vend_id =produces.vend_id;<br>自联结： 引用别名，自己联结自己<br>SELECT p1.prod_id,p1.prod_name FROM products AS p1,products AS p2<br>WHERE p1.vend_id =p2.vend_id AND p2.prod_id =’DTNTR’;<br>此查询种需要的俩个表实际上是相同的表。<br>因此products 表在from 子句中出现了俩次。虽然这是合法的，但是对products 的引用具有二义性。因此使用了别名。（用自联结而不用子查询。有时候处理联结要比处理查询要快的多）<br>自然联结：<br>其中你只能选择那些唯一的列。<br>通过对表使用通配符（SELECT <em>）对所有其他表的列使用明确的子集来完成的。<br>SELECT c.</em>,o.ordr_num,o.order_date,oi.prod_id,oi.quantity,OI.item_price FROM customers AS c,orders AS o,orderitems AS oi WHERE c.cust_id =o.cust_id AND oi.order_num =o.order_num<br>AND prod_id =’FB’;<br>通配符只对第一个表使用，所有其他列明确列出，所以没有重复的列被检索出来。<br>外部联结：<br>许多联结将一个表中的行与另外一个表中的行相关联，但有时候会需要包含没有关联行的那些行，例如  可能需要使用联结来完成以下的工作：<br>1对每个客户下了多少订单进行计数，包括那些至今未下订单的客户。<br>2列出所有产品以及订购数量，包括没有人订购的产品<br>3计算平均销售规模，包括那些至今未下订单的客户<br>联结包含了那些在相关表中没有关联行的行，这种叫做外部联结<br>内部联结检索所有客户及其订单：<br>SELECT customers.cust_id,order.orders.order_num FROM customers INNER JOIN orders ON<br>Customers.cust_id =orders.cust_id;<br>外部联结：<br>SELECT customers.cust_id ,orders.order_num FROM customers LEFT OUTER JOIN oders<br>ON customers.cust_id =orders.cust_id;<br>输出为：<br> cust_id   order_num<br>  10001      20005<br>  10001      20009<br>  10002       null<br> 10003       null<br>此时必须要用RIGHT 或LEFT 关键字指定包括其所有行的表<br>其实就是左外部联结和右外部联结<br>16.3 使用带聚集函数的联结<br>使用了COUNT（）函数的联结<br>SELECT customers.cust_name, customers.cust_id,COUNT(orders.order_num) AS num_ord FROM customers INNER JOIN orders ON customers.cust_id =orders.cust_id GROUP BY customers.cust_id;<br>SELECT 语句使用INNER JOIN 将customers和orders 表互相关联。 GROUP BY 子句按客户分组数据。<br>聚集函数也可以方便地与其他联结一起使用，<br>如 SELECT customers,cust_name,cusomers,cust_id,COUNT(orders,order_num)AS num_ord FROM customers LEFT OUTER JOIN orders ON customers.cust_id =orders.cust_id  GROUP BY customers.cust_id;<br>17 章 组合查询<br>利用UNION 操作符将多条SELECT 语句组合成一个结果集<br>执行多个查询，多个SELECT 语句 并将结果作为单个查询结果集返回。<br>这种称为并（union）或复合查询<br>使用UNION<br>输入<br>SELECT vend_id ,prod_id ,prod_price FROM products WHERE prod_price &lt;=5<br>UNION<br>SELECT vend_id,prod_id,prod_price FROM products WHERE vend_id IN(1001,1002);<br>也可以使用多个where<br>SELECT vend_id ,prod_id,prod_price FROM products WHERE prod_price &lt;=5 OR vend_id IN<br>(1001,1002);<br>从多个表中检索数据的情形，使用UNION 可能会处理更简单。<br>17.2.2 UNION 规则<br> 1   UNION 的每个查询必须包含相同的列，表达式，或聚集函数</p>
+<p> 2   UNION 的默认行为，如果想返回所有匹配行 可以使用UNION ALL 而不是UNION<br> 17.2.4 对组合查询结果排序<br>SELECT vend_id ,prod_id,prod_price FROM products WHERE prod_price &lt;=5<br>UNION<br>SELECT vend_id,prod_id,prod_price FROM products WHERE vend_id IN (1001,1002)<br>ORDER BY vend_id ,prod_price ;<br>18章 全文本搜素<br>18.1 理解全文本搜素</p>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mysql更新和删除数据</title>
+    <url>/2020/05/07/mysql%E6%9B%B4%E6%96%B0%E5%92%8C%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍如何利用UPDATA和DELETE语句进一步操控表数据</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="更新数据"><a href="#更新数据" class="headerlink" title="更新数据"></a>更新数据</h2><ul>
+<li>更新特定行</li>
+<li>更新所有行 <strong>特别注意不要省略WHERE子句 稍不注意就会更新表中的所有行</strong></li>
+</ul>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">UPDATA customers SET cust_email ='elmer@gmail.com' WHERE cust_id =10005;</span><br></pre></td></tr></table></figure>
+
+<p>更新多个列： 用逗号分隔</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">UPDATE customers SET cust_name='The Fudds',</span><br><span class="line">cust_email='elmer@gmail.com'</span><br><span class="line">WHERE cust_id =<span class="number">10005</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="IGNORE关键字"><a href="#IGNORE关键字" class="headerlink" title="IGNORE关键字"></a>IGNORE关键字</h3><p>如果用UPDATE 语句更新多行，并且在更新这些行中的一行或多行时出现一个现错误，则整个UPDATE操作被取消。</p>
+<p>为即使是发生错误，也继续进行更新可以使用<strong>IGNORE</strong>关键字</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">UPDATE IGNORE customers...</span><br></pre></td></tr></table></figure>
+
+<h2 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h2><ul>
+<li>从表中删除特定的行</li>
+<li>从表中删除所有行  <strong>不要省略WHERE子句</strong></li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">DELETE FROM customers WHERE cust_id =<span class="number">10006</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="更快的删除"><a href="#更快的删除" class="headerlink" title="更快的删除"></a>更快的删除</h3><p>如果想删除所有行</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">TRUNCATE TABLE</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
       </tags>
   </entry>
   <entry>
@@ -963,58 +1103,68 @@
       </tags>
   </entry>
   <entry>
-    <title>mysql插入数据</title>
-    <url>/2020/05/07/mysql%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE/</url>
+    <title>两数之和</title>
+    <url>/2020/05/11/%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍如何利用SQL的INSERT语句将数据插入到表中</p>
+<p>本章介绍</p>
 </blockquote>
 <a id="more"></a>
 
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="插入到完整的行"><a href="#插入到完整的行" class="headerlink" title="插入到完整的行"></a>插入到完整的行</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">INSERT INTO Customers</span><br><span class="line">VALUES(<span class="literal">NULL</span>,</span><br><span class="line">       'PEP E.LAPEW',</span><br><span class="line">       '100 MAIN STREET',</span><br><span class="line">        'Los Angeles',</span><br><span class="line">         'CA',</span><br><span class="line">        '90046',</span><br><span class="line">         'USA',</span><br><span class="line">          <span class="literal">NULL</span>,</span><br><span class="line">          <span class="literal">NULL</span>);</span><br></pre></td></tr></table></figure>
-
-<p>编写INSERT语句的更加安全（不过更加繁琐）</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">INSERT INTO customers(cust_name,cust_address,cust_city,cust_state,cust_zip,cust_country,cust_contact,cust_email)</span><br><span class="line">VALUSES(&#39;PEP E.LAPEW&#39;,</span><br><span class="line">       &#39;100 MAIN STREET&#39;,</span><br><span class="line">        &#39;Los Angeles&#39;,</span><br><span class="line">         &#39;CA&#39;,</span><br><span class="line">        &#39;90046&#39;,</span><br><span class="line">         &#39;USA&#39;,</span><br><span class="line">          NULL,</span><br><span class="line">          NULL&#39;);</span><br></pre></td></tr></table></figure>
-
-<h3 id="省略列"><a href="#省略列" class="headerlink" title="省略列"></a>省略列</h3><ul>
-<li>该列定义为允许null值</li>
-<li>在表定义中给出默认值</li>
-</ul>
-<h3 id="提高整体性能"><a href="#提高整体性能" class="headerlink" title="提高整体性能"></a>提高整体性能</h3><p>如果数据检索是最重要的，那你可以通过在INSERT INTO 之间添加关键字</p>
-<p>LOW_PRIORITY 指示Mysql降低INSERT语句的优先级</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">INSERT LOW_PRIORITY INTO</span><br></pre></td></tr></table></figure>
-
-<h2 id="插入多个行"><a href="#插入多个行" class="headerlink" title="插入多个行"></a>插入多个行</h2><figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="function">INSERT INTO <span class="title">customers</span><span class="params">(cust_name,cust_address,cust_city,cust_state,cust_zip,cust_country,cust_contact,cust_email)</span></span></span><br><span class="line">VALUSES('PEP E.LAPEW',</span><br><span class="line">       '100 MAIN STREET',</span><br><span class="line">        'Los Angeles',</span><br><span class="line">         'CA',</span><br><span class="line">        '90046',</span><br><span class="line">         'USA',</span><br><span class="line">          <span class="literal">NULL</span>,</span><br><span class="line">          NULL'),</span><br><span class="line">       ('PEP E.LAPEW',</span><br><span class="line">       '100 MAIN STREET',</span><br><span class="line">        'Los Angeles',</span><br><span class="line">         'CA',</span><br><span class="line">        '90046',</span><br><span class="line">         'USA',</span><br><span class="line">          <span class="literal">NULL</span>,</span><br><span class="line">          NULL');</span><br></pre></td></tr></table></figure>
-
-<p>其中单条INSERT语句有多组值，每组值用一对圆括号括起来，用逗号分隔。</p>
-<h3 id="插入检索出的数据"><a href="#插入检索出的数据" class="headerlink" title="插入检索出的数据"></a>插入检索出的数据</h3><figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="function">INSERT INTO <span class="title">customers</span><span class="params">(cust_id,cust_name,cust_address,cust_city,cust_state,cust_zip,cust_country,cust_contact,cust_email)</span></span></span><br><span class="line">SELECT cust_id,cust_name,cust_address,cust_city,cust_state,cust_zip,cust_country,cust_contact,cust_email FROM custnew;</span><br></pre></td></tr></table></figure>
-
-<p>这个例子中INSERT SELECT 从custnew中将所有数据导入到customer中。</p>
-<p><strong>其实MYSQL不关心SELECT返回的列名，它使用的是列的位置，因此SELECT中的第一列用来填充表列中指定的第一列</strong>。</p>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>mysql</tag>
-      </tags>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
   </entry>
   <entry>
-    <title>mysql必知必会</title>
-    <url>/2020/05/03/mysql%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/</url>
-    <content><![CDATA[<p> 登录mysql -h localhost -u root -p<br> Show databases;<br> Use databasename;<br>Show tables;  //显示行</p>
+    <title>mysql联结表</title>
+    <url>/2020/05/08/mysql%E8%81%94%E7%BB%93%E8%A1%A8/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍联结以及高级联结。</p>
+</blockquote>
 <a id="more"></a>
-<p> Show columns from xxx;   //显示列<br>SELECT DISTINCT  published FROM t_blog ;  DISTINCT此关键字指示只返回不同的值。<br> SELECT id FROM t_blog LIMIT 5;<br> SELECT id FROM t_blog LIMIT 3,3; //从第三行开始的后三行<br> SELECT t_blog.id FROM blog.t_blog;   完全限定的列名和表名 和之前的用法一样。<br> SELECT id,type_id,user_id FROM t_blog ORDER BY type_id,id;  先对type_id排序 再对id进行排序。<br> DESC 降序 ASC 升序  没多大用处<br> SELECT id FROM t_blog ORDER BY type_id LIMIT 1; 此种方式找到了数值最大的一行。<br> 在使用where 过滤时 ，order by 排序要在where的后面<br>  SELECT id FROM t_blog  where id &lt;&gt;10;   &lt;&gt; 不匹配检查<br> 范围值检查<br>  SELECT ID FROM T_BLOG WHERE ID BETWEEN 10 AND 20 :<br> Select id from t_blog where id is null;  空值检查<br> Select id,user_id from t_blog where id &lt;=10 and user_id &lt;=1;<br> Select prod_name,prod_price from products where vend_id=1002 or vend_id =1003 and<br>  Prod_price&gt;=10; SQL处理OR操作符和AND操作符时，优先处理AND操作符。<br> 故先处理 vend_id =1003 and prod_price&gt;=10  或者  vend_id=1002  ；<br>解决方法是<br>Select prod_name,prod_price from products where (vend_id =1002 or vend_id =1003) and prod_price &gt;=10    用( )来明确分组操作符。DBMS 首先过滤圆括号内的OR条件。<br>NOT 在MYSQL中的NOT中 MYSQL支持使用NOT 对IN,BETWEEN 和EXISTS子句取反。这与多数其他DBMS允许使用NOT对各种条件取反有很大区别。<br>######<br>通配符<br>用来匹配值的一部分的特殊字符<br>LIKE 指示MYSQL 后跟的搜索模式利用通配符匹配而不是直接相等匹配比较<br>SELECT prod_name FROM products WHERE prod_name REGEXP ‘[123] Ton’<br>ORDER BY prod_name;<br>正则表达式 [123]Ton 其中[123]定义一组字符<br>它的意思是匹配1或2或3  因此 1ton 和2ton 都匹配且返回了<br>[] 其实是另一种形式的OR语句<br>[1|2|3]Ton 的缩写 为 [123]Ton<br>1|2|3 Ton 的意思是检索出1或2或3 ton<br>[^123] 匹配除这些字符除外的任何东西<br> ^ 是REGEXP的否定符号<br>在匹配范围中<br>0到9  将由[0123456789] 等同于 [0-9]<br>.表示匹配一个字符<br>输入 SELECT vend_name FROM vendors WHERE vend_name REGEXP ‘.’ ORDER BY vend_name<br>.匹配任意字符  这时每一行都被检索出来 为了匹配特殊字符 必须用\ 作为前导<br>如<br>SELECT vend_name FROM vendors WHERE vend_name REGEXP ‘\.’ ORDER BY vend_name<br>这才是期望的输出 \.匹配. 这种处理就是所谓的转义。<br>？ 字符 ？匹配它前面的任何字符的0次或者1次出现。<br> 如 SELECT prod_name FROM products WHERE prod_name REGEXP ‘\([0-9] sticks?\)’<br> ORDER BY prod_name ;<br>Sticks 匹配 stick 和sticks s后的?使s可选<br>另外例如<br>SELECT prod_name FROM products WHERE prod_name REGEXP ‘[[:digit:]]{4}<br>ORDER BY prod_name；<br>[:digit:]匹配任意数字<br>因而它作为数字的一个集合<br>{4} 确切的要求它前面的字符 出现4次<br>匹配特定位置的文本，需要使用表9-4列出的定位符<br>^ 文本的开始<br>$ 文本的结尾<br>[[:&lt;:]] 词的开始<br>[[:&gt;;]] 词的结尾<br>‘^[0-9\.]’ 找出一个数 包括以小数点开始的数开始的所有产品。<br>SELECT prod_name FROM products WHERE prod_name REGEXP ‘^[0-9\.]’<br>ORDER BY prod_name;<br>在第10章 中 创建计算字段<br>MySQL 使用Concat() 函数来实现<br>SELECT Concat(vend_name,’（‘，vend_country,’）’)<br>FROM vendors ORDER BY vend_name;<br>拼接  将值联结到一起构成单个值<br>比如以上的输出为<br>ACME (USA)<br>删除数据右侧多余的空格来整理数据<br>MySQL 的RTrim()可以去掉值右边的所有的空格<br>SELECT Concat(RTrim(vend_name),’(‘,RTrim(vend_country),’)’)<br>FROM vendors<br>ORDER BY vend_name;<br>LTrim() 去掉串左边的空格<br>Trim()去掉左右俩边的空格<br>SELECT Concat (RTrim(vend_name),’(‘,RTrim(vend_country),’)’)AS vend_title FROM vendors ORDER BY vend_name;<br>一个未命名的列不能用于客户机的应用中，因为客户机没有办法去引用它。<br>所以才出现了别名。AS 关键字来赋予别名 任何客户机应用都可以按名来引用这个列，就像它是一个实际的表列一样。</p>
-<p>执行算数运算<br>SELECT pro_id,quantity,item_price FROM oderitems WHERE order order_num =20005;<br>在算数运算中 检索200005中的所有物品<br>如果要计算汇总物品的价格<br>SELECT prod_id ,quantity,item_price, quantity*item_price  AS expanded_price FROM oderitems WHERE order_num =20005;<br>此时客户机可以使用这个新计算的列，就像其他列一样。<br>MYSQL 支持基本算术运算符</p>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="创建联结"><a href="#创建联结" class="headerlink" title="创建联结"></a>创建联结</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">SELECT vent_name,prod_name,prod_price </span><br><span class="line">FROM vendors ,products </span><br><span class="line">WHERE vendors.vend_id=products.vend_id;</span><br><span class="line">ORDER BY vend_name,prod_name ;</span><br></pre></td></tr></table></figure>
+
+<h2 id="内部联结"><a href="#内部联结" class="headerlink" title="内部联结"></a>内部联结</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">SELECT vend_name , prod_name , prod_price FROM vendors INNER JOIN products ON vendors.vend_id =products.vend_id ;</span><br></pre></td></tr></table></figure>
+
+<p>此时使用的是INNER JOIN 联结条件用的是ON</p>
+<p>联结多个表：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">SELECT prod_name,vend_name,prod_price,quantity FROM orderitems,products,vendors WHERE products.vend_id =vendors.vend_id AND orderitems.prod_id =products.prod_id AND order_num =<span class="number">20005</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建高级联结"><a href="#创建高级联结" class="headerlink" title="创建高级联结"></a>创建高级联结</h2><h3 id="使用表别名"><a href="#使用表别名" class="headerlink" title="使用表别名"></a>使用表别名</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function">SELECT <span class="title">Concat</span><span class="params">(RTrim(vend_name)，‘（’，RTrim（vend_country）,’）’)</span> AS vend_title FROM vendors ORDER BY vend_name</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="内部联结："><a href="#内部联结：" class="headerlink" title="内部联结："></a>内部联结：</h3><p>它基于俩个表之间的相等测试</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">SELECT vend_name .prod_name,prod_price FROM vendors INNER JOIN products ON vendors.vend_id =produces.vend_id;</span><br></pre></td></tr></table></figure>
+
+<h3 id="自联结：-引用别名，自己联结自己"><a href="#自联结：-引用别名，自己联结自己" class="headerlink" title="自联结： 引用别名，自己联结自己"></a>自联结： 引用别名，自己联结自己</h3><p>假如你发现某物品（其ID为DTNRT)存在问题，因此想知道生产该物品的供应商生产的其他物品是否也存在这些问题。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">SELECT p1.prod_id,p1.prod_name FROM products AS p1,products AS p2</span><br><span class="line">WHERE p1.vend_id =p2.vend_id AND p2.prod_id =’DTNTR’;</span><br></pre></td></tr></table></figure>
+
+<p>因此products 表在from 子句中出现了俩次。虽然这是合法的，但是对products 的引用具有二义性。因此使用了别名。（用自联结而不用子查询。有时候处理联结要比处理查询要快的多）</p>
+<h3 id="自然联结"><a href="#自然联结" class="headerlink" title="自然联结"></a>自然联结</h3><p><strong>自然联结的意思是排除多次出现，使每个列只返回一次。</strong></p>
+<p><strong>我们建立的每个内部联结都是自然联结。</strong></p>
+<p>示例通过对表使用通配符（SELECT *）对所有其他表的列使用明确的子集来完成的。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">SELECT c.*,o.ordr_num,o.order_date,oi.prod_id,oi.quantity,OI.item_price FROM customers AS c,orders AS o,orderitems AS oi WHERE c.cust_id =o.cust_id AND oi.order_num =o.order_num</span><br><span class="line">AND prod_id =’FB’;</span><br></pre></td></tr></table></figure>
+
+<p>通配符只对第一个表使用，所有其他列明确列出，但没有重复的列被检索出来。</p>
+<h3 id="外部联结："><a href="#外部联结：" class="headerlink" title="外部联结："></a>外部联结：</h3><p><strong>许多联结将一个表中的行与另外一个表中的行相关联，但有时候会需要包含没有关联行的那些行，</strong>例如 可能需要使用联结来完成以下的工作：</p>
 <ul>
-<li><ul>
-<li>/ 圆括号可以用来区分优先顺序<br>第十一章 使用数据来处理函数<br>SELECT vend_name,Upper(vend_name) AS  vend_name_upcase FROM vendors ORDER BY vend_name;<br>Upper()将文本转换为大写<br>常用的文本处理函数：<br>Left() 返回串左边的字符<br>Length() 返回串的长度<br>Locate()返回串的一个子串<br>Lower()将串转换为小写<br>LTrim() 去掉左边的空格<br>Right()返回串右边的字符<br>RTrim() 去掉串右边的空格<br>Soundex()返回串的Soundex值<br>SubString() 返回子串的字符<br>Upper() 大写<br>Soundex（） 将任何文本串转换为描述其语音表示的字母数字模式的算法<br>如<br>SELECT cust_name ,cust_contact FROM customers WHERE cust_contact =’Y.Lie’;<br>其联系名是为Y.Lee 此时没办法搜索到<br>但是通过<br>SELECT cust_name,cust_contact FROM customers WHERE Soundex(cust_contact)=Soundex(‘Y.lie);<br>此时可以搜索到Y.Lee<br>日期和时间的处理函数<br>Date() 返回日期部分的日期部分<br>Year() 返回日期部分的年份部分<br>Day()<br>Month()</li>
+<li>对每个客户下了多少订单进行计数，包括那些至今未下订单的客户。</li>
+<li>列出所有产品以及订购数量，包括没有人订购的产品</li>
+<li>计算平均销售规模，包括那些至今未下订单的客户</li>
 </ul>
-</li>
-</ul>
-<p>如：<br>SELECT cust_id,oder_num FROM oders WHERE Date(order_date)=’2005-09-01’;<br>SELECT cust_id,order_num FROM orders WHERE Date(order_date) BETWEEN ‘2005-09-01’AND’2005-03-30’;<br>数值处理函数<br>Abs() 返回数的绝对值</p>
-<p>Cos() 角度的余弦<br>Exp() 返回一个数的指数值<br>Mod() 操作数的余数<br>……<br>第12章 汇总数据<br>12.1 聚集函数  运行在行组上，计算和返回单个值得函数<br>AVG() 返回某列的平均值<br>COUNT()  返回某列的行数<br>MAX() 返回某列的最大值<br>MIN() 返回某列的最小值<br>SUM() 返回某列值之和<br>SELECT AVG(prod_price) AS avg_price FROM products;<br>AVG() 也可以用来确定列或行当平均值<br>SELECT AVG(prod_price) AS avg_price FROM products WHERE vend_id =1003;<br>COUNT () 函数<br>COUNT(<em>)对表中的行的数目进行技术<br>COUNT(column) 对特定列中具有值的行进行计数<br>例如SELECT COUNT(</em>) AS num_cust FROM customers;<br>利用COUNT(<em>)对所有行计数<br>SELECT COUNT(cust_email) AS num_cust FROM customers;<br>对于cust_email中所有有值的行进行计数<br>MAX() 指定列中的最大值 MAX()要求指定列名。<br>MIN()<br>SUM() 也可以用来合计计算值 用来得出总的订单金额<br>SELECT SUM(item_price  *quantity) AS total_price FROM oderitems WHERE order_num=20005;<br>SUM(item_price *quantity) 返回订单中所有物品价钱之和<br>第13章 分组数据<br>SELECT vend_id ,COUNT(</em>) AS num_prods FROM products GROUP BY vend_id;<br>Vend_id num_prods<br>1001        3<br>1002        2<br>1003        7<br>1005        2<br>上述语句将vend_id进行分组，GROUP BY 对于分组的整个结果集进行聚集<br>使用ROLLUP 使用WITH ROLLUP 关键字，将得到每个分组以及分组汇总级别的值<br>2如何过滤分组?<br>HAVING<br>如： SELECT cust_id ,COUNT(<em>)AS orders FROM orders GROUP BY cust_id<br>HAVING COUNT(</em>) &gt;=2<br>它过滤COUNT(<em>)&gt;=2 的那些分组<br>输入： SELECT vend_id,COUNT(</em>) AS num_prods FROM products WHERE prod_price &gt;=10<br>GROUP BY vend_id HAVING COUNT(<em>)&gt;=2;<br>13.4 分组和排序<br>GROUP BY 和ORDER BY<br>GROUP BY  是在ORDER BY 之前，在where 之后<br>第14章 子查询<br>子查询：嵌套在其他查询中的查询<br>1 检索包含物品TNT2 的所有订单的编号<br> SELECT order_num FROM orderitems WHERE prod_id =’TNT2’；<br>2 检索具有前一步骤列出的订单编号的所有客户的ID<br> SELECT cust_id FROM orders WHERE order_num IN (20005,20007);<br>3 现在把第一个查询变为子查询 组合成俩个查询：<br> SELECT cust_id FROM oders WHERE order_num IN (SELECT order_num FROM orderitems WHERE prod_id =’TNT2’);<br>在SELECT 语句中，子查询总是从内向外查询处理。<br>检索这些客户的ID的客户信息，检索俩列的SQL语句为：<br>SELECT cust_name, cust_contact FROM customers WHERE cust_id IN (10001,10004);<br>则可以转换为：<br>SELECT cust_name ,cust_contact FROM customers WHERE cust_id IN (SELECT cust_id FROM orders WHERE order_num IN (SELECT order_num FROM orderitems WHERE prod_Id =’TNT2’))；<br>计算结果子查询：<br>SELECT cust_name,cust_state,(SELECT COUNT(</em>) FROM oders WHERE orders.cust_id=customers.cust_id)AS orders FROM customers ORDER BY cust_name;<br>第15 章  联结表  join 表<br>外键位某个表中的一列 它包含另一个表的主键值定义了俩个表之间的关系。<br>SELECT vent_name,prod_name,prod_price<br>FROM vendors ,products<br>WHERE vendors.vend_id=products.vend_id;<br>ORDER BY vend_name,prod_name ;<br>此种方法通过WHERE子句来限定了列名 ，如果要给出 vend_id 那么mysql_id 并不知道是哪个<br>存在一种状况是<br>笛卡尔积：<br>在不指定where子句时<br>：<br>SELECT vend_name ,prod_name,prod_price<br>FROM vendors,products ORDER BY vend_name,prod_name;<br>15.2.2 内部联结<br>目前为止所使用的联结称为 等值联结  它基于俩个表之间的相等测试 这种联结也叫内部联结。<br>SELECT vend_name , prod_name , prod_price FROM vendors INNER JOIN products ON vendors.vend_id =products.vend_id ;<br>此时使用的是INNER JOIN  联结条件用的是ON<br>联结多个表：<br>SELECT prod_name,vend_name,prod_price,quantity FROM orderitems,products,vendors WHERE products.vend_id =vendors.vend_id AND orderitems.prod_id =products.prod_id AND order_num =20005;<br>第16章 创建高级联结<br>使用表别名<br>SELECT Concat(RTrim(vend_name)，‘（’，RTrim（vend_country）,’）’) AS vend_title FROM vendors ORDER BY vend_name;<br>内部联结：<br>它基于俩个表之间的相等测试<br>SELECT vend_name .prod_name,prod_price FROM vendors INNER JOIN products ON vendors.vend_id =produces.vend_id;<br>自联结： 引用别名，自己联结自己<br>SELECT p1.prod_id,p1.prod_name FROM products AS p1,products AS p2<br>WHERE p1.vend_id =p2.vend_id AND p2.prod_id =’DTNTR’;<br>此查询种需要的俩个表实际上是相同的表。<br>因此products 表在from 子句中出现了俩次。虽然这是合法的，但是对products 的引用具有二义性。因此使用了别名。（用自联结而不用子查询。有时候处理联结要比处理查询要快的多）<br>自然联结：<br>其中你只能选择那些唯一的列。<br>通过对表使用通配符（SELECT <em>）对所有其他表的列使用明确的子集来完成的。<br>SELECT c.</em>,o.ordr_num,o.order_date,oi.prod_id,oi.quantity,OI.item_price FROM customers AS c,orders AS o,orderitems AS oi WHERE c.cust_id =o.cust_id AND oi.order_num =o.order_num<br>AND prod_id =’FB’;<br>通配符只对第一个表使用，所有其他列明确列出，所以没有重复的列被检索出来。<br>外部联结：<br>许多联结将一个表中的行与另外一个表中的行相关联，但有时候会需要包含没有关联行的那些行，例如  可能需要使用联结来完成以下的工作：<br>1对每个客户下了多少订单进行计数，包括那些至今未下订单的客户。<br>2列出所有产品以及订购数量，包括没有人订购的产品<br>3计算平均销售规模，包括那些至今未下订单的客户<br>联结包含了那些在相关表中没有关联行的行，这种叫做外部联结<br>内部联结检索所有客户及其订单：<br>SELECT customers.cust_id,order.orders.order_num FROM customers INNER JOIN orders ON<br>Customers.cust_id =orders.cust_id;<br>外部联结：<br>SELECT customers.cust_id ,orders.order_num FROM customers LEFT OUTER JOIN oders<br>ON customers.cust_id =orders.cust_id;<br>输出为：<br> cust_id   order_num<br>  10001      20005<br>  10001      20009<br>  10002       null<br> 10003       null<br>此时必须要用RIGHT 或LEFT 关键字指定包括其所有行的表<br>其实就是左外部联结和右外部联结<br>16.3 使用带聚集函数的联结<br>使用了COUNT（）函数的联结<br>SELECT customers.cust_name, customers.cust_id,COUNT(orders.order_num) AS num_ord FROM customers INNER JOIN orders ON customers.cust_id =orders.cust_id GROUP BY customers.cust_id;<br>SELECT 语句使用INNER JOIN 将customers和orders 表互相关联。 GROUP BY 子句按客户分组数据。<br>聚集函数也可以方便地与其他联结一起使用，<br>如 SELECT customers,cust_name,cusomers,cust_id,COUNT(orders,order_num)AS num_ord FROM customers LEFT OUTER JOIN orders ON customers.cust_id =orders.cust_id  GROUP BY customers.cust_id;<br>17 章 组合查询<br>利用UNION 操作符将多条SELECT 语句组合成一个结果集<br>执行多个查询，多个SELECT 语句 并将结果作为单个查询结果集返回。<br>这种称为并（union）或复合查询<br>使用UNION<br>输入<br>SELECT vend_id ,prod_id ,prod_price FROM products WHERE prod_price &lt;=5<br>UNION<br>SELECT vend_id,prod_id,prod_price FROM products WHERE vend_id IN(1001,1002);<br>也可以使用多个where<br>SELECT vend_id ,prod_id,prod_price FROM products WHERE prod_price &lt;=5 OR vend_id IN<br>(1001,1002);<br>从多个表中检索数据的情形，使用UNION 可能会处理更简单。<br>17.2.2 UNION 规则<br> 1   UNION 的每个查询必须包含相同的列，表达式，或聚集函数</p>
-<p> 2   UNION 的默认行为，如果想返回所有匹配行 可以使用UNION ALL 而不是UNION<br> 17.2.4 对组合查询结果排序<br>SELECT vend_id ,prod_id,prod_price FROM products WHERE prod_price &lt;=5<br>UNION<br>SELECT vend_id,prod_id,prod_price FROM products WHERE vend_id IN (1001,1002)<br>ORDER BY vend_id ,prod_price ;<br>18章 全文本搜素<br>18.1 理解全文本搜素</p>
-]]></content>
+<p><strong>联结包含了那些在相关表中没有关联行的行，这种叫做外部联结</strong>     </p>
+<p>内部联结检索所有客户及其订单：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SELECT customers.cust_id,order.orders.order_num FROM customers INNER JOIN orders ON</span><br><span class="line">Customers.cust_id &#x3D;orders.cust_id;</span><br></pre></td></tr></table></figure>
+
+<p>外部联结：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">SELECT customers.cust_id ,orders.order_num FROM customers LEFT OUTER JOIN oders </span><br><span class="line">ON customers.cust_id =orders.cust_id;</span><br></pre></td></tr></table></figure>
+
+<p>输出为</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cust_id   order_num</span><br><span class="line"> 10001      20005</span><br><span class="line"> 10001      20009</span><br><span class="line"> 10002       null</span><br><span class="line"> 10003       null</span><br></pre></td></tr></table></figure>
+
+<p>此时必须要用RIGHT 或LEFT 关键字指定包括其所有行的表，如果是<strong>LEFT</strong>，就<strong>指出包括OUTER JOIN左边表的所有行</strong>。示例是包括（customers)表种所有行。</p>
+<p>其实就是左外部联结和右外部联结</p>
+<h3 id="使用带聚集函数的联结"><a href="#使用带聚集函数的联结" class="headerlink" title="使用带聚集函数的联结"></a>使用带聚集函数的联结</h3><p>使用了COUNT（）函数的联结</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SELECT customers.cust_name, customers.cust_id,COUNT(orders.order_num) AS num_ord FROM customers INNER JOIN orders ON customers.cust_id &#x3D;orders.cust_id GROUP BY customers.cust_id;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SELECT customers,cust_name,cusomers,cust_id,COUNT(orders,order_num)AS num_ord FROM customers LEFT OUTER JOIN orders ON customers.cust_id &#x3D;orders.cust_id  GROUP BY customers.cust_id;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>后端</category>
       </categories>
@@ -1105,114 +1255,6 @@
       </tags>
   </entry>
   <entry>
-    <title>mysql联结表</title>
-    <url>/2020/05/08/mysql%E8%81%94%E7%BB%93%E8%A1%A8/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍联结以及高级联结。</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="创建联结"><a href="#创建联结" class="headerlink" title="创建联结"></a>创建联结</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">SELECT vent_name,prod_name,prod_price </span><br><span class="line">FROM vendors ,products </span><br><span class="line">WHERE vendors.vend_id=products.vend_id;</span><br><span class="line">ORDER BY vend_name,prod_name ;</span><br></pre></td></tr></table></figure>
-
-<h2 id="内部联结"><a href="#内部联结" class="headerlink" title="内部联结"></a>内部联结</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">SELECT vend_name , prod_name , prod_price FROM vendors INNER JOIN products ON vendors.vend_id =products.vend_id ;</span><br></pre></td></tr></table></figure>
-
-<p>此时使用的是INNER JOIN 联结条件用的是ON</p>
-<p>联结多个表：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">SELECT prod_name,vend_name,prod_price,quantity FROM orderitems,products,vendors WHERE products.vend_id =vendors.vend_id AND orderitems.prod_id =products.prod_id AND order_num =<span class="number">20005</span>;</span><br></pre></td></tr></table></figure>
-
-<h2 id="创建高级联结"><a href="#创建高级联结" class="headerlink" title="创建高级联结"></a>创建高级联结</h2><h3 id="使用表别名"><a href="#使用表别名" class="headerlink" title="使用表别名"></a>使用表别名</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function">SELECT <span class="title">Concat</span><span class="params">(RTrim(vend_name)，‘（’，RTrim（vend_country）,’）’)</span> AS vend_title FROM vendors ORDER BY vend_name</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="内部联结："><a href="#内部联结：" class="headerlink" title="内部联结："></a>内部联结：</h3><p>它基于俩个表之间的相等测试</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">SELECT vend_name .prod_name,prod_price FROM vendors INNER JOIN products ON vendors.vend_id =produces.vend_id;</span><br></pre></td></tr></table></figure>
-
-<h3 id="自联结：-引用别名，自己联结自己"><a href="#自联结：-引用别名，自己联结自己" class="headerlink" title="自联结： 引用别名，自己联结自己"></a>自联结： 引用别名，自己联结自己</h3><p>假如你发现某物品（其ID为DTNRT)存在问题，因此想知道生产该物品的供应商生产的其他物品是否也存在这些问题。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">SELECT p1.prod_id,p1.prod_name FROM products AS p1,products AS p2</span><br><span class="line">WHERE p1.vend_id =p2.vend_id AND p2.prod_id =’DTNTR’;</span><br></pre></td></tr></table></figure>
-
-<p>因此products 表在from 子句中出现了俩次。虽然这是合法的，但是对products 的引用具有二义性。因此使用了别名。（用自联结而不用子查询。有时候处理联结要比处理查询要快的多）</p>
-<h3 id="自然联结"><a href="#自然联结" class="headerlink" title="自然联结"></a>自然联结</h3><p><strong>自然联结的意思是排除多次出现，使每个列只返回一次。</strong></p>
-<p><strong>我们建立的每个内部联结都是自然联结。</strong></p>
-<p>示例通过对表使用通配符（SELECT *）对所有其他表的列使用明确的子集来完成的。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">SELECT c.*,o.ordr_num,o.order_date,oi.prod_id,oi.quantity,OI.item_price FROM customers AS c,orders AS o,orderitems AS oi WHERE c.cust_id =o.cust_id AND oi.order_num =o.order_num</span><br><span class="line">AND prod_id =’FB’;</span><br></pre></td></tr></table></figure>
-
-<p>通配符只对第一个表使用，所有其他列明确列出，但没有重复的列被检索出来。</p>
-<h3 id="外部联结："><a href="#外部联结：" class="headerlink" title="外部联结："></a>外部联结：</h3><p><strong>许多联结将一个表中的行与另外一个表中的行相关联，但有时候会需要包含没有关联行的那些行，</strong>例如 可能需要使用联结来完成以下的工作：</p>
-<ul>
-<li>对每个客户下了多少订单进行计数，包括那些至今未下订单的客户。</li>
-<li>列出所有产品以及订购数量，包括没有人订购的产品</li>
-<li>计算平均销售规模，包括那些至今未下订单的客户</li>
-</ul>
-<p><strong>联结包含了那些在相关表中没有关联行的行，这种叫做外部联结</strong>     </p>
-<p>内部联结检索所有客户及其订单：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SELECT customers.cust_id,order.orders.order_num FROM customers INNER JOIN orders ON</span><br><span class="line">Customers.cust_id &#x3D;orders.cust_id;</span><br></pre></td></tr></table></figure>
-
-<p>外部联结：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">SELECT customers.cust_id ,orders.order_num FROM customers LEFT OUTER JOIN oders </span><br><span class="line">ON customers.cust_id =orders.cust_id;</span><br></pre></td></tr></table></figure>
-
-<p>输出为</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cust_id   order_num</span><br><span class="line"> 10001      20005</span><br><span class="line"> 10001      20009</span><br><span class="line"> 10002       null</span><br><span class="line"> 10003       null</span><br></pre></td></tr></table></figure>
-
-<p>此时必须要用RIGHT 或LEFT 关键字指定包括其所有行的表，如果是<strong>LEFT</strong>，就<strong>指出包括OUTER JOIN左边表的所有行</strong>。示例是包括（customers)表种所有行。</p>
-<p>其实就是左外部联结和右外部联结</p>
-<h3 id="使用带聚集函数的联结"><a href="#使用带聚集函数的联结" class="headerlink" title="使用带聚集函数的联结"></a>使用带聚集函数的联结</h3><p>使用了COUNT（）函数的联结</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SELECT customers.cust_name, customers.cust_id,COUNT(orders.order_num) AS num_ord FROM customers INNER JOIN orders ON customers.cust_id &#x3D;orders.cust_id GROUP BY customers.cust_id;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SELECT customers,cust_name,cusomers,cust_id,COUNT(orders,order_num)AS num_ord FROM customers LEFT OUTER JOIN orders ON customers.cust_id &#x3D;orders.cust_id  GROUP BY customers.cust_id;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>mysql</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>mysql更新和删除数据</title>
-    <url>/2020/05/07/mysql%E6%9B%B4%E6%96%B0%E5%92%8C%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍如何利用UPDATA和DELETE语句进一步操控表数据</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="更新数据"><a href="#更新数据" class="headerlink" title="更新数据"></a>更新数据</h2><ul>
-<li>更新特定行</li>
-<li>更新所有行 <strong>特别注意不要省略WHERE子句 稍不注意就会更新表中的所有行</strong></li>
-</ul>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">UPDATA customers SET cust_email ='elmer@gmail.com' WHERE cust_id =10005;</span><br></pre></td></tr></table></figure>
-
-<p>更新多个列： 用逗号分隔</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">UPDATE customers SET cust_name='The Fudds',</span><br><span class="line">cust_email='elmer@gmail.com'</span><br><span class="line">WHERE cust_id =<span class="number">10005</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="IGNORE关键字"><a href="#IGNORE关键字" class="headerlink" title="IGNORE关键字"></a>IGNORE关键字</h3><p>如果用UPDATE 语句更新多行，并且在更新这些行中的一行或多行时出现一个现错误，则整个UPDATE操作被取消。</p>
-<p>为即使是发生错误，也继续进行更新可以使用<strong>IGNORE</strong>关键字</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">UPDATE IGNORE customers...</span><br></pre></td></tr></table></figure>
-
-<h2 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h2><ul>
-<li>从表中删除特定的行</li>
-<li>从表中删除所有行  <strong>不要省略WHERE子句</strong></li>
-</ul>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">DELETE FROM customers WHERE cust_id =<span class="number">10006</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="更快的删除"><a href="#更快的删除" class="headerlink" title="更快的删除"></a>更快的删除</h3><p>如果想删除所有行</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">TRUNCATE TABLE</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>mysql</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>两数之和</title>
-    <url>/2020/05/11/%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
-  </entry>
-  <entry>
     <title>二叉树</title>
     <url>/2020/05/07/%E4%BA%8C%E5%8F%89%E6%A0%91/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -1289,6 +1331,16 @@
       <tags>
         <tag>DataStructure</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>使用存储过程</title>
+    <url>/2020/05/10/%E4%BD%BF%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
   </entry>
   <entry>
     <title>二叉树的遍历</title>
@@ -1567,14 +1619,108 @@
 ]]></content>
   </entry>
   <entry>
-    <title>使用存储过程</title>
-    <url>/2020/05/10/%E4%BD%BF%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/</url>
+    <title>内部类</title>
+    <url>/2020/05/08/%E5%86%85%E9%83%A8%E7%B1%BB/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍JAVA内部类</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h1 id="JAVA内部类"><a href="#JAVA内部类" class="headerlink" title="JAVA内部类"></a>JAVA内部类</h1><h2 id="为什么需要内部类"><a href="#为什么需要内部类" class="headerlink" title="为什么需要内部类"></a>为什么需要内部类</h2><ul>
+<li>内部类可以对同一个包中的其他类隐藏</li>
+<li>内部类方法可以访问定义这个类的作用域中的数据，包括原有私有的数据。</li>
+</ul>
+<p>内部类的特点：</p>
+<ul>
+<li><p>一个内部类方法可以访问自身的数据字段</p>
+</li>
+<li><p>可以访问创建它的外围类对象的数据字段</p>
+<p>示例：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TalkingClock</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> interval;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> beep;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">TalkingClock</span><span class="params">(<span class="keyword">int</span> interval ,<span class="keyword">boolean</span> beep)</span></span></span><br><span class="line"><span class="function">    </span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// an inner class</span></span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TimePrinter</span> <span class="keyword">implements</span> <span class="title">ActionListener</span></span></span><br><span class="line"><span class="class">    </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span>  <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent event)</span></span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            System.out.println(<span class="string">"at the tone,the time is"</span>+Insant.ofEpochMilli(event.getWhen()));</span><br><span class="line">            <span class="keyword">if</span>(beep) Toolkit.getDefaultToolkit().beep();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>TimePrinter类没有实例字段或者名为beep的对象。</p>
+<p>实际上为此，<strong>内部类对象总有一个隐式引用，指向创建它的外部类对象。</strong></p>
+</li>
+</ul>
+<p>​       但是这个引用在内部类的定义中是不可见的。我们将外围类对象的引用称为outer</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span>  <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent event)</span></span></span><br><span class="line"><span class="function">      </span>&#123;</span><br><span class="line">          System.out.println(<span class="string">"at the tone,the time is"</span>+Insant.ofEpochMilli(event.getWhen()));</span><br><span class="line">          <span class="keyword">if</span>(outer.beep) Toolkit.getDefaultToolkit().beep();</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="局部内部类"><a href="#局部内部类" class="headerlink" title="局部内部类"></a>局部内部类</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// an inner class</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">TimePrinter</span> <span class="keyword">implements</span> <span class="title">ActionListener</span></span></span><br><span class="line"><span class="class">    </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span>  <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent event)</span></span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            System.out.println(<span class="string">"at the tone,the time is"</span>+Insant.ofEpochMilli(event.getWhen()));</span><br><span class="line">            <span class="keyword">if</span>(beep) Toolkit.getDefaultToolkit().beep();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> listener =<span class="keyword">new</span> TimePrinter();</span><br><span class="line">    <span class="keyword">var</span> timer=<span class="keyword">new</span> Timer(interval,listener);</span><br><span class="line">    timer.start();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在示例代码中，只是在start方法中创建这个类型的对象时使用了一次。</p>
+<p>当遇到这类情况时，可以在一个方法中局部的定义这个类。</p>
+<ul>
+<li><p>声明局部类时不能有访问说明符（即public 或者private)</p>
+</li>
+<li><p>局部类的作用域被限定在声明这个局部类的块中</p>
+</li>
+<li><p>局部类的优点: 对外部世界完全隐藏。除了start()方法外，没有任何方法知道TimePrinter类的存在。</p>
+</li>
+<li><p>局部类不仅可以访问外部类的字段，还可以访问局部变量。（必须是事实最终变量）它们一旦赋值就绝对不会改变。</p>
+<h3 id="匿名内部类"><a href="#匿名内部类" class="headerlink" title="匿名内部类"></a>匿名内部类</h3></li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>创建表和操控表</title>
+    <url>/2020/05/08/%E5%88%9B%E5%BB%BA%E8%A1%A8%E5%92%8C%E6%93%8D%E6%8E%A7%E8%A1%A8/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍表的创建，更改和删除的基本知识。</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
+  </entry>
+  <entry>
+    <title>初级排序算法</title>
+    <url>/2020/05/12/%E5%88%9D%E7%BA%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
 <p>本章介绍</p>
 </blockquote>
 <a id="more"></a>
 
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>我们关注的主要对象是重新排列数组元素 的算法，其中每个元素都有一个主键 。排序算法的目标就是将所有元素的主键按照某种方式排列（通常是按照大小或是字母顺序）。排序后索引较大的主键大于等于索引较小的主键 . </p>
+<h2 id="一-初级排序算法"><a href="#一-初级排序算法" class="headerlink" title="一.初级排序算法"></a>一.初级排序算法</h2><p>排序算法类的模板</p>
+<p>排序算法类模版”中的 Example 类展示了我们的习惯约定：我们会将排序代码放在类的 sort() 方法中，该类还将包含辅助函数 less() 和 exch() （可能还有其他辅助函数）以及一个示例用例main() 。Example 类还包含了一些早期调试使用的代码：测试用例 main() 将标准输入得到的字符串排序，并用私有方法 show() 打印字符数组的内容。我们还会在本章中遇到各种用于比较不同算法并研究它们的性能的测试用例。为了区别不同的排序算法，我们为相应的类取了不同的名字，用例可以根据名字调用不同的实现，例如 Insertion.sort() 、Merge.sort() 、Quick.sort() 等。<br>大多数情况下，我们的排序代码只会通过两个方法操作数据：less() 方法对元素进行比较，exch()方法将元素交换位置。exch() 方法的实现很简单，通过 Comparable 接口实现 less() 方法也不困难。将数据操作限制在这两个方法中使得代码的可读性和可移植性更好，更容易验证代码的正确性、分析性能以及排序算法之间的比较。在学习具体的排序算法实现之前，我们先讨论几个对于所有排序算法都很<br>重要的问题。  </p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Example</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(Comparable[] a)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="comment">/* 请见算法2.1、算法2.2、算法2.3、算法2.4、算法2.5或算法2.7*/</span> &#125;<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">less</span><span class="params">(Comparable v, Comparable w)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="keyword">return</span> v.compareTo(w) &lt; <span class="number">0</span>; &#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">exch</span><span class="params">(Comparable[] a, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span></span></span><br><span class="line"><span class="function"></span>&#123; Comparable t = a[i]; a[i] = a[j]; a[j] = t; &#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">(Comparable[] a)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="comment">// 在单行中打印数组</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; a.length; i++)</span><br><span class="line">StdOut.print(a[i] + <span class="string">" "</span>);</span><br><span class="line">StdOut.println();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isSorted</span><span class="params">(Comparable[] a)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="comment">// 测试数组元素是否有序</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; a.length; i++)</span><br><span class="line"><span class="keyword">if</span> (less(a[i], a[i-<span class="number">1</span>])) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line"><span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="comment">// 从标准输入读取字符串，将它们排序并输出</span></span><br><span class="line">String[] a = In.readStrings();</span><br><span class="line">sort(a);</span><br><span class="line"><span class="function"><span class="keyword">assert</span> <span class="title">isSorted</span><span class="params">(a)</span></span>;</span><br><span class="line">show(a);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="1-java中compareTo-用法详解"><a href="#1-java中compareTo-用法详解" class="headerlink" title="1.java中compareTo()用法详解"></a>1.java中compareTo()用法详解</h2><p>一、字符串比较用compareTo()时:</p>
+<p>1，长度相同,从第一位开始比较，如果相同返回0，如果不同则马上返回这两个字符的ascii值的差值。</p>
+<p>2，长度不同,直接返回长度差值。</p>
+<p>二、Integer比较用compareTo()时：</p>
+<p>1，对比数字时相同，返回0。</p>
+<p>2，对比数字不同时，返回-1。</p>
+<p><strong>对于 v&lt;w 、v=w 和 v&gt;w 三种情况，Java 的习惯是在 v.compareTo(w) 被调用时分别返回一个负整数、零和一个正整数（一般是 -1、0 和 1）</strong></p>
+<h2 id="2-实现-Comparable-接口"><a href="#2-实现-Comparable-接口" class="headerlink" title="2.实现 Comparable 接口"></a>2.实现 Comparable 接口</h2><p>在创建自己的数据类型时，我们只要实现 Comparable 接口就能够保证用例代码可以将其排序。要做到这一点，只需要实现一个 compareTo() 方法来定义目标类型对象的自然次序  .</p>
+<p><img src="/2020/05/12/%E5%88%9D%E7%BA%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/E:%5Cdev%5CMYBLOG%5Cblog%5Csource_posts%5C%E5%88%9D%E7%BA%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%5C2020-05-12_155201.png" alt></p>
+<h2 id="二-选择排序"><a href="#二-选择排序" class="headerlink" title="二.选择排序"></a>二.选择排序</h2><p><strong>定义</strong>：一种最简单的排序算法是这样的：首先，找到数组中最小的那个元素，其次，将它和数组的第一个元素交换位置（如果第一个元素就是最小元素那么它就和自己交换）。再次，在剩下的元素中找到最小的元素，将它与数组的第二个元素交换位置。如此往复，直到将整个数组排序。这种方法叫做选择排序 ，因为它在不断地选择剩余元素之中的最小者。  </p>
+<p><strong>选择排序代码</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Selection</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(Comparable[] a)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="comment">// 将a[]按升序排列</span></span><br><span class="line"><span class="keyword">int</span> N = a.length; <span class="comment">// 数组长度for (int i = 0; i &lt; N; i++)</span></span><br><span class="line">&#123; <span class="comment">// 将a[i]和a[i+1..N]中最小的元素交换</span></span><br><span class="line"><span class="keyword">int</span> min = i; <span class="comment">// 最小元素的索引</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt; N; j++)</span><br><span class="line"><span class="keyword">if</span> (less(a[j], a[min])) min = j;</span><br><span class="line">exch(a, i, min);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// less()、exch()、isSorted()和main()方法见“排序算法类模板”</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>该算法将第 i 小的元素放到 a[i] 之中。数组的第 i 个位置的左边是 i 个最小的元素且它们不会再被访问。  </p>
+<h1 id="三-插入排序"><a href="#三-插入排序" class="headerlink" title="三.插入排序"></a>三.插入排序</h1><p>在计算机的实现中，为了给要插入的元素腾出空间，我们需要将其余所有元素在插入之前都向右移动一位。这种算法叫做<strong>插入排序</strong>   </p>
+]]></content>
+  </entry>
+  <entry>
+    <title>学习方法</title>
+    <url>/2020/05/07/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>学习方法</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><ul>
+<li>慢一点，你理解的越多，需要记的就越少</li>
+<li>勤做练习，自己记笔记</li>
+<li>上床睡觉之前就不要再看别的书了，或者至少不能再看其他有难度的东西</li>
+<li>要喝水，要多喝水</li>
+<li>大声说出来</li>
+<li>听听你的大脑怎么说（注意大脑是不是负荷太重）</li>
+<li>要有点感觉（真正融入到书的故事中）</li>
+</ul>
+]]></content>
   </entry>
   <entry>
     <title>创建和操纵表</title>
@@ -1663,78 +1809,6 @@
       </tags>
   </entry>
   <entry>
-    <title>内部类</title>
-    <url>/2020/05/08/%E5%86%85%E9%83%A8%E7%B1%BB/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍JAVA内部类</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h1 id="JAVA内部类"><a href="#JAVA内部类" class="headerlink" title="JAVA内部类"></a>JAVA内部类</h1><h2 id="为什么需要内部类"><a href="#为什么需要内部类" class="headerlink" title="为什么需要内部类"></a>为什么需要内部类</h2><ul>
-<li>内部类可以对同一个包中的其他类隐藏</li>
-<li>内部类方法可以访问定义这个类的作用域中的数据，包括原有私有的数据。</li>
-</ul>
-<p>内部类的特点：</p>
-<ul>
-<li><p>一个内部类方法可以访问自身的数据字段</p>
-</li>
-<li><p>可以访问创建它的外围类对象的数据字段</p>
-<p>示例：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TalkingClock</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> interval;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> beep;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">TalkingClock</span><span class="params">(<span class="keyword">int</span> interval ,<span class="keyword">boolean</span> beep)</span></span></span><br><span class="line"><span class="function">    </span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// an inner class</span></span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TimePrinter</span> <span class="keyword">implements</span> <span class="title">ActionListener</span></span></span><br><span class="line"><span class="class">    </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span>  <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent event)</span></span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            System.out.println(<span class="string">"at the tone,the time is"</span>+Insant.ofEpochMilli(event.getWhen()));</span><br><span class="line">            <span class="keyword">if</span>(beep) Toolkit.getDefaultToolkit().beep();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>TimePrinter类没有实例字段或者名为beep的对象。</p>
-<p>实际上为此，<strong>内部类对象总有一个隐式引用，指向创建它的外部类对象。</strong></p>
-</li>
-</ul>
-<p>​       但是这个引用在内部类的定义中是不可见的。我们将外围类对象的引用称为outer</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span>  <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent event)</span></span></span><br><span class="line"><span class="function">      </span>&#123;</span><br><span class="line">          System.out.println(<span class="string">"at the tone,the time is"</span>+Insant.ofEpochMilli(event.getWhen()));</span><br><span class="line">          <span class="keyword">if</span>(outer.beep) Toolkit.getDefaultToolkit().beep();</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="局部内部类"><a href="#局部内部类" class="headerlink" title="局部内部类"></a>局部内部类</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// an inner class</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">TimePrinter</span> <span class="keyword">implements</span> <span class="title">ActionListener</span></span></span><br><span class="line"><span class="class">    </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span>  <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent event)</span></span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            System.out.println(<span class="string">"at the tone,the time is"</span>+Insant.ofEpochMilli(event.getWhen()));</span><br><span class="line">            <span class="keyword">if</span>(beep) Toolkit.getDefaultToolkit().beep();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> listener =<span class="keyword">new</span> TimePrinter();</span><br><span class="line">    <span class="keyword">var</span> timer=<span class="keyword">new</span> Timer(interval,listener);</span><br><span class="line">    timer.start();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在示例代码中，只是在start方法中创建这个类型的对象时使用了一次。</p>
-<p>当遇到这类情况时，可以在一个方法中局部的定义这个类。</p>
-<ul>
-<li><p>声明局部类时不能有访问说明符（即public 或者private)</p>
-</li>
-<li><p>局部类的作用域被限定在声明这个局部类的块中</p>
-</li>
-<li><p>局部类的优点: 对外部世界完全隐藏。除了start()方法外，没有任何方法知道TimePrinter类的存在。</p>
-</li>
-<li><p>局部类不仅可以访问外部类的字段，还可以访问局部变量。（必须是事实最终变量）它们一旦赋值就绝对不会改变。</p>
-<h3 id="匿名内部类"><a href="#匿名内部类" class="headerlink" title="匿名内部类"></a>匿名内部类</h3></li>
-</ul>
-]]></content>
-  </entry>
-  <entry>
-    <title>创建表和操控表</title>
-    <url>/2020/05/08/%E5%88%9B%E5%BB%BA%E8%A1%A8%E5%92%8C%E6%93%8D%E6%8E%A7%E8%A1%A8/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍表的创建，更改和删除的基本知识。</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
-  </entry>
-  <entry>
-    <title>学习方法</title>
-    <url>/2020/05/07/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>学习方法</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><ul>
-<li>慢一点，你理解的越多，需要记的就越少</li>
-<li>勤做练习，自己记笔记</li>
-<li>上床睡觉之前就不要再看别的书了，或者至少不能再看其他有难度的东西</li>
-<li>要喝水，要多喝水</li>
-<li>大声说出来</li>
-<li>听听你的大脑怎么说（注意大脑是不是负荷太重）</li>
-<li>要有点感觉（真正融入到书的故事中）</li>
-</ul>
-]]></content>
-  </entry>
-  <entry>
     <title>实习</title>
     <url>/2020/05/08/%E5%AE%9E%E4%B9%A0/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -1770,90 +1844,6 @@
       </categories>
       <tags>
         <tag>杂谈</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>抽象类和接口的区别详解</title>
-    <url>/2020/05/11/%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%8C%BA%E5%88%AB%E8%AF%A6%E8%A7%A3/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍抽象类和接口</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h2><p>它不能被实例化，只能被用作 子类的超类。抽象类是被用来创建继承层级里子类的模板。</p>
-<p>以JDK中的GenericServlet为例：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">GenericServlet</span> <span class="keyword">implements</span> <span class="title">Servlet</span>, <span class="title">ServletConfig</span>, <span class="title">Serializable</span> </span>&#123;</span><br><span class="line">    <span class="comment">// abstract method</span></span><br><span class="line">    <span class="function"><span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(ServletRequest req, ServletResponse res)</span></span>;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// Its implementation</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// other method related to Servlet</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>当HttpServlet类继承GenericServlet时，它提供了<strong>service</strong>方法的实现。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HttpServlet</span> <span class="keyword">extends</span> <span class="title">GenericServlet</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">service</span><span class="params">(ServletRequest req, ServletResponse res)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// implementation</span></span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// Implementation</span></span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// Implementation</span></span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">// some other methods related to HttpServlet</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><p>接口是抽象方法的集合，如果一个类实现了某个接口，那么它就继承了这个接口的抽象方法，这就像契约的模式，如果实现了这个接口，那么就必须确保使用了这些方法，接口只是一种形式，它本身不能实现任何方法，以Externalizable接口为例：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Externalizable</span> <span class="keyword">extends</span> <span class="title">Serializable</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">writeExternal</span><span class="params">(ObjectOutput out)</span> <span class="keyword">throws</span> IOException</span>;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">readExternal</span><span class="params">(ObjectInput in)</span> <span class="keyword">throws</span> IOException, ClassNotFoundException</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>当你继承这个接口时，你就必须实现上面的俩个方法：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Employee</span> <span class="keyword">implements</span> <span class="title">Externalizable</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">int</span> employeeId;</span><br><span class="line">    String employeeName;</span><br><span class="line"> </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">readExternal</span><span class="params">(ObjectInput in)</span> <span class="keyword">throws</span> IOException, ClassNotFoundException </span>&#123;</span><br><span class="line">        employeeId = in.readInt();</span><br><span class="line">        employeeName = (String) in.readObject();</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">writeExternal</span><span class="params">(ObjectOutput out)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line"> </span><br><span class="line">        out.writeInt(employeeId);</span><br><span class="line">        out.writeObject(employeeName);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="什么时候使用抽象类和接口？"><a href="#什么时候使用抽象类和接口？" class="headerlink" title="什么时候使用抽象类和接口？"></a>什么时候使用抽象类和接口？</h2><ul>
-<li>如果你拥有一些方法，并且想让它们中的一些有默认实现，那么使用抽象类吧</li>
-<li>如果你想实现多重继承，那么请使用接口，抽象类不允许多重继承</li>
-<li>如果基本功能在不断的进行改变，那么你就需要使用抽象类。如果不断改变基本功能，并且使用接口，那么就需要改变所有实现了该接口的类。</li>
-</ul>
-<h2 id="JAVA8中的默认方法和静态方法"><a href="#JAVA8中的默认方法和静态方法" class="headerlink" title="JAVA8中的默认方法和静态方法"></a>JAVA8中的默认方法和静态方法</h2><p>Oracle已经开始尝试向接口中引入默认方法和静态方法，依次来减少抽象类和接口之间的差异。</p>
-<p>现在我们可以为接口提供默认实现的方法并且不用强制子类来实现它。default方法。</p>
-]]></content>
-      <categories>
-        <category>面试</category>
-      </categories>
-      <tags>
-        <tag>JAVASE</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>指针</title>
-    <url>/2020/05/04/%E6%8C%87%E9%92%88/</url>
-    <content><![CDATA[<h1 id="10-1-指针变量"><a href="#10-1-指针变量" class="headerlink" title="10.1 指针变量"></a>10.1 指针变量</h1><p> 由于通过地址能访问指定的内存存储单元。可以说地址“指向”该内存单元。地址可以形象地称为指针，意思是通过指针能够找到内存单元。<br> <a id="more"></a></p>
-<h2 id="1一个变量的地址称为该变量的指针，如果有一个变量专门用来存放另一个变量的地址，那么它就是指针变量。"><a href="#1一个变量的地址称为该变量的指针，如果有一个变量专门用来存放另一个变量的地址，那么它就是指针变量。" class="headerlink" title="1一个变量的地址称为该变量的指针，如果有一个变量专门用来存放另一个变量的地址，那么它就是指针变量。"></a>1一个变量的地址称为该变量的指针，如果有一个变量专门用来存放另一个变量的地址，那么它就是指针变量。</h2><p>一般形式为：<br>类型说明 * 变量名<br>int * q;<br>C语言中提供了地址运算符“&amp;”来表示变量的地址。其中一般形式为：<br>&amp;变量名;</p>
-<h2 id="2给指针变量赋值一般有俩个方法"><a href="#2给指针变量赋值一般有俩个方法" class="headerlink" title="2给指针变量赋值一般有俩个方法"></a>2给指针变量赋值一般有俩个方法</h2><p>1   </p>
-<pre><code>int a;
-int *p=&amp;a</code></pre><p>2       </p>
-<pre><code>int a;
-int *p;
-p=&amp;a;</code></pre><h2 id="3-指针变量的引用"><a href="#3-指针变量的引用" class="headerlink" title="3 指针变量的引用"></a>3 指针变量的引用</h2><p>引用指针变量是对变量进行间接访问的一种形式</p>
-<p>对指针变量的引用形式如下：</p>
-<p>*指针变量 其含义是引用指针变量所指向的值</p>
-<h2 id="4-amp-和-的区别"><a href="#4-amp-和-的区别" class="headerlink" title="4 &amp; 和 *的区别"></a>4 &amp; 和 *的区别</h2><p> &amp;运算符是一个返回操作数地址的单目运算符，叫做取地址运算符</p>
-<p> *运算符是返回指定的地址内的变量的值，叫做指针运算符。</p>
-<h2 id="5-指针自增和自减运算"><a href="#5-指针自增和自减运算" class="headerlink" title="5 指针自增和自减运算"></a>5 指针自增和自减运算</h2><p>基本整型变量i在内存中占4个字节，指针P是指向变量i的地址的，p++是指向下一个存放基本整型数的地址。</p>
-<h2 id="6-数组与指针"><a href="#6-数组与指针" class="headerlink" title="6 数组与指针"></a>6 数组与指针</h2><p>在定义一个一维数组时，系统会在内存中为该数组分配一个存储空间，其数组的名称就是数组在内存中的首地址。<br>例如：</p>
-<p>1      </p>
-<pre><code>int *p,a[10]; 
- p=a;</code></pre><p>或</p>
-<p>2   </p>
-<pre><code>int *p,a[10]; 
-p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数组与指针" class="headerlink" title="7 二维数组与指针"></a>7 二维数组与指针</h2><p>表示二维数组中元素地址的方法：</p>
-<p>&amp;a[0][0]可以看作数组0行0列的首地址，也可以看作二维数组的首地址。</p>
-<p>&amp;a[m][n]就是第m行n列元素的地址。而a[0]+n表示第0行第n个元素的地址。</p>
-<h2 id="8指针变量作为函数参数"><a href="#8指针变量作为函数参数" class="headerlink" title="8指针变量作为函数参数"></a>8指针变量作为函数参数</h2><p>指针变量也可以作为函数参数</p>
-<p>例<br>在swap（int <em>a,int</em> b)中</p>
-<p>在函数调用的过程中，主调用函数与被调用函数之间有一个数值传递的过程。函数调用中发生的数据传递是单向的，只能把实际参数的值传递给形式参数，在函数调用的过程中，形式参数的值发生改变，但是实际参数的值不会发生变化。如果swap(int a,int b) 则不能实现x与y值的互换。</p>
-<p>通过指针传递参数可以减少值传递带来的开销，也可以使函数调用不产生值传递。</p>
-<h2 id="9返回指针值的函数"><a href="#9返回指针值的函数" class="headerlink" title="9返回指针值的函数"></a>9返回指针值的函数</h2><p>返回的值的类型为指针类型，返回指针值的函数简称为指针函数</p>
-<p>定义指针函数的一般形式为 </p>
-<p>类型名 *函数名（参数列表） </p>
-<p>如   int *fun(int x,int y)</p>
-<p>如 </p>
-<pre><code>int *per(int a,int b)
-{
- int *p;
- p=&amp;Perimeter;
- Perimeter=(a+b)*2;
- return p; 
-}</code></pre>]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>C</tag>
       </tags>
   </entry>
   <entry>
@@ -1898,6 +1888,42 @@ p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数�
       </categories>
       <tags>
         <tag>DataStructure</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>抽象类和接口的区别详解</title>
+    <url>/2020/05/11/%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%8C%BA%E5%88%AB%E8%AF%A6%E8%A7%A3/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍抽象类和接口</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h2><p>它不能被实例化，只能被用作 子类的超类。抽象类是被用来创建继承层级里子类的模板。</p>
+<p>以JDK中的GenericServlet为例：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">GenericServlet</span> <span class="keyword">implements</span> <span class="title">Servlet</span>, <span class="title">ServletConfig</span>, <span class="title">Serializable</span> </span>&#123;</span><br><span class="line">    <span class="comment">// abstract method</span></span><br><span class="line">    <span class="function"><span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(ServletRequest req, ServletResponse res)</span></span>;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// Its implementation</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// other method related to Servlet</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当HttpServlet类继承GenericServlet时，它提供了<strong>service</strong>方法的实现。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HttpServlet</span> <span class="keyword">extends</span> <span class="title">GenericServlet</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">service</span><span class="params">(ServletRequest req, ServletResponse res)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// implementation</span></span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// Implementation</span></span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// Implementation</span></span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">// some other methods related to HttpServlet</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><p>接口是抽象方法的集合，如果一个类实现了某个接口，那么它就继承了这个接口的抽象方法，这就像契约的模式，如果实现了这个接口，那么就必须确保使用了这些方法，接口只是一种形式，它本身不能实现任何方法，以Externalizable接口为例：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Externalizable</span> <span class="keyword">extends</span> <span class="title">Serializable</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">writeExternal</span><span class="params">(ObjectOutput out)</span> <span class="keyword">throws</span> IOException</span>;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">readExternal</span><span class="params">(ObjectInput in)</span> <span class="keyword">throws</span> IOException, ClassNotFoundException</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当你继承这个接口时，你就必须实现上面的俩个方法：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Employee</span> <span class="keyword">implements</span> <span class="title">Externalizable</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">int</span> employeeId;</span><br><span class="line">    String employeeName;</span><br><span class="line"> </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">readExternal</span><span class="params">(ObjectInput in)</span> <span class="keyword">throws</span> IOException, ClassNotFoundException </span>&#123;</span><br><span class="line">        employeeId = in.readInt();</span><br><span class="line">        employeeName = (String) in.readObject();</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">writeExternal</span><span class="params">(ObjectOutput out)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line"> </span><br><span class="line">        out.writeInt(employeeId);</span><br><span class="line">        out.writeObject(employeeName);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="什么时候使用抽象类和接口？"><a href="#什么时候使用抽象类和接口？" class="headerlink" title="什么时候使用抽象类和接口？"></a>什么时候使用抽象类和接口？</h2><ul>
+<li>如果你拥有一些方法，并且想让它们中的一些有默认实现，那么使用抽象类吧</li>
+<li>如果你想实现多重继承，那么请使用接口，抽象类不允许多重继承</li>
+<li>如果基本功能在不断的进行改变，那么你就需要使用抽象类。如果不断改变基本功能，并且使用接口，那么就需要改变所有实现了该接口的类。</li>
+</ul>
+<h2 id="JAVA8中的默认方法和静态方法"><a href="#JAVA8中的默认方法和静态方法" class="headerlink" title="JAVA8中的默认方法和静态方法"></a>JAVA8中的默认方法和静态方法</h2><p>Oracle已经开始尝试向接口中引入默认方法和静态方法，依次来减少抽象类和接口之间的差异。</p>
+<p>现在我们可以为接口提供默认实现的方法并且不用强制子类来实现它。default方法。</p>
+]]></content>
+      <categories>
+        <category>面试</category>
+      </categories>
+      <tags>
+        <tag>JAVASE</tag>
       </tags>
   </entry>
   <entry>
@@ -2006,6 +2032,54 @@ p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数�
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
   </entry>
   <entry>
+    <title>指针</title>
+    <url>/2020/05/04/%E6%8C%87%E9%92%88/</url>
+    <content><![CDATA[<h1 id="10-1-指针变量"><a href="#10-1-指针变量" class="headerlink" title="10.1 指针变量"></a>10.1 指针变量</h1><p> 由于通过地址能访问指定的内存存储单元。可以说地址“指向”该内存单元。地址可以形象地称为指针，意思是通过指针能够找到内存单元。<br> <a id="more"></a></p>
+<h2 id="1一个变量的地址称为该变量的指针，如果有一个变量专门用来存放另一个变量的地址，那么它就是指针变量。"><a href="#1一个变量的地址称为该变量的指针，如果有一个变量专门用来存放另一个变量的地址，那么它就是指针变量。" class="headerlink" title="1一个变量的地址称为该变量的指针，如果有一个变量专门用来存放另一个变量的地址，那么它就是指针变量。"></a>1一个变量的地址称为该变量的指针，如果有一个变量专门用来存放另一个变量的地址，那么它就是指针变量。</h2><p>一般形式为：<br>类型说明 * 变量名<br>int * q;<br>C语言中提供了地址运算符“&amp;”来表示变量的地址。其中一般形式为：<br>&amp;变量名;</p>
+<h2 id="2给指针变量赋值一般有俩个方法"><a href="#2给指针变量赋值一般有俩个方法" class="headerlink" title="2给指针变量赋值一般有俩个方法"></a>2给指针变量赋值一般有俩个方法</h2><p>1   </p>
+<pre><code>int a;
+int *p=&amp;a</code></pre><p>2       </p>
+<pre><code>int a;
+int *p;
+p=&amp;a;</code></pre><h2 id="3-指针变量的引用"><a href="#3-指针变量的引用" class="headerlink" title="3 指针变量的引用"></a>3 指针变量的引用</h2><p>引用指针变量是对变量进行间接访问的一种形式</p>
+<p>对指针变量的引用形式如下：</p>
+<p>*指针变量 其含义是引用指针变量所指向的值</p>
+<h2 id="4-amp-和-的区别"><a href="#4-amp-和-的区别" class="headerlink" title="4 &amp; 和 *的区别"></a>4 &amp; 和 *的区别</h2><p> &amp;运算符是一个返回操作数地址的单目运算符，叫做取地址运算符</p>
+<p> *运算符是返回指定的地址内的变量的值，叫做指针运算符。</p>
+<h2 id="5-指针自增和自减运算"><a href="#5-指针自增和自减运算" class="headerlink" title="5 指针自增和自减运算"></a>5 指针自增和自减运算</h2><p>基本整型变量i在内存中占4个字节，指针P是指向变量i的地址的，p++是指向下一个存放基本整型数的地址。</p>
+<h2 id="6-数组与指针"><a href="#6-数组与指针" class="headerlink" title="6 数组与指针"></a>6 数组与指针</h2><p>在定义一个一维数组时，系统会在内存中为该数组分配一个存储空间，其数组的名称就是数组在内存中的首地址。<br>例如：</p>
+<p>1      </p>
+<pre><code>int *p,a[10]; 
+ p=a;</code></pre><p>或</p>
+<p>2   </p>
+<pre><code>int *p,a[10]; 
+p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数组与指针" class="headerlink" title="7 二维数组与指针"></a>7 二维数组与指针</h2><p>表示二维数组中元素地址的方法：</p>
+<p>&amp;a[0][0]可以看作数组0行0列的首地址，也可以看作二维数组的首地址。</p>
+<p>&amp;a[m][n]就是第m行n列元素的地址。而a[0]+n表示第0行第n个元素的地址。</p>
+<h2 id="8指针变量作为函数参数"><a href="#8指针变量作为函数参数" class="headerlink" title="8指针变量作为函数参数"></a>8指针变量作为函数参数</h2><p>指针变量也可以作为函数参数</p>
+<p>例<br>在swap（int <em>a,int</em> b)中</p>
+<p>在函数调用的过程中，主调用函数与被调用函数之间有一个数值传递的过程。函数调用中发生的数据传递是单向的，只能把实际参数的值传递给形式参数，在函数调用的过程中，形式参数的值发生改变，但是实际参数的值不会发生变化。如果swap(int a,int b) 则不能实现x与y值的互换。</p>
+<p>通过指针传递参数可以减少值传递带来的开销，也可以使函数调用不产生值传递。</p>
+<h2 id="9返回指针值的函数"><a href="#9返回指针值的函数" class="headerlink" title="9返回指针值的函数"></a>9返回指针值的函数</h2><p>返回的值的类型为指针类型，返回指针值的函数简称为指针函数</p>
+<p>定义指针函数的一般形式为 </p>
+<p>类型名 *函数名（参数列表） </p>
+<p>如   int *fun(int x,int y)</p>
+<p>如 </p>
+<pre><code>int *per(int a,int b)
+{
+ int *p;
+ p=&amp;Perimeter;
+ Perimeter=(a+b)*2;
+ return p; 
+}</code></pre>]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>C</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>链表</title>
     <url>/2020/05/07/%E9%93%BE%E8%A1%A8/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -2029,7 +2103,7 @@ p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数�
 <li>当链表末尾p为空时，则说明第i个结点不存在</li>
 <li>若查找成功，那么返回结点p的数据。</li>
 </ol>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function">Status <span class="title">GetElem</span><span class="params">(LinkList L,<span class="keyword">int</span> i,ElemType *e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> j;</span><br><span class="line">  LinkList p;</span><br><span class="line">  p=L-&gt;next;</span><br><span class="line">  j=<span class="number">1</span>;</span><br><span class="line">  <span class="keyword">while</span>(p&amp;&amp;j&lt;i)</span><br><span class="line">  &#123;</span><br><span class="line">  p=p-&gt;next;</span><br><span class="line">  j++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span>(!p || j&gt;<span class="number">1</span>)</span><br><span class="line">  &#123;</span><br><span class="line">  <span class="keyword">return</span> ERROR；</span><br><span class="line">  *e=p-&gt;data;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function">Status <span class="title">GetElem</span><span class="params">(LinkList L,<span class="keyword">int</span> i,ElemType *e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> j;</span><br><span class="line">  LinkList p;</span><br><span class="line">  p=L-&gt;next;</span><br><span class="line">  j=<span class="number">1</span>;</span><br><span class="line">  <span class="keyword">while</span>(p&amp;&amp;j&lt;i)</span><br><span class="line">  &#123;</span><br><span class="line">  p=p-&gt;next;</span><br><span class="line">  j++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span>(!p || j&gt;i)</span><br><span class="line">  <span class="keyword">return</span> ERROR；</span><br><span class="line">  *e=p-&gt;data;</span><br><span class="line">  <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="单链表的插入与删除"><a href="#单链表的插入与删除" class="headerlink" title="单链表的插入与删除"></a>单链表的插入与删除</h2><h3 id="单链表插入"><a href="#单链表插入" class="headerlink" title="单链表插入"></a>单链表插入</h3><p>思路：在俩节点之间再插入一个结点</p>
 <p>图示：</p>
