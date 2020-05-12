@@ -27,17 +27,17 @@
 <meta property="og:site_name" content="Alita&#39;s blog">
 <meta property="og:description" content="概述 本章介绍什么是存储过程，为什么要使用存储过程以及如何使用存储过程，并且介绍创建和使用存储过程的基本语法。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://www.alitaalice.cn/2020/05/12/%E4%BD%BF%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B-1/2020-05-12_215109.png">
-<meta property="og:image" content="https://www.alitaalice.cn/2020/05/12/%E4%BD%BF%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B-1/2020-05-12_215228.png">
-<meta property="og:image" content="https://www.alitaalice.cn/2020/05/12/%E4%BD%BF%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B-1/2020-05-12_215509.png">
-<meta property="og:image" content="https://www.alitaalice.cn/2020/05/12/%E4%BD%BF%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B-1/2020-05-12_215533.png">
-<meta property="og:image" content="https://www.alitaalice.cn/2020/05/12/%E4%BD%BF%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B-1/2020-05-12_220005.png">
+<meta property="og:image" content="https://photos.alitaalice.cn/image/20200513001100.png">
+<meta property="og:image" content="https://photos.alitaalice.cn/image/20200513001134.png">
+<meta property="og:image" content="https://photos.alitaalice.cn/image/20200513001157.png">
+<meta property="og:image" content="https://photos.alitaalice.cn/image/20200513001232.png">
+<meta property="og:image" content="https://photos.alitaalice.cn/image/20200513001250.png">
 <meta property="article:published_time" content="2020-05-12T12:55:02.000Z">
-<meta property="article:modified_time" content="2020-05-12T16:05:39.547Z">
+<meta property="article:modified_time" content="2020-05-12T16:16:23.710Z">
 <meta property="article:author" content="Alita Alice">
 <meta property="article:tag" content="mysql">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://www.alitaalice.cn/2020/05/12/%E4%BD%BF%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B-1/2020-05-12_215109.png">
+<meta name="twitter:image" content="https://photos.alitaalice.cn/image/20200513001100.png">
 
 <link rel="canonical" href="https://www.alitaalice.cn/2020/05/12/%E4%BD%BF%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B-1/">
 
@@ -201,7 +201,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-05-13 00:05:39" itemprop="dateModified" datetime="2020-05-13T00:05:39+08:00">2020-05-13</time>
+                <time title="Modified: 2020-05-13 00:16:23" itemprop="dateModified" datetime="2020-05-13T00:16:23+08:00">2020-05-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -283,15 +283,15 @@
 <li><p>你可能没有创建存储过程的安全访问权限。许多数据库管理员限<br>制存储过程的创建权限，允许用户使用存储过程，但不允许他们<br>创建存储过程。  </p>
 </li>
 </ul>
-<h2 id="eg：一个返回产品平均价格的存储过程"><a href="#eg：一个返回产品平均价格的存储过程" class="headerlink" title="eg：一个返回产品平均价格的存储过程"></a>eg：一个返回产品平均价格的存储过程</h2><p><img src="/2020/05/12/%E4%BD%BF%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B-1/2020-05-12_215109.png" alt></p>
+<h2 id="eg：一个返回产品平均价格的存储过程"><a href="#eg：一个返回产品平均价格的存储过程" class="headerlink" title="eg：一个返回产品平均价格的存储过程"></a>eg：一个返回产品平均价格的存储过程</h2><p><img src="https://photos.alitaalice.cn/image/20200513001100.png" alt></p>
 <p>此存储过程名为productpricing，用CREATE PROCEDURE productpricing()语<br>句定义。如果存储过程接受参数，它们将在()中列举出来。此存储过程没<br>有参数，但后跟的()仍然需要。 BEGIN和END语句用来限定存储过程体，过<br>程体本身仅是一个简单的SELECT语句。</p>
 <p>如何使用这个存储过程呢？</p>
-<p><img src="/2020/05/12/%E4%BD%BF%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B-1/2020-05-12_215228.png" alt></p>
-<p><img src="/2020/05/12/%E4%BD%BF%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B-1/2020-05-12_215509.png" alt></p>
-<p><img src="/2020/05/12/%E4%BD%BF%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B-1/2020-05-12_215533.png" alt></p>
+<p><img src="https://photos.alitaalice.cn/image/20200513001134.png" alt></p>
+<p><img src="https://photos.alitaalice.cn/image/20200513001157.png" alt></p>
+<p><img src="https://photos.alitaalice.cn/image/20200513001232.png" alt></p>
 <h4 id="如何使用这个存储过程-？"><a href="#如何使用这个存储过程-？" class="headerlink" title="如何使用这个存储过程  ？"></a>如何使用这个存储过程  ？</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">CALL <span class="title">productpricing</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
 
-<p><img src="/2020/05/12/%E4%BD%BF%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B-1/2020-05-12_220005.png" alt></p>
+<p><img src="https://photos.alitaalice.cn/image/20200513001250.png" alt></p>
 <h4 id="如何删除这个存储过程？"><a href="#如何删除这个存储过程？" class="headerlink" title="如何删除这个存储过程？"></a>如何删除这个存储过程？</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DROP PROCEDURE productpricing;</span><br></pre></td></tr></table></figure>
 
 <p>仅当存在时删除 如果指定的过程不存在，则DROP PROCEDURE将产生一个错误。当过程存在想删除它时（如果过程不存在也不产生错误）可使用DROP PROCEDURE IF EXISTS。  </p>
