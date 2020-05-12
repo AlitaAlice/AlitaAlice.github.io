@@ -49,22 +49,48 @@
       </tags>
   </entry>
   <entry>
-    <title>JAVA和C++的区别</title>
-    <url>/2020/05/11/JAVA%E5%92%8CC++%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍JAVA和C++的区别</p>
-</blockquote>
-<a id="more"></a>
+    <title>JAVA中的输入与输出</title>
+    <url>/2020/05/06/JAVA%E4%B8%AD%E7%9A%84%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA/</url>
+    <content><![CDATA[<h1 id="JAVA中的输入"><a href="#JAVA中的输入" class="headerlink" title="JAVA中的输入"></a>JAVA中的输入</h1><h2 id="读取输入"><a href="#读取输入" class="headerlink" title="读取输入"></a>读取输入</h2><p>  要想通过输入台进行输入，首先需要构造一个与“标准输入流”System.in关联的Scanner对象。<br>  <a id="more"></a></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Scanner scanner=<span class="keyword">new</span> Scanner(System.in);</span><br></pre></td></tr></table></figure>
 
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="JAVA和C-的区别"><a href="#JAVA和C-的区别" class="headerlink" title="JAVA和C++的区别"></a>JAVA和C++的区别</h2><ul>
-<li>都是面向对象的语言，并且都支持封装，继承和多态</li>
-<li>指针：JAVA不提供指针来直接访问内存，程序更加安全。</li>
-<li>继承：JAVA中的类是单继承的，但是C++允许多继承，JAVA中允许一个类实现多个接口来实现C++中的多冲继承。</li>
-<li>内存：JAVA有自动内存管理机制，不需要程序员手动释放无用内存。</li>
-</ul>
+<p>Scanner类中的方法：</p>
+<p>API  JAVA.util.Scanner</p>
+<table>
+<thead>
+<tr>
+<th>String nextLine()</th>
+<th>读取输入的下一行内容  以enter作为结束符  能得到带空格的字符串</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>String next()</td>
+<td>读取输入的下一个单词（以空格作为分隔符）空格视而不见</td>
+</tr>
+<tr>
+<td>int nextInt()</td>
+<td>只读取int值</td>
+</tr>
+<tr>
+<td>double nextDouble()</td>
+<td>只读取double值</td>
+</tr>
+<tr>
+<td>boolean hasNext()</td>
+<td>检测输入中是否还有其他的单词</td>
+</tr>
+<tr>
+<td>boolean hasNextInt()</td>
+<td>检测输入中是否还有表示整数</td>
+</tr>
+<tr>
+<td>boolean hasNextDouble()</td>
+<td>检测输入中是否还有表示浮点数</td>
+</tr>
+</tbody></table>
 ]]></content>
       <categories>
-        <category>面试</category>
+        <category>后端</category>
       </categories>
       <tags>
         <tag>JAVASE</tag>
@@ -196,80 +222,22 @@
       </tags>
   </entry>
   <entry>
-    <title>JAVA泛型</title>
-    <url>/2020/05/12/JAVA%E6%B3%9B%E5%9E%8B/</url>
+    <title>JAVA和C++的区别</title>
+    <url>/2020/05/11/JAVA%E5%92%8CC++%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍</p>
+<p>本章介绍JAVA和C++的区别</p>
 </blockquote>
 <a id="more"></a>
 
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
-  </entry>
-  <entry>
-    <title>JAVA中的输入与输出</title>
-    <url>/2020/05/06/JAVA%E4%B8%AD%E7%9A%84%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA/</url>
-    <content><![CDATA[<h1 id="JAVA中的输入"><a href="#JAVA中的输入" class="headerlink" title="JAVA中的输入"></a>JAVA中的输入</h1><h2 id="读取输入"><a href="#读取输入" class="headerlink" title="读取输入"></a>读取输入</h2><p>  要想通过输入台进行输入，首先需要构造一个与“标准输入流”System.in关联的Scanner对象。<br>  <a id="more"></a></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Scanner scanner=<span class="keyword">new</span> Scanner(System.in);</span><br></pre></td></tr></table></figure>
-
-<p>Scanner类中的方法：</p>
-<p>API  JAVA.util.Scanner</p>
-<table>
-<thead>
-<tr>
-<th>String nextLine()</th>
-<th>读取输入的下一行内容  以enter作为结束符  能得到带空格的字符串</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>String next()</td>
-<td>读取输入的下一个单词（以空格作为分隔符）空格视而不见</td>
-</tr>
-<tr>
-<td>int nextInt()</td>
-<td>只读取int值</td>
-</tr>
-<tr>
-<td>double nextDouble()</td>
-<td>只读取double值</td>
-</tr>
-<tr>
-<td>boolean hasNext()</td>
-<td>检测输入中是否还有其他的单词</td>
-</tr>
-<tr>
-<td>boolean hasNextInt()</td>
-<td>检测输入中是否还有表示整数</td>
-</tr>
-<tr>
-<td>boolean hasNextDouble()</td>
-<td>检测输入中是否还有表示浮点数</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>JAVASE</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JAVA的静态方法不能被重写</title>
-    <url>/2020/05/06/JAVA%E7%9A%84%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95%E4%B8%8D%E8%83%BD%E8%A2%AB%E9%87%8D%E5%86%99/</url>
-    <content><![CDATA[<h1 id="JAVA的静态方法不能被重写"><a href="#JAVA的静态方法不能被重写" class="headerlink" title="JAVA的静态方法不能被重写"></a>JAVA的静态方法不能被重写</h1><p>堆区：</p>
-<ul>
-<li>存储的全部都是对象，每个对象都包含一个与之对应的class信息。<a id="more"></a>
-
-</li>
-</ul>
-<p>栈区:</p>
-<p>方法区：</p>
-<ul>
-<li>方法区包含所有的class和static变量  class可以直接调用static</li>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="JAVA和C-的区别"><a href="#JAVA和C-的区别" class="headerlink" title="JAVA和C++的区别"></a>JAVA和C++的区别</h2><ul>
+<li>都是面向对象的语言，并且都支持封装，继承和多态</li>
+<li>指针：JAVA不提供指针来直接访问内存，程序更加安全。</li>
+<li>继承：JAVA中的类是单继承的，但是C++允许多继承，JAVA中允许一个类实现多个接口来实现C++中的多冲继承。</li>
+<li>内存：JAVA有自动内存管理机制，不需要程序员手动释放无用内存。</li>
 </ul>
 ]]></content>
       <categories>
-        <category>后端</category>
+        <category>面试</category>
       </categories>
       <tags>
         <tag>JAVASE</tag>
@@ -304,94 +272,6 @@
 </li>
 </ul>
 <p>  <strong>注意：静态方法不能被重写，所以也不存在多态，即使向上转型，子类重写了父类的静态方法，子类调用父类的静态方法，输出依然是父类静态方法中的值。</strong></p>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>JAVASE</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JAVA中this和super的用法总结</title>
-    <url>/2020/05/09/JAVA%E4%B8%ADthis%E5%92%8Csuper%E7%9A%84%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍这几天看到类在继承时会用到<strong>this</strong>和<strong>super</strong>，这里就做了一点总结，与各位共同交流，有错误请各位指正~</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><strong>this</strong></p>
-<p>this是自身的一个对象，代表对象本身，可以理解为：指向对象本身的一个指针。</p>
-<h2 id="this的用法在java中大体可以分为3种："><a href="#this的用法在java中大体可以分为3种：" class="headerlink" title="this的用法在java中大体可以分为3种："></a>this的用法在java中大体可以分为3种：</h2><p><strong>1.普通的直接引用</strong></p>
-<p>这种就不用讲了，this相当于是指向当前对象本身。</p>
-<p><strong>2.形参与成员名字重名，用this来区分：</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age = <span class="number">10</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">()</span></span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"初始化年龄："</span>+age);</span><br><span class="line">&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">GetAge</span><span class="params">(<span class="keyword">int</span> age)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">test1</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Person Harry = <span class="keyword">new</span> Person();</span><br><span class="line">        System.out.println(<span class="string">"Harry's age is "</span>+Harry.GetAge(<span class="number">12</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>运行结果：</strong></p>
-<p><strong>初始化年龄：10</strong><br><strong>Harry’s age is 12</strong></p>
-<p>可以看到，这里age是GetAge成员方法的形参，this.age是Person类的成员变量。</p>
-<p><strong>3.引用构造函数</strong></p>
-<p>这个和super放在一起讲，见下面。</p>
-<h2 id="super"><a href="#super" class="headerlink" title="super"></a><strong>super</strong></h2><p>super可以理解为是指向自己超（父）类对象的一个指针，而这个超类指的是离自己最近的一个父类。</p>
-<h3 id="super也有三种用法："><a href="#super也有三种用法：" class="headerlink" title="super也有三种用法："></a>super也有三种用法：</h3><p>1.普通的直接引用</p>
-<p>与this类似，super相当于是指向当前对象的父类，这样就可以用super.xxx来引用父类的成员。</p>
-<p>2.子类中的成员变量或方法与父类中的成员变量或方法同名</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Country</span> </span>&#123;</span><br><span class="line">    String name;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">value</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       name = <span class="string">"China"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">City</span> <span class="keyword">extends</span> <span class="title">Country</span> </span>&#123;</span><br><span class="line">    String name;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">value</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    name = <span class="string">"Shanghai"</span>;</span><br><span class="line">    <span class="keyword">super</span>.value();      <span class="comment">//调用父类的方法</span></span><br><span class="line">    System.out.println(name);</span><br><span class="line">    System.out.println(<span class="keyword">super</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">       City c=<span class="keyword">new</span> City();</span><br><span class="line">       c.value();</span><br><span class="line">       &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>运行结果：</strong></p>
-<p><strong>Shanghai</strong><br><strong>China</strong></p>
-<p>可以看到，这里既调用了父类的方法，也调用了父类的变量。若不调用父类方法value()，只调用父类变量name的话，则父类name值为默认值null。</p>
-<p>3.引用构造函数</p>
-<p>super（参数）：调用父类中的某一个构造函数（应该为构造函数中的第一条语句）。</p>
-<p>this（参数）：调用本类中另一种形式的构造函数（应该为构造函数中的第一条语句）。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">prt</span><span class="params">(String s)</span> </span>&#123; </span><br><span class="line">       System.out.println(s); </span><br><span class="line">    &#125; </span><br><span class="line">   </span><br><span class="line">    Person() &#123; </span><br><span class="line">       prt(<span class="string">"父类·无参数构造方法： "</span>+<span class="string">"A Person."</span>); </span><br><span class="line">    &#125;<span class="comment">//构造方法(1) </span></span><br><span class="line">    </span><br><span class="line">    Person(String name) &#123; </span><br><span class="line">       prt(<span class="string">"父类·含一个参数的构造方法： "</span>+<span class="string">"A person's name is "</span> + name); </span><br><span class="line">    &#125;<span class="comment">//构造方法(2) </span></span><br><span class="line">&#125; </span><br><span class="line">    </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Chinese</span> <span class="keyword">extends</span> <span class="title">Person</span> </span>&#123; </span><br><span class="line">    Chinese() &#123; </span><br><span class="line">       <span class="keyword">super</span>(); <span class="comment">// 调用父类构造方法（1） </span></span><br><span class="line">       prt(<span class="string">"子类·调用父类”无参数构造方法“： "</span>+<span class="string">"A chinese coder."</span>); </span><br><span class="line">    &#125; </span><br><span class="line">    </span><br><span class="line">    Chinese(String name) &#123; </span><br><span class="line">       <span class="keyword">super</span>(name);<span class="comment">// 调用父类具有相同形参的构造方法（2） </span></span><br><span class="line">       prt(<span class="string">"子类·调用父类”含一个参数的构造方法“： "</span>+<span class="string">"his name is "</span> + name); </span><br><span class="line">    &#125; </span><br><span class="line">    </span><br><span class="line">    Chinese(String name, <span class="keyword">int</span> age) &#123; </span><br><span class="line">       <span class="keyword">this</span>(name);<span class="comment">// 调用具有相同形参的构造方法（3） </span></span><br><span class="line">       prt(<span class="string">"子类：调用子类具有相同形参的构造方法：his age is "</span> + age); </span><br><span class="line">    &#125; </span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123; </span><br><span class="line">       Chinese cn = <span class="keyword">new</span> Chinese(); </span><br><span class="line">       cn = <span class="keyword">new</span> Chinese(<span class="string">"codersai"</span>); </span><br><span class="line">       cn = <span class="keyword">new</span> Chinese(<span class="string">"codersai"</span>, <span class="number">18</span>); </span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>运行结果：</strong></p>
-<p><strong>父类·无参数构造方法： A Person.</strong><br><strong>子类·调用父类”无参数构造方法“： A chinese coder.</strong><br><strong>父类·含一个参数的构造方法： A person’s name is codersai</strong><br><strong>子类·调用父类”含一个参数的构造方法“： his name is codersai</strong><br><strong>父类·含一个参数的构造方法： A person’s name is codersai</strong><br><strong>子类·调用父类”含一个参数的构造方法“： his name is codersai</strong><br><strong>子类：调用子类具有相同形参的构造方法：his age is 18</strong></p>
-<p>从本例可以看到，可以用super和this分别调用父类的构造方法和本类中其他形式的构造方法。</p>
-<p>例子中Chinese类第三种构造方法调用的是本类中第二种构造方法，而第二种构造方法是调用父类的，因此也要先调用父类的构造方法，再调用本类中第二种，最后是重写第三种构造方法。</p>
-<p><strong>super和this的异同：</strong></p>
-<ul>
-<li>super（参数）：调用基类中的某一个构造函数（应该为构造函数中的第一条语句） </li>
-<li>this（参数）：调用本类中另一种形成的构造函数（应该为构造函数中的第一条语句）</li>
-<li>super:　它引用当前对象的直接父类中的成员（用来访问直接父类中被隐藏的父类中成员数据或函数，基类与派生类中有相同成员定义时如：super.变量名  super.成员函数据名（实参）</li>
-<li>this：它代表当前对象名（在程序中易产生二义性之处，应使用this来指明当前对象；如果函数的形参与类中的成员数据同名，这时需用this来指明成员变量名）</li>
-<li>调用super()必须写在子类构造方法的第一行，否则编译不通过。每个子类构造方法的第一条语句，都是隐含地调用super()，如果父类没有这种形式的构造函数，那么在编译的时候就会报错。</li>
-<li>super()和this()类似,区别是，super()从子类中调用父类的构造方法，this()在同一类内调用其它方法。</li>
-<li>super()和this()均需放在构造方法内第一行。</li>
-<li>尽管可以用this调用一个构造器，但却不能调用两个。</li>
-<li>this和super不能同时出现在一个构造函数里面，因为this必然会调用其它的构造函数，其它的构造函数必然也会有super语句的存在，所以在同一个构造函数里面有相同的语句，就失去了语句的意义，编译器也不会通过。</li>
-<li>this()和super()都指的是对象，所以，均不可以在static环境中使用。包括：static变量,static方法，static语句块。</li>
-<li>从本质上讲，this是一个指向本对象的指针, 然而super是一个Java关键字。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>JAVASE</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JAVA编译和运行的过程</title>
-    <url>/2020/05/11/JAVA%E7%BC%96%E8%AF%91%E5%92%8C%E8%BF%90%E8%A1%8C%E7%9A%84%E8%BF%87%E7%A8%8B/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍JAVA编译和运行的过程</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><ul>
-<li><p>JAVA程序源码 </p>
-</li>
-<li><p>——-&gt; JAVA字节码（经过编译器编译)</p>
-</li>
-<li><p>——-&gt;JVM （对字节码进行解释和运行）</p>
-<p>编译只进行一次，但是解释在每次运行程序时都会运行，编译的字节码采用一种针对JVM优化过度机器码的形式进行保存</p>
-</li>
-<li><p>——&gt;机器码（虚拟机将字节码解释为机器码，在计算机上运行）</p>
-<p><img src="/2020/05/11/JAVA%E7%BC%96%E8%AF%91%E5%92%8C%E8%BF%90%E8%A1%8C%E7%9A%84%E8%BF%87%E7%A8%8B/Screenshot.png" alt></p>
-</li>
-</ul>
 ]]></content>
       <categories>
         <category>后端</category>
@@ -484,6 +364,126 @@
       </tags>
   </entry>
   <entry>
+    <title>JAVA中this和super的用法总结</title>
+    <url>/2020/05/09/JAVA%E4%B8%ADthis%E5%92%8Csuper%E7%9A%84%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍这几天看到类在继承时会用到<strong>this</strong>和<strong>super</strong>，这里就做了一点总结，与各位共同交流，有错误请各位指正~</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><strong>this</strong></p>
+<p>this是自身的一个对象，代表对象本身，可以理解为：指向对象本身的一个指针。</p>
+<h2 id="this的用法在java中大体可以分为3种："><a href="#this的用法在java中大体可以分为3种：" class="headerlink" title="this的用法在java中大体可以分为3种："></a>this的用法在java中大体可以分为3种：</h2><p><strong>1.普通的直接引用</strong></p>
+<p>这种就不用讲了，this相当于是指向当前对象本身。</p>
+<p><strong>2.形参与成员名字重名，用this来区分：</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age = <span class="number">10</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">()</span></span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"初始化年龄："</span>+age);</span><br><span class="line">&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">GetAge</span><span class="params">(<span class="keyword">int</span> age)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">test1</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Person Harry = <span class="keyword">new</span> Person();</span><br><span class="line">        System.out.println(<span class="string">"Harry's age is "</span>+Harry.GetAge(<span class="number">12</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>运行结果：</strong></p>
+<p><strong>初始化年龄：10</strong><br><strong>Harry’s age is 12</strong></p>
+<p>可以看到，这里age是GetAge成员方法的形参，this.age是Person类的成员变量。</p>
+<p><strong>3.引用构造函数</strong></p>
+<p>这个和super放在一起讲，见下面。</p>
+<h2 id="super"><a href="#super" class="headerlink" title="super"></a><strong>super</strong></h2><p>super可以理解为是指向自己超（父）类对象的一个指针，而这个超类指的是离自己最近的一个父类。</p>
+<h3 id="super也有三种用法："><a href="#super也有三种用法：" class="headerlink" title="super也有三种用法："></a>super也有三种用法：</h3><p>1.普通的直接引用</p>
+<p>与this类似，super相当于是指向当前对象的父类，这样就可以用super.xxx来引用父类的成员。</p>
+<p>2.子类中的成员变量或方法与父类中的成员变量或方法同名</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Country</span> </span>&#123;</span><br><span class="line">    String name;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">value</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       name = <span class="string">"China"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">City</span> <span class="keyword">extends</span> <span class="title">Country</span> </span>&#123;</span><br><span class="line">    String name;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">value</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    name = <span class="string">"Shanghai"</span>;</span><br><span class="line">    <span class="keyword">super</span>.value();      <span class="comment">//调用父类的方法</span></span><br><span class="line">    System.out.println(name);</span><br><span class="line">    System.out.println(<span class="keyword">super</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">       City c=<span class="keyword">new</span> City();</span><br><span class="line">       c.value();</span><br><span class="line">       &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>运行结果：</strong></p>
+<p><strong>Shanghai</strong><br><strong>China</strong></p>
+<p>可以看到，这里既调用了父类的方法，也调用了父类的变量。若不调用父类方法value()，只调用父类变量name的话，则父类name值为默认值null。</p>
+<p>3.引用构造函数</p>
+<p>super（参数）：调用父类中的某一个构造函数（应该为构造函数中的第一条语句）。</p>
+<p>this（参数）：调用本类中另一种形式的构造函数（应该为构造函数中的第一条语句）。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">prt</span><span class="params">(String s)</span> </span>&#123; </span><br><span class="line">       System.out.println(s); </span><br><span class="line">    &#125; </span><br><span class="line">   </span><br><span class="line">    Person() &#123; </span><br><span class="line">       prt(<span class="string">"父类·无参数构造方法： "</span>+<span class="string">"A Person."</span>); </span><br><span class="line">    &#125;<span class="comment">//构造方法(1) </span></span><br><span class="line">    </span><br><span class="line">    Person(String name) &#123; </span><br><span class="line">       prt(<span class="string">"父类·含一个参数的构造方法： "</span>+<span class="string">"A person's name is "</span> + name); </span><br><span class="line">    &#125;<span class="comment">//构造方法(2) </span></span><br><span class="line">&#125; </span><br><span class="line">    </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Chinese</span> <span class="keyword">extends</span> <span class="title">Person</span> </span>&#123; </span><br><span class="line">    Chinese() &#123; </span><br><span class="line">       <span class="keyword">super</span>(); <span class="comment">// 调用父类构造方法（1） </span></span><br><span class="line">       prt(<span class="string">"子类·调用父类”无参数构造方法“： "</span>+<span class="string">"A chinese coder."</span>); </span><br><span class="line">    &#125; </span><br><span class="line">    </span><br><span class="line">    Chinese(String name) &#123; </span><br><span class="line">       <span class="keyword">super</span>(name);<span class="comment">// 调用父类具有相同形参的构造方法（2） </span></span><br><span class="line">       prt(<span class="string">"子类·调用父类”含一个参数的构造方法“： "</span>+<span class="string">"his name is "</span> + name); </span><br><span class="line">    &#125; </span><br><span class="line">    </span><br><span class="line">    Chinese(String name, <span class="keyword">int</span> age) &#123; </span><br><span class="line">       <span class="keyword">this</span>(name);<span class="comment">// 调用具有相同形参的构造方法（3） </span></span><br><span class="line">       prt(<span class="string">"子类：调用子类具有相同形参的构造方法：his age is "</span> + age); </span><br><span class="line">    &#125; </span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123; </span><br><span class="line">       Chinese cn = <span class="keyword">new</span> Chinese(); </span><br><span class="line">       cn = <span class="keyword">new</span> Chinese(<span class="string">"codersai"</span>); </span><br><span class="line">       cn = <span class="keyword">new</span> Chinese(<span class="string">"codersai"</span>, <span class="number">18</span>); </span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>运行结果：</strong></p>
+<p><strong>父类·无参数构造方法： A Person.</strong><br><strong>子类·调用父类”无参数构造方法“： A chinese coder.</strong><br><strong>父类·含一个参数的构造方法： A person’s name is codersai</strong><br><strong>子类·调用父类”含一个参数的构造方法“： his name is codersai</strong><br><strong>父类·含一个参数的构造方法： A person’s name is codersai</strong><br><strong>子类·调用父类”含一个参数的构造方法“： his name is codersai</strong><br><strong>子类：调用子类具有相同形参的构造方法：his age is 18</strong></p>
+<p>从本例可以看到，可以用super和this分别调用父类的构造方法和本类中其他形式的构造方法。</p>
+<p>例子中Chinese类第三种构造方法调用的是本类中第二种构造方法，而第二种构造方法是调用父类的，因此也要先调用父类的构造方法，再调用本类中第二种，最后是重写第三种构造方法。</p>
+<p><strong>super和this的异同：</strong></p>
+<ul>
+<li>super（参数）：调用基类中的某一个构造函数（应该为构造函数中的第一条语句） </li>
+<li>this（参数）：调用本类中另一种形成的构造函数（应该为构造函数中的第一条语句）</li>
+<li>super:　它引用当前对象的直接父类中的成员（用来访问直接父类中被隐藏的父类中成员数据或函数，基类与派生类中有相同成员定义时如：super.变量名  super.成员函数据名（实参）</li>
+<li>this：它代表当前对象名（在程序中易产生二义性之处，应使用this来指明当前对象；如果函数的形参与类中的成员数据同名，这时需用this来指明成员变量名）</li>
+<li>调用super()必须写在子类构造方法的第一行，否则编译不通过。每个子类构造方法的第一条语句，都是隐含地调用super()，如果父类没有这种形式的构造函数，那么在编译的时候就会报错。</li>
+<li>super()和this()类似,区别是，super()从子类中调用父类的构造方法，this()在同一类内调用其它方法。</li>
+<li>super()和this()均需放在构造方法内第一行。</li>
+<li>尽管可以用this调用一个构造器，但却不能调用两个。</li>
+<li>this和super不能同时出现在一个构造函数里面，因为this必然会调用其它的构造函数，其它的构造函数必然也会有super语句的存在，所以在同一个构造函数里面有相同的语句，就失去了语句的意义，编译器也不会通过。</li>
+<li>this()和super()都指的是对象，所以，均不可以在static环境中使用。包括：static变量,static方法，static语句块。</li>
+<li>从本质上讲，this是一个指向本对象的指针, 然而super是一个Java关键字。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>JAVASE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JAVA泛型</title>
+    <url>/2020/05/12/JAVA%E6%B3%9B%E5%9E%8B/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
+  </entry>
+  <entry>
+    <title>JAVA的静态方法不能被重写</title>
+    <url>/2020/05/06/JAVA%E7%9A%84%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95%E4%B8%8D%E8%83%BD%E8%A2%AB%E9%87%8D%E5%86%99/</url>
+    <content><![CDATA[<h1 id="JAVA的静态方法不能被重写"><a href="#JAVA的静态方法不能被重写" class="headerlink" title="JAVA的静态方法不能被重写"></a>JAVA的静态方法不能被重写</h1><p>堆区：</p>
+<ul>
+<li>存储的全部都是对象，每个对象都包含一个与之对应的class信息。<a id="more"></a>
+
+</li>
+</ul>
+<p>栈区:</p>
+<p>方法区：</p>
+<ul>
+<li>方法区包含所有的class和static变量  class可以直接调用static</li>
+</ul>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>JAVASE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JAVA编译和运行的过程</title>
+    <url>/2020/05/11/JAVA%E7%BC%96%E8%AF%91%E5%92%8C%E8%BF%90%E8%A1%8C%E7%9A%84%E8%BF%87%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍JAVA编译和运行的过程</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><ul>
+<li><p>JAVA程序源码 </p>
+</li>
+<li><p>——-&gt; JAVA字节码（经过编译器编译)</p>
+</li>
+<li><p>——-&gt;JVM （对字节码进行解释和运行）</p>
+<p>编译只进行一次，但是解释在每次运行程序时都会运行，编译的字节码采用一种针对JVM优化过度机器码的形式进行保存</p>
+</li>
+<li><p>——&gt;机器码（虚拟机将字节码解释为机器码，在计算机上运行）</p>
+<p><img src="/2020/05/11/JAVA%E7%BC%96%E8%AF%91%E5%92%8C%E8%BF%90%E8%A1%8C%E7%9A%84%E8%BF%87%E7%A8%8B/Screenshot.png" alt></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>JAVASE</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JAVA集合面试</title>
     <url>/2020/05/12/JAVA%E9%9B%86%E5%90%88%E9%9D%A2%E8%AF%95/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -547,6 +547,124 @@
 ]]></content>
       <categories>
         <category>面试</category>
+      </categories>
+      <tags>
+        <tag>JAVASE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JDK和JRE</title>
+    <url>/2020/05/09/JDK%E5%92%8CJRE/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍JDK和JRE的区别，他们的作用分别是什么？</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h2><p>JDK是JAVA Development Kit (JAVA开发套件) ，是JAVA的开发工具包。主要包含了类库和工具。</p>
+<p>JDK中包含了JRE 而且在JDK安装目录/JRE/bin/server 文件夹下包含jvm.dll</p>
+<p><img src="/2020/05/09/JDK%E5%92%8CJRE/QQ20200509115538.png" alt></p>
+<p>这说明JDK提供了一个虚拟机。</p>
+<p>另外JDK的bin目录下有各种JAVA程序需要用到的命令。</p>
+<p>与JRE明显的区别就饿死JDK文件下才会有javac</p>
+<p><img src="/2020/05/09/JDK%E5%92%8CJRE/QQ20200509115836.png" alt></p>
+<p>因为JRE只是一个运行环境，与开发无关。</p>
+<h2 id="JRE"><a href="#JRE" class="headerlink" title="JRE"></a>JRE</h2><p>JRE是JAVA Runtime Environment的缩写。是JAVA程序的运行环境。既然是运行，那么当然要包含JVM,也就是JAVA虚拟机，还有所有JAVA类库的class文件，都在lib下，并且被打包成了jar </p>
+<p><img src="/2020/05/09/JDK%E5%92%8CJRE/Screenshot.png" alt></p>
+<h2 id="问题：jdk里的jre与外面jre的区别"><a href="#问题：jdk里的jre与外面jre的区别" class="headerlink" title="问题：jdk里的jre与外面jre的区别"></a>问题：jdk里的jre与外面jre的区别</h2><p>分析：如果我们安装了JDK，那么我们的电脑中将会有C:\Program Files (x86)\Java\jdk1.8.0_05文件夹 ，这个文件夹里面有一个jre文件夹。然后我们再安装jre，此时我们的电脑中有C:\Program Files (x86)\Java\jre8文件夹。</p>
+<p>通过对比jre和jre8文件夹中的东西，我们发现基本是一样的，那么这俩文件夹到底有啥区别呢？</p>
+<p>我们暂且称jre为自带jdk-jre，jre8为公共jre。</p>
+<p>jdk-jre与公共jre的主要区别在于jdk-jre多了一个server的vm执行选项。</p>
+<p>sever与client使用不同的vm虚拟机。如果电脑运行一个java程序的时候，会自动调用client vm。但是如果开发java程序时使用的就是server vm（server vm启动时间较长，占用内存较多，但是启动后执行性能更高，适合开发）。</p>
+<p><strong>换句话说：公共jre是给普通电脑用户使用的，假如你安装了一个java程序，这个java程序启动运行的时候就会调用jre（java runtime environment）；如果你是一个java开发者，那么你就需要安装jdk（java development kit），这时你开发调试java程序的时候就会调用jdk里面的jre。</strong></p>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>JAVASE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java值传递和引用传递基础分析</title>
+    <url>/2020/05/11/Java%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E5%9F%BA%E7%A1%80%E5%88%86%E6%9E%90/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍JAVA的值传递和引用传递</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="java内的基础类型数据传递都是值传递-java中实例对象的传递是引用传递。"><a href="#java内的基础类型数据传递都是值传递-java中实例对象的传递是引用传递。" class="headerlink" title="java内的基础类型数据传递都是值传递. java中实例对象的传递是引用传递。"></a>java内的基础类型数据传递都是值传递. java中实例对象的传递是引用传递。</h2><p><strong>值传递是对基本型变量而言的,传递的是该变量的一个副本,改变副本不影响原变量。引用传递一般是对于对象型变量而言的,传递的是该对象地址的一个副本, 并不是原对象本身 。</strong></p>
+<p>首先，不要纠结于 Pass By Value 和 Pass By Reference 的字面上的意义，否则很容易陷入所谓的“一切传引用其实本质上是传值”这种并不能解决问题无意义论战中。<br>更何况，要想知道Java到底是传值还是传引用，起码你要先知道传值和传引用的准确含义吧？可是如果你已经知道了这两个名字的准确含义，那么你自己就能判断Java到底是传值还是传引用。</p>
+<h2 id="一：搞清楚-基本类型-和-引用类型的不同之处"><a href="#一：搞清楚-基本类型-和-引用类型的不同之处" class="headerlink" title="一：搞清楚 基本类型 和 引用类型的不同之处"></a>一：搞清楚 基本类型 和 引用类型的不同之处</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> num = <span class="number">10</span>;</span><br><span class="line">String str = <span class="string">"hello"</span>;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/05/11/Java%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E5%9F%BA%E7%A1%80%E5%88%86%E6%9E%90/2020-05-12_112353.png" alt></p>
+<p>如图所示，num是基本类型，值就直接保存在变量中。而str是引用类型，变量中保存的只是实际对象的地址。一般称这种变量为”引用”，引用指向实际对象，实际对象中保存着内容。</p>
+<p>二：搞清楚赋值运算符（=）的作用</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">num &#x3D; 20;</span><br><span class="line">str &#x3D; &quot;java&quot;;</span><br></pre></td></tr></table></figure>
+
+<p>对于基本类型 num ，赋值运算符会直接改变变量的值，原来的值被覆盖掉。<br>对于引用类型 str，赋值运算符会改变引用中所保存的地址，原来的地址被覆盖掉。但是原来的对象不会被改变（重要）。<br>如上图所示，”hello” 字符串对象没有被改变。（没有被任何引用所指向的对象是垃圾，会被垃圾回收器回收）</p>
+<p><img src="/2020/05/11/Java%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E5%9F%BA%E7%A1%80%E5%88%86%E6%9E%90/2020-05-12_112409.png" alt></p>
+<h2 id="三：调用方法时发生了什么？参数传递基本上就是赋值操作"><a href="#三：调用方法时发生了什么？参数传递基本上就是赋值操作" class="headerlink" title="三：调用方法时发生了什么？参数传递基本上就是赋值操作"></a>三：调用方法时发生了什么？参数传递基本上就是赋值操作</h2><p>第一个例子：基本类型</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">foo</span><span class="params">(<span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    value = <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">foo(num); <span class="comment">// num 没有被改变</span></span><br></pre></td></tr></table></figure>
+
+<p>第二个例子：没有提供改变自身方法的引用类型</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">foo</span><span class="params">(String text)</span> </span>&#123;</span><br><span class="line">    text = <span class="string">"windows"</span>;  <span class="comment">//String没改变是因为赋值新的字符串直接导致新new了一个String</span></span><br><span class="line">&#125;</span><br><span class="line">foo(str); <span class="comment">// str 也没有被改变</span></span><br></pre></td></tr></table></figure>
+
+<p>第三个例子：提供改变自身方法的引用类型</p>
+<p>builder的引用对象也是StringBuilder</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">StringBuilder sb = <span class="keyword">new</span> StringBuilder(<span class="string">"iphone"</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">foo</span><span class="params">(StringBuilder builder)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    builder.append(<span class="string">"4"</span>); <span class="comment">//没有生成新的stringBuilder对象</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">foo(sb); <span class="comment">// sb 被改变了，变成了"iphone4"。</span></span><br></pre></td></tr></table></figure>
+
+<p>第四个例子：提供了改变自身方法的引用类型，但是不使用，而是使用赋值运算符。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">StringBuilder sb = <span class="keyword">new</span> StringBuilder(<span class="string">"iphone"</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">foo</span><span class="params">(StringBuilder builder)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    builder = <span class="keyword">new</span> StringBuilder(<span class="string">"ipad"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(sb); <span class="comment">// sb 没有被改变，还是 "iphone"。</span></span><br></pre></td></tr></table></figure>
+
+<p>重点理解为什么，第三个例子和第四个例子结果不同？</p>
+<p>下面是第三个例子的图解：</p>
+<p><img src="/2020/05/11/Java%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E5%9F%BA%E7%A1%80%E5%88%86%E6%9E%90/2020-05-12_112424.png" alt></p>
+<p>builder = new StringBuilder(“ipad”); 之后</p>
+<p><img src="/2020/05/11/Java%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E5%9F%BA%E7%A1%80%E5%88%86%E6%9E%90/2020-05-12_112435.png" alt></p>
+]]></content>
+      <categories>
+        <category>面试</category>
+      </categories>
+      <tags>
+        <tag>JAVASE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>List集合</title>
+    <url>/2020/05/07/List%E9%9B%86%E5%90%88/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>List集合包括List接口和List接口所有的实现类</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="List接口定义的方法"><a href="#List接口定义的方法" class="headerlink" title="List接口定义的方法"></a>List接口定义的方法</h2><p>除了继承Collection外，List接口还有俩个重要的方法。</p>
+<table>
+<thead>
+<tr>
+<th>get(int index)</th>
+<th>获得指定索引位置的元素</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>set(int index,Object obj)</td>
+<td>将集合中指定索引位置的对象修改为指定的对象</td>
+</tr>
+</tbody></table>
+<h2 id="List接口的实现类"><a href="#List接口的实现类" class="headerlink" title="List接口的实现类"></a>List接口的实现类</h2><ul>
+<li><p>ArrayList</p>
+<p>实现了可变的数组，允许保存所有元素包括null .并且可以根据索引的位置对集合进行快速的随机访问，缺点是向指向的索引位置插入对象或删除对象时的速度较慢</p>
+</li>
+<li><p>LinkedList </p>
+<p>采用链表的结构保存对象。优点是便于向集合中插入和删除对象</p>
+<p>分别用ArrayList 和LinkedList来实例化集合</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;E&gt; list=<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">List&lt;E&gt; list=<span class="keyword">new</span> LinkedList&lt;&gt;();</span><br></pre></td></tr></table></figure>
+
+<p>E是合法的JAVA数据类型，也可以是字符串String</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>后端</category>
       </categories>
       <tags>
         <tag>JAVASE</tag>
@@ -682,124 +800,6 @@
       </categories>
       <tags>
         <tag>JAVA源码</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JDK和JRE</title>
-    <url>/2020/05/09/JDK%E5%92%8CJRE/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍JDK和JRE的区别，他们的作用分别是什么？</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h2><p>JDK是JAVA Development Kit (JAVA开发套件) ，是JAVA的开发工具包。主要包含了类库和工具。</p>
-<p>JDK中包含了JRE 而且在JDK安装目录/JRE/bin/server 文件夹下包含jvm.dll</p>
-<p><img src="/2020/05/09/JDK%E5%92%8CJRE/QQ20200509115538.png" alt></p>
-<p>这说明JDK提供了一个虚拟机。</p>
-<p>另外JDK的bin目录下有各种JAVA程序需要用到的命令。</p>
-<p>与JRE明显的区别就饿死JDK文件下才会有javac</p>
-<p><img src="/2020/05/09/JDK%E5%92%8CJRE/QQ20200509115836.png" alt></p>
-<p>因为JRE只是一个运行环境，与开发无关。</p>
-<h2 id="JRE"><a href="#JRE" class="headerlink" title="JRE"></a>JRE</h2><p>JRE是JAVA Runtime Environment的缩写。是JAVA程序的运行环境。既然是运行，那么当然要包含JVM,也就是JAVA虚拟机，还有所有JAVA类库的class文件，都在lib下，并且被打包成了jar </p>
-<p><img src="/2020/05/09/JDK%E5%92%8CJRE/Screenshot.png" alt></p>
-<h2 id="问题：jdk里的jre与外面jre的区别"><a href="#问题：jdk里的jre与外面jre的区别" class="headerlink" title="问题：jdk里的jre与外面jre的区别"></a>问题：jdk里的jre与外面jre的区别</h2><p>分析：如果我们安装了JDK，那么我们的电脑中将会有C:\Program Files (x86)\Java\jdk1.8.0_05文件夹 ，这个文件夹里面有一个jre文件夹。然后我们再安装jre，此时我们的电脑中有C:\Program Files (x86)\Java\jre8文件夹。</p>
-<p>通过对比jre和jre8文件夹中的东西，我们发现基本是一样的，那么这俩文件夹到底有啥区别呢？</p>
-<p>我们暂且称jre为自带jdk-jre，jre8为公共jre。</p>
-<p>jdk-jre与公共jre的主要区别在于jdk-jre多了一个server的vm执行选项。</p>
-<p>sever与client使用不同的vm虚拟机。如果电脑运行一个java程序的时候，会自动调用client vm。但是如果开发java程序时使用的就是server vm（server vm启动时间较长，占用内存较多，但是启动后执行性能更高，适合开发）。</p>
-<p><strong>换句话说：公共jre是给普通电脑用户使用的，假如你安装了一个java程序，这个java程序启动运行的时候就会调用jre（java runtime environment）；如果你是一个java开发者，那么你就需要安装jdk（java development kit），这时你开发调试java程序的时候就会调用jdk里面的jre。</strong></p>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>JAVASE</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>List集合</title>
-    <url>/2020/05/07/List%E9%9B%86%E5%90%88/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>List集合包括List接口和List接口所有的实现类</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="List接口定义的方法"><a href="#List接口定义的方法" class="headerlink" title="List接口定义的方法"></a>List接口定义的方法</h2><p>除了继承Collection外，List接口还有俩个重要的方法。</p>
-<table>
-<thead>
-<tr>
-<th>get(int index)</th>
-<th>获得指定索引位置的元素</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>set(int index,Object obj)</td>
-<td>将集合中指定索引位置的对象修改为指定的对象</td>
-</tr>
-</tbody></table>
-<h2 id="List接口的实现类"><a href="#List接口的实现类" class="headerlink" title="List接口的实现类"></a>List接口的实现类</h2><ul>
-<li><p>ArrayList</p>
-<p>实现了可变的数组，允许保存所有元素包括null .并且可以根据索引的位置对集合进行快速的随机访问，缺点是向指向的索引位置插入对象或删除对象时的速度较慢</p>
-</li>
-<li><p>LinkedList </p>
-<p>采用链表的结构保存对象。优点是便于向集合中插入和删除对象</p>
-<p>分别用ArrayList 和LinkedList来实例化集合</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;E&gt; list=<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">List&lt;E&gt; list=<span class="keyword">new</span> LinkedList&lt;&gt;();</span><br></pre></td></tr></table></figure>
-
-<p>E是合法的JAVA数据类型，也可以是字符串String</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>JAVASE</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java值传递和引用传递基础分析</title>
-    <url>/2020/05/11/Java%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E5%9F%BA%E7%A1%80%E5%88%86%E6%9E%90/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍JAVA的值传递和引用传递</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="java内的基础类型数据传递都是值传递-java中实例对象的传递是引用传递。"><a href="#java内的基础类型数据传递都是值传递-java中实例对象的传递是引用传递。" class="headerlink" title="java内的基础类型数据传递都是值传递. java中实例对象的传递是引用传递。"></a>java内的基础类型数据传递都是值传递. java中实例对象的传递是引用传递。</h2><p><strong>值传递是对基本型变量而言的,传递的是该变量的一个副本,改变副本不影响原变量。引用传递一般是对于对象型变量而言的,传递的是该对象地址的一个副本, 并不是原对象本身 。</strong></p>
-<p>首先，不要纠结于 Pass By Value 和 Pass By Reference 的字面上的意义，否则很容易陷入所谓的“一切传引用其实本质上是传值”这种并不能解决问题无意义论战中。<br>更何况，要想知道Java到底是传值还是传引用，起码你要先知道传值和传引用的准确含义吧？可是如果你已经知道了这两个名字的准确含义，那么你自己就能判断Java到底是传值还是传引用。</p>
-<h2 id="一：搞清楚-基本类型-和-引用类型的不同之处"><a href="#一：搞清楚-基本类型-和-引用类型的不同之处" class="headerlink" title="一：搞清楚 基本类型 和 引用类型的不同之处"></a>一：搞清楚 基本类型 和 引用类型的不同之处</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> num = <span class="number">10</span>;</span><br><span class="line">String str = <span class="string">"hello"</span>;</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2020/05/11/Java%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E5%9F%BA%E7%A1%80%E5%88%86%E6%9E%90/2020-05-12_112353.png" alt></p>
-<p>如图所示，num是基本类型，值就直接保存在变量中。而str是引用类型，变量中保存的只是实际对象的地址。一般称这种变量为”引用”，引用指向实际对象，实际对象中保存着内容。</p>
-<p>二：搞清楚赋值运算符（=）的作用</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">num &#x3D; 20;</span><br><span class="line">str &#x3D; &quot;java&quot;;</span><br></pre></td></tr></table></figure>
-
-<p>对于基本类型 num ，赋值运算符会直接改变变量的值，原来的值被覆盖掉。<br>对于引用类型 str，赋值运算符会改变引用中所保存的地址，原来的地址被覆盖掉。但是原来的对象不会被改变（重要）。<br>如上图所示，”hello” 字符串对象没有被改变。（没有被任何引用所指向的对象是垃圾，会被垃圾回收器回收）</p>
-<p><img src="/2020/05/11/Java%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E5%9F%BA%E7%A1%80%E5%88%86%E6%9E%90/2020-05-12_112409.png" alt></p>
-<h2 id="三：调用方法时发生了什么？参数传递基本上就是赋值操作"><a href="#三：调用方法时发生了什么？参数传递基本上就是赋值操作" class="headerlink" title="三：调用方法时发生了什么？参数传递基本上就是赋值操作"></a>三：调用方法时发生了什么？参数传递基本上就是赋值操作</h2><p>第一个例子：基本类型</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">foo</span><span class="params">(<span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    value = <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">foo(num); <span class="comment">// num 没有被改变</span></span><br></pre></td></tr></table></figure>
-
-<p>第二个例子：没有提供改变自身方法的引用类型</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">foo</span><span class="params">(String text)</span> </span>&#123;</span><br><span class="line">    text = <span class="string">"windows"</span>;  <span class="comment">//String没改变是因为赋值新的字符串直接导致新new了一个String</span></span><br><span class="line">&#125;</span><br><span class="line">foo(str); <span class="comment">// str 也没有被改变</span></span><br></pre></td></tr></table></figure>
-
-<p>第三个例子：提供改变自身方法的引用类型</p>
-<p>builder的引用对象也是StringBuilder</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">StringBuilder sb = <span class="keyword">new</span> StringBuilder(<span class="string">"iphone"</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">foo</span><span class="params">(StringBuilder builder)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    builder.append(<span class="string">"4"</span>); <span class="comment">//没有生成新的stringBuilder对象</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">foo(sb); <span class="comment">// sb 被改变了，变成了"iphone4"。</span></span><br></pre></td></tr></table></figure>
-
-<p>第四个例子：提供了改变自身方法的引用类型，但是不使用，而是使用赋值运算符。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">StringBuilder sb = <span class="keyword">new</span> StringBuilder(<span class="string">"iphone"</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">foo</span><span class="params">(StringBuilder builder)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    builder = <span class="keyword">new</span> StringBuilder(<span class="string">"ipad"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(sb); <span class="comment">// sb 没有被改变，还是 "iphone"。</span></span><br></pre></td></tr></table></figure>
-
-<p>重点理解为什么，第三个例子和第四个例子结果不同？</p>
-<p>下面是第三个例子的图解：</p>
-<p><img src="/2020/05/11/Java%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E5%9F%BA%E7%A1%80%E5%88%86%E6%9E%90/2020-05-12_112424.png" alt></p>
-<p>builder = new StringBuilder(“ipad”); 之后</p>
-<p><img src="/2020/05/11/Java%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E5%9F%BA%E7%A1%80%E5%88%86%E6%9E%90/2020-05-12_112435.png" alt></p>
-]]></content>
-      <categories>
-        <category>面试</category>
-      </categories>
-      <tags>
-        <tag>JAVASE</tag>
       </tags>
   </entry>
   <entry>
@@ -941,33 +941,61 @@
       </tags>
   </entry>
   <entry>
-    <title>mysql插入数据</title>
-    <url>/2020/05/07/mysql%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE/</url>
+    <title>mysql全文本搜索</title>
+    <url>/2020/05/07/mysql%E5%85%A8%E6%96%87%E6%9C%AC%E6%90%9C%E7%B4%A2/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍如何利用SQL的INSERT语句将数据插入到表中</p>
+<p>Mysql 全文本搜索用法实例及详解。</p>
 </blockquote>
 <a id="more"></a>
 
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="插入到完整的行"><a href="#插入到完整的行" class="headerlink" title="插入到完整的行"></a>插入到完整的行</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">INSERT INTO Customers</span><br><span class="line">VALUES(<span class="literal">NULL</span>,</span><br><span class="line">       'PEP E.LAPEW',</span><br><span class="line">       '100 MAIN STREET',</span><br><span class="line">        'Los Angeles',</span><br><span class="line">         'CA',</span><br><span class="line">        '90046',</span><br><span class="line">         'USA',</span><br><span class="line">          <span class="literal">NULL</span>,</span><br><span class="line">          <span class="literal">NULL</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h1 id="启用全文本搜索支持"><a href="#启用全文本搜索支持" class="headerlink" title="启用全文本搜索支持"></a>启用全文本搜索支持</h1><p>CREATE  TABLE 接受FULLTEXT子句</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">CREATE TABLE productsnotes</span><br><span class="line">(</span><br><span class="line"> note_id <span class="keyword">int</span> NOT <span class="literal">NULL</span> AUTO_INCREMENT,  <span class="comment">/* auto increment 自动递增主键字段 */</span></span><br><span class="line"> prod_id <span class="keyword">char</span>(<span class="number">10</span>)  NOT <span class="literal">NULL</span>,</span><br><span class="line"> note_date datetime NOT <span class="literal">NULL</span>,</span><br><span class="line"> note_text  <span class="built_in">text</span>  <span class="literal">NULL</span>,</span><br><span class="line"> PRIMARY KEY(note_id),</span><br><span class="line"> FULLTEXT(note_text)</span><br><span class="line"> ) ENGINE=MyISAM;</span><br></pre></td></tr></table></figure>
 
-<p>编写INSERT语句的更加安全（不过更加繁琐）</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">INSERT INTO customers(cust_name,cust_address,cust_city,cust_state,cust_zip,cust_country,cust_contact,cust_email)</span><br><span class="line">VALUSES(&#39;PEP E.LAPEW&#39;,</span><br><span class="line">       &#39;100 MAIN STREET&#39;,</span><br><span class="line">        &#39;Los Angeles&#39;,</span><br><span class="line">         &#39;CA&#39;,</span><br><span class="line">        &#39;90046&#39;,</span><br><span class="line">         &#39;USA&#39;,</span><br><span class="line">          NULL,</span><br><span class="line">          NULL&#39;);</span><br></pre></td></tr></table></figure>
+<p>这条CREATE TABLE 语句定义表productnotes 并列出它所包含的列即可。这些列中有一个名为note_text 的列，为了进行全文本搜素，MySQL根据子句FULLTEXT(note_text)的指示对它进行索引。<br>FULLTEXT索引单个列，如果需要也可以指定多个列。</p>
+<h2 id="在索引之后，使用俩个函数Match-和Against-执行全文本搜素"><a href="#在索引之后，使用俩个函数Match-和Against-执行全文本搜素" class="headerlink" title="在索引之后，使用俩个函数Match() 和Against()执行全文本搜素"></a>在索引之后，使用俩个函数Match() 和Against()执行全文本搜素</h2><p>其中Match()指定被搜索的列，Against()指定要使用的搜索表达式</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">SELECT note_text FROM productnotes WHERE Match(not_text) Against('rabbit');</span><br></pre></td></tr></table></figure>
 
-<h3 id="省略列"><a href="#省略列" class="headerlink" title="省略列"></a>省略列</h3><ul>
-<li>该列定义为允许null值</li>
-<li>在表定义中给出默认值</li>
+<p>Match(note_text )指示MySQL针对指定的列进行搜索，Against(‘rabbit’) 指定词rabbit作为搜索文本。</p>
+<p>使用完整的Match()说明，传递给Match()的值必须与FULLTEXT()定义中的相同。除非使用BINARY 方式，否则全文本搜索不区分大小写。</p>
+<ul>
+<li>搜索页可以简单地用LIKE子句完成</li>
 </ul>
-<h3 id="提高整体性能"><a href="#提高整体性能" class="headerlink" title="提高整体性能"></a>提高整体性能</h3><p>如果数据检索是最重要的，那你可以通过在INSERT INTO 之间添加关键字</p>
-<p>LOW_PRIORITY 指示Mysql降低INSERT语句的优先级</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">INSERT LOW_PRIORITY INTO</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">SELECT note_text FROM productnotes WHERE note_text LIKE '%rabbit%';</span><br></pre></td></tr></table></figure>
 
-<h2 id="插入多个行"><a href="#插入多个行" class="headerlink" title="插入多个行"></a>插入多个行</h2><figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="function">INSERT INTO <span class="title">customers</span><span class="params">(cust_name,cust_address,cust_city,cust_state,cust_zip,cust_country,cust_contact,cust_email)</span></span></span><br><span class="line">VALUSES('PEP E.LAPEW',</span><br><span class="line">       '100 MAIN STREET',</span><br><span class="line">        'Los Angeles',</span><br><span class="line">         'CA',</span><br><span class="line">        '90046',</span><br><span class="line">         'USA',</span><br><span class="line">          <span class="literal">NULL</span>,</span><br><span class="line">          NULL'),</span><br><span class="line">       ('PEP E.LAPEW',</span><br><span class="line">       '100 MAIN STREET',</span><br><span class="line">        'Los Angeles',</span><br><span class="line">         'CA',</span><br><span class="line">        '90046',</span><br><span class="line">         'USA',</span><br><span class="line">          <span class="literal">NULL</span>,</span><br><span class="line">          NULL');</span><br></pre></td></tr></table></figure>
-
-<p>其中单条INSERT语句有多组值，每组值用一对圆括号括起来，用逗号分隔。</p>
-<h3 id="插入检索出的数据"><a href="#插入检索出的数据" class="headerlink" title="插入检索出的数据"></a>插入检索出的数据</h3><figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="function">INSERT INTO <span class="title">customers</span><span class="params">(cust_id,cust_name,cust_address,cust_city,cust_state,cust_zip,cust_country,cust_contact,cust_email)</span></span></span><br><span class="line">SELECT cust_id,cust_name,cust_address,cust_city,cust_state,cust_zip,cust_country,cust_contact,cust_email FROM custnew;</span><br></pre></td></tr></table></figure>
-
-<p>这个例子中INSERT SELECT 从custnew中将所有数据导入到customer中。</p>
-<p><strong>其实MYSQL不关心SELECT返回的列名，它使用的是列的位置，因此SELECT中的第一列用来填充表列中指定的第一列</strong>。</p>
+<ul>
+<li>但是却与全文本搜索，各有优劣</li>
+</ul>
+<ol>
+<li></li>
+<li>在使用全文本搜索时就会对此结果排序，但是like却不会。</li>
+</ol>
+<h1 id="全文本布尔操作符"><a href="#全文本布尔操作符" class="headerlink" title="全文本布尔操作符"></a>全文本布尔操作符</h1><ul>
+<li>+包含，词必须存在</li>
+</ul>
+<ul>
+<li>-排除，词必须不出现</li>
+<li>大于号 包含，而且增加等级值</li>
+<li>&lt;包含，且减少等级值</li>
+<li>() 把词组成子表达式(允许这些子表达式作为一个组被包含，排除，排列等）</li>
+<li>~取消一个词的排序值</li>
+</ul>
+<ul>
+<li>*词尾的通配符</li>
+<li>“” 定义一个短语</li>
+</ul>
+<h2 id="布尔文本搜索"><a href="#布尔文本搜索" class="headerlink" title="布尔文本搜索"></a>布尔文本搜索</h2><p>布尔方式搜索，添加布尔操作符</p>
+<p>IN BOOLEAN MODE</p>
+<ul>
+<li><p>举几个例子：</p>
+</li>
+<li><pre><code class="c">1 SELECT note_text FROM productnotes WHERE Match(note_text) Against('+rabbit +bait' IN BOOLEAN MODE);
+<span class="comment">/*这个搜索匹配包含词rabbit和bait的行 */</span>
+2 SELECT note_text FROM productnotes WHERE Match(note_text) Against('rabbit bait' IN BOOLEAN MODE);
+<span class="comment">/*没有指定操作符，这个搜索匹配包含rabbit 和bait中的至少一个词的行。*/</span>
+3 SELECT note_text FROM productnotes WHERE Match(note_text) Against('"rabbit bait"' IN BOOLEAN MODE);
+4 SELECT note_text FROM productnotes WHERE Match(note_text) Against ('&gt;rabbit &lt;carrot' IN BOOLEAN MODE);</code></pre>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>后端</category>
@@ -1039,61 +1067,33 @@
       </tags>
   </entry>
   <entry>
-    <title>mysql全文本搜索</title>
-    <url>/2020/05/07/mysql%E5%85%A8%E6%96%87%E6%9C%AC%E6%90%9C%E7%B4%A2/</url>
+    <title>mysql插入数据</title>
+    <url>/2020/05/07/mysql%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>Mysql 全文本搜索用法实例及详解。</p>
+<p>本章介绍如何利用SQL的INSERT语句将数据插入到表中</p>
 </blockquote>
 <a id="more"></a>
 
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h1 id="启用全文本搜索支持"><a href="#启用全文本搜索支持" class="headerlink" title="启用全文本搜索支持"></a>启用全文本搜索支持</h1><p>CREATE  TABLE 接受FULLTEXT子句</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">CREATE TABLE productsnotes</span><br><span class="line">(</span><br><span class="line"> note_id <span class="keyword">int</span> NOT <span class="literal">NULL</span> AUTO_INCREMENT,  <span class="comment">/* auto increment 自动递增主键字段 */</span></span><br><span class="line"> prod_id <span class="keyword">char</span>(<span class="number">10</span>)  NOT <span class="literal">NULL</span>,</span><br><span class="line"> note_date datetime NOT <span class="literal">NULL</span>,</span><br><span class="line"> note_text  <span class="built_in">text</span>  <span class="literal">NULL</span>,</span><br><span class="line"> PRIMARY KEY(note_id),</span><br><span class="line"> FULLTEXT(note_text)</span><br><span class="line"> ) ENGINE=MyISAM;</span><br></pre></td></tr></table></figure>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="插入到完整的行"><a href="#插入到完整的行" class="headerlink" title="插入到完整的行"></a>插入到完整的行</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">INSERT INTO Customers</span><br><span class="line">VALUES(<span class="literal">NULL</span>,</span><br><span class="line">       'PEP E.LAPEW',</span><br><span class="line">       '100 MAIN STREET',</span><br><span class="line">        'Los Angeles',</span><br><span class="line">         'CA',</span><br><span class="line">        '90046',</span><br><span class="line">         'USA',</span><br><span class="line">          <span class="literal">NULL</span>,</span><br><span class="line">          <span class="literal">NULL</span>);</span><br></pre></td></tr></table></figure>
 
-<p>这条CREATE TABLE 语句定义表productnotes 并列出它所包含的列即可。这些列中有一个名为note_text 的列，为了进行全文本搜素，MySQL根据子句FULLTEXT(note_text)的指示对它进行索引。<br>FULLTEXT索引单个列，如果需要也可以指定多个列。</p>
-<h2 id="在索引之后，使用俩个函数Match-和Against-执行全文本搜素"><a href="#在索引之后，使用俩个函数Match-和Against-执行全文本搜素" class="headerlink" title="在索引之后，使用俩个函数Match() 和Against()执行全文本搜素"></a>在索引之后，使用俩个函数Match() 和Against()执行全文本搜素</h2><p>其中Match()指定被搜索的列，Against()指定要使用的搜索表达式</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">SELECT note_text FROM productnotes WHERE Match(not_text) Against('rabbit');</span><br></pre></td></tr></table></figure>
+<p>编写INSERT语句的更加安全（不过更加繁琐）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">INSERT INTO customers(cust_name,cust_address,cust_city,cust_state,cust_zip,cust_country,cust_contact,cust_email)</span><br><span class="line">VALUSES(&#39;PEP E.LAPEW&#39;,</span><br><span class="line">       &#39;100 MAIN STREET&#39;,</span><br><span class="line">        &#39;Los Angeles&#39;,</span><br><span class="line">         &#39;CA&#39;,</span><br><span class="line">        &#39;90046&#39;,</span><br><span class="line">         &#39;USA&#39;,</span><br><span class="line">          NULL,</span><br><span class="line">          NULL&#39;);</span><br></pre></td></tr></table></figure>
 
-<p>Match(note_text )指示MySQL针对指定的列进行搜索，Against(‘rabbit’) 指定词rabbit作为搜索文本。</p>
-<p>使用完整的Match()说明，传递给Match()的值必须与FULLTEXT()定义中的相同。除非使用BINARY 方式，否则全文本搜索不区分大小写。</p>
-<ul>
-<li>搜索页可以简单地用LIKE子句完成</li>
+<h3 id="省略列"><a href="#省略列" class="headerlink" title="省略列"></a>省略列</h3><ul>
+<li>该列定义为允许null值</li>
+<li>在表定义中给出默认值</li>
 </ul>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">SELECT note_text FROM productnotes WHERE note_text LIKE '%rabbit%';</span><br></pre></td></tr></table></figure>
+<h3 id="提高整体性能"><a href="#提高整体性能" class="headerlink" title="提高整体性能"></a>提高整体性能</h3><p>如果数据检索是最重要的，那你可以通过在INSERT INTO 之间添加关键字</p>
+<p>LOW_PRIORITY 指示Mysql降低INSERT语句的优先级</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">INSERT LOW_PRIORITY INTO</span><br></pre></td></tr></table></figure>
 
-<ul>
-<li>但是却与全文本搜索，各有优劣</li>
-</ul>
-<ol>
-<li></li>
-<li>在使用全文本搜索时就会对此结果排序，但是like却不会。</li>
-</ol>
-<h1 id="全文本布尔操作符"><a href="#全文本布尔操作符" class="headerlink" title="全文本布尔操作符"></a>全文本布尔操作符</h1><ul>
-<li>+包含，词必须存在</li>
-</ul>
-<ul>
-<li>-排除，词必须不出现</li>
-<li>大于号 包含，而且增加等级值</li>
-<li>&lt;包含，且减少等级值</li>
-<li>() 把词组成子表达式(允许这些子表达式作为一个组被包含，排除，排列等）</li>
-<li>~取消一个词的排序值</li>
-</ul>
-<ul>
-<li>*词尾的通配符</li>
-<li>“” 定义一个短语</li>
-</ul>
-<h2 id="布尔文本搜索"><a href="#布尔文本搜索" class="headerlink" title="布尔文本搜索"></a>布尔文本搜索</h2><p>布尔方式搜索，添加布尔操作符</p>
-<p>IN BOOLEAN MODE</p>
-<ul>
-<li><p>举几个例子：</p>
-</li>
-<li><pre><code class="c">1 SELECT note_text FROM productnotes WHERE Match(note_text) Against('+rabbit +bait' IN BOOLEAN MODE);
-<span class="comment">/*这个搜索匹配包含词rabbit和bait的行 */</span>
-2 SELECT note_text FROM productnotes WHERE Match(note_text) Against('rabbit bait' IN BOOLEAN MODE);
-<span class="comment">/*没有指定操作符，这个搜索匹配包含rabbit 和bait中的至少一个词的行。*/</span>
-3 SELECT note_text FROM productnotes WHERE Match(note_text) Against('"rabbit bait"' IN BOOLEAN MODE);
-4 SELECT note_text FROM productnotes WHERE Match(note_text) Against ('&gt;rabbit &lt;carrot' IN BOOLEAN MODE);</code></pre>
-</li>
-</ul>
+<h2 id="插入多个行"><a href="#插入多个行" class="headerlink" title="插入多个行"></a>插入多个行</h2><figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="function">INSERT INTO <span class="title">customers</span><span class="params">(cust_name,cust_address,cust_city,cust_state,cust_zip,cust_country,cust_contact,cust_email)</span></span></span><br><span class="line">VALUSES('PEP E.LAPEW',</span><br><span class="line">       '100 MAIN STREET',</span><br><span class="line">        'Los Angeles',</span><br><span class="line">         'CA',</span><br><span class="line">        '90046',</span><br><span class="line">         'USA',</span><br><span class="line">          <span class="literal">NULL</span>,</span><br><span class="line">          NULL'),</span><br><span class="line">       ('PEP E.LAPEW',</span><br><span class="line">       '100 MAIN STREET',</span><br><span class="line">        'Los Angeles',</span><br><span class="line">         'CA',</span><br><span class="line">        '90046',</span><br><span class="line">         'USA',</span><br><span class="line">          <span class="literal">NULL</span>,</span><br><span class="line">          NULL');</span><br></pre></td></tr></table></figure>
+
+<p>其中单条INSERT语句有多组值，每组值用一对圆括号括起来，用逗号分隔。</p>
+<h3 id="插入检索出的数据"><a href="#插入检索出的数据" class="headerlink" title="插入检索出的数据"></a>插入检索出的数据</h3><figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="function">INSERT INTO <span class="title">customers</span><span class="params">(cust_id,cust_name,cust_address,cust_city,cust_state,cust_zip,cust_country,cust_contact,cust_email)</span></span></span><br><span class="line">SELECT cust_id,cust_name,cust_address,cust_city,cust_state,cust_zip,cust_country,cust_contact,cust_email FROM custnew;</span><br></pre></td></tr></table></figure>
+
+<p>这个例子中INSERT SELECT 从custnew中将所有数据导入到customer中。</p>
+<p><strong>其实MYSQL不关心SELECT返回的列名，它使用的是列的位置，因此SELECT中的第一列用来填充表列中指定的第一列</strong>。</p>
 ]]></content>
       <categories>
         <category>后端</category>
@@ -1101,16 +1101,6 @@
       <tags>
         <tag>mysql</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>两数之和</title>
-    <url>/2020/05/11/%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
   </entry>
   <entry>
     <title>mysql联结表</title>
@@ -1255,6 +1245,16 @@
       </tags>
   </entry>
   <entry>
+    <title>两数之和</title>
+    <url>/2020/05/11/%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
+  </entry>
+  <entry>
     <title>二叉树</title>
     <url>/2020/05/07/%E4%BA%8C%E5%8F%89%E6%A0%91/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -1331,16 +1331,6 @@
       <tags>
         <tag>DataStructure</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>使用存储过程</title>
-    <url>/2020/05/10/%E4%BD%BF%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
   </entry>
   <entry>
     <title>二叉树的遍历</title>
@@ -1619,6 +1609,16 @@
 ]]></content>
   </entry>
   <entry>
+    <title>使用存储过程</title>
+    <url>/2020/05/10/%E4%BD%BF%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
+  </entry>
+  <entry>
     <title>内部类</title>
     <url>/2020/05/08/%E5%86%85%E9%83%A8%E7%B1%BB/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -1658,67 +1658,6 @@
 </li>
 <li><p>局部类不仅可以访问外部类的字段，还可以访问局部变量。（必须是事实最终变量）它们一旦赋值就绝对不会改变。</p>
 <h3 id="匿名内部类"><a href="#匿名内部类" class="headerlink" title="匿名内部类"></a>匿名内部类</h3></li>
-</ul>
-]]></content>
-  </entry>
-  <entry>
-    <title>创建表和操控表</title>
-    <url>/2020/05/08/%E5%88%9B%E5%BB%BA%E8%A1%A8%E5%92%8C%E6%93%8D%E6%8E%A7%E8%A1%A8/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍表的创建，更改和删除的基本知识。</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
-  </entry>
-  <entry>
-    <title>初级排序算法</title>
-    <url>/2020/05/12/%E5%88%9D%E7%BA%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>我们关注的主要对象是重新排列数组元素 的算法，其中每个元素都有一个主键 。排序算法的目标就是将所有元素的主键按照某种方式排列（通常是按照大小或是字母顺序）。排序后索引较大的主键大于等于索引较小的主键 . </p>
-<h2 id="一-初级排序算法"><a href="#一-初级排序算法" class="headerlink" title="一.初级排序算法"></a>一.初级排序算法</h2><p>排序算法类的模板</p>
-<p>排序算法类模版”中的 Example 类展示了我们的习惯约定：我们会将排序代码放在类的 sort() 方法中，该类还将包含辅助函数 less() 和 exch() （可能还有其他辅助函数）以及一个示例用例main() 。Example 类还包含了一些早期调试使用的代码：测试用例 main() 将标准输入得到的字符串排序，并用私有方法 show() 打印字符数组的内容。我们还会在本章中遇到各种用于比较不同算法并研究它们的性能的测试用例。为了区别不同的排序算法，我们为相应的类取了不同的名字，用例可以根据名字调用不同的实现，例如 Insertion.sort() 、Merge.sort() 、Quick.sort() 等。<br>大多数情况下，我们的排序代码只会通过两个方法操作数据：less() 方法对元素进行比较，exch()方法将元素交换位置。exch() 方法的实现很简单，通过 Comparable 接口实现 less() 方法也不困难。将数据操作限制在这两个方法中使得代码的可读性和可移植性更好，更容易验证代码的正确性、分析性能以及排序算法之间的比较。在学习具体的排序算法实现之前，我们先讨论几个对于所有排序算法都很<br>重要的问题。  </p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Example</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(Comparable[] a)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="comment">/* 请见算法2.1、算法2.2、算法2.3、算法2.4、算法2.5或算法2.7*/</span> &#125;<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">less</span><span class="params">(Comparable v, Comparable w)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="keyword">return</span> v.compareTo(w) &lt; <span class="number">0</span>; &#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">exch</span><span class="params">(Comparable[] a, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span></span></span><br><span class="line"><span class="function"></span>&#123; Comparable t = a[i]; a[i] = a[j]; a[j] = t; &#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">(Comparable[] a)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="comment">// 在单行中打印数组</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; a.length; i++)</span><br><span class="line">StdOut.print(a[i] + <span class="string">" "</span>);</span><br><span class="line">StdOut.println();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isSorted</span><span class="params">(Comparable[] a)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="comment">// 测试数组元素是否有序</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; a.length; i++)</span><br><span class="line"><span class="keyword">if</span> (less(a[i], a[i-<span class="number">1</span>])) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line"><span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="comment">// 从标准输入读取字符串，将它们排序并输出</span></span><br><span class="line">String[] a = In.readStrings();</span><br><span class="line">sort(a);</span><br><span class="line"><span class="function"><span class="keyword">assert</span> <span class="title">isSorted</span><span class="params">(a)</span></span>;</span><br><span class="line">show(a);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="1-java中compareTo-用法详解"><a href="#1-java中compareTo-用法详解" class="headerlink" title="1.java中compareTo()用法详解"></a>1.java中compareTo()用法详解</h2><p>一、字符串比较用compareTo()时:</p>
-<p>1，长度相同,从第一位开始比较，如果相同返回0，如果不同则马上返回这两个字符的ascii值的差值。</p>
-<p>2，长度不同,直接返回长度差值。</p>
-<p>二、Integer比较用compareTo()时：</p>
-<p>1，对比数字时相同，返回0。</p>
-<p>2，对比数字不同时，返回-1。</p>
-<p><strong>对于 v&lt;w 、v=w 和 v&gt;w 三种情况，Java 的习惯是在 v.compareTo(w) 被调用时分别返回一个负整数、零和一个正整数（一般是 -1、0 和 1）</strong></p>
-<h2 id="2-实现-Comparable-接口"><a href="#2-实现-Comparable-接口" class="headerlink" title="2.实现 Comparable 接口"></a>2.实现 Comparable 接口</h2><p>在创建自己的数据类型时，我们只要实现 Comparable 接口就能够保证用例代码可以将其排序。要做到这一点，只需要实现一个 compareTo() 方法来定义目标类型对象的自然次序  .</p>
-<p><img src="/2020/05/12/%E5%88%9D%E7%BA%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/E:%5Cdev%5CMYBLOG%5Cblog%5Csource_posts%5C%E5%88%9D%E7%BA%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%5C2020-05-12_155201.png" alt></p>
-<h2 id="二-选择排序"><a href="#二-选择排序" class="headerlink" title="二.选择排序"></a>二.选择排序</h2><p><strong>定义</strong>：一种最简单的排序算法是这样的：首先，找到数组中最小的那个元素，其次，将它和数组的第一个元素交换位置（如果第一个元素就是最小元素那么它就和自己交换）。再次，在剩下的元素中找到最小的元素，将它与数组的第二个元素交换位置。如此往复，直到将整个数组排序。这种方法叫做选择排序 ，因为它在不断地选择剩余元素之中的最小者。  </p>
-<p><strong>选择排序代码</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Selection</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(Comparable[] a)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="comment">// 将a[]按升序排列</span></span><br><span class="line"><span class="keyword">int</span> N = a.length; <span class="comment">// 数组长度for (int i = 0; i &lt; N; i++)</span></span><br><span class="line">&#123; <span class="comment">// 将a[i]和a[i+1..N]中最小的元素交换</span></span><br><span class="line"><span class="keyword">int</span> min = i; <span class="comment">// 最小元素的索引</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt; N; j++)</span><br><span class="line"><span class="keyword">if</span> (less(a[j], a[min])) min = j;</span><br><span class="line">exch(a, i, min);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// less()、exch()、isSorted()和main()方法见“排序算法类模板”</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>该算法将第 i 小的元素放到 a[i] 之中。数组的第 i 个位置的左边是 i 个最小的元素且它们不会再被访问。  </p>
-<h1 id="三-插入排序"><a href="#三-插入排序" class="headerlink" title="三.插入排序"></a>三.插入排序</h1><p>在计算机的实现中，为了给要插入的元素腾出空间，我们需要将其余所有元素在插入之前都向右移动一位。这种算法叫做<strong>插入排序</strong>   </p>
-]]></content>
-  </entry>
-  <entry>
-    <title>学习方法</title>
-    <url>/2020/05/07/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>学习方法</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><ul>
-<li>慢一点，你理解的越多，需要记的就越少</li>
-<li>勤做练习，自己记笔记</li>
-<li>上床睡觉之前就不要再看别的书了，或者至少不能再看其他有难度的东西</li>
-<li>要喝水，要多喝水</li>
-<li>大声说出来</li>
-<li>听听你的大脑怎么说（注意大脑是不是负荷太重）</li>
-<li>要有点感觉（真正融入到书的故事中）</li>
 </ul>
 ]]></content>
   </entry>
@@ -1809,6 +1748,48 @@
       </tags>
   </entry>
   <entry>
+    <title>创建表和操控表</title>
+    <url>/2020/05/08/%E5%88%9B%E5%BB%BA%E8%A1%A8%E5%92%8C%E6%93%8D%E6%8E%A7%E8%A1%A8/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍表的创建，更改和删除的基本知识。</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
+  </entry>
+  <entry>
+    <title>初级排序算法</title>
+    <url>/2020/05/12/%E5%88%9D%E7%BA%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>我们关注的主要对象是重新排列数组元素 的算法，其中每个元素都有一个主键 。排序算法的目标就是将所有元素的主键按照某种方式排列（通常是按照大小或是字母顺序）。排序后索引较大的主键大于等于索引较小的主键 . </p>
+<h2 id="一-初级排序算法"><a href="#一-初级排序算法" class="headerlink" title="一.初级排序算法"></a>一.初级排序算法</h2><p>排序算法类的模板</p>
+<p>排序算法类模版”中的 Example 类展示了我们的习惯约定：我们会将排序代码放在类的 sort() 方法中，该类还将包含辅助函数 less() 和 exch() （可能还有其他辅助函数）以及一个示例用例main() 。Example 类还包含了一些早期调试使用的代码：测试用例 main() 将标准输入得到的字符串排序，并用私有方法 show() 打印字符数组的内容。我们还会在本章中遇到各种用于比较不同算法并研究它们的性能的测试用例。为了区别不同的排序算法，我们为相应的类取了不同的名字，用例可以根据名字调用不同的实现，例如 Insertion.sort() 、Merge.sort() 、Quick.sort() 等。<br>大多数情况下，我们的排序代码只会通过两个方法操作数据：less() 方法对元素进行比较，exch()方法将元素交换位置。exch() 方法的实现很简单，通过 Comparable 接口实现 less() 方法也不困难。将数据操作限制在这两个方法中使得代码的可读性和可移植性更好，更容易验证代码的正确性、分析性能以及排序算法之间的比较。在学习具体的排序算法实现之前，我们先讨论几个对于所有排序算法都很<br>重要的问题。  </p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Example</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(Comparable[] a)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="comment">/* 请见算法2.1、算法2.2、算法2.3、算法2.4、算法2.5或算法2.7*/</span> &#125;<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">less</span><span class="params">(Comparable v, Comparable w)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="keyword">return</span> v.compareTo(w) &lt; <span class="number">0</span>; &#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">exch</span><span class="params">(Comparable[] a, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span></span></span><br><span class="line"><span class="function"></span>&#123; Comparable t = a[i]; a[i] = a[j]; a[j] = t; &#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">(Comparable[] a)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="comment">// 在单行中打印数组</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; a.length; i++)</span><br><span class="line">StdOut.print(a[i] + <span class="string">" "</span>);</span><br><span class="line">StdOut.println();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isSorted</span><span class="params">(Comparable[] a)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="comment">// 测试数组元素是否有序</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; a.length; i++)</span><br><span class="line"><span class="keyword">if</span> (less(a[i], a[i-<span class="number">1</span>])) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line"><span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="comment">// 从标准输入读取字符串，将它们排序并输出</span></span><br><span class="line">String[] a = In.readStrings();</span><br><span class="line">sort(a);</span><br><span class="line"><span class="function"><span class="keyword">assert</span> <span class="title">isSorted</span><span class="params">(a)</span></span>;</span><br><span class="line">show(a);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="1-java中compareTo-用法详解"><a href="#1-java中compareTo-用法详解" class="headerlink" title="1.java中compareTo()用法详解"></a>1.java中compareTo()用法详解</h2><p>一、字符串比较用compareTo()时:</p>
+<p>1，长度相同,从第一位开始比较，如果相同返回0，如果不同则马上返回这两个字符的ascii值的差值。</p>
+<p>2，长度不同,直接返回长度差值。</p>
+<p>二、Integer比较用compareTo()时：</p>
+<p>1，对比数字时相同，返回0。</p>
+<p>2，对比数字不同时，返回-1。</p>
+<p><strong>对于 v&lt;w 、v=w 和 v&gt;w 三种情况，Java 的习惯是在 v.compareTo(w) 被调用时分别返回一个负整数、零和一个正整数（一般是 -1、0 和 1）</strong></p>
+<h2 id="2-实现-Comparable-接口"><a href="#2-实现-Comparable-接口" class="headerlink" title="2.实现 Comparable 接口"></a>2.实现 Comparable 接口</h2><p>在创建自己的数据类型时，我们只要实现 Comparable 接口就能够保证用例代码可以将其排序。要做到这一点，只需要实现一个 compareTo() 方法来定义目标类型对象的自然次序  .</p>
+<p><img src="/2020/05/12/%E5%88%9D%E7%BA%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/E:%5Cdev%5CMYBLOG%5Cblog%5Csource_posts%5C%E5%88%9D%E7%BA%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%5C2020-05-12_155201.png" alt></p>
+<h2 id="二-选择排序"><a href="#二-选择排序" class="headerlink" title="二.选择排序"></a>二.选择排序</h2><p><strong>定义</strong>：一种最简单的排序算法是这样的：首先，找到数组中最小的那个元素，其次，将它和数组的第一个元素交换位置（如果第一个元素就是最小元素那么它就和自己交换）。再次，在剩下的元素中找到最小的元素，将它与数组的第二个元素交换位置。如此往复，直到将整个数组排序。这种方法叫做选择排序 ，因为它在不断地选择剩余元素之中的最小者。  </p>
+<p><strong>选择排序代码</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Selection</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(Comparable[] a)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="comment">// 将a[]按升序排列</span></span><br><span class="line"><span class="keyword">int</span> N = a.length; <span class="comment">// 数组长度for (int i = 0; i &lt; N; i++)</span></span><br><span class="line">&#123; <span class="comment">// 将a[i]和a[i+1..N]中最小的元素交换</span></span><br><span class="line"><span class="keyword">int</span> min = i; <span class="comment">// 最小元素的索引</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt; N; j++)</span><br><span class="line"><span class="keyword">if</span> (less(a[j], a[min])) min = j;</span><br><span class="line">exch(a, i, min);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// less()、exch()、isSorted()和main()方法见“排序算法类模板”</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>该算法将第 i 小的元素放到 a[i] 之中。数组的第 i 个位置的左边是 i 个最小的元素且它们不会再被访问。  </p>
+<h1 id="三-插入排序"><a href="#三-插入排序" class="headerlink" title="三.插入排序"></a>三.插入排序</h1><p>在计算机的实现中，为了给要插入的元素腾出空间，我们需要将其余所有元素在插入之前都向右移动一位。这种算法叫做<strong>插入排序</strong>   </p>
+]]></content>
+  </entry>
+  <entry>
     <title>实习</title>
     <url>/2020/05/08/%E5%AE%9E%E4%B9%A0/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -1847,48 +1828,23 @@
       </tags>
   </entry>
   <entry>
-    <title>时间复杂度</title>
-    <url>/2020/05/05/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/</url>
-    <content><![CDATA[<h1 id="算法时间复杂度"><a href="#算法时间复杂度" class="headerlink" title="算法时间复杂度"></a>算法时间复杂度</h1><h2 id="算法时间复杂度定义"><a href="#算法时间复杂度定义" class="headerlink" title="算法时间复杂度定义"></a>算法时间复杂度定义</h2><ul>
-<li><p>O()来体现算法时间复杂度的记法</p>
+    <title>学习方法</title>
+    <url>/2020/05/07/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>学习方法</p>
+</blockquote>
 <a id="more"></a>
 
-<h2 id="推导大O阶的方法"><a href="#推导大O阶的方法" class="headerlink" title="推导大O阶的方法"></a>推导大O阶的方法</h2><ol>
-<li><p>用常数1代替所有加法常数</p>
-</li>
-<li><p>在修改后的运行次数函数中，只保留最高阶项</p>
-</li>
-<li><p>如果最高阶项存在且不是1，则去除这个项相乘的常数</p>
-<p>得到的结果就是大O阶.</p>
-<h3 id="举例说明："><a href="#举例说明：" class="headerlink" title="举例说明："></a>举例说明：</h3><h4 id="常数阶"><a href="#常数阶" class="headerlink" title="常数阶"></a>常数阶</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> sum=<span class="number">0</span>,n=<span class="number">100</span>; <span class="comment">//执行1次</span></span><br><span class="line">sum=(<span class="number">1</span>+n)*n/<span class="number">2</span>; <span class="comment">//执行2次</span></span><br><span class="line">sum=(<span class="number">1</span>+n)*n/<span class="number">2</span>; <span class="comment">//</span></span><br><span class="line">sum=(<span class="number">1</span>+n)*n/<span class="number">2</span>; <span class="comment">//</span></span><br><span class="line">sum=(<span class="number">1</span>+n)*n/<span class="number">2</span>; <span class="comment">//</span></span><br><span class="line">...</span><br><span class="line">sum=(<span class="number">1</span>+n)*n/<span class="number">2</span>; <span class="comment">//执行10次</span></span><br></pre></td></tr></table></figure>
-
-<p>事实上无论n为多少，上面代码就是1次，2次，10次的差别，这种与问题大小无关（与n的大小无关）执行时间恒定的算法。称为O(1)阶，又叫常数阶</p>
-<h4 id="线性阶"><a href="#线性阶" class="headerlink" title="线性阶"></a>线性阶</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> i;</span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">/* 时间复杂度为O(1)的程序     */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-</li>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><ul>
+<li>慢一点，你理解的越多，需要记的就越少</li>
+<li>勤做练习，自己记笔记</li>
+<li>上床睡觉之前就不要再看别的书了，或者至少不能再看其他有难度的东西</li>
+<li>要喝水，要多喝水</li>
+<li>大声说出来</li>
+<li>听听你的大脑怎么说（注意大脑是不是负荷太重）</li>
+<li>要有点感觉（真正融入到书的故事中）</li>
 </ul>
-<p>​               循环的时间复杂度为O(n)</p>
-<h4 id="对数阶"><a href="#对数阶" class="headerlink" title="对数阶"></a>对数阶</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int count&#x3D;1;</span><br><span class="line">while (count &lt;n)</span><br><span class="line">&#123;</span><br><span class="line">count &#x3D;count *2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>2^x=n  x=log2 n   所以这个循环的时间复杂度为O(log n).</p>
-<h4 id="平方阶"><a href="#平方阶" class="headerlink" title="平方阶"></a>平方阶</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> i,j;</span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;m;i++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;n;j++)</span><br><span class="line">&#123;</span><br><span class="line">   <span class="comment">/*时间复杂度为O(1)的程序步骤序列      */</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>时间复杂度为O(m*n)</p>
-<p>又如：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> i,j;</span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">for</span>(j=i;j&lt;n;j++)</span><br><span class="line">&#123;</span><br><span class="line"> <span class="comment">/* 时间复杂度为O(1)的程序*/</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>执行总次数 n+n-1+(n-2)+…+1=n(n+1)/2   时间复杂度为O(n^2) </p>
-<h4 id="常见的时间复杂度"><a href="#常见的时间复杂度" class="headerlink" title="常见的时间复杂度"></a>常见的时间复杂度</h4><p>常用时间复杂度耗费时间比对：</p>
-<p>O(1)&lt;O(log n)&lt;O(n)&lt;O(nlogn)&lt;O(n^2)&lt;O(n^3)&lt;O(2^n)&lt;O(n!)&lt;O(n^n)</p>
 ]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>DataStructure</tag>
-      </tags>
   </entry>
   <entry>
     <title>抽象类和接口的区别详解</title>
@@ -1927,6 +1883,54 @@
       </tags>
   </entry>
   <entry>
+    <title>指针</title>
+    <url>/2020/05/04/%E6%8C%87%E9%92%88/</url>
+    <content><![CDATA[<h1 id="10-1-指针变量"><a href="#10-1-指针变量" class="headerlink" title="10.1 指针变量"></a>10.1 指针变量</h1><p> 由于通过地址能访问指定的内存存储单元。可以说地址“指向”该内存单元。地址可以形象地称为指针，意思是通过指针能够找到内存单元。<br> <a id="more"></a></p>
+<h2 id="1一个变量的地址称为该变量的指针，如果有一个变量专门用来存放另一个变量的地址，那么它就是指针变量。"><a href="#1一个变量的地址称为该变量的指针，如果有一个变量专门用来存放另一个变量的地址，那么它就是指针变量。" class="headerlink" title="1一个变量的地址称为该变量的指针，如果有一个变量专门用来存放另一个变量的地址，那么它就是指针变量。"></a>1一个变量的地址称为该变量的指针，如果有一个变量专门用来存放另一个变量的地址，那么它就是指针变量。</h2><p>一般形式为：<br>类型说明 * 变量名<br>int * q;<br>C语言中提供了地址运算符“&amp;”来表示变量的地址。其中一般形式为：<br>&amp;变量名;</p>
+<h2 id="2给指针变量赋值一般有俩个方法"><a href="#2给指针变量赋值一般有俩个方法" class="headerlink" title="2给指针变量赋值一般有俩个方法"></a>2给指针变量赋值一般有俩个方法</h2><p>1   </p>
+<pre><code>int a;
+int *p=&amp;a</code></pre><p>2       </p>
+<pre><code>int a;
+int *p;
+p=&amp;a;</code></pre><h2 id="3-指针变量的引用"><a href="#3-指针变量的引用" class="headerlink" title="3 指针变量的引用"></a>3 指针变量的引用</h2><p>引用指针变量是对变量进行间接访问的一种形式</p>
+<p>对指针变量的引用形式如下：</p>
+<p>*指针变量 其含义是引用指针变量所指向的值</p>
+<h2 id="4-amp-和-的区别"><a href="#4-amp-和-的区别" class="headerlink" title="4 &amp; 和 *的区别"></a>4 &amp; 和 *的区别</h2><p> &amp;运算符是一个返回操作数地址的单目运算符，叫做取地址运算符</p>
+<p> *运算符是返回指定的地址内的变量的值，叫做指针运算符。</p>
+<h2 id="5-指针自增和自减运算"><a href="#5-指针自增和自减运算" class="headerlink" title="5 指针自增和自减运算"></a>5 指针自增和自减运算</h2><p>基本整型变量i在内存中占4个字节，指针P是指向变量i的地址的，p++是指向下一个存放基本整型数的地址。</p>
+<h2 id="6-数组与指针"><a href="#6-数组与指针" class="headerlink" title="6 数组与指针"></a>6 数组与指针</h2><p>在定义一个一维数组时，系统会在内存中为该数组分配一个存储空间，其数组的名称就是数组在内存中的首地址。<br>例如：</p>
+<p>1      </p>
+<pre><code>int *p,a[10]; 
+ p=a;</code></pre><p>或</p>
+<p>2   </p>
+<pre><code>int *p,a[10]; 
+p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数组与指针" class="headerlink" title="7 二维数组与指针"></a>7 二维数组与指针</h2><p>表示二维数组中元素地址的方法：</p>
+<p>&amp;a[0][0]可以看作数组0行0列的首地址，也可以看作二维数组的首地址。</p>
+<p>&amp;a[m][n]就是第m行n列元素的地址。而a[0]+n表示第0行第n个元素的地址。</p>
+<h2 id="8指针变量作为函数参数"><a href="#8指针变量作为函数参数" class="headerlink" title="8指针变量作为函数参数"></a>8指针变量作为函数参数</h2><p>指针变量也可以作为函数参数</p>
+<p>例<br>在swap（int <em>a,int</em> b)中</p>
+<p>在函数调用的过程中，主调用函数与被调用函数之间有一个数值传递的过程。函数调用中发生的数据传递是单向的，只能把实际参数的值传递给形式参数，在函数调用的过程中，形式参数的值发生改变，但是实际参数的值不会发生变化。如果swap(int a,int b) 则不能实现x与y值的互换。</p>
+<p>通过指针传递参数可以减少值传递带来的开销，也可以使函数调用不产生值传递。</p>
+<h2 id="9返回指针值的函数"><a href="#9返回指针值的函数" class="headerlink" title="9返回指针值的函数"></a>9返回指针值的函数</h2><p>返回的值的类型为指针类型，返回指针值的函数简称为指针函数</p>
+<p>定义指针函数的一般形式为 </p>
+<p>类型名 *函数名（参数列表） </p>
+<p>如   int *fun(int x,int y)</p>
+<p>如 </p>
+<pre><code>int *per(int a,int b)
+{
+ int *p;
+ p=&amp;Perimeter;
+ Perimeter=(a+b)*2;
+ return p; 
+}</code></pre>]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>C</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>树</title>
     <url>/2020/05/07/%E6%A0%91/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -1946,6 +1950,50 @@
 </ul>
 <h3 id="有序树和无序树"><a href="#有序树和无序树" class="headerlink" title="有序树和无序树"></a>有序树和无序树</h3><p>如果将树中结点的各子树看成从左至右是由次序的，不能互换的，那么该树为有序树，否则为无序树。</p>
 <h3 id="森林"><a href="#森林" class="headerlink" title="森林"></a>森林</h3><p>森林是m（m&gt;=0)颗互不相交的树的集合。</p>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>DataStructure</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>时间复杂度</title>
+    <url>/2020/05/05/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/</url>
+    <content><![CDATA[<h1 id="算法时间复杂度"><a href="#算法时间复杂度" class="headerlink" title="算法时间复杂度"></a>算法时间复杂度</h1><h2 id="算法时间复杂度定义"><a href="#算法时间复杂度定义" class="headerlink" title="算法时间复杂度定义"></a>算法时间复杂度定义</h2><ul>
+<li><p>O()来体现算法时间复杂度的记法</p>
+<a id="more"></a>
+
+<h2 id="推导大O阶的方法"><a href="#推导大O阶的方法" class="headerlink" title="推导大O阶的方法"></a>推导大O阶的方法</h2><ol>
+<li><p>用常数1代替所有加法常数</p>
+</li>
+<li><p>在修改后的运行次数函数中，只保留最高阶项</p>
+</li>
+<li><p>如果最高阶项存在且不是1，则去除这个项相乘的常数</p>
+<p>得到的结果就是大O阶.</p>
+<h3 id="举例说明："><a href="#举例说明：" class="headerlink" title="举例说明："></a>举例说明：</h3><h4 id="常数阶"><a href="#常数阶" class="headerlink" title="常数阶"></a>常数阶</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> sum=<span class="number">0</span>,n=<span class="number">100</span>; <span class="comment">//执行1次</span></span><br><span class="line">sum=(<span class="number">1</span>+n)*n/<span class="number">2</span>; <span class="comment">//执行2次</span></span><br><span class="line">sum=(<span class="number">1</span>+n)*n/<span class="number">2</span>; <span class="comment">//</span></span><br><span class="line">sum=(<span class="number">1</span>+n)*n/<span class="number">2</span>; <span class="comment">//</span></span><br><span class="line">sum=(<span class="number">1</span>+n)*n/<span class="number">2</span>; <span class="comment">//</span></span><br><span class="line">...</span><br><span class="line">sum=(<span class="number">1</span>+n)*n/<span class="number">2</span>; <span class="comment">//执行10次</span></span><br></pre></td></tr></table></figure>
+
+<p>事实上无论n为多少，上面代码就是1次，2次，10次的差别，这种与问题大小无关（与n的大小无关）执行时间恒定的算法。称为O(1)阶，又叫常数阶</p>
+<h4 id="线性阶"><a href="#线性阶" class="headerlink" title="线性阶"></a>线性阶</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> i;</span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">/* 时间复杂度为O(1)的程序     */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+</li>
+</ul>
+<p>​               循环的时间复杂度为O(n)</p>
+<h4 id="对数阶"><a href="#对数阶" class="headerlink" title="对数阶"></a>对数阶</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int count&#x3D;1;</span><br><span class="line">while (count &lt;n)</span><br><span class="line">&#123;</span><br><span class="line">count &#x3D;count *2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2^x=n  x=log2 n   所以这个循环的时间复杂度为O(log n).</p>
+<h4 id="平方阶"><a href="#平方阶" class="headerlink" title="平方阶"></a>平方阶</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> i,j;</span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;m;i++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;n;j++)</span><br><span class="line">&#123;</span><br><span class="line">   <span class="comment">/*时间复杂度为O(1)的程序步骤序列      */</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>时间复杂度为O(m*n)</p>
+<p>又如：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> i,j;</span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">for</span>(j=i;j&lt;n;j++)</span><br><span class="line">&#123;</span><br><span class="line"> <span class="comment">/* 时间复杂度为O(1)的程序*/</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行总次数 n+n-1+(n-2)+…+1=n(n+1)/2   时间复杂度为O(n^2) </p>
+<h4 id="常见的时间复杂度"><a href="#常见的时间复杂度" class="headerlink" title="常见的时间复杂度"></a>常见的时间复杂度</h4><p>常用时间复杂度耗费时间比对：</p>
+<p>O(1)&lt;O(log n)&lt;O(n)&lt;O(nlogn)&lt;O(n^2)&lt;O(n^3)&lt;O(2^n)&lt;O(n!)&lt;O(n^n)</p>
 ]]></content>
       <categories>
         <category>算法</category>
@@ -2030,54 +2078,6 @@
 <a id="more"></a>
 
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
-  </entry>
-  <entry>
-    <title>指针</title>
-    <url>/2020/05/04/%E6%8C%87%E9%92%88/</url>
-    <content><![CDATA[<h1 id="10-1-指针变量"><a href="#10-1-指针变量" class="headerlink" title="10.1 指针变量"></a>10.1 指针变量</h1><p> 由于通过地址能访问指定的内存存储单元。可以说地址“指向”该内存单元。地址可以形象地称为指针，意思是通过指针能够找到内存单元。<br> <a id="more"></a></p>
-<h2 id="1一个变量的地址称为该变量的指针，如果有一个变量专门用来存放另一个变量的地址，那么它就是指针变量。"><a href="#1一个变量的地址称为该变量的指针，如果有一个变量专门用来存放另一个变量的地址，那么它就是指针变量。" class="headerlink" title="1一个变量的地址称为该变量的指针，如果有一个变量专门用来存放另一个变量的地址，那么它就是指针变量。"></a>1一个变量的地址称为该变量的指针，如果有一个变量专门用来存放另一个变量的地址，那么它就是指针变量。</h2><p>一般形式为：<br>类型说明 * 变量名<br>int * q;<br>C语言中提供了地址运算符“&amp;”来表示变量的地址。其中一般形式为：<br>&amp;变量名;</p>
-<h2 id="2给指针变量赋值一般有俩个方法"><a href="#2给指针变量赋值一般有俩个方法" class="headerlink" title="2给指针变量赋值一般有俩个方法"></a>2给指针变量赋值一般有俩个方法</h2><p>1   </p>
-<pre><code>int a;
-int *p=&amp;a</code></pre><p>2       </p>
-<pre><code>int a;
-int *p;
-p=&amp;a;</code></pre><h2 id="3-指针变量的引用"><a href="#3-指针变量的引用" class="headerlink" title="3 指针变量的引用"></a>3 指针变量的引用</h2><p>引用指针变量是对变量进行间接访问的一种形式</p>
-<p>对指针变量的引用形式如下：</p>
-<p>*指针变量 其含义是引用指针变量所指向的值</p>
-<h2 id="4-amp-和-的区别"><a href="#4-amp-和-的区别" class="headerlink" title="4 &amp; 和 *的区别"></a>4 &amp; 和 *的区别</h2><p> &amp;运算符是一个返回操作数地址的单目运算符，叫做取地址运算符</p>
-<p> *运算符是返回指定的地址内的变量的值，叫做指针运算符。</p>
-<h2 id="5-指针自增和自减运算"><a href="#5-指针自增和自减运算" class="headerlink" title="5 指针自增和自减运算"></a>5 指针自增和自减运算</h2><p>基本整型变量i在内存中占4个字节，指针P是指向变量i的地址的，p++是指向下一个存放基本整型数的地址。</p>
-<h2 id="6-数组与指针"><a href="#6-数组与指针" class="headerlink" title="6 数组与指针"></a>6 数组与指针</h2><p>在定义一个一维数组时，系统会在内存中为该数组分配一个存储空间，其数组的名称就是数组在内存中的首地址。<br>例如：</p>
-<p>1      </p>
-<pre><code>int *p,a[10]; 
- p=a;</code></pre><p>或</p>
-<p>2   </p>
-<pre><code>int *p,a[10]; 
-p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数组与指针" class="headerlink" title="7 二维数组与指针"></a>7 二维数组与指针</h2><p>表示二维数组中元素地址的方法：</p>
-<p>&amp;a[0][0]可以看作数组0行0列的首地址，也可以看作二维数组的首地址。</p>
-<p>&amp;a[m][n]就是第m行n列元素的地址。而a[0]+n表示第0行第n个元素的地址。</p>
-<h2 id="8指针变量作为函数参数"><a href="#8指针变量作为函数参数" class="headerlink" title="8指针变量作为函数参数"></a>8指针变量作为函数参数</h2><p>指针变量也可以作为函数参数</p>
-<p>例<br>在swap（int <em>a,int</em> b)中</p>
-<p>在函数调用的过程中，主调用函数与被调用函数之间有一个数值传递的过程。函数调用中发生的数据传递是单向的，只能把实际参数的值传递给形式参数，在函数调用的过程中，形式参数的值发生改变，但是实际参数的值不会发生变化。如果swap(int a,int b) 则不能实现x与y值的互换。</p>
-<p>通过指针传递参数可以减少值传递带来的开销，也可以使函数调用不产生值传递。</p>
-<h2 id="9返回指针值的函数"><a href="#9返回指针值的函数" class="headerlink" title="9返回指针值的函数"></a>9返回指针值的函数</h2><p>返回的值的类型为指针类型，返回指针值的函数简称为指针函数</p>
-<p>定义指针函数的一般形式为 </p>
-<p>类型名 *函数名（参数列表） </p>
-<p>如   int *fun(int x,int y)</p>
-<p>如 </p>
-<pre><code>int *per(int a,int b)
-{
- int *p;
- p=&amp;Perimeter;
- Perimeter=(a+b)*2;
- return p; 
-}</code></pre>]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>C</tag>
-      </tags>
   </entry>
   <entry>
     <title>链表</title>
