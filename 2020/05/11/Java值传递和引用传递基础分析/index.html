@@ -27,10 +27,16 @@
 <meta property="og:site_name" content="Alita&#39;s blog">
 <meta property="og:description" content="概述 本章介绍JAVA的值传递和引用传递">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://www.alitaalice.cn/2020/05/11/Java%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E5%9F%BA%E7%A1%80%E5%88%86%E6%9E%90/2020-05-12_112353.png">
+<meta property="og:image" content="https://www.alitaalice.cn/2020/05/11/Java%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E5%9F%BA%E7%A1%80%E5%88%86%E6%9E%90/2020-05-12_112409.png">
+<meta property="og:image" content="https://www.alitaalice.cn/2020/05/11/Java%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E5%9F%BA%E7%A1%80%E5%88%86%E6%9E%90/2020-05-12_112424.png">
+<meta property="og:image" content="https://www.alitaalice.cn/2020/05/11/Java%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E5%9F%BA%E7%A1%80%E5%88%86%E6%9E%90/2020-05-12_112435.png">
 <meta property="article:published_time" content="2020-05-11T04:13:37.000Z">
-<meta property="article:modified_time" content="2020-05-11T06:39:24.383Z">
+<meta property="article:modified_time" content="2020-05-12T03:53:14.810Z">
 <meta property="article:author" content="Alita Alice">
+<meta property="article:tag" content="JAVASE">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.alitaalice.cn/2020/05/11/Java%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E5%9F%BA%E7%A1%80%E5%88%86%E6%9E%90/2020-05-12_112353.png">
 
 <link rel="canonical" href="https://www.alitaalice.cn/2020/05/11/Java%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E5%9F%BA%E7%A1%80%E5%88%86%E6%9E%90/">
 
@@ -186,9 +192,24 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-05-11 12:13:37 / Modified: 14:39:24" itemprop="dateCreated datePublished" datetime="2020-05-11T12:13:37+08:00">2020-05-11</time>
+              <time title="Created: 2020-05-11 12:13:37" itemprop="dateCreated datePublished" datetime="2020-05-11T12:13:37+08:00">2020-05-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-05-12 11:53:14" itemprop="dateModified" datetime="2020-05-12T11:53:14+08:00">2020-05-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9D%A2%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">面试</span></a>
+                </span>
             </span>
 
           
@@ -218,7 +239,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>21</span>
+              <span>1.3k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -242,7 +263,36 @@
 </blockquote>
 <a id="more"></a>
 
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="java内的基础类型数据传递都是值传递-java中实例对象的传递是引用传递。"><a href="#java内的基础类型数据传递都是值传递-java中实例对象的传递是引用传递。" class="headerlink" title="java内的基础类型数据传递都是值传递. java中实例对象的传递是引用传递。"></a>java内的基础类型数据传递都是值传递. java中实例对象的传递是引用传递。</h2><p><strong>值传递是对基本型变量而言的,传递的是该变量的一个副本,改变副本不影响原变量。引用传递一般是对于对象型变量而言的,传递的是该对象地址的一个副本, 并不是原对象本身 。</strong></p>
+<p>首先，不要纠结于 Pass By Value 和 Pass By Reference 的字面上的意义，否则很容易陷入所谓的“一切传引用其实本质上是传值”这种并不能解决问题无意义论战中。<br>更何况，要想知道Java到底是传值还是传引用，起码你要先知道传值和传引用的准确含义吧？可是如果你已经知道了这两个名字的准确含义，那么你自己就能判断Java到底是传值还是传引用。</p>
+<h2 id="一：搞清楚-基本类型-和-引用类型的不同之处"><a href="#一：搞清楚-基本类型-和-引用类型的不同之处" class="headerlink" title="一：搞清楚 基本类型 和 引用类型的不同之处"></a>一：搞清楚 基本类型 和 引用类型的不同之处</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> num = <span class="number">10</span>;</span><br><span class="line">String str = <span class="string">"hello"</span>;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/05/11/Java%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E5%9F%BA%E7%A1%80%E5%88%86%E6%9E%90/2020-05-12_112353.png" alt></p>
+<p>如图所示，num是基本类型，值就直接保存在变量中。而str是引用类型，变量中保存的只是实际对象的地址。一般称这种变量为”引用”，引用指向实际对象，实际对象中保存着内容。</p>
+<p>二：搞清楚赋值运算符（=）的作用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">num &#x3D; 20;</span><br><span class="line">str &#x3D; &quot;java&quot;;</span><br></pre></td></tr></table></figure>
+
+<p>对于基本类型 num ，赋值运算符会直接改变变量的值，原来的值被覆盖掉。<br>对于引用类型 str，赋值运算符会改变引用中所保存的地址，原来的地址被覆盖掉。但是原来的对象不会被改变（重要）。<br>如上图所示，”hello” 字符串对象没有被改变。（没有被任何引用所指向的对象是垃圾，会被垃圾回收器回收）</p>
+<p><img src="/2020/05/11/Java%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E5%9F%BA%E7%A1%80%E5%88%86%E6%9E%90/2020-05-12_112409.png" alt></p>
+<h2 id="三：调用方法时发生了什么？参数传递基本上就是赋值操作"><a href="#三：调用方法时发生了什么？参数传递基本上就是赋值操作" class="headerlink" title="三：调用方法时发生了什么？参数传递基本上就是赋值操作"></a>三：调用方法时发生了什么？参数传递基本上就是赋值操作</h2><p>第一个例子：基本类型</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">foo</span><span class="params">(<span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    value = <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">foo(num); <span class="comment">// num 没有被改变</span></span><br></pre></td></tr></table></figure>
+
+<p>第二个例子：没有提供改变自身方法的引用类型</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">foo</span><span class="params">(String text)</span> </span>&#123;</span><br><span class="line">    text = <span class="string">"windows"</span>;  <span class="comment">//String没改变是因为赋值新的字符串直接导致新new了一个String</span></span><br><span class="line">&#125;</span><br><span class="line">foo(str); <span class="comment">// str 也没有被改变</span></span><br></pre></td></tr></table></figure>
+
+<p>第三个例子：提供改变自身方法的引用类型</p>
+<p>builder的引用对象也是StringBuilder</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">StringBuilder sb = <span class="keyword">new</span> StringBuilder(<span class="string">"iphone"</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">foo</span><span class="params">(StringBuilder builder)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    builder.append(<span class="string">"4"</span>); <span class="comment">//没有生成新的stringBuilder对象</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">foo(sb); <span class="comment">// sb 被改变了，变成了"iphone4"。</span></span><br></pre></td></tr></table></figure>
+
+<p>第四个例子：提供了改变自身方法的引用类型，但是不使用，而是使用赋值运算符。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">StringBuilder sb = <span class="keyword">new</span> StringBuilder(<span class="string">"iphone"</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">foo</span><span class="params">(StringBuilder builder)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    builder = <span class="keyword">new</span> StringBuilder(<span class="string">"ipad"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(sb); <span class="comment">// sb 没有被改变，还是 "iphone"。</span></span><br></pre></td></tr></table></figure>
+
+<p>重点理解为什么，第三个例子和第四个例子结果不同？</p>
+<p>下面是第三个例子的图解：</p>
+<p><img src="/2020/05/11/Java%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E5%9F%BA%E7%A1%80%E5%88%86%E6%9E%90/2020-05-12_112424.png" alt></p>
+<p>builder = new StringBuilder(“ipad”); 之后</p>
+<p><img src="/2020/05/11/Java%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E5%9F%BA%E7%A1%80%E5%88%86%E6%9E%90/2020-05-12_112435.png" alt></p>
+
     </div>
 
     
@@ -250,6 +300,9 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/JAVASE/" rel="tag"># JAVASE</a>
+          </div>
 
         
 
@@ -323,7 +376,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java内的基础类型数据传递都是值传递-java中实例对象的传递是引用传递。"><span class="nav-number">3.</span> <span class="nav-text">java内的基础类型数据传递都是值传递. java中实例对象的传递是引用传递。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一：搞清楚-基本类型-和-引用类型的不同之处"><span class="nav-number">4.</span> <span class="nav-text">一：搞清楚 基本类型 和 引用类型的不同之处</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三：调用方法时发生了什么？参数传递基本上就是赋值操作"><span class="nav-number">5.</span> <span class="nav-text">三：调用方法时发生了什么？参数传递基本上就是赋值操作</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -400,12 +453,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">59k</span>
+    <span title="Symbols count total">61k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">54 mins.</span>
+    <span title="Reading time total">55 mins.</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
   </div>
