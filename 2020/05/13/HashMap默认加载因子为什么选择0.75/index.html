@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/avatar.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/avatar.jpg">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.alitaalice.cn","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":"default","style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
+  </script>
+
+  <meta name="description" content="概述 本章介绍HashMap加载因子和初始容量">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HashMap默认加载因子为什么选择0.75">
+<meta property="og:url" content="https://www.alitaalice.cn/2020/05/13/HashMap%E9%BB%98%E8%AE%A4%E5%8A%A0%E8%BD%BD%E5%9B%A0%E5%AD%90%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A90.75/index.html">
+<meta property="og:site_name" content="Alita&#39;s blog">
+<meta property="og:description" content="概述 本章介绍HashMap加载因子和初始容量">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1463793-67e6de5bcfd4a66d.png">
+<meta property="article:published_time" content="2020-05-13T02:52:47.000Z">
+<meta property="article:modified_time" content="2020-05-13T03:37:22.041Z">
+<meta property="article:author" content="Alita Alice">
+<meta property="article:tag" content="JAVA集合">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/1463793-67e6de5bcfd4a66d.png">
+
+<link rel="canonical" href="https://www.alitaalice.cn/2020/05/13/HashMap%E9%BB%98%E8%AE%A4%E5%8A%A0%E8%BD%BD%E5%9B%A0%E5%AD%90%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A90.75/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>HashMap默认加载因子为什么选择0.75 | Alita's blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Alita's blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Alita's blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">君子藏器于身，待时而动</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.alitaalice.cn/2020/05/13/HashMap%E9%BB%98%E8%AE%A4%E5%8A%A0%E8%BD%BD%E5%9B%A0%E5%AD%90%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A90.75/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Alita Alice">
+      <meta itemprop="description" content="但行好事 莫问前程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alita's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          HashMap默认加载因子为什么选择0.75
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-05-13 10:52:47 / Modified: 11:37:22" itemprop="dateCreated datePublished" datetime="2020-05-13T10:52:47+08:00">2020-05-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9D%A2%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">面试</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/05/13/HashMap%E9%BB%98%E8%AE%A4%E5%8A%A0%E8%BD%BD%E5%9B%A0%E5%AD%90%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A90.75/" class="post-meta-item leancloud_visitors" data-flag-title="HashMap默认加载因子为什么选择0.75" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2020/05/13/HashMap%E9%BB%98%E8%AE%A4%E5%8A%A0%E8%BD%BD%E5%9B%A0%E5%AD%90%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A90.75/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/13/HashMap%E9%BB%98%E8%AE%A4%E5%8A%A0%E8%BD%BD%E5%9B%A0%E5%AD%90%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A90.75/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>4.3k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>4 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍HashMap加载因子和初始容量</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>转载自<a href="https://www.cnblogs.com/aspirant/p/11470928.html" target="_blank" rel="noopener">https://www.cnblogs.com/aspirant/p/11470928.html</a></p>
+<h1 id="HashMap默认加载因子为什么选择0-75？-阿里"><a href="#HashMap默认加载因子为什么选择0-75？-阿里" class="headerlink" title="HashMap默认加载因子为什么选择0.75？(阿里)"></a><a href="https://www.cnblogs.com/aspirant/p/11470928.html" target="_blank" rel="noopener">HashMap默认加载因子为什么选择0.75？(阿里)</a></h1><p><strong>Hashtable 初始容量是11 ，扩容 方式为2N+1;</strong></p>
+<p><strong>HashMap 初始容量是16,扩容方式为2N;</strong>　　</p>
+<p>阿里的人突然问我为啥扩容因子是0.75，回来总结了一下； <strong>提高空间利用率和 减少查询成本的折中，主要是泊松分布，0.75的话碰撞最小，</strong></p>
+<p>HashMap有两个参数影响其性能：初始容量和加载因子。容量是哈希表中桶的数量，初始容量只是哈希表在创建时的容量。加载因子是哈希表在其容量自动扩容之前可以达到多满的一种度量。当哈希表中的条目数超出了加载因子与当前容量的乘积时，则要对该哈希表进行扩容、rehash操作（即重建内部数据结构），扩容后的哈希表将具有两倍的原容量。</p>
+<p>通常，加载因子需要在时间和空间成本上寻求一种折衷。</p>
+<p>加载因子过高，例如为1，虽然减少了空间开销，提高了空间利用率，但同时也增加了查询时间成本；</p>
+<p><strong>加载因子过低，例如0.5，虽然可以减少查询时间成本，但是空间利用率很低，同时提高了rehash操作的次数</strong>。</p>
+<p><strong>在设置初始容量时应该考虑到映射中所需的条目数及其加载因子，以便最大限度地减少rehash操作次数，所以，一般在使用HashMap时建议根据预估值设置初始容量，减少扩容操作。</strong></p>
+<p><strong>选择0.75作为默认的加载因子，完全是时间和空间成本上寻求的一种折衷选择，</strong> </p>
+<p><strong>正文</strong></p>
+<p>前几天在一个群里看到有人讨论hashmap中的加载因子为什么是默认0.75。</p>
+<p>HashMap源码中的加载因子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">static final float DEFAULT_LOAD_FACTOR &#x3D; 0.75f;</span><br></pre></td></tr></table></figure>
+
+<p>当时想到的是应该是“哈希冲突”和“空间利用率”矛盾的一个折衷。</p>
+<p>跟数据结构要么查询快要么插入快一个道理，hashmap就是一个插入慢、查询快的数据结构。</p>
+<p>加载因子是表示Hash表中元素的填满的程度。<br>加载因子越大,填满的元素越多,空间利用率越高，但冲突的机会加大了。<br>反之,加载因子越小,填满的元素越少,冲突的机会减小,但空间浪费多了。</p>
+<p>冲突的机会越大,则查找的成本越高。反之,查找的成本越小。</p>
+<p>因此,必须在 “冲突的机会”与”空间利用率”之间寻找一种平衡与折衷。</p>
+<p>哈希冲突主要与两个因素有关，（1）填装因子，填装因子是指哈希表中已存入的数据元素个数与哈希地址空间的大小的比值，a=n/m ; a越小，冲突的可能性就越小，相反则冲突可能性较大；但是a越小空间利用率也就越小，a越大，空间利用率越高，为了兼顾哈希冲突和存储空间利用率，通常将a控制在0.6-0.9之间，而.net中的HashTable则直接将a的最大值定义为0.72 （虽然微软官方MSDN中声明HashTable默认填装因子为1.0，但实际上都是0.72的倍数），（2）与所用的哈希函数有关，如果哈希函数得当，就可以使哈希地址尽可能的均匀分布在哈希地址空间上，从而减少冲突的产生，但一个良好的哈希函数的得来很大程度上取决于大量的实践，不过幸好前人已经总结实践了很多高效的哈希函数，可以参考大神Lucifer文章：数据结构：HashTable： <a href="http://www.cnblogs.com/lucifer1982/archive/2008/06/18/1224319.html" target="_blank" rel="noopener">http://www.cnblogs.com/lucifer1982/archive/2008/06/18/1224319.html</a></p>
+<hr>
+<h3 id="但是为什么一定是0-75？而不是0-8，0-6"><a href="#但是为什么一定是0-75？而不是0-8，0-6" class="headerlink" title="但是为什么一定是0.75？而不是0.8，0.6"></a>但是为什么一定是0.75？而不是0.8，0.6</h3><p>本着不嫌事大的精神继续深挖，在此之前先简单补充点本文需要的基础知识：</p>
+<p>1.冲突定义：假设哈希表的地址集为［0，ｎ），冲突是指由关键字得到的哈希地址为j（0&lt;=j&lt;=n-1）的位置上已经有记录。在关键字得到的哈希地址上已经有记录，那么就称之为冲突。</p>
+<p>2.处理冲突：就是为该关键字的记录扎到另一个“空”的哈希地址。即在处理哈希地址的冲突时，若得到的另一个哈希地址H1仍然发生冲突，则再求下一个地址H2，若H2仍然冲突，再求的H3，直至Hk不发生冲突为止，则Hk为记录在表中的地址。</p>
+<hr>
+<p><a href="https://www.cnblogs.com/DarrenChan/p/8854859.html#_labelTop" target="_blank" rel="noopener">回到顶部</a></p>
+<h1 id="处理冲突的几种方法："><a href="#处理冲突的几种方法：" class="headerlink" title="处理冲突的几种方法："></a>处理冲突的几种方法：</h1><h2 id="一、-开放定址法"><a href="#一、-开放定址法" class="headerlink" title="一、 开放定址法"></a>一、 开放定址法</h2><p>Hi=(H(key) + di) MOD m i=1,2,…k(k&lt;=m-1)其中H(key)为哈希函数；m为哈希表表长；di为增量序列。</p>
+<p>开放定址法根据步长不同可以分为３种：</p>
+<p>1）线性探查法(Linear Probing)：di=1,2,3,…,m-1<br>　 简单地说就是以当前冲突位置为起点，步长为１循环查找，直到找到一个空的位置就把元素插进去，循环完了都找不到说明容器满了。就像你去一条街上的店里吃饭，问了第一家被告知满座，然后挨着一家家去问是否有位置一样。</p>
+<p>2）线性补偿探测法：di=Ｑ　下一个位置满足 Hi=(H(key) + Ｑ) mod m i=1,2,…k(k&lt;=m-1) ，要求 Q 与 m 是互质的，以便能探测到哈希表中的所有单元。<br>继续用上面的例子，现在你不是挨着一家家去问了，拿出计算器算了一下，然后隔Ｑ家问一次有没有位置。</p>
+<p>3）伪随机探测再散列：di=伪随机数序列。还是那个例子，这是完全根据心情去选一家店来问了</p>
+<p>缺点：</p>
+<ul>
+<li>这种方法建立起来的hash表当冲突多的时候数据容易堆聚在一起，这时候对查找不友好；</li>
+<li>删除结点不能简单地将被删结 点的空间置为空，否则将截断在它之后填人散列表的同义词结点的查找路径。因此在 用开放地址法处理冲突的散列表上执行删除操作，只能在被删结点上做删除标记，而不能真正删除结点</li>
+<li>当空间满了，还要建立一个溢出表来存多出来的元素。</li>
+</ul>
+<h2 id="二、再哈希法"><a href="#二、再哈希法" class="headerlink" title="二、再哈希法"></a>二、再哈希法</h2><p>Hi = RHi（key），i=1,2,…k<br>RHi均是不同的哈希函数，即在同义词产生地址冲突时计算另一个哈希函数地址，直到不发生冲突为止。这种方法不易产生聚集，但是增加了计算时间。</p>
+<p>缺点：增加了计算时间。</p>
+<h2 id="三、建立一个公共溢出区"><a href="#三、建立一个公共溢出区" class="headerlink" title="三、建立一个公共溢出区["></a>三、建立一个公共溢出区[</h2><p>假设哈希函数的值域为[0,m-1]，则设向量HashTable[0…m-1]为基本表，每个分量存放一个记录，另设立向量OverTable[0….v]为溢出表。所有关键字和基本表中关键字为同义词的记录，不管他们由哈希函数得到的哈希地址是什么，一旦发生冲突，都填入溢出表。</p>
+<p>简单地说就是搞个新表存冲突的元素。</p>
+<h2 id="四、链地址法（拉链法）"><a href="#四、链地址法（拉链法）" class="headerlink" title="四、链地址法（拉链法）"></a>四、链地址法（拉链法）</h2><p>将所有关键字为同义词的记录存储在同一线性链表中，也就是把冲突位置的元素构造成链表。</p>
+<p>拉链法的优点:</p>
+<ul>
+<li>拉链法处理冲突简单，且无堆积现象，即非同义词决不会发生冲突，因此平均查找长度较短；</li>
+<li>由于拉链法中各链表上的结点空间是动态申请的，故它更适合于造表前无法确定表长的情况；</li>
+<li>在用拉链法构造的散列表中，删除结点的操作易于实现。只要简单地删去链表上相应的结点即可。</li>
+</ul>
+<p>拉链法的缺点：</p>
+<ul>
+<li>指针需要额外的空间，故当结点规模较小时，开放定址法较为节省空间，而若将节省的指针空间用来扩大散列表的规模，可使装填因子变小，这又减少了开放定址法中的冲突，从而提高平均查找速度</li>
+</ul>
+<hr>
+<p><a href="https://www.cnblogs.com/DarrenChan/p/8854859.html#_labelTop" target="_blank" rel="noopener">回到顶部</a></p>
+<h1 id="Java中HashMap的数据结构"><a href="#Java中HashMap的数据结构" class="headerlink" title="Java中HashMap的数据结构"></a>Java中HashMap的数据结构</h1><p>HashMap实际上是一个“链表散列”的数据结构，即数组和链表的结合体。</p>
+<p><a href="https://upload-images.jianshu.io/upload_images/1463793-67e6de5bcfd4a66d.png" target="_blank" rel="noopener"><img src="https://upload-images.jianshu.io/upload_images/1463793-67e6de5bcfd4a66d.png" alt="img"></a></p>
+<p>HashMap数据结构，来源于网络</p>
+<p>看图就可以知道Java中的hashMap使用了拉链法处理冲突。<br>HashMap有一个初始容量大小，默认是16</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">static final int DEFAULT_INITIAL_CAPACITY &#x3D; 1 &lt;&lt; 4; &#x2F;&#x2F; aka 16</span><br></pre></td></tr></table></figure>
+
+<p>为了减少冲突的概率，当hashMap的数组长度到了一个临界值就会触发扩容，把所有元素rehash再放到扩容后的容器中，这是一个非常耗时的操作。</p>
+<p>而这个临界值由【加载因子】和当前容器的容量大小来确定：DEFAULT_INITIAL_CAPACITY*DEFAULT_LOAD_FACTOR ，即默认情况下是16x0.75=12时，就会触发扩容操作。</p>
+<p>所以使用hash容器时尽量预估自己的数据量来设置初始值。具体代码实现自行去研究HashMap的源码。</p>
+<p>基础知识补充完毕，回到正题，为什么加载因子要默认是0.75？<br>从hashmap源码注释里找到了这一段</p>
+<blockquote>
+<p>Ideally, under random hashCodes, the frequency of</p>
+</blockquote>
+<ul>
+<li>nodes in bins follows a Poisson distribution</li>
+<li>(<a href="https://link.jianshu.com/?t=http://en.wikipedia.org/wiki/Poisson_distribution" target="_blank" rel="noopener">http://en.wikipedia.org/wiki/Poisson_distribution</a>) with a</li>
+<li>parameter of about 0.5 on average for the default resizing</li>
+<li>threshold of 0.75, although with a large variance because of</li>
+<li>resizing granularity. Ignoring variance, the expected</li>
+<li>occurrences of list size k are (exp(-0.5) * pow(0.5, k) /</li>
+<li>factorial(k)). The first values are:</li>
+<li></li>
+<li>0: 0.60653066</li>
+<li>1: 0.30326533</li>
+<li>2: 0.07581633</li>
+<li>3: 0.01263606</li>
+<li>4: 0.00157952</li>
+<li>5: 0.00015795</li>
+<li>6: 0.00001316</li>
+<li>7: 0.00000094</li>
+<li>8: 0.00000006</li>
+<li>more: less than 1 in ten million</li>
+</ul>
+<p>注意wiki链接中的关键字：Poisson_distribution<br>泊淞分布啊</p>
+<p><strong>简单翻译一下就是在理想情况下,使用随机哈希码,节点出现的频率在hash桶中遵循泊松分布，同时给出了桶中元素个数和概率的对照表。</strong></p>
+<p><strong>从上面的表中可以看到当桶中元素到达8个的时候，概率已经变得非常小，也就是说用0.75作为加载因子，每个碰撞位置的链表长度超过８个是几乎不可能的。</strong></p>
+<p><strong>好了，再深挖就要挖到统计学那边去了，就此打住，重申一下使用hash容器请尽量指定初始容量，且是2的幂次方。</strong></p>
+<p>关于泊淞分布的知识请看 <a href="http://www.ruanyifeng.com/blog/2015/06/poisson-distribution.html#comment-356111" target="_blank" rel="noopener">泊松分布和指数分布：10分钟教程</a></p>
+<p><strong>List、Set 和 Map 的初始容量和加载因子</strong></p>
+<p>答：</p>
+<ol>
+<li>List</li>
+</ol>
+<ul>
+<li>ArrayList 的初始容量是 10；加载因子为 0.5； 扩容增量：原容量的 0.5 倍 +1；一次扩容后长度为 16。</li>
+<li>Vector 初始容量为 10，加载因子是 1。扩容增量：原容量的 1 倍，如 Vector 的容量为 10，一次扩容后是容量为 20。</li>
+</ul>
+<ol start="2">
+<li>Set</li>
+</ol>
+<p>HashSet，初始容量为 16，加载因子为 0.75； 扩容增量：原容量的 1 倍； 如 HashSet 的容量为 16，一次扩容后容量为 32</p>
+<ol start="3">
+<li>Map</li>
+</ol>
+<p>HashMap，初始容量 16，加载因子为 0.75； 扩容增量：原容量的 1 倍； 如 HashMap 的容量为 16，一次扩容后容量为 32</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/JAVA%E9%9B%86%E5%90%88/" rel="tag"># JAVA集合</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/05/12/%E4%BD%BF%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B-1/" rel="prev" title="使用存储过程">
+      <i class="fa fa-chevron-left"></i> 使用存储过程
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/05/13/HTTP%E7%8A%B6%E6%80%81%E7%A0%81/" rel="next" title="HTTP状态码">
+      HTTP状态码 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HashMap默认加载因子为什么选择0-75？-阿里"><span class="nav-number"></span> <span class="nav-text">HashMap默认加载因子为什么选择0.75？(阿里)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#但是为什么一定是0-75？而不是0-8，0-6"><span class="nav-number">0.1.</span> <span class="nav-text">但是为什么一定是0.75？而不是0.8，0.6</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#处理冲突的几种方法："><span class="nav-number"></span> <span class="nav-text">处理冲突的几种方法：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、-开放定址法"><span class="nav-number">1.</span> <span class="nav-text">一、 开放定址法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、再哈希法"><span class="nav-number">2.</span> <span class="nav-text">二、再哈希法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、建立一个公共溢出区"><span class="nav-number">3.</span> <span class="nav-text">三、建立一个公共溢出区[</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、链地址法（拉链法）"><span class="nav-number">4.</span> <span class="nav-text">四、链地址法（拉链法）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java中HashMap的数据结构"><span class="nav-number"></span> <span class="nav-text">Java中HashMap的数据结构</span></a></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Alita Alice"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Alita Alice</p>
+  <div class="site-description" itemprop="description">但行好事 莫问前程</div>
+</div>
+
+   <div class="feed-link motion-element">
+     <a href="/atom.xml" rel="alternate">
+       <i class="fa fa-rss"></i>
+       RSS
+     </a>
+   </div>
+ 
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">47</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alita Alice</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">73k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">1:07</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	<span><br></span>	
+
+	<span class="post-meta-item-icon">
+	      <i class="fa fa-group"></i>
+	</span>
+	<span>总访客&nbsp<span id="busuanzi_value_site_uv"></span>&nbsp人</span>
+    	<span class="post-meta-divider">|</span>
+	<span class="post-meta-item-icon">
+	      <i class="fa fa-eye"></i>
+	</span>
+    	<span>访问总量&nbsp<span id="busuanzi_value_site_pv"></span>&nbsp次</span>
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : 'CA2aJGINRmVJi49ntr4sj44c-gzGzoHsz',
+      appKey     : 'CB4XrxBdbG9ndBkYwo9N6Kf6',
+      placeholder: "遗憾莫过于难忘你的背影，却找不到你来过的痕迹",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/haru02.model.json"},"display":{"position":"left","width":220,"height":440},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+</html>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.alitaalice.cn/"/>
-  <updated>2020-05-12T16:16:23.710Z</updated>
+  <updated>2020-05-13T04:36:31.206Z</updated>
   <id>https://www.alitaalice.cn/</id>
   
   <author>
@@ -17,11 +17,57 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>HTTP状态码</title>
+    <link href="https://www.alitaalice.cn/2020/05/13/HTTP%E7%8A%B6%E6%80%81%E7%A0%81/"/>
+    <id>https://www.alitaalice.cn/2020/05/13/HTTP%E7%8A%B6%E6%80%81%E7%A0%81/</id>
+    <published>2020-05-13T04:02:40.000Z</published>
+    <updated>2020-05-13T04:36:31.206Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;本章介绍返回结果的HTTP状态码。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="计网" scheme="https://www.alitaalice.cn/categories/%E8%AE%A1%E7%BD%91/"/>
+    
+    
+      <category term="HTTP" scheme="https://www.alitaalice.cn/tags/HTTP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HashMap默认加载因子为什么选择0.75</title>
+    <link href="https://www.alitaalice.cn/2020/05/13/HashMap%E9%BB%98%E8%AE%A4%E5%8A%A0%E8%BD%BD%E5%9B%A0%E5%AD%90%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A90.75/"/>
+    <id>https://www.alitaalice.cn/2020/05/13/HashMap%E9%BB%98%E8%AE%A4%E5%8A%A0%E8%BD%BD%E5%9B%A0%E5%AD%90%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A90.75/</id>
+    <published>2020-05-13T02:52:47.000Z</published>
+    <updated>2020-05-13T03:37:22.041Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;本章介绍HashMap加载因子和初始容量&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="面试" scheme="https://www.alitaalice.cn/categories/%E9%9D%A2%E8%AF%95/"/>
+    
+    
+      <category term="JAVA集合" scheme="https://www.alitaalice.cn/tags/JAVA%E9%9B%86%E5%90%88/"/>
+    
+  </entry>
+  
+  <entry>
     <title>使用存储过程</title>
     <link href="https://www.alitaalice.cn/2020/05/12/%E4%BD%BF%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B-1/"/>
     <id>https://www.alitaalice.cn/2020/05/12/%E4%BD%BF%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B-1/</id>
     <published>2020-05-12T12:55:02.000Z</published>
-    <updated>2020-05-12T16:16:23.710Z</updated>
+    <updated>2020-05-13T02:38:51.660Z</updated>
     
     <summary type="html">
     
@@ -44,7 +90,7 @@
     <link href="https://www.alitaalice.cn/2020/05/12/%E5%88%9D%E7%BA%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
     <id>https://www.alitaalice.cn/2020/05/12/%E5%88%9D%E7%BA%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</id>
     <published>2020-05-12T07:25:26.000Z</published>
-    <updated>2020-05-12T16:16:05.822Z</updated>
+    <updated>2020-05-13T04:00:14.135Z</updated>
     
     <summary type="html">
     
@@ -398,52 +444,6 @@
     
       &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;本章介绍JDK和JRE的区别，他们的作用分别是什么？&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="后端" scheme="https://www.alitaalice.cn/categories/%E5%90%8E%E7%AB%AF/"/>
-    
-    
-      <category term="JAVASE" scheme="https://www.alitaalice.cn/tags/JAVASE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JAVA中this和super的用法总结</title>
-    <link href="https://www.alitaalice.cn/2020/05/09/JAVA%E4%B8%ADthis%E5%92%8Csuper%E7%9A%84%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/"/>
-    <id>https://www.alitaalice.cn/2020/05/09/JAVA%E4%B8%ADthis%E5%92%8Csuper%E7%9A%84%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/</id>
-    <published>2020-05-09T02:37:34.000Z</published>
-    <updated>2020-05-09T02:40:57.943Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;本章介绍这几天看到类在继承时会用到&lt;strong&gt;this&lt;/strong&gt;和&lt;strong&gt;super&lt;/strong&gt;，这里就做了一点总结，与各位共同交流，有错误请各位指正~&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="后端" scheme="https://www.alitaalice.cn/categories/%E5%90%8E%E7%AB%AF/"/>
-    
-    
-      <category term="JAVASE" scheme="https://www.alitaalice.cn/tags/JAVASE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Set</title>
-    <link href="https://www.alitaalice.cn/2020/05/08/Set/"/>
-    <id>https://www.alitaalice.cn/2020/05/08/Set/</id>
-    <published>2020-05-08T12:04:00.000Z</published>
-    <updated>2020-05-12T09:09:16.365Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;本章介绍Set&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>
