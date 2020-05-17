@@ -20,18 +20,27 @@
     var CONFIG = {"hostname":"www.alitaalice.cn","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":"default","style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
   </script>
 
-  <meta name="description" content="概述 本章介绍">
+  <meta name="description" content="概述 本章介绍JAVA内存区域与内存溢出异常">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JAVA内存区域与内存溢出异常">
 <meta property="og:url" content="https://www.alitaalice.cn/2020/05/15/JAVA%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F%E4%B8%8E%E5%86%85%E5%AD%98%E6%BA%A2%E5%87%BA%E5%BC%82%E5%B8%B8/index.html">
 <meta property="og:site_name" content="Alita&#39;s blog">
-<meta property="og:description" content="概述 本章介绍">
+<meta property="og:description" content="概述 本章介绍JAVA内存区域与内存溢出异常">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://photos.alitaalice.cn/image/20200517164736.png">
+<meta property="og:image" content="https://photos.alitaalice.cn/image/20200517165000.png">
+<meta property="og:image" content="https://photos.alitaalice.cn/image/20200517165050.png">
+<meta property="og:image" content="https://photos.alitaalice.cn/image/20200517164220.png">
+<meta property="og:image" content="https://photos.alitaalice.cn/image/20200517165147.png">
+<meta property="og:image" content="https://photos.alitaalice.cn/image/20200517165221.png">
+<meta property="og:image" content="https://photos.alitaalice.cn/image/20200517165249.png">
+<meta property="og:image" content="https://photos.alitaalice.cn/image/20200517165303.png">
 <meta property="article:published_time" content="2020-05-15T09:05:29.000Z">
-<meta property="article:modified_time" content="2020-05-15T09:05:39.383Z">
+<meta property="article:modified_time" content="2020-05-17T08:53:52.618Z">
 <meta property="article:author" content="Alita Alice">
 <meta property="article:tag" content="JVM">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://photos.alitaalice.cn/image/20200517164736.png">
 
 <link rel="canonical" href="https://www.alitaalice.cn/2020/05/15/JAVA%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F%E4%B8%8E%E5%86%85%E5%AD%98%E6%BA%A2%E5%87%BA%E5%BC%82%E5%B8%B8/">
 
@@ -187,10 +196,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-05-15 17:05:29 / Modified: 17:05:39" itemprop="dateCreated datePublished" datetime="2020-05-15T17:05:29+08:00">2020-05-15</time>
+              <time title="Created: 2020-05-15 17:05:29" itemprop="dateCreated datePublished" datetime="2020-05-15T17:05:29+08:00">2020-05-15</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-05-17 16:53:52" itemprop="dateModified" datetime="2020-05-17T16:53:52+08:00">2020-05-17</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -228,7 +243,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>8</span>
+              <span>360</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -248,11 +263,21 @@
 
       
         <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍</p>
+<p>本章介绍JAVA内存区域与内存溢出异常</p>
 </blockquote>
 <a id="more"></a>
 
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>类文件(<code>.class</code>文件扩展名)是包含Java字节码 <code>ByteCode</code>的文件，可以在Java虚拟机上执行，每个类文件包含了一个类，接口或者模块（Java 9）的定义.Java程序（<code>.java</code> 文件）可以通过 Java compiler 生成字节码文件，其他基于JVM的语言也都可以通过自己的编译器生成字节码文件，例如Scala，Groovy等JVM是与平台无关的，类文件可以在多个平台上执行，这使得相应的语言也与平台无关.</p>
+<h2 id="JVM的内存布局"><a href="#JVM的内存布局" class="headerlink" title="JVM的内存布局"></a>JVM的内存布局</h2><p>虚拟机中，Java 内存区域可以划分为 6 个部分，程序计数器、虚拟机栈、本地方法栈（以上三个是线程私有的）、堆和方法区（里面有常量池，方法区与堆是线程共享的 )、直接内存（不受 JVM GC 管理）。除了直接内存，其他都是运行时数据区。</p>
+<p><img src="https://photos.alitaalice.cn/image/20200517164736.png" alt></p>
+<h2 id="对象的创建"><a href="#对象的创建" class="headerlink" title="对象的创建"></a>对象的创建</h2><p><img src="https://photos.alitaalice.cn/image/20200517165000.png" alt></p>
+<p><img src="https://photos.alitaalice.cn/image/20200517165050.png" alt></p>
+<h2 id="对象的内存布局"><a href="#对象的内存布局" class="headerlink" title="对象的内存布局"></a>对象的内存布局</h2><p><img src="https://photos.alitaalice.cn/image/20200517164220.png" alt></p>
+<p><img src="https://photos.alitaalice.cn/image/20200517165147.png" alt></p>
+<p><img src="https://photos.alitaalice.cn/image/20200517165221.png" alt></p>
+<p><img src="https://photos.alitaalice.cn/image/20200517165249.png" alt></p>
+<p><img src="https://photos.alitaalice.cn/image/20200517165303.png" alt></p>
+
     </div>
 
     
@@ -333,7 +358,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JVM的内存布局"><span class="nav-number">3.</span> <span class="nav-text">JVM的内存布局</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象的创建"><span class="nav-number">4.</span> <span class="nav-text">对象的创建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象的内存布局"><span class="nav-number">5.</span> <span class="nav-text">对象的内存布局</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -410,12 +435,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">86k</span>
+    <span title="Symbols count total">94k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:18</span>
+    <span title="Reading time total">1:26</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
   </div>

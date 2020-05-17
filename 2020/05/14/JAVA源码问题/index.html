@@ -28,7 +28,7 @@
 <meta property="og:description" content="概述 本章介绍JAVA源码问题">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-05-14T05:54:19.000Z">
-<meta property="article:modified_time" content="2020-05-14T09:29:03.000Z">
+<meta property="article:modified_time" content="2020-05-17T09:04:47.346Z">
 <meta property="article:author" content="Alita Alice">
 <meta property="article:tag" content="JAVA源码">
 <meta name="twitter:card" content="summary">
@@ -187,10 +187,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-05-14 13:54:19 / Modified: 17:29:03" itemprop="dateCreated datePublished" datetime="2020-05-14T13:54:19+08:00">2020-05-14</time>
+              <time title="Created: 2020-05-14 13:54:19" itemprop="dateCreated datePublished" datetime="2020-05-14T13:54:19+08:00">2020-05-14</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-05-17 17:04:47" itemprop="dateModified" datetime="2020-05-17T17:04:47+08:00">2020-05-17</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -228,14 +234,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>2.5k</span>
+              <span>2.8k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>2 mins.</span>
+              <span>3 mins.</span>
             </span>
 
         </div>
@@ -252,7 +258,14 @@
 </blockquote>
 <a id="more"></a>
 
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="当两个对象的hashcode相同时会发生什么，如何获取对象？"><a href="#当两个对象的hashcode相同时会发生什么，如何获取对象？" class="headerlink" title="当两个对象的hashcode相同时会发生什么，如何获取对象？"></a>当两个对象的hashcode相同时会发生什么，如何获取对象？</h3><p>因为hashcode相同，所以它们的bucket位置相同，‘碰撞’会发生。</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="说说常见的集合有哪些吧？"><a href="#说说常见的集合有哪些吧？" class="headerlink" title="说说常见的集合有哪些吧？"></a>说说常见的集合有哪些吧？</h2><p>答：Map 接口和 Collection 接口是所有集合框架的父接口：</p>
+<ol>
+<li>Collection 接口的子接口包括：Set 接口和 List 接口；</li>
+<li>Map 接口的实现类主要有：HashMap、TreeMap、Hashtable、ConcurrentHashMap 以及 Properties 等；</li>
+<li>Set 接口的实现类主要有：HashSet、TreeSet、LinkedHashSet 等；</li>
+<li>List 接口的实现类主要有：ArrayList、LinkedList、Stack 以及 Vector 等。</li>
+</ol>
+<h3 id="当两个对象的hashcode相同时会发生什么，如何获取对象？"><a href="#当两个对象的hashcode相同时会发生什么，如何获取对象？" class="headerlink" title="当两个对象的hashcode相同时会发生什么，如何获取对象？"></a>当两个对象的hashcode相同时会发生什么，如何获取对象？</h3><p>因为hashcode相同，所以它们的bucket位置相同，‘碰撞’会发生。</p>
 <p>两个对象的hashCode相同所以它们的bucket位置相同，找到bucket位置之后，会调用keys.equals()方法去找到链表中正确的节点 <strong><code>(key != null &amp;&amp; key.equals(k)</code></strong>。</p>
 <p>因为HashMap使用链表存储对象，这个Entry(包含有键值对的Map.Entry对象)会存储在链表中。这个时候要理解根据hashcode来划分的数组，如果数组的坐标相同，则进入链表这个数据结构中了，一般的添加都在最前面，也就是和数组下标直接相连的地方，链表长度到达8的时候，jdk1.8上升为红黑树。</p>
 <h3 id="HashMap的大小超过了负载因子-load-factor-定义的容量，怎么办"><a href="#HashMap的大小超过了负载因子-load-factor-定义的容量，怎么办" class="headerlink" title="HashMap的大小超过了负载因子(load factor)定义的容量，怎么办"></a>HashMap的大小超过了负载因子(load factor)定义的容量，怎么办</h3><p>会调用<strong><code>resize()</code></strong>进行数组扩容。</p>
@@ -277,7 +290,7 @@
 <h2 id="哪些是线程安全的容器"><a href="#哪些是线程安全的容器" class="headerlink" title="哪些是线程安全的容器"></a>哪些是线程安全的容器</h2><p>同步容器类：</p>
 <p>使用了synchronized<br>1.Vector<br>2.HashTable</p>
 <p>并发容器：<br>3.ConcurrentHashMap:分段<br>4.CopyOnWriteArrayList：写时复制<br>5.CopyOnWriteArraySet：写时复制</p>
-
+<h3 id="Hashtable和HashMap的区别"><a href="#Hashtable和HashMap的区别" class="headerlink" title="Hashtable和HashMap的区别"></a>Hashtable和HashMap的区别</h3><h3 id="HashMap多线程处理之快速失败机制"><a href="#HashMap多线程处理之快速失败机制" class="headerlink" title="HashMap多线程处理之快速失败机制"></a>HashMap多线程处理之快速失败机制</h3><h3 id="jdk7和jdk8的HashMap实现的区别"><a href="#jdk7和jdk8的HashMap实现的区别" class="headerlink" title="jdk7和jdk8的HashMap实现的区别"></a>jdk7和jdk8的HashMap实现的区别</h3><h3 id="HashMap与LinkedHashMap和TreeMap的区别"><a href="#HashMap与LinkedHashMap和TreeMap的区别" class="headerlink" title="HashMap与LinkedHashMap和TreeMap的区别"></a>HashMap与LinkedHashMap和TreeMap的区别</h3>
     </div>
 
     
@@ -361,7 +374,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#当两个对象的hashcode相同时会发生什么，如何获取对象？"><span class="nav-number">2.1.</span> <span class="nav-text">当两个对象的hashcode相同时会发生什么，如何获取对象？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HashMap的大小超过了负载因子-load-factor-定义的容量，怎么办"><span class="nav-number">2.2.</span> <span class="nav-text">HashMap的大小超过了负载因子(load factor)定义的容量，怎么办</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HashMap中的tableSizeFor方法"><span class="nav-number">3.</span> <span class="nav-text">HashMap中的tableSizeFor方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HashMap是线程安全的吗，为什么"><span class="nav-number">4.</span> <span class="nav-text">HashMap是线程安全的吗，为什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#哪些是线程安全的容器"><span class="nav-number">5.</span> <span class="nav-text">哪些是线程安全的容器</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#说说常见的集合有哪些吧？"><span class="nav-number">3.</span> <span class="nav-text">说说常见的集合有哪些吧？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#当两个对象的hashcode相同时会发生什么，如何获取对象？"><span class="nav-number">3.1.</span> <span class="nav-text">当两个对象的hashcode相同时会发生什么，如何获取对象？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HashMap的大小超过了负载因子-load-factor-定义的容量，怎么办"><span class="nav-number">3.2.</span> <span class="nav-text">HashMap的大小超过了负载因子(load factor)定义的容量，怎么办</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HashMap中的tableSizeFor方法"><span class="nav-number">4.</span> <span class="nav-text">HashMap中的tableSizeFor方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HashMap是线程安全的吗，为什么"><span class="nav-number">5.</span> <span class="nav-text">HashMap是线程安全的吗，为什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#哪些是线程安全的容器"><span class="nav-number">6.</span> <span class="nav-text">哪些是线程安全的容器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hashtable和HashMap的区别"><span class="nav-number">6.1.</span> <span class="nav-text">Hashtable和HashMap的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HashMap多线程处理之快速失败机制"><span class="nav-number">6.2.</span> <span class="nav-text">HashMap多线程处理之快速失败机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jdk7和jdk8的HashMap实现的区别"><span class="nav-number">6.3.</span> <span class="nav-text">jdk7和jdk8的HashMap实现的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HashMap与LinkedHashMap和TreeMap的区别"><span class="nav-number">6.4.</span> <span class="nav-text">HashMap与LinkedHashMap和TreeMap的区别</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -438,12 +451,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">86k</span>
+    <span title="Symbols count total">94k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:18</span>
+    <span title="Reading time total">1:26</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
   </div>

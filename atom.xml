@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.alitaalice.cn/"/>
-  <updated>2020-05-15T09:05:39.383Z</updated>
+  <updated>2020-05-17T08:53:52.618Z</updated>
   <id>https://www.alitaalice.cn/</id>
   
   <author>
@@ -21,12 +21,12 @@
     <link href="https://www.alitaalice.cn/2020/05/15/JAVA%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F%E4%B8%8E%E5%86%85%E5%AD%98%E6%BA%A2%E5%87%BA%E5%BC%82%E5%B8%B8/"/>
     <id>https://www.alitaalice.cn/2020/05/15/JAVA%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F%E4%B8%8E%E5%86%85%E5%AD%98%E6%BA%A2%E5%87%BA%E5%BC%82%E5%B8%B8/</id>
     <published>2020-05-15T09:05:29.000Z</published>
-    <updated>2020-05-15T09:05:39.383Z</updated>
+    <updated>2020-05-17T08:53:52.618Z</updated>
     
     <summary type="html">
     
       &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;本章介绍&lt;/p&gt;
+&lt;p&gt;本章介绍JAVA内存区域与内存溢出异常&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>
@@ -113,7 +113,7 @@
     <link href="https://www.alitaalice.cn/2020/05/14/JAVA%E6%BA%90%E7%A0%81%E9%97%AE%E9%A2%98/"/>
     <id>https://www.alitaalice.cn/2020/05/14/JAVA%E6%BA%90%E7%A0%81%E9%97%AE%E9%A2%98/</id>
     <published>2020-05-14T05:54:19.000Z</published>
-    <updated>2020-05-14T09:29:03.000Z</updated>
+    <updated>2020-05-17T09:04:47.346Z</updated>
     
     <summary type="html">
     
@@ -285,25 +285,6 @@
   </entry>
   
   <entry>
-    <title>ConcurrentHashMap和Hashtable的区别</title>
-    <link href="https://www.alitaalice.cn/2020/05/13/ConcurrentHashMap%E5%92%8CHashtable%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
-    <id>https://www.alitaalice.cn/2020/05/13/ConcurrentHashMap%E5%92%8CHashtable%E7%9A%84%E5%8C%BA%E5%88%AB/</id>
-    <published>2020-05-13T07:56:51.000Z</published>
-    <updated>2020-05-13T07:58:17.068Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;本章介绍&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>HTTP状态码</title>
     <link href="https://www.alitaalice.cn/2020/05/13/HTTP%E7%8A%B6%E6%80%81%E7%A0%81/"/>
     <id>https://www.alitaalice.cn/2020/05/13/HTTP%E7%8A%B6%E6%80%81%E7%A0%81/</id>
@@ -331,7 +312,7 @@
     <link href="https://www.alitaalice.cn/2020/05/13/HashMap%E9%BB%98%E8%AE%A4%E5%8A%A0%E8%BD%BD%E5%9B%A0%E5%AD%90%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A90.75/"/>
     <id>https://www.alitaalice.cn/2020/05/13/HashMap%E9%BB%98%E8%AE%A4%E5%8A%A0%E8%BD%BD%E5%9B%A0%E5%AD%90%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A90.75/</id>
     <published>2020-05-13T02:52:47.000Z</published>
-    <updated>2020-05-13T03:37:22.041Z</updated>
+    <updated>2020-05-17T08:59:01.244Z</updated>
     
     <summary type="html">
     
@@ -396,29 +377,6 @@
   </entry>
   
   <entry>
-    <title>JAVA集合面试</title>
-    <link href="https://www.alitaalice.cn/2020/05/12/JAVA%E9%9B%86%E5%90%88%E9%9D%A2%E8%AF%95/"/>
-    <id>https://www.alitaalice.cn/2020/05/12/JAVA%E9%9B%86%E5%90%88%E9%9D%A2%E8%AF%95/</id>
-    <published>2020-05-12T06:29:31.000Z</published>
-    <updated>2020-05-12T09:08:42.451Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;本章介绍JAVA集合面试&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="面试" scheme="https://www.alitaalice.cn/categories/%E9%9D%A2%E8%AF%95/"/>
-    
-    
-      <category term="JAVASE" scheme="https://www.alitaalice.cn/tags/JAVASE/"/>
-    
-  </entry>
-  
-  <entry>
     <title>JAVA泛型</title>
     <link href="https://www.alitaalice.cn/2020/05/12/JAVA%E6%B3%9B%E5%9E%8B/"/>
     <id>https://www.alitaalice.cn/2020/05/12/JAVA%E6%B3%9B%E5%9E%8B/</id>
@@ -453,6 +411,52 @@
     </summary>
     
     
+    
+  </entry>
+  
+  <entry>
+    <title>JAVA编译和运行的过程</title>
+    <link href="https://www.alitaalice.cn/2020/05/11/JAVA%E7%BC%96%E8%AF%91%E5%92%8C%E8%BF%90%E8%A1%8C%E7%9A%84%E8%BF%87%E7%A8%8B/"/>
+    <id>https://www.alitaalice.cn/2020/05/11/JAVA%E7%BC%96%E8%AF%91%E5%92%8C%E8%BF%90%E8%A1%8C%E7%9A%84%E8%BF%87%E7%A8%8B/</id>
+    <published>2020-05-11T08:18:28.000Z</published>
+    <updated>2020-05-11T08:27:14.386Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;本章介绍JAVA编译和运行的过程&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="后端" scheme="https://www.alitaalice.cn/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="JAVASE" scheme="https://www.alitaalice.cn/tags/JAVASE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JAVA注解</title>
+    <link href="https://www.alitaalice.cn/2020/05/11/JAVA%E6%B3%A8%E8%A7%A3/"/>
+    <id>https://www.alitaalice.cn/2020/05/11/JAVA%E6%B3%A8%E8%A7%A3/</id>
+    <published>2020-05-11T06:49:56.000Z</published>
+    <updated>2020-05-11T08:41:42.971Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;本章介绍 JAVA注解&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="面试" scheme="https://www.alitaalice.cn/categories/%E9%9D%A2%E8%AF%95/"/>
+    
+    
+      <category term="JAVASE" scheme="https://www.alitaalice.cn/tags/JAVASE/"/>
     
   </entry>
   
