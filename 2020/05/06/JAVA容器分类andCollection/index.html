@@ -20,19 +20,20 @@
     var CONFIG = {"hostname":"www.alitaalice.cn","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":"default","style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
   </script>
 
-  <meta name="description" content="概述 本章介绍">
+  <meta name="description" content="Java容器可分为两大类： Collection接口 继承JAVA.lang.Object  List接口 ArrayList LinkedList">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用存储过程">
-<meta property="og:url" content="https://www.alitaalice.cn/2020/05/10/%E4%BD%BF%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/index.html">
+<meta property="og:title" content="JAVA容器分类andCollection">
+<meta property="og:url" content="https://www.alitaalice.cn/2020/05/06/JAVA%E5%AE%B9%E5%99%A8%E5%88%86%E7%B1%BBandCollection/index.html">
 <meta property="og:site_name" content="Alita&#39;s blog">
-<meta property="og:description" content="概述 本章介绍">
+<meta property="og:description" content="Java容器可分为两大类： Collection接口 继承JAVA.lang.Object  List接口 ArrayList LinkedList">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-05-10T02:31:56.000Z">
-<meta property="article:modified_time" content="2020-05-10T02:32:42.624Z">
+<meta property="article:published_time" content="2020-05-06T02:30:29.000Z">
+<meta property="article:modified_time" content="2020-05-17T10:24:37.719Z">
 <meta property="article:author" content="Alita Alice">
+<meta property="article:tag" content="JAVA集合">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://www.alitaalice.cn/2020/05/10/%E4%BD%BF%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/">
+<link rel="canonical" href="https://www.alitaalice.cn/2020/05/06/JAVA%E5%AE%B9%E5%99%A8%E5%88%86%E7%B1%BBandCollection/">
 
 
 <script id="page-configurations">
@@ -45,7 +46,7 @@
   };
 </script>
 
-  <title>使用存储过程 | Alita's blog</title>
+  <title>JAVA容器分类andCollection | Alita's blog</title>
   
 
 
@@ -164,7 +165,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://www.alitaalice.cn/2020/05/10/%E4%BD%BF%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/">
+    <link itemprop="mainEntityOfPage" href="https://www.alitaalice.cn/2020/05/06/JAVA%E5%AE%B9%E5%99%A8%E5%88%86%E7%B1%BBandCollection/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -177,7 +178,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          使用存储过程
+          JAVA容器分类andCollection
         </h1>
 
         <div class="post-meta">
@@ -186,13 +187,28 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-05-10 10:31:56 / Modified: 10:32:42" itemprop="dateCreated datePublished" datetime="2020-05-10T10:31:56+08:00">2020-05-10</time>
+              <time title="Created: 2020-05-06 10:30:29" itemprop="dateCreated datePublished" datetime="2020-05-06T10:30:29+08:00">2020-05-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-05-17 18:24:37" itemprop="dateModified" datetime="2020-05-17T18:24:37+08:00">2020-05-17</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%90%8E%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">后端</span></a>
+                </span>
             </span>
 
           
-            <span id="/2020/05/10/%E4%BD%BF%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/" class="post-meta-item leancloud_visitors" data-flag-title="使用存储过程" title="Views">
+            <span id="/2020/05/06/JAVA%E5%AE%B9%E5%99%A8%E5%88%86%E7%B1%BBandCollection/" class="post-meta-item leancloud_visitors" data-flag-title="JAVA容器分类andCollection" title="Views">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -207,8 +223,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2020/05/10/%E4%BD%BF%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/10/%E4%BD%BF%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/05/06/JAVA%E5%AE%B9%E5%99%A8%E5%88%86%E7%B1%BBandCollection/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/06/JAVA%E5%AE%B9%E5%99%A8%E5%88%86%E7%B1%BBandCollection/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -218,7 +234,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>8</span>
+              <span>1.4k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -237,12 +253,121 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍</p>
-</blockquote>
-<a id="more"></a>
+        <h2 id="Java容器可分为两大类："><a href="#Java容器可分为两大类：" class="headerlink" title="Java容器可分为两大类："></a>Java容器可分为两大类：</h2><ul>
+<li><p>Collection接口 继承JAVA.lang.Object</p>
+<ul>
+<li>List接口<ul>
+<li><strong>ArrayList</strong></li>
+<li>LinkedList<a id="more"></a></li>
+<li>Vector(了解，已过时)</li>
+</ul>
+</li>
+<li>Set接口<ul>
+<li>HashSet<ul>
+<li>LinkedHashSet</li>
+</ul>
+</li>
+<li>TreeSet</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Map接口  继承JAVA.lang.Object</p>
+<ul>
+<li><p><strong>HashMap</strong></p>
+<ul>
+<li>LinkedHashMap</li>
+</ul>
+</li>
+<li><p>TreeMap</p>
+</li>
+<li><p>ConcurrentHashMap</p>
+</li>
+<li><p>Hashtable(了解，，已过时)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Collection接口："><a href="#Collection接口：" class="headerlink" title="Collection接口："></a>Collection接口：</h2><ul>
+<li><p>Collection接口的常用方法</p>
+</li>
+<li><p>添加功能</p>
+<ul>
+<li><table>
+<thead>
+<tr>
+<th>boolean add(Object obj)</th>
+<th>添加一个元素</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>boolean  addAll(Collection c)</td>
+<td>添加一个集合的元素</td>
+</tr>
+</tbody></table>
+<p>示例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">   <span class="keyword">static</span> Collection c = <span class="keyword">new</span> ArrayList();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"add:"</span>+c.add(<span class="string">"hello"</span>));</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">/* 输出为 add:true */</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>
+</li>
+</ul>
+</li>
+</ul>
+<p>​             </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> Collection c1 = <span class="keyword">new</span> ArrayList();</span><br><span class="line">    <span class="keyword">static</span> Collection c2 = <span class="keyword">new</span> ArrayList();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        c1.add(<span class="string">"xxxx"</span>);</span><br><span class="line">        System.out.println(<span class="string">"add:"</span> + c1.add(<span class="string">"hello"</span>));</span><br><span class="line">        System.out.println(<span class="string">"addAll:"</span> + c2.addAll(c1));</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">/* 输出add:true</span></span><br><span class="line"><span class="comment">addAll:true */</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>删除功能</p>
+<ul>
+<li><table>
+<thead>
+<tr>
+<th>void clear()</th>
+<th>移除所有元素</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>boolean remove(Object o)</td>
+<td>移除一个元素</td>
+</tr>
+<tr>
+<td>boolean removeAll(Object o)</td>
+<td>移除一个集合的所有元素</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>判断功能</p>
+<ul>
+<li><table>
+<thead>
+<tr>
+<th>boolean contains(Object o)</th>
+<th>判断集合中是否包含指定的元素</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>boolean containsAll(Object o)</td>
+<td>判断集合中是否包含指定的集合元素（一个集合中的所有元素</td>
+</tr>
+<tr>
+<td>boolean isEmpty()</td>
+<td>判断集合是否为空</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+<li><p><strong>获取功能</strong></p>
+<p>重点：迭代器（Iterator） 下一篇中我们详细解释。</p>
+<p>itetator()   返回在此 Collection 的元素上进行迭代的迭代器。用于遍历集合中的对象</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.Collection;</span><br><span class="line"><span class="keyword">import</span> java.util.Iterator;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Muster</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Collection&lt;String&gt; list=<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        list.add(<span class="string">"a"</span>);</span><br><span class="line">        list.add(<span class="string">"b"</span>);</span><br><span class="line">        list.add(<span class="string">"c"</span>);</span><br><span class="line">        Iterator&lt;String&gt; it=list.iterator();</span><br><span class="line">        <span class="keyword">while</span>(it.hasNext())</span><br><span class="line">        &#123;</span><br><span class="line">            String str=(String) it.next();</span><br><span class="line">            System.out.println(str);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+
     </div>
 
     
@@ -250,6 +375,9 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/JAVA%E9%9B%86%E5%90%88/" rel="tag"># JAVA集合</a>
+          </div>
 
         
 
@@ -257,12 +385,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/05/09/mysql%E8%A7%86%E5%9B%BE/" rel="prev" title="mysql视图">
-      <i class="fa fa-chevron-left"></i> mysql视图
+    <a href="/2020/05/06/char%E5%8F%AF%E4%BB%A5%E5%AD%98%E5%82%A8%E6%B1%89%E5%AD%97%E5%90%97%EF%BC%9F/" rel="prev" title="char可以存储汉字吗？">
+      <i class="fa fa-chevron-left"></i> char可以存储汉字吗？
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/05/10/Spring%E8%B5%B7%E6%AD%A5/" rel="next" title="Spring起步">
-      Spring起步 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/05/06/JAVA%E4%B8%AD%E7%9A%84%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA/" rel="next" title="JAVA中的输入与输出">
+      JAVA中的输入与输出 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -323,7 +451,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Java容器可分为两大类："><span class="nav-number">1.</span> <span class="nav-text">Java容器可分为两大类：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Collection接口："><span class="nav-number">2.</span> <span class="nav-text">Collection接口：</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -347,7 +475,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">58</span>
+          <span class="site-state-item-count">55</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -400,12 +528,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">94k</span>
+    <span title="Symbols count total">82k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:26</span>
+    <span title="Reading time total">1:15</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
   </div>

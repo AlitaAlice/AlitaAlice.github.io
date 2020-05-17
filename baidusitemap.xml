@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.alitaalice.cn/2020/05/06/JAVA%E5%AE%B9%E5%99%A8%E5%88%86%E7%B1%BB/</loc>
-    <lastmod>2020-05-17</lastmod>
-  </url>  <url>
-    <loc>https://www.alitaalice.cn/2020/05/07/List%E9%9B%86%E5%90%88/</loc>
-    <lastmod>2020-05-17</lastmod>
-  </url>  <url>
-    <loc>https://www.alitaalice.cn/2020/05/08/Map/</loc>
-    <lastmod>2020-05-17</lastmod>
-  </url>  <url>
-    <loc>https://www.alitaalice.cn/2020/05/14/JAVA%E6%BA%90%E7%A0%81%E9%97%AE%E9%A2%98/</loc>
+    <loc>https://www.alitaalice.cn/2020/05/08/HashSet%E5%92%8CTreeSet%E5%92%8CLinkedHashSet/</loc>
     <lastmod>2020-05-17</lastmod>
   </url>  <url>
     <loc>https://www.alitaalice.cn/2020/05/13/HashMap%E9%BB%98%E8%AE%A4%E5%8A%A0%E8%BD%BD%E5%9B%A0%E5%AD%90%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A90.75/</loc>
+    <lastmod>2020-05-17</lastmod>
+  </url>  <url>
+    <loc>https://www.alitaalice.cn/2020/05/07/List%E6%8E%A5%E5%8F%A3/</loc>
+    <lastmod>2020-05-17</lastmod>
+  </url>  <url>
+    <loc>https://www.alitaalice.cn/2020/05/06/JAVA%E5%AE%B9%E5%99%A8%E5%88%86%E7%B1%BBandCollection/</loc>
+    <lastmod>2020-05-17</lastmod>
+  </url>  <url>
+    <loc>https://www.alitaalice.cn/2020/05/08/Map%E6%8E%A5%E5%8F%A3/</loc>
+    <lastmod>2020-05-17</lastmod>
+  </url>  <url>
+    <loc>https://www.alitaalice.cn/2020/05/07/ArrayList%E5%92%8CLinkedList/</loc>
+    <lastmod>2020-05-17</lastmod>
+  </url>  <url>
+    <loc>https://www.alitaalice.cn/2020/05/14/JAVA%E6%BA%90%E7%A0%81%E9%97%AE%E9%A2%98/</loc>
     <lastmod>2020-05-17</lastmod>
   </url>  <url>
     <loc>https://www.alitaalice.cn/2020/05/15/JAVA%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F%E4%B8%8E%E5%86%85%E5%AD%98%E6%BA%A2%E5%87%BA%E5%BC%82%E5%B8%B8/</loc>
@@ -35,15 +41,6 @@
     <lastmod>2020-05-15</lastmod>
   </url>  <url>
     <loc>https://www.alitaalice.cn/2020/05/07/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/</loc>
-    <lastmod>2020-05-14</lastmod>
-  </url>  <url>
-    <loc>https://www.alitaalice.cn/2020/05/06/JAVA%E5%AE%B9%E5%99%A8%E5%88%86%E7%B1%BB%E5%92%8CCollection/</loc>
-    <lastmod>2020-05-14</lastmod>
-  </url>  <url>
-    <loc>https://www.alitaalice.cn/2020/05/07/ArrayList%E5%92%8CLinkedList/</loc>
-    <lastmod>2020-05-14</lastmod>
-  </url>  <url>
-    <loc>https://www.alitaalice.cn/2020/05/08/Map%E6%8E%A5%E5%8F%A3/</loc>
     <lastmod>2020-05-14</lastmod>
   </url>  <url>
     <loc>https://www.alitaalice.cn/2020/05/13/%E6%95%A3%E5%88%97%E8%A1%A8%E8%AF%A6%E8%A7%A3/</loc>
@@ -75,9 +72,6 @@
   </url>  <url>
     <loc>https://www.alitaalice.cn/2020/05/13/HTTP%E7%8A%B6%E6%80%81%E7%A0%81/</loc>
     <lastmod>2020-05-13</lastmod>
-  </url>  <url>
-    <loc>https://www.alitaalice.cn/2020/05/08/HashSet%E5%92%8CTreeSet%E5%92%8CLinkedHashSet/</loc>
-    <lastmod>2020-05-12</lastmod>
   </url>  <url>
     <loc>https://www.alitaalice.cn/2020/05/07/%E9%93%BE%E8%A1%A8/</loc>
     <lastmod>2020-05-12</lastmod>
@@ -113,9 +107,6 @@
     <lastmod>2020-05-11</lastmod>
   </url>  <url>
     <loc>https://www.alitaalice.cn/2020/05/10/Spring%E8%B5%B7%E6%AD%A5/</loc>
-    <lastmod>2020-05-10</lastmod>
-  </url>  <url>
-    <loc>https://www.alitaalice.cn/2020/05/10/%E4%BD%BF%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/</loc>
     <lastmod>2020-05-10</lastmod>
   </url>  <url>
     <loc>https://www.alitaalice.cn/2020/05/09/mysql%E8%A7%86%E5%9B%BE/</loc>
