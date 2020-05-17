@@ -282,32 +282,6 @@
       </tags>
   </entry>
   <entry>
-    <title>JAVA内存区域与内存溢出异常</title>
-    <url>/2020/05/15/JAVA%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F%E4%B8%8E%E5%86%85%E5%AD%98%E6%BA%A2%E5%87%BA%E5%BC%82%E5%B8%B8/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍JAVA内存区域与内存溢出异常</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>类文件(<code>.class</code>文件扩展名)是包含Java字节码 <code>ByteCode</code>的文件，可以在Java虚拟机上执行，每个类文件包含了一个类，接口或者模块（Java 9）的定义.Java程序（<code>.java</code> 文件）可以通过 Java compiler 生成字节码文件，其他基于JVM的语言也都可以通过自己的编译器生成字节码文件，例如Scala，Groovy等JVM是与平台无关的，类文件可以在多个平台上执行，这使得相应的语言也与平台无关.</p>
-<h2 id="JVM的内存布局"><a href="#JVM的内存布局" class="headerlink" title="JVM的内存布局"></a>JVM的内存布局</h2><p>虚拟机中，Java 内存区域可以划分为 6 个部分，程序计数器、虚拟机栈、本地方法栈（以上三个是线程私有的）、堆和方法区（里面有常量池，方法区与堆是线程共享的 )、直接内存（不受 JVM GC 管理）。除了直接内存，其他都是运行时数据区。</p>
-<p><img src="https://photos.alitaalice.cn/image/20200517164736.png" alt></p>
-<h2 id="对象的创建"><a href="#对象的创建" class="headerlink" title="对象的创建"></a>对象的创建</h2><p><img src="https://photos.alitaalice.cn/image/20200517165000.png" alt></p>
-<p><img src="https://photos.alitaalice.cn/image/20200517165050.png" alt></p>
-<h2 id="对象的内存布局"><a href="#对象的内存布局" class="headerlink" title="对象的内存布局"></a>对象的内存布局</h2><p><img src="https://photos.alitaalice.cn/image/20200517164220.png" alt></p>
-<p><img src="https://photos.alitaalice.cn/image/20200517165147.png" alt></p>
-<p><img src="https://photos.alitaalice.cn/image/20200517165221.png" alt></p>
-<p><img src="https://photos.alitaalice.cn/image/20200517165249.png" alt></p>
-<p><img src="https://photos.alitaalice.cn/image/20200517165303.png" alt></p>
-]]></content>
-      <categories>
-        <category>JVM</category>
-      </categories>
-      <tags>
-        <tag>JVM</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JAVA中的输入与输出</title>
     <url>/2020/05/06/JAVA%E4%B8%AD%E7%9A%84%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA/</url>
     <content><![CDATA[<h1 id="JAVA中的输入"><a href="#JAVA中的输入" class="headerlink" title="JAVA中的输入"></a>JAVA中的输入</h1><h2 id="读取输入"><a href="#读取输入" class="headerlink" title="读取输入"></a>读取输入</h2><p>  要想通过输入台进行输入，首先需要构造一个与“标准输入流”System.in关联的Scanner对象。<br>  <a id="more"></a></p>
@@ -378,40 +352,29 @@
       </tags>
   </entry>
   <entry>
-    <title>JAVA多态</title>
-    <url>/2020/05/06/JAVA%E5%A4%9A%E6%80%81/</url>
-    <content><![CDATA[<h1 id="JAVA多态"><a href="#JAVA多态" class="headerlink" title="JAVA多态"></a>JAVA多态</h1><p>JAVA的三大特性为：</p>
-<ul>
-<li><p>封装</p>
-</li>
-<li><p>继承</p>
-</li>
-<li><p>多态</p>
-<p>今天我们就来说一说到底什么是多态，以及多态到底有什么用。</p>
+    <title>JAVA内存区域与内存溢出异常</title>
+    <url>/2020/05/15/JAVA%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F%E4%B8%8E%E5%86%85%E5%AD%98%E6%BA%A2%E5%87%BA%E5%BC%82%E5%B8%B8/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍JAVA内存区域与内存溢出异常</p>
+</blockquote>
 <a id="more"></a>
 
-<h2 id="多态的定义"><a href="#多态的定义" class="headerlink" title="多态的定义"></a>多态的定义</h2><p>定义： <strong>事物的不同形态。</strong>多态多应用在向上转型。</p>
-<p>多态的用处：在实际开发中，如果发现某个类的方法可以做出改进，但工程已经交付给用户使用，但是不想影响其他部分对于该方法的调用。那么通过创建子类对象，对于父类方法进行<strong>重写</strong>（Override）。<strong>但是此时父类的其他成员方法和成员属性却不能进行利用</strong>。此时就需要用到<strong>向上转型</strong>，将子类向上转换为父类，此时程序的相应方法做出了改进，程序的其他地方也不会受此影响。</p>
-</li>
-</ul>
-<h2 id="多态的三个前提："><a href="#多态的三个前提：" class="headerlink" title="多态的三个前提："></a>多态的三个前提：</h2><ul>
-<li><p>存在继承关系，子类继承父类</p>
-</li>
-<li><p>子类要重写父类的方法 </p>
-<p>子类重写父类的成员方法。</p>
-</li>
-<li><p>父类数据类型的引用要指向子类对象 （向上转型）</p>
-<p>如 Animal am=new Cat();</p>
-<h2 id="多态的弊端"><a href="#多态的弊端" class="headerlink" title="多态的弊端"></a>多态的弊端</h2><p>向上转型之后，<strong>不能够引用子类特有的成员属性和子类特有的成员方法</strong>。</p>
-</li>
-</ul>
-<p>  <strong>注意：静态方法不能被重写，所以也不存在多态，即使向上转型，子类重写了父类的静态方法，子类调用父类的静态方法，输出依然是父类静态方法中的值。</strong></p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>类文件(<code>.class</code>文件扩展名)是包含Java字节码 <code>ByteCode</code>的文件，可以在Java虚拟机上执行，每个类文件包含了一个类，接口或者模块（Java 9）的定义.Java程序（<code>.java</code> 文件）可以通过 Java compiler 生成字节码文件，其他基于JVM的语言也都可以通过自己的编译器生成字节码文件，例如Scala，Groovy等JVM是与平台无关的，类文件可以在多个平台上执行，这使得相应的语言也与平台无关.</p>
+<h2 id="JVM的内存布局"><a href="#JVM的内存布局" class="headerlink" title="JVM的内存布局"></a>JVM的内存布局</h2><p>虚拟机中，Java 内存区域可以划分为 6 个部分，程序计数器、虚拟机栈、本地方法栈（以上三个是线程私有的）、堆和方法区（里面有常量池，方法区与堆是线程共享的 )、直接内存（不受 JVM GC 管理）。除了直接内存，其他都是运行时数据区。</p>
+<p><img src="https://photos.alitaalice.cn/image/20200517164736.png" alt></p>
+<h2 id="对象的创建"><a href="#对象的创建" class="headerlink" title="对象的创建"></a>对象的创建</h2><p><img src="https://photos.alitaalice.cn/image/20200517165000.png" alt></p>
+<p><img src="https://photos.alitaalice.cn/image/20200517165050.png" alt></p>
+<h2 id="对象的内存布局"><a href="#对象的内存布局" class="headerlink" title="对象的内存布局"></a>对象的内存布局</h2><p><img src="https://photos.alitaalice.cn/image/20200517164220.png" alt></p>
+<p><img src="https://photos.alitaalice.cn/image/20200517165147.png" alt></p>
+<p><img src="https://photos.alitaalice.cn/image/20200517165221.png" alt></p>
+<p><img src="https://photos.alitaalice.cn/image/20200517165249.png" alt></p>
+<p><img src="https://photos.alitaalice.cn/image/20200517165303.png" alt></p>
 ]]></content>
       <categories>
-        <category>后端</category>
+        <category>JVM</category>
       </categories>
       <tags>
-        <tag>JAVASE</tag>
+        <tag>JVM</tag>
       </tags>
   </entry>
   <entry>
@@ -550,6 +513,43 @@
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
   </entry>
   <entry>
+    <title>JAVA多态</title>
+    <url>/2020/05/06/JAVA%E5%A4%9A%E6%80%81/</url>
+    <content><![CDATA[<h1 id="JAVA多态"><a href="#JAVA多态" class="headerlink" title="JAVA多态"></a>JAVA多态</h1><p>JAVA的三大特性为：</p>
+<ul>
+<li><p>封装</p>
+</li>
+<li><p>继承</p>
+</li>
+<li><p>多态</p>
+<p>今天我们就来说一说到底什么是多态，以及多态到底有什么用。</p>
+<a id="more"></a>
+
+<h2 id="多态的定义"><a href="#多态的定义" class="headerlink" title="多态的定义"></a>多态的定义</h2><p>定义： <strong>事物的不同形态。</strong>多态多应用在向上转型。</p>
+<p>多态的用处：在实际开发中，如果发现某个类的方法可以做出改进，但工程已经交付给用户使用，但是不想影响其他部分对于该方法的调用。那么通过创建子类对象，对于父类方法进行<strong>重写</strong>（Override）。<strong>但是此时父类的其他成员方法和成员属性却不能进行利用</strong>。此时就需要用到<strong>向上转型</strong>，将子类向上转换为父类，此时程序的相应方法做出了改进，程序的其他地方也不会受此影响。</p>
+</li>
+</ul>
+<h2 id="多态的三个前提："><a href="#多态的三个前提：" class="headerlink" title="多态的三个前提："></a>多态的三个前提：</h2><ul>
+<li><p>存在继承关系，子类继承父类</p>
+</li>
+<li><p>子类要重写父类的方法 </p>
+<p>子类重写父类的成员方法。</p>
+</li>
+<li><p>父类数据类型的引用要指向子类对象 （向上转型）</p>
+<p>如 Animal am=new Cat();</p>
+<h2 id="多态的弊端"><a href="#多态的弊端" class="headerlink" title="多态的弊端"></a>多态的弊端</h2><p>向上转型之后，<strong>不能够引用子类特有的成员属性和子类特有的成员方法</strong>。</p>
+</li>
+</ul>
+<p>  <strong>注意：静态方法不能被重写，所以也不存在多态，即使向上转型，子类重写了父类的静态方法，子类调用父类的静态方法，输出依然是父类静态方法中的值。</strong></p>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>JAVASE</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JAVA注解</title>
     <url>/2020/05/11/JAVA%E6%B3%A8%E8%A7%A3/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -633,6 +633,28 @@
       </tags>
   </entry>
   <entry>
+    <title>JAVA的静态方法不能被重写</title>
+    <url>/2020/05/06/JAVA%E7%9A%84%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95%E4%B8%8D%E8%83%BD%E8%A2%AB%E9%87%8D%E5%86%99/</url>
+    <content><![CDATA[<h1 id="JAVA的静态方法不能被重写"><a href="#JAVA的静态方法不能被重写" class="headerlink" title="JAVA的静态方法不能被重写"></a>JAVA的静态方法不能被重写</h1><p>堆区：</p>
+<ul>
+<li>存储的全部都是对象，每个对象都包含一个与之对应的class信息。<a id="more"></a>
+
+</li>
+</ul>
+<p>栈区:</p>
+<p>方法区：</p>
+<ul>
+<li>方法区包含所有的class和static变量  class可以直接调用static</li>
+</ul>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>JAVASE</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JAVA源码问题</title>
     <url>/2020/05/14/JAVA%E6%BA%90%E7%A0%81%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -681,28 +703,6 @@
       </tags>
   </entry>
   <entry>
-    <title>JAVA的静态方法不能被重写</title>
-    <url>/2020/05/06/JAVA%E7%9A%84%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95%E4%B8%8D%E8%83%BD%E8%A2%AB%E9%87%8D%E5%86%99/</url>
-    <content><![CDATA[<h1 id="JAVA的静态方法不能被重写"><a href="#JAVA的静态方法不能被重写" class="headerlink" title="JAVA的静态方法不能被重写"></a>JAVA的静态方法不能被重写</h1><p>堆区：</p>
-<ul>
-<li>存储的全部都是对象，每个对象都包含一个与之对应的class信息。<a id="more"></a>
-
-</li>
-</ul>
-<p>栈区:</p>
-<p>方法区：</p>
-<ul>
-<li>方法区包含所有的class和static变量  class可以直接调用static</li>
-</ul>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>JAVASE</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JAVA编译和运行的过程</title>
     <url>/2020/05/11/JAVA%E7%BC%96%E8%AF%91%E5%92%8C%E8%BF%90%E8%A1%8C%E7%9A%84%E8%BF%87%E7%A8%8B/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -731,17 +731,6 @@
       </tags>
   </entry>
   <entry>
-    <title>JAVA面试</title>
-    <url>/2020/05/11/JAVA%E9%9D%A2%E8%AF%95/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><img src="/2020/05/11/JAVA%E9%9D%A2%E8%AF%95/E:%5Cdev%5CMYBLOG%5Cblog%5Csource_posts%5CJAVA%E9%9D%A2%E8%AF%95%5C2020-05-11_205422.png" alt></p>
-]]></content>
-  </entry>
-  <entry>
     <title>JDK中常用的包有哪些？</title>
     <url>/2020/05/11/JDK%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E5%8C%85%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -766,6 +755,17 @@
       <tags>
         <tag>JAVASE</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>JAVA面试</title>
+    <url>/2020/05/11/JAVA%E9%9D%A2%E8%AF%95/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><img src="/2020/05/11/JAVA%E9%9D%A2%E8%AF%95/E:%5Cdev%5CMYBLOG%5Cblog%5Csource_posts%5CJAVA%E9%9D%A2%E8%AF%95%5C2020-05-11_205422.png" alt></p>
+]]></content>
   </entry>
   <entry>
     <title>JDK和JRE</title>
@@ -1065,6 +1065,31 @@
       </tags>
   </entry>
   <entry>
+    <title>char可以存储汉字吗？</title>
+    <url>/2020/05/06/char%E5%8F%AF%E4%BB%A5%E5%AD%98%E5%82%A8%E6%B1%89%E5%AD%97%E5%90%97%EF%BC%9F/</url>
+    <content><![CDATA[<h2 id="char存储汉字"><a href="#char存储汉字" class="headerlink" title="char存储汉字"></a>char存储汉字</h2><ul>
+<li><p>char是按照字符存储的，不管是英文还是中文，JAVA中固定占用2个字符，用来存储Unicode字符，范围在0-65535.</p>
+</li>
+<li><p>Unicode编码字符集中包含了汉字，所以char类型变量当然可以存储汉字拉。</p>
+<a id="more"></a>
+
+<h2 id="char和String的区别"><a href="#char和String的区别" class="headerlink" title="char和String的区别"></a>char和String的区别</h2><ul>
+<li>char表示字符，定义时用单引号，只能存储一个字符。如char c=‘x’ ;</li>
+<li>String表示的是字符串，可以存储一个或多个字符 如String name=”tom”;</li>
+<li></li>
+</ul>
+</li>
+</ul>
+<p>如name.length();</p>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>JAVASE</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>mysql使用触发器</title>
     <url>/2020/05/15/mysql%E4%BD%BF%E7%94%A8%E8%A7%A6%E5%8F%91%E5%99%A8/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -1196,31 +1221,6 @@
       </tags>
   </entry>
   <entry>
-    <title>char可以存储汉字吗？</title>
-    <url>/2020/05/06/char%E5%8F%AF%E4%BB%A5%E5%AD%98%E5%82%A8%E6%B1%89%E5%AD%97%E5%90%97%EF%BC%9F/</url>
-    <content><![CDATA[<h2 id="char存储汉字"><a href="#char存储汉字" class="headerlink" title="char存储汉字"></a>char存储汉字</h2><ul>
-<li><p>char是按照字符存储的，不管是英文还是中文，JAVA中固定占用2个字符，用来存储Unicode字符，范围在0-65535.</p>
-</li>
-<li><p>Unicode编码字符集中包含了汉字，所以char类型变量当然可以存储汉字拉。</p>
-<a id="more"></a>
-
-<h2 id="char和String的区别"><a href="#char和String的区别" class="headerlink" title="char和String的区别"></a>char和String的区别</h2><ul>
-<li>char表示字符，定义时用单引号，只能存储一个字符。如char c=‘x’ ;</li>
-<li>String表示的是字符串，可以存储一个或多个字符 如String name=”tom”;</li>
-<li></li>
-</ul>
-</li>
-</ul>
-<p>如name.length();</p>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>JAVASE</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>mysql必知必会</title>
     <url>/2020/05/03/mysql%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/</url>
     <content><![CDATA[<p> 登录mysql -h localhost -u root -p<br> Show databases;<br> Use databasename;<br>Show tables;  //显示行</p>
@@ -1311,6 +1311,66 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">TRUNCATE TABLE</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mysql联结表</title>
+    <url>/2020/05/08/mysql%E8%81%94%E7%BB%93%E8%A1%A8/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍联结以及高级联结。</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="创建联结"><a href="#创建联结" class="headerlink" title="创建联结"></a>创建联结</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">SELECT vent_name,prod_name,prod_price </span><br><span class="line">FROM vendors ,products </span><br><span class="line">WHERE vendors.vend_id=products.vend_id;</span><br><span class="line">ORDER BY vend_name,prod_name ;</span><br></pre></td></tr></table></figure>
+
+<h2 id="内部联结"><a href="#内部联结" class="headerlink" title="内部联结"></a>内部联结</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">SELECT vend_name , prod_name , prod_price FROM vendors INNER JOIN products ON vendors.vend_id =products.vend_id ;</span><br></pre></td></tr></table></figure>
+
+<p>此时使用的是INNER JOIN 联结条件用的是ON</p>
+<p>联结多个表：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">SELECT prod_name,vend_name,prod_price,quantity FROM orderitems,products,vendors WHERE products.vend_id =vendors.vend_id AND orderitems.prod_id =products.prod_id AND order_num =<span class="number">20005</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建高级联结"><a href="#创建高级联结" class="headerlink" title="创建高级联结"></a>创建高级联结</h2><h3 id="使用表别名"><a href="#使用表别名" class="headerlink" title="使用表别名"></a>使用表别名</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function">SELECT <span class="title">Concat</span><span class="params">(RTrim(vend_name)，‘（’，RTrim（vend_country）,’）’)</span> AS vend_title FROM vendors ORDER BY vend_name</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="内部联结："><a href="#内部联结：" class="headerlink" title="内部联结："></a>内部联结：</h3><p>它基于俩个表之间的相等测试</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">SELECT vend_name .prod_name,prod_price FROM vendors INNER JOIN products ON vendors.vend_id =produces.vend_id;</span><br></pre></td></tr></table></figure>
+
+<h3 id="自联结：-引用别名，自己联结自己"><a href="#自联结：-引用别名，自己联结自己" class="headerlink" title="自联结： 引用别名，自己联结自己"></a>自联结： 引用别名，自己联结自己</h3><p>假如你发现某物品（其ID为DTNRT)存在问题，因此想知道生产该物品的供应商生产的其他物品是否也存在这些问题。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">SELECT p1.prod_id,p1.prod_name FROM products AS p1,products AS p2</span><br><span class="line">WHERE p1.vend_id =p2.vend_id AND p2.prod_id =’DTNTR’;</span><br></pre></td></tr></table></figure>
+
+<p>因此products 表在from 子句中出现了俩次。虽然这是合法的，但是对products 的引用具有二义性。因此使用了别名。（用自联结而不用子查询。有时候处理联结要比处理查询要快的多）</p>
+<h3 id="自然联结"><a href="#自然联结" class="headerlink" title="自然联结"></a>自然联结</h3><p><strong>自然联结的意思是排除多次出现，使每个列只返回一次。</strong></p>
+<p><strong>我们建立的每个内部联结都是自然联结。</strong></p>
+<p>示例通过对表使用通配符（SELECT *）对所有其他表的列使用明确的子集来完成的。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">SELECT c.*,o.ordr_num,o.order_date,oi.prod_id,oi.quantity,OI.item_price FROM customers AS c,orders AS o,orderitems AS oi WHERE c.cust_id =o.cust_id AND oi.order_num =o.order_num</span><br><span class="line">AND prod_id =’FB’;</span><br></pre></td></tr></table></figure>
+
+<p>通配符只对第一个表使用，所有其他列明确列出，但没有重复的列被检索出来。</p>
+<h3 id="外部联结："><a href="#外部联结：" class="headerlink" title="外部联结："></a>外部联结：</h3><p><strong>许多联结将一个表中的行与另外一个表中的行相关联，但有时候会需要包含没有关联行的那些行，</strong>例如 可能需要使用联结来完成以下的工作：</p>
+<ul>
+<li>对每个客户下了多少订单进行计数，包括那些至今未下订单的客户。</li>
+<li>列出所有产品以及订购数量，包括没有人订购的产品</li>
+<li>计算平均销售规模，包括那些至今未下订单的客户</li>
+</ul>
+<p><strong>联结包含了那些在相关表中没有关联行的行，这种叫做外部联结</strong>     </p>
+<p>内部联结检索所有客户及其订单：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SELECT customers.cust_id,order.orders.order_num FROM customers INNER JOIN orders ON</span><br><span class="line">Customers.cust_id &#x3D;orders.cust_id;</span><br></pre></td></tr></table></figure>
+
+<p>外部联结：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">SELECT customers.cust_id ,orders.order_num FROM customers LEFT OUTER JOIN oders </span><br><span class="line">ON customers.cust_id =orders.cust_id;</span><br></pre></td></tr></table></figure>
+
+<p>输出为</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cust_id   order_num</span><br><span class="line"> 10001      20005</span><br><span class="line"> 10001      20009</span><br><span class="line"> 10002       null</span><br><span class="line"> 10003       null</span><br></pre></td></tr></table></figure>
+
+<p>此时必须要用RIGHT 或LEFT 关键字指定包括其所有行的表，如果是<strong>LEFT</strong>，就<strong>指出包括OUTER JOIN左边表的所有行</strong>。示例是包括（customers)表种所有行。</p>
+<p>其实就是左外部联结和右外部联结</p>
+<h3 id="使用带聚集函数的联结"><a href="#使用带聚集函数的联结" class="headerlink" title="使用带聚集函数的联结"></a>使用带聚集函数的联结</h3><p>使用了COUNT（）函数的联结</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SELECT customers.cust_name, customers.cust_id,COUNT(orders.order_num) AS num_ord FROM customers INNER JOIN orders ON customers.cust_id &#x3D;orders.cust_id GROUP BY customers.cust_id;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SELECT customers,cust_name,cusomers,cust_id,COUNT(orders,order_num)AS num_ord FROM customers LEFT OUTER JOIN orders ON customers.cust_id &#x3D;orders.cust_id  GROUP BY customers.cust_id;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>后端</category>
       </categories>
@@ -1412,253 +1472,6 @@
 <p><img src="https://photos.alitaalice.cn/image/20200514134241.png" alt></p>
 <h3 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h3><p>一般来说，在符号表中查找一个键可能得到两种结果。如果含有该键的结点存在于表中，我们的查找就命<br>中 了，然后返回相应的值。否则查找未命中 （并返回 null ）。根据数据表示的递归结构我们马上就能得到，在二叉查找树中查找一个键的递归算法：如果树是空的，则查找未命中；如果被查找的键和根结点的键相等，查找命中，否则我们就（递归地）在适当的子树中继续查找。如果被查找的键较小就选择左子树，较大则选择右子树。算法 3.3（续 1）中递归的 get() 方法完全实现了这段算法。它的第一个参 数是一个结点（子树的根结点），第二个参数是被查找的键。  </p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>mysql联结表</title>
-    <url>/2020/05/08/mysql%E8%81%94%E7%BB%93%E8%A1%A8/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍联结以及高级联结。</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="创建联结"><a href="#创建联结" class="headerlink" title="创建联结"></a>创建联结</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">SELECT vent_name,prod_name,prod_price </span><br><span class="line">FROM vendors ,products </span><br><span class="line">WHERE vendors.vend_id=products.vend_id;</span><br><span class="line">ORDER BY vend_name,prod_name ;</span><br></pre></td></tr></table></figure>
-
-<h2 id="内部联结"><a href="#内部联结" class="headerlink" title="内部联结"></a>内部联结</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">SELECT vend_name , prod_name , prod_price FROM vendors INNER JOIN products ON vendors.vend_id =products.vend_id ;</span><br></pre></td></tr></table></figure>
-
-<p>此时使用的是INNER JOIN 联结条件用的是ON</p>
-<p>联结多个表：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">SELECT prod_name,vend_name,prod_price,quantity FROM orderitems,products,vendors WHERE products.vend_id =vendors.vend_id AND orderitems.prod_id =products.prod_id AND order_num =<span class="number">20005</span>;</span><br></pre></td></tr></table></figure>
-
-<h2 id="创建高级联结"><a href="#创建高级联结" class="headerlink" title="创建高级联结"></a>创建高级联结</h2><h3 id="使用表别名"><a href="#使用表别名" class="headerlink" title="使用表别名"></a>使用表别名</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function">SELECT <span class="title">Concat</span><span class="params">(RTrim(vend_name)，‘（’，RTrim（vend_country）,’）’)</span> AS vend_title FROM vendors ORDER BY vend_name</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="内部联结："><a href="#内部联结：" class="headerlink" title="内部联结："></a>内部联结：</h3><p>它基于俩个表之间的相等测试</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">SELECT vend_name .prod_name,prod_price FROM vendors INNER JOIN products ON vendors.vend_id =produces.vend_id;</span><br></pre></td></tr></table></figure>
-
-<h3 id="自联结：-引用别名，自己联结自己"><a href="#自联结：-引用别名，自己联结自己" class="headerlink" title="自联结： 引用别名，自己联结自己"></a>自联结： 引用别名，自己联结自己</h3><p>假如你发现某物品（其ID为DTNRT)存在问题，因此想知道生产该物品的供应商生产的其他物品是否也存在这些问题。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">SELECT p1.prod_id,p1.prod_name FROM products AS p1,products AS p2</span><br><span class="line">WHERE p1.vend_id =p2.vend_id AND p2.prod_id =’DTNTR’;</span><br></pre></td></tr></table></figure>
-
-<p>因此products 表在from 子句中出现了俩次。虽然这是合法的，但是对products 的引用具有二义性。因此使用了别名。（用自联结而不用子查询。有时候处理联结要比处理查询要快的多）</p>
-<h3 id="自然联结"><a href="#自然联结" class="headerlink" title="自然联结"></a>自然联结</h3><p><strong>自然联结的意思是排除多次出现，使每个列只返回一次。</strong></p>
-<p><strong>我们建立的每个内部联结都是自然联结。</strong></p>
-<p>示例通过对表使用通配符（SELECT *）对所有其他表的列使用明确的子集来完成的。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">SELECT c.*,o.ordr_num,o.order_date,oi.prod_id,oi.quantity,OI.item_price FROM customers AS c,orders AS o,orderitems AS oi WHERE c.cust_id =o.cust_id AND oi.order_num =o.order_num</span><br><span class="line">AND prod_id =’FB’;</span><br></pre></td></tr></table></figure>
-
-<p>通配符只对第一个表使用，所有其他列明确列出，但没有重复的列被检索出来。</p>
-<h3 id="外部联结："><a href="#外部联结：" class="headerlink" title="外部联结："></a>外部联结：</h3><p><strong>许多联结将一个表中的行与另外一个表中的行相关联，但有时候会需要包含没有关联行的那些行，</strong>例如 可能需要使用联结来完成以下的工作：</p>
-<ul>
-<li>对每个客户下了多少订单进行计数，包括那些至今未下订单的客户。</li>
-<li>列出所有产品以及订购数量，包括没有人订购的产品</li>
-<li>计算平均销售规模，包括那些至今未下订单的客户</li>
-</ul>
-<p><strong>联结包含了那些在相关表中没有关联行的行，这种叫做外部联结</strong>     </p>
-<p>内部联结检索所有客户及其订单：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SELECT customers.cust_id,order.orders.order_num FROM customers INNER JOIN orders ON</span><br><span class="line">Customers.cust_id &#x3D;orders.cust_id;</span><br></pre></td></tr></table></figure>
-
-<p>外部联结：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">SELECT customers.cust_id ,orders.order_num FROM customers LEFT OUTER JOIN oders </span><br><span class="line">ON customers.cust_id =orders.cust_id;</span><br></pre></td></tr></table></figure>
-
-<p>输出为</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cust_id   order_num</span><br><span class="line"> 10001      20005</span><br><span class="line"> 10001      20009</span><br><span class="line"> 10002       null</span><br><span class="line"> 10003       null</span><br></pre></td></tr></table></figure>
-
-<p>此时必须要用RIGHT 或LEFT 关键字指定包括其所有行的表，如果是<strong>LEFT</strong>，就<strong>指出包括OUTER JOIN左边表的所有行</strong>。示例是包括（customers)表种所有行。</p>
-<p>其实就是左外部联结和右外部联结</p>
-<h3 id="使用带聚集函数的联结"><a href="#使用带聚集函数的联结" class="headerlink" title="使用带聚集函数的联结"></a>使用带聚集函数的联结</h3><p>使用了COUNT（）函数的联结</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SELECT customers.cust_name, customers.cust_id,COUNT(orders.order_num) AS num_ord FROM customers INNER JOIN orders ON customers.cust_id &#x3D;orders.cust_id GROUP BY customers.cust_id;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SELECT customers,cust_name,cusomers,cust_id,COUNT(orders,order_num)AS num_ord FROM customers LEFT OUTER JOIN orders ON customers.cust_id &#x3D;orders.cust_id  GROUP BY customers.cust_id;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>mysql</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>二叉树</title>
-    <url>/2020/05/07/%E4%BA%8C%E5%8F%89%E6%A0%91/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本文。</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="二叉树的特点"><a href="#二叉树的特点" class="headerlink" title="二叉树的特点"></a>二叉树的特点</h2><ul>
-<li><p>每个结点最多有俩颗子树。所以二叉树中不存在大于2的结点。</p>
-</li>
-<li><p>左子树和右子树是有顺序的，次序不能随意颠倒。</p>
-</li>
-<li><p>即使树中某结点只有一颗子树，也要区分它是左子树还是右子树</p>
-<h3 id="二叉树的5种形态"><a href="#二叉树的5种形态" class="headerlink" title="二叉树的5种形态"></a>二叉树的5种形态</h3><ul>
-<li>空二叉树</li>
-<li>只有一个根结点</li>
-<li>根节点只有左子树</li>
-<li>根节点只有右子树</li>
-<li>根节点既有左子树又有右子树</li>
-</ul>
-</li>
-</ul>
-<h2 id="特殊二叉树"><a href="#特殊二叉树" class="headerlink" title="特殊二叉树"></a>特殊二叉树</h2><ol>
-<li><p>斜树</p>
-<p>所有结点都只有左子树的二叉树叫做左斜树</p>
-<p>所有结点都只有右子树的二叉树叫做右斜树</p>
-<p>俩者统称为斜树</p>
-</li>
-<li><p>满二叉树</p>
-<p>在一颗二叉树中，如果所有分支结点都存在左子树和右子树，并且所有叶子都在同一层上，这样的二叉树叫做满二叉树</p>
-</li>
-<li><p>完全二叉树</p>
-<p>对一颗具有n个结点的二叉树按照层序编号，如果编号为i（1&lt;=i&lt;=n)的结点与同样深度的满二叉树中编号为i的结点在二叉树中位置完全相同，则这颗二叉树称为完全二叉树。</p>
-</li>
-</ol>
-<h2 id="二叉树的性质"><a href="#二叉树的性质" class="headerlink" title="二叉树的性质"></a>二叉树的性质</h2><h3 id="二叉树性质1"><a href="#二叉树性质1" class="headerlink" title="二叉树性质1"></a>二叉树性质1</h3><p>性质1：在二叉树的第i层上至多有2^(i-1) 个结点。（i&gt;=1)</p>
-<h3 id="二叉树性质2"><a href="#二叉树性质2" class="headerlink" title="二叉树性质2"></a>二叉树性质2</h3><p>性质2：深度为k的二叉树至多有2^(k) -1个结点 （k&gt;=1)   (<strong>结点的总量</strong>)</p>
-<h3 id="二叉树性质3"><a href="#二叉树性质3" class="headerlink" title="二叉树性质3"></a>二叉树性质3</h3><p>性质3：对于任何一颗二叉树T，如果其终端结点数为n0，度为2的结点数为n2，则n0=n2+1</p>
-<h3 id="二叉树性质4"><a href="#二叉树性质4" class="headerlink" title="二叉树性质4"></a>二叉树性质4</h3><p>性质4： 具有n个结点的完全二叉树的深度为[log2 n]+1 ([x]表示不大于x的最大整数)</p>
-<h3 id="二叉树性质5"><a href="#二叉树性质5" class="headerlink" title="二叉树性质5"></a>二叉树性质5</h3><p><strong>性质5： 如果对一颗有n个结点的完全二叉树（其深度为[log2 n]+1)的结点按层序编号，对任一结点i（1&lt;=i&lt;=n)</strong></p>
-<p><strong>有</strong></p>
-<ol>
-<li><strong>如果i=1,则结点i是二叉树的根，无双亲;如果i&gt;1,则其双亲是结点[i/2]</strong></li>
-<li><strong>如果2i&gt;n,则结点i无左孩子（结点i为叶子结点）；否则其左孩子是结点2i</strong></li>
-<li><strong>如果2i+1&gt;n,则结点i无右孩子；否则其右孩子是结点2i+1</strong></li>
-</ol>
-<h2 id="二叉树的存储结构"><a href="#二叉树的存储结构" class="headerlink" title="二叉树的存储结构"></a>二叉树的存储结构</h2><h4 id="二叉树的顺序存储结构"><a href="#二叉树的顺序存储结构" class="headerlink" title="二叉树的顺序存储结构"></a>二叉树的顺序存储结构</h4><p>用一维数组存储二叉树的结点，并且结点的位置，也就是数组的下标要能体现结点之间的逻辑关系。</p>
-<p>一般来说顺序存储用于完全二叉树</p>
-<h4 id="二叉链表"><a href="#二叉链表" class="headerlink" title="二叉链表"></a>二叉链表</h4><p>二叉树的每个结点最多有俩个孩子。所以为它设计一个数据域，和俩个指针域是比较自然的想法。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">lchid -- data --rchild</span><br></pre></td></tr></table></figure>
-
-<p>lchild 和 rchild 都是指针域</p>
-<p><strong>二叉树的二叉链表结点结构定义</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">typedef struct BiTNode</span><br><span class="line">&#123;</span><br><span class="line">   TElemType data; &#x2F;&#x2F;结点数据</span><br><span class="line">   struct BiTNode *lchild ,*rchild;</span><br><span class="line">&#125; BiTNode, *BiTree;</span><br></pre></td></tr></table></figure>
-
-<p>图示：</p>
-<h2 id="二叉树的遍历"><a href="#二叉树的遍历" class="headerlink" title="二叉树的遍历"></a>二叉树的遍历</h2><p>二叉树的定义：</p>
-<p><strong>二叉树的遍历是指从根节点出发，按照某种次序依次访问二叉树中的所有结点，使得每个结点被访问且仅被访问一次。</strong></p>
-<h3 id="前序遍历"><a href="#前序遍历" class="headerlink" title="前序遍历"></a>前序遍历</h3><p>规则：若二叉树为空，则空操作返回，否则先访问根结点，然后前序遍历左子树，再前序遍历右子树。</p>
-<p>如图：</p>
-<p><img src="/2020/05/07/%E4%BA%8C%E5%8F%89%E6%A0%91/TIM%E5%9B%BE%E7%89%8720200510112558.png" alt></p>
-<h3 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h3><p>规则： 若树为空，则空操作返回，否则从根节点开始（注意并不是先访问根节点），中序遍历根节点的左子树，然后是访问根节点，最后中序遍历右子树。</p>
-<p><img src="/2020/05/07/%E4%BA%8C%E5%8F%89%E6%A0%91/TIM%E5%9B%BE%E7%89%8720200510113141.png" alt></p>
-<h3 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h3><p>规则： 若树为空，则空操作返回，否则从左到右先叶子后结点的方式遍历访问左右子树，最后是访问根结点。</p>
-<p>图示：</p>
-<p><img src="/2020/05/07/%E4%BA%8C%E5%8F%89%E6%A0%91/TIM%E5%9B%BE%E7%89%8720200510113343.png" alt></p>
-<h3 id="层序遍历"><a href="#层序遍历" class="headerlink" title="层序遍历"></a>层序遍历</h3><p>规则：若树为空，则空操作返回。</p>
-<p>否则从树的第一层，也就是根节点开始访问，从上而下逐层遍历，在同一层中，按从左到右的顺序对结点逐个访问。</p>
-<p><img src="/2020/05/07/%E4%BA%8C%E5%8F%89%E6%A0%91/TIM%E5%9B%BE%E7%89%8720200510113800.png" alt></p>
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>DataStructure</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>使用存储过程</title>
-    <url>/2020/05/12/%E4%BD%BF%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B-1/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍什么是存储过程，为什么要使用存储过程以及如何使用存储过程，并且介绍创建和使用存储过程的基本语法。  </p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>存储过程简单来说，就是为以后的使用而保存的一条或多条MySQL语句的集合。可将其视为批文件，虽然它们的作用不仅限于批处理  。</p>
-<h2 id="为什么要使用存储过程"><a href="#为什么要使用存储过程" class="headerlink" title="为什么要使用存储过程"></a>为什么要使用存储过程</h2><p>理由：</p>
-<ul>
-<li>通过把处理封装在容易使用的单元中，简化复杂的操作（正如前面例子所述）。</li>
-<li>由于不要求反复建立一系列处理步骤，这保证了数据的完整性。如果所有开发人员和应用程序都使用同一（试验和测试）存储过程，则所使用的代码都是相同的。这一点的延伸就是防止错误。需要执行的步骤越多，出错的可能性就越大。防止错误保证了数据的一致性。</li>
-<li>简化对变动的管理。如果表名、列名或业务逻辑（或别的内容）有变化，只需要更改存储过程的代码。使用它的人员甚至不需要知道这些变化。</li>
-</ul>
-<p>这一点的延伸就是安全性。通过存储过程限制对基础数据的访问减少了数据讹误（无意识的或别的原因所导致的数据讹误）的机会。</p>
-<ul>
-<li>提高性能。因为使用存储过程比使用单独的SQL语句要快。</li>
-<li>存在一些只能用在单个请求中的MySQL元素和特性，存储过程可以使用它们来编写功能更强更灵活的代码（在下一章的例子中可以看到。）  </li>
-</ul>
-<p>换句话说，使用存储过程有3个主要的好处，即简单、安全、高性能。显然，它们都很重要。不过，在将SQL代码转换为存储过程前，也必须知道它的一些缺陷。  </p>
-<ul>
-<li><p>一般来说，存储过程的编写比基本SQL语句复杂，编写存储过程需要更高的技能，更丰富的经验。  </p>
-</li>
-<li><p>你可能没有创建存储过程的安全访问权限。许多数据库管理员限制存储过程的创建权限，允许用户使用存储过程，但不允许他们创建存储过程。  </p>
-</li>
-</ul>
-<h2 id="eg：一个返回产品平均价格的存储过程"><a href="#eg：一个返回产品平均价格的存储过程" class="headerlink" title="eg：一个返回产品平均价格的存储过程"></a>eg：一个返回产品平均价格的存储过程</h2><p><img src="https://photos.alitaalice.cn/image/20200513001100.png" alt></p>
-<p>此存储过程名为productpricing，用CREATE PROCEDURE productpricing()语句定义。如果存储过程接受参数，它们将在()中列举出来。此存储过程没有参数，但后跟的()仍然需要。 BEGIN和END语句用来限定存储过程体，过<br>程体本身仅是一个简单的SELECT语句。如何使用这个存储过程呢？</p>
-<p><img src="https://photos.alitaalice.cn/image/20200513001134.png" alt></p>
-<p><img src="https://photos.alitaalice.cn/image/20200513001157.png" alt></p>
-<p><img src="https://photos.alitaalice.cn/image/20200513001232.png" alt></p>
-<h4 id="如何使用这个存储过程-？"><a href="#如何使用这个存储过程-？" class="headerlink" title="如何使用这个存储过程  ？"></a>如何使用这个存储过程  ？</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">CALL <span class="title">productpricing</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://photos.alitaalice.cn/image/20200513001250.png" alt></p>
-<h4 id="如何删除这个存储过程？"><a href="#如何删除这个存储过程？" class="headerlink" title="如何删除这个存储过程？"></a>如何删除这个存储过程？</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">DROP PROCEDURE productpricing;</span><br></pre></td></tr></table></figure>
-
-<p>仅当存在时删除 如果指定的过程不存在，则DROP PROCEDURE将产生一个错误。当过程存在想删除它时（如果过程不存在也不产生错误）可使用DROP PROCEDURE IF EXISTS。  </p>
-<h4 id="使用参数"><a href="#使用参数" class="headerlink" title="使用参数"></a>使用参数</h4><p>productpricing只是一个简单的存储过程，它简单地显示SELECT语句的结果。一般，存储过程并不显示结果，而是把结果返回给你指定的变量。    </p>
-<p>变量（variable） 内存中一个特定的位置，用来临时存储数据。  以下productpricing的修改版本（如果不先删除此存储过程，则不能再次创建它）：  </p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">CREATE PROCEDURE <span class="title">productpricing</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">              OUT p1 DECIMAL(<span class="number">8</span>,<span class="number">2</span>)</span>,</span></span><br><span class="line"><span class="function">              OUT ph <span class="title">DECIMAL</span><span class="params">(<span class="number">8</span>,<span class="number">2</span>)</span>,</span></span><br><span class="line"><span class="function">              OUT pa <span class="title">DECIMAL</span><span class="params">(<span class="number">8</span>,<span class="number">2</span>)</span></span></span><br><span class="line"><span class="function">              )</span></span><br><span class="line"><span class="function">        BEGIN</span></span><br><span class="line"><span class="function">            SELECT <span class="title">Min</span><span class="params">(prod_price)</span></span></span><br><span class="line"><span class="function">            INTO p1</span></span><br><span class="line"><span class="function">            FROM products</span>;</span><br><span class="line">            <span class="function">SELECT <span class="title">Max</span><span class="params">(prod_price)</span></span></span><br><span class="line"><span class="function">            INTO ph</span></span><br><span class="line"><span class="function">            FROM products</span>;</span><br><span class="line">            <span class="function">SELECT <span class="title">Avg</span><span class="params">(prod_price)</span></span></span><br><span class="line"><span class="function">            INTO pa</span></span><br><span class="line"><span class="function">            FROM products</span>;</span><br><span class="line">            END;</span><br></pre></td></tr></table></figure>
-
-<p>此存储过程接受3个参数： pl存储产品最低价格， ph存储产品最高价格， pa存储产品平均价格。每个参数必须具有指定的类型，这里使用十进制值。关键字OUT指出相应的参数用来从存储过程传出一个值（返回给调用者）。 MySQL支持IN（传递给存储过程）、 OUT（从存储过程传出，如这里所用）和INOUT（对存储过程传入和传出）类型的参数。存储过程的代码位于BEGIN和END语句内，如前所见，它们是一系列SELECT语句，用来检索值，然后保存到相应的变量（通过指定INTO关键字）。</p>
-<p>​    为调用此修改过的存储过程，必须指定3个变量名  </p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">CALL <span class="title">productpricing</span><span class="params">(@pricelow,</span></span></span><br><span class="line"><span class="function"><span class="params">                    @pricehigh,</span></span></span><br><span class="line"><span class="function"><span class="params">                    @priceaverage)</span></span>;</span><br></pre></td></tr></table></figure>
-
-<p>由于此存储过程要求3个参数，因此必须正好传递3个参数，不多也不少。所以，这条CALL语句给出3个参数。它们是存储过程将保存结果的3个变量的名字。<br><strong>变量名</strong> 所有MySQL变量都必须以@开始。  </p>
-<p><img src="https://photos.alitaalice.cn/image/20200513094242.png" alt></p>
-<p><img src="https://photos.alitaalice.cn/image/20200513094323.png" alt></p>
-<p>另外一个例子：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">CREATE PROCEDURE ordertotal(</span><br><span class="line">IN onumeber INT,</span><br><span class="line">OUT ototal DECIMAL(8,2))</span><br><span class="line">BEGIN</span><br><span class="line">    SELECT Sum(item_price*quantity)</span><br><span class="line">    FROM orderitems</span><br><span class="line">    WHERE order_num&#x3D;onumber</span><br><span class="line">    INTO ototal;</span><br><span class="line">END;</span><br></pre></td></tr></table></figure>
-
-<p>为调用新存储过程，可以使用：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">CALL ordertotal(20005,@total);</span><br></pre></td></tr></table></figure>
-
-<p><strong>必须给ordertotal传递两个参数；第一个参数为订单号，第二个参数为包含计算出来的合计的变量名。</strong>  </p>
-<p>为了显示合计：</p>
-<p>SELECT @total;</p>
-<p><img src="https://photos.alitaalice.cn/image/20200513094845.png" alt></p>
-<h2 id="建立智能存储过程"><a href="#建立智能存储过程" class="headerlink" title="建立智能存储过程"></a>建立智能存储过程</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">-- Name: ordertotal</span><br><span class="line">-- Parameters: onumber =order number</span><br><span class="line">--             taxable= <span class="number">0</span> <span class="keyword">if</span> not taxable,<span class="number">1</span> <span class="keyword">if</span> taxable</span><br><span class="line">--             ototal =order total variable</span><br><span class="line"></span><br><span class="line"><span class="function">CREATE PROCEDURE <span class="title">ordertotal</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">        IN onumber INT,</span></span></span><br><span class="line"><span class="function"><span class="params">        IN taxable BOOLEAN,</span></span></span><br><span class="line"><span class="function"><span class="params">        OUT ototal DECIMAL(<span class="number">8</span>,<span class="number">2</span>)</span></span></span><br><span class="line"><span class="function">)COMMENT 'Obtain order total,optionally adding tax'</span></span><br><span class="line"><span class="function">BEGIN</span></span><br><span class="line"><span class="function">     --Declare variable <span class="keyword">for</span> total</span></span><br><span class="line"><span class="function">     DECLARE total <span class="title">DECIMAL</span><span class="params">(<span class="number">8</span>,<span class="number">2</span>)</span></span>;</span><br><span class="line">     --Declare tax percentage</span><br><span class="line">     DECLARE taxrate INT DEFAULT <span class="number">6</span>;</span><br><span class="line">     </span><br><span class="line">     --Get the order total</span><br><span class="line">     <span class="function">SELECT <span class="title">Sum</span><span class="params">(item_price*quantity)</span></span></span><br><span class="line"><span class="function">     FROM orderitems</span></span><br><span class="line"><span class="function">     WHERE order_num </span>=onumber</span><br><span class="line">     INTO total;</span><br><span class="line">     </span><br><span class="line">     --is <span class="keyword">this</span> taxable?</span><br><span class="line">     IF taxable THEN</span><br><span class="line">        --Yes,so add taxrate to the total</span><br><span class="line">        SELECT total+(total/<span class="number">100</span>*taxrate) INTO total;</span><br><span class="line">     END IF;</span><br><span class="line">     --And <span class="keyword">finally</span>,save to out variable</span><br><span class="line">     SELECT total INTO ototal;</span><br><span class="line">END;</span><br></pre></td></tr></table></figure>
-
-<p>为了试验它</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">CALL ordertotal(20005,0,@total);</span><br><span class="line">SELECT @total;</span><br></pre></td></tr></table></figure>
-
-<p>为显示用来创建一个存储过程的CREATE语句，使用SHOW CREATE<br>PROCEDURE语句：  </p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">SHOW CREATE PROCEDURE ordertotal;</span><br></pre></td></tr></table></figure>
-
-<p>为了获得包括何时、由谁创建等详细信息的存储过程列表， 使用SHOW<br>PROCEDURE STATUS。  </p>
-<p>SHOW PROCEDURE STATUS列出所有存储过程。为限制其输出，可使用LIKE指定一个过滤模式，例如：  </p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">SHOW PROCEDURE STATUS LIKE <span class="string">'ordertotal'</span>;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>mysql</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>使用事务处理</title>
-    <url>/2020/05/15/%E4%BD%BF%E7%94%A8%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍什么是事务处理以及如何利用COMMIT和ROLLBACK语句来管理事务处理  .</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>MyISAM和<strong>InnoDB</strong>是两种最常使用的引擎。前者不支持明确的事务处理管理，而后者支持。  </p>
-<p><strong>事务处理（transaction processing）可以用来维护数据库的完整性，它保证成批的MySQL操作要么完全执行，要么完全不执行。</strong>  </p>
-<p><strong>事务处理是一种机制，用来管理必须成批执行的MySQL操作，以保证数据库不包含不完整的操作结果。利用事务处理，可以保证一组操作不会中途停止，它们或者作为整体执行，或者完全不执行（除非明确指示）。如果没有错误发生，整组语句提交给（写到）数据库表。如果发生错误，则进行回退（撤销）以恢复数据库到某个已知且安全的状态 .</strong> </p>
-<p><img src="https://photos.alitaalice.cn/image/20200515163050.png" alt></p>
-<h2 id="1控制事务处理"><a href="#1控制事务处理" class="headerlink" title="1控制事务处理"></a>1控制事务处理</h2><p>MySQL使用下面的语句来标识事务的开始  ：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">START TRANSACTION</span><br></pre></td></tr></table></figure>
-
-<p>MySQL的ROLLBACK命令用来回退（撤销） MySQL语句，请看下面的语句：  </p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">SELECT * FROM ordertotals;</span><br><span class="line">START TRANSACTION;</span><br><span class="line">DELETE FROM ordertotals;</span><br><span class="line">SELECL * FROM ordertotals;</span><br><span class="line">ROLLBACK;</span><br><span class="line">SELECT * FROM ordertotals;</span><br></pre></td></tr></table></figure>
-
-<p>ROLLBACK只能在一个事务处理内使用（在执行一条START<br> TRANSACTION命令之后）  .</p>
-<p>事务处理用来<strong>管理INSERT、 UPDATE和DELETE语</strong>句。你不能回退SELECT语句。（这样做也没有什么意义。）你不能<strong>回退CREATE或DROP</strong>操作。事务处理块中可以使用这两条语句，但如果你执行回退，它们不会被撤销。  </p>
-<h2 id="2-使用COMMIT"><a href="#2-使用COMMIT" class="headerlink" title="2 使用COMMIT"></a>2 使用COMMIT</h2><p>般的MySQL语句都是直接针对数据库表执行和编写的。这就是<br>所谓的隐含提交（implicit commit），即提交（写或保存）操作是自动进行的。  </p>
-<p>在事务处理块中，提交不会隐含地进行。为进行明确的提交，<br>使用COMMIT语句 。</p>
-]]></content>
-      <categories>
-        <category>mysql</category>
-      </categories>
-      <tags>
-        <tag>mysql</tag>
-      </tags>
   </entry>
   <entry>
     <title>二叉树的遍历</title>
@@ -1937,6 +1750,193 @@
 ]]></content>
   </entry>
   <entry>
+    <title>二叉树</title>
+    <url>/2020/05/07/%E4%BA%8C%E5%8F%89%E6%A0%91/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本文。</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="二叉树的特点"><a href="#二叉树的特点" class="headerlink" title="二叉树的特点"></a>二叉树的特点</h2><ul>
+<li><p>每个结点最多有俩颗子树。所以二叉树中不存在大于2的结点。</p>
+</li>
+<li><p>左子树和右子树是有顺序的，次序不能随意颠倒。</p>
+</li>
+<li><p>即使树中某结点只有一颗子树，也要区分它是左子树还是右子树</p>
+<h3 id="二叉树的5种形态"><a href="#二叉树的5种形态" class="headerlink" title="二叉树的5种形态"></a>二叉树的5种形态</h3><ul>
+<li>空二叉树</li>
+<li>只有一个根结点</li>
+<li>根节点只有左子树</li>
+<li>根节点只有右子树</li>
+<li>根节点既有左子树又有右子树</li>
+</ul>
+</li>
+</ul>
+<h2 id="特殊二叉树"><a href="#特殊二叉树" class="headerlink" title="特殊二叉树"></a>特殊二叉树</h2><ol>
+<li><p>斜树</p>
+<p>所有结点都只有左子树的二叉树叫做左斜树</p>
+<p>所有结点都只有右子树的二叉树叫做右斜树</p>
+<p>俩者统称为斜树</p>
+</li>
+<li><p>满二叉树</p>
+<p>在一颗二叉树中，如果所有分支结点都存在左子树和右子树，并且所有叶子都在同一层上，这样的二叉树叫做满二叉树</p>
+</li>
+<li><p>完全二叉树</p>
+<p>对一颗具有n个结点的二叉树按照层序编号，如果编号为i（1&lt;=i&lt;=n)的结点与同样深度的满二叉树中编号为i的结点在二叉树中位置完全相同，则这颗二叉树称为完全二叉树。</p>
+</li>
+</ol>
+<h2 id="二叉树的性质"><a href="#二叉树的性质" class="headerlink" title="二叉树的性质"></a>二叉树的性质</h2><h3 id="二叉树性质1"><a href="#二叉树性质1" class="headerlink" title="二叉树性质1"></a>二叉树性质1</h3><p>性质1：在二叉树的第i层上至多有2^(i-1) 个结点。（i&gt;=1)</p>
+<h3 id="二叉树性质2"><a href="#二叉树性质2" class="headerlink" title="二叉树性质2"></a>二叉树性质2</h3><p>性质2：深度为k的二叉树至多有2^(k) -1个结点 （k&gt;=1)   (<strong>结点的总量</strong>)</p>
+<h3 id="二叉树性质3"><a href="#二叉树性质3" class="headerlink" title="二叉树性质3"></a>二叉树性质3</h3><p>性质3：对于任何一颗二叉树T，如果其终端结点数为n0，度为2的结点数为n2，则n0=n2+1</p>
+<h3 id="二叉树性质4"><a href="#二叉树性质4" class="headerlink" title="二叉树性质4"></a>二叉树性质4</h3><p>性质4： 具有n个结点的完全二叉树的深度为[log2 n]+1 ([x]表示不大于x的最大整数)</p>
+<h3 id="二叉树性质5"><a href="#二叉树性质5" class="headerlink" title="二叉树性质5"></a>二叉树性质5</h3><p><strong>性质5： 如果对一颗有n个结点的完全二叉树（其深度为[log2 n]+1)的结点按层序编号，对任一结点i（1&lt;=i&lt;=n)</strong></p>
+<p><strong>有</strong></p>
+<ol>
+<li><strong>如果i=1,则结点i是二叉树的根，无双亲;如果i&gt;1,则其双亲是结点[i/2]</strong></li>
+<li><strong>如果2i&gt;n,则结点i无左孩子（结点i为叶子结点）；否则其左孩子是结点2i</strong></li>
+<li><strong>如果2i+1&gt;n,则结点i无右孩子；否则其右孩子是结点2i+1</strong></li>
+</ol>
+<h2 id="二叉树的存储结构"><a href="#二叉树的存储结构" class="headerlink" title="二叉树的存储结构"></a>二叉树的存储结构</h2><h4 id="二叉树的顺序存储结构"><a href="#二叉树的顺序存储结构" class="headerlink" title="二叉树的顺序存储结构"></a>二叉树的顺序存储结构</h4><p>用一维数组存储二叉树的结点，并且结点的位置，也就是数组的下标要能体现结点之间的逻辑关系。</p>
+<p>一般来说顺序存储用于完全二叉树</p>
+<h4 id="二叉链表"><a href="#二叉链表" class="headerlink" title="二叉链表"></a>二叉链表</h4><p>二叉树的每个结点最多有俩个孩子。所以为它设计一个数据域，和俩个指针域是比较自然的想法。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">lchid -- data --rchild</span><br></pre></td></tr></table></figure>
+
+<p>lchild 和 rchild 都是指针域</p>
+<p><strong>二叉树的二叉链表结点结构定义</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">typedef struct BiTNode</span><br><span class="line">&#123;</span><br><span class="line">   TElemType data; &#x2F;&#x2F;结点数据</span><br><span class="line">   struct BiTNode *lchild ,*rchild;</span><br><span class="line">&#125; BiTNode, *BiTree;</span><br></pre></td></tr></table></figure>
+
+<p>图示：</p>
+<h2 id="二叉树的遍历"><a href="#二叉树的遍历" class="headerlink" title="二叉树的遍历"></a>二叉树的遍历</h2><p>二叉树的定义：</p>
+<p><strong>二叉树的遍历是指从根节点出发，按照某种次序依次访问二叉树中的所有结点，使得每个结点被访问且仅被访问一次。</strong></p>
+<h3 id="前序遍历"><a href="#前序遍历" class="headerlink" title="前序遍历"></a>前序遍历</h3><p>规则：若二叉树为空，则空操作返回，否则先访问根结点，然后前序遍历左子树，再前序遍历右子树。</p>
+<p>如图：</p>
+<p><img src="/2020/05/07/%E4%BA%8C%E5%8F%89%E6%A0%91/TIM%E5%9B%BE%E7%89%8720200510112558.png" alt></p>
+<h3 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h3><p>规则： 若树为空，则空操作返回，否则从根节点开始（注意并不是先访问根节点），中序遍历根节点的左子树，然后是访问根节点，最后中序遍历右子树。</p>
+<p><img src="/2020/05/07/%E4%BA%8C%E5%8F%89%E6%A0%91/TIM%E5%9B%BE%E7%89%8720200510113141.png" alt></p>
+<h3 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h3><p>规则： 若树为空，则空操作返回，否则从左到右先叶子后结点的方式遍历访问左右子树，最后是访问根结点。</p>
+<p>图示：</p>
+<p><img src="/2020/05/07/%E4%BA%8C%E5%8F%89%E6%A0%91/TIM%E5%9B%BE%E7%89%8720200510113343.png" alt></p>
+<h3 id="层序遍历"><a href="#层序遍历" class="headerlink" title="层序遍历"></a>层序遍历</h3><p>规则：若树为空，则空操作返回。</p>
+<p>否则从树的第一层，也就是根节点开始访问，从上而下逐层遍历，在同一层中，按从左到右的顺序对结点逐个访问。</p>
+<p><img src="/2020/05/07/%E4%BA%8C%E5%8F%89%E6%A0%91/TIM%E5%9B%BE%E7%89%8720200510113800.png" alt></p>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>DataStructure</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用事务处理</title>
+    <url>/2020/05/15/%E4%BD%BF%E7%94%A8%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍什么是事务处理以及如何利用COMMIT和ROLLBACK语句来管理事务处理  .</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>MyISAM和<strong>InnoDB</strong>是两种最常使用的引擎。前者不支持明确的事务处理管理，而后者支持。  </p>
+<p><strong>事务处理（transaction processing）可以用来维护数据库的完整性，它保证成批的MySQL操作要么完全执行，要么完全不执行。</strong>  </p>
+<p><strong>事务处理是一种机制，用来管理必须成批执行的MySQL操作，以保证数据库不包含不完整的操作结果。利用事务处理，可以保证一组操作不会中途停止，它们或者作为整体执行，或者完全不执行（除非明确指示）。如果没有错误发生，整组语句提交给（写到）数据库表。如果发生错误，则进行回退（撤销）以恢复数据库到某个已知且安全的状态 .</strong> </p>
+<p><img src="https://photos.alitaalice.cn/image/20200515163050.png" alt></p>
+<h2 id="1控制事务处理"><a href="#1控制事务处理" class="headerlink" title="1控制事务处理"></a>1控制事务处理</h2><p>MySQL使用下面的语句来标识事务的开始  ：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">START TRANSACTION</span><br></pre></td></tr></table></figure>
+
+<p>MySQL的ROLLBACK命令用来回退（撤销） MySQL语句，请看下面的语句：  </p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">SELECT * FROM ordertotals;</span><br><span class="line">START TRANSACTION;</span><br><span class="line">DELETE FROM ordertotals;</span><br><span class="line">SELECL * FROM ordertotals;</span><br><span class="line">ROLLBACK;</span><br><span class="line">SELECT * FROM ordertotals;</span><br></pre></td></tr></table></figure>
+
+<p>ROLLBACK只能在一个事务处理内使用（在执行一条START<br> TRANSACTION命令之后）  .</p>
+<p>事务处理用来<strong>管理INSERT、 UPDATE和DELETE语</strong>句。你不能回退SELECT语句。（这样做也没有什么意义。）你不能<strong>回退CREATE或DROP</strong>操作。事务处理块中可以使用这两条语句，但如果你执行回退，它们不会被撤销。  </p>
+<h2 id="2-使用COMMIT"><a href="#2-使用COMMIT" class="headerlink" title="2 使用COMMIT"></a>2 使用COMMIT</h2><p>般的MySQL语句都是直接针对数据库表执行和编写的。这就是<br>所谓的隐含提交（implicit commit），即提交（写或保存）操作是自动进行的。  </p>
+<p>在事务处理块中，提交不会隐含地进行。为进行明确的提交，<br>使用COMMIT语句 。</p>
+]]></content>
+      <categories>
+        <category>mysql</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用存储过程</title>
+    <url>/2020/05/12/%E4%BD%BF%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B-1/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍什么是存储过程，为什么要使用存储过程以及如何使用存储过程，并且介绍创建和使用存储过程的基本语法。  </p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>存储过程简单来说，就是为以后的使用而保存的一条或多条MySQL语句的集合。可将其视为批文件，虽然它们的作用不仅限于批处理  。</p>
+<h2 id="为什么要使用存储过程"><a href="#为什么要使用存储过程" class="headerlink" title="为什么要使用存储过程"></a>为什么要使用存储过程</h2><p>理由：</p>
+<ul>
+<li>通过把处理封装在容易使用的单元中，简化复杂的操作（正如前面例子所述）。</li>
+<li>由于不要求反复建立一系列处理步骤，这保证了数据的完整性。如果所有开发人员和应用程序都使用同一（试验和测试）存储过程，则所使用的代码都是相同的。这一点的延伸就是防止错误。需要执行的步骤越多，出错的可能性就越大。防止错误保证了数据的一致性。</li>
+<li>简化对变动的管理。如果表名、列名或业务逻辑（或别的内容）有变化，只需要更改存储过程的代码。使用它的人员甚至不需要知道这些变化。</li>
+</ul>
+<p>这一点的延伸就是安全性。通过存储过程限制对基础数据的访问减少了数据讹误（无意识的或别的原因所导致的数据讹误）的机会。</p>
+<ul>
+<li>提高性能。因为使用存储过程比使用单独的SQL语句要快。</li>
+<li>存在一些只能用在单个请求中的MySQL元素和特性，存储过程可以使用它们来编写功能更强更灵活的代码（在下一章的例子中可以看到。）  </li>
+</ul>
+<p>换句话说，使用存储过程有3个主要的好处，即简单、安全、高性能。显然，它们都很重要。不过，在将SQL代码转换为存储过程前，也必须知道它的一些缺陷。  </p>
+<ul>
+<li><p>一般来说，存储过程的编写比基本SQL语句复杂，编写存储过程需要更高的技能，更丰富的经验。  </p>
+</li>
+<li><p>你可能没有创建存储过程的安全访问权限。许多数据库管理员限制存储过程的创建权限，允许用户使用存储过程，但不允许他们创建存储过程。  </p>
+</li>
+</ul>
+<h2 id="eg：一个返回产品平均价格的存储过程"><a href="#eg：一个返回产品平均价格的存储过程" class="headerlink" title="eg：一个返回产品平均价格的存储过程"></a>eg：一个返回产品平均价格的存储过程</h2><p><img src="https://photos.alitaalice.cn/image/20200513001100.png" alt></p>
+<p>此存储过程名为productpricing，用CREATE PROCEDURE productpricing()语句定义。如果存储过程接受参数，它们将在()中列举出来。此存储过程没有参数，但后跟的()仍然需要。 BEGIN和END语句用来限定存储过程体，过<br>程体本身仅是一个简单的SELECT语句。如何使用这个存储过程呢？</p>
+<p><img src="https://photos.alitaalice.cn/image/20200513001134.png" alt></p>
+<p><img src="https://photos.alitaalice.cn/image/20200513001157.png" alt></p>
+<p><img src="https://photos.alitaalice.cn/image/20200513001232.png" alt></p>
+<h4 id="如何使用这个存储过程-？"><a href="#如何使用这个存储过程-？" class="headerlink" title="如何使用这个存储过程  ？"></a>如何使用这个存储过程  ？</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">CALL <span class="title">productpricing</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://photos.alitaalice.cn/image/20200513001250.png" alt></p>
+<h4 id="如何删除这个存储过程？"><a href="#如何删除这个存储过程？" class="headerlink" title="如何删除这个存储过程？"></a>如何删除这个存储过程？</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">DROP PROCEDURE productpricing;</span><br></pre></td></tr></table></figure>
+
+<p>仅当存在时删除 如果指定的过程不存在，则DROP PROCEDURE将产生一个错误。当过程存在想删除它时（如果过程不存在也不产生错误）可使用DROP PROCEDURE IF EXISTS。  </p>
+<h4 id="使用参数"><a href="#使用参数" class="headerlink" title="使用参数"></a>使用参数</h4><p>productpricing只是一个简单的存储过程，它简单地显示SELECT语句的结果。一般，存储过程并不显示结果，而是把结果返回给你指定的变量。    </p>
+<p>变量（variable） 内存中一个特定的位置，用来临时存储数据。  以下productpricing的修改版本（如果不先删除此存储过程，则不能再次创建它）：  </p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">CREATE PROCEDURE <span class="title">productpricing</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">              OUT p1 DECIMAL(<span class="number">8</span>,<span class="number">2</span>)</span>,</span></span><br><span class="line"><span class="function">              OUT ph <span class="title">DECIMAL</span><span class="params">(<span class="number">8</span>,<span class="number">2</span>)</span>,</span></span><br><span class="line"><span class="function">              OUT pa <span class="title">DECIMAL</span><span class="params">(<span class="number">8</span>,<span class="number">2</span>)</span></span></span><br><span class="line"><span class="function">              )</span></span><br><span class="line"><span class="function">        BEGIN</span></span><br><span class="line"><span class="function">            SELECT <span class="title">Min</span><span class="params">(prod_price)</span></span></span><br><span class="line"><span class="function">            INTO p1</span></span><br><span class="line"><span class="function">            FROM products</span>;</span><br><span class="line">            <span class="function">SELECT <span class="title">Max</span><span class="params">(prod_price)</span></span></span><br><span class="line"><span class="function">            INTO ph</span></span><br><span class="line"><span class="function">            FROM products</span>;</span><br><span class="line">            <span class="function">SELECT <span class="title">Avg</span><span class="params">(prod_price)</span></span></span><br><span class="line"><span class="function">            INTO pa</span></span><br><span class="line"><span class="function">            FROM products</span>;</span><br><span class="line">            END;</span><br></pre></td></tr></table></figure>
+
+<p>此存储过程接受3个参数： pl存储产品最低价格， ph存储产品最高价格， pa存储产品平均价格。每个参数必须具有指定的类型，这里使用十进制值。关键字OUT指出相应的参数用来从存储过程传出一个值（返回给调用者）。 MySQL支持IN（传递给存储过程）、 OUT（从存储过程传出，如这里所用）和INOUT（对存储过程传入和传出）类型的参数。存储过程的代码位于BEGIN和END语句内，如前所见，它们是一系列SELECT语句，用来检索值，然后保存到相应的变量（通过指定INTO关键字）。</p>
+<p>​    为调用此修改过的存储过程，必须指定3个变量名  </p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">CALL <span class="title">productpricing</span><span class="params">(@pricelow,</span></span></span><br><span class="line"><span class="function"><span class="params">                    @pricehigh,</span></span></span><br><span class="line"><span class="function"><span class="params">                    @priceaverage)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p>由于此存储过程要求3个参数，因此必须正好传递3个参数，不多也不少。所以，这条CALL语句给出3个参数。它们是存储过程将保存结果的3个变量的名字。<br><strong>变量名</strong> 所有MySQL变量都必须以@开始。  </p>
+<p><img src="https://photos.alitaalice.cn/image/20200513094242.png" alt></p>
+<p><img src="https://photos.alitaalice.cn/image/20200513094323.png" alt></p>
+<p>另外一个例子：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">CREATE PROCEDURE ordertotal(</span><br><span class="line">IN onumeber INT,</span><br><span class="line">OUT ototal DECIMAL(8,2))</span><br><span class="line">BEGIN</span><br><span class="line">    SELECT Sum(item_price*quantity)</span><br><span class="line">    FROM orderitems</span><br><span class="line">    WHERE order_num&#x3D;onumber</span><br><span class="line">    INTO ototal;</span><br><span class="line">END;</span><br></pre></td></tr></table></figure>
+
+<p>为调用新存储过程，可以使用：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">CALL ordertotal(20005,@total);</span><br></pre></td></tr></table></figure>
+
+<p><strong>必须给ordertotal传递两个参数；第一个参数为订单号，第二个参数为包含计算出来的合计的变量名。</strong>  </p>
+<p>为了显示合计：</p>
+<p>SELECT @total;</p>
+<p><img src="https://photos.alitaalice.cn/image/20200513094845.png" alt></p>
+<h2 id="建立智能存储过程"><a href="#建立智能存储过程" class="headerlink" title="建立智能存储过程"></a>建立智能存储过程</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">-- Name: ordertotal</span><br><span class="line">-- Parameters: onumber =order number</span><br><span class="line">--             taxable= <span class="number">0</span> <span class="keyword">if</span> not taxable,<span class="number">1</span> <span class="keyword">if</span> taxable</span><br><span class="line">--             ototal =order total variable</span><br><span class="line"></span><br><span class="line"><span class="function">CREATE PROCEDURE <span class="title">ordertotal</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">        IN onumber INT,</span></span></span><br><span class="line"><span class="function"><span class="params">        IN taxable BOOLEAN,</span></span></span><br><span class="line"><span class="function"><span class="params">        OUT ototal DECIMAL(<span class="number">8</span>,<span class="number">2</span>)</span></span></span><br><span class="line"><span class="function">)COMMENT 'Obtain order total,optionally adding tax'</span></span><br><span class="line"><span class="function">BEGIN</span></span><br><span class="line"><span class="function">     --Declare variable <span class="keyword">for</span> total</span></span><br><span class="line"><span class="function">     DECLARE total <span class="title">DECIMAL</span><span class="params">(<span class="number">8</span>,<span class="number">2</span>)</span></span>;</span><br><span class="line">     --Declare tax percentage</span><br><span class="line">     DECLARE taxrate INT DEFAULT <span class="number">6</span>;</span><br><span class="line">     </span><br><span class="line">     --Get the order total</span><br><span class="line">     <span class="function">SELECT <span class="title">Sum</span><span class="params">(item_price*quantity)</span></span></span><br><span class="line"><span class="function">     FROM orderitems</span></span><br><span class="line"><span class="function">     WHERE order_num </span>=onumber</span><br><span class="line">     INTO total;</span><br><span class="line">     </span><br><span class="line">     --is <span class="keyword">this</span> taxable?</span><br><span class="line">     IF taxable THEN</span><br><span class="line">        --Yes,so add taxrate to the total</span><br><span class="line">        SELECT total+(total/<span class="number">100</span>*taxrate) INTO total;</span><br><span class="line">     END IF;</span><br><span class="line">     --And <span class="keyword">finally</span>,save to out variable</span><br><span class="line">     SELECT total INTO ototal;</span><br><span class="line">END;</span><br></pre></td></tr></table></figure>
+
+<p>为了试验它</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">CALL ordertotal(20005,0,@total);</span><br><span class="line">SELECT @total;</span><br></pre></td></tr></table></figure>
+
+<p>为显示用来创建一个存储过程的CREATE语句，使用SHOW CREATE<br>PROCEDURE语句：  </p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">SHOW CREATE PROCEDURE ordertotal;</span><br></pre></td></tr></table></figure>
+
+<p>为了获得包括何时、由谁创建等详细信息的存储过程列表， 使用SHOW<br>PROCEDURE STATUS。  </p>
+<p>SHOW PROCEDURE STATUS列出所有存储过程。为限制其输出，可使用LIKE指定一个过滤模式，例如：  </p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">SHOW PROCEDURE STATUS LIKE <span class="string">'ordertotal'</span>;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用游标mysql</title>
     <url>/2020/05/14/%E4%BD%BF%E7%94%A8%E6%B8%B8%E6%A0%87mysql/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -1973,49 +1973,6 @@
       <tags>
         <tag>mysql</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>内部类</title>
-    <url>/2020/05/08/%E5%86%85%E9%83%A8%E7%B1%BB/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍JAVA内部类</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h1 id="JAVA内部类"><a href="#JAVA内部类" class="headerlink" title="JAVA内部类"></a>JAVA内部类</h1><h2 id="为什么需要内部类"><a href="#为什么需要内部类" class="headerlink" title="为什么需要内部类"></a>为什么需要内部类</h2><ul>
-<li>内部类可以对同一个包中的其他类隐藏</li>
-<li>内部类方法可以访问定义这个类的作用域中的数据，包括原有私有的数据。</li>
-</ul>
-<p>内部类的特点：</p>
-<ul>
-<li><p>一个内部类方法可以访问自身的数据字段</p>
-</li>
-<li><p>可以访问创建它的外围类对象的数据字段</p>
-<p>示例：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TalkingClock</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> interval;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> beep;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">TalkingClock</span><span class="params">(<span class="keyword">int</span> interval ,<span class="keyword">boolean</span> beep)</span></span></span><br><span class="line"><span class="function">    </span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// an inner class</span></span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TimePrinter</span> <span class="keyword">implements</span> <span class="title">ActionListener</span></span></span><br><span class="line"><span class="class">    </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span>  <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent event)</span></span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            System.out.println(<span class="string">"at the tone,the time is"</span>+Insant.ofEpochMilli(event.getWhen()));</span><br><span class="line">            <span class="keyword">if</span>(beep) Toolkit.getDefaultToolkit().beep();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>TimePrinter类没有实例字段或者名为beep的对象。</p>
-<p>实际上为此，<strong>内部类对象总有一个隐式引用，指向创建它的外部类对象。</strong></p>
-</li>
-</ul>
-<p>​       但是这个引用在内部类的定义中是不可见的。我们将外围类对象的引用称为outer</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span>  <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent event)</span></span></span><br><span class="line"><span class="function">      </span>&#123;</span><br><span class="line">          System.out.println(<span class="string">"at the tone,the time is"</span>+Insant.ofEpochMilli(event.getWhen()));</span><br><span class="line">          <span class="keyword">if</span>(outer.beep) Toolkit.getDefaultToolkit().beep();</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="局部内部类"><a href="#局部内部类" class="headerlink" title="局部内部类"></a>局部内部类</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// an inner class</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">TimePrinter</span> <span class="keyword">implements</span> <span class="title">ActionListener</span></span></span><br><span class="line"><span class="class">    </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span>  <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent event)</span></span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            System.out.println(<span class="string">"at the tone,the time is"</span>+Insant.ofEpochMilli(event.getWhen()));</span><br><span class="line">            <span class="keyword">if</span>(beep) Toolkit.getDefaultToolkit().beep();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> listener =<span class="keyword">new</span> TimePrinter();</span><br><span class="line">    <span class="keyword">var</span> timer=<span class="keyword">new</span> Timer(interval,listener);</span><br><span class="line">    timer.start();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在示例代码中，只是在start方法中创建这个类型的对象时使用了一次。</p>
-<p>当遇到这类情况时，可以在一个方法中局部的定义这个类。</p>
-<ul>
-<li><p>声明局部类时不能有访问说明符（即public 或者private)</p>
-</li>
-<li><p>局部类的作用域被限定在声明这个局部类的块中</p>
-</li>
-<li><p>局部类的优点: 对外部世界完全隐藏。除了start()方法外，没有任何方法知道TimePrinter类的存在。</p>
-</li>
-<li><p>局部类不仅可以访问外部类的字段，还可以访问局部变量。（必须是事实最终变量）它们一旦赋值就绝对不会改变。</p>
-<h3 id="匿名内部类"><a href="#匿名内部类" class="headerlink" title="匿名内部类"></a>匿名内部类</h3></li>
-</ul>
-]]></content>
   </entry>
   <entry>
     <title>创建和操纵表</title>
@@ -2104,6 +2061,59 @@
       </tags>
   </entry>
   <entry>
+    <title>内部类</title>
+    <url>/2020/05/08/%E5%86%85%E9%83%A8%E7%B1%BB/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍JAVA内部类</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h1 id="JAVA内部类"><a href="#JAVA内部类" class="headerlink" title="JAVA内部类"></a>JAVA内部类</h1><h2 id="为什么需要内部类"><a href="#为什么需要内部类" class="headerlink" title="为什么需要内部类"></a>为什么需要内部类</h2><ul>
+<li>内部类可以对同一个包中的其他类隐藏</li>
+<li>内部类方法可以访问定义这个类的作用域中的数据，包括原有私有的数据。</li>
+</ul>
+<p>内部类的特点：</p>
+<ul>
+<li><p>一个内部类方法可以访问自身的数据字段</p>
+</li>
+<li><p>可以访问创建它的外围类对象的数据字段</p>
+<p>示例：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TalkingClock</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> interval;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> beep;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">TalkingClock</span><span class="params">(<span class="keyword">int</span> interval ,<span class="keyword">boolean</span> beep)</span></span></span><br><span class="line"><span class="function">    </span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// an inner class</span></span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TimePrinter</span> <span class="keyword">implements</span> <span class="title">ActionListener</span></span></span><br><span class="line"><span class="class">    </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span>  <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent event)</span></span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            System.out.println(<span class="string">"at the tone,the time is"</span>+Insant.ofEpochMilli(event.getWhen()));</span><br><span class="line">            <span class="keyword">if</span>(beep) Toolkit.getDefaultToolkit().beep();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>TimePrinter类没有实例字段或者名为beep的对象。</p>
+<p>实际上为此，<strong>内部类对象总有一个隐式引用，指向创建它的外部类对象。</strong></p>
+</li>
+</ul>
+<p>​       但是这个引用在内部类的定义中是不可见的。我们将外围类对象的引用称为outer</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span>  <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent event)</span></span></span><br><span class="line"><span class="function">      </span>&#123;</span><br><span class="line">          System.out.println(<span class="string">"at the tone,the time is"</span>+Insant.ofEpochMilli(event.getWhen()));</span><br><span class="line">          <span class="keyword">if</span>(outer.beep) Toolkit.getDefaultToolkit().beep();</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="局部内部类"><a href="#局部内部类" class="headerlink" title="局部内部类"></a>局部内部类</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// an inner class</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">TimePrinter</span> <span class="keyword">implements</span> <span class="title">ActionListener</span></span></span><br><span class="line"><span class="class">    </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span>  <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent event)</span></span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            System.out.println(<span class="string">"at the tone,the time is"</span>+Insant.ofEpochMilli(event.getWhen()));</span><br><span class="line">            <span class="keyword">if</span>(beep) Toolkit.getDefaultToolkit().beep();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> listener =<span class="keyword">new</span> TimePrinter();</span><br><span class="line">    <span class="keyword">var</span> timer=<span class="keyword">new</span> Timer(interval,listener);</span><br><span class="line">    timer.start();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在示例代码中，只是在start方法中创建这个类型的对象时使用了一次。</p>
+<p>当遇到这类情况时，可以在一个方法中局部的定义这个类。</p>
+<ul>
+<li><p>声明局部类时不能有访问说明符（即public 或者private)</p>
+</li>
+<li><p>局部类的作用域被限定在声明这个局部类的块中</p>
+</li>
+<li><p>局部类的优点: 对外部世界完全隐藏。除了start()方法外，没有任何方法知道TimePrinter类的存在。</p>
+</li>
+<li><p>局部类不仅可以访问外部类的字段，还可以访问局部变量。（必须是事实最终变量）它们一旦赋值就绝对不会改变。</p>
+<h3 id="匿名内部类"><a href="#匿名内部类" class="headerlink" title="匿名内部类"></a>匿名内部类</h3></li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>创建表和操控表</title>
+    <url>/2020/05/08/%E5%88%9B%E5%BB%BA%E8%A1%A8%E5%92%8C%E6%93%8D%E6%8E%A7%E8%A1%A8/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍表的创建，更改和删除的基本知识。</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
+  </entry>
+  <entry>
     <title>初级排序算法</title>
     <url>/2020/05/12/%E5%88%9D%E7%BA%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -2165,41 +2175,6 @@
       </tags>
   </entry>
   <entry>
-    <title>创建表和操控表</title>
-    <url>/2020/05/08/%E5%88%9B%E5%BB%BA%E8%A1%A8%E5%92%8C%E6%93%8D%E6%8E%A7%E8%A1%A8/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍表的创建，更改和删除的基本知识。</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
-  </entry>
-  <entry>
-    <title>学习方法</title>
-    <url>/2020/05/07/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>学习方法</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><ul>
-<li>慢一点，你理解的越多，需要记的就越少</li>
-<li>勤做练习，自己记笔记</li>
-<li>上床睡觉之前就不要再看别的书了，或者至少不能再看其他有难度的东西</li>
-<li>要喝水，要多喝水</li>
-<li>大声说出来</li>
-<li>听听你的大脑怎么说（注意大脑是不是负荷太重）</li>
-<li>要有点感觉（真正融入到书的故事中）</li>
-</ul>
-]]></content>
-      <categories>
-        <category>杂谈</category>
-      </categories>
-      <tags>
-        <tag>杂谈</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>基于拉链和线性探测法的散列表</title>
     <url>/2020/05/13/%E5%9F%BA%E4%BA%8E%E6%8B%89%E9%93%BE%E5%92%8C%E7%BA%BF%E6%80%A7%E6%8E%A2%E6%B5%8B%E6%B3%95%E7%9A%84%E6%95%A3%E5%88%97%E8%A1%A8/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -2225,6 +2200,31 @@
       </categories>
       <tags>
         <tag>DataStructure</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>学习方法</title>
+    <url>/2020/05/07/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>学习方法</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><ul>
+<li>慢一点，你理解的越多，需要记的就越少</li>
+<li>勤做练习，自己记笔记</li>
+<li>上床睡觉之前就不要再看别的书了，或者至少不能再看其他有难度的东西</li>
+<li>要喝水，要多喝水</li>
+<li>大声说出来</li>
+<li>听听你的大脑怎么说（注意大脑是不是负荷太重）</li>
+<li>要有点感觉（真正融入到书的故事中）</li>
+</ul>
+]]></content>
+      <categories>
+        <category>杂谈</category>
+      </categories>
+      <tags>
+        <tag>杂谈</tag>
       </tags>
   </entry>
   <entry>
@@ -2271,25 +2271,6 @@
       </tags>
   </entry>
   <entry>
-    <title>归并排序</title>
-    <url>/2020/05/14/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍归并排序</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>在本节中我们所讨论的算法都基于归并 这个简单的操作，即将两个有序的数组归并成一个更大的有序数组。很快人们就根据这个操作发明了一种简单的递归排序算法：<strong>归并排序</strong> 。  </p>
-<p><img src="https://photos.alitaalice.cn/image/20200514103423.png" alt></p>
-<p>​                                         归并排序示意图  </p>
-<h2 id="原地归并"><a href="#原地归并" class="headerlink" title="原地归并"></a>原地归并</h2>]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>DataStructure</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>抽象类和接口的区别详解</title>
     <url>/2020/05/11/%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%8C%BA%E5%88%AB%E8%AF%A6%E8%A7%A3/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -2323,6 +2304,56 @@
       </categories>
       <tags>
         <tag>JAVASE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>归并排序</title>
+    <url>/2020/05/14/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍归并排序</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>在本节中我们所讨论的算法都基于归并 这个简单的操作，即将两个有序的数组归并成一个更大的有序数组。很快人们就根据这个操作发明了一种简单的递归排序算法：<strong>归并排序</strong> 。  </p>
+<p><img src="https://photos.alitaalice.cn/image/20200514103423.png" alt></p>
+<p>​                                         归并排序示意图  </p>
+<h2 id="原地归并"><a href="#原地归并" class="headerlink" title="原地归并"></a>原地归并</h2>]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>DataStructure</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>散列表详解</title>
+    <url>/2020/05/13/%E6%95%A3%E5%88%97%E8%A1%A8%E8%AF%A6%E8%A7%A3/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍散列表。</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="散列函数"><a href="#散列函数" class="headerlink" title="散列函数"></a>散列函数</h2><p>我们面对的第一个问题就是散列函数的计算，这个过程会将键转化为数组的索引。如果我们有一个能够保存 M个键值对的数组，那么我们就需要一个能够将任意键转化为该数组范围内的索引([0,M-1] 范围内的整数）的散列函数 -</p>
+<p>散列函数和键的类型有关。<strong>严格地说，对于每种类型的键都我们都需要一个与之对应的散列函数 。</strong>如果键是一个数，比如社会保险号，我们就可以直接使用这个数；如果键是一个字符串，比如一个人的名字，<br>我们就需要将这个字符串转化为一个数；<strong>如果键含有多个部分，比如邮件地址，我们需要用某种方法将这些部分结合起来</strong>。对于许多常见类型的键，我们可以利用 Java 提供的默认实现。我们会简略讨论多种数<br>据类型的散列函数。你应该看看它们是如何实现的，因为你也需要为自定义的类型实现散列函数。  </p>
+<h3 id="正整数"><a href="#正整数" class="headerlink" title="正整数"></a>正整数</h3><p>将整数散列最常用方法是<strong>除留余数法</strong> 。我们选择大小为素数 的数组，对于任意正整数 ，计算除以 的余数。这个函数的计算非常容易（在 Java 中为 k% M ）并能够有效地将键散布在 0 到M-1的范围内。  </p>
+<p><img src="https://photos.alitaalice.cn/image/20200513162105.png" alt></p>
+<h3 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h3><p>如果键是 0 到 1 之间的实数，我们可以将它乘以 并四舍五入得到一个 0 至 之间的索引值。<br>尽管这个方法很容易理解，但它是有缺陷的，因为这种情况下键的高位起的作用更大，最低位对散列的结果没有影响。修正这个问题的办法是将键表示为二进制数然后再使用除留余数法（Java 就是这么做的）  </p>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><h2 id="组合键"><a href="#组合键" class="headerlink" title="组合键"></a>组合键</h2><h2 id="JAVA的约定"><a href="#JAVA的约定" class="headerlink" title="JAVA的约定"></a>JAVA的约定</h2><p>每种数据类型都需要相应的散列函数，于是 Java 令所有数据类型都继承了一个能够返回一个 32 比特整数的 hashCode() 方法。每一种数据类型的 hashCode() 方法都必须和 equals() 方法一致 。也就是说，如果 a.equals(b) 返回 true ，那么 a.hashCode() 的返回值必然和 b.hashCode()的返回值相同。相反，如果两个对象的 hashCode() 方法的返回值不同，那么我们就知道这两个对象是不同的。但如果两个对象的 hashCode() 方法的返回值相同，这两个对象也有可能不同，我们还需要用equals() 方法进行判断。请注意，这说明如果你要为自定义的数据类型定义散列函数，你需要同时重写 hashCode() 和 equals() 两个方法。默认散列函数会返回对象的内存地址，但这只适用于很少的情况。Java 为很多常用的数据类型重写了 hashCode() 方法（包括 String 、Integer 、Double、File 和 URL ）。  </p>
+<h3 id="将hashCode-的返回值转化为一个数组索引"><a href="#将hashCode-的返回值转化为一个数组索引" class="headerlink" title="将hashCode()的返回值转化为一个数组索引"></a>将hashCode()的返回值转化为一个数组索引</h3><p>因为我们需要的是数组的索引而不是一个 32 位的整数，我们在实现中会将默认的 hashCode() 方法和除留余数法结合起来产生一个 0 到M-1 的整数，方法如下：  </p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">hash</span><span class="params">(Key x)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="keyword">return</span> (x.hashCode() &amp; <span class="number">0x7fffffff</span>) % M; &#125;</span><br></pre></td></tr></table></figure>
+
+<p>这段代码会将符号位屏蔽（将一个 32 位整数变为一个 31 位非负整数），然后用除留余数法计算它除以M 的余数。在使用这样的代码时我们一般会将数组的大小 M 取为素数 以充分利用原散列值的所有位。  </p>
+<h3 id="自定义的hashCode-方法"><a href="#自定义的hashCode-方法" class="headerlink" title="自定义的hashCode()方法"></a>自定义的hashCode()方法</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Transaction</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">...</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> String who;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> Date when;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">double</span> amount;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> hash = <span class="number">17</span>;</span><br><span class="line">hash = <span class="number">31</span> * hash + who.hashCode();</span><br><span class="line">hash = <span class="number">31</span> * hash + when.hashCode();</span><br><span class="line">hash = <span class="number">31</span> * hash+ ((Double) amount).hashCode();</span><br><span class="line"><span class="keyword">return</span> hash;</span><br><span class="line">&#125;</span><br><span class="line">...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>自定义类型中 hashCode() 方法的实现  </p>
+<p>对于原始类型的对象，可以将其转化为对应的数据类型然后再调用 hashCode() 方法。和以前一样，系数的具体值（这里是 31）并不是很重要。  </p>
+<h3 id="软缓存"><a href="#软缓存" class="headerlink" title="软缓存"></a>软缓存</h3><p>如果散列值的计算很耗时，那么我们或许可以将每个键的散列值缓存起来 ，即在每个键中使用一个hash 变量来保存它的 hashCode() 的返回值（请见练习 3.4.25）。第一次调用 hashCode() 方法时，我们需要计算对象的散列值，但之后对 hashCode() 方法的调用会直接返回 hash 变量的值。<br>Java 的 String 对象的 hashCode() 方法就使用了这种方法来减少计算量。  </p>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>DataStructure</tag>
       </tags>
   </entry>
   <entry>
@@ -2371,37 +2402,6 @@ p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数�
       </categories>
       <tags>
         <tag>C</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>散列表详解</title>
-    <url>/2020/05/13/%E6%95%A3%E5%88%97%E8%A1%A8%E8%AF%A6%E8%A7%A3/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍散列表。</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="散列函数"><a href="#散列函数" class="headerlink" title="散列函数"></a>散列函数</h2><p>我们面对的第一个问题就是散列函数的计算，这个过程会将键转化为数组的索引。如果我们有一个能够保存 M个键值对的数组，那么我们就需要一个能够将任意键转化为该数组范围内的索引([0,M-1] 范围内的整数）的散列函数 -</p>
-<p>散列函数和键的类型有关。<strong>严格地说，对于每种类型的键都我们都需要一个与之对应的散列函数 。</strong>如果键是一个数，比如社会保险号，我们就可以直接使用这个数；如果键是一个字符串，比如一个人的名字，<br>我们就需要将这个字符串转化为一个数；<strong>如果键含有多个部分，比如邮件地址，我们需要用某种方法将这些部分结合起来</strong>。对于许多常见类型的键，我们可以利用 Java 提供的默认实现。我们会简略讨论多种数<br>据类型的散列函数。你应该看看它们是如何实现的，因为你也需要为自定义的类型实现散列函数。  </p>
-<h3 id="正整数"><a href="#正整数" class="headerlink" title="正整数"></a>正整数</h3><p>将整数散列最常用方法是<strong>除留余数法</strong> 。我们选择大小为素数 的数组，对于任意正整数 ，计算除以 的余数。这个函数的计算非常容易（在 Java 中为 k% M ）并能够有效地将键散布在 0 到M-1的范围内。  </p>
-<p><img src="https://photos.alitaalice.cn/image/20200513162105.png" alt></p>
-<h3 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h3><p>如果键是 0 到 1 之间的实数，我们可以将它乘以 并四舍五入得到一个 0 至 之间的索引值。<br>尽管这个方法很容易理解，但它是有缺陷的，因为这种情况下键的高位起的作用更大，最低位对散列的结果没有影响。修正这个问题的办法是将键表示为二进制数然后再使用除留余数法（Java 就是这么做的）  </p>
-<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><h2 id="组合键"><a href="#组合键" class="headerlink" title="组合键"></a>组合键</h2><h2 id="JAVA的约定"><a href="#JAVA的约定" class="headerlink" title="JAVA的约定"></a>JAVA的约定</h2><p>每种数据类型都需要相应的散列函数，于是 Java 令所有数据类型都继承了一个能够返回一个 32 比特整数的 hashCode() 方法。每一种数据类型的 hashCode() 方法都必须和 equals() 方法一致 。也就是说，如果 a.equals(b) 返回 true ，那么 a.hashCode() 的返回值必然和 b.hashCode()的返回值相同。相反，如果两个对象的 hashCode() 方法的返回值不同，那么我们就知道这两个对象是不同的。但如果两个对象的 hashCode() 方法的返回值相同，这两个对象也有可能不同，我们还需要用equals() 方法进行判断。请注意，这说明如果你要为自定义的数据类型定义散列函数，你需要同时重写 hashCode() 和 equals() 两个方法。默认散列函数会返回对象的内存地址，但这只适用于很少的情况。Java 为很多常用的数据类型重写了 hashCode() 方法（包括 String 、Integer 、Double、File 和 URL ）。  </p>
-<h3 id="将hashCode-的返回值转化为一个数组索引"><a href="#将hashCode-的返回值转化为一个数组索引" class="headerlink" title="将hashCode()的返回值转化为一个数组索引"></a>将hashCode()的返回值转化为一个数组索引</h3><p>因为我们需要的是数组的索引而不是一个 32 位的整数，我们在实现中会将默认的 hashCode() 方法和除留余数法结合起来产生一个 0 到M-1 的整数，方法如下：  </p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">hash</span><span class="params">(Key x)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="keyword">return</span> (x.hashCode() &amp; <span class="number">0x7fffffff</span>) % M; &#125;</span><br></pre></td></tr></table></figure>
-
-<p>这段代码会将符号位屏蔽（将一个 32 位整数变为一个 31 位非负整数），然后用除留余数法计算它除以M 的余数。在使用这样的代码时我们一般会将数组的大小 M 取为素数 以充分利用原散列值的所有位。  </p>
-<h3 id="自定义的hashCode-方法"><a href="#自定义的hashCode-方法" class="headerlink" title="自定义的hashCode()方法"></a>自定义的hashCode()方法</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Transaction</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">...</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> String who;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> Date when;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">double</span> amount;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> hash = <span class="number">17</span>;</span><br><span class="line">hash = <span class="number">31</span> * hash + who.hashCode();</span><br><span class="line">hash = <span class="number">31</span> * hash + when.hashCode();</span><br><span class="line">hash = <span class="number">31</span> * hash+ ((Double) amount).hashCode();</span><br><span class="line"><span class="keyword">return</span> hash;</span><br><span class="line">&#125;</span><br><span class="line">...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>自定义类型中 hashCode() 方法的实现  </p>
-<p>对于原始类型的对象，可以将其转化为对应的数据类型然后再调用 hashCode() 方法。和以前一样，系数的具体值（这里是 31）并不是很重要。  </p>
-<h3 id="软缓存"><a href="#软缓存" class="headerlink" title="软缓存"></a>软缓存</h3><p>如果散列值的计算很耗时，那么我们或许可以将每个键的散列值缓存起来 ，即在每个键中使用一个hash 变量来保存它的 hashCode() 的返回值（请见练习 3.4.25）。第一次调用 hashCode() 方法时，我们需要计算对象的散列值，但之后对 hashCode() 方法的调用会直接返回 hash 变量的值。<br>Java 的 String 对象的 hashCode() 方法就使用了这种方法来减少计算量。  </p>
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>DataStructure</tag>
       </tags>
   </entry>
   <entry>
@@ -2494,16 +2494,6 @@ p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数�
       </tags>
   </entry>
   <entry>
-    <title>观察者模式</title>
-    <url>/2020/05/14/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
-  </entry>
-  <entry>
     <title>线性表</title>
     <url>/2020/05/05/%E7%BA%BF%E6%80%A7%E8%A1%A8/</url>
     <content><![CDATA[<h1 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h1><h2 id="线性表的定义："><a href="#线性表的定义：" class="headerlink" title="线性表的定义："></a>线性表的定义：</h2><ul>
@@ -2587,6 +2577,16 @@ p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数�
       <tags>
         <tag>TCP/IP</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>观察者模式</title>
+    <url>/2020/05/14/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
   </entry>
   <entry>
     <title>链表</title>
