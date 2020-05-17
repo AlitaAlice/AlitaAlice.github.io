@@ -11,52 +11,51 @@
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="ConcurrentHashMap"><a href="#ConcurrentHashMap" class="headerlink" title="ConcurrentHashMap"></a>ConcurrentHashMap</h2><h2 id="Hashtable"><a href="#Hashtable" class="headerlink" title="Hashtable"></a>Hashtable</h2>]]></content>
   </entry>
   <entry>
-    <title>HTTP状态码</title>
-    <url>/2020/05/13/HTTP%E7%8A%B6%E6%80%81%E7%A0%81/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍返回结果的HTTP状态码。</p>
-</blockquote>
-<a id="more"></a>
+    <title>JAVA_String_API</title>
+    <url>/2020/05/06/JAVA-String-API/</url>
+    <content><![CDATA[<p>String API</p>
+<ul>
+<li>append()</li>
+</ul>
+<p>  在由许多小段的字符串构建一个字符串时，则使用StringBuilder类（字符串构造器）</p>
+<p>  首先构造一个空的字符串构造器：<br>  <a id="more"></a></p>
+  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">StringBuilder builder =<span class="keyword">new</span> StringBuilder();</span><br></pre></td></tr></table></figure>
 
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h1 id="1-状态码告知从服务器端返回的请求结果"><a href="#1-状态码告知从服务器端返回的请求结果" class="headerlink" title="1 状态码告知从服务器端返回的请求结果"></a>1 状态码告知从服务器端返回的请求结果</h1><p>状态码的职责是当客户端向服务器端发送请求时，描述返回的请求结果。借助状态码，用户可以知道服务器端是正常处理了请求，还是出现了错误  </p>
-<p><img src="https://photos.alitaalice.cn/image/20200513120418.png" alt></p>
-<p>状态码如 200 OK，以 3 位数字和原因短语组成。<br>数字中的第一位指定了响应类别，后两位无分类。响应类别有以下 5 种  </p>
-<p><img src="https://photos.alitaalice.cn/image/20200513120523.png" alt></p>
-<h2 id="2XX-成功"><a href="#2XX-成功" class="headerlink" title="2XX 成功"></a>2XX 成功</h2><h3 id="2-1-200-OK"><a href="#2-1-200-OK" class="headerlink" title="2.1 200 OK"></a>2.1 200 OK</h3><p><img src="https://photos.alitaalice.cn/image/20200513120936.png" alt></p>
-<p>表示从客户端发来的请求在服务器端被正常处理了。<br>在响应报文内，随状态码一起返回的信息会因方法的不同而发生改变。比如，使用 GET 方法时，对应请求资源的实体会作为响应返回；而使用 HEAD 方法时，对应请求资源的实体首部不随报文主体作为响应返回（即在响应中只返回首部，不会返回实体的主体部分）  </p>
-<h3 id="2-2-204-NOT-Content"><a href="#2-2-204-NOT-Content" class="headerlink" title="2.2 204 NOT Content"></a>2.2 204 NOT Content</h3><p><img src="https://photos.alitaalice.cn/image/20200513121124.png" alt></p>
-<p>该状态码代表服务器接收的请求已成功处理，但在返回的响应报文中不含实体的主体部分。另外，也不允许返回任何实体的主体。比如，当从浏览器发出请求处理后，返回 204 响应，那么浏览器显示的页面不发生更新。<br>一般在只需要从客户端往服务器发送信息，而对客户端不需要发送新信息内容的情况下使用。  </p>
-<h3 id="2-3-206-Partial-Content"><a href="#2-3-206-Partial-Content" class="headerlink" title="2.3 206 Partial Content"></a>2.3 206 Partial Content</h3><p><img src="https://photos.alitaalice.cn/image/20200513121229.png" alt></p>
-<p>该状态码表示客户端进行了范围请求，而服务器成功执行了这部分的 GET 请求。响应报文中包含由Content-Range 指定范围的实体内容。  </p>
-<h2 id="3-3XX-重定向"><a href="#3-3XX-重定向" class="headerlink" title="3 3XX 重定向"></a>3 3XX 重定向</h2><p>3XX 响应结果表明浏览器需要执行某些特殊的处理以正确处理请求。  </p>
-<h3 id="3-1-301-Moved-Permanently"><a href="#3-1-301-Moved-Permanently" class="headerlink" title="3.1 301 Moved Permanently"></a>3.1 301 Moved Permanently</h3><p><img src="https://photos.alitaalice.cn/image/20200513121404.png" alt></p>
-<p>永久性重定向。该状态码表示请求的资源已被分配了新的 URI，以后应使用资源现在所指的 URI。也就是说，如果已经把资源对应的 URI 保存为书签了，这时应该按 Location 首部字段提示的 URI 重新保存。像下方给出的请求 URI，当指定资源路径的最后忘记添加斜杠“/”，就会产生 301 状态码。  </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;example.com&#x2F;sample</span><br></pre></td></tr></table></figure>
+<p>  当需要添加一部分内容时，调用append()方法</p>
+  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">builder.append(ch);</span><br><span class="line">builder.append(str);</span><br><span class="line">String completedString=builder.toString(); <span class="comment">/*调用toString()方法，得到String对象。*/</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="3-2-302-Found"><a href="#3-2-302-Found" class="headerlink" title="3.2 302 Found"></a>3.2 302 Found</h3><p><img src="https://photos.alitaalice.cn/image/20200513121815.png" alt></p>
-<h3 id="3-3-303-See-Other"><a href="#3-3-303-See-Other" class="headerlink" title="3.3  303 See Other"></a>3.3  303 See Other</h3><p><img src="https://photos.alitaalice.cn/image/20200513122022.png" alt></p>
-<p>该状态码表示由于请求对应的资源存在着另一个 URI，应使用 GET 方法定向获取请求的资源。<br>303 状态码和 302 Found 状态码有着相同的功能，但 303 状态码明确表示客户端应当采用 GET 方法获取资源，这点与 302 状态码有区别。<br>比如，当使用 POST 方法访问 CGI 程序，其执行后的处理结果是希望客户端能以 GET 方法重定向到另一个 URI 上去时，返回 303 状态码。虽然 302 Found 状态码也可以实现相同的功能，但这里使用 303 状态码是最理想的。  </p>
-<h3 id="3-4-304-Not-Modified"><a href="#3-4-304-Not-Modified" class="headerlink" title="3.4 304 Not Modified"></a>3.4 304 Not Modified</h3><p><img src="/2020/05/13/HTTP%E7%8A%B6%E6%80%81%E7%A0%81/C:%5CUsers%5C16508%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200513122317593.png" alt="image-20200513122317593"></p>
-<p>该状态码表示客户端发送附带条件的请求 2 时，服务器端允许请求访问资源，但未满足条件的情况。304状态码返回时，不包含任何响应的主体部分。304 虽然被划分在 3XX 类别中，但是和重定向没有关系。  </p>
-<h3 id="3-5-307-Temporary-Redirect"><a href="#3-5-307-Temporary-Redirect" class="headerlink" title="3.5 307 Temporary Redirect"></a>3.5 307 Temporary Redirect</h3><p>临时重定向。该状态码与 302 Found 有着相同的含义。尽管 302 标准禁止 POST 变换成 GET，但实际使用时大家并不遵守。<br>307 会遵照浏览器标准，不会从 POST 变成 GET。但是，对于处理响应时的行为，每种浏览器有可能出现不同的情况。</p>
-<h2 id="4-4XX客户端错误"><a href="#4-4XX客户端错误" class="headerlink" title="4 4XX客户端错误"></a>4 4XX客户端错误</h2><h3 id="4-1-400-Bad-Request"><a href="#4-1-400-Bad-Request" class="headerlink" title="4.1 400 Bad Request"></a>4.1 400 Bad Request</h3><p><img src="https://photos.alitaalice.cn/image/20200513122701.png" alt></p>
-<p>该状态码表示请求报文中存在语法错误。当错误发生时，需修改请求的内容后再次发送请求。另外，浏览器会像 200 OK 一样对待该状态码。  </p>
-<h3 id="4-2-401-Unauthorized"><a href="#4-2-401-Unauthorized" class="headerlink" title="4.2 401 Unauthorized"></a>4.2 401 Unauthorized</h3><p>-+<img src="https://photos.alitaalice.cn/image/20200513122941.png" alt></p>
-<p>该状态码表示发送的请求需要有通过 HTTP 认证（BASIC 认证、DIGEST 认证）的认证信息。另外若之前已进行过 1 次请求，则表示用户认证失败。  </p>
-<h3 id="4-3-403-Forbidden"><a href="#4-3-403-Forbidden" class="headerlink" title="4.3 403 Forbidden"></a>4.3 403 Forbidden</h3><p><img src="https://photos.alitaalice.cn/image/20200513123055.png" alt></p>
-<p>该状态码表明对请求资源的访问被服务器拒绝了。服务器端没有必要给出拒绝的详细理由，但如果想作说明的话，可以在实体的主体部分对原因进行描述，这样就能让用户看到了。<br>未获得文件系统的访问授权，访问权限出现某些问题（从未授权的发送源 IP 地址试图访问）等列举的情况都可能是发生 403 的原因。  </p>
-<h3 id="4-4-404-Not-Found"><a href="#4-4-404-Not-Found" class="headerlink" title="4.4 404 Not Found"></a>4.4 404 Not Found</h3><p><img src="https://photos.alitaalice.cn/image/20200513123152.png" alt></p>
-<p>该状态码表明服务器上无法找到请求的资源。除此之外，也可以在服务器端拒绝请求且不想说明理由时使用。  </p>
-<h2 id="5-5XX-服务器错误"><a href="#5-5XX-服务器错误" class="headerlink" title="5 5XX 服务器错误"></a>5 5XX 服务器错误</h2><p>5XX 的响应结果表明服务器本身发生错误。  </p>
-<h3 id="5-1-500-Internal-Server-Error"><a href="#5-1-500-Internal-Server-Error" class="headerlink" title="5.1 500 Internal Server Error"></a>5.1 500 Internal Server Error</h3><p>该状态码表明服务器端在执行请求时发生了错误。也有可能是 Web 应用存在的 bug 或某些临时的故障。  <img src="/2020/05/13/HTTP%E7%8A%B6%E6%80%81%E7%A0%81/C:%5CUsers%5C16508%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200513123521561.png" alt="image-20200513123521561"></p>
-<h3 id="5-2-503-Service-Unavailable"><a href="#5-2-503-Service-Unavailable" class="headerlink" title="5.2 503 Service Unavailable"></a>5.2 503 Service Unavailable</h3><p><img src="https://photos.alitaalice.cn/image/20200513123558.png" alt></p>
-<p>该状态码表明服务器暂时处于超负载或正在进行停机维护，现在无法处理请求。如果事先得知解除以上状况需要的时间，最好写入 RetryAfter 首部字段再返回给客户端。  </p>
+<ul>
+<li><p>char charAt(int index)</p>
+<p>返回给定位置的代码单元。</p>
+</li>
+<li><p>int length()</p>
+</li>
+</ul>
+<p>​         返回字符串代码单元的个数</p>
+<ul>
+<li><p>String repeat(int count)</p>
+<p>返回一个字符串，将当前字符重复count次</p>
+</li>
+<li><p>boolean equals() </p>
+<p>用来检测俩个字符串是否相等</p>
+<p>boolean equalsIgnoreCase() </p>
+<p>用来检测俩个字符串是否相等（不区分大小写）</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="string">"hello"</span>.equals(greeting);</span><br><span class="line"><span class="string">"HELLO"</span>.equalsIgnoreCase(<span class="string">"hello"</span>); <span class="comment">/* 不区分大小写 */</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注意：</p>
+<p><strong>不要用==运算符检测是否相等。</strong></p>
+<p><strong>这个运算符只能够确定俩个字符串是否存放在同一个位置上。</strong>当然如果字符串存放在同一个位置上，它们必然相等，但是完全有可能把内容相同的多个字符串副本放置在不同的位置上。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String greeting=<span class="string">"Hello"</span>;</span><br><span class="line"><span class="keyword">if</span>(greeting ==<span class="string">"Hello"</span>)</span><br><span class="line">  -- <span class="keyword">true</span></span><br><span class="line"> <span class="keyword">if</span>(greeting.substring(<span class="number">0</span>,<span class="number">3</span>)==<span class="string">"Hel"</span>)</span><br><span class="line">  --<span class="keyword">false</span></span><br></pre></td></tr></table></figure>
+
+<p>实际上只有字符串字面量共享，而+或者substring操作得到的字符串并不共享。</p>
+</li>
+</ul>
 ]]></content>
       <categories>
-        <category>计网</category>
+        <category>后端</category>
       </categories>
       <tags>
-        <tag>HTTP</tag>
+        <tag>JAVASE</tag>
       </tags>
   </entry>
   <entry>
@@ -110,54 +109,6 @@
 <li>this和super不能同时出现在一个构造函数里面，因为this必然会调用其它的构造函数，其它的构造函数必然也会有super语句的存在，所以在同一个构造函数里面有相同的语句，就失去了语句的意义，编译器也不会通过。</li>
 <li>this()和super()都指的是对象，所以，均不可以在static环境中使用。包括：static变量,static方法，static语句块。</li>
 <li>从本质上讲，this是一个指向本对象的指针, 然而super是一个Java关键字。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>JAVASE</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JAVA_String_API</title>
-    <url>/2020/05/06/JAVA-String-API/</url>
-    <content><![CDATA[<p>String API</p>
-<ul>
-<li>append()</li>
-</ul>
-<p>  在由许多小段的字符串构建一个字符串时，则使用StringBuilder类（字符串构造器）</p>
-<p>  首先构造一个空的字符串构造器：<br>  <a id="more"></a></p>
-  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">StringBuilder builder =<span class="keyword">new</span> StringBuilder();</span><br></pre></td></tr></table></figure>
-
-<p>  当需要添加一部分内容时，调用append()方法</p>
-  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">builder.append(ch);</span><br><span class="line">builder.append(str);</span><br><span class="line">String completedString=builder.toString(); <span class="comment">/*调用toString()方法，得到String对象。*/</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>char charAt(int index)</p>
-<p>返回给定位置的代码单元。</p>
-</li>
-<li><p>int length()</p>
-</li>
-</ul>
-<p>​         返回字符串代码单元的个数</p>
-<ul>
-<li><p>String repeat(int count)</p>
-<p>返回一个字符串，将当前字符重复count次</p>
-</li>
-<li><p>boolean equals() </p>
-<p>用来检测俩个字符串是否相等</p>
-<p>boolean equalsIgnoreCase() </p>
-<p>用来检测俩个字符串是否相等（不区分大小写）</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="string">"hello"</span>.equals(greeting);</span><br><span class="line"><span class="string">"HELLO"</span>.equalsIgnoreCase(<span class="string">"hello"</span>); <span class="comment">/* 不区分大小写 */</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>注意：</p>
-<p><strong>不要用==运算符检测是否相等。</strong></p>
-<p><strong>这个运算符只能够确定俩个字符串是否存放在同一个位置上。</strong>当然如果字符串存放在同一个位置上，它们必然相等，但是完全有可能把内容相同的多个字符串副本放置在不同的位置上。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String greeting=<span class="string">"Hello"</span>;</span><br><span class="line"><span class="keyword">if</span>(greeting ==<span class="string">"Hello"</span>)</span><br><span class="line">  -- <span class="keyword">true</span></span><br><span class="line"> <span class="keyword">if</span>(greeting.substring(<span class="number">0</span>,<span class="number">3</span>)==<span class="string">"Hel"</span>)</span><br><span class="line">  --<span class="keyword">false</span></span><br></pre></td></tr></table></figure>
-
-<p>实际上只有字符串字面量共享，而+或者substring操作得到的字符串并不共享。</p>
-</li>
 </ul>
 ]]></content>
       <categories>
@@ -294,6 +245,77 @@
       </tags>
   </entry>
   <entry>
+    <title>HTTP状态码</title>
+    <url>/2020/05/13/HTTP%E7%8A%B6%E6%80%81%E7%A0%81/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍返回结果的HTTP状态码。</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h1 id="1-状态码告知从服务器端返回的请求结果"><a href="#1-状态码告知从服务器端返回的请求结果" class="headerlink" title="1 状态码告知从服务器端返回的请求结果"></a>1 状态码告知从服务器端返回的请求结果</h1><p>状态码的职责是当客户端向服务器端发送请求时，描述返回的请求结果。借助状态码，用户可以知道服务器端是正常处理了请求，还是出现了错误  </p>
+<p><img src="https://photos.alitaalice.cn/image/20200513120418.png" alt></p>
+<p>状态码如 200 OK，以 3 位数字和原因短语组成。<br>数字中的第一位指定了响应类别，后两位无分类。响应类别有以下 5 种  </p>
+<p><img src="https://photos.alitaalice.cn/image/20200513120523.png" alt></p>
+<h2 id="2XX-成功"><a href="#2XX-成功" class="headerlink" title="2XX 成功"></a>2XX 成功</h2><h3 id="2-1-200-OK"><a href="#2-1-200-OK" class="headerlink" title="2.1 200 OK"></a>2.1 200 OK</h3><p><img src="https://photos.alitaalice.cn/image/20200513120936.png" alt></p>
+<p>表示从客户端发来的请求在服务器端被正常处理了。<br>在响应报文内，随状态码一起返回的信息会因方法的不同而发生改变。比如，使用 GET 方法时，对应请求资源的实体会作为响应返回；而使用 HEAD 方法时，对应请求资源的实体首部不随报文主体作为响应返回（即在响应中只返回首部，不会返回实体的主体部分）  </p>
+<h3 id="2-2-204-NOT-Content"><a href="#2-2-204-NOT-Content" class="headerlink" title="2.2 204 NOT Content"></a>2.2 204 NOT Content</h3><p><img src="https://photos.alitaalice.cn/image/20200513121124.png" alt></p>
+<p>该状态码代表服务器接收的请求已成功处理，但在返回的响应报文中不含实体的主体部分。另外，也不允许返回任何实体的主体。比如，当从浏览器发出请求处理后，返回 204 响应，那么浏览器显示的页面不发生更新。<br>一般在只需要从客户端往服务器发送信息，而对客户端不需要发送新信息内容的情况下使用。  </p>
+<h3 id="2-3-206-Partial-Content"><a href="#2-3-206-Partial-Content" class="headerlink" title="2.3 206 Partial Content"></a>2.3 206 Partial Content</h3><p><img src="https://photos.alitaalice.cn/image/20200513121229.png" alt></p>
+<p>该状态码表示客户端进行了范围请求，而服务器成功执行了这部分的 GET 请求。响应报文中包含由Content-Range 指定范围的实体内容。  </p>
+<h2 id="3-3XX-重定向"><a href="#3-3XX-重定向" class="headerlink" title="3 3XX 重定向"></a>3 3XX 重定向</h2><p>3XX 响应结果表明浏览器需要执行某些特殊的处理以正确处理请求。  </p>
+<h3 id="3-1-301-Moved-Permanently"><a href="#3-1-301-Moved-Permanently" class="headerlink" title="3.1 301 Moved Permanently"></a>3.1 301 Moved Permanently</h3><p><img src="https://photos.alitaalice.cn/image/20200513121404.png" alt></p>
+<p>永久性重定向。该状态码表示请求的资源已被分配了新的 URI，以后应使用资源现在所指的 URI。也就是说，如果已经把资源对应的 URI 保存为书签了，这时应该按 Location 首部字段提示的 URI 重新保存。像下方给出的请求 URI，当指定资源路径的最后忘记添加斜杠“/”，就会产生 301 状态码。  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;example.com&#x2F;sample</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-302-Found"><a href="#3-2-302-Found" class="headerlink" title="3.2 302 Found"></a>3.2 302 Found</h3><p><img src="https://photos.alitaalice.cn/image/20200513121815.png" alt></p>
+<h3 id="3-3-303-See-Other"><a href="#3-3-303-See-Other" class="headerlink" title="3.3  303 See Other"></a>3.3  303 See Other</h3><p><img src="https://photos.alitaalice.cn/image/20200513122022.png" alt></p>
+<p>该状态码表示由于请求对应的资源存在着另一个 URI，应使用 GET 方法定向获取请求的资源。<br>303 状态码和 302 Found 状态码有着相同的功能，但 303 状态码明确表示客户端应当采用 GET 方法获取资源，这点与 302 状态码有区别。<br>比如，当使用 POST 方法访问 CGI 程序，其执行后的处理结果是希望客户端能以 GET 方法重定向到另一个 URI 上去时，返回 303 状态码。虽然 302 Found 状态码也可以实现相同的功能，但这里使用 303 状态码是最理想的。  </p>
+<h3 id="3-4-304-Not-Modified"><a href="#3-4-304-Not-Modified" class="headerlink" title="3.4 304 Not Modified"></a>3.4 304 Not Modified</h3><p><img src="/2020/05/13/HTTP%E7%8A%B6%E6%80%81%E7%A0%81/C:%5CUsers%5C16508%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200513122317593.png" alt="image-20200513122317593"></p>
+<p>该状态码表示客户端发送附带条件的请求 2 时，服务器端允许请求访问资源，但未满足条件的情况。304状态码返回时，不包含任何响应的主体部分。304 虽然被划分在 3XX 类别中，但是和重定向没有关系。  </p>
+<h3 id="3-5-307-Temporary-Redirect"><a href="#3-5-307-Temporary-Redirect" class="headerlink" title="3.5 307 Temporary Redirect"></a>3.5 307 Temporary Redirect</h3><p>临时重定向。该状态码与 302 Found 有着相同的含义。尽管 302 标准禁止 POST 变换成 GET，但实际使用时大家并不遵守。<br>307 会遵照浏览器标准，不会从 POST 变成 GET。但是，对于处理响应时的行为，每种浏览器有可能出现不同的情况。</p>
+<h2 id="4-4XX客户端错误"><a href="#4-4XX客户端错误" class="headerlink" title="4 4XX客户端错误"></a>4 4XX客户端错误</h2><h3 id="4-1-400-Bad-Request"><a href="#4-1-400-Bad-Request" class="headerlink" title="4.1 400 Bad Request"></a>4.1 400 Bad Request</h3><p><img src="https://photos.alitaalice.cn/image/20200513122701.png" alt></p>
+<p>该状态码表示请求报文中存在语法错误。当错误发生时，需修改请求的内容后再次发送请求。另外，浏览器会像 200 OK 一样对待该状态码。  </p>
+<h3 id="4-2-401-Unauthorized"><a href="#4-2-401-Unauthorized" class="headerlink" title="4.2 401 Unauthorized"></a>4.2 401 Unauthorized</h3><p>-+<img src="https://photos.alitaalice.cn/image/20200513122941.png" alt></p>
+<p>该状态码表示发送的请求需要有通过 HTTP 认证（BASIC 认证、DIGEST 认证）的认证信息。另外若之前已进行过 1 次请求，则表示用户认证失败。  </p>
+<h3 id="4-3-403-Forbidden"><a href="#4-3-403-Forbidden" class="headerlink" title="4.3 403 Forbidden"></a>4.3 403 Forbidden</h3><p><img src="https://photos.alitaalice.cn/image/20200513123055.png" alt></p>
+<p>该状态码表明对请求资源的访问被服务器拒绝了。服务器端没有必要给出拒绝的详细理由，但如果想作说明的话，可以在实体的主体部分对原因进行描述，这样就能让用户看到了。<br>未获得文件系统的访问授权，访问权限出现某些问题（从未授权的发送源 IP 地址试图访问）等列举的情况都可能是发生 403 的原因。  </p>
+<h3 id="4-4-404-Not-Found"><a href="#4-4-404-Not-Found" class="headerlink" title="4.4 404 Not Found"></a>4.4 404 Not Found</h3><p><img src="https://photos.alitaalice.cn/image/20200513123152.png" alt></p>
+<p>该状态码表明服务器上无法找到请求的资源。除此之外，也可以在服务器端拒绝请求且不想说明理由时使用。  </p>
+<h2 id="5-5XX-服务器错误"><a href="#5-5XX-服务器错误" class="headerlink" title="5 5XX 服务器错误"></a>5 5XX 服务器错误</h2><p>5XX 的响应结果表明服务器本身发生错误。  </p>
+<h3 id="5-1-500-Internal-Server-Error"><a href="#5-1-500-Internal-Server-Error" class="headerlink" title="5.1 500 Internal Server Error"></a>5.1 500 Internal Server Error</h3><p>该状态码表明服务器端在执行请求时发生了错误。也有可能是 Web 应用存在的 bug 或某些临时的故障。  <img src="/2020/05/13/HTTP%E7%8A%B6%E6%80%81%E7%A0%81/C:%5CUsers%5C16508%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200513123521561.png" alt="image-20200513123521561"></p>
+<h3 id="5-2-503-Service-Unavailable"><a href="#5-2-503-Service-Unavailable" class="headerlink" title="5.2 503 Service Unavailable"></a>5.2 503 Service Unavailable</h3><p><img src="https://photos.alitaalice.cn/image/20200513123558.png" alt></p>
+<p>该状态码表明服务器暂时处于超负载或正在进行停机维护，现在无法处理请求。如果事先得知解除以上状况需要的时间，最好写入 RetryAfter 首部字段再返回给客户端。  </p>
+]]></content>
+      <categories>
+        <category>计网</category>
+      </categories>
+      <tags>
+        <tag>HTTP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JAVA和C++的区别</title>
+    <url>/2020/05/11/JAVA%E5%92%8CC++%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍JAVA和C++的区别</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="JAVA和C-的区别"><a href="#JAVA和C-的区别" class="headerlink" title="JAVA和C++的区别"></a>JAVA和C++的区别</h2><ul>
+<li>都是面向对象的语言，并且都支持封装，继承和多态</li>
+<li>指针：JAVA不提供指针来直接访问内存，程序更加安全。</li>
+<li>继承：JAVA中的类是单继承的，但是C++允许多继承，JAVA中允许一个类实现多个接口来实现C++中的多冲继承。</li>
+<li>内存：JAVA有自动内存管理机制，不需要程序员手动释放无用内存。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>面试</category>
+      </categories>
+      <tags>
+        <tag>JAVASE</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JAVA中的输入与输出</title>
     <url>/2020/05/06/JAVA%E4%B8%AD%E7%9A%84%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA/</url>
     <content><![CDATA[<h1 id="JAVA中的输入"><a href="#JAVA中的输入" class="headerlink" title="JAVA中的输入"></a>JAVA中的输入</h1><h2 id="读取输入"><a href="#读取输入" class="headerlink" title="读取输入"></a>读取输入</h2><p>  要想通过输入台进行输入，首先需要构造一个与“标准输入流”System.in关联的Scanner对象。<br>  <a id="more"></a></p>
@@ -342,28 +364,6 @@
       </tags>
   </entry>
   <entry>
-    <title>JAVA和C++的区别</title>
-    <url>/2020/05/11/JAVA%E5%92%8CC++%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍JAVA和C++的区别</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="JAVA和C-的区别"><a href="#JAVA和C-的区别" class="headerlink" title="JAVA和C++的区别"></a>JAVA和C++的区别</h2><ul>
-<li>都是面向对象的语言，并且都支持封装，继承和多态</li>
-<li>指针：JAVA不提供指针来直接访问内存，程序更加安全。</li>
-<li>继承：JAVA中的类是单继承的，但是C++允许多继承，JAVA中允许一个类实现多个接口来实现C++中的多冲继承。</li>
-<li>内存：JAVA有自动内存管理机制，不需要程序员手动释放无用内存。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>面试</category>
-      </categories>
-      <tags>
-        <tag>JAVASE</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JAVA多态</title>
     <url>/2020/05/06/JAVA%E5%A4%9A%E6%80%81/</url>
     <content><![CDATA[<h1 id="JAVA多态"><a href="#JAVA多态" class="headerlink" title="JAVA多态"></a>JAVA多态</h1><p>JAVA的三大特性为：</p>
@@ -401,35 +401,19 @@
       </tags>
   </entry>
   <entry>
-    <title>JAVA泛型</title>
-    <url>/2020/05/12/JAVA%E6%B3%9B%E5%9E%8B/</url>
+    <title>JAVA内存区域与内存溢出异常</title>
+    <url>/2020/05/15/JAVA%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F%E4%B8%8E%E5%86%85%E5%AD%98%E6%BA%A2%E5%87%BA%E5%BC%82%E5%B8%B8/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
 <p>本章介绍</p>
 </blockquote>
 <a id="more"></a>
 
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
-  </entry>
-  <entry>
-    <title>JAVA的静态方法不能被重写</title>
-    <url>/2020/05/06/JAVA%E7%9A%84%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95%E4%B8%8D%E8%83%BD%E8%A2%AB%E9%87%8D%E5%86%99/</url>
-    <content><![CDATA[<h1 id="JAVA的静态方法不能被重写"><a href="#JAVA的静态方法不能被重写" class="headerlink" title="JAVA的静态方法不能被重写"></a>JAVA的静态方法不能被重写</h1><p>堆区：</p>
-<ul>
-<li>存储的全部都是对象，每个对象都包含一个与之对应的class信息。<a id="more"></a>
-
-</li>
-</ul>
-<p>栈区:</p>
-<p>方法区：</p>
-<ul>
-<li>方法区包含所有的class和static变量  class可以直接调用static</li>
-</ul>
-]]></content>
       <categories>
-        <category>后端</category>
+        <category>JVM</category>
       </categories>
       <tags>
-        <tag>JAVASE</tag>
+        <tag>JVM</tag>
       </tags>
   </entry>
   <entry>
@@ -554,8 +538,18 @@
         <category>后端</category>
       </categories>
       <tags>
-        <tag>JAVASE</tag>
+        <tag>JAVA集合</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>JAVA泛型</title>
+    <url>/2020/05/12/JAVA%E6%B3%9B%E5%9E%8B/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
   </entry>
   <entry>
     <title>JAVA注解</title>
@@ -641,15 +635,67 @@
       </tags>
   </entry>
   <entry>
-    <title>JAVA面试</title>
-    <url>/2020/05/11/JAVA%E9%9D%A2%E8%AF%95/</url>
+    <title>JAVA的静态方法不能被重写</title>
+    <url>/2020/05/06/JAVA%E7%9A%84%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95%E4%B8%8D%E8%83%BD%E8%A2%AB%E9%87%8D%E5%86%99/</url>
+    <content><![CDATA[<h1 id="JAVA的静态方法不能被重写"><a href="#JAVA的静态方法不能被重写" class="headerlink" title="JAVA的静态方法不能被重写"></a>JAVA的静态方法不能被重写</h1><p>堆区：</p>
+<ul>
+<li>存储的全部都是对象，每个对象都包含一个与之对应的class信息。<a id="more"></a>
+
+</li>
+</ul>
+<p>栈区:</p>
+<p>方法区：</p>
+<ul>
+<li>方法区包含所有的class和static变量  class可以直接调用static</li>
+</ul>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>JAVASE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JAVA源码问题</title>
+    <url>/2020/05/14/JAVA%E6%BA%90%E7%A0%81%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍</p>
+<p>本章介绍JAVA源码问题</p>
 </blockquote>
 <a id="more"></a>
 
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><img src="/2020/05/11/JAVA%E9%9D%A2%E8%AF%95/E:%5Cdev%5CMYBLOG%5Cblog%5Csource_posts%5CJAVA%E9%9D%A2%E8%AF%95%5C2020-05-11_205422.png" alt></p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="当两个对象的hashcode相同时会发生什么，如何获取对象？"><a href="#当两个对象的hashcode相同时会发生什么，如何获取对象？" class="headerlink" title="当两个对象的hashcode相同时会发生什么，如何获取对象？"></a>当两个对象的hashcode相同时会发生什么，如何获取对象？</h3><p>因为hashcode相同，所以它们的bucket位置相同，‘碰撞’会发生。</p>
+<p>两个对象的hashCode相同所以它们的bucket位置相同，找到bucket位置之后，会调用keys.equals()方法去找到链表中正确的节点 <strong><code>(key != null &amp;&amp; key.equals(k)</code></strong>。</p>
+<p>因为HashMap使用链表存储对象，这个Entry(包含有键值对的Map.Entry对象)会存储在链表中。这个时候要理解根据hashcode来划分的数组，如果数组的坐标相同，则进入链表这个数据结构中了，一般的添加都在最前面，也就是和数组下标直接相连的地方，链表长度到达8的时候，jdk1.8上升为红黑树。</p>
+<h3 id="HashMap的大小超过了负载因子-load-factor-定义的容量，怎么办"><a href="#HashMap的大小超过了负载因子-load-factor-定义的容量，怎么办" class="headerlink" title="HashMap的大小超过了负载因子(load factor)定义的容量，怎么办"></a>HashMap的大小超过了负载因子(load factor)定义的容量，怎么办</h3><p>会调用<strong><code>resize()</code></strong>进行数组扩容。</p>
+<h2 id="HashMap中的tableSizeFor方法"><a href="#HashMap中的tableSizeFor方法" class="headerlink" title="HashMap中的tableSizeFor方法"></a>HashMap中的tableSizeFor方法</h2><p>在使用指定数组的初始容量时上面说过，数组容量必须是2的次方。所以就需要通过算法将我们给定的数值转换成2的次方。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 这个方法可以将任意一个整数转换成2的次方。</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> <span class="title">tableSizeFor</span><span class="params">(<span class="keyword">int</span> cap)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = cap - <span class="number">1</span>;</span><br><span class="line">    n |= n &gt;&gt;&gt; <span class="number">1</span>;</span><br><span class="line">    n |= n &gt;&gt;&gt; <span class="number">2</span>;</span><br><span class="line">    n |= n &gt;&gt;&gt; <span class="number">4</span>;</span><br><span class="line">    n |= n &gt;&gt;&gt; <span class="number">8</span>;</span><br><span class="line">    n |= n &gt;&gt;&gt; <span class="number">16</span>;</span><br><span class="line">    <span class="keyword">return</span> (n &lt; <span class="number">0</span>) ? <span class="number">1</span> : (n &gt;= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="HashMap是线程安全的吗，为什么"><a href="#HashMap是线程安全的吗，为什么" class="headerlink" title="HashMap是线程安全的吗，为什么"></a>HashMap是线程安全的吗，为什么</h2><p>HashMap底层是一个Entry数组，当发生hash冲突的时候，hashmap是采用链表的方式来解决的，在对应的数组位置存放链表的头结点。对链表而言，新加入的节点会从头结点加入。</p>
+<p>1</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addEntry</span><span class="params">(<span class="keyword">int</span> hash, K key, V value, <span class="keyword">int</span> bucketIndex)</span> </span>&#123;</span><br><span class="line">	Entry&lt;K,V&gt; e = table[bucketIndex];</span><br><span class="line">        table[bucketIndex] = <span class="keyword">new</span> Entry&lt;K,V&gt;(hash, key, value, e);</span><br><span class="line">        <span class="keyword">if</span> (size++ &gt;= threshold)</span><br><span class="line">            resize(<span class="number">2</span> * table.length);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>在hashmap做put操作的时候会调用到以上的方法。现在假如A线程和B线程同时对同一个数组位置调用addEntry，两个线程会同时得到现在的头结点，然后A写入新的头结点之后，B也写入新的头结点，那B的写入操作就会覆盖A的写入操作造成A的写入操作丢失</p>
+<p>2</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">final</span> Entry&lt;K,V&gt; <span class="title">removeEntryForKey</span><span class="params">(Object key)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> hash = (key == <span class="keyword">null</span>) ? <span class="number">0</span> : hash(key.hashCode());</span><br><span class="line">        <span class="keyword">int</span> i = indexFor(hash, table.length);</span><br><span class="line">        Entry&lt;K,V&gt; prev = table[i];</span><br><span class="line">        Entry&lt;K,V&gt; e = prev;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">while</span> (e != <span class="keyword">null</span>) &#123;</span><br><span class="line">            Entry&lt;K,V&gt; next = e.next;</span><br><span class="line">            Object k;</span><br><span class="line">            <span class="keyword">if</span> (e.hash == hash &amp;&amp;</span><br><span class="line">                ((k = e.key) == key || (key != <span class="keyword">null</span> &amp;&amp; key.equals(k)))) &#123;</span><br><span class="line">                modCount++;</span><br><span class="line">                size--;</span><br><span class="line">                <span class="keyword">if</span> (prev == e)</span><br><span class="line">                    table[i] = next;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    prev.next = next;</span><br><span class="line">                e.recordRemoval(<span class="keyword">this</span>);</span><br><span class="line">                <span class="keyword">return</span> e;</span><br><span class="line">            &#125;</span><br><span class="line">            prev = e;</span><br><span class="line">            e = next;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">return</span> e;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>删除键值对的代码如上：</p>
+<p>当多个线程同时操作同一个数组位置的时候，也都会先取得现在状态下该位置存储的头结点，然后各自去进行计算操作，之后再把结果写会到该数组位置去，其实写回的时候可能其他的线程已经就把这个位置给修改过了，就会覆盖其他线程的修改</p>
+<p>3、addEntry中当加入新的键值对后键值对总数量超过门限值的时候会调用一个resize操作，代码如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">resize</span><span class="params">(<span class="keyword">int</span> newCapacity)</span> </span>&#123;</span><br><span class="line">        Entry[] oldTable = table;</span><br><span class="line">        <span class="keyword">int</span> oldCapacity = oldTable.length;</span><br><span class="line">        <span class="keyword">if</span> (oldCapacity == MAXIMUM_CAPACITY) &#123;</span><br><span class="line">            threshold = Integer.MAX_VALUE;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        Entry[] newTable = <span class="keyword">new</span> Entry[newCapacity];</span><br><span class="line">        transfer(newTable);</span><br><span class="line">        table = newTable;</span><br><span class="line">        threshold = (<span class="keyword">int</span>)(newCapacity * loadFactor);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>这个操作会新生成一个新的容量的数组，然后对原数组的所有键值对重新进行计算和写入新的数组，之后指向新生成的数组。</p>
+<p>当多个线程同时检测到总数量超过门限值的时候就会同时调用resize操作，各自生成新的数组并rehash后赋给该map底层的数组table，结果最终只有最后一个线程生成的新数组被赋给table变量，其他线程的均会丢失。而且当某些线程已经完成赋值而其他线程刚开始的时候，就会用已经被赋值的table作为原始数组，这样也会有问题。</p>
+<h2 id="哪些是线程安全的容器"><a href="#哪些是线程安全的容器" class="headerlink" title="哪些是线程安全的容器"></a>哪些是线程安全的容器</h2><p>同步容器类：</p>
+<p>使用了synchronized<br>1.Vector<br>2.HashTable</p>
+<p>并发容器：<br>3.ConcurrentHashMap:分段<br>4.CopyOnWriteArrayList：写时复制<br>5.CopyOnWriteArraySet：写时复制</p>
 ]]></content>
+      <categories>
+        <category>JAVA源码</category>
+      </categories>
+      <tags>
+        <tag>JAVA源码</tag>
+      </tags>
   </entry>
   <entry>
     <title>JAVA编译和运行的过程</title>
@@ -706,38 +752,6 @@
       </tags>
   </entry>
   <entry>
-    <title>JAVA集合面试</title>
-    <url>/2020/05/12/JAVA%E9%9B%86%E5%90%88%E9%9D%A2%E8%AF%95/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍JAVA集合面试</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><strong>1）说说常见的集合有哪些吧？</strong></p>
-<p>答：Map 接口和 Collection 接口是所有集合框架的父接口：</p>
-<ol>
-<li>Collection 接口的子接口包括：Set 接口和 List 接口；</li>
-<li>Map 接口的实现类主要有：HashMap、TreeMap、Hashtable、ConcurrentHashMap 以及 Properties 等；</li>
-<li>Set 接口的实现类主要有：HashSet、TreeSet、LinkedHashSet 等；</li>
-<li>List 接口的实现类主要有：ArrayList、LinkedList、Stack 以及 Vector 等。</li>
-</ol>
-<p><strong>（2）HashMap 和 Hashtable 的区别有哪些？（必问）</strong></p>
-<p>答：</p>
-<ol>
-<li>HashMap 没有考虑同步，是线程不安全的；Hashtable 使用了 synchronized 关键字，是线程安全的；</li>
-<li>前者允许 null 作为 Key；后者不允许 null 作为 Key。</li>
-</ol>
-<p><strong>6）List 和 Set 的区别是啥？</strong></p>
-<p>答：List 元素是有序的，可以重复；Set 元素是无序的，不可以重复。</p>
-]]></content>
-      <categories>
-        <category>面试</category>
-      </categories>
-      <tags>
-        <tag>JAVASE</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JDK和JRE</title>
     <url>/2020/05/09/JDK%E5%92%8CJRE/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -770,41 +784,43 @@
       </tags>
   </entry>
   <entry>
-    <title>List集合</title>
-    <url>/2020/05/07/List%E9%9B%86%E5%90%88/</url>
+    <title>JAVA面试</title>
+    <url>/2020/05/11/JAVA%E9%9D%A2%E8%AF%95/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>List集合包括List接口和List接口所有的实现类</p>
+<p>本章介绍</p>
 </blockquote>
 <a id="more"></a>
 
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="List接口定义的方法"><a href="#List接口定义的方法" class="headerlink" title="List接口定义的方法"></a>List接口定义的方法</h2><p>除了继承Collection外，List接口还有俩个重要的方法。</p>
-<table>
-<thead>
-<tr>
-<th>get(int index)</th>
-<th>获得指定索引位置的元素</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>set(int index,Object obj)</td>
-<td>将集合中指定索引位置的对象修改为指定的对象</td>
-</tr>
-</tbody></table>
-<h2 id="List接口的实现类"><a href="#List接口的实现类" class="headerlink" title="List接口的实现类"></a>List接口的实现类</h2><ul>
-<li><p>ArrayList</p>
-<p>实现了可变的数组，允许保存所有元素包括null .并且可以根据索引的位置对集合进行快速的随机访问，缺点是向指向的索引位置插入对象或删除对象时的速度较慢</p>
-</li>
-<li><p>LinkedList </p>
-<p>采用链表的结构保存对象。优点是便于向集合中插入和删除对象</p>
-<p>分别用ArrayList 和LinkedList来实例化集合</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;E&gt; list=<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">List&lt;E&gt; list=<span class="keyword">new</span> LinkedList&lt;&gt;();</span><br></pre></td></tr></table></figure>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><img src="/2020/05/11/JAVA%E9%9D%A2%E8%AF%95/E:%5Cdev%5CMYBLOG%5Cblog%5Csource_posts%5CJAVA%E9%9D%A2%E8%AF%95%5C2020-05-11_205422.png" alt></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>JAVA集合面试</title>
+    <url>/2020/05/12/JAVA%E9%9B%86%E5%90%88%E9%9D%A2%E8%AF%95/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍JAVA集合面试</p>
+</blockquote>
+<a id="more"></a>
 
-<p>E是合法的JAVA数据类型，也可以是字符串String</p>
-</li>
-</ul>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><strong>1）说说常见的集合有哪些吧？</strong></p>
+<p>答：Map 接口和 Collection 接口是所有集合框架的父接口：</p>
+<ol>
+<li>Collection 接口的子接口包括：Set 接口和 List 接口；</li>
+<li>Map 接口的实现类主要有：HashMap、TreeMap、Hashtable、ConcurrentHashMap 以及 Properties 等；</li>
+<li>Set 接口的实现类主要有：HashSet、TreeSet、LinkedHashSet 等；</li>
+<li>List 接口的实现类主要有：ArrayList、LinkedList、Stack 以及 Vector 等。</li>
+</ol>
+<p><strong>（2）HashMap 和 Hashtable 的区别有哪些？（必问）</strong></p>
+<p>答：</p>
+<ol>
+<li>HashMap 没有考虑同步，是线程不安全的；Hashtable 使用了 synchronized 关键字，是线程安全的；</li>
+<li>前者允许 null 作为 Key；后者不允许 null 作为 Key。</li>
+</ol>
+<p><strong>6）List 和 Set 的区别是啥？</strong></p>
+<p>答：List 元素是有序的，可以重复；Set 元素是无序的，不可以重复。</p>
 ]]></content>
       <categories>
-        <category>后端</category>
+        <category>面试</category>
       </categories>
       <tags>
         <tag>JAVASE</tag>
@@ -856,6 +872,47 @@
       </tags>
   </entry>
   <entry>
+    <title>List集合</title>
+    <url>/2020/05/07/List%E9%9B%86%E5%90%88/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>List集合包括List接口和List接口所有的实现类</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="List接口定义的方法"><a href="#List接口定义的方法" class="headerlink" title="List接口定义的方法"></a>List接口定义的方法</h2><p>除了继承Collection外，List接口还有俩个重要的方法。</p>
+<table>
+<thead>
+<tr>
+<th>get(int index)</th>
+<th>获得指定索引位置的元素</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>set(int index,Object obj)</td>
+<td>将集合中指定索引位置的对象修改为指定的对象</td>
+</tr>
+</tbody></table>
+<h2 id="List接口的实现类"><a href="#List接口的实现类" class="headerlink" title="List接口的实现类"></a>List接口的实现类</h2><ul>
+<li><p>ArrayList</p>
+<p>实现了可变的数组，允许保存所有元素包括null .并且可以根据索引的位置对集合进行快速的随机访问，缺点是向指向的索引位置插入对象或删除对象时的速度较慢</p>
+</li>
+<li><p>LinkedList </p>
+<p>采用链表的结构保存对象。优点是便于向集合中插入和删除对象</p>
+<p>分别用ArrayList 和LinkedList来实例化集合</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;E&gt; list=<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">List&lt;E&gt; list=<span class="keyword">new</span> LinkedList&lt;&gt;();</span><br></pre></td></tr></table></figure>
+
+<p>E是合法的JAVA数据类型，也可以是字符串String</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>JAVA集合</category>
+      </categories>
+      <tags>
+        <tag>JAVASE</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Map</title>
     <url>/2020/05/08/Map/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -872,7 +929,7 @@
 <thead>
 <tr>
 <th>put(key,Value)</th>
-<th>可以添加相同的key值，但是添加的value值会覆盖前面的value值。返回的是oldValue（返回被覆盖的值）,如果没有就返回null</th>
+<th>调用put方法时，如果已经存在一个相同的key， 则返回的是前一个key对应的value，同时该key的新value覆盖旧value；如果是新的一个key，则返回的是null</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -1054,6 +1111,31 @@
       </tags>
   </entry>
   <entry>
+    <title>char可以存储汉字吗？</title>
+    <url>/2020/05/06/char%E5%8F%AF%E4%BB%A5%E5%AD%98%E5%82%A8%E6%B1%89%E5%AD%97%E5%90%97%EF%BC%9F/</url>
+    <content><![CDATA[<h2 id="char存储汉字"><a href="#char存储汉字" class="headerlink" title="char存储汉字"></a>char存储汉字</h2><ul>
+<li><p>char是按照字符存储的，不管是英文还是中文，JAVA中固定占用2个字符，用来存储Unicode字符，范围在0-65535.</p>
+</li>
+<li><p>Unicode编码字符集中包含了汉字，所以char类型变量当然可以存储汉字拉。</p>
+<a id="more"></a>
+
+<h2 id="char和String的区别"><a href="#char和String的区别" class="headerlink" title="char和String的区别"></a>char和String的区别</h2><ul>
+<li>char表示字符，定义时用单引号，只能存储一个字符。如char c=‘x’ ;</li>
+<li>String表示的是字符串，可以存储一个或多个字符 如String name=”tom”;</li>
+<li></li>
+</ul>
+</li>
+</ul>
+<p>如name.length();</p>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>JAVASE</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Spring起步</title>
     <url>/2020/05/10/Spring%E8%B5%B7%E6%AD%A5/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -1101,64 +1183,27 @@
       </tags>
   </entry>
   <entry>
-    <title>mysql插入数据</title>
-    <url>/2020/05/07/mysql%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍如何利用SQL的INSERT语句将数据插入到表中</p>
-</blockquote>
+    <title>mysql必知必会</title>
+    <url>/2020/05/03/mysql%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/</url>
+    <content><![CDATA[<p> 登录mysql -h localhost -u root -p<br> Show databases;<br> Use databasename;<br>Show tables;  //显示行</p>
 <a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="插入到完整的行"><a href="#插入到完整的行" class="headerlink" title="插入到完整的行"></a>插入到完整的行</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">INSERT INTO Customers</span><br><span class="line">VALUES(<span class="literal">NULL</span>,</span><br><span class="line">       'PEP E.LAPEW',</span><br><span class="line">       '100 MAIN STREET',</span><br><span class="line">        'Los Angeles',</span><br><span class="line">         'CA',</span><br><span class="line">        '90046',</span><br><span class="line">         'USA',</span><br><span class="line">          <span class="literal">NULL</span>,</span><br><span class="line">          <span class="literal">NULL</span>);</span><br></pre></td></tr></table></figure>
-
-<p>编写INSERT语句的更加安全（不过更加繁琐）</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">INSERT INTO customers(cust_name,cust_address,cust_city,cust_state,cust_zip,cust_country,cust_contact,cust_email)</span><br><span class="line">VALUSES(&#39;PEP E.LAPEW&#39;,</span><br><span class="line">       &#39;100 MAIN STREET&#39;,</span><br><span class="line">        &#39;Los Angeles&#39;,</span><br><span class="line">         &#39;CA&#39;,</span><br><span class="line">        &#39;90046&#39;,</span><br><span class="line">         &#39;USA&#39;,</span><br><span class="line">          NULL,</span><br><span class="line">          NULL&#39;);</span><br></pre></td></tr></table></figure>
-
-<h3 id="省略列"><a href="#省略列" class="headerlink" title="省略列"></a>省略列</h3><ul>
-<li>该列定义为允许null值</li>
-<li>在表定义中给出默认值</li>
+<p> Show columns from xxx;   //显示列<br>SELECT DISTINCT  published FROM t_blog ;  DISTINCT此关键字指示只返回不同的值。<br> SELECT id FROM t_blog LIMIT 5;<br> SELECT id FROM t_blog LIMIT 3,3; //从第三行开始的后三行<br> SELECT t_blog.id FROM blog.t_blog;   完全限定的列名和表名 和之前的用法一样。<br> SELECT id,type_id,user_id FROM t_blog ORDER BY type_id,id;  先对type_id排序 再对id进行排序。<br> DESC 降序 ASC 升序  没多大用处<br> SELECT id FROM t_blog ORDER BY type_id LIMIT 1; 此种方式找到了数值最大的一行。<br> 在使用where 过滤时 ，order by 排序要在where的后面<br>  SELECT id FROM t_blog  where id &lt;&gt;10;   &lt;&gt; 不匹配检查<br> 范围值检查<br>  SELECT ID FROM T_BLOG WHERE ID BETWEEN 10 AND 20 :<br> Select id from t_blog where id is null;  空值检查<br> Select id,user_id from t_blog where id &lt;=10 and user_id &lt;=1;<br> Select prod_name,prod_price from products where vend_id=1002 or vend_id =1003 and<br>  Prod_price&gt;=10; SQL处理OR操作符和AND操作符时，优先处理AND操作符。<br> 故先处理 vend_id =1003 and prod_price&gt;=10  或者  vend_id=1002  ；<br>解决方法是<br>Select prod_name,prod_price from products where (vend_id =1002 or vend_id =1003) and prod_price &gt;=10    用( )来明确分组操作符。DBMS 首先过滤圆括号内的OR条件。<br>NOT 在MYSQL中的NOT中 MYSQL支持使用NOT 对IN,BETWEEN 和EXISTS子句取反。这与多数其他DBMS允许使用NOT对各种条件取反有很大区别。<br>######<br>通配符<br>用来匹配值的一部分的特殊字符<br>LIKE 指示MYSQL 后跟的搜索模式利用通配符匹配而不是直接相等匹配比较<br>SELECT prod_name FROM products WHERE prod_name REGEXP ‘[123] Ton’<br>ORDER BY prod_name;<br>正则表达式 [123]Ton 其中[123]定义一组字符<br>它的意思是匹配1或2或3  因此 1ton 和2ton 都匹配且返回了<br>[] 其实是另一种形式的OR语句<br>[1|2|3]Ton 的缩写 为 [123]Ton<br>1|2|3 Ton 的意思是检索出1或2或3 ton<br>[^123] 匹配除这些字符除外的任何东西<br> ^ 是REGEXP的否定符号<br>在匹配范围中<br>0到9  将由[0123456789] 等同于 [0-9]<br>.表示匹配一个字符<br>输入 SELECT vend_name FROM vendors WHERE vend_name REGEXP ‘.’ ORDER BY vend_name<br>.匹配任意字符  这时每一行都被检索出来 为了匹配特殊字符 必须用\ 作为前导<br>如<br>SELECT vend_name FROM vendors WHERE vend_name REGEXP ‘\.’ ORDER BY vend_name<br>这才是期望的输出 \.匹配. 这种处理就是所谓的转义。<br>？ 字符 ？匹配它前面的任何字符的0次或者1次出现。<br> 如 SELECT prod_name FROM products WHERE prod_name REGEXP ‘\([0-9] sticks?\)’<br> ORDER BY prod_name ;<br>Sticks 匹配 stick 和sticks s后的?使s可选<br>另外例如<br>SELECT prod_name FROM products WHERE prod_name REGEXP ‘[[:digit:]]{4}<br>ORDER BY prod_name；<br>[:digit:]匹配任意数字<br>因而它作为数字的一个集合<br>{4} 确切的要求它前面的字符 出现4次<br>匹配特定位置的文本，需要使用表9-4列出的定位符<br>^ 文本的开始<br>$ 文本的结尾<br>[[:&lt;:]] 词的开始<br>[[:&gt;;]] 词的结尾<br>‘^[0-9\.]’ 找出一个数 包括以小数点开始的数开始的所有产品。<br>SELECT prod_name FROM products WHERE prod_name REGEXP ‘^[0-9\.]’<br>ORDER BY prod_name;<br>在第10章 中 创建计算字段<br>MySQL 使用Concat() 函数来实现<br>SELECT Concat(vend_name,’（‘，vend_country,’）’)<br>FROM vendors ORDER BY vend_name;<br>拼接  将值联结到一起构成单个值<br>比如以上的输出为<br>ACME (USA)<br>删除数据右侧多余的空格来整理数据<br>MySQL 的RTrim()可以去掉值右边的所有的空格<br>SELECT Concat(RTrim(vend_name),’(‘,RTrim(vend_country),’)’)<br>FROM vendors<br>ORDER BY vend_name;<br>LTrim() 去掉串左边的空格<br>Trim()去掉左右俩边的空格<br>SELECT Concat (RTrim(vend_name),’(‘,RTrim(vend_country),’)’)AS vend_title FROM vendors ORDER BY vend_name;<br>一个未命名的列不能用于客户机的应用中，因为客户机没有办法去引用它。<br>所以才出现了别名。AS 关键字来赋予别名 任何客户机应用都可以按名来引用这个列，就像它是一个实际的表列一样。</p>
+<p>执行算数运算<br>SELECT pro_id,quantity,item_price FROM oderitems WHERE order order_num =20005;<br>在算数运算中 检索200005中的所有物品<br>如果要计算汇总物品的价格<br>SELECT prod_id ,quantity,item_price, quantity*item_price  AS expanded_price FROM oderitems WHERE order_num =20005;<br>此时客户机可以使用这个新计算的列，就像其他列一样。<br>MYSQL 支持基本算术运算符</p>
+<ul>
+<li><ul>
+<li>/ 圆括号可以用来区分优先顺序<br>第十一章 使用数据来处理函数<br>SELECT vend_name,Upper(vend_name) AS  vend_name_upcase FROM vendors ORDER BY vend_name;<br>Upper()将文本转换为大写<br>常用的文本处理函数：<br>Left() 返回串左边的字符<br>Length() 返回串的长度<br>Locate()返回串的一个子串<br>Lower()将串转换为小写<br>LTrim() 去掉左边的空格<br>Right()返回串右边的字符<br>RTrim() 去掉串右边的空格<br>Soundex()返回串的Soundex值<br>SubString() 返回子串的字符<br>Upper() 大写<br>Soundex（） 将任何文本串转换为描述其语音表示的字母数字模式的算法<br>如<br>SELECT cust_name ,cust_contact FROM customers WHERE cust_contact =’Y.Lie’;<br>其联系名是为Y.Lee 此时没办法搜索到<br>但是通过<br>SELECT cust_name,cust_contact FROM customers WHERE Soundex(cust_contact)=Soundex(‘Y.lie);<br>此时可以搜索到Y.Lee<br>日期和时间的处理函数<br>Date() 返回日期部分的日期部分<br>Year() 返回日期部分的年份部分<br>Day()<br>Month()</li>
 </ul>
-<h3 id="提高整体性能"><a href="#提高整体性能" class="headerlink" title="提高整体性能"></a>提高整体性能</h3><p>如果数据检索是最重要的，那你可以通过在INSERT INTO 之间添加关键字</p>
-<p>LOW_PRIORITY 指示Mysql降低INSERT语句的优先级</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">INSERT LOW_PRIORITY INTO</span><br></pre></td></tr></table></figure>
-
-<h2 id="插入多个行"><a href="#插入多个行" class="headerlink" title="插入多个行"></a>插入多个行</h2><figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="function">INSERT INTO <span class="title">customers</span><span class="params">(cust_name,cust_address,cust_city,cust_state,cust_zip,cust_country,cust_contact,cust_email)</span></span></span><br><span class="line">VALUSES('PEP E.LAPEW',</span><br><span class="line">       '100 MAIN STREET',</span><br><span class="line">        'Los Angeles',</span><br><span class="line">         'CA',</span><br><span class="line">        '90046',</span><br><span class="line">         'USA',</span><br><span class="line">          <span class="literal">NULL</span>,</span><br><span class="line">          NULL'),</span><br><span class="line">       ('PEP E.LAPEW',</span><br><span class="line">       '100 MAIN STREET',</span><br><span class="line">        'Los Angeles',</span><br><span class="line">         'CA',</span><br><span class="line">        '90046',</span><br><span class="line">         'USA',</span><br><span class="line">          <span class="literal">NULL</span>,</span><br><span class="line">          NULL');</span><br></pre></td></tr></table></figure>
-
-<p>其中单条INSERT语句有多组值，每组值用一对圆括号括起来，用逗号分隔。</p>
-<h3 id="插入检索出的数据"><a href="#插入检索出的数据" class="headerlink" title="插入检索出的数据"></a>插入检索出的数据</h3><figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="function">INSERT INTO <span class="title">customers</span><span class="params">(cust_id,cust_name,cust_address,cust_city,cust_state,cust_zip,cust_country,cust_contact,cust_email)</span></span></span><br><span class="line">SELECT cust_id,cust_name,cust_address,cust_city,cust_state,cust_zip,cust_country,cust_contact,cust_email FROM custnew;</span><br></pre></td></tr></table></figure>
-
-<p>这个例子中INSERT SELECT 从custnew中将所有数据导入到customer中。</p>
-<p><strong>其实MYSQL不关心SELECT返回的列名，它使用的是列的位置，因此SELECT中的第一列用来填充表列中指定的第一列</strong>。</p>
+</li>
+</ul>
+<p>如：<br>SELECT cust_id,oder_num FROM oders WHERE Date(order_date)=’2005-09-01’;<br>SELECT cust_id,order_num FROM orders WHERE Date(order_date) BETWEEN ‘2005-09-01’AND’2005-03-30’;<br>数值处理函数<br>Abs() 返回数的绝对值</p>
+<p>Cos() 角度的余弦<br>Exp() 返回一个数的指数值<br>Mod() 操作数的余数<br>……<br>第12章 汇总数据<br>12.1 聚集函数  运行在行组上，计算和返回单个值得函数<br>AVG() 返回某列的平均值<br>COUNT()  返回某列的行数<br>MAX() 返回某列的最大值<br>MIN() 返回某列的最小值<br>SUM() 返回某列值之和<br>SELECT AVG(prod_price) AS avg_price FROM products;<br>AVG() 也可以用来确定列或行当平均值<br>SELECT AVG(prod_price) AS avg_price FROM products WHERE vend_id =1003;<br>COUNT () 函数<br>COUNT(<em>)对表中的行的数目进行技术<br>COUNT(column) 对特定列中具有值的行进行计数<br>例如SELECT COUNT(</em>) AS num_cust FROM customers;<br>利用COUNT(<em>)对所有行计数<br>SELECT COUNT(cust_email) AS num_cust FROM customers;<br>对于cust_email中所有有值的行进行计数<br>MAX() 指定列中的最大值 MAX()要求指定列名。<br>MIN()<br>SUM() 也可以用来合计计算值 用来得出总的订单金额<br>SELECT SUM(item_price  *quantity) AS total_price FROM oderitems WHERE order_num=20005;<br>SUM(item_price *quantity) 返回订单中所有物品价钱之和<br>第13章 分组数据<br>SELECT vend_id ,COUNT(</em>) AS num_prods FROM products GROUP BY vend_id;<br>Vend_id num_prods<br>1001        3<br>1002        2<br>1003        7<br>1005        2<br>上述语句将vend_id进行分组，GROUP BY 对于分组的整个结果集进行聚集<br>使用ROLLUP 使用WITH ROLLUP 关键字，将得到每个分组以及分组汇总级别的值<br>2如何过滤分组?<br>HAVING<br>如： SELECT cust_id ,COUNT(<em>)AS orders FROM orders GROUP BY cust_id<br>HAVING COUNT(</em>) &gt;=2<br>它过滤COUNT(<em>)&gt;=2 的那些分组<br>输入： SELECT vend_id,COUNT(</em>) AS num_prods FROM products WHERE prod_price &gt;=10<br>GROUP BY vend_id HAVING COUNT(<em>)&gt;=2;<br>13.4 分组和排序<br>GROUP BY 和ORDER BY<br>GROUP BY  是在ORDER BY 之前，在where 之后<br>第14章 子查询<br>子查询：嵌套在其他查询中的查询<br>1 检索包含物品TNT2 的所有订单的编号<br> SELECT order_num FROM orderitems WHERE prod_id =’TNT2’；<br>2 检索具有前一步骤列出的订单编号的所有客户的ID<br> SELECT cust_id FROM orders WHERE order_num IN (20005,20007);<br>3 现在把第一个查询变为子查询 组合成俩个查询：<br> SELECT cust_id FROM oders WHERE order_num IN (SELECT order_num FROM orderitems WHERE prod_id =’TNT2’);<br>在SELECT 语句中，子查询总是从内向外查询处理。<br>检索这些客户的ID的客户信息，检索俩列的SQL语句为：<br>SELECT cust_name, cust_contact FROM customers WHERE cust_id IN (10001,10004);<br>则可以转换为：<br>SELECT cust_name ,cust_contact FROM customers WHERE cust_id IN (SELECT cust_id FROM orders WHERE order_num IN (SELECT order_num FROM orderitems WHERE prod_Id =’TNT2’))；<br>计算结果子查询：<br>SELECT cust_name,cust_state,(SELECT COUNT(</em>) FROM oders WHERE orders.cust_id=customers.cust_id)AS orders FROM customers ORDER BY cust_name;<br>第15 章  联结表  join 表<br>外键位某个表中的一列 它包含另一个表的主键值定义了俩个表之间的关系。<br>SELECT vent_name,prod_name,prod_price<br>FROM vendors ,products<br>WHERE vendors.vend_id=products.vend_id;<br>ORDER BY vend_name,prod_name ;<br>此种方法通过WHERE子句来限定了列名 ，如果要给出 vend_id 那么mysql_id 并不知道是哪个<br>存在一种状况是<br>笛卡尔积：<br>在不指定where子句时<br>：<br>SELECT vend_name ,prod_name,prod_price<br>FROM vendors,products ORDER BY vend_name,prod_name;<br>15.2.2 内部联结<br>目前为止所使用的联结称为 等值联结  它基于俩个表之间的相等测试 这种联结也叫内部联结。<br>SELECT vend_name , prod_name , prod_price FROM vendors INNER JOIN products ON vendors.vend_id =products.vend_id ;<br>此时使用的是INNER JOIN  联结条件用的是ON<br>联结多个表：<br>SELECT prod_name,vend_name,prod_price,quantity FROM orderitems,products,vendors WHERE products.vend_id =vendors.vend_id AND orderitems.prod_id =products.prod_id AND order_num =20005;<br>第16章 创建高级联结<br>使用表别名<br>SELECT Concat(RTrim(vend_name)，‘（’，RTrim（vend_country）,’）’) AS vend_title FROM vendors ORDER BY vend_name;<br>内部联结：<br>它基于俩个表之间的相等测试<br>SELECT vend_name .prod_name,prod_price FROM vendors INNER JOIN products ON vendors.vend_id =produces.vend_id;<br>自联结： 引用别名，自己联结自己<br>SELECT p1.prod_id,p1.prod_name FROM products AS p1,products AS p2<br>WHERE p1.vend_id =p2.vend_id AND p2.prod_id =’DTNTR’;<br>此查询种需要的俩个表实际上是相同的表。<br>因此products 表在from 子句中出现了俩次。虽然这是合法的，但是对products 的引用具有二义性。因此使用了别名。（用自联结而不用子查询。有时候处理联结要比处理查询要快的多）<br>自然联结：<br>其中你只能选择那些唯一的列。<br>通过对表使用通配符（SELECT <em>）对所有其他表的列使用明确的子集来完成的。<br>SELECT c.</em>,o.ordr_num,o.order_date,oi.prod_id,oi.quantity,OI.item_price FROM customers AS c,orders AS o,orderitems AS oi WHERE c.cust_id =o.cust_id AND oi.order_num =o.order_num<br>AND prod_id =’FB’;<br>通配符只对第一个表使用，所有其他列明确列出，所以没有重复的列被检索出来。<br>外部联结：<br>许多联结将一个表中的行与另外一个表中的行相关联，但有时候会需要包含没有关联行的那些行，例如  可能需要使用联结来完成以下的工作：<br>1对每个客户下了多少订单进行计数，包括那些至今未下订单的客户。<br>2列出所有产品以及订购数量，包括没有人订购的产品<br>3计算平均销售规模，包括那些至今未下订单的客户<br>联结包含了那些在相关表中没有关联行的行，这种叫做外部联结<br>内部联结检索所有客户及其订单：<br>SELECT customers.cust_id,order.orders.order_num FROM customers INNER JOIN orders ON<br>Customers.cust_id =orders.cust_id;<br>外部联结：<br>SELECT customers.cust_id ,orders.order_num FROM customers LEFT OUTER JOIN oders<br>ON customers.cust_id =orders.cust_id;<br>输出为：<br> cust_id   order_num<br>  10001      20005<br>  10001      20009<br>  10002       null<br> 10003       null<br>此时必须要用RIGHT 或LEFT 关键字指定包括其所有行的表<br>其实就是左外部联结和右外部联结<br>16.3 使用带聚集函数的联结<br>使用了COUNT（）函数的联结<br>SELECT customers.cust_name, customers.cust_id,COUNT(orders.order_num) AS num_ord FROM customers INNER JOIN orders ON customers.cust_id =orders.cust_id GROUP BY customers.cust_id;<br>SELECT 语句使用INNER JOIN 将customers和orders 表互相关联。 GROUP BY 子句按客户分组数据。<br>聚集函数也可以方便地与其他联结一起使用，<br>如 SELECT customers,cust_name,cusomers,cust_id,COUNT(orders,order_num)AS num_ord FROM customers LEFT OUTER JOIN orders ON customers.cust_id =orders.cust_id  GROUP BY customers.cust_id;<br>17 章 组合查询<br>利用UNION 操作符将多条SELECT 语句组合成一个结果集<br>执行多个查询，多个SELECT 语句 并将结果作为单个查询结果集返回。<br>这种称为并（union）或复合查询<br>使用UNION<br>输入<br>SELECT vend_id ,prod_id ,prod_price FROM products WHERE prod_price &lt;=5<br>UNION<br>SELECT vend_id,prod_id,prod_price FROM products WHERE vend_id IN(1001,1002);<br>也可以使用多个where<br>SELECT vend_id ,prod_id,prod_price FROM products WHERE prod_price &lt;=5 OR vend_id IN<br>(1001,1002);<br>从多个表中检索数据的情形，使用UNION 可能会处理更简单。<br>17.2.2 UNION 规则<br> 1   UNION 的每个查询必须包含相同的列，表达式，或聚集函数</p>
+<p> 2   UNION 的默认行为，如果想返回所有匹配行 可以使用UNION ALL 而不是UNION<br> 17.2.4 对组合查询结果排序<br>SELECT vend_id ,prod_id,prod_price FROM products WHERE prod_price &lt;=5<br>UNION<br>SELECT vend_id,prod_id,prod_price FROM products WHERE vend_id IN (1001,1002)<br>ORDER BY vend_id ,prod_price ;<br>18章 全文本搜素<br>18.1 理解全文本搜素</p>
 ]]></content>
       <categories>
         <category>后端</category>
       </categories>
       <tags>
         <tag>mysql</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>char可以存储汉字吗？</title>
-    <url>/2020/05/06/char%E5%8F%AF%E4%BB%A5%E5%AD%98%E5%82%A8%E6%B1%89%E5%AD%97%E5%90%97%EF%BC%9F/</url>
-    <content><![CDATA[<h2 id="char存储汉字"><a href="#char存储汉字" class="headerlink" title="char存储汉字"></a>char存储汉字</h2><ul>
-<li><p>char是按照字符存储的，不管是英文还是中文，JAVA中固定占用2个字符，用来存储Unicode字符，范围在0-65535.</p>
-</li>
-<li><p>Unicode编码字符集中包含了汉字，所以char类型变量当然可以存储汉字拉。</p>
-<a id="more"></a>
-
-<h2 id="char和String的区别"><a href="#char和String的区别" class="headerlink" title="char和String的区别"></a>char和String的区别</h2><ul>
-<li>char表示字符，定义时用单引号，只能存储一个字符。如char c=‘x’ ;</li>
-<li>String表示的是字符串，可以存储一个或多个字符 如String name=”tom”;</li>
-<li></li>
-</ul>
-</li>
-</ul>
-<p>如name.length();</p>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>JAVASE</tag>
       </tags>
   </entry>
   <entry>
@@ -1264,93 +1309,101 @@
       </tags>
   </entry>
   <entry>
-    <title>mysql必知必会</title>
-    <url>/2020/05/03/mysql%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/</url>
-    <content><![CDATA[<p> 登录mysql -h localhost -u root -p<br> Show databases;<br> Use databasename;<br>Show tables;  //显示行</p>
+    <title>mysql使用触发器</title>
+    <url>/2020/05/15/mysql%E4%BD%BF%E7%94%A8%E8%A7%A6%E5%8F%91%E5%99%A8/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍触发器</p>
+</blockquote>
 <a id="more"></a>
-<p> Show columns from xxx;   //显示列<br>SELECT DISTINCT  published FROM t_blog ;  DISTINCT此关键字指示只返回不同的值。<br> SELECT id FROM t_blog LIMIT 5;<br> SELECT id FROM t_blog LIMIT 3,3; //从第三行开始的后三行<br> SELECT t_blog.id FROM blog.t_blog;   完全限定的列名和表名 和之前的用法一样。<br> SELECT id,type_id,user_id FROM t_blog ORDER BY type_id,id;  先对type_id排序 再对id进行排序。<br> DESC 降序 ASC 升序  没多大用处<br> SELECT id FROM t_blog ORDER BY type_id LIMIT 1; 此种方式找到了数值最大的一行。<br> 在使用where 过滤时 ，order by 排序要在where的后面<br>  SELECT id FROM t_blog  where id &lt;&gt;10;   &lt;&gt; 不匹配检查<br> 范围值检查<br>  SELECT ID FROM T_BLOG WHERE ID BETWEEN 10 AND 20 :<br> Select id from t_blog where id is null;  空值检查<br> Select id,user_id from t_blog where id &lt;=10 and user_id &lt;=1;<br> Select prod_name,prod_price from products where vend_id=1002 or vend_id =1003 and<br>  Prod_price&gt;=10; SQL处理OR操作符和AND操作符时，优先处理AND操作符。<br> 故先处理 vend_id =1003 and prod_price&gt;=10  或者  vend_id=1002  ；<br>解决方法是<br>Select prod_name,prod_price from products where (vend_id =1002 or vend_id =1003) and prod_price &gt;=10    用( )来明确分组操作符。DBMS 首先过滤圆括号内的OR条件。<br>NOT 在MYSQL中的NOT中 MYSQL支持使用NOT 对IN,BETWEEN 和EXISTS子句取反。这与多数其他DBMS允许使用NOT对各种条件取反有很大区别。<br>######<br>通配符<br>用来匹配值的一部分的特殊字符<br>LIKE 指示MYSQL 后跟的搜索模式利用通配符匹配而不是直接相等匹配比较<br>SELECT prod_name FROM products WHERE prod_name REGEXP ‘[123] Ton’<br>ORDER BY prod_name;<br>正则表达式 [123]Ton 其中[123]定义一组字符<br>它的意思是匹配1或2或3  因此 1ton 和2ton 都匹配且返回了<br>[] 其实是另一种形式的OR语句<br>[1|2|3]Ton 的缩写 为 [123]Ton<br>1|2|3 Ton 的意思是检索出1或2或3 ton<br>[^123] 匹配除这些字符除外的任何东西<br> ^ 是REGEXP的否定符号<br>在匹配范围中<br>0到9  将由[0123456789] 等同于 [0-9]<br>.表示匹配一个字符<br>输入 SELECT vend_name FROM vendors WHERE vend_name REGEXP ‘.’ ORDER BY vend_name<br>.匹配任意字符  这时每一行都被检索出来 为了匹配特殊字符 必须用\ 作为前导<br>如<br>SELECT vend_name FROM vendors WHERE vend_name REGEXP ‘\.’ ORDER BY vend_name<br>这才是期望的输出 \.匹配. 这种处理就是所谓的转义。<br>？ 字符 ？匹配它前面的任何字符的0次或者1次出现。<br> 如 SELECT prod_name FROM products WHERE prod_name REGEXP ‘\([0-9] sticks?\)’<br> ORDER BY prod_name ;<br>Sticks 匹配 stick 和sticks s后的?使s可选<br>另外例如<br>SELECT prod_name FROM products WHERE prod_name REGEXP ‘[[:digit:]]{4}<br>ORDER BY prod_name；<br>[:digit:]匹配任意数字<br>因而它作为数字的一个集合<br>{4} 确切的要求它前面的字符 出现4次<br>匹配特定位置的文本，需要使用表9-4列出的定位符<br>^ 文本的开始<br>$ 文本的结尾<br>[[:&lt;:]] 词的开始<br>[[:&gt;;]] 词的结尾<br>‘^[0-9\.]’ 找出一个数 包括以小数点开始的数开始的所有产品。<br>SELECT prod_name FROM products WHERE prod_name REGEXP ‘^[0-9\.]’<br>ORDER BY prod_name;<br>在第10章 中 创建计算字段<br>MySQL 使用Concat() 函数来实现<br>SELECT Concat(vend_name,’（‘，vend_country,’）’)<br>FROM vendors ORDER BY vend_name;<br>拼接  将值联结到一起构成单个值<br>比如以上的输出为<br>ACME (USA)<br>删除数据右侧多余的空格来整理数据<br>MySQL 的RTrim()可以去掉值右边的所有的空格<br>SELECT Concat(RTrim(vend_name),’(‘,RTrim(vend_country),’)’)<br>FROM vendors<br>ORDER BY vend_name;<br>LTrim() 去掉串左边的空格<br>Trim()去掉左右俩边的空格<br>SELECT Concat (RTrim(vend_name),’(‘,RTrim(vend_country),’)’)AS vend_title FROM vendors ORDER BY vend_name;<br>一个未命名的列不能用于客户机的应用中，因为客户机没有办法去引用它。<br>所以才出现了别名。AS 关键字来赋予别名 任何客户机应用都可以按名来引用这个列，就像它是一个实际的表列一样。</p>
-<p>执行算数运算<br>SELECT pro_id,quantity,item_price FROM oderitems WHERE order order_num =20005;<br>在算数运算中 检索200005中的所有物品<br>如果要计算汇总物品的价格<br>SELECT prod_id ,quantity,item_price, quantity*item_price  AS expanded_price FROM oderitems WHERE order_num =20005;<br>此时客户机可以使用这个新计算的列，就像其他列一样。<br>MYSQL 支持基本算术运算符</p>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>触发器是MySQL响应以下任意语句而自动执行的一条MySQL语句（或位于BEGIN和END语句之间的一组语句 。</p>
 <ul>
-<li><ul>
-<li>/ 圆括号可以用来区分优先顺序<br>第十一章 使用数据来处理函数<br>SELECT vend_name,Upper(vend_name) AS  vend_name_upcase FROM vendors ORDER BY vend_name;<br>Upper()将文本转换为大写<br>常用的文本处理函数：<br>Left() 返回串左边的字符<br>Length() 返回串的长度<br>Locate()返回串的一个子串<br>Lower()将串转换为小写<br>LTrim() 去掉左边的空格<br>Right()返回串右边的字符<br>RTrim() 去掉串右边的空格<br>Soundex()返回串的Soundex值<br>SubString() 返回子串的字符<br>Upper() 大写<br>Soundex（） 将任何文本串转换为描述其语音表示的字母数字模式的算法<br>如<br>SELECT cust_name ,cust_contact FROM customers WHERE cust_contact =’Y.Lie’;<br>其联系名是为Y.Lee 此时没办法搜索到<br>但是通过<br>SELECT cust_name,cust_contact FROM customers WHERE Soundex(cust_contact)=Soundex(‘Y.lie);<br>此时可以搜索到Y.Lee<br>日期和时间的处理函数<br>Date() 返回日期部分的日期部分<br>Year() 返回日期部分的年份部分<br>Day()<br>Month()</li>
-</ul>
+<li><p>DELETE </p>
+</li>
+<li><p>INSERT </p>
+</li>
+<li><p>UPDATE</p>
+<p>在创建触发器时，需要给出4条信息 :</p>
+<p><img src="https://photos.alitaalice.cn/image/20200515154008.png" alt></p>
 </li>
 </ul>
-<p>如：<br>SELECT cust_id,oder_num FROM oders WHERE Date(order_date)=’2005-09-01’;<br>SELECT cust_id,order_num FROM orders WHERE Date(order_date) BETWEEN ‘2005-09-01’AND’2005-03-30’;<br>数值处理函数<br>Abs() 返回数的绝对值</p>
-<p>Cos() 角度的余弦<br>Exp() 返回一个数的指数值<br>Mod() 操作数的余数<br>……<br>第12章 汇总数据<br>12.1 聚集函数  运行在行组上，计算和返回单个值得函数<br>AVG() 返回某列的平均值<br>COUNT()  返回某列的行数<br>MAX() 返回某列的最大值<br>MIN() 返回某列的最小值<br>SUM() 返回某列值之和<br>SELECT AVG(prod_price) AS avg_price FROM products;<br>AVG() 也可以用来确定列或行当平均值<br>SELECT AVG(prod_price) AS avg_price FROM products WHERE vend_id =1003;<br>COUNT () 函数<br>COUNT(<em>)对表中的行的数目进行技术<br>COUNT(column) 对特定列中具有值的行进行计数<br>例如SELECT COUNT(</em>) AS num_cust FROM customers;<br>利用COUNT(<em>)对所有行计数<br>SELECT COUNT(cust_email) AS num_cust FROM customers;<br>对于cust_email中所有有值的行进行计数<br>MAX() 指定列中的最大值 MAX()要求指定列名。<br>MIN()<br>SUM() 也可以用来合计计算值 用来得出总的订单金额<br>SELECT SUM(item_price  *quantity) AS total_price FROM oderitems WHERE order_num=20005;<br>SUM(item_price *quantity) 返回订单中所有物品价钱之和<br>第13章 分组数据<br>SELECT vend_id ,COUNT(</em>) AS num_prods FROM products GROUP BY vend_id;<br>Vend_id num_prods<br>1001        3<br>1002        2<br>1003        7<br>1005        2<br>上述语句将vend_id进行分组，GROUP BY 对于分组的整个结果集进行聚集<br>使用ROLLUP 使用WITH ROLLUP 关键字，将得到每个分组以及分组汇总级别的值<br>2如何过滤分组?<br>HAVING<br>如： SELECT cust_id ,COUNT(<em>)AS orders FROM orders GROUP BY cust_id<br>HAVING COUNT(</em>) &gt;=2<br>它过滤COUNT(<em>)&gt;=2 的那些分组<br>输入： SELECT vend_id,COUNT(</em>) AS num_prods FROM products WHERE prod_price &gt;=10<br>GROUP BY vend_id HAVING COUNT(<em>)&gt;=2;<br>13.4 分组和排序<br>GROUP BY 和ORDER BY<br>GROUP BY  是在ORDER BY 之前，在where 之后<br>第14章 子查询<br>子查询：嵌套在其他查询中的查询<br>1 检索包含物品TNT2 的所有订单的编号<br> SELECT order_num FROM orderitems WHERE prod_id =’TNT2’；<br>2 检索具有前一步骤列出的订单编号的所有客户的ID<br> SELECT cust_id FROM orders WHERE order_num IN (20005,20007);<br>3 现在把第一个查询变为子查询 组合成俩个查询：<br> SELECT cust_id FROM oders WHERE order_num IN (SELECT order_num FROM orderitems WHERE prod_id =’TNT2’);<br>在SELECT 语句中，子查询总是从内向外查询处理。<br>检索这些客户的ID的客户信息，检索俩列的SQL语句为：<br>SELECT cust_name, cust_contact FROM customers WHERE cust_id IN (10001,10004);<br>则可以转换为：<br>SELECT cust_name ,cust_contact FROM customers WHERE cust_id IN (SELECT cust_id FROM orders WHERE order_num IN (SELECT order_num FROM orderitems WHERE prod_Id =’TNT2’))；<br>计算结果子查询：<br>SELECT cust_name,cust_state,(SELECT COUNT(</em>) FROM oders WHERE orders.cust_id=customers.cust_id)AS orders FROM customers ORDER BY cust_name;<br>第15 章  联结表  join 表<br>外键位某个表中的一列 它包含另一个表的主键值定义了俩个表之间的关系。<br>SELECT vent_name,prod_name,prod_price<br>FROM vendors ,products<br>WHERE vendors.vend_id=products.vend_id;<br>ORDER BY vend_name,prod_name ;<br>此种方法通过WHERE子句来限定了列名 ，如果要给出 vend_id 那么mysql_id 并不知道是哪个<br>存在一种状况是<br>笛卡尔积：<br>在不指定where子句时<br>：<br>SELECT vend_name ,prod_name,prod_price<br>FROM vendors,products ORDER BY vend_name,prod_name;<br>15.2.2 内部联结<br>目前为止所使用的联结称为 等值联结  它基于俩个表之间的相等测试 这种联结也叫内部联结。<br>SELECT vend_name , prod_name , prod_price FROM vendors INNER JOIN products ON vendors.vend_id =products.vend_id ;<br>此时使用的是INNER JOIN  联结条件用的是ON<br>联结多个表：<br>SELECT prod_name,vend_name,prod_price,quantity FROM orderitems,products,vendors WHERE products.vend_id =vendors.vend_id AND orderitems.prod_id =products.prod_id AND order_num =20005;<br>第16章 创建高级联结<br>使用表别名<br>SELECT Concat(RTrim(vend_name)，‘（’，RTrim（vend_country）,’）’) AS vend_title FROM vendors ORDER BY vend_name;<br>内部联结：<br>它基于俩个表之间的相等测试<br>SELECT vend_name .prod_name,prod_price FROM vendors INNER JOIN products ON vendors.vend_id =produces.vend_id;<br>自联结： 引用别名，自己联结自己<br>SELECT p1.prod_id,p1.prod_name FROM products AS p1,products AS p2<br>WHERE p1.vend_id =p2.vend_id AND p2.prod_id =’DTNTR’;<br>此查询种需要的俩个表实际上是相同的表。<br>因此products 表在from 子句中出现了俩次。虽然这是合法的，但是对products 的引用具有二义性。因此使用了别名。（用自联结而不用子查询。有时候处理联结要比处理查询要快的多）<br>自然联结：<br>其中你只能选择那些唯一的列。<br>通过对表使用通配符（SELECT <em>）对所有其他表的列使用明确的子集来完成的。<br>SELECT c.</em>,o.ordr_num,o.order_date,oi.prod_id,oi.quantity,OI.item_price FROM customers AS c,orders AS o,orderitems AS oi WHERE c.cust_id =o.cust_id AND oi.order_num =o.order_num<br>AND prod_id =’FB’;<br>通配符只对第一个表使用，所有其他列明确列出，所以没有重复的列被检索出来。<br>外部联结：<br>许多联结将一个表中的行与另外一个表中的行相关联，但有时候会需要包含没有关联行的那些行，例如  可能需要使用联结来完成以下的工作：<br>1对每个客户下了多少订单进行计数，包括那些至今未下订单的客户。<br>2列出所有产品以及订购数量，包括没有人订购的产品<br>3计算平均销售规模，包括那些至今未下订单的客户<br>联结包含了那些在相关表中没有关联行的行，这种叫做外部联结<br>内部联结检索所有客户及其订单：<br>SELECT customers.cust_id,order.orders.order_num FROM customers INNER JOIN orders ON<br>Customers.cust_id =orders.cust_id;<br>外部联结：<br>SELECT customers.cust_id ,orders.order_num FROM customers LEFT OUTER JOIN oders<br>ON customers.cust_id =orders.cust_id;<br>输出为：<br> cust_id   order_num<br>  10001      20005<br>  10001      20009<br>  10002       null<br> 10003       null<br>此时必须要用RIGHT 或LEFT 关键字指定包括其所有行的表<br>其实就是左外部联结和右外部联结<br>16.3 使用带聚集函数的联结<br>使用了COUNT（）函数的联结<br>SELECT customers.cust_name, customers.cust_id,COUNT(orders.order_num) AS num_ord FROM customers INNER JOIN orders ON customers.cust_id =orders.cust_id GROUP BY customers.cust_id;<br>SELECT 语句使用INNER JOIN 将customers和orders 表互相关联。 GROUP BY 子句按客户分组数据。<br>聚集函数也可以方便地与其他联结一起使用，<br>如 SELECT customers,cust_name,cusomers,cust_id,COUNT(orders,order_num)AS num_ord FROM customers LEFT OUTER JOIN orders ON customers.cust_id =orders.cust_id  GROUP BY customers.cust_id;<br>17 章 组合查询<br>利用UNION 操作符将多条SELECT 语句组合成一个结果集<br>执行多个查询，多个SELECT 语句 并将结果作为单个查询结果集返回。<br>这种称为并（union）或复合查询<br>使用UNION<br>输入<br>SELECT vend_id ,prod_id ,prod_price FROM products WHERE prod_price &lt;=5<br>UNION<br>SELECT vend_id,prod_id,prod_price FROM products WHERE vend_id IN(1001,1002);<br>也可以使用多个where<br>SELECT vend_id ,prod_id,prod_price FROM products WHERE prod_price &lt;=5 OR vend_id IN<br>(1001,1002);<br>从多个表中检索数据的情形，使用UNION 可能会处理更简单。<br>17.2.2 UNION 规则<br> 1   UNION 的每个查询必须包含相同的列，表达式，或聚集函数</p>
-<p> 2   UNION 的默认行为，如果想返回所有匹配行 可以使用UNION ALL 而不是UNION<br> 17.2.4 对组合查询结果排序<br>SELECT vend_id ,prod_id,prod_price FROM products WHERE prod_price &lt;=5<br>UNION<br>SELECT vend_id,prod_id,prod_price FROM products WHERE vend_id IN (1001,1002)<br>ORDER BY vend_id ,prod_price ;<br>18章 全文本搜素<br>18.1 理解全文本搜素</p>
+<p>Eg：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">CREATE TRIGGER newproduct AFTER INSERT ON products</span><br><span class="line">FOR EACH ROW SELECT <span class="string">'Product added'</span></span><br></pre></td></tr></table></figure>
+
+<p>CREATE TRIGGER用来创建名为newproduct的新触发器。触发器<br>可在一个操作发生之前或之后执行，这里给出了AFTER INSERT，<br>所以此触发器将在INSERT语句成功执行后执行。这个触发器还指定FOR EACH ROW，因此代码对每个插入行执行。在这个例子中，文本Product added将对每个插入的行显示一次.</p>
+<p>  每个表最多支持6个触发器（每条INSERT、 UPDATE和DELETE的之前和之后）。单一触发器不能与多个事件或多个表关联，所以，如果你需要一个对INSERT和UPDATE操作执行的触发器，则应该定义两个触发器  .</p>
+<h2 id="删除触发器"><a href="#删除触发器" class="headerlink" title="删除触发器"></a>删除触发器</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">DROP TRIGGER newproduct;</span><br></pre></td></tr></table></figure>
+
+<p>触发器不能更新或覆盖。为了修改一个触发器，必须先删除它，然后再重新创建。  </p>
+<h2 id="使用-触发器"><a href="#使用-触发器" class="headerlink" title="使用 触发器"></a>使用 触发器</h2><h3 id="1-INSERT-触发器"><a href="#1-INSERT-触发器" class="headerlink" title="1 INSERT 触发器"></a>1 INSERT 触发器</h3><p>INSERT触发器在INSERT语句执行之前或之后执行。  </p>
+<ul>
+<li>在INSERT触发器代码内，可引用一个名为NEW的虚拟表，访问被插入的行；</li>
+<li>在BEFORE INSERT触发器中， NEW中的值也可以被更新（允许更改被插入的值）；</li>
+<li>对于AUTO_INCREMENT列， NEW在INSERT执行之前包含0，在INSERT 执行之后包含新的自动生成值  </li>
+</ul>
+<p>eg：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">CREATE TRIGGER neworder AFTER INSERT ON orders</span><br><span class="line">FOR EACH ROW SELECT NEW.order_num;</span><br></pre></td></tr></table></figure>
+
+<p>此代码创建一个名为neworder的触发器，它按照AFTER INSERT<br>ON orders执行。在插入一个新订单到orders表时， MySQL生<br>成一个新订单号并保存到order_num中。触发器从NEW. order_num取得这个值并返回它。此触发器必须按照AFTER INSERT执行，因为在BEFORE INSERT语句执行之前，新order_num还没有生成。对于orders的每次插入使用这个触发器将总是返回新的订单号。  </p>
+<p>试着插入一下新行：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">INSERT INTO orders(order_date,cust_id) VALUES(NOW(),10001);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://photos.alitaalice.cn/image/20200515155708.png" alt></p>
+<h3 id="DELETE-触发器"><a href="#DELETE-触发器" class="headerlink" title="DELETE 触发器"></a>DELETE 触发器</h3><ul>
+<li>在DELETE触发器代码内，你可以引用一个名为OLD的虚拟表，访问被删除的行；</li>
+<li>OLD中的值全都是只读的，不能更新。  </li>
+</ul>
+<p>下面例子用OLD保存将要被删除的行到一个存档表中</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">CREATE TRIGGER deleteorder BEFORE DELETE ON orders</span><br><span class="line">FOR EACH ROW</span><br><span class="line">BEGIN</span><br><span class="line">    <span class="function">INSERT INTO <span class="title">archive_orders</span><span class="params">(order_num, order_date,cust_id)</span> <span class="title">VALUES</span><span class="params">(OLD.order_num,OLD.order_date,OLD.cust_id)</span></span>;</span><br><span class="line">END;</span><br></pre></td></tr></table></figure>
+
+<p>在任意订单被删除前将执行此触发器。它使用一条INSERT语句将OLD中的值（要被删除的订单）保存到一个名为archive_orders的存档表中（为实际使用这个例子，你需要用与orders相同的列创建一个名为archive_orders的表）  </p>
+<h2 id="UPDATE-触发器"><a href="#UPDATE-触发器" class="headerlink" title="UPDATE 触发器"></a>UPDATE 触发器</h2><ul>
+<li><p>在UPDATE触发器代码中，你可以引用一个名为OLD的虚拟表访问以前（UPDATE语句前）的值，引用一个名为NEW的虚拟表访问新更新的值；</p>
+</li>
+<li><p>在BEFORE UPDATE触发器中， NEW中的值可能也被更新（允许更改将要用于UPDATE语句中的值）；</p>
+</li>
+<li><p>OLD中的值全都是只读的，不能更新  </p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">CREATE TRIGGER updatevendor BERORE UPDATE ON vendors</span><br><span class="line">FOR EACH ROW SET NEW.vend_state=Upper(NEW.vend_state);</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
-        <category>后端</category>
+        <category>mysql</category>
       </categories>
       <tags>
         <tag>mysql</tag>
       </tags>
   </entry>
   <entry>
-    <title>两数之和</title>
-    <url>/2020/05/11/%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</url>
+    <title>mysql插入数据</title>
+    <url>/2020/05/07/mysql%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍</p>
+<p>本章介绍如何利用SQL的INSERT语句将数据插入到表中</p>
 </blockquote>
 <a id="more"></a>
 
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><img src="https://photos.alitaalice.cn/image/20200512235913.png" alt></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>mysql联结表</title>
-    <url>/2020/05/08/mysql%E8%81%94%E7%BB%93%E8%A1%A8/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍联结以及高级联结。</p>
-</blockquote>
-<a id="more"></a>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="插入到完整的行"><a href="#插入到完整的行" class="headerlink" title="插入到完整的行"></a>插入到完整的行</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">INSERT INTO Customers</span><br><span class="line">VALUES(<span class="literal">NULL</span>,</span><br><span class="line">       'PEP E.LAPEW',</span><br><span class="line">       '100 MAIN STREET',</span><br><span class="line">        'Los Angeles',</span><br><span class="line">         'CA',</span><br><span class="line">        '90046',</span><br><span class="line">         'USA',</span><br><span class="line">          <span class="literal">NULL</span>,</span><br><span class="line">          <span class="literal">NULL</span>);</span><br></pre></td></tr></table></figure>
 
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="创建联结"><a href="#创建联结" class="headerlink" title="创建联结"></a>创建联结</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">SELECT vent_name,prod_name,prod_price </span><br><span class="line">FROM vendors ,products </span><br><span class="line">WHERE vendors.vend_id=products.vend_id;</span><br><span class="line">ORDER BY vend_name,prod_name ;</span><br></pre></td></tr></table></figure>
+<p>编写INSERT语句的更加安全（不过更加繁琐）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">INSERT INTO customers(cust_name,cust_address,cust_city,cust_state,cust_zip,cust_country,cust_contact,cust_email)</span><br><span class="line">VALUSES(&#39;PEP E.LAPEW&#39;,</span><br><span class="line">       &#39;100 MAIN STREET&#39;,</span><br><span class="line">        &#39;Los Angeles&#39;,</span><br><span class="line">         &#39;CA&#39;,</span><br><span class="line">        &#39;90046&#39;,</span><br><span class="line">         &#39;USA&#39;,</span><br><span class="line">          NULL,</span><br><span class="line">          NULL&#39;);</span><br></pre></td></tr></table></figure>
 
-<h2 id="内部联结"><a href="#内部联结" class="headerlink" title="内部联结"></a>内部联结</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">SELECT vend_name , prod_name , prod_price FROM vendors INNER JOIN products ON vendors.vend_id =products.vend_id ;</span><br></pre></td></tr></table></figure>
-
-<p>此时使用的是INNER JOIN 联结条件用的是ON</p>
-<p>联结多个表：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">SELECT prod_name,vend_name,prod_price,quantity FROM orderitems,products,vendors WHERE products.vend_id =vendors.vend_id AND orderitems.prod_id =products.prod_id AND order_num =<span class="number">20005</span>;</span><br></pre></td></tr></table></figure>
-
-<h2 id="创建高级联结"><a href="#创建高级联结" class="headerlink" title="创建高级联结"></a>创建高级联结</h2><h3 id="使用表别名"><a href="#使用表别名" class="headerlink" title="使用表别名"></a>使用表别名</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function">SELECT <span class="title">Concat</span><span class="params">(RTrim(vend_name)，‘（’，RTrim（vend_country）,’）’)</span> AS vend_title FROM vendors ORDER BY vend_name</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="内部联结："><a href="#内部联结：" class="headerlink" title="内部联结："></a>内部联结：</h3><p>它基于俩个表之间的相等测试</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">SELECT vend_name .prod_name,prod_price FROM vendors INNER JOIN products ON vendors.vend_id =produces.vend_id;</span><br></pre></td></tr></table></figure>
-
-<h3 id="自联结：-引用别名，自己联结自己"><a href="#自联结：-引用别名，自己联结自己" class="headerlink" title="自联结： 引用别名，自己联结自己"></a>自联结： 引用别名，自己联结自己</h3><p>假如你发现某物品（其ID为DTNRT)存在问题，因此想知道生产该物品的供应商生产的其他物品是否也存在这些问题。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">SELECT p1.prod_id,p1.prod_name FROM products AS p1,products AS p2</span><br><span class="line">WHERE p1.vend_id =p2.vend_id AND p2.prod_id =’DTNTR’;</span><br></pre></td></tr></table></figure>
-
-<p>因此products 表在from 子句中出现了俩次。虽然这是合法的，但是对products 的引用具有二义性。因此使用了别名。（用自联结而不用子查询。有时候处理联结要比处理查询要快的多）</p>
-<h3 id="自然联结"><a href="#自然联结" class="headerlink" title="自然联结"></a>自然联结</h3><p><strong>自然联结的意思是排除多次出现，使每个列只返回一次。</strong></p>
-<p><strong>我们建立的每个内部联结都是自然联结。</strong></p>
-<p>示例通过对表使用通配符（SELECT *）对所有其他表的列使用明确的子集来完成的。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">SELECT c.*,o.ordr_num,o.order_date,oi.prod_id,oi.quantity,OI.item_price FROM customers AS c,orders AS o,orderitems AS oi WHERE c.cust_id =o.cust_id AND oi.order_num =o.order_num</span><br><span class="line">AND prod_id =’FB’;</span><br></pre></td></tr></table></figure>
-
-<p>通配符只对第一个表使用，所有其他列明确列出，但没有重复的列被检索出来。</p>
-<h3 id="外部联结："><a href="#外部联结：" class="headerlink" title="外部联结："></a>外部联结：</h3><p><strong>许多联结将一个表中的行与另外一个表中的行相关联，但有时候会需要包含没有关联行的那些行，</strong>例如 可能需要使用联结来完成以下的工作：</p>
-<ul>
-<li>对每个客户下了多少订单进行计数，包括那些至今未下订单的客户。</li>
-<li>列出所有产品以及订购数量，包括没有人订购的产品</li>
-<li>计算平均销售规模，包括那些至今未下订单的客户</li>
+<h3 id="省略列"><a href="#省略列" class="headerlink" title="省略列"></a>省略列</h3><ul>
+<li>该列定义为允许null值</li>
+<li>在表定义中给出默认值</li>
 </ul>
-<p><strong>联结包含了那些在相关表中没有关联行的行，这种叫做外部联结</strong>     </p>
-<p>内部联结检索所有客户及其订单：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SELECT customers.cust_id,order.orders.order_num FROM customers INNER JOIN orders ON</span><br><span class="line">Customers.cust_id &#x3D;orders.cust_id;</span><br></pre></td></tr></table></figure>
+<h3 id="提高整体性能"><a href="#提高整体性能" class="headerlink" title="提高整体性能"></a>提高整体性能</h3><p>如果数据检索是最重要的，那你可以通过在INSERT INTO 之间添加关键字</p>
+<p>LOW_PRIORITY 指示Mysql降低INSERT语句的优先级</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">INSERT LOW_PRIORITY INTO</span><br></pre></td></tr></table></figure>
 
-<p>外部联结：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">SELECT customers.cust_id ,orders.order_num FROM customers LEFT OUTER JOIN oders </span><br><span class="line">ON customers.cust_id =orders.cust_id;</span><br></pre></td></tr></table></figure>
+<h2 id="插入多个行"><a href="#插入多个行" class="headerlink" title="插入多个行"></a>插入多个行</h2><figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="function">INSERT INTO <span class="title">customers</span><span class="params">(cust_name,cust_address,cust_city,cust_state,cust_zip,cust_country,cust_contact,cust_email)</span></span></span><br><span class="line">VALUSES('PEP E.LAPEW',</span><br><span class="line">       '100 MAIN STREET',</span><br><span class="line">        'Los Angeles',</span><br><span class="line">         'CA',</span><br><span class="line">        '90046',</span><br><span class="line">         'USA',</span><br><span class="line">          <span class="literal">NULL</span>,</span><br><span class="line">          NULL'),</span><br><span class="line">       ('PEP E.LAPEW',</span><br><span class="line">       '100 MAIN STREET',</span><br><span class="line">        'Los Angeles',</span><br><span class="line">         'CA',</span><br><span class="line">        '90046',</span><br><span class="line">         'USA',</span><br><span class="line">          <span class="literal">NULL</span>,</span><br><span class="line">          NULL');</span><br></pre></td></tr></table></figure>
 
-<p>输出为</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cust_id   order_num</span><br><span class="line"> 10001      20005</span><br><span class="line"> 10001      20009</span><br><span class="line"> 10002       null</span><br><span class="line"> 10003       null</span><br></pre></td></tr></table></figure>
+<p>其中单条INSERT语句有多组值，每组值用一对圆括号括起来，用逗号分隔。</p>
+<h3 id="插入检索出的数据"><a href="#插入检索出的数据" class="headerlink" title="插入检索出的数据"></a>插入检索出的数据</h3><figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="function">INSERT INTO <span class="title">customers</span><span class="params">(cust_id,cust_name,cust_address,cust_city,cust_state,cust_zip,cust_country,cust_contact,cust_email)</span></span></span><br><span class="line">SELECT cust_id,cust_name,cust_address,cust_city,cust_state,cust_zip,cust_country,cust_contact,cust_email FROM custnew;</span><br></pre></td></tr></table></figure>
 
-<p>此时必须要用RIGHT 或LEFT 关键字指定包括其所有行的表，如果是<strong>LEFT</strong>，就<strong>指出包括OUTER JOIN左边表的所有行</strong>。示例是包括（customers)表种所有行。</p>
-<p>其实就是左外部联结和右外部联结</p>
-<h3 id="使用带聚集函数的联结"><a href="#使用带聚集函数的联结" class="headerlink" title="使用带聚集函数的联结"></a>使用带聚集函数的联结</h3><p>使用了COUNT（）函数的联结</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SELECT customers.cust_name, customers.cust_id,COUNT(orders.order_num) AS num_ord FROM customers INNER JOIN orders ON customers.cust_id &#x3D;orders.cust_id GROUP BY customers.cust_id;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SELECT customers,cust_name,cusomers,cust_id,COUNT(orders,order_num)AS num_ord FROM customers LEFT OUTER JOIN orders ON customers.cust_id &#x3D;orders.cust_id  GROUP BY customers.cust_id;</span><br></pre></td></tr></table></figure>]]></content>
+<p>这个例子中INSERT SELECT 从custnew中将所有数据导入到customer中。</p>
+<p><strong>其实MYSQL不关心SELECT返回的列名，它使用的是列的位置，因此SELECT中的第一列用来填充表列中指定的第一列</strong>。</p>
+]]></content>
       <categories>
         <category>后端</category>
       </categories>
@@ -1441,92 +1494,88 @@
       </tags>
   </entry>
   <entry>
-    <title>二叉树</title>
-    <url>/2020/05/07/%E4%BA%8C%E5%8F%89%E6%A0%91/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本文。</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="二叉树的特点"><a href="#二叉树的特点" class="headerlink" title="二叉树的特点"></a>二叉树的特点</h2><ul>
-<li><p>每个结点最多有俩颗子树。所以二叉树中不存在大于2的结点。</p>
-</li>
-<li><p>左子树和右子树是有顺序的，次序不能随意颠倒。</p>
-</li>
-<li><p>即使树中某结点只有一颗子树，也要区分它是左子树还是右子树</p>
-<h3 id="二叉树的5种形态"><a href="#二叉树的5种形态" class="headerlink" title="二叉树的5种形态"></a>二叉树的5种形态</h3><ul>
-<li>空二叉树</li>
-<li>只有一个根结点</li>
-<li>根节点只有左子树</li>
-<li>根节点只有右子树</li>
-<li>根节点既有左子树又有右子树</li>
-</ul>
-</li>
-</ul>
-<h2 id="特殊二叉树"><a href="#特殊二叉树" class="headerlink" title="特殊二叉树"></a>特殊二叉树</h2><ol>
-<li><p>斜树</p>
-<p>所有结点都只有左子树的二叉树叫做左斜树</p>
-<p>所有结点都只有右子树的二叉树叫做右斜树</p>
-<p>俩者统称为斜树</p>
-</li>
-<li><p>满二叉树</p>
-<p>在一颗二叉树中，如果所有分支结点都存在左子树和右子树，并且所有叶子都在同一层上，这样的二叉树叫做满二叉树</p>
-</li>
-<li><p>完全二叉树</p>
-<p>对一颗具有n个结点的二叉树按照层序编号，如果编号为i（1&lt;=i&lt;=n)的结点与同样深度的满二叉树中编号为i的结点在二叉树中位置完全相同，则这颗二叉树称为完全二叉树。</p>
-</li>
-</ol>
-<h2 id="二叉树的性质"><a href="#二叉树的性质" class="headerlink" title="二叉树的性质"></a>二叉树的性质</h2><h3 id="二叉树性质1"><a href="#二叉树性质1" class="headerlink" title="二叉树性质1"></a>二叉树性质1</h3><p>性质1：在二叉树的第i层上至多有2^(i-1) 个结点。（i&gt;=1)</p>
-<h3 id="二叉树性质2"><a href="#二叉树性质2" class="headerlink" title="二叉树性质2"></a>二叉树性质2</h3><p>性质2：深度为k的二叉树至多有2^(k) -1个结点 （k&gt;=1)   (<strong>结点的总量</strong>)</p>
-<h3 id="二叉树性质3"><a href="#二叉树性质3" class="headerlink" title="二叉树性质3"></a>二叉树性质3</h3><p>性质3：对于任何一颗二叉树T，如果其终端结点数为n0，度为2的结点数为n2，则n0=n2+1</p>
-<h3 id="二叉树性质4"><a href="#二叉树性质4" class="headerlink" title="二叉树性质4"></a>二叉树性质4</h3><p>性质4： 具有n个结点的完全二叉树的深度为[log2 n]+1 ([x]表示不大于x的最大整数)</p>
-<h3 id="二叉树性质5"><a href="#二叉树性质5" class="headerlink" title="二叉树性质5"></a>二叉树性质5</h3><p><strong>性质5： 如果对一颗有n个结点的完全二叉树（其深度为[log2 n]+1)的结点按层序编号，对任一结点i（1&lt;=i&lt;=n)</strong></p>
-<p><strong>有</strong></p>
-<ol>
-<li><strong>如果i=1,则结点i是二叉树的根，无双亲;如果i&gt;1,则其双亲是结点[i/2]</strong></li>
-<li><strong>如果2i&gt;n,则结点i无左孩子（结点i为叶子结点）；否则其左孩子是结点2i</strong></li>
-<li><strong>如果2i+1&gt;n,则结点i无右孩子；否则其右孩子是结点2i+1</strong></li>
-</ol>
-<h2 id="二叉树的存储结构"><a href="#二叉树的存储结构" class="headerlink" title="二叉树的存储结构"></a>二叉树的存储结构</h2><h4 id="二叉树的顺序存储结构"><a href="#二叉树的顺序存储结构" class="headerlink" title="二叉树的顺序存储结构"></a>二叉树的顺序存储结构</h4><p>用一维数组存储二叉树的结点，并且结点的位置，也就是数组的下标要能体现结点之间的逻辑关系。</p>
-<p>一般来说顺序存储用于完全二叉树</p>
-<h4 id="二叉链表"><a href="#二叉链表" class="headerlink" title="二叉链表"></a>二叉链表</h4><p>二叉树的每个结点最多有俩个孩子。所以为它设计一个数据域，和俩个指针域是比较自然的想法。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">lchid -- data --rchild</span><br></pre></td></tr></table></figure>
-
-<p>lchild 和 rchild 都是指针域</p>
-<p><strong>二叉树的二叉链表结点结构定义</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">typedef struct BiTNode</span><br><span class="line">&#123;</span><br><span class="line">   TElemType data; &#x2F;&#x2F;结点数据</span><br><span class="line">   struct BiTNode *lchild ,*rchild;</span><br><span class="line">&#125; BiTNode, *BiTree;</span><br></pre></td></tr></table></figure>
-
-<p>图示：</p>
-<h2 id="二叉树的遍历"><a href="#二叉树的遍历" class="headerlink" title="二叉树的遍历"></a>二叉树的遍历</h2><p>二叉树的定义：</p>
-<p><strong>二叉树的遍历是指从根节点出发，按照某种次序依次访问二叉树中的所有结点，使得每个结点被访问且仅被访问一次。</strong></p>
-<h3 id="前序遍历"><a href="#前序遍历" class="headerlink" title="前序遍历"></a>前序遍历</h3><p>规则：若二叉树为空，则空操作返回，否则先访问根结点，然后前序遍历左子树，再前序遍历右子树。</p>
-<p>如图：</p>
-<p><img src="/2020/05/07/%E4%BA%8C%E5%8F%89%E6%A0%91/TIM%E5%9B%BE%E7%89%8720200510112558.png" alt></p>
-<h3 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h3><p>规则： 若树为空，则空操作返回，否则从根节点开始（注意并不是先访问根节点），中序遍历根节点的左子树，然后是访问根节点，最后中序遍历右子树。</p>
-<p><img src="/2020/05/07/%E4%BA%8C%E5%8F%89%E6%A0%91/TIM%E5%9B%BE%E7%89%8720200510113141.png" alt></p>
-<h3 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h3><p>规则： 若树为空，则空操作返回，否则从左到右先叶子后结点的方式遍历访问左右子树，最后是访问根结点。</p>
-<p>图示：</p>
-<p><img src="/2020/05/07/%E4%BA%8C%E5%8F%89%E6%A0%91/TIM%E5%9B%BE%E7%89%8720200510113343.png" alt></p>
-<h3 id="层序遍历"><a href="#层序遍历" class="headerlink" title="层序遍历"></a>层序遍历</h3><p>规则：若树为空，则空操作返回。</p>
-<p>否则从树的第一层，也就是根节点开始访问，从上而下逐层遍历，在同一层中，按从左到右的顺序对结点逐个访问。</p>
-<p><img src="/2020/05/07/%E4%BA%8C%E5%8F%89%E6%A0%91/TIM%E5%9B%BE%E7%89%8720200510113800.png" alt></p>
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>DataStructure</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>使用存储过程</title>
-    <url>/2020/05/10/%E4%BD%BF%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/</url>
+    <title>两数之和</title>
+    <url>/2020/05/11/%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
 <p>本章介绍</p>
 </blockquote>
 <a id="more"></a>
 
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><img src="https://photos.alitaalice.cn/image/20200512235913.png" alt></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>mysql联结表</title>
+    <url>/2020/05/08/mysql%E8%81%94%E7%BB%93%E8%A1%A8/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍联结以及高级联结。</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="创建联结"><a href="#创建联结" class="headerlink" title="创建联结"></a>创建联结</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">SELECT vent_name,prod_name,prod_price </span><br><span class="line">FROM vendors ,products </span><br><span class="line">WHERE vendors.vend_id=products.vend_id;</span><br><span class="line">ORDER BY vend_name,prod_name ;</span><br></pre></td></tr></table></figure>
+
+<h2 id="内部联结"><a href="#内部联结" class="headerlink" title="内部联结"></a>内部联结</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">SELECT vend_name , prod_name , prod_price FROM vendors INNER JOIN products ON vendors.vend_id =products.vend_id ;</span><br></pre></td></tr></table></figure>
+
+<p>此时使用的是INNER JOIN 联结条件用的是ON</p>
+<p>联结多个表：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">SELECT prod_name,vend_name,prod_price,quantity FROM orderitems,products,vendors WHERE products.vend_id =vendors.vend_id AND orderitems.prod_id =products.prod_id AND order_num =<span class="number">20005</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建高级联结"><a href="#创建高级联结" class="headerlink" title="创建高级联结"></a>创建高级联结</h2><h3 id="使用表别名"><a href="#使用表别名" class="headerlink" title="使用表别名"></a>使用表别名</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function">SELECT <span class="title">Concat</span><span class="params">(RTrim(vend_name)，‘（’，RTrim（vend_country）,’）’)</span> AS vend_title FROM vendors ORDER BY vend_name</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="内部联结："><a href="#内部联结：" class="headerlink" title="内部联结："></a>内部联结：</h3><p>它基于俩个表之间的相等测试</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">SELECT vend_name .prod_name,prod_price FROM vendors INNER JOIN products ON vendors.vend_id =produces.vend_id;</span><br></pre></td></tr></table></figure>
+
+<h3 id="自联结：-引用别名，自己联结自己"><a href="#自联结：-引用别名，自己联结自己" class="headerlink" title="自联结： 引用别名，自己联结自己"></a>自联结： 引用别名，自己联结自己</h3><p>假如你发现某物品（其ID为DTNRT)存在问题，因此想知道生产该物品的供应商生产的其他物品是否也存在这些问题。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">SELECT p1.prod_id,p1.prod_name FROM products AS p1,products AS p2</span><br><span class="line">WHERE p1.vend_id =p2.vend_id AND p2.prod_id =’DTNTR’;</span><br></pre></td></tr></table></figure>
+
+<p>因此products 表在from 子句中出现了俩次。虽然这是合法的，但是对products 的引用具有二义性。因此使用了别名。（用自联结而不用子查询。有时候处理联结要比处理查询要快的多）</p>
+<h3 id="自然联结"><a href="#自然联结" class="headerlink" title="自然联结"></a>自然联结</h3><p><strong>自然联结的意思是排除多次出现，使每个列只返回一次。</strong></p>
+<p><strong>我们建立的每个内部联结都是自然联结。</strong></p>
+<p>示例通过对表使用通配符（SELECT *）对所有其他表的列使用明确的子集来完成的。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">SELECT c.*,o.ordr_num,o.order_date,oi.prod_id,oi.quantity,OI.item_price FROM customers AS c,orders AS o,orderitems AS oi WHERE c.cust_id =o.cust_id AND oi.order_num =o.order_num</span><br><span class="line">AND prod_id =’FB’;</span><br></pre></td></tr></table></figure>
+
+<p>通配符只对第一个表使用，所有其他列明确列出，但没有重复的列被检索出来。</p>
+<h3 id="外部联结："><a href="#外部联结：" class="headerlink" title="外部联结："></a>外部联结：</h3><p><strong>许多联结将一个表中的行与另外一个表中的行相关联，但有时候会需要包含没有关联行的那些行，</strong>例如 可能需要使用联结来完成以下的工作：</p>
+<ul>
+<li>对每个客户下了多少订单进行计数，包括那些至今未下订单的客户。</li>
+<li>列出所有产品以及订购数量，包括没有人订购的产品</li>
+<li>计算平均销售规模，包括那些至今未下订单的客户</li>
+</ul>
+<p><strong>联结包含了那些在相关表中没有关联行的行，这种叫做外部联结</strong>     </p>
+<p>内部联结检索所有客户及其订单：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SELECT customers.cust_id,order.orders.order_num FROM customers INNER JOIN orders ON</span><br><span class="line">Customers.cust_id &#x3D;orders.cust_id;</span><br></pre></td></tr></table></figure>
+
+<p>外部联结：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">SELECT customers.cust_id ,orders.order_num FROM customers LEFT OUTER JOIN oders </span><br><span class="line">ON customers.cust_id =orders.cust_id;</span><br></pre></td></tr></table></figure>
+
+<p>输出为</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cust_id   order_num</span><br><span class="line"> 10001      20005</span><br><span class="line"> 10001      20009</span><br><span class="line"> 10002       null</span><br><span class="line"> 10003       null</span><br></pre></td></tr></table></figure>
+
+<p>此时必须要用RIGHT 或LEFT 关键字指定包括其所有行的表，如果是<strong>LEFT</strong>，就<strong>指出包括OUTER JOIN左边表的所有行</strong>。示例是包括（customers)表种所有行。</p>
+<p>其实就是左外部联结和右外部联结</p>
+<h3 id="使用带聚集函数的联结"><a href="#使用带聚集函数的联结" class="headerlink" title="使用带聚集函数的联结"></a>使用带聚集函数的联结</h3><p>使用了COUNT（）函数的联结</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SELECT customers.cust_name, customers.cust_id,COUNT(orders.order_num) AS num_ord FROM customers INNER JOIN orders ON customers.cust_id &#x3D;orders.cust_id GROUP BY customers.cust_id;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SELECT customers,cust_name,cusomers,cust_id,COUNT(orders,order_num)AS num_ord FROM customers LEFT OUTER JOIN orders ON customers.cust_id &#x3D;orders.cust_id  GROUP BY customers.cust_id;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>二叉查找树</title>
+    <url>/2020/05/14/%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>定义：一棵二叉查找树 （BST）是一棵二叉树，其中每个结点都含有一个 Comparable 的键（以及相关联的值）且每个结点的键都大于其左子树中的任意结点的键而小于右子树的任意结点的键。  </p>
+<p><img src="https://photos.alitaalice.cn/image/20200514134241.png" alt></p>
+<h3 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h3><p>一般来说，在符号表中查找一个键可能得到两种结果。如果含有该键的结点存在于表中，我们的查找就命<br>中 了，然后返回相应的值。否则查找未命中 （并返回 null ）。根据数据表示的递归结构我们马上就能得到，在二叉查找树中查找一个键的递归算法：如果树是空的，则查找未命中；如果被查找的键和根结点的键相等，查找命中，否则我们就（递归地）在适当的子树中继续查找。如果被查找的键较小就选择左子树，较大则选择右子树。算法 3.3（续 1）中递归的 get() 方法完全实现了这段算法。它的第一个参 数是一个结点（子树的根结点），第二个参数是被查找的键。  </p>
+]]></content>
   </entry>
   <entry>
     <title>二叉树的遍历</title>
@@ -1805,35 +1854,152 @@
 ]]></content>
   </entry>
   <entry>
+    <title>二叉树</title>
+    <url>/2020/05/07/%E4%BA%8C%E5%8F%89%E6%A0%91/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本文。</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="二叉树的特点"><a href="#二叉树的特点" class="headerlink" title="二叉树的特点"></a>二叉树的特点</h2><ul>
+<li><p>每个结点最多有俩颗子树。所以二叉树中不存在大于2的结点。</p>
+</li>
+<li><p>左子树和右子树是有顺序的，次序不能随意颠倒。</p>
+</li>
+<li><p>即使树中某结点只有一颗子树，也要区分它是左子树还是右子树</p>
+<h3 id="二叉树的5种形态"><a href="#二叉树的5种形态" class="headerlink" title="二叉树的5种形态"></a>二叉树的5种形态</h3><ul>
+<li>空二叉树</li>
+<li>只有一个根结点</li>
+<li>根节点只有左子树</li>
+<li>根节点只有右子树</li>
+<li>根节点既有左子树又有右子树</li>
+</ul>
+</li>
+</ul>
+<h2 id="特殊二叉树"><a href="#特殊二叉树" class="headerlink" title="特殊二叉树"></a>特殊二叉树</h2><ol>
+<li><p>斜树</p>
+<p>所有结点都只有左子树的二叉树叫做左斜树</p>
+<p>所有结点都只有右子树的二叉树叫做右斜树</p>
+<p>俩者统称为斜树</p>
+</li>
+<li><p>满二叉树</p>
+<p>在一颗二叉树中，如果所有分支结点都存在左子树和右子树，并且所有叶子都在同一层上，这样的二叉树叫做满二叉树</p>
+</li>
+<li><p>完全二叉树</p>
+<p>对一颗具有n个结点的二叉树按照层序编号，如果编号为i（1&lt;=i&lt;=n)的结点与同样深度的满二叉树中编号为i的结点在二叉树中位置完全相同，则这颗二叉树称为完全二叉树。</p>
+</li>
+</ol>
+<h2 id="二叉树的性质"><a href="#二叉树的性质" class="headerlink" title="二叉树的性质"></a>二叉树的性质</h2><h3 id="二叉树性质1"><a href="#二叉树性质1" class="headerlink" title="二叉树性质1"></a>二叉树性质1</h3><p>性质1：在二叉树的第i层上至多有2^(i-1) 个结点。（i&gt;=1)</p>
+<h3 id="二叉树性质2"><a href="#二叉树性质2" class="headerlink" title="二叉树性质2"></a>二叉树性质2</h3><p>性质2：深度为k的二叉树至多有2^(k) -1个结点 （k&gt;=1)   (<strong>结点的总量</strong>)</p>
+<h3 id="二叉树性质3"><a href="#二叉树性质3" class="headerlink" title="二叉树性质3"></a>二叉树性质3</h3><p>性质3：对于任何一颗二叉树T，如果其终端结点数为n0，度为2的结点数为n2，则n0=n2+1</p>
+<h3 id="二叉树性质4"><a href="#二叉树性质4" class="headerlink" title="二叉树性质4"></a>二叉树性质4</h3><p>性质4： 具有n个结点的完全二叉树的深度为[log2 n]+1 ([x]表示不大于x的最大整数)</p>
+<h3 id="二叉树性质5"><a href="#二叉树性质5" class="headerlink" title="二叉树性质5"></a>二叉树性质5</h3><p><strong>性质5： 如果对一颗有n个结点的完全二叉树（其深度为[log2 n]+1)的结点按层序编号，对任一结点i（1&lt;=i&lt;=n)</strong></p>
+<p><strong>有</strong></p>
+<ol>
+<li><strong>如果i=1,则结点i是二叉树的根，无双亲;如果i&gt;1,则其双亲是结点[i/2]</strong></li>
+<li><strong>如果2i&gt;n,则结点i无左孩子（结点i为叶子结点）；否则其左孩子是结点2i</strong></li>
+<li><strong>如果2i+1&gt;n,则结点i无右孩子；否则其右孩子是结点2i+1</strong></li>
+</ol>
+<h2 id="二叉树的存储结构"><a href="#二叉树的存储结构" class="headerlink" title="二叉树的存储结构"></a>二叉树的存储结构</h2><h4 id="二叉树的顺序存储结构"><a href="#二叉树的顺序存储结构" class="headerlink" title="二叉树的顺序存储结构"></a>二叉树的顺序存储结构</h4><p>用一维数组存储二叉树的结点，并且结点的位置，也就是数组的下标要能体现结点之间的逻辑关系。</p>
+<p>一般来说顺序存储用于完全二叉树</p>
+<h4 id="二叉链表"><a href="#二叉链表" class="headerlink" title="二叉链表"></a>二叉链表</h4><p>二叉树的每个结点最多有俩个孩子。所以为它设计一个数据域，和俩个指针域是比较自然的想法。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">lchid -- data --rchild</span><br></pre></td></tr></table></figure>
+
+<p>lchild 和 rchild 都是指针域</p>
+<p><strong>二叉树的二叉链表结点结构定义</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">typedef struct BiTNode</span><br><span class="line">&#123;</span><br><span class="line">   TElemType data; &#x2F;&#x2F;结点数据</span><br><span class="line">   struct BiTNode *lchild ,*rchild;</span><br><span class="line">&#125; BiTNode, *BiTree;</span><br></pre></td></tr></table></figure>
+
+<p>图示：</p>
+<h2 id="二叉树的遍历"><a href="#二叉树的遍历" class="headerlink" title="二叉树的遍历"></a>二叉树的遍历</h2><p>二叉树的定义：</p>
+<p><strong>二叉树的遍历是指从根节点出发，按照某种次序依次访问二叉树中的所有结点，使得每个结点被访问且仅被访问一次。</strong></p>
+<h3 id="前序遍历"><a href="#前序遍历" class="headerlink" title="前序遍历"></a>前序遍历</h3><p>规则：若二叉树为空，则空操作返回，否则先访问根结点，然后前序遍历左子树，再前序遍历右子树。</p>
+<p>如图：</p>
+<p><img src="/2020/05/07/%E4%BA%8C%E5%8F%89%E6%A0%91/TIM%E5%9B%BE%E7%89%8720200510112558.png" alt></p>
+<h3 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h3><p>规则： 若树为空，则空操作返回，否则从根节点开始（注意并不是先访问根节点），中序遍历根节点的左子树，然后是访问根节点，最后中序遍历右子树。</p>
+<p><img src="/2020/05/07/%E4%BA%8C%E5%8F%89%E6%A0%91/TIM%E5%9B%BE%E7%89%8720200510113141.png" alt></p>
+<h3 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h3><p>规则： 若树为空，则空操作返回，否则从左到右先叶子后结点的方式遍历访问左右子树，最后是访问根结点。</p>
+<p>图示：</p>
+<p><img src="/2020/05/07/%E4%BA%8C%E5%8F%89%E6%A0%91/TIM%E5%9B%BE%E7%89%8720200510113343.png" alt></p>
+<h3 id="层序遍历"><a href="#层序遍历" class="headerlink" title="层序遍历"></a>层序遍历</h3><p>规则：若树为空，则空操作返回。</p>
+<p>否则从树的第一层，也就是根节点开始访问，从上而下逐层遍历，在同一层中，按从左到右的顺序对结点逐个访问。</p>
+<p><img src="/2020/05/07/%E4%BA%8C%E5%8F%89%E6%A0%91/TIM%E5%9B%BE%E7%89%8720200510113800.png" alt></p>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>DataStructure</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用事务处理</title>
+    <url>/2020/05/15/%E4%BD%BF%E7%94%A8%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍什么是事务处理以及如何利用COMMIT和ROLLBACK语句来管理事务处理  .</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>MyISAM和<strong>InnoDB</strong>是两种最常使用的引擎。前者不支持明确的事务处理管理，而后者支持。  </p>
+<p><strong>事务处理（transaction processing）可以用来维护数据库的完整性，它保证成批的MySQL操作要么完全执行，要么完全不执行。</strong>  </p>
+<p><strong>事务处理是一种机制，用来管理必须成批执行的MySQL操作，以保证数据库不包含不完整的操作结果。利用事务处理，可以保证一组操作不会中途停止，它们或者作为整体执行，或者完全不执行（除非明确指示）。如果没有错误发生，整组语句提交给（写到）数据库表。如果发生错误，则进行回退（撤销）以恢复数据库到某个已知且安全的状态 .</strong> </p>
+<p><img src="https://photos.alitaalice.cn/image/20200515163050.png" alt></p>
+<h2 id="1控制事务处理"><a href="#1控制事务处理" class="headerlink" title="1控制事务处理"></a>1控制事务处理</h2><p>MySQL使用下面的语句来标识事务的开始  ：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">START TRANSACTION</span><br></pre></td></tr></table></figure>
+
+<p>MySQL的ROLLBACK命令用来回退（撤销） MySQL语句，请看下面的语句：  </p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">SELECT * FROM ordertotals;</span><br><span class="line">START TRANSACTION;</span><br><span class="line">DELETE FROM ordertotals;</span><br><span class="line">SELECL * FROM ordertotals;</span><br><span class="line">ROLLBACK;</span><br><span class="line">SELECT * FROM ordertotals;</span><br></pre></td></tr></table></figure>
+
+<p>ROLLBACK只能在一个事务处理内使用（在执行一条START<br> TRANSACTION命令之后）  .</p>
+<p>事务处理用来<strong>管理INSERT、 UPDATE和DELETE语</strong>句。你不能回退SELECT语句。（这样做也没有什么意义。）你不能<strong>回退CREATE或DROP</strong>操作。事务处理块中可以使用这两条语句，但如果你执行回退，它们不会被撤销。  </p>
+<h2 id="2-使用COMMIT"><a href="#2-使用COMMIT" class="headerlink" title="2 使用COMMIT"></a>2 使用COMMIT</h2><p>般的MySQL语句都是直接针对数据库表执行和编写的。这就是<br>所谓的隐含提交（implicit commit），即提交（写或保存）操作是自动进行的。  </p>
+<p>在事务处理块中，提交不会隐含地进行。为进行明确的提交，<br>使用COMMIT语句 。</p>
+]]></content>
+      <categories>
+        <category>mysql</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用存储过程</title>
+    <url>/2020/05/10/%E4%BD%BF%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
+  </entry>
+  <entry>
     <title>使用存储过程</title>
     <url>/2020/05/12/%E4%BD%BF%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B-1/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍什么是存储过程，为什么要使用存储过程以及如何使用存<br>储过程，并且介绍创建和使用存储过程的基本语法。  </p>
+<p>本章介绍什么是存储过程，为什么要使用存储过程以及如何使用存储过程，并且介绍创建和使用存储过程的基本语法。  </p>
 </blockquote>
 <a id="more"></a>
 
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>存储过程简单来说，就是为以后的使用而保存的一条或多条MySQL语句的集合。可将其视为批文件，虽然它们的作用不仅限于批处理  。</p>
 <h2 id="为什么要使用存储过程"><a href="#为什么要使用存储过程" class="headerlink" title="为什么要使用存储过程"></a>为什么要使用存储过程</h2><p>理由：</p>
 <ul>
-<li>通过把处理封装在容易使用的单元中，简化复杂的操作（正如前<br>面例子所述）。</li>
-<li>由于不要求反复建立一系列处理步骤，这保证了数据的完整性。<br>如果所有开发人员和应用程序都使用同一（试验和测试）存储过<br>程，则所使用的代码都是相同的。<br>这一点的延伸就是防止错误。需要执行的步骤越多，出错的可能<br>性就越大。防止错误保证了数据的一致性。</li>
-<li>简化对变动的管理。如果表名、列名或业务逻辑（或别的内容）<br>有变化，只需要更改存储过程的代码。使用它的人员甚至不需要<br>知道这些变化。</li>
+<li>通过把处理封装在容易使用的单元中，简化复杂的操作（正如前面例子所述）。</li>
+<li>由于不要求反复建立一系列处理步骤，这保证了数据的完整性。如果所有开发人员和应用程序都使用同一（试验和测试）存储过程，则所使用的代码都是相同的。这一点的延伸就是防止错误。需要执行的步骤越多，出错的可能性就越大。防止错误保证了数据的一致性。</li>
+<li>简化对变动的管理。如果表名、列名或业务逻辑（或别的内容）有变化，只需要更改存储过程的代码。使用它的人员甚至不需要知道这些变化。</li>
 </ul>
 <p>这一点的延伸就是安全性。通过存储过程限制对基础数据的访问减少了数据讹误（无意识的或别的原因所导致的数据讹误）的机会。</p>
 <ul>
 <li>提高性能。因为使用存储过程比使用单独的SQL语句要快。</li>
-<li>存在一些只能用在单个请求中的MySQL元素和特性，存储过程可<br>以使用它们来编写功能更强更灵活的代码（在下一章的例子中可<br>以看到。）  </li>
+<li>存在一些只能用在单个请求中的MySQL元素和特性，存储过程可以使用它们来编写功能更强更灵活的代码（在下一章的例子中可以看到。）  </li>
 </ul>
-<p>换句话说，使用存储过程有3个主要的好处，即简单、安全、高性能。<br>显然，它们都很重要。不过，在将SQL代码转换为存储过程前，也必须知<br>道它的一些缺陷。  </p>
+<p>换句话说，使用存储过程有3个主要的好处，即简单、安全、高性能。显然，它们都很重要。不过，在将SQL代码转换为存储过程前，也必须知道它的一些缺陷。  </p>
 <ul>
-<li><p>一般来说，存储过程的编写比基本SQL语句复杂，编写存储过程<br>需要更高的技能，更丰富的经验。  </p>
+<li><p>一般来说，存储过程的编写比基本SQL语句复杂，编写存储过程需要更高的技能，更丰富的经验。  </p>
 </li>
-<li><p>你可能没有创建存储过程的安全访问权限。许多数据库管理员限<br>制存储过程的创建权限，允许用户使用存储过程，但不允许他们<br>创建存储过程。  </p>
+<li><p>你可能没有创建存储过程的安全访问权限。许多数据库管理员限制存储过程的创建权限，允许用户使用存储过程，但不允许他们创建存储过程。  </p>
 </li>
 </ul>
 <h2 id="eg：一个返回产品平均价格的存储过程"><a href="#eg：一个返回产品平均价格的存储过程" class="headerlink" title="eg：一个返回产品平均价格的存储过程"></a>eg：一个返回产品平均价格的存储过程</h2><p><img src="https://photos.alitaalice.cn/image/20200513001100.png" alt></p>
-<p>此存储过程名为productpricing，用CREATE PROCEDURE productpricing()语<br>句定义。如果存储过程接受参数，它们将在()中列举出来。此存储过程没<br>有参数，但后跟的()仍然需要。 BEGIN和END语句用来限定存储过程体，过<br>程体本身仅是一个简单的SELECT语句。</p>
-<p>如何使用这个存储过程呢？</p>
+<p>此存储过程名为productpricing，用CREATE PROCEDURE productpricing()语句定义。如果存储过程接受参数，它们将在()中列举出来。此存储过程没有参数，但后跟的()仍然需要。 BEGIN和END语句用来限定存储过程体，过<br>程体本身仅是一个简单的SELECT语句。如何使用这个存储过程呢？</p>
 <p><img src="https://photos.alitaalice.cn/image/20200513001134.png" alt></p>
 <p><img src="https://photos.alitaalice.cn/image/20200513001157.png" alt></p>
 <p><img src="https://photos.alitaalice.cn/image/20200513001232.png" alt></p>
@@ -1864,7 +2030,7 @@
 <p>为了显示合计：</p>
 <p>SELECT @total;</p>
 <p><img src="https://photos.alitaalice.cn/image/20200513094845.png" alt></p>
-<h2 id="建立智能存储过程"><a href="#建立智能存储过程" class="headerlink" title="建立智能存储过程"></a>建立智能存储过程</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">-- Name: ordertotal</span><br><span class="line">-- Parameters: onumber =order number</span><br><span class="line">--             taxable= <span class="number">0</span> <span class="keyword">if</span> not taxable,<span class="number">1</span> <span class="keyword">if</span> taxable</span><br><span class="line">--             ototal =order total variable</span><br><span class="line"></span><br><span class="line"><span class="function">CREATE PROCEDURE <span class="title">ordertotal</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">        IN onumber INT,</span></span></span><br><span class="line"><span class="function"><span class="params">        IN taxable BOOLEAN,</span></span></span><br><span class="line"><span class="function"><span class="params">        OUT ototal DECIMAL(<span class="number">8</span>,<span class="number">2</span>)</span></span></span><br><span class="line"><span class="function">)COMMEN 'Obtain order total,optionally adding tax'</span></span><br><span class="line"><span class="function">BEGIN</span></span><br><span class="line"><span class="function">     --Declare variable <span class="keyword">for</span> total</span></span><br><span class="line"><span class="function">     DECLARE total <span class="title">DECIMAL</span><span class="params">(<span class="number">8</span>,<span class="number">2</span>)</span></span>;</span><br><span class="line">     --Declare tax percentage</span><br><span class="line">     DECLARE taxrate INT DEFAULT <span class="number">6</span>;</span><br><span class="line">     </span><br><span class="line">     --Get the order total</span><br><span class="line">     <span class="function">SELECT <span class="title">Sum</span><span class="params">(item_price*quantity)</span></span></span><br><span class="line"><span class="function">     FROM orderitems</span></span><br><span class="line"><span class="function">     WHERE order_num </span>=onumber</span><br><span class="line">     INTO total;</span><br><span class="line">     </span><br><span class="line">     --is <span class="keyword">this</span> taxable?</span><br><span class="line">     IF taxable THEN</span><br><span class="line">        --Yes,so add taxrate to the total</span><br><span class="line">        SELECT total+(total/<span class="number">100</span>*taxrate) INTO total;</span><br><span class="line">     END IF;</span><br><span class="line">     --And <span class="keyword">finally</span>,save to out variable</span><br><span class="line">     SELECT total INTO ototal;</span><br><span class="line">    END;</span><br></pre></td></tr></table></figure>
+<h2 id="建立智能存储过程"><a href="#建立智能存储过程" class="headerlink" title="建立智能存储过程"></a>建立智能存储过程</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">-- Name: ordertotal</span><br><span class="line">-- Parameters: onumber =order number</span><br><span class="line">--             taxable= <span class="number">0</span> <span class="keyword">if</span> not taxable,<span class="number">1</span> <span class="keyword">if</span> taxable</span><br><span class="line">--             ototal =order total variable</span><br><span class="line"></span><br><span class="line"><span class="function">CREATE PROCEDURE <span class="title">ordertotal</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">        IN onumber INT,</span></span></span><br><span class="line"><span class="function"><span class="params">        IN taxable BOOLEAN,</span></span></span><br><span class="line"><span class="function"><span class="params">        OUT ototal DECIMAL(<span class="number">8</span>,<span class="number">2</span>)</span></span></span><br><span class="line"><span class="function">)COMMENT 'Obtain order total,optionally adding tax'</span></span><br><span class="line"><span class="function">BEGIN</span></span><br><span class="line"><span class="function">     --Declare variable <span class="keyword">for</span> total</span></span><br><span class="line"><span class="function">     DECLARE total <span class="title">DECIMAL</span><span class="params">(<span class="number">8</span>,<span class="number">2</span>)</span></span>;</span><br><span class="line">     --Declare tax percentage</span><br><span class="line">     DECLARE taxrate INT DEFAULT <span class="number">6</span>;</span><br><span class="line">     </span><br><span class="line">     --Get the order total</span><br><span class="line">     <span class="function">SELECT <span class="title">Sum</span><span class="params">(item_price*quantity)</span></span></span><br><span class="line"><span class="function">     FROM orderitems</span></span><br><span class="line"><span class="function">     WHERE order_num </span>=onumber</span><br><span class="line">     INTO total;</span><br><span class="line">     </span><br><span class="line">     --is <span class="keyword">this</span> taxable?</span><br><span class="line">     IF taxable THEN</span><br><span class="line">        --Yes,so add taxrate to the total</span><br><span class="line">        SELECT total+(total/<span class="number">100</span>*taxrate) INTO total;</span><br><span class="line">     END IF;</span><br><span class="line">     --And <span class="keyword">finally</span>,save to out variable</span><br><span class="line">     SELECT total INTO ototal;</span><br><span class="line">END;</span><br></pre></td></tr></table></figure>
 
 <p>为了试验它</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">CALL ordertotal(20005,0,@total);</span><br><span class="line">SELECT @total;</span><br></pre></td></tr></table></figure>
@@ -1883,6 +2049,16 @@
       <tags>
         <tag>mysql</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>创建表和操控表</title>
+    <url>/2020/05/08/%E5%88%9B%E5%BB%BA%E8%A1%A8%E5%92%8C%E6%93%8D%E6%8E%A7%E8%A1%A8/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍表的创建，更改和删除的基本知识。</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
   </entry>
   <entry>
     <title>内部类</title>
@@ -1928,14 +2104,42 @@
 ]]></content>
   </entry>
   <entry>
-    <title>创建表和操控表</title>
-    <url>/2020/05/08/%E5%88%9B%E5%BB%BA%E8%A1%A8%E5%92%8C%E6%93%8D%E6%8E%A7%E8%A1%A8/</url>
+    <title>使用游标mysql</title>
+    <url>/2020/05/14/%E4%BD%BF%E7%94%A8%E6%B8%B8%E6%A0%87mysql/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍表的创建，更改和删除的基本知识。</p>
+<p>本章介绍游标</p>
 </blockquote>
 <a id="more"></a>
 
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p> MySQL检索操作返回一组称为结果集的行。这组返回的行都是与SQL语句相匹配的行（零行或多行）。使用简单的SELECT语<br>句，例如，没有办法得到第一行、下一行或前10行，也不存在每次一行地处理所有行的简单方法（相对于成批地处理它们）  </p>
+<p>游标（cursor） 是一个存储在MySQL服务器上的数据库查询，<br>它不是一条SELECT语句，而是被该语句检索出来的结果集。在存储了游标之后，应用程序可以根据需要滚动或浏览其中的数据.  </p>
+<p>只能用于存储过程 不像多数DBMS， MySQL游标只能用于<br>存储过程（和函数）  </p>
+<h2 id="1-创建游标"><a href="#1-创建游标" class="headerlink" title="1 创建游标"></a>1 创建游标</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">CREATE PROCEDURE processorders()</span><br><span class="line">BEGIN </span><br><span class="line">   DECLARE ordernumbers CURSOR</span><br><span class="line">   FOR</span><br><span class="line">   SELECT order_num FROM orders</span><br><span class="line">END;</span><br></pre></td></tr></table></figure>
+
+<p>DECLARE语句用来定义和命名游标，这里为ordernumbers。 存储过程处理完成后，游标就消失（因为它局限于存储过程）  </p>
+<h2 id="2-打开和关闭游标"><a href="#2-打开和关闭游标" class="headerlink" title="2 打开和关闭游标"></a>2 打开和关闭游标</h2><p>输入：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">OPEN ordernumbers;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">关闭游标： CLOSE ordernumbers;</span><br></pre></td></tr></table></figure>
+
+<p>如果你不明确关闭游标，MySQL将会在到达END语句时自动关闭它。</p>
+<p>前面的例子修改版本：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">CREATE PROCEDURE <span class="title">processorders</span><span class="params">()</span></span></span><br><span class="line"><span class="function">BEGIN</span></span><br><span class="line"><span class="function">     --Declare the cursor</span></span><br><span class="line"><span class="function">     DECLARE ordernumbers CURSOR</span></span><br><span class="line"><span class="function">     FOR</span></span><br><span class="line"><span class="function">     SELECT order_num FROM orders</span>;</span><br><span class="line">     --Open the cursor</span><br><span class="line">     OPEN ordernumbers;</span><br><span class="line">     --Close the cursor</span><br><span class="line">     CLOSE ordernumbers;</span><br><span class="line">     </span><br><span class="line">     END;</span><br></pre></td></tr></table></figure>
+
+<p>声明打开和关闭一个游标。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">CREATE PROCEDURE <span class="title">processorders</span><span class="params">()</span></span></span><br><span class="line"><span class="function">BEGIN</span></span><br><span class="line"><span class="function">    --Delare local variables</span></span><br><span class="line"><span class="function">    DECLARE done BOOLEAN DEFAULT 0</span>;</span><br><span class="line">    DECLARE o INT;</span><br><span class="line">    --Declare the cursor</span><br><span class="line">    DECLARE ordernumbers CURSOR</span><br><span class="line">    FOR</span><br><span class="line">    SELECT order_num FROM orders;</span><br><span class="line">    --Declare <span class="keyword">continue</span> handler</span><br><span class="line">    DELARE CONTINUE HANDLER FOR SQLSTATE <span class="string">'02000'</span> SET done=<span class="number">1</span>;</span><br><span class="line">    --Open the cursor</span><br><span class="line">    OPEN ordernumbers;</span><br><span class="line">    --LOOP through all rows</span><br><span class="line">    REPEAT</span><br><span class="line">    </span><br><span class="line">    --GET order number</span><br><span class="line">    FETCH ordernumbers INTO o;</span><br><span class="line">    --End of loop</span><br><span class="line">    UNTIL done END REPEAT;</span><br><span class="line">    --Close the cursor</span><br><span class="line">    CLOSE ordernumbers;</span><br><span class="line">    END;</span><br></pre></td></tr></table></figure>
+
+<p>FETCH是在REPEAT内，因此它反复执行直到done为真（由UNTIL<br>done END REPEAT;规定）。为使它起作用，用一个DEFAULT 0（假，不结束）定义变量done。那么， done怎样才能在结束时被设置为真呢？答案是用以下语句：  </p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">DECLARE CONTINUE HANDLER FOR SQLSTATE <span class="string">'02000'</span> SET done=<span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<p>这条语句定义了一个CONTINUE HANDLER，它是在条件出现时被执行的代码。这里， 它指出当SQLSTATE ‘02000’出现时， SET done=1。SQLSTATE’02000’是一个未找到条件， 当REPEAT由于没有更多的行供循环而不能继续时，出现这个条件。  </p>
+]]></content>
+      <categories>
+        <category>mysql</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
   </entry>
   <entry>
     <title>创建和操纵表</title>
@@ -2024,34 +2228,6 @@
       </tags>
   </entry>
   <entry>
-    <title>基于拉链和线性探测法的散列表</title>
-    <url>/2020/05/13/%E5%9F%BA%E4%BA%8E%E6%8B%89%E9%93%BE%E5%92%8C%E7%BA%BF%E6%80%A7%E6%8E%A2%E6%B5%8B%E6%B3%95%E7%9A%84%E6%95%A3%E5%88%97%E8%A1%A8/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍基于拉链和线性探测法的散列表</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>使用散列的查找算法分为两步。第一步是用散列函数 将被查找的键转化为数组的一个索引。理想情况下，不同的键都能转化为不同的索引值。当然，这只是理想情况，所以我们需要面对两个或者多个键都会散列到相同的索引值的情况。因此，散列查找的第二步就是一个处理碰撞冲突 的过程，如图 所示。在描述了多种散列函数的计算后，我们会学习两种解决碰撞的方法：拉链法 和线性探测法 。  </p>
-<p><img src="https://photos.alitaalice.cn/image/20200514100602.png" alt></p>
-<h3 id="散列表的核心问题"><a href="#散列表的核心问题" class="headerlink" title="散列表的核心问题"></a>散列表的核心问题</h3><p>散列表是算法在时间和空间上作出权衡的 经典例子。如果没有内存限制，我们可以直接将键作为（可能是一个超大的）数组的索引，那么所有查找操作只需要访问内存一次即可完成。但这种理想情况不会经常<br>出现，因为当键很多时需要的内存太大。另一方面，如果没有时间限制，我们可以使用无序数组并进行顺序查找，这样就只需要很少的内存。而散列表则使用了适度的空间和时间并在这两个极端之间找到了一种平衡。事实上，我们不必重写代码，只需要调整散列算法的参数就可以在空间和时间之间作出取舍。我们会使用概率论的经典结论来帮助我们选择适当的参数。  </p>
-<h3 id="基于拉链法的散列表"><a href="#基于拉链法的散列表" class="headerlink" title="基于拉链法的散列表"></a>基于拉链法的散列表</h3><p>一个散列函数能够将键转化为数组索引。散列算法的第二步是碰撞处理 ，也就是处理两个或多个键的散列值相同的情况。<strong>一种直接的办法是将大小为 的数组中的每个元素指向一条链表，链表中的每个结点都存储了散列值为该元素的索引的键值对。这种方法被称为拉链法</strong> ，因为发生冲突的元素都被存储在链表中。这个方法的基本思想就是选择足够大的 ，使得所有链表都尽可能短以保证高效的查找。查找分两步：首先根据散列值找到对应的链表，然后沿着链表顺序查找相应的键。  </p>
-<h3 id="散列表的大小"><a href="#散列表的大小" class="headerlink" title="散列表的大小"></a>散列表的大小</h3><p>在实现基于拉链法的散列表时，我们的目标是选择适当的数组大小 ，既不会因为空链表而浪费大量内存，也不会因为链表太长而在查找上浪费太多时间。而拉链法的一个好处就是这并不是关键性的选择。如<br>果存入的键多于预期，查找所需的时间只会比选择更大的数组稍长；如果少于预期，虽然有些空间浪费但查找会非常快。当内存不是很紧张时，可以选择一个足够大的 ，使得查找需要的时间变为常数；当内<br>存紧张时，选择尽量大的 仍然能够将性能提高 倍。  </p>
-<h3 id="基于线性探测法的散列表"><a href="#基于线性探测法的散列表" class="headerlink" title="基于线性探测法的散列表"></a>基于线性探测法的散列表</h3><p>实现散列表的另一种方式就是用大小为 M的数组保存N 个键值对，其中 M&gt;N。我们需要依靠数组中的空位 解决碰撞冲突。基于这种策略的所有方法被统称为开放地址 散列表。  </p>
-<p>开放地址散列表中最简单的方法叫做线性探测法 ：当碰撞发生时（当一个键的散列值已经被另一个不同的键占用），我们直接检查散列表中的下一个位置（将索引值加 1）。这样的线性探测可能会产生三种结<br>果：  </p>
-<ul>
-<li>命中，该位置的键和被查找的键相同；</li>
-<li>未命中，键为空（该位置没有键）；</li>
-<li>继续查找，该位置的键和被查找的键不同。  </li>
-</ul>
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>DataStructure</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>初级排序算法</title>
     <url>/2020/05/12/%E5%88%9D%E7%BA%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -2113,16 +2289,25 @@
       </tags>
   </entry>
   <entry>
-    <title>归并排序</title>
-    <url>/2020/05/14/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/</url>
+    <title>基于拉链和线性探测法的散列表</title>
+    <url>/2020/05/13/%E5%9F%BA%E4%BA%8E%E6%8B%89%E9%93%BE%E5%92%8C%E7%BA%BF%E6%80%A7%E6%8E%A2%E6%B5%8B%E6%B3%95%E7%9A%84%E6%95%A3%E5%88%97%E8%A1%A8/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍归并排序</p>
+<p>本章介绍基于拉链和线性探测法的散列表</p>
 </blockquote>
 <a id="more"></a>
 
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>在本节中我们所讨论的算法都基于归并 这个简单的操作，即将两个有序的数组归并成一个更大的有序数组。很快人们就根据这个操作发明了一种简单的递归排序算法：<strong>归并排序</strong> 。  </p>
-<p><img src="https://photos.alitaalice.cn/image/20200514103423.png" alt></p>
-<p>​                                         归并排序示意图  </p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>使用散列的查找算法分为两步。第一步是用散列函数 将被查找的键转化为数组的一个索引。理想情况下，不同的键都能转化为不同的索引值。当然，这只是理想情况，所以我们需要面对两个或者多个键都会散列到相同的索引值的情况。因此，散列查找的第二步就是一个处理碰撞冲突 的过程，如图 所示。在描述了多种散列函数的计算后，我们会学习两种解决碰撞的方法：拉链法 和线性探测法 。  </p>
+<p><img src="https://photos.alitaalice.cn/image/20200514100602.png" alt></p>
+<h3 id="散列表的核心问题"><a href="#散列表的核心问题" class="headerlink" title="散列表的核心问题"></a>散列表的核心问题</h3><p>散列表是算法在时间和空间上作出权衡的 经典例子。如果没有内存限制，我们可以直接将键作为（可能是一个超大的）数组的索引，那么所有查找操作只需要访问内存一次即可完成。但这种理想情况不会经常<br>出现，因为当键很多时需要的内存太大。另一方面，如果没有时间限制，我们可以使用无序数组并进行顺序查找，这样就只需要很少的内存。而散列表则使用了适度的空间和时间并在这两个极端之间找到了一种平衡。事实上，我们不必重写代码，只需要调整散列算法的参数就可以在空间和时间之间作出取舍。我们会使用概率论的经典结论来帮助我们选择适当的参数。  </p>
+<h3 id="基于拉链法的散列表"><a href="#基于拉链法的散列表" class="headerlink" title="基于拉链法的散列表"></a>基于拉链法的散列表</h3><p>一个散列函数能够将键转化为数组索引。散列算法的第二步是碰撞处理 ，也就是处理两个或多个键的散列值相同的情况。<strong>一种直接的办法是将大小为 的数组中的每个元素指向一条链表，链表中的每个结点都存储了散列值为该元素的索引的键值对。这种方法被称为拉链法</strong> ，因为发生冲突的元素都被存储在链表中。这个方法的基本思想就是选择足够大的 ，使得所有链表都尽可能短以保证高效的查找。查找分两步：首先根据散列值找到对应的链表，然后沿着链表顺序查找相应的键。  </p>
+<h3 id="散列表的大小"><a href="#散列表的大小" class="headerlink" title="散列表的大小"></a>散列表的大小</h3><p>在实现基于拉链法的散列表时，我们的目标是选择适当的数组大小 ，既不会因为空链表而浪费大量内存，也不会因为链表太长而在查找上浪费太多时间。而拉链法的一个好处就是这并不是关键性的选择。如<br>果存入的键多于预期，查找所需的时间只会比选择更大的数组稍长；如果少于预期，虽然有些空间浪费但查找会非常快。当内存不是很紧张时，可以选择一个足够大的 ，使得查找需要的时间变为常数；当内<br>存紧张时，选择尽量大的 仍然能够将性能提高 倍。  </p>
+<h3 id="基于线性探测法的散列表"><a href="#基于线性探测法的散列表" class="headerlink" title="基于线性探测法的散列表"></a>基于线性探测法的散列表</h3><p>实现散列表的另一种方式就是用大小为 M的数组保存N 个键值对，其中 M&gt;N。我们需要依靠数组中的空位 解决碰撞冲突。基于这种策略的所有方法被统称为开放地址 散列表。  </p>
+<p>开放地址散列表中最简单的方法叫做线性探测法 ：当碰撞发生时（当一个键的散列值已经被另一个不同的键占用），我们直接检查散列表中的下一个位置（将索引值加 1）。这样的线性探测可能会产生三种结<br>果：  </p>
+<ul>
+<li>命中，该位置的键和被查找的键相同；</li>
+<li>未命中，键为空（该位置没有键）；</li>
+<li>继续查找，该位置的键和被查找的键不同。  </li>
+</ul>
 ]]></content>
       <categories>
         <category>算法</category>
@@ -2149,6 +2334,67 @@
 <li>要有点感觉（真正融入到书的故事中）</li>
 </ul>
 ]]></content>
+      <categories>
+        <category>杂谈</category>
+      </categories>
+      <tags>
+        <tag>杂谈</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>归并排序</title>
+    <url>/2020/05/14/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍归并排序</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>在本节中我们所讨论的算法都基于归并 这个简单的操作，即将两个有序的数组归并成一个更大的有序数组。很快人们就根据这个操作发明了一种简单的递归排序算法：<strong>归并排序</strong> 。  </p>
+<p><img src="https://photos.alitaalice.cn/image/20200514103423.png" alt></p>
+<p>​                                         归并排序示意图  </p>
+<h2 id="原地归并"><a href="#原地归并" class="headerlink" title="原地归并"></a>原地归并</h2>]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>DataStructure</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>抽象类和接口的区别详解</title>
+    <url>/2020/05/11/%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%8C%BA%E5%88%AB%E8%AF%A6%E8%A7%A3/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍抽象类和接口</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h2><p>它不能被实例化，只能被用作 子类的超类。抽象类是被用来创建继承层级里子类的模板。</p>
+<p>以JDK中的GenericServlet为例：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">GenericServlet</span> <span class="keyword">implements</span> <span class="title">Servlet</span>, <span class="title">ServletConfig</span>, <span class="title">Serializable</span> </span>&#123;</span><br><span class="line">    <span class="comment">// abstract method</span></span><br><span class="line">    <span class="function"><span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(ServletRequest req, ServletResponse res)</span></span>;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// Its implementation</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// other method related to Servlet</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当HttpServlet类继承GenericServlet时，它提供了<strong>service</strong>方法的实现。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HttpServlet</span> <span class="keyword">extends</span> <span class="title">GenericServlet</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">service</span><span class="params">(ServletRequest req, ServletResponse res)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// implementation</span></span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// Implementation</span></span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// Implementation</span></span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">// some other methods related to HttpServlet</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><p>接口是抽象方法的集合，如果一个类实现了某个接口，那么它就继承了这个接口的抽象方法，这就像契约的模式，如果实现了这个接口，那么就必须确保使用了这些方法，接口只是一种形式，它本身不能实现任何方法，以Externalizable接口为例：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Externalizable</span> <span class="keyword">extends</span> <span class="title">Serializable</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">writeExternal</span><span class="params">(ObjectOutput out)</span> <span class="keyword">throws</span> IOException</span>;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">readExternal</span><span class="params">(ObjectInput in)</span> <span class="keyword">throws</span> IOException, ClassNotFoundException</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当你继承这个接口时，你就必须实现上面的俩个方法：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Employee</span> <span class="keyword">implements</span> <span class="title">Externalizable</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">int</span> employeeId;</span><br><span class="line">    String employeeName;</span><br><span class="line"> </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">readExternal</span><span class="params">(ObjectInput in)</span> <span class="keyword">throws</span> IOException, ClassNotFoundException </span>&#123;</span><br><span class="line">        employeeId = in.readInt();</span><br><span class="line">        employeeName = (String) in.readObject();</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">writeExternal</span><span class="params">(ObjectOutput out)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line"> </span><br><span class="line">        out.writeInt(employeeId);</span><br><span class="line">        out.writeObject(employeeName);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="什么时候使用抽象类和接口？"><a href="#什么时候使用抽象类和接口？" class="headerlink" title="什么时候使用抽象类和接口？"></a>什么时候使用抽象类和接口？</h2><ul>
+<li>如果你拥有一些方法，并且想让它们中的一些有默认实现，那么使用抽象类吧</li>
+<li>如果你想实现多重继承，那么请使用接口，抽象类不允许多重继承</li>
+<li>如果基本功能在不断的进行改变，那么你就需要使用抽象类。如果不断改变基本功能，并且使用接口，那么就需要改变所有实现了该接口的类。</li>
+</ul>
+<h2 id="JAVA8中的默认方法和静态方法"><a href="#JAVA8中的默认方法和静态方法" class="headerlink" title="JAVA8中的默认方法和静态方法"></a>JAVA8中的默认方法和静态方法</h2><p>Oracle已经开始尝试向接口中引入默认方法和静态方法，依次来减少抽象类和接口之间的差异。</p>
+<p>现在我们可以为接口提供默认实现的方法并且不用强制子类来实现它。default方法。</p>
+]]></content>
+      <categories>
+        <category>面试</category>
+      </categories>
+      <tags>
+        <tag>JAVASE</tag>
+      </tags>
   </entry>
   <entry>
     <title>实习</title>
@@ -2201,12 +2447,12 @@
 </blockquote>
 <a id="more"></a>
 
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="散列函数"><a href="#散列函数" class="headerlink" title="散列函数"></a>散列函数</h2><p>我们面对的第一个问题就是散列函数的计算，这个过程会将键转化为数组的索引。如果我们有一个能够保存 M个键值对的数组，那么我们就需要一个能够将任意键转化为该数组范围内的索引([0,M-1] 范围内的整数）的散列函数 。  </p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="散列函数"><a href="#散列函数" class="headerlink" title="散列函数"></a>散列函数</h2><p>我们面对的第一个问题就是散列函数的计算，这个过程会将键转化为数组的索引。如果我们有一个能够保存 M个键值对的数组，那么我们就需要一个能够将任意键转化为该数组范围内的索引([0,M-1] 范围内的整数）的散列函数 -</p>
 <p>散列函数和键的类型有关。<strong>严格地说，对于每种类型的键都我们都需要一个与之对应的散列函数 。</strong>如果键是一个数，比如社会保险号，我们就可以直接使用这个数；如果键是一个字符串，比如一个人的名字，<br>我们就需要将这个字符串转化为一个数；<strong>如果键含有多个部分，比如邮件地址，我们需要用某种方法将这些部分结合起来</strong>。对于许多常见类型的键，我们可以利用 Java 提供的默认实现。我们会简略讨论多种数<br>据类型的散列函数。你应该看看它们是如何实现的，因为你也需要为自定义的类型实现散列函数。  </p>
 <h3 id="正整数"><a href="#正整数" class="headerlink" title="正整数"></a>正整数</h3><p>将整数散列最常用方法是<strong>除留余数法</strong> 。我们选择大小为素数 的数组，对于任意正整数 ，计算除以 的余数。这个函数的计算非常容易（在 Java 中为 k% M ）并能够有效地将键散布在 0 到M-1的范围内。  </p>
 <p><img src="https://photos.alitaalice.cn/image/20200513162105.png" alt></p>
 <h3 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h3><p>如果键是 0 到 1 之间的实数，我们可以将它乘以 并四舍五入得到一个 0 至 之间的索引值。<br>尽管这个方法很容易理解，但它是有缺陷的，因为这种情况下键的高位起的作用更大，最低位对散列的结果没有影响。修正这个问题的办法是将键表示为二进制数然后再使用除留余数法（Java 就是这么做的）  </p>
-<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><h2 id="组合键"><a href="#组合键" class="headerlink" title="组合键"></a>组合键</h2><h2 id="JAVA的约定"><a href="#JAVA的约定" class="headerlink" title="JAVA的约定"></a>JAVA的约定</h2><p>每种数据类型都需要相应的散列函数，于是 Java 令所有数据类型都继承了一个能够返回一个 32 比特整数的 hashCode() 方法。每一种数据类型的 hashCode() 方法都必须和 equals() 方法一致 。也<br>就是说，如果 a.equals(b) 返回 true ，那么 a.hashCode() 的返回值必然和 b.hashCode()的返回值相同。相反，如果两个对象的 hashCode() 方法的返回值不同，那么我们就知道这两个对象是不同的。但如果两个对象的 hashCode() 方法的返回值相同，这两个对象也有可能不同，我们还需要用equals() 方法进行判断。请注意，这说明如果你要为自定义的数据类型定义散列函数，你需要同时重写 hashCode() 和 equals() 两个方法。默认散列函数会返回对象的内存地址，但这只适用于很少的<br>情况。Java 为很多常用的数据类型重写了 hashCode() 方法（包括 String 、Integer 、Double、File 和 URL ）。  </p>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><h2 id="组合键"><a href="#组合键" class="headerlink" title="组合键"></a>组合键</h2><h2 id="JAVA的约定"><a href="#JAVA的约定" class="headerlink" title="JAVA的约定"></a>JAVA的约定</h2><p>每种数据类型都需要相应的散列函数，于是 Java 令所有数据类型都继承了一个能够返回一个 32 比特整数的 hashCode() 方法。每一种数据类型的 hashCode() 方法都必须和 equals() 方法一致 。也就是说，如果 a.equals(b) 返回 true ，那么 a.hashCode() 的返回值必然和 b.hashCode()的返回值相同。相反，如果两个对象的 hashCode() 方法的返回值不同，那么我们就知道这两个对象是不同的。但如果两个对象的 hashCode() 方法的返回值相同，这两个对象也有可能不同，我们还需要用equals() 方法进行判断。请注意，这说明如果你要为自定义的数据类型定义散列函数，你需要同时重写 hashCode() 和 equals() 两个方法。默认散列函数会返回对象的内存地址，但这只适用于很少的情况。Java 为很多常用的数据类型重写了 hashCode() 方法（包括 String 、Integer 、Double、File 和 URL ）。  </p>
 <h3 id="将hashCode-的返回值转化为一个数组索引"><a href="#将hashCode-的返回值转化为一个数组索引" class="headerlink" title="将hashCode()的返回值转化为一个数组索引"></a>将hashCode()的返回值转化为一个数组索引</h3><p>因为我们需要的是数组的索引而不是一个 32 位的整数，我们在实现中会将默认的 hashCode() 方法和除留余数法结合起来产生一个 0 到M-1 的整数，方法如下：  </p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">hash</span><span class="params">(Key x)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="keyword">return</span> (x.hashCode() &amp; <span class="number">0x7fffffff</span>) % M; &#125;</span><br></pre></td></tr></table></figure>
 
@@ -2222,90 +2468,6 @@
       </categories>
       <tags>
         <tag>DataStructure</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>抽象类和接口的区别详解</title>
-    <url>/2020/05/11/%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%8C%BA%E5%88%AB%E8%AF%A6%E8%A7%A3/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍抽象类和接口</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h2><p>它不能被实例化，只能被用作 子类的超类。抽象类是被用来创建继承层级里子类的模板。</p>
-<p>以JDK中的GenericServlet为例：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">GenericServlet</span> <span class="keyword">implements</span> <span class="title">Servlet</span>, <span class="title">ServletConfig</span>, <span class="title">Serializable</span> </span>&#123;</span><br><span class="line">    <span class="comment">// abstract method</span></span><br><span class="line">    <span class="function"><span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(ServletRequest req, ServletResponse res)</span></span>;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// Its implementation</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// other method related to Servlet</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>当HttpServlet类继承GenericServlet时，它提供了<strong>service</strong>方法的实现。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HttpServlet</span> <span class="keyword">extends</span> <span class="title">GenericServlet</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">service</span><span class="params">(ServletRequest req, ServletResponse res)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// implementation</span></span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// Implementation</span></span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// Implementation</span></span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">// some other methods related to HttpServlet</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><p>接口是抽象方法的集合，如果一个类实现了某个接口，那么它就继承了这个接口的抽象方法，这就像契约的模式，如果实现了这个接口，那么就必须确保使用了这些方法，接口只是一种形式，它本身不能实现任何方法，以Externalizable接口为例：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Externalizable</span> <span class="keyword">extends</span> <span class="title">Serializable</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">writeExternal</span><span class="params">(ObjectOutput out)</span> <span class="keyword">throws</span> IOException</span>;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">readExternal</span><span class="params">(ObjectInput in)</span> <span class="keyword">throws</span> IOException, ClassNotFoundException</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>当你继承这个接口时，你就必须实现上面的俩个方法：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Employee</span> <span class="keyword">implements</span> <span class="title">Externalizable</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">int</span> employeeId;</span><br><span class="line">    String employeeName;</span><br><span class="line"> </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">readExternal</span><span class="params">(ObjectInput in)</span> <span class="keyword">throws</span> IOException, ClassNotFoundException </span>&#123;</span><br><span class="line">        employeeId = in.readInt();</span><br><span class="line">        employeeName = (String) in.readObject();</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">writeExternal</span><span class="params">(ObjectOutput out)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line"> </span><br><span class="line">        out.writeInt(employeeId);</span><br><span class="line">        out.writeObject(employeeName);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="什么时候使用抽象类和接口？"><a href="#什么时候使用抽象类和接口？" class="headerlink" title="什么时候使用抽象类和接口？"></a>什么时候使用抽象类和接口？</h2><ul>
-<li>如果你拥有一些方法，并且想让它们中的一些有默认实现，那么使用抽象类吧</li>
-<li>如果你想实现多重继承，那么请使用接口，抽象类不允许多重继承</li>
-<li>如果基本功能在不断的进行改变，那么你就需要使用抽象类。如果不断改变基本功能，并且使用接口，那么就需要改变所有实现了该接口的类。</li>
-</ul>
-<h2 id="JAVA8中的默认方法和静态方法"><a href="#JAVA8中的默认方法和静态方法" class="headerlink" title="JAVA8中的默认方法和静态方法"></a>JAVA8中的默认方法和静态方法</h2><p>Oracle已经开始尝试向接口中引入默认方法和静态方法，依次来减少抽象类和接口之间的差异。</p>
-<p>现在我们可以为接口提供默认实现的方法并且不用强制子类来实现它。default方法。</p>
-]]></content>
-      <categories>
-        <category>面试</category>
-      </categories>
-      <tags>
-        <tag>JAVASE</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>指针</title>
-    <url>/2020/05/04/%E6%8C%87%E9%92%88/</url>
-    <content><![CDATA[<h1 id="10-1-指针变量"><a href="#10-1-指针变量" class="headerlink" title="10.1 指针变量"></a>10.1 指针变量</h1><p> 由于通过地址能访问指定的内存存储单元。可以说地址“指向”该内存单元。地址可以形象地称为指针，意思是通过指针能够找到内存单元。<br> <a id="more"></a></p>
-<h2 id="1一个变量的地址称为该变量的指针，如果有一个变量专门用来存放另一个变量的地址，那么它就是指针变量。"><a href="#1一个变量的地址称为该变量的指针，如果有一个变量专门用来存放另一个变量的地址，那么它就是指针变量。" class="headerlink" title="1一个变量的地址称为该变量的指针，如果有一个变量专门用来存放另一个变量的地址，那么它就是指针变量。"></a>1一个变量的地址称为该变量的指针，如果有一个变量专门用来存放另一个变量的地址，那么它就是指针变量。</h2><p>一般形式为：<br>类型说明 * 变量名<br>int * q;<br>C语言中提供了地址运算符“&amp;”来表示变量的地址。其中一般形式为：<br>&amp;变量名;</p>
-<h2 id="2给指针变量赋值一般有俩个方法"><a href="#2给指针变量赋值一般有俩个方法" class="headerlink" title="2给指针变量赋值一般有俩个方法"></a>2给指针变量赋值一般有俩个方法</h2><p>1   </p>
-<pre><code>int a;
-int *p=&amp;a</code></pre><p>2       </p>
-<pre><code>int a;
-int *p;
-p=&amp;a;</code></pre><h2 id="3-指针变量的引用"><a href="#3-指针变量的引用" class="headerlink" title="3 指针变量的引用"></a>3 指针变量的引用</h2><p>引用指针变量是对变量进行间接访问的一种形式</p>
-<p>对指针变量的引用形式如下：</p>
-<p>*指针变量 其含义是引用指针变量所指向的值</p>
-<h2 id="4-amp-和-的区别"><a href="#4-amp-和-的区别" class="headerlink" title="4 &amp; 和 *的区别"></a>4 &amp; 和 *的区别</h2><p> &amp;运算符是一个返回操作数地址的单目运算符，叫做取地址运算符</p>
-<p> *运算符是返回指定的地址内的变量的值，叫做指针运算符。</p>
-<h2 id="5-指针自增和自减运算"><a href="#5-指针自增和自减运算" class="headerlink" title="5 指针自增和自减运算"></a>5 指针自增和自减运算</h2><p>基本整型变量i在内存中占4个字节，指针P是指向变量i的地址的，p++是指向下一个存放基本整型数的地址。</p>
-<h2 id="6-数组与指针"><a href="#6-数组与指针" class="headerlink" title="6 数组与指针"></a>6 数组与指针</h2><p>在定义一个一维数组时，系统会在内存中为该数组分配一个存储空间，其数组的名称就是数组在内存中的首地址。<br>例如：</p>
-<p>1      </p>
-<pre><code>int *p,a[10]; 
- p=a;</code></pre><p>或</p>
-<p>2   </p>
-<pre><code>int *p,a[10]; 
-p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数组与指针" class="headerlink" title="7 二维数组与指针"></a>7 二维数组与指针</h2><p>表示二维数组中元素地址的方法：</p>
-<p>&amp;a[0][0]可以看作数组0行0列的首地址，也可以看作二维数组的首地址。</p>
-<p>&amp;a[m][n]就是第m行n列元素的地址。而a[0]+n表示第0行第n个元素的地址。</p>
-<h2 id="8指针变量作为函数参数"><a href="#8指针变量作为函数参数" class="headerlink" title="8指针变量作为函数参数"></a>8指针变量作为函数参数</h2><p>指针变量也可以作为函数参数</p>
-<p>例<br>在swap（int <em>a,int</em> b)中</p>
-<p>在函数调用的过程中，主调用函数与被调用函数之间有一个数值传递的过程。函数调用中发生的数据传递是单向的，只能把实际参数的值传递给形式参数，在函数调用的过程中，形式参数的值发生改变，但是实际参数的值不会发生变化。如果swap(int a,int b) 则不能实现x与y值的互换。</p>
-<p>通过指针传递参数可以减少值传递带来的开销，也可以使函数调用不产生值传递。</p>
-<h2 id="9返回指针值的函数"><a href="#9返回指针值的函数" class="headerlink" title="9返回指针值的函数"></a>9返回指针值的函数</h2><p>返回的值的类型为指针类型，返回指针值的函数简称为指针函数</p>
-<p>定义指针函数的一般形式为 </p>
-<p>类型名 *函数名（参数列表） </p>
-<p>如   int *fun(int x,int y)</p>
-<p>如 </p>
-<pre><code>int *per(int a,int b)
-{
- int *p;
- p=&amp;Perimeter;
- Perimeter=(a+b)*2;
- return p; 
-}</code></pre>]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>C</tag>
       </tags>
   </entry>
   <entry>
@@ -2370,42 +2532,52 @@ p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数�
       </tags>
   </entry>
   <entry>
-    <title>树</title>
-    <url>/2020/05/07/%E6%A0%91/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>树的相关概念</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="树的相关概念"><a href="#树的相关概念" class="headerlink" title="树的相关概念"></a>树的相关概念</h2><h3 id="度"><a href="#度" class="headerlink" title="度"></a>度</h3><ul>
-<li>结点拥有的子树树称为结点的度</li>
-<li>度为0的结点称为叶结点（Leaf）或者终端结点。</li>
-<li>度不为0的结点称为非终端结点或者分支结点</li>
-<li>树的度是树内各结点度的最大值</li>
-</ul>
-<h3 id="深度（Depth-或高度"><a href="#深度（Depth-或高度" class="headerlink" title="深度（Depth)或高度"></a>深度（Depth)或高度</h3><ul>
-<li>层次：结点的层次从根开始定义起，根为第一层，根的孩子为第二层，以此类推</li>
-<li>树中结点的最大层次被称为树的深度（Depth）或者高度。</li>
-</ul>
-<h3 id="有序树和无序树"><a href="#有序树和无序树" class="headerlink" title="有序树和无序树"></a>有序树和无序树</h3><p>如果将树中结点的各子树看成从左至右是由次序的，不能互换的，那么该树为有序树，否则为无序树。</p>
-<h3 id="森林"><a href="#森林" class="headerlink" title="森林"></a>森林</h3><p>森林是m（m&gt;=0)颗互不相交的树的集合。</p>
-]]></content>
+    <title>指针</title>
+    <url>/2020/05/04/%E6%8C%87%E9%92%88/</url>
+    <content><![CDATA[<h1 id="10-1-指针变量"><a href="#10-1-指针变量" class="headerlink" title="10.1 指针变量"></a>10.1 指针变量</h1><p> 由于通过地址能访问指定的内存存储单元。可以说地址“指向”该内存单元。地址可以形象地称为指针，意思是通过指针能够找到内存单元。<br> <a id="more"></a></p>
+<h2 id="1一个变量的地址称为该变量的指针，如果有一个变量专门用来存放另一个变量的地址，那么它就是指针变量。"><a href="#1一个变量的地址称为该变量的指针，如果有一个变量专门用来存放另一个变量的地址，那么它就是指针变量。" class="headerlink" title="1一个变量的地址称为该变量的指针，如果有一个变量专门用来存放另一个变量的地址，那么它就是指针变量。"></a>1一个变量的地址称为该变量的指针，如果有一个变量专门用来存放另一个变量的地址，那么它就是指针变量。</h2><p>一般形式为：<br>类型说明 * 变量名<br>int * q;<br>C语言中提供了地址运算符“&amp;”来表示变量的地址。其中一般形式为：<br>&amp;变量名;</p>
+<h2 id="2给指针变量赋值一般有俩个方法"><a href="#2给指针变量赋值一般有俩个方法" class="headerlink" title="2给指针变量赋值一般有俩个方法"></a>2给指针变量赋值一般有俩个方法</h2><p>1   </p>
+<pre><code>int a;
+int *p=&amp;a</code></pre><p>2       </p>
+<pre><code>int a;
+int *p;
+p=&amp;a;</code></pre><h2 id="3-指针变量的引用"><a href="#3-指针变量的引用" class="headerlink" title="3 指针变量的引用"></a>3 指针变量的引用</h2><p>引用指针变量是对变量进行间接访问的一种形式</p>
+<p>对指针变量的引用形式如下：</p>
+<p>*指针变量 其含义是引用指针变量所指向的值</p>
+<h2 id="4-amp-和-的区别"><a href="#4-amp-和-的区别" class="headerlink" title="4 &amp; 和 *的区别"></a>4 &amp; 和 *的区别</h2><p> &amp;运算符是一个返回操作数地址的单目运算符，叫做取地址运算符</p>
+<p> *运算符是返回指定的地址内的变量的值，叫做指针运算符。</p>
+<h2 id="5-指针自增和自减运算"><a href="#5-指针自增和自减运算" class="headerlink" title="5 指针自增和自减运算"></a>5 指针自增和自减运算</h2><p>基本整型变量i在内存中占4个字节，指针P是指向变量i的地址的，p++是指向下一个存放基本整型数的地址。</p>
+<h2 id="6-数组与指针"><a href="#6-数组与指针" class="headerlink" title="6 数组与指针"></a>6 数组与指针</h2><p>在定义一个一维数组时，系统会在内存中为该数组分配一个存储空间，其数组的名称就是数组在内存中的首地址。<br>例如：</p>
+<p>1      </p>
+<pre><code>int *p,a[10]; 
+ p=a;</code></pre><p>或</p>
+<p>2   </p>
+<pre><code>int *p,a[10]; 
+p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数组与指针" class="headerlink" title="7 二维数组与指针"></a>7 二维数组与指针</h2><p>表示二维数组中元素地址的方法：</p>
+<p>&amp;a[0][0]可以看作数组0行0列的首地址，也可以看作二维数组的首地址。</p>
+<p>&amp;a[m][n]就是第m行n列元素的地址。而a[0]+n表示第0行第n个元素的地址。</p>
+<h2 id="8指针变量作为函数参数"><a href="#8指针变量作为函数参数" class="headerlink" title="8指针变量作为函数参数"></a>8指针变量作为函数参数</h2><p>指针变量也可以作为函数参数</p>
+<p>例<br>在swap（int <em>a,int</em> b)中</p>
+<p>在函数调用的过程中，主调用函数与被调用函数之间有一个数值传递的过程。函数调用中发生的数据传递是单向的，只能把实际参数的值传递给形式参数，在函数调用的过程中，形式参数的值发生改变，但是实际参数的值不会发生变化。如果swap(int a,int b) 则不能实现x与y值的互换。</p>
+<p>通过指针传递参数可以减少值传递带来的开销，也可以使函数调用不产生值传递。</p>
+<h2 id="9返回指针值的函数"><a href="#9返回指针值的函数" class="headerlink" title="9返回指针值的函数"></a>9返回指针值的函数</h2><p>返回的值的类型为指针类型，返回指针值的函数简称为指针函数</p>
+<p>定义指针函数的一般形式为 </p>
+<p>类型名 *函数名（参数列表） </p>
+<p>如   int *fun(int x,int y)</p>
+<p>如 </p>
+<pre><code>int *per(int a,int b)
+{
+ int *p;
+ p=&amp;Perimeter;
+ Perimeter=(a+b)*2;
+ return p; 
+}</code></pre>]]></content>
       <categories>
-        <category>算法</category>
+        <category>后端</category>
       </categories>
       <tags>
-        <tag>DataStructure</tag>
+        <tag>C</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>观察者模式</title>
-    <url>/2020/05/14/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
   </entry>
   <entry>
     <title>线性表</title>
@@ -2459,37 +2631,41 @@ p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数�
       </tags>
   </entry>
   <entry>
-    <title>网络基础TCP/IP</title>
-    <url>/2020/05/13/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80TCP-IP/</url>
+    <title>观察者模式</title>
+    <url>/2020/05/14/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍网络基础TCP/IP</p>
+<p>本章介绍</p>
 </blockquote>
 <a id="more"></a>
 
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="1-TCP-IP的定义"><a href="#1-TCP-IP的定义" class="headerlink" title="1 TCP/IP的定义"></a>1 TCP/IP的定义</h2><p>定义：计算机与网络设备要相互通信，双方就必须基于相同的方法。比如，如何探测到通信目标、由哪一边先发起通信、使用哪种语言进行通信、怎样结束通信等规则都需要事先确定。不同的硬件、操作系统之间的通信，所有的这一切都需要一种规则。而我们就把这种规则称为协议（protocol）。  </p>
-<p><img src="https://photos.alitaalice.cn/image/20200513211754.png" alt></p>
-<p>图：TCP/IP 是互联网相关的各类协议族的总称  </p>
-<h2 id="2-TCP-IP的分层管理"><a href="#2-TCP-IP的分层管理" class="headerlink" title="2 TCP/IP的分层管理"></a>2 TCP/IP的分层管理</h2><p>TCP/IP 协议族里重要的一点就是分层。TCP/IP 协议族按层次分别分为以下 4 层：应用层、传输层、网络层和数据链路层。  </p>
-<p>把 TCP/IP 层次化是有好处的。比如，如果互联网只由一个协议统筹，某个地方需要改变设计时，就必须把所有部分整体替换掉。而分层之后只需把变动的层替换掉即可。把各层之间的接口部分规划好之后，每个层次内部的设计就能够自由改动了。  </p>
-<h3 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h3><p><strong>应用层决定了向用户提供应用服务时通信的活动。</strong><br>TCP/IP 协议族内预存了各类通用的应用服务。比如，FTP（File Transfer Protocol，文件传输协议）和DNS（Domain Name System，域名系统）服务就是其中两类。<br>HTTP 协议也处于该层。  </p>
-<h3 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h3><p>传输层对上层应用层，提供处于网络连接中的两台计算机之间的数据传输。<strong>在传输层有两个性质不同的协议：TCP（Transmission Control Protocol，传输控制协议）和 UDP（User Data Protocol，用户数据报协议）</strong>  </p>
-<h2 id="网络层（又名网络互连层）"><a href="#网络层（又名网络互连层）" class="headerlink" title="网络层（又名网络互连层）"></a>网络层（又名网络互连层）</h2><p>网络层用来处理在网络上流动的数据包。数据包是网络传输的最小数据单位。<strong>该层规定了通过怎样的路径（所谓的传输路线）到达对方计算机，并把数据包传送给对方。</strong><br>与对方计算机之间通过多台计算机或网络设备进行传输时，网络层所起的作用就是在众多的选项内选择一条传输路线。  </p>
-<h2 id="链路层（又名数据链路层，网络接口层）"><a href="#链路层（又名数据链路层，网络接口层）" class="headerlink" title="链路层（又名数据链路层，网络接口层）"></a>链路层（又名数据链路层，网络接口层）</h2><p>用来处理连接网络的硬件部分。包括控制操作系统、硬件的设备驱动、NIC（Network Interface Card，网络适配器，即网卡），及光纤等物理可见部分（还包括连接器等一切传输媒介）。硬件上的范畴均在链<br>路层的作用范围之内。  </p>
-<h2 id="3-流程"><a href="#3-流程" class="headerlink" title="3 流程"></a>3 流程</h2><p><img src="https://photos.alitaalice.cn/image/20200513213825.png" alt></p>
-<p>利用 TCP/IP 协议族进行网络通信时，会通过分层顺序与对方进行通信。发送端从应用层往下走，接收端则往应用层往上走。<br>我们用 HTTP 举例来说明，首先作为发送端的客户端在应用层（HTTP 协议）发出一个想看某个 Web 页面的 HTTP 请求。</p>
-<p>接着，为了传输方便，在传输层（TCP 协议）把从应用层处收到的数据（HTTP 请求报文）进行分割，并在各个报文上打上标记序号及端口号后转发给网络层。</p>
-<p>在网络层（IP 协议），增加作为通信目的地的 MAC 地址后转发给链路层。这样一来，发往网络的通信请求就准备齐全了。<br>接收端的服务器在链路层接收到数据，按序往上层发送，一直到应用层。当传输到应用层，才能算真正接收到由客户端发送过来的 HTTP 请求。  </p>
-<p><img src="https://photos.alitaalice.cn/image/20200513214119.png" alt></p>
-<p>发送端在层与层之间传输数据时，每经过一层时必定会被打上一个该层所属的首部信息。反之，接收端在层与层传输数据时，每经过一层时会把对应的首部消去。<br>这种把数据信息包装起来的做法称为封装（encapsulate）  </p>
-<h2 id="4-IP-TCP-DNS"><a href="#4-IP-TCP-DNS" class="headerlink" title="4 IP.TCP.DNS"></a>4 IP.TCP.DNS</h2><h3 id="4-1-IP"><a href="#4-1-IP" class="headerlink" title="4.1 IP"></a>4.1 IP</h3><p>按层次分，IP（Internet Protocol）网际协议位于网络层。  可能有人会把“IP”和“IP 地址”搞混，“IP”其实是一种协议的名称  </p>
-<p>IP 协议的作用是把各种数据包传送给对方。而要保证确实传送到对方那里，则需要满足各类条件。其中两个重要的条件是 IP 地址和 MAC 地址（Media Access Control Address）  </p>
-<p>IP 地址指明了节点被分配到的地址，MAC 地址是指网卡所属的固定地址。IP 地址可以和 MAC 地址进行配对。IP 地址可变换，但 MAC 地址基本上不会更改。  </p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
+  </entry>
+  <entry>
+    <title>树</title>
+    <url>/2020/05/07/%E6%A0%91/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>树的相关概念</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="树的相关概念"><a href="#树的相关概念" class="headerlink" title="树的相关概念"></a>树的相关概念</h2><h3 id="度"><a href="#度" class="headerlink" title="度"></a>度</h3><ul>
+<li>结点拥有的子树树称为结点的度</li>
+<li>度为0的结点称为叶结点（Leaf）或者终端结点。</li>
+<li>度不为0的结点称为非终端结点或者分支结点</li>
+<li>树的度是树内各结点度的最大值</li>
+</ul>
+<h3 id="深度（Depth-或高度"><a href="#深度（Depth-或高度" class="headerlink" title="深度（Depth)或高度"></a>深度（Depth)或高度</h3><ul>
+<li>层次：结点的层次从根开始定义起，根为第一层，根的孩子为第二层，以此类推</li>
+<li>树中结点的最大层次被称为树的深度（Depth）或者高度。</li>
+</ul>
+<h3 id="有序树和无序树"><a href="#有序树和无序树" class="headerlink" title="有序树和无序树"></a>有序树和无序树</h3><p>如果将树中结点的各子树看成从左至右是由次序的，不能互换的，那么该树为有序树，否则为无序树。</p>
+<h3 id="森林"><a href="#森林" class="headerlink" title="森林"></a>森林</h3><p>森林是m（m&gt;=0)颗互不相交的树的集合。</p>
 ]]></content>
       <categories>
-        <category>计网</category>
+        <category>算法</category>
       </categories>
       <tags>
-        <tag>TCP/IP</tag>
+        <tag>DataStructure</tag>
       </tags>
   </entry>
   <entry>
@@ -2547,6 +2723,40 @@ p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数�
       </categories>
       <tags>
         <tag>DataStructure</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>网络基础TCP/IP</title>
+    <url>/2020/05/13/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80TCP-IP/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍网络基础TCP/IP</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="1-TCP-IP的定义"><a href="#1-TCP-IP的定义" class="headerlink" title="1 TCP/IP的定义"></a>1 TCP/IP的定义</h2><p>定义：计算机与网络设备要相互通信，双方就必须基于相同的方法。比如，如何探测到通信目标、由哪一边先发起通信、使用哪种语言进行通信、怎样结束通信等规则都需要事先确定。不同的硬件、操作系统之间的通信，所有的这一切都需要一种规则。而我们就把这种规则称为协议（protocol）。  </p>
+<p><img src="https://photos.alitaalice.cn/image/20200513211754.png" alt></p>
+<p>图：TCP/IP 是互联网相关的各类协议族的总称  </p>
+<h2 id="2-TCP-IP的分层管理"><a href="#2-TCP-IP的分层管理" class="headerlink" title="2 TCP/IP的分层管理"></a>2 TCP/IP的分层管理</h2><p>TCP/IP 协议族里重要的一点就是分层。TCP/IP 协议族按层次分别分为以下 4 层：应用层、传输层、网络层和数据链路层。  </p>
+<p>把 TCP/IP 层次化是有好处的。比如，如果互联网只由一个协议统筹，某个地方需要改变设计时，就必须把所有部分整体替换掉。而分层之后只需把变动的层替换掉即可。把各层之间的接口部分规划好之后，每个层次内部的设计就能够自由改动了。  </p>
+<h3 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h3><p><strong>应用层决定了向用户提供应用服务时通信的活动。</strong><br>TCP/IP 协议族内预存了各类通用的应用服务。比如，FTP（File Transfer Protocol，文件传输协议）和DNS（Domain Name System，域名系统）服务就是其中两类。<br>HTTP 协议也处于该层。  </p>
+<h3 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h3><p>传输层对上层应用层，提供处于网络连接中的两台计算机之间的数据传输。<strong>在传输层有两个性质不同的协议：TCP（Transmission Control Protocol，传输控制协议）和 UDP（User Data Protocol，用户数据报协议）</strong>  </p>
+<h2 id="网络层（又名网络互连层）"><a href="#网络层（又名网络互连层）" class="headerlink" title="网络层（又名网络互连层）"></a>网络层（又名网络互连层）</h2><p>网络层用来处理在网络上流动的数据包。数据包是网络传输的最小数据单位。<strong>该层规定了通过怎样的路径（所谓的传输路线）到达对方计算机，并把数据包传送给对方。</strong><br>与对方计算机之间通过多台计算机或网络设备进行传输时，网络层所起的作用就是在众多的选项内选择一条传输路线。  </p>
+<h2 id="链路层（又名数据链路层，网络接口层）"><a href="#链路层（又名数据链路层，网络接口层）" class="headerlink" title="链路层（又名数据链路层，网络接口层）"></a>链路层（又名数据链路层，网络接口层）</h2><p>用来处理连接网络的硬件部分。包括控制操作系统、硬件的设备驱动、NIC（Network Interface Card，网络适配器，即网卡），及光纤等物理可见部分（还包括连接器等一切传输媒介）。硬件上的范畴均在链<br>路层的作用范围之内。  </p>
+<h2 id="3-流程"><a href="#3-流程" class="headerlink" title="3 流程"></a>3 流程</h2><p><img src="https://photos.alitaalice.cn/image/20200513213825.png" alt></p>
+<p>利用 TCP/IP 协议族进行网络通信时，会通过分层顺序与对方进行通信。发送端从应用层往下走，接收端则往应用层往上走。<br>我们用 HTTP 举例来说明，首先作为发送端的客户端在应用层（HTTP 协议）发出一个想看某个 Web 页面的 HTTP 请求。</p>
+<p>接着，为了传输方便，在传输层（TCP 协议）把从应用层处收到的数据（HTTP 请求报文）进行分割，并在各个报文上打上标记序号及端口号后转发给网络层。</p>
+<p>在网络层（IP 协议），增加作为通信目的地的 MAC 地址后转发给链路层。这样一来，发往网络的通信请求就准备齐全了。<br>接收端的服务器在链路层接收到数据，按序往上层发送，一直到应用层。当传输到应用层，才能算真正接收到由客户端发送过来的 HTTP 请求。  </p>
+<p><img src="https://photos.alitaalice.cn/image/20200513214119.png" alt></p>
+<p>发送端在层与层之间传输数据时，每经过一层时必定会被打上一个该层所属的首部信息。反之，接收端在层与层传输数据时，每经过一层时会把对应的首部消去。<br>这种把数据信息包装起来的做法称为封装（encapsulate）  </p>
+<h2 id="4-IP-TCP-DNS"><a href="#4-IP-TCP-DNS" class="headerlink" title="4 IP.TCP.DNS"></a>4 IP.TCP.DNS</h2><h3 id="4-1-IP"><a href="#4-1-IP" class="headerlink" title="4.1 IP"></a>4.1 IP</h3><p>按层次分，IP（Internet Protocol）网际协议位于网络层。  可能有人会把“IP”和“IP 地址”搞混，“IP”其实是一种协议的名称  </p>
+<p>IP 协议的作用是把各种数据包传送给对方。而要保证确实传送到对方那里，则需要满足各类条件。其中两个重要的条件是 IP 地址和 MAC 地址（Media Access Control Address）  </p>
+<p>IP 地址指明了节点被分配到的地址，MAC 地址是指网卡所属的固定地址。IP 地址可以和 MAC 地址进行配对。IP 地址可变换，但 MAC 地址基本上不会更改。  </p>
+]]></content>
+      <categories>
+        <category>计网</category>
+      </categories>
+      <tags>
+        <tag>TCP/IP</tag>
       </tags>
   </entry>
 </search>
