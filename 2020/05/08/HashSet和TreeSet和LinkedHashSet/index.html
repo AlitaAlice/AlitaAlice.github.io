@@ -267,7 +267,7 @@
 <p><strong>元素的哈希值是通过元素的hashcode方法来获取的，HashSet首先判断俩个元素的哈希值，如果哈希值一样，那么接着比较equals方法，如果equals结果为true。HashSet就会视作同一个元素。如果equals为false 就不是同一个元素。</strong></p>
 <h3 id="哈希值相同equals为flase的元素是怎么存储的呢？"><a href="#哈希值相同equals为flase的元素是怎么存储的呢？" class="headerlink" title="哈希值相同equals为flase的元素是怎么存储的呢？"></a>哈希值相同equals为flase的元素是怎么存储的呢？</h3><p>就是在同样的哈希值下顺延。也就是哈希值一样的存一列。</p>
 <p>HashTable</p>
-<p><img src="/2020/05/08/HashSet%E5%92%8CTreeSet%E5%92%8CLinkedHashSet/hashtable.png" alt></p>
+<p><img src="hashtable.png" alt=""></p>
 <p>图1：hashCode值不相同的情况</p>
 <p>图2：hashCode值相同，但equals不相同的情况。</p>
 <h3 id="HashSet到底是如何判断俩个元素重复"><a href="#HashSet到底是如何判断俩个元素重复" class="headerlink" title="HashSet到底是如何判断俩个元素重复"></a>HashSet到底是如何判断俩个元素重复</h3><p>通过hashCode方法和equals方法来保证元素的唯一性，add()返回的是boolean类型</p>
@@ -418,20 +418,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">55</span>
+          <span class="site-state-item-count">66</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -471,12 +471,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">82k</span>
+    <span title="Symbols count total">91k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:15</span>
+    <span title="Reading time total">1:23</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
   </div>

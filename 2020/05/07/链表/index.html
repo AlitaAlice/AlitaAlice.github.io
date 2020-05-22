@@ -270,7 +270,7 @@
 <p>假设p是指向线性表第i个元素的指针，则该结点ai的数据域 可以用p-&gt;data 来表示</p>
 <p>结点ai的指针域用p-&gt;next来表示。p-&gt;next指向第i-1个元素，即指向ai+1的指针。即p-&gt;data=ai</p>
 <p>那么p-&gt;next-&gt;data=ai+1</p>
-<p><img src="/2020/05/07/%E9%93%BE%E8%A1%A8/%E9%93%BE%E8%A1%A801.png" alt></p>
+<p><img src="%E9%93%BE%E8%A1%A801.png" alt=""></p>
 <h2 id="单链表的读取"><a href="#单链表的读取" class="headerlink" title="单链表的读取"></a>单链表的读取</h2><p>算法思路：<br>从第一个头结点开始，指针域p-&gt; next一直向下指向第i个元素的指针域。</p>
 <ol>
 <li>声明指针p指向链表的第一个结点 ，初始化从1开始</li>
@@ -282,7 +282,7 @@
 
 <h2 id="单链表的插入与删除"><a href="#单链表的插入与删除" class="headerlink" title="单链表的插入与删除"></a>单链表的插入与删除</h2><h3 id="单链表插入"><a href="#单链表插入" class="headerlink" title="单链表插入"></a>单链表插入</h3><p>思路：在俩节点之间再插入一个结点</p>
 <p>图示：</p>
-<p><img src="/2020/05/07/%E9%93%BE%E8%A1%A8/%E9%93%BE%E8%A1%A802.png" alt></p>
+<p><img src="%E9%93%BE%E8%A1%A802.png" alt=""></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s-&gt;next=p-&gt;next;</span><br><span class="line">p-next=s;   <span class="comment">/*单链表插入标准语句 */</span></span><br></pre></td></tr></table></figure>
 
 <p>实现插入操作的具体思路：</p>
@@ -294,7 +294,7 @@
 
 <p>malloc  函数，生成一个新的结点，其类型与Node一样的，其实质就是在内存中找一小块空地，准备用来存放数据e的s结点。</p>
 <h2 id="单链表的删除："><a href="#单链表的删除：" class="headerlink" title="单链表的删除："></a>单链表的删除：</h2><p>图示：</p>
-<p><img src="/2020/05/07/%E9%93%BE%E8%A1%A8/%E9%93%BE%E8%A1%A803.png" alt></p>
+<p><img src="%E9%93%BE%E8%A1%A803.png" alt=""></p>
 <p>实际上就是p-&gt;next=p-&gt;next-&gt;next;</p>
 <p>如果用q来表示p-&gt;next即</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">q=p-&gt;next;</span><br><span class="line">p-&gt;next=q-&gt;next;</span><br></pre></td></tr></table></figure>
@@ -411,20 +411,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">55</span>
+          <span class="site-state-item-count">66</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -464,12 +464,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">82k</span>
+    <span title="Symbols count total">91k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:15</span>
+    <span title="Reading time total">1:23</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
   </div>

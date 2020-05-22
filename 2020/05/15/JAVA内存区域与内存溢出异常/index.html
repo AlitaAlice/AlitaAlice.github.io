@@ -269,14 +269,14 @@
 
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>类文件(<code>.class</code>文件扩展名)是包含Java字节码 <code>ByteCode</code>的文件，可以在Java虚拟机上执行，每个类文件包含了一个类，接口或者模块（Java 9）的定义.Java程序（<code>.java</code> 文件）可以通过 Java compiler 生成字节码文件，其他基于JVM的语言也都可以通过自己的编译器生成字节码文件，例如Scala，Groovy等JVM是与平台无关的，类文件可以在多个平台上执行，这使得相应的语言也与平台无关.</p>
 <h2 id="JVM的内存布局"><a href="#JVM的内存布局" class="headerlink" title="JVM的内存布局"></a>JVM的内存布局</h2><p>虚拟机中，Java 内存区域可以划分为 6 个部分，程序计数器、虚拟机栈、本地方法栈（以上三个是线程私有的）、堆和方法区（里面有常量池，方法区与堆是线程共享的 )、直接内存（不受 JVM GC 管理）。除了直接内存，其他都是运行时数据区。</p>
-<p><img src="https://photos.alitaalice.cn/image/20200517164736.png" alt></p>
-<h2 id="对象的创建"><a href="#对象的创建" class="headerlink" title="对象的创建"></a>对象的创建</h2><p><img src="https://photos.alitaalice.cn/image/20200517165000.png" alt></p>
-<p><img src="https://photos.alitaalice.cn/image/20200517165050.png" alt></p>
-<h2 id="对象的内存布局"><a href="#对象的内存布局" class="headerlink" title="对象的内存布局"></a>对象的内存布局</h2><p><img src="https://photos.alitaalice.cn/image/20200517164220.png" alt></p>
-<p><img src="https://photos.alitaalice.cn/image/20200517165147.png" alt></p>
-<p><img src="https://photos.alitaalice.cn/image/20200517165221.png" alt></p>
-<p><img src="https://photos.alitaalice.cn/image/20200517165249.png" alt></p>
-<p><img src="https://photos.alitaalice.cn/image/20200517165303.png" alt></p>
+<p><img src="https://photos.alitaalice.cn/image/20200517164736.png" alt=""></p>
+<h2 id="对象的创建"><a href="#对象的创建" class="headerlink" title="对象的创建"></a>对象的创建</h2><p><img src="https://photos.alitaalice.cn/image/20200517165000.png" alt=""></p>
+<p><img src="https://photos.alitaalice.cn/image/20200517165050.png" alt=""></p>
+<h2 id="对象的内存布局"><a href="#对象的内存布局" class="headerlink" title="对象的内存布局"></a>对象的内存布局</h2><p><img src="https://photos.alitaalice.cn/image/20200517164220.png" alt=""></p>
+<p><img src="https://photos.alitaalice.cn/image/20200517165147.png" alt=""></p>
+<p><img src="https://photos.alitaalice.cn/image/20200517165221.png" alt=""></p>
+<p><img src="https://photos.alitaalice.cn/image/20200517165249.png" alt=""></p>
+<p><img src="https://photos.alitaalice.cn/image/20200517165303.png" alt=""></p>
 
     </div>
 
@@ -298,7 +298,10 @@
     <a href="/2020/05/15/%E4%BD%BF%E7%94%A8%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/" rel="prev" title="使用事务处理">
       <i class="fa fa-chevron-left"></i> 使用事务处理
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/05/17/%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E6%80%A7/" rel="next" title="线程安全性">
+      线程安全性 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -382,20 +385,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">55</span>
+          <span class="site-state-item-count">66</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -435,12 +438,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">82k</span>
+    <span title="Symbols count total">91k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:15</span>
+    <span title="Reading time total">1:23</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
   </div>
