@@ -122,6 +122,54 @@
       </tags>
   </entry>
   <entry>
+    <title>JAVA_String_API</title>
+    <url>/2020/05/06/JAVA-String-API/</url>
+    <content><![CDATA[<p>String API</p>
+<ul>
+<li>append()</li>
+</ul>
+<p>  在由许多小段的字符串构建一个字符串时，则使用StringBuilder类（字符串构造器）</p>
+<p>  首先构造一个空的字符串构造器：<br>  <a id="more"></a></p>
+  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">StringBuilder builder =<span class="keyword">new</span> StringBuilder();</span><br></pre></td></tr></table></figure>
+
+<p>  当需要添加一部分内容时，调用append()方法</p>
+  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">builder.append(ch);</span><br><span class="line">builder.append(str);</span><br><span class="line">String completedString=builder.toString(); <span class="comment">/*调用toString()方法，得到String对象。*/</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>char charAt(int index)</p>
+<p>返回给定位置的代码单元。</p>
+</li>
+<li><p>int length()</p>
+</li>
+</ul>
+<p>​         返回字符串代码单元的个数</p>
+<ul>
+<li><p>String repeat(int count)</p>
+<p>返回一个字符串，将当前字符重复count次</p>
+</li>
+<li><p>boolean equals() </p>
+<p>用来检测俩个字符串是否相等</p>
+<p>boolean equalsIgnoreCase() </p>
+<p>用来检测俩个字符串是否相等（不区分大小写）</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="string">"hello"</span>.equals(greeting);</span><br><span class="line"><span class="string">"HELLO"</span>.equalsIgnoreCase(<span class="string">"hello"</span>); <span class="comment">/* 不区分大小写 */</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注意：</p>
+<p><strong>不要用==运算符检测是否相等。</strong></p>
+<p><strong>这个运算符只能够确定俩个字符串是否存放在同一个位置上。</strong>当然如果字符串存放在同一个位置上，它们必然相等，但是完全有可能把内容相同的多个字符串副本放置在不同的位置上。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String greeting=<span class="string">"Hello"</span>;</span><br><span class="line"><span class="keyword">if</span>(greeting ==<span class="string">"Hello"</span>)</span><br><span class="line">  -- <span class="keyword">true</span></span><br><span class="line"> <span class="keyword">if</span>(greeting.substring(<span class="number">0</span>,<span class="number">3</span>)==<span class="string">"Hel"</span>)</span><br><span class="line">  --<span class="keyword">false</span></span><br></pre></td></tr></table></figure>
+
+<p>实际上只有字符串字面量共享，而+或者substring操作得到的字符串并不共享。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>JAVASE</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>HashMap默认加载因子为什么选择0.75</title>
     <url>/2020/05/13/HashMap%E9%BB%98%E8%AE%A4%E5%8A%A0%E8%BD%BD%E5%9B%A0%E5%AD%90%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A90.75/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -205,54 +253,6 @@
       </tags>
   </entry>
   <entry>
-    <title>JAVA_String_API</title>
-    <url>/2020/05/06/JAVA-String-API/</url>
-    <content><![CDATA[<p>String API</p>
-<ul>
-<li>append()</li>
-</ul>
-<p>  在由许多小段的字符串构建一个字符串时，则使用StringBuilder类（字符串构造器）</p>
-<p>  首先构造一个空的字符串构造器：<br>  <a id="more"></a></p>
-  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">StringBuilder builder =<span class="keyword">new</span> StringBuilder();</span><br></pre></td></tr></table></figure>
-
-<p>  当需要添加一部分内容时，调用append()方法</p>
-  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">builder.append(ch);</span><br><span class="line">builder.append(str);</span><br><span class="line">String completedString=builder.toString(); <span class="comment">/*调用toString()方法，得到String对象。*/</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>char charAt(int index)</p>
-<p>返回给定位置的代码单元。</p>
-</li>
-<li><p>int length()</p>
-</li>
-</ul>
-<p>​         返回字符串代码单元的个数</p>
-<ul>
-<li><p>String repeat(int count)</p>
-<p>返回一个字符串，将当前字符重复count次</p>
-</li>
-<li><p>boolean equals() </p>
-<p>用来检测俩个字符串是否相等</p>
-<p>boolean equalsIgnoreCase() </p>
-<p>用来检测俩个字符串是否相等（不区分大小写）</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="string">"hello"</span>.equals(greeting);</span><br><span class="line"><span class="string">"HELLO"</span>.equalsIgnoreCase(<span class="string">"hello"</span>); <span class="comment">/* 不区分大小写 */</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>注意：</p>
-<p><strong>不要用==运算符检测是否相等。</strong></p>
-<p><strong>这个运算符只能够确定俩个字符串是否存放在同一个位置上。</strong>当然如果字符串存放在同一个位置上，它们必然相等，但是完全有可能把内容相同的多个字符串副本放置在不同的位置上。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String greeting=<span class="string">"Hello"</span>;</span><br><span class="line"><span class="keyword">if</span>(greeting ==<span class="string">"Hello"</span>)</span><br><span class="line">  -- <span class="keyword">true</span></span><br><span class="line"> <span class="keyword">if</span>(greeting.substring(<span class="number">0</span>,<span class="number">3</span>)==<span class="string">"Hel"</span>)</span><br><span class="line">  --<span class="keyword">false</span></span><br></pre></td></tr></table></figure>
-
-<p>实际上只有字符串字面量共享，而+或者substring操作得到的字符串并不共享。</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>JAVASE</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JAVA中this和super的用法总结</title>
     <url>/2020/05/09/JAVA%E4%B8%ADthis%E5%92%8Csuper%E7%9A%84%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -313,6 +313,80 @@
       </tags>
   </entry>
   <entry>
+    <title>JAVA中的输入与输出</title>
+    <url>/2020/05/06/JAVA%E4%B8%AD%E7%9A%84%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA/</url>
+    <content><![CDATA[<h1 id="JAVA中的输入"><a href="#JAVA中的输入" class="headerlink" title="JAVA中的输入"></a>JAVA中的输入</h1><h2 id="读取输入"><a href="#读取输入" class="headerlink" title="读取输入"></a>读取输入</h2><p>  要想通过输入台进行输入，首先需要构造一个与“标准输入流”System.in关联的Scanner对象。<br>  <a id="more"></a></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Scanner scanner=<span class="keyword">new</span> Scanner(System.in);</span><br></pre></td></tr></table></figure>
+
+<p>Scanner类中的方法：</p>
+<p>API  JAVA.util.Scanner</p>
+<table>
+<thead>
+<tr>
+<th>String nextLine()</th>
+<th>读取输入的下一行内容  以enter作为结束符  能得到带空格的字符串</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>String next()</td>
+<td>读取输入的下一个单词（以空格作为分隔符）空格视而不见</td>
+</tr>
+<tr>
+<td>int nextInt()</td>
+<td>只读取int值</td>
+</tr>
+<tr>
+<td>double nextDouble()</td>
+<td>只读取double值</td>
+</tr>
+<tr>
+<td>boolean hasNext()</td>
+<td>检测输入中是否还有其他的单词</td>
+</tr>
+<tr>
+<td>boolean hasNextInt()</td>
+<td>检测输入中是否还有表示整数</td>
+</tr>
+<tr>
+<td>boolean hasNextDouble()</td>
+<td>检测输入中是否还有表示浮点数</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>JAVASE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JAVA内存区域与内存溢出异常</title>
+    <url>/2020/05/15/JAVA%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F%E4%B8%8E%E5%86%85%E5%AD%98%E6%BA%A2%E5%87%BA%E5%BC%82%E5%B8%B8/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍JAVA内存区域与内存溢出异常</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>类文件(<code>.class</code>文件扩展名)是包含Java字节码 <code>ByteCode</code>的文件，可以在Java虚拟机上执行，每个类文件包含了一个类，接口或者模块（Java 9）的定义.Java程序（<code>.java</code> 文件）可以通过 Java compiler 生成字节码文件，其他基于JVM的语言也都可以通过自己的编译器生成字节码文件，例如Scala，Groovy等JVM是与平台无关的，类文件可以在多个平台上执行，这使得相应的语言也与平台无关.</p>
+<h2 id="JVM的内存布局"><a href="#JVM的内存布局" class="headerlink" title="JVM的内存布局"></a>JVM的内存布局</h2><p>虚拟机中，Java 内存区域可以划分为 6 个部分，程序计数器、虚拟机栈、本地方法栈（以上三个是线程私有的）、堆和方法区（里面有常量池，方法区与堆是线程共享的 )、直接内存（不受 JVM GC 管理）。除了直接内存，其他都是运行时数据区。</p>
+<p><img src="https://photos.alitaalice.cn/image/20200517164736.png" alt=""></p>
+<h2 id="对象的创建"><a href="#对象的创建" class="headerlink" title="对象的创建"></a>对象的创建</h2><p><img src="https://photos.alitaalice.cn/image/20200517165000.png" alt=""></p>
+<p><img src="https://photos.alitaalice.cn/image/20200517165050.png" alt=""></p>
+<h2 id="对象的内存布局"><a href="#对象的内存布局" class="headerlink" title="对象的内存布局"></a>对象的内存布局</h2><p><img src="https://photos.alitaalice.cn/image/20200517164220.png" alt=""></p>
+<p><img src="https://photos.alitaalice.cn/image/20200517165147.png" alt=""></p>
+<p><img src="https://photos.alitaalice.cn/image/20200517165221.png" alt=""></p>
+<p><img src="https://photos.alitaalice.cn/image/20200517165249.png" alt=""></p>
+<p><img src="https://photos.alitaalice.cn/image/20200517165303.png" alt=""></p>
+]]></content>
+      <categories>
+        <category>JVM</category>
+      </categories>
+      <tags>
+        <tag>JVM</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JAVA和C++的区别</title>
     <url>/2020/05/11/JAVA%E5%92%8CC++%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -363,80 +437,6 @@
 </li>
 </ul>
 <p>  <strong>注意：静态方法不能被重写，所以也不存在多态，即使向上转型，子类重写了父类的静态方法，子类调用父类的静态方法，输出依然是父类静态方法中的值。</strong></p>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>JAVASE</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JAVA内存区域与内存溢出异常</title>
-    <url>/2020/05/15/JAVA%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F%E4%B8%8E%E5%86%85%E5%AD%98%E6%BA%A2%E5%87%BA%E5%BC%82%E5%B8%B8/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍JAVA内存区域与内存溢出异常</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>类文件(<code>.class</code>文件扩展名)是包含Java字节码 <code>ByteCode</code>的文件，可以在Java虚拟机上执行，每个类文件包含了一个类，接口或者模块（Java 9）的定义.Java程序（<code>.java</code> 文件）可以通过 Java compiler 生成字节码文件，其他基于JVM的语言也都可以通过自己的编译器生成字节码文件，例如Scala，Groovy等JVM是与平台无关的，类文件可以在多个平台上执行，这使得相应的语言也与平台无关.</p>
-<h2 id="JVM的内存布局"><a href="#JVM的内存布局" class="headerlink" title="JVM的内存布局"></a>JVM的内存布局</h2><p>虚拟机中，Java 内存区域可以划分为 6 个部分，程序计数器、虚拟机栈、本地方法栈（以上三个是线程私有的）、堆和方法区（里面有常量池，方法区与堆是线程共享的 )、直接内存（不受 JVM GC 管理）。除了直接内存，其他都是运行时数据区。</p>
-<p><img src="https://photos.alitaalice.cn/image/20200517164736.png" alt=""></p>
-<h2 id="对象的创建"><a href="#对象的创建" class="headerlink" title="对象的创建"></a>对象的创建</h2><p><img src="https://photos.alitaalice.cn/image/20200517165000.png" alt=""></p>
-<p><img src="https://photos.alitaalice.cn/image/20200517165050.png" alt=""></p>
-<h2 id="对象的内存布局"><a href="#对象的内存布局" class="headerlink" title="对象的内存布局"></a>对象的内存布局</h2><p><img src="https://photos.alitaalice.cn/image/20200517164220.png" alt=""></p>
-<p><img src="https://photos.alitaalice.cn/image/20200517165147.png" alt=""></p>
-<p><img src="https://photos.alitaalice.cn/image/20200517165221.png" alt=""></p>
-<p><img src="https://photos.alitaalice.cn/image/20200517165249.png" alt=""></p>
-<p><img src="https://photos.alitaalice.cn/image/20200517165303.png" alt=""></p>
-]]></content>
-      <categories>
-        <category>JVM</category>
-      </categories>
-      <tags>
-        <tag>JVM</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JAVA中的输入与输出</title>
-    <url>/2020/05/06/JAVA%E4%B8%AD%E7%9A%84%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA/</url>
-    <content><![CDATA[<h1 id="JAVA中的输入"><a href="#JAVA中的输入" class="headerlink" title="JAVA中的输入"></a>JAVA中的输入</h1><h2 id="读取输入"><a href="#读取输入" class="headerlink" title="读取输入"></a>读取输入</h2><p>  要想通过输入台进行输入，首先需要构造一个与“标准输入流”System.in关联的Scanner对象。<br>  <a id="more"></a></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Scanner scanner=<span class="keyword">new</span> Scanner(System.in);</span><br></pre></td></tr></table></figure>
-
-<p>Scanner类中的方法：</p>
-<p>API  JAVA.util.Scanner</p>
-<table>
-<thead>
-<tr>
-<th>String nextLine()</th>
-<th>读取输入的下一行内容  以enter作为结束符  能得到带空格的字符串</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>String next()</td>
-<td>读取输入的下一个单词（以空格作为分隔符）空格视而不见</td>
-</tr>
-<tr>
-<td>int nextInt()</td>
-<td>只读取int值</td>
-</tr>
-<tr>
-<td>double nextDouble()</td>
-<td>只读取double值</td>
-</tr>
-<tr>
-<td>boolean hasNext()</td>
-<td>检测输入中是否还有其他的单词</td>
-</tr>
-<tr>
-<td>boolean hasNextInt()</td>
-<td>检测输入中是否还有表示整数</td>
-</tr>
-<tr>
-<td>boolean hasNextDouble()</td>
-<td>检测输入中是否还有表示浮点数</td>
-</tr>
-</tbody></table>
 ]]></content>
       <categories>
         <category>后端</category>
@@ -571,28 +571,6 @@
       </tags>
   </entry>
   <entry>
-    <title>JAVA的静态方法不能被重写</title>
-    <url>/2020/05/06/JAVA%E7%9A%84%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95%E4%B8%8D%E8%83%BD%E8%A2%AB%E9%87%8D%E5%86%99/</url>
-    <content><![CDATA[<h1 id="JAVA的静态方法不能被重写"><a href="#JAVA的静态方法不能被重写" class="headerlink" title="JAVA的静态方法不能被重写"></a>JAVA的静态方法不能被重写</h1><p>堆区：</p>
-<ul>
-<li>存储的全部都是对象，每个对象都包含一个与之对应的class信息。<a id="more"></a>
-
-</li>
-</ul>
-<p>栈区:</p>
-<p>方法区：</p>
-<ul>
-<li>方法区包含所有的class和static变量  class可以直接调用static</li>
-</ul>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>JAVASE</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JAVA泛型</title>
     <url>/2020/05/12/JAVA%E6%B3%9B%E5%9E%8B/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -601,54 +579,6 @@
 <a id="more"></a>
 
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
-  </entry>
-  <entry>
-    <title>JAVA源码问题</title>
-    <url>/2020/05/14/JAVA%E6%BA%90%E7%A0%81%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍JAVA源码问题</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="说说常见的集合有哪些吧？"><a href="#说说常见的集合有哪些吧？" class="headerlink" title="说说常见的集合有哪些吧？"></a>说说常见的集合有哪些吧？</h2><p>答：Map 接口和 Collection 接口是所有集合框架的父接口：</p>
-<ol>
-<li>Collection 接口的子接口包括：Set 接口和 List 接口；</li>
-<li>Map 接口的实现类主要有：HashMap、TreeMap、Hashtable、ConcurrentHashMap 以及 Properties 等；</li>
-<li>Set 接口的实现类主要有：HashSet、TreeSet、LinkedHashSet 等；</li>
-<li>List 接口的实现类主要有：ArrayList、LinkedList、Stack 以及 Vector 等。</li>
-</ol>
-<h3 id="当两个对象的hashcode相同时会发生什么，如何获取对象？"><a href="#当两个对象的hashcode相同时会发生什么，如何获取对象？" class="headerlink" title="当两个对象的hashcode相同时会发生什么，如何获取对象？"></a>当两个对象的hashcode相同时会发生什么，如何获取对象？</h3><p>因为hashcode相同，所以它们的bucket位置相同，‘碰撞’会发生。</p>
-<p>两个对象的hashCode相同所以它们的bucket位置相同，找到bucket位置之后，会调用keys.equals()方法去找到链表中正确的节点 <strong><code>(key != null &amp;&amp; key.equals(k)</code></strong>。</p>
-<p>因为HashMap使用链表存储对象，这个Entry(包含有键值对的Map.Entry对象)会存储在链表中。这个时候要理解根据hashcode来划分的数组，如果数组的坐标相同，则进入链表这个数据结构中了，一般的添加都在最前面，也就是和数组下标直接相连的地方，链表长度到达8的时候，jdk1.8上升为红黑树。</p>
-<h3 id="HashMap的大小超过了负载因子-load-factor-定义的容量，怎么办"><a href="#HashMap的大小超过了负载因子-load-factor-定义的容量，怎么办" class="headerlink" title="HashMap的大小超过了负载因子(load factor)定义的容量，怎么办"></a>HashMap的大小超过了负载因子(load factor)定义的容量，怎么办</h3><p>会调用<strong><code>resize()</code></strong>进行数组扩容。</p>
-<h2 id="HashMap中的tableSizeFor方法"><a href="#HashMap中的tableSizeFor方法" class="headerlink" title="HashMap中的tableSizeFor方法"></a>HashMap中的tableSizeFor方法</h2><p>在使用指定数组的初始容量时上面说过，数组容量必须是2的次方。所以就需要通过算法将我们给定的数值转换成2的次方。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 这个方法可以将任意一个整数转换成2的次方。</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> <span class="title">tableSizeFor</span><span class="params">(<span class="keyword">int</span> cap)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = cap - <span class="number">1</span>;</span><br><span class="line">    n |= n &gt;&gt;&gt; <span class="number">1</span>;</span><br><span class="line">    n |= n &gt;&gt;&gt; <span class="number">2</span>;</span><br><span class="line">    n |= n &gt;&gt;&gt; <span class="number">4</span>;</span><br><span class="line">    n |= n &gt;&gt;&gt; <span class="number">8</span>;</span><br><span class="line">    n |= n &gt;&gt;&gt; <span class="number">16</span>;</span><br><span class="line">    <span class="keyword">return</span> (n &lt; <span class="number">0</span>) ? <span class="number">1</span> : (n &gt;= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="HashMap是线程安全的吗，为什么"><a href="#HashMap是线程安全的吗，为什么" class="headerlink" title="HashMap是线程安全的吗，为什么"></a>HashMap是线程安全的吗，为什么</h2><p>HashMap底层是一个Entry数组，当发生hash冲突的时候，hashmap是采用链表的方式来解决的，在对应的数组位置存放链表的头结点。对链表而言，新加入的节点会从头结点加入。</p>
-<p>1</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addEntry</span><span class="params">(<span class="keyword">int</span> hash, K key, V value, <span class="keyword">int</span> bucketIndex)</span> </span>&#123;</span><br><span class="line">	Entry&lt;K,V&gt; e = table[bucketIndex];</span><br><span class="line">        table[bucketIndex] = <span class="keyword">new</span> Entry&lt;K,V&gt;(hash, key, value, e);</span><br><span class="line">        <span class="keyword">if</span> (size++ &gt;= threshold)</span><br><span class="line">            resize(<span class="number">2</span> * table.length);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<p>在hashmap做put操作的时候会调用到以上的方法。现在假如A线程和B线程同时对同一个数组位置调用addEntry，两个线程会同时得到现在的头结点，然后A写入新的头结点之后，B也写入新的头结点，那B的写入操作就会覆盖A的写入操作造成A的写入操作丢失</p>
-<p>2</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">final</span> Entry&lt;K,V&gt; <span class="title">removeEntryForKey</span><span class="params">(Object key)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> hash = (key == <span class="keyword">null</span>) ? <span class="number">0</span> : hash(key.hashCode());</span><br><span class="line">        <span class="keyword">int</span> i = indexFor(hash, table.length);</span><br><span class="line">        Entry&lt;K,V&gt; prev = table[i];</span><br><span class="line">        Entry&lt;K,V&gt; e = prev;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">while</span> (e != <span class="keyword">null</span>) &#123;</span><br><span class="line">            Entry&lt;K,V&gt; next = e.next;</span><br><span class="line">            Object k;</span><br><span class="line">            <span class="keyword">if</span> (e.hash == hash &amp;&amp;</span><br><span class="line">                ((k = e.key) == key || (key != <span class="keyword">null</span> &amp;&amp; key.equals(k)))) &#123;</span><br><span class="line">                modCount++;</span><br><span class="line">                size--;</span><br><span class="line">                <span class="keyword">if</span> (prev == e)</span><br><span class="line">                    table[i] = next;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    prev.next = next;</span><br><span class="line">                e.recordRemoval(<span class="keyword">this</span>);</span><br><span class="line">                <span class="keyword">return</span> e;</span><br><span class="line">            &#125;</span><br><span class="line">            prev = e;</span><br><span class="line">            e = next;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">return</span> e;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<p>删除键值对的代码如上：</p>
-<p>当多个线程同时操作同一个数组位置的时候，也都会先取得现在状态下该位置存储的头结点，然后各自去进行计算操作，之后再把结果写会到该数组位置去，其实写回的时候可能其他的线程已经就把这个位置给修改过了，就会覆盖其他线程的修改</p>
-<p>3、addEntry中当加入新的键值对后键值对总数量超过门限值的时候会调用一个resize操作，代码如下：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">resize</span><span class="params">(<span class="keyword">int</span> newCapacity)</span> </span>&#123;</span><br><span class="line">        Entry[] oldTable = table;</span><br><span class="line">        <span class="keyword">int</span> oldCapacity = oldTable.length;</span><br><span class="line">        <span class="keyword">if</span> (oldCapacity == MAXIMUM_CAPACITY) &#123;</span><br><span class="line">            threshold = Integer.MAX_VALUE;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        Entry[] newTable = <span class="keyword">new</span> Entry[newCapacity];</span><br><span class="line">        transfer(newTable);</span><br><span class="line">        table = newTable;</span><br><span class="line">        threshold = (<span class="keyword">int</span>)(newCapacity * loadFactor);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<p>这个操作会新生成一个新的容量的数组，然后对原数组的所有键值对重新进行计算和写入新的数组，之后指向新生成的数组。</p>
-<p>当多个线程同时检测到总数量超过门限值的时候就会同时调用resize操作，各自生成新的数组并rehash后赋给该map底层的数组table，结果最终只有最后一个线程生成的新数组被赋给table变量，其他线程的均会丢失。而且当某些线程已经完成赋值而其他线程刚开始的时候，就会用已经被赋值的table作为原始数组，这样也会有问题。</p>
-<h2 id="哪些是线程安全的容器"><a href="#哪些是线程安全的容器" class="headerlink" title="哪些是线程安全的容器"></a>哪些是线程安全的容器</h2><p>同步容器类：</p>
-<p>使用了synchronized<br>1.Vector<br>2.HashTable</p>
-<p>并发容器：<br>3.ConcurrentHashMap:分段<br>4.CopyOnWriteArrayList：写时复制<br>5.CopyOnWriteArraySet：写时复制</p>
-<h3 id="Hashtable和HashMap的区别"><a href="#Hashtable和HashMap的区别" class="headerlink" title="Hashtable和HashMap的区别"></a>Hashtable和HashMap的区别</h3><h3 id="HashMap多线程处理之快速失败机制"><a href="#HashMap多线程处理之快速失败机制" class="headerlink" title="HashMap多线程处理之快速失败机制"></a>HashMap多线程处理之快速失败机制</h3><h3 id="jdk7和jdk8的HashMap实现的区别"><a href="#jdk7和jdk8的HashMap实现的区别" class="headerlink" title="jdk7和jdk8的HashMap实现的区别"></a>jdk7和jdk8的HashMap实现的区别</h3><h3 id="HashMap与LinkedHashMap和TreeMap的区别"><a href="#HashMap与LinkedHashMap和TreeMap的区别" class="headerlink" title="HashMap与LinkedHashMap和TreeMap的区别"></a>HashMap与LinkedHashMap和TreeMap的区别</h3>]]></content>
-      <categories>
-        <category>JAVA源码</category>
-      </categories>
-      <tags>
-        <tag>JAVA源码</tag>
-      </tags>
   </entry>
   <entry>
     <title>JAVA注解</title>
@@ -728,6 +658,104 @@
 <h2 id="9-注解处理器"><a href="#9-注解处理器" class="headerlink" title="9.注解处理器"></a>9.注解处理器</h2>]]></content>
       <categories>
         <category>面试</category>
+      </categories>
+      <tags>
+        <tag>JAVASE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JAVA源码问题</title>
+    <url>/2020/05/14/JAVA%E6%BA%90%E7%A0%81%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍JAVA源码问题</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="说说常见的集合有哪些吧？"><a href="#说说常见的集合有哪些吧？" class="headerlink" title="说说常见的集合有哪些吧？"></a>说说常见的集合有哪些吧？</h2><p>答：Map 接口和 Collection 接口是所有集合框架的父接口：</p>
+<ol>
+<li>Collection 接口的子接口包括：Set 接口和 List 接口；</li>
+<li>Map 接口的实现类主要有：HashMap、TreeMap、Hashtable、ConcurrentHashMap 以及 Properties 等；</li>
+<li>Set 接口的实现类主要有：HashSet、TreeSet、LinkedHashSet 等；</li>
+<li>List 接口的实现类主要有：ArrayList、LinkedList、Stack 以及 Vector 等。</li>
+</ol>
+<h3 id="当两个对象的hashcode相同时会发生什么，如何获取对象？"><a href="#当两个对象的hashcode相同时会发生什么，如何获取对象？" class="headerlink" title="当两个对象的hashcode相同时会发生什么，如何获取对象？"></a>当两个对象的hashcode相同时会发生什么，如何获取对象？</h3><p>因为hashcode相同，所以它们的bucket位置相同，‘碰撞’会发生。</p>
+<p>两个对象的hashCode相同所以它们的bucket位置相同，找到bucket位置之后，会调用keys.equals()方法去找到链表中正确的节点 <strong><code>(key != null &amp;&amp; key.equals(k)</code></strong>。</p>
+<p>因为HashMap使用链表存储对象，这个Entry(包含有键值对的Map.Entry对象)会存储在链表中。这个时候要理解根据hashcode来划分的数组，如果数组的坐标相同，则进入链表这个数据结构中了，一般的添加都在最前面，也就是和数组下标直接相连的地方，链表长度到达8的时候，jdk1.8上升为红黑树。</p>
+<h3 id="HashMap的大小超过了负载因子-load-factor-定义的容量，怎么办"><a href="#HashMap的大小超过了负载因子-load-factor-定义的容量，怎么办" class="headerlink" title="HashMap的大小超过了负载因子(load factor)定义的容量，怎么办"></a>HashMap的大小超过了负载因子(load factor)定义的容量，怎么办</h3><p>会调用<strong><code>resize()</code></strong>进行数组扩容。</p>
+<h2 id="HashMap中的tableSizeFor方法"><a href="#HashMap中的tableSizeFor方法" class="headerlink" title="HashMap中的tableSizeFor方法"></a>HashMap中的tableSizeFor方法</h2><p>在使用指定数组的初始容量时上面说过，数组容量必须是2的次方。所以就需要通过算法将我们给定的数值转换成2的次方。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 这个方法可以将任意一个整数转换成2的次方。</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> <span class="title">tableSizeFor</span><span class="params">(<span class="keyword">int</span> cap)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = cap - <span class="number">1</span>;</span><br><span class="line">    n |= n &gt;&gt;&gt; <span class="number">1</span>;</span><br><span class="line">    n |= n &gt;&gt;&gt; <span class="number">2</span>;</span><br><span class="line">    n |= n &gt;&gt;&gt; <span class="number">4</span>;</span><br><span class="line">    n |= n &gt;&gt;&gt; <span class="number">8</span>;</span><br><span class="line">    n |= n &gt;&gt;&gt; <span class="number">16</span>;</span><br><span class="line">    <span class="keyword">return</span> (n &lt; <span class="number">0</span>) ? <span class="number">1</span> : (n &gt;= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="HashMap是线程安全的吗，为什么"><a href="#HashMap是线程安全的吗，为什么" class="headerlink" title="HashMap是线程安全的吗，为什么"></a>HashMap是线程安全的吗，为什么</h2><p>HashMap底层是一个Entry数组，当发生hash冲突的时候，hashmap是采用链表的方式来解决的，在对应的数组位置存放链表的头结点。对链表而言，新加入的节点会从头结点加入。</p>
+<p>1</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addEntry</span><span class="params">(<span class="keyword">int</span> hash, K key, V value, <span class="keyword">int</span> bucketIndex)</span> </span>&#123;</span><br><span class="line">	Entry&lt;K,V&gt; e = table[bucketIndex];</span><br><span class="line">        table[bucketIndex] = <span class="keyword">new</span> Entry&lt;K,V&gt;(hash, key, value, e);</span><br><span class="line">        <span class="keyword">if</span> (size++ &gt;= threshold)</span><br><span class="line">            resize(<span class="number">2</span> * table.length);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>在hashmap做put操作的时候会调用到以上的方法。现在假如A线程和B线程同时对同一个数组位置调用addEntry，两个线程会同时得到现在的头结点，然后A写入新的头结点之后，B也写入新的头结点，那B的写入操作就会覆盖A的写入操作造成A的写入操作丢失</p>
+<p>2</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">final</span> Entry&lt;K,V&gt; <span class="title">removeEntryForKey</span><span class="params">(Object key)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> hash = (key == <span class="keyword">null</span>) ? <span class="number">0</span> : hash(key.hashCode());</span><br><span class="line">        <span class="keyword">int</span> i = indexFor(hash, table.length);</span><br><span class="line">        Entry&lt;K,V&gt; prev = table[i];</span><br><span class="line">        Entry&lt;K,V&gt; e = prev;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">while</span> (e != <span class="keyword">null</span>) &#123;</span><br><span class="line">            Entry&lt;K,V&gt; next = e.next;</span><br><span class="line">            Object k;</span><br><span class="line">            <span class="keyword">if</span> (e.hash == hash &amp;&amp;</span><br><span class="line">                ((k = e.key) == key || (key != <span class="keyword">null</span> &amp;&amp; key.equals(k)))) &#123;</span><br><span class="line">                modCount++;</span><br><span class="line">                size--;</span><br><span class="line">                <span class="keyword">if</span> (prev == e)</span><br><span class="line">                    table[i] = next;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    prev.next = next;</span><br><span class="line">                e.recordRemoval(<span class="keyword">this</span>);</span><br><span class="line">                <span class="keyword">return</span> e;</span><br><span class="line">            &#125;</span><br><span class="line">            prev = e;</span><br><span class="line">            e = next;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">return</span> e;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>删除键值对的代码如上：</p>
+<p>当多个线程同时操作同一个数组位置的时候，也都会先取得现在状态下该位置存储的头结点，然后各自去进行计算操作，之后再把结果写会到该数组位置去，其实写回的时候可能其他的线程已经就把这个位置给修改过了，就会覆盖其他线程的修改</p>
+<p>3、addEntry中当加入新的键值对后键值对总数量超过门限值的时候会调用一个resize操作，代码如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">resize</span><span class="params">(<span class="keyword">int</span> newCapacity)</span> </span>&#123;</span><br><span class="line">        Entry[] oldTable = table;</span><br><span class="line">        <span class="keyword">int</span> oldCapacity = oldTable.length;</span><br><span class="line">        <span class="keyword">if</span> (oldCapacity == MAXIMUM_CAPACITY) &#123;</span><br><span class="line">            threshold = Integer.MAX_VALUE;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        Entry[] newTable = <span class="keyword">new</span> Entry[newCapacity];</span><br><span class="line">        transfer(newTable);</span><br><span class="line">        table = newTable;</span><br><span class="line">        threshold = (<span class="keyword">int</span>)(newCapacity * loadFactor);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>这个操作会新生成一个新的容量的数组，然后对原数组的所有键值对重新进行计算和写入新的数组，之后指向新生成的数组。</p>
+<p>当多个线程同时检测到总数量超过门限值的时候就会同时调用resize操作，各自生成新的数组并rehash后赋给该map底层的数组table，结果最终只有最后一个线程生成的新数组被赋给table变量，其他线程的均会丢失。而且当某些线程已经完成赋值而其他线程刚开始的时候，就会用已经被赋值的table作为原始数组，这样也会有问题。</p>
+<h2 id="哪些是线程安全的容器"><a href="#哪些是线程安全的容器" class="headerlink" title="哪些是线程安全的容器"></a>哪些是线程安全的容器</h2><p>同步容器类：</p>
+<p>使用了synchronized<br>1.Vector<br>2.HashTable</p>
+<p>并发容器：<br>3.ConcurrentHashMap:分段<br>4.CopyOnWriteArrayList：写时复制<br>5.CopyOnWriteArraySet：写时复制</p>
+<h3 id="Hashtable和HashMap的区别"><a href="#Hashtable和HashMap的区别" class="headerlink" title="Hashtable和HashMap的区别"></a>Hashtable和HashMap的区别</h3><h3 id="HashMap多线程处理之快速失败机制"><a href="#HashMap多线程处理之快速失败机制" class="headerlink" title="HashMap多线程处理之快速失败机制"></a>HashMap多线程处理之快速失败机制</h3><h3 id="jdk7和jdk8的HashMap实现的区别"><a href="#jdk7和jdk8的HashMap实现的区别" class="headerlink" title="jdk7和jdk8的HashMap实现的区别"></a>jdk7和jdk8的HashMap实现的区别</h3><h3 id="HashMap与LinkedHashMap和TreeMap的区别"><a href="#HashMap与LinkedHashMap和TreeMap的区别" class="headerlink" title="HashMap与LinkedHashMap和TreeMap的区别"></a>HashMap与LinkedHashMap和TreeMap的区别</h3>]]></content>
+      <categories>
+        <category>JAVA源码</category>
+      </categories>
+      <tags>
+        <tag>JAVA源码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JAVA的静态方法不能被重写</title>
+    <url>/2020/05/06/JAVA%E7%9A%84%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95%E4%B8%8D%E8%83%BD%E8%A2%AB%E9%87%8D%E5%86%99/</url>
+    <content><![CDATA[<h1 id="JAVA的静态方法不能被重写"><a href="#JAVA的静态方法不能被重写" class="headerlink" title="JAVA的静态方法不能被重写"></a>JAVA的静态方法不能被重写</h1><p>堆区：</p>
+<ul>
+<li>存储的全部都是对象，每个对象都包含一个与之对应的class信息。<a id="more"></a>
+
+</li>
+</ul>
+<p>栈区:</p>
+<p>方法区：</p>
+<ul>
+<li>方法区包含所有的class和static变量  class可以直接调用static</li>
+</ul>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>JAVASE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JAVA编译和运行的过程</title>
+    <url>/2020/05/11/JAVA%E7%BC%96%E8%AF%91%E5%92%8C%E8%BF%90%E8%A1%8C%E7%9A%84%E8%BF%87%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍JAVA编译和运行的过程</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><ul>
+<li><p>JAVA程序源码 </p>
+</li>
+<li><p>——-&gt; JAVA字节码（经过编译器编译)</p>
+</li>
+<li><p>——-&gt;JVM （对字节码进行解释和运行）</p>
+<p>编译只进行一次，但是解释在每次运行程序时都会运行，编译的字节码采用一种针对JVM优化过度机器码的形式进行保存</p>
+</li>
+<li><p>——&gt;机器码（虚拟机将字节码解释为机器码，在计算机上运行）</p>
+<p><img src="Screenshot.png" alt=""></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>后端</category>
       </categories>
       <tags>
         <tag>JAVASE</tag>
@@ -1038,66 +1066,6 @@
       </tags>
   </entry>
   <entry>
-    <title>JAVA编译和运行的过程</title>
-    <url>/2020/05/11/JAVA%E7%BC%96%E8%AF%91%E5%92%8C%E8%BF%90%E8%A1%8C%E7%9A%84%E8%BF%87%E7%A8%8B/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍JAVA编译和运行的过程</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><ul>
-<li><p>JAVA程序源码 </p>
-</li>
-<li><p>——-&gt; JAVA字节码（经过编译器编译)</p>
-</li>
-<li><p>——-&gt;JVM （对字节码进行解释和运行）</p>
-<p>编译只进行一次，但是解释在每次运行程序时都会运行，编译的字节码采用一种针对JVM优化过度机器码的形式进行保存</p>
-</li>
-<li><p>——&gt;机器码（虚拟机将字节码解释为机器码，在计算机上运行）</p>
-<p><img src="Screenshot.png" alt=""></p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>JAVASE</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Mysql自定义函数</title>
-    <url>/2020/05/18/Mysql%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍Mysql自定义函数</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>创建函数语法：<br>CREATE FUNCTION fn_name(func_parameter[,…])<br>RETURNS type<br>[characteristic…]<br>routine_body</p>
-<p>eg:</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">#创建一个函数</span><br><span class="line">DELIMITER $$ -- 定界符</span><br><span class="line">-- 开始创建函数</span><br><span class="line"><span class="function">CREATE FUNCTION <span class="title">user_main_fn</span><span class="params">(v_id INT)</span></span></span><br><span class="line"><span class="function">RETURNS <span class="title">VARCHAR</span><span class="params">(<span class="number">50</span>)</span></span></span><br><span class="line"><span class="function">BEGIN</span></span><br><span class="line"><span class="function">  -- 定义变量</span></span><br><span class="line"><span class="function">  DECLARE v_userName <span class="title">VARCHAR</span><span class="params">(<span class="number">50</span>)</span></span>;</span><br><span class="line">  -- 给定义的变量赋值</span><br><span class="line">  SELECT f_userName INTO v_userName FROM t_user_main </span><br><span class="line">  WHERE f_userId = v_id;</span><br><span class="line">  -- 返回函数处理结果</span><br><span class="line">  RETURN v_userName;</span><br><span class="line">END $$ -- 函数创建定界符</span><br><span class="line">DELIMITER;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">#创建第二个函数，使用第一个函数</span><br><span class="line">DELIMITER $$</span><br><span class="line"><span class="function">CREATE FUNCTION <span class="title">user_main_fn2</span><span class="params">(v_id INT)</span></span></span><br><span class="line"><span class="function">RETURNS <span class="title">VARCHAR</span><span class="params">(<span class="number">100</span>)</span></span></span><br><span class="line"><span class="function">BEGIN </span></span><br><span class="line"><span class="function">  #定义变量</span></span><br><span class="line"><span class="function">  DECLARE v_userName <span class="title">VARCHAR</span><span class="params">(<span class="number">50</span>)</span></span>;</span><br><span class="line">  <span class="function">DECLARE  v_userNameNew <span class="title">VARCHAR</span><span class="params">(<span class="number">50</span>)</span></span>;</span><br><span class="line">  #通过into赋值</span><br><span class="line">  SELECT f_userName INTO v_userName FROM t_user_main WHERE f_userId = v_id;</span><br><span class="line">  #使用函数</span><br><span class="line">  <span class="function">SELECT <span class="title">user_main_fn</span><span class="params">(v_id)</span> INTO v_userNameNew FROM DUAL</span>;</span><br><span class="line">  #返回函数处理结果</span><br><span class="line">  <span class="function">RETURN <span class="title">CONCAT</span><span class="params">(v_userName,<span class="string">'***'</span>,v_userNameNew)</span></span>;</span><br><span class="line">END $$</span><br><span class="line">DELIMITER;</span><br></pre></td></tr></table></figure>
-
-<p>DUAL 虚拟表</p>
-<h3 id="查看函数状态语法："><a href="#查看函数状态语法：" class="headerlink" title="查看函数状态语法："></a>查看函数状态语法：</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">SHOW FUNCTION STATUS [LIKE <span class="string">'pattern'</span>]</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="查看函数的定义语法："><a href="#查看函数的定义语法：" class="headerlink" title="查看函数的定义语法："></a>查看函数的定义语法：</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">SHOW CREATE FUNCTION fn_name;</span><br></pre></td></tr></table></figure>
-
-<p>eg:  输出第n高的工资</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">CREATE FUNCTION <span class="title">getNthHighestSalary</span><span class="params">(N INT)</span> RETURNS INT</span></span><br><span class="line"><span class="function">BEGIN</span></span><br><span class="line"><span class="function">  SET N</span>=N-<span class="number">1</span>;</span><br><span class="line">  RETURN (</span><br><span class="line">      # Write your MySQL query statement below.</span><br><span class="line">      SELECT  DISTINCT Salary  FROM Employee ORDER BY Salary DESC  limit N,<span class="number">1</span></span><br><span class="line">  );</span><br><span class="line">END</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>mysql</category>
-      </categories>
-      <tags>
-        <tag>mysql</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Mysql用户变量和set语句</title>
     <url>/2020/05/19/Mysql%E7%94%A8%E6%88%B7%E5%8F%98%E9%87%8F%E5%92%8Cset%E8%AF%AD%E5%8F%A5/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -1139,19 +1107,35 @@
       </tags>
   </entry>
   <entry>
-    <title>SSM基础</title>
-    <url>/2020/05/27/SSM%E5%9F%BA%E7%A1%80/</url>
+    <title>Mysql自定义函数</title>
+    <url>/2020/05/18/Mysql%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍</p>
+<p>本章介绍Mysql自定义函数</p>
 </blockquote>
 <a id="more"></a>
 
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>创建函数语法：<br>CREATE FUNCTION fn_name(func_parameter[,…])<br>RETURNS type<br>[characteristic…]<br>routine_body</p>
+<p>eg:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">#创建一个函数</span><br><span class="line">DELIMITER $$ -- 定界符</span><br><span class="line">-- 开始创建函数</span><br><span class="line"><span class="function">CREATE FUNCTION <span class="title">user_main_fn</span><span class="params">(v_id INT)</span></span></span><br><span class="line"><span class="function">RETURNS <span class="title">VARCHAR</span><span class="params">(<span class="number">50</span>)</span></span></span><br><span class="line"><span class="function">BEGIN</span></span><br><span class="line"><span class="function">  -- 定义变量</span></span><br><span class="line"><span class="function">  DECLARE v_userName <span class="title">VARCHAR</span><span class="params">(<span class="number">50</span>)</span></span>;</span><br><span class="line">  -- 给定义的变量赋值</span><br><span class="line">  SELECT f_userName INTO v_userName FROM t_user_main </span><br><span class="line">  WHERE f_userId = v_id;</span><br><span class="line">  -- 返回函数处理结果</span><br><span class="line">  RETURN v_userName;</span><br><span class="line">END $$ -- 函数创建定界符</span><br><span class="line">DELIMITER;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">#创建第二个函数，使用第一个函数</span><br><span class="line">DELIMITER $$</span><br><span class="line"><span class="function">CREATE FUNCTION <span class="title">user_main_fn2</span><span class="params">(v_id INT)</span></span></span><br><span class="line"><span class="function">RETURNS <span class="title">VARCHAR</span><span class="params">(<span class="number">100</span>)</span></span></span><br><span class="line"><span class="function">BEGIN </span></span><br><span class="line"><span class="function">  #定义变量</span></span><br><span class="line"><span class="function">  DECLARE v_userName <span class="title">VARCHAR</span><span class="params">(<span class="number">50</span>)</span></span>;</span><br><span class="line">  <span class="function">DECLARE  v_userNameNew <span class="title">VARCHAR</span><span class="params">(<span class="number">50</span>)</span></span>;</span><br><span class="line">  #通过into赋值</span><br><span class="line">  SELECT f_userName INTO v_userName FROM t_user_main WHERE f_userId = v_id;</span><br><span class="line">  #使用函数</span><br><span class="line">  <span class="function">SELECT <span class="title">user_main_fn</span><span class="params">(v_id)</span> INTO v_userNameNew FROM DUAL</span>;</span><br><span class="line">  #返回函数处理结果</span><br><span class="line">  <span class="function">RETURN <span class="title">CONCAT</span><span class="params">(v_userName,<span class="string">'***'</span>,v_userNameNew)</span></span>;</span><br><span class="line">END $$</span><br><span class="line">DELIMITER;</span><br></pre></td></tr></table></figure>
+
+<p>DUAL 虚拟表</p>
+<h3 id="查看函数状态语法："><a href="#查看函数状态语法：" class="headerlink" title="查看函数状态语法："></a>查看函数状态语法：</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">SHOW FUNCTION STATUS [LIKE <span class="string">'pattern'</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="查看函数的定义语法："><a href="#查看函数的定义语法：" class="headerlink" title="查看函数的定义语法："></a>查看函数的定义语法：</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">SHOW CREATE FUNCTION fn_name;</span><br></pre></td></tr></table></figure>
+
+<p>eg:  输出第n高的工资</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">CREATE FUNCTION <span class="title">getNthHighestSalary</span><span class="params">(N INT)</span> RETURNS INT</span></span><br><span class="line"><span class="function">BEGIN</span></span><br><span class="line"><span class="function">  SET N</span>=N-<span class="number">1</span>;</span><br><span class="line">  RETURN (</span><br><span class="line">      # Write your MySQL query statement below.</span><br><span class="line">      SELECT  DISTINCT Salary  FROM Employee ORDER BY Salary DESC  limit N,<span class="number">1</span></span><br><span class="line">  );</span><br><span class="line">END</span><br></pre></td></tr></table></figure>
+
+]]></content>
       <categories>
-        <category>框架</category>
+        <category>mysql</category>
       </categories>
       <tags>
-        <tag>框架</tag>
+        <tag>mysql</tag>
       </tags>
   </entry>
   <entry>
@@ -1170,6 +1154,22 @@
       </categories>
       <tags>
         <tag>JVM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SSM基础</title>
+    <url>/2020/05/27/SSM%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
+      <categories>
+        <category>框架</category>
+      </categories>
+      <tags>
+        <tag>框架</tag>
       </tags>
   </entry>
   <entry>
@@ -1400,42 +1400,6 @@
       </tags>
   </entry>
   <entry>
-    <title>mysql插入数据</title>
-    <url>/2020/05/07/mysql%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍如何利用SQL的INSERT语句将数据插入到表中</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="插入到完整的行"><a href="#插入到完整的行" class="headerlink" title="插入到完整的行"></a>插入到完整的行</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">INSERT INTO Customers</span><br><span class="line">VALUES(<span class="literal">NULL</span>,</span><br><span class="line">       'PEP E.LAPEW',</span><br><span class="line">       '100 MAIN STREET',</span><br><span class="line">        'Los Angeles',</span><br><span class="line">         'CA',</span><br><span class="line">        '90046',</span><br><span class="line">         'USA',</span><br><span class="line">          <span class="literal">NULL</span>,</span><br><span class="line">          <span class="literal">NULL</span>);</span><br></pre></td></tr></table></figure>
-
-<p>编写INSERT语句的更加安全（不过更加繁琐）</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">INSERT INTO customers(cust_name,cust_address,cust_city,cust_state,cust_zip,cust_country,cust_contact,cust_email)</span><br><span class="line">VALUSES(&#39;PEP E.LAPEW&#39;,</span><br><span class="line">       &#39;100 MAIN STREET&#39;,</span><br><span class="line">        &#39;Los Angeles&#39;,</span><br><span class="line">         &#39;CA&#39;,</span><br><span class="line">        &#39;90046&#39;,</span><br><span class="line">         &#39;USA&#39;,</span><br><span class="line">          NULL,</span><br><span class="line">          NULL&#39;);</span><br></pre></td></tr></table></figure>
-
-<h3 id="省略列"><a href="#省略列" class="headerlink" title="省略列"></a>省略列</h3><ul>
-<li>该列定义为允许null值</li>
-<li>在表定义中给出默认值</li>
-</ul>
-<h3 id="提高整体性能"><a href="#提高整体性能" class="headerlink" title="提高整体性能"></a>提高整体性能</h3><p>如果数据检索是最重要的，那你可以通过在INSERT INTO 之间添加关键字</p>
-<p>LOW_PRIORITY 指示Mysql降低INSERT语句的优先级</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">INSERT LOW_PRIORITY INTO</span><br></pre></td></tr></table></figure>
-
-<h2 id="插入多个行"><a href="#插入多个行" class="headerlink" title="插入多个行"></a>插入多个行</h2><figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="function">INSERT INTO <span class="title">customers</span><span class="params">(cust_name,cust_address,cust_city,cust_state,cust_zip,cust_country,cust_contact,cust_email)</span></span></span><br><span class="line">VALUSES('PEP E.LAPEW',</span><br><span class="line">       '100 MAIN STREET',</span><br><span class="line">        'Los Angeles',</span><br><span class="line">         'CA',</span><br><span class="line">        '90046',</span><br><span class="line">         'USA',</span><br><span class="line">          <span class="literal">NULL</span>,</span><br><span class="line">          NULL'),</span><br><span class="line">       ('PEP E.LAPEW',</span><br><span class="line">       '100 MAIN STREET',</span><br><span class="line">        'Los Angeles',</span><br><span class="line">         'CA',</span><br><span class="line">        '90046',</span><br><span class="line">         'USA',</span><br><span class="line">          <span class="literal">NULL</span>,</span><br><span class="line">          NULL');</span><br></pre></td></tr></table></figure>
-
-<p>其中单条INSERT语句有多组值，每组值用一对圆括号括起来，用逗号分隔。</p>
-<h3 id="插入检索出的数据"><a href="#插入检索出的数据" class="headerlink" title="插入检索出的数据"></a>插入检索出的数据</h3><figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="function">INSERT INTO <span class="title">customers</span><span class="params">(cust_id,cust_name,cust_address,cust_city,cust_state,cust_zip,cust_country,cust_contact,cust_email)</span></span></span><br><span class="line">SELECT cust_id,cust_name,cust_address,cust_city,cust_state,cust_zip,cust_country,cust_contact,cust_email FROM custnew;</span><br></pre></td></tr></table></figure>
-
-<p>这个例子中INSERT SELECT 从custnew中将所有数据导入到customer中。</p>
-<p><strong>其实MYSQL不关心SELECT返回的列名，它使用的是列的位置，因此SELECT中的第一列用来填充表列中指定的第一列</strong>。</p>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>mysql</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>mysql更新和删除数据</title>
     <url>/2020/05/07/mysql%E6%9B%B4%E6%96%B0%E5%92%8C%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -1465,6 +1429,42 @@
 <h3 id="更快的删除"><a href="#更快的删除" class="headerlink" title="更快的删除"></a>更快的删除</h3><p>如果想删除所有行</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">TRUNCATE TABLE</span><br></pre></td></tr></table></figure>
 
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mysql插入数据</title>
+    <url>/2020/05/07/mysql%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍如何利用SQL的INSERT语句将数据插入到表中</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="插入到完整的行"><a href="#插入到完整的行" class="headerlink" title="插入到完整的行"></a>插入到完整的行</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">INSERT INTO Customers</span><br><span class="line">VALUES(<span class="literal">NULL</span>,</span><br><span class="line">       'PEP E.LAPEW',</span><br><span class="line">       '100 MAIN STREET',</span><br><span class="line">        'Los Angeles',</span><br><span class="line">         'CA',</span><br><span class="line">        '90046',</span><br><span class="line">         'USA',</span><br><span class="line">          <span class="literal">NULL</span>,</span><br><span class="line">          <span class="literal">NULL</span>);</span><br></pre></td></tr></table></figure>
+
+<p>编写INSERT语句的更加安全（不过更加繁琐）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">INSERT INTO customers(cust_name,cust_address,cust_city,cust_state,cust_zip,cust_country,cust_contact,cust_email)</span><br><span class="line">VALUSES(&#39;PEP E.LAPEW&#39;,</span><br><span class="line">       &#39;100 MAIN STREET&#39;,</span><br><span class="line">        &#39;Los Angeles&#39;,</span><br><span class="line">         &#39;CA&#39;,</span><br><span class="line">        &#39;90046&#39;,</span><br><span class="line">         &#39;USA&#39;,</span><br><span class="line">          NULL,</span><br><span class="line">          NULL&#39;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="省略列"><a href="#省略列" class="headerlink" title="省略列"></a>省略列</h3><ul>
+<li>该列定义为允许null值</li>
+<li>在表定义中给出默认值</li>
+</ul>
+<h3 id="提高整体性能"><a href="#提高整体性能" class="headerlink" title="提高整体性能"></a>提高整体性能</h3><p>如果数据检索是最重要的，那你可以通过在INSERT INTO 之间添加关键字</p>
+<p>LOW_PRIORITY 指示Mysql降低INSERT语句的优先级</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">INSERT LOW_PRIORITY INTO</span><br></pre></td></tr></table></figure>
+
+<h2 id="插入多个行"><a href="#插入多个行" class="headerlink" title="插入多个行"></a>插入多个行</h2><figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="function">INSERT INTO <span class="title">customers</span><span class="params">(cust_name,cust_address,cust_city,cust_state,cust_zip,cust_country,cust_contact,cust_email)</span></span></span><br><span class="line">VALUSES('PEP E.LAPEW',</span><br><span class="line">       '100 MAIN STREET',</span><br><span class="line">        'Los Angeles',</span><br><span class="line">         'CA',</span><br><span class="line">        '90046',</span><br><span class="line">         'USA',</span><br><span class="line">          <span class="literal">NULL</span>,</span><br><span class="line">          NULL'),</span><br><span class="line">       ('PEP E.LAPEW',</span><br><span class="line">       '100 MAIN STREET',</span><br><span class="line">        'Los Angeles',</span><br><span class="line">         'CA',</span><br><span class="line">        '90046',</span><br><span class="line">         'USA',</span><br><span class="line">          <span class="literal">NULL</span>,</span><br><span class="line">          NULL');</span><br></pre></td></tr></table></figure>
+
+<p>其中单条INSERT语句有多组值，每组值用一对圆括号括起来，用逗号分隔。</p>
+<h3 id="插入检索出的数据"><a href="#插入检索出的数据" class="headerlink" title="插入检索出的数据"></a>插入检索出的数据</h3><figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="function">INSERT INTO <span class="title">customers</span><span class="params">(cust_id,cust_name,cust_address,cust_city,cust_state,cust_zip,cust_country,cust_contact,cust_email)</span></span></span><br><span class="line">SELECT cust_id,cust_name,cust_address,cust_city,cust_state,cust_zip,cust_country,cust_contact,cust_email FROM custnew;</span><br></pre></td></tr></table></figure>
+
+<p>这个例子中INSERT SELECT 从custnew中将所有数据导入到customer中。</p>
+<p><strong>其实MYSQL不关心SELECT返回的列名，它使用的是列的位置，因此SELECT中的第一列用来填充表列中指定的第一列</strong>。</p>
 ]]></content>
       <categories>
         <category>后端</category>
@@ -2186,6 +2186,49 @@
       </tags>
   </entry>
   <entry>
+    <title>内部类</title>
+    <url>/2020/05/08/%E5%86%85%E9%83%A8%E7%B1%BB/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍JAVA内部类</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h1 id="JAVA内部类"><a href="#JAVA内部类" class="headerlink" title="JAVA内部类"></a>JAVA内部类</h1><h2 id="为什么需要内部类"><a href="#为什么需要内部类" class="headerlink" title="为什么需要内部类"></a>为什么需要内部类</h2><ul>
+<li>内部类可以对同一个包中的其他类隐藏</li>
+<li>内部类方法可以访问定义这个类的作用域中的数据，包括原有私有的数据。</li>
+</ul>
+<p>内部类的特点：</p>
+<ul>
+<li><p>一个内部类方法可以访问自身的数据字段</p>
+</li>
+<li><p>可以访问创建它的外围类对象的数据字段</p>
+<p>示例：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TalkingClock</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> interval;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> beep;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">TalkingClock</span><span class="params">(<span class="keyword">int</span> interval ,<span class="keyword">boolean</span> beep)</span></span></span><br><span class="line"><span class="function">    </span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// an inner class</span></span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TimePrinter</span> <span class="keyword">implements</span> <span class="title">ActionListener</span></span></span><br><span class="line"><span class="class">    </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span>  <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent event)</span></span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            System.out.println(<span class="string">"at the tone,the time is"</span>+Insant.ofEpochMilli(event.getWhen()));</span><br><span class="line">            <span class="keyword">if</span>(beep) Toolkit.getDefaultToolkit().beep();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>TimePrinter类没有实例字段或者名为beep的对象。</p>
+<p>实际上为此，<strong>内部类对象总有一个隐式引用，指向创建它的外部类对象。</strong></p>
+</li>
+</ul>
+<p>​       但是这个引用在内部类的定义中是不可见的。我们将外围类对象的引用称为outer</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span>  <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent event)</span></span></span><br><span class="line"><span class="function">      </span>&#123;</span><br><span class="line">          System.out.println(<span class="string">"at the tone,the time is"</span>+Insant.ofEpochMilli(event.getWhen()));</span><br><span class="line">          <span class="keyword">if</span>(outer.beep) Toolkit.getDefaultToolkit().beep();</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="局部内部类"><a href="#局部内部类" class="headerlink" title="局部内部类"></a>局部内部类</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// an inner class</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">TimePrinter</span> <span class="keyword">implements</span> <span class="title">ActionListener</span></span></span><br><span class="line"><span class="class">    </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span>  <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent event)</span></span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            System.out.println(<span class="string">"at the tone,the time is"</span>+Insant.ofEpochMilli(event.getWhen()));</span><br><span class="line">            <span class="keyword">if</span>(beep) Toolkit.getDefaultToolkit().beep();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> listener =<span class="keyword">new</span> TimePrinter();</span><br><span class="line">    <span class="keyword">var</span> timer=<span class="keyword">new</span> Timer(interval,listener);</span><br><span class="line">    timer.start();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在示例代码中，只是在start方法中创建这个类型的对象时使用了一次。</p>
+<p>当遇到这类情况时，可以在一个方法中局部的定义这个类。</p>
+<ul>
+<li><p>声明局部类时不能有访问说明符（即public 或者private)</p>
+</li>
+<li><p>局部类的作用域被限定在声明这个局部类的块中</p>
+</li>
+<li><p>局部类的优点: 对外部世界完全隐藏。除了start()方法外，没有任何方法知道TimePrinter类的存在。</p>
+</li>
+<li><p>局部类不仅可以访问外部类的字段，还可以访问局部变量。（必须是事实最终变量）它们一旦赋值就绝对不会改变。</p>
+<h3 id="匿名内部类"><a href="#匿名内部类" class="headerlink" title="匿名内部类"></a>匿名内部类</h3></li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
     <title>创建和操纵表</title>
     <url>/2020/05/09/%E5%88%9B%E5%BB%BA%E5%92%8C%E6%93%8D%E7%BA%B5%E8%A1%A8/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -2270,49 +2313,6 @@
       <tags>
         <tag>mysql</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>内部类</title>
-    <url>/2020/05/08/%E5%86%85%E9%83%A8%E7%B1%BB/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍JAVA内部类</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h1 id="JAVA内部类"><a href="#JAVA内部类" class="headerlink" title="JAVA内部类"></a>JAVA内部类</h1><h2 id="为什么需要内部类"><a href="#为什么需要内部类" class="headerlink" title="为什么需要内部类"></a>为什么需要内部类</h2><ul>
-<li>内部类可以对同一个包中的其他类隐藏</li>
-<li>内部类方法可以访问定义这个类的作用域中的数据，包括原有私有的数据。</li>
-</ul>
-<p>内部类的特点：</p>
-<ul>
-<li><p>一个内部类方法可以访问自身的数据字段</p>
-</li>
-<li><p>可以访问创建它的外围类对象的数据字段</p>
-<p>示例：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TalkingClock</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> interval;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> beep;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">TalkingClock</span><span class="params">(<span class="keyword">int</span> interval ,<span class="keyword">boolean</span> beep)</span></span></span><br><span class="line"><span class="function">    </span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// an inner class</span></span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TimePrinter</span> <span class="keyword">implements</span> <span class="title">ActionListener</span></span></span><br><span class="line"><span class="class">    </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span>  <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent event)</span></span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            System.out.println(<span class="string">"at the tone,the time is"</span>+Insant.ofEpochMilli(event.getWhen()));</span><br><span class="line">            <span class="keyword">if</span>(beep) Toolkit.getDefaultToolkit().beep();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>TimePrinter类没有实例字段或者名为beep的对象。</p>
-<p>实际上为此，<strong>内部类对象总有一个隐式引用，指向创建它的外部类对象。</strong></p>
-</li>
-</ul>
-<p>​       但是这个引用在内部类的定义中是不可见的。我们将外围类对象的引用称为outer</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span>  <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent event)</span></span></span><br><span class="line"><span class="function">      </span>&#123;</span><br><span class="line">          System.out.println(<span class="string">"at the tone,the time is"</span>+Insant.ofEpochMilli(event.getWhen()));</span><br><span class="line">          <span class="keyword">if</span>(outer.beep) Toolkit.getDefaultToolkit().beep();</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="局部内部类"><a href="#局部内部类" class="headerlink" title="局部内部类"></a>局部内部类</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// an inner class</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">TimePrinter</span> <span class="keyword">implements</span> <span class="title">ActionListener</span></span></span><br><span class="line"><span class="class">    </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span>  <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent event)</span></span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            System.out.println(<span class="string">"at the tone,the time is"</span>+Insant.ofEpochMilli(event.getWhen()));</span><br><span class="line">            <span class="keyword">if</span>(beep) Toolkit.getDefaultToolkit().beep();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> listener =<span class="keyword">new</span> TimePrinter();</span><br><span class="line">    <span class="keyword">var</span> timer=<span class="keyword">new</span> Timer(interval,listener);</span><br><span class="line">    timer.start();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在示例代码中，只是在start方法中创建这个类型的对象时使用了一次。</p>
-<p>当遇到这类情况时，可以在一个方法中局部的定义这个类。</p>
-<ul>
-<li><p>声明局部类时不能有访问说明符（即public 或者private)</p>
-</li>
-<li><p>局部类的作用域被限定在声明这个局部类的块中</p>
-</li>
-<li><p>局部类的优点: 对外部世界完全隐藏。除了start()方法外，没有任何方法知道TimePrinter类的存在。</p>
-</li>
-<li><p>局部类不仅可以访问外部类的字段，还可以访问局部变量。（必须是事实最终变量）它们一旦赋值就绝对不会改变。</p>
-<h3 id="匿名内部类"><a href="#匿名内部类" class="headerlink" title="匿名内部类"></a>匿名内部类</h3></li>
-</ul>
-]]></content>
   </entry>
   <entry>
     <title>创建表和操控表</title>
@@ -2404,6 +2404,23 @@
       </tags>
   </entry>
   <entry>
+    <title>图解JAVA垃圾回收机制</title>
+    <url>/2020/05/20/%E5%9B%BE%E8%A7%A3JAVA%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>转<a href="https://blog.csdn.net/justloveyou_/article/details/71216049" target="_blank" rel="noopener">https://blog.csdn.net/justloveyou_/article/details/71216049</a></p>
+]]></content>
+      <categories>
+        <category>JVM</category>
+      </categories>
+      <tags>
+        <tag>JVM</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>垃圾收集器与内存分配策略</title>
     <url>/2020/05/18/%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8%E4%B8%8E%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E7%AD%96%E7%95%A5/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -2429,23 +2446,6 @@
 <p>当垃圾回收器(garbage colector)决定回收某对象时，就会运行该对象的finalize()方法。值得C++程序员注意的是，finalize()方法并不能等同与析构函数。Java中是没有析构函数的。C++的析构函数是在对象消亡时运行的。由于C++没有垃圾回收，对象空间手动回收，所以一旦对象用不到时，程序员就应当把它delete()掉。所以析构函数中经常做一些文件保存之类的收尾工作。但是在Java中很不幸，如果内存总是充足的，那么垃圾回收可能永远不会进行，也就是说filalize()可能永远不被执行，显然指望它做收尾工作是靠不住的。</p>
 <p>那么finalize()究竟是做什么的呢？它最主要的用途是回收特殊渠道申请的内存。Java程序有垃圾回收器，所以一般情况下内存问题不用程序员操心。但有一种JNI(Java Native Interface)调用non-Java程序（C或C++），finalize()的工作就是回收这部分的内存。</p>
 <h3 id="Java中的引用"><a href="#Java中的引用" class="headerlink" title="Java中的引用"></a>Java中的引用</h3><h3 id="简述垃圾回收算法"><a href="#简述垃圾回收算法" class="headerlink" title="简述垃圾回收算法"></a>简述垃圾回收算法</h3><h3 id="垃圾回收器"><a href="#垃圾回收器" class="headerlink" title="垃圾回收器"></a>垃圾回收器</h3><h3 id="在垃圾回收器回收对象的时候，程序的逻辑是否可以继续执行"><a href="#在垃圾回收器回收对象的时候，程序的逻辑是否可以继续执行" class="headerlink" title="在垃圾回收器回收对象的时候，程序的逻辑是否可以继续执行"></a>在垃圾回收器回收对象的时候，程序的逻辑是否可以继续执行</h3><h3 id="垃圾回收器在什么时候，对哪些对象，做了什么"><a href="#垃圾回收器在什么时候，对哪些对象，做了什么" class="headerlink" title="垃圾回收器在什么时候，对哪些对象，做了什么"></a>垃圾回收器在什么时候，对哪些对象，做了什么</h3><h3 id="简述minor-GC，与full-GC-java垃圾回收分代，以及何时发生minor-gc，以及full-gc"><a href="#简述minor-GC，与full-GC-java垃圾回收分代，以及何时发生minor-gc，以及full-gc" class="headerlink" title="简述minor GC，与full GC,java垃圾回收分代，以及何时发生minor gc，以及full gc"></a>简述minor GC，与full GC,java垃圾回收分代，以及何时发生minor gc，以及full gc</h3>]]></content>
-      <categories>
-        <category>JVM</category>
-      </categories>
-      <tags>
-        <tag>JVM</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>图解JAVA垃圾回收机制</title>
-    <url>/2020/05/20/%E5%9B%BE%E8%A7%A3JAVA%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>转<a href="https://blog.csdn.net/justloveyou_/article/details/71216049" target="_blank" rel="noopener">https://blog.csdn.net/justloveyou_/article/details/71216049</a></p>
-]]></content>
       <categories>
         <category>JVM</category>
       </categories>
@@ -2507,45 +2507,6 @@
       </tags>
   </entry>
   <entry>
-    <title>工厂模式</title>
-    <url>/2020/05/22/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍工厂模式</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>工厂方法模式：通过让子类决定该创建的对象是什么，来达到将对象创建的过程封装的目的。</p>
-<p>创造者（Creator）类   抽象创建者类。定义抽象的工厂方法，让子类实现此方法制造产品。</p>
-<p>产品类  具体的产品，实际能制造的东西</p>
-<p><img src="https://photos.alitaalice.cn/image/20200525105633.png" alt=""> </p>
-]]></content>
-      <categories>
-        <category>设计模式</category>
-      </categories>
-      <tags>
-        <tag>设计模式</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>归并排序</title>
-    <url>/2020/05/14/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍归并排序</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>在本节中我们所讨论的算法都基于归并 这个简单的操作，即将两个有序的数组归并成一个更大的有序数组。很快人们就根据这个操作发明了一种简单的递归排序算法：<strong>归并排序</strong> 。  </p>
-<p><img src="https://photos.alitaalice.cn/image/20200514103423.png" alt=""></p>
-<p>​                                         归并排序示意图  </p>
-<h2 id="原地归并"><a href="#原地归并" class="headerlink" title="原地归并"></a>原地归并</h2>]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>DataStructure</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>实习</title>
     <url>/2020/05/08/%E5%AE%9E%E4%B9%A0/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -2586,6 +2547,45 @@
       </categories>
       <tags>
         <tag>杂谈</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>工厂模式</title>
+    <url>/2020/05/22/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍工厂模式</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>工厂方法模式：通过让子类决定该创建的对象是什么，来达到将对象创建的过程封装的目的。</p>
+<p>创造者（Creator）类   抽象创建者类。定义抽象的工厂方法，让子类实现此方法制造产品。</p>
+<p>产品类  具体的产品，实际能制造的东西</p>
+<p><img src="https://photos.alitaalice.cn/image/20200525105633.png" alt=""> </p>
+]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
+      <tags>
+        <tag>设计模式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>归并排序</title>
+    <url>/2020/05/14/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍归并排序</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>在本节中我们所讨论的算法都基于归并 这个简单的操作，即将两个有序的数组归并成一个更大的有序数组。很快人们就根据这个操作发明了一种简单的递归排序算法：<strong>归并排序</strong> 。  </p>
+<p><img src="https://photos.alitaalice.cn/image/20200514103423.png" alt=""></p>
+<p>​                                         归并排序示意图  </p>
+<h2 id="原地归并"><a href="#原地归并" class="headerlink" title="原地归并"></a>原地归并</h2>]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>DataStructure</tag>
       </tags>
   </entry>
   <entry>
@@ -2673,34 +2673,6 @@ p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数�
       </tags>
   </entry>
   <entry>
-    <title>树</title>
-    <url>/2020/05/07/%E6%A0%91/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>树的相关概念</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="树的相关概念"><a href="#树的相关概念" class="headerlink" title="树的相关概念"></a>树的相关概念</h2><h3 id="度"><a href="#度" class="headerlink" title="度"></a>度</h3><ul>
-<li>结点拥有的子树树称为结点的度</li>
-<li>度为0的结点称为叶结点（Leaf）或者终端结点。</li>
-<li>度不为0的结点称为非终端结点或者分支结点</li>
-<li>树的度是树内各结点度的最大值</li>
-</ul>
-<h3 id="深度（Depth-或高度"><a href="#深度（Depth-或高度" class="headerlink" title="深度（Depth)或高度"></a>深度（Depth)或高度</h3><ul>
-<li>层次：结点的层次从根开始定义起，根为第一层，根的孩子为第二层，以此类推</li>
-<li>树中结点的最大层次被称为树的深度（Depth）或者高度。</li>
-</ul>
-<h3 id="有序树和无序树"><a href="#有序树和无序树" class="headerlink" title="有序树和无序树"></a>有序树和无序树</h3><p>如果将树中结点的各子树看成从左至右是由次序的，不能互换的，那么该树为有序树，否则为无序树。</p>
-<h3 id="森林"><a href="#森林" class="headerlink" title="森林"></a>森林</h3><p>森林是m（m&gt;=0)颗互不相交的树的集合。</p>
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>DataStructure</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>散列表详解</title>
     <url>/2020/05/13/%E6%95%A3%E5%88%97%E8%A1%A8%E8%AF%A6%E8%A7%A3/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -2776,6 +2748,34 @@ p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数�
       </tags>
   </entry>
   <entry>
+    <title>树</title>
+    <url>/2020/05/07/%E6%A0%91/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>树的相关概念</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="树的相关概念"><a href="#树的相关概念" class="headerlink" title="树的相关概念"></a>树的相关概念</h2><h3 id="度"><a href="#度" class="headerlink" title="度"></a>度</h3><ul>
+<li>结点拥有的子树树称为结点的度</li>
+<li>度为0的结点称为叶结点（Leaf）或者终端结点。</li>
+<li>度不为0的结点称为非终端结点或者分支结点</li>
+<li>树的度是树内各结点度的最大值</li>
+</ul>
+<h3 id="深度（Depth-或高度"><a href="#深度（Depth-或高度" class="headerlink" title="深度（Depth)或高度"></a>深度（Depth)或高度</h3><ul>
+<li>层次：结点的层次从根开始定义起，根为第一层，根的孩子为第二层，以此类推</li>
+<li>树中结点的最大层次被称为树的深度（Depth）或者高度。</li>
+</ul>
+<h3 id="有序树和无序树"><a href="#有序树和无序树" class="headerlink" title="有序树和无序树"></a>有序树和无序树</h3><p>如果将树中结点的各子树看成从左至右是由次序的，不能互换的，那么该树为有序树，否则为无序树。</p>
+<h3 id="森林"><a href="#森林" class="headerlink" title="森林"></a>森林</h3><p>森林是m（m&gt;=0)颗互不相交的树的集合。</p>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>DataStructure</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>策略模式</title>
     <url>/2020/05/14/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -2792,6 +2792,23 @@ p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数�
       </categories>
       <tags>
         <tag>设计模式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>类加载的过程</title>
+    <url>/2020/05/25/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E7%9A%84%E8%BF%87%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍类加载的过程</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><img src="https://photos.alitaalice.cn/image/20200525210206.png" alt=""></p>
+]]></content>
+      <categories>
+        <category>JVM</category>
+      </categories>
+      <tags>
+        <tag>JVM</tag>
       </tags>
   </entry>
   <entry>
@@ -2882,43 +2899,6 @@ p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数�
       </tags>
   </entry>
   <entry>
-    <title>类加载的过程</title>
-    <url>/2020/05/25/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E7%9A%84%E8%BF%87%E7%A8%8B/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍类加载的过程</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><img src="https://photos.alitaalice.cn/image/20200525210206.png" alt=""></p>
-]]></content>
-      <categories>
-        <category>JVM</category>
-      </categories>
-      <tags>
-        <tag>JVM</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>装饰者模式</title>
-    <url>/2020/05/18/%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍装饰者模式。</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="装饰者模式定义"><a href="#装饰者模式定义" class="headerlink" title="装饰者模式定义"></a>装饰者模式定义</h3><p><img src="https://photos.alitaalice.cn/image/20200518102539.png" alt=""></p>
-<p>设计原则：</p>
-<p>类应该对扩展开放，对修改关闭。</p>
-<p>我们的目标是允许类容易扩展，在不修改现有代码的情况下，就可搭配新的行为。如果能实现这样的目标，有什么好处呢？这样的设计具有弹性可以应对改变，可以接受新的功能来应对改变的需求。</p>
-]]></content>
-      <categories>
-        <category>设计模式</category>
-      </categories>
-      <tags>
-        <tag>设计模式</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>网络基础TCP/IP</title>
     <url>/2020/05/13/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80TCP-IP/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -2950,6 +2930,26 @@ p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数�
       </categories>
       <tags>
         <tag>TCP/IP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>装饰者模式</title>
+    <url>/2020/05/18/%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍装饰者模式。</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="装饰者模式定义"><a href="#装饰者模式定义" class="headerlink" title="装饰者模式定义"></a>装饰者模式定义</h3><p><img src="https://photos.alitaalice.cn/image/20200518102539.png" alt=""></p>
+<p>设计原则：</p>
+<p>类应该对扩展开放，对修改关闭。</p>
+<p>我们的目标是允许类容易扩展，在不修改现有代码的情况下，就可搭配新的行为。如果能实现这样的目标，有什么好处呢？这样的设计具有弹性可以应对改变，可以接受新的功能来应对改变的需求。</p>
+]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
+      <tags>
+        <tag>设计模式</tag>
       </tags>
   </entry>
   <entry>
@@ -3016,6 +3016,32 @@ p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数�
       </tags>
   </entry>
   <entry>
+    <title>语法分析消除回溯</title>
+    <url>/2020/05/20/%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%E6%B6%88%E9%99%A4%E5%9B%9E%E6%BA%AF/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><img src="https://photos.alitaalice.cn/image/20200520110241.png" alt=""></p>
+<p><img src="https://photos.alitaalice.cn/image/20200520110725.png" alt=""></p>
+<p><img src="https://photos.alitaalice.cn/image/20200520110909.png" alt=""></p>
+<p><img src="https://photos.alitaalice.cn/image/20200520111151.png" alt=""></p>
+<p><img src="C:%5CUsers%5C16508%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200520111712012.png" alt="image-20200520111712012"></p>
+<p><img src="https://photos.alitaalice.cn/image/20200520112422.png" alt=""></p>
+<p><img src="https://photos.alitaalice.cn/image/20200520112834.png" alt=""> </p>
+<p><img src="https://photos.alitaalice.cn/image/20200520113021.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">    public boolean Judge(List&lt;String&gt; list)&#123;</span><br><span class="line">         ArrayList&lt;node&gt; analy &#x3D; new ArrayList&lt;&gt;();</span><br><span class="line">        for (int i &#x3D; 0; i &lt; list.size(); i++) &#123;</span><br><span class="line">            node aa &#x3D; new node(list.get(i).charAt(0),list.get(i).substring(3));</span><br><span class="line">            analy.add(aa);</span><br><span class="line">        &#125;</span><br><span class="line">        for(int i&#x3D;0;i&lt;analy.size();i++)&#123;</span><br><span class="line">            if(analy.get(i).left &#x3D;&#x3D; analy.get(i).right.charAt(0))&#123;   &#x2F;&#x2F;当产生式的左部等于右部第一个符号，则具有左递归</span><br><span class="line">                return true;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">    class node&#123;          &#x2F;&#x2F;用于方便查找产生式的左部与右部</span><br><span class="line">    public char left;</span><br><span class="line">    public String right;</span><br><span class="line">    public node(char left,String right)&#123;</span><br><span class="line">        this.left&#x3D;left;</span><br><span class="line">        this.right&#x3D;right;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>编译原理</category>
+      </categories>
+      <tags>
+        <tag>编译原理</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>链表</title>
     <url>/2020/05/07/%E9%93%BE%E8%A1%A8/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -3070,32 +3096,6 @@ p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数�
       </categories>
       <tags>
         <tag>DataStructure</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>语法分析消除回溯</title>
-    <url>/2020/05/20/%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%E6%B6%88%E9%99%A4%E5%9B%9E%E6%BA%AF/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><img src="https://photos.alitaalice.cn/image/20200520110241.png" alt=""></p>
-<p><img src="https://photos.alitaalice.cn/image/20200520110725.png" alt=""></p>
-<p><img src="https://photos.alitaalice.cn/image/20200520110909.png" alt=""></p>
-<p><img src="https://photos.alitaalice.cn/image/20200520111151.png" alt=""></p>
-<p><img src="C:%5CUsers%5C16508%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200520111712012.png" alt="image-20200520111712012"></p>
-<p><img src="https://photos.alitaalice.cn/image/20200520112422.png" alt=""></p>
-<p><img src="https://photos.alitaalice.cn/image/20200520112834.png" alt=""> </p>
-<p><img src="https://photos.alitaalice.cn/image/20200520113021.png" alt=""></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">    public boolean Judge(List&lt;String&gt; list)&#123;</span><br><span class="line">         ArrayList&lt;node&gt; analy &#x3D; new ArrayList&lt;&gt;();</span><br><span class="line">        for (int i &#x3D; 0; i &lt; list.size(); i++) &#123;</span><br><span class="line">            node aa &#x3D; new node(list.get(i).charAt(0),list.get(i).substring(3));</span><br><span class="line">            analy.add(aa);</span><br><span class="line">        &#125;</span><br><span class="line">        for(int i&#x3D;0;i&lt;analy.size();i++)&#123;</span><br><span class="line">            if(analy.get(i).left &#x3D;&#x3D; analy.get(i).right.charAt(0))&#123;   &#x2F;&#x2F;当产生式的左部等于右部第一个符号，则具有左递归</span><br><span class="line">                return true;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">    class node&#123;          &#x2F;&#x2F;用于方便查找产生式的左部与右部</span><br><span class="line">    public char left;</span><br><span class="line">    public String right;</span><br><span class="line">    public node(char left,String right)&#123;</span><br><span class="line">        this.left&#x3D;left;</span><br><span class="line">        this.right&#x3D;right;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>编译原理</category>
-      </categories>
-      <tags>
-        <tag>编译原理</tag>
       </tags>
   </entry>
   <entry>
