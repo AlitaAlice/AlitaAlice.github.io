@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"www.alitaalice.cn","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":"default","style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":7,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="登录mysql -h localhost -u root -p Show databases; Use databasename;Show tables;  &#x2F;&#x2F;显示行">
+  <meta name="description" content="1 基础操作 登录mysql -u root -p Show databases; Use databasename;Show tables;  &#x2F;&#x2F;显示行">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql必知必会">
 <meta property="og:url" content="https://www.alitaalice.cn/2020/05/03/mysql%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/index.html">
 <meta property="og:site_name" content="Alita&#39;s blog">
-<meta property="og:description" content="登录mysql -h localhost -u root -p Show databases; Use databasename;Show tables;  &#x2F;&#x2F;显示行">
+<meta property="og:description" content="1 基础操作 登录mysql -u root -p Show databases; Use databasename;Show tables;  &#x2F;&#x2F;显示行">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-05-03T01:59:42.000Z">
-<meta property="article:modified_time" content="2020-05-06T16:12:07.898Z">
+<meta property="article:modified_time" content="2020-05-28T08:02:19.071Z">
 <meta property="article:author" content="Alita Alice">
 <meta property="article:tag" content="mysql">
 <meta name="twitter:card" content="summary">
@@ -223,7 +223,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-05-07 00:12:07" itemprop="dateModified" datetime="2020-05-07T00:12:07+08:00">2020-05-07</time>
+                <time title="Modified: 2020-05-28 16:02:19" itemprop="dateModified" datetime="2020-05-28T16:02:19+08:00">2020-05-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -231,7 +231,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%90%8E%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">后端</span></a>
+                  <a href="/categories/mysql/" itemprop="url" rel="index"><span itemprop="name">mysql</span></a>
                 </span>
             </span>
 
@@ -262,7 +262,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>8.2k</span>
+              <span>8.1k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -281,9 +281,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p> 登录mysql -h localhost -u root -p<br> Show databases;<br> Use databasename;<br>Show tables;  //显示行</p>
+        <h3 id="1-基础操作"><a href="#1-基础操作" class="headerlink" title="1 基础操作"></a>1 基础操作</h3><p> 登录mysql -u root -p<br> Show databases;<br> Use databasename;<br>Show tables;  //显示行</p>
 <a id="more"></a>
-<p> Show columns from xxx;   //显示列<br>SELECT DISTINCT  published FROM t_blog ;  DISTINCT此关键字指示只返回不同的值。<br> SELECT id FROM t_blog LIMIT 5;<br> SELECT id FROM t_blog LIMIT 3,3; //从第三行开始的后三行<br> SELECT t_blog.id FROM blog.t_blog;   完全限定的列名和表名 和之前的用法一样。<br> SELECT id,type_id,user_id FROM t_blog ORDER BY type_id,id;  先对type_id排序 再对id进行排序。<br> DESC 降序 ASC 升序  没多大用处<br> SELECT id FROM t_blog ORDER BY type_id LIMIT 1; 此种方式找到了数值最大的一行。<br> 在使用where 过滤时 ，order by 排序要在where的后面<br>  SELECT id FROM t_blog  where id &lt;&gt;10;   &lt;&gt; 不匹配检查<br> 范围值检查<br>  SELECT ID FROM T_BLOG WHERE ID BETWEEN 10 AND 20 :<br> Select id from t_blog where id is null;  空值检查<br> Select id,user_id from t_blog where id &lt;=10 and user_id &lt;=1;<br> Select prod_name,prod_price from products where vend_id=1002 or vend_id =1003 and<br>  Prod_price&gt;=10; SQL处理OR操作符和AND操作符时，优先处理AND操作符。<br> 故先处理 vend_id =1003 and prod_price&gt;=10  或者  vend_id=1002  ；<br>解决方法是<br>Select prod_name,prod_price from products where (vend_id =1002 or vend_id =1003) and prod_price &gt;=10    用( )来明确分组操作符。DBMS 首先过滤圆括号内的OR条件。<br>NOT 在MYSQL中的NOT中 MYSQL支持使用NOT 对IN,BETWEEN 和EXISTS子句取反。这与多数其他DBMS允许使用NOT对各种条件取反有很大区别。<br>######<br>通配符<br>用来匹配值的一部分的特殊字符<br>LIKE 指示MYSQL 后跟的搜索模式利用通配符匹配而不是直接相等匹配比较<br>SELECT prod_name FROM products WHERE prod_name REGEXP ‘[123] Ton’<br>ORDER BY prod_name;<br>正则表达式 [123]Ton 其中[123]定义一组字符<br>它的意思是匹配1或2或3  因此 1ton 和2ton 都匹配且返回了<br>[] 其实是另一种形式的OR语句<br>[1|2|3]Ton 的缩写 为 [123]Ton<br>1|2|3 Ton 的意思是检索出1或2或3 ton<br>[^123] 匹配除这些字符除外的任何东西<br> ^ 是REGEXP的否定符号<br>在匹配范围中<br>0到9  将由[0123456789] 等同于 [0-9]<br>.表示匹配一个字符<br>输入 SELECT vend_name FROM vendors WHERE vend_name REGEXP ‘.’ ORDER BY vend_name<br>.匹配任意字符  这时每一行都被检索出来 为了匹配特殊字符 必须用\ 作为前导<br>如<br>SELECT vend_name FROM vendors WHERE vend_name REGEXP ‘\.’ ORDER BY vend_name<br>这才是期望的输出 \.匹配. 这种处理就是所谓的转义。<br>？ 字符 ？匹配它前面的任何字符的0次或者1次出现。<br> 如 SELECT prod_name FROM products WHERE prod_name REGEXP ‘\([0-9] sticks?\)’<br> ORDER BY prod_name ;<br>Sticks 匹配 stick 和sticks s后的?使s可选<br>另外例如<br>SELECT prod_name FROM products WHERE prod_name REGEXP ‘[[:digit:]]{4}<br>ORDER BY prod_name；<br>[:digit:]匹配任意数字<br>因而它作为数字的一个集合<br>{4} 确切的要求它前面的字符 出现4次<br>匹配特定位置的文本，需要使用表9-4列出的定位符<br>^ 文本的开始<br>$ 文本的结尾<br>[[:&lt;:]] 词的开始<br>[[:&gt;;]] 词的结尾<br>‘^[0-9\.]’ 找出一个数 包括以小数点开始的数开始的所有产品。<br>SELECT prod_name FROM products WHERE prod_name REGEXP ‘^[0-9\.]’<br>ORDER BY prod_name;<br>在第10章 中 创建计算字段<br>MySQL 使用Concat() 函数来实现<br>SELECT Concat(vend_name,’（‘，vend_country,’）’)<br>FROM vendors ORDER BY vend_name;<br>拼接  将值联结到一起构成单个值<br>比如以上的输出为<br>ACME (USA)<br>删除数据右侧多余的空格来整理数据<br>MySQL 的RTrim()可以去掉值右边的所有的空格<br>SELECT Concat(RTrim(vend_name),’(‘,RTrim(vend_country),’)’)<br>FROM vendors<br>ORDER BY vend_name;<br>LTrim() 去掉串左边的空格<br>Trim()去掉左右俩边的空格<br>SELECT Concat (RTrim(vend_name),’(‘,RTrim(vend_country),’)’)AS vend_title FROM vendors ORDER BY vend_name;<br>一个未命名的列不能用于客户机的应用中，因为客户机没有办法去引用它。<br>所以才出现了别名。AS 关键字来赋予别名 任何客户机应用都可以按名来引用这个列，就像它是一个实际的表列一样。</p>
+<p> Show columns from xxx;   //显示列 </p>
+<h3 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h3><p>SELECT DISTINCT  published FROM t_blog ;  DISTINCT此关键字指示只返回不同的值。<br> SELECT id FROM t_blog LIMIT 5;<br> SELECT id FROM t_blog LIMIT 3,3; //从第三行开始的后三行<br> SELECT t_blog.id FROM blog.t_blog;   完全限定的列名和表名 和之前的用法一样。<br> SELECT id,type_id,user_id FROM t_blog ORDER BY type_id,id;  先对type_id排序 再对id进行排序。<br> DESC 降序 ASC 升序  默认升序<br> SELECT id FROM t_blog ORDER BY type_id LIMIT 1; 此种方式找到了数值最大的一行。<br> <strong>在使用where 过滤时 ，order by 排序要在where的后面</strong><br> SELECT id FROM t_blog  where id &lt;&gt;10;   &lt;&gt; 不匹配检查<br> 范围值检查<br>  SELECT ID FROM T_BLOG WHERE ID BETWEEN 10 AND 20 :<br> Select id from t_blog where id is null;  空值检查<br> Select id,user_id from t_blog where id &lt;=10 and user_id &lt;=1;<br> Select prod_name,prod_price from products where vend_id=1002 or vend_id =1003 and<br>  Prod_price&gt;=10; SQL处理OR操作符和AND操作符时，优先处理AND操作符。<br> 故先处理 vend_id =1003 and prod_price&gt;=10  或者  vend_id=1002  ；<br>解决方法是<br>Select prod_name,prod_price from products where (vend_id =1002 or vend_id =1003) and prod_price &gt;=10    用( )来明确分组操作符。DBMS 首先过滤圆括号内的OR条件。<br>NOT 在MYSQL中的NOT中 MYSQL支持使用NOT 对IN,BETWEEN 和EXISTS子句取反。这与多数其他DBMS允许使用NOT对各种条件取反有很大区别。<br>######<br>通配符<br>用来匹配值的一部分的特殊字符<br>LIKE 指示MYSQL 后跟的搜索模式利用通配符匹配而不是直接相等匹配比较<br>SELECT prod_name FROM products WHERE prod_name REGEXP ‘[123] Ton’<br>ORDER BY prod_name;<br>正则表达式 [123]Ton 其中[123]定义一组字符<br>它的意思是匹配1或2或3  因此 1ton 和2ton 都匹配且返回了<br>[] 其实是另一种形式的OR语句<br>[1|2|3]Ton 的缩写 为 [123]Ton<br>1|2|3 Ton 的意思是检索出1或2或3 ton<br>[^123] 匹配除这些字符除外的任何东西<br> ^ 是REGEXP的否定符号<br>在匹配范围中<br>0到9  将由[0123456789] 等同于 [0-9]<br>.表示匹配一个字符<br>输入 SELECT vend_name FROM vendors WHERE vend_name REGEXP ‘.’ ORDER BY vend_name<br>.匹配任意字符  这时每一行都被检索出来 为了匹配特殊字符 必须用\ 作为前导<br>如<br>SELECT vend_name FROM vendors WHERE vend_name REGEXP ‘\.’ ORDER BY vend_name<br>这才是期望的输出 \.匹配. 这种处理就是所谓的转义。<br>？ 字符 ？匹配它前面的任何字符的0次或者1次出现。<br> 如 SELECT prod_name FROM products WHERE prod_name REGEXP ‘\([0-9] sticks?\)’<br> ORDER BY prod_name ;<br>Sticks 匹配 stick 和sticks s后的?使s可选<br>另外例如<br>SELECT prod_name FROM products WHERE prod_name REGEXP ‘[[:digit:]]{4}<br>ORDER BY prod_name；<br>[:digit:]匹配任意数字<br>因而它作为数字的一个集合<br>{4} 确切的要求它前面的字符 出现4次<br>匹配特定位置的文本，需要使用表9-4列出的定位符<br>^ 文本的开始<br>$ 文本的结尾<br>[[:&lt;:]] 词的开始<br>[[:&gt;;]] 词的结尾<br>‘^[0-9\.]’ 找出一个数 包括以小数点开始的数开始的所有产品。<br>SELECT prod_name FROM products WHERE prod_name REGEXP ‘^[0-9\.]’<br>ORDER BY prod_name;<br>在第10章 中 创建计算字段<br>MySQL 使用Concat() 函数来实现<br>SELECT Concat(vend_name,’（‘，vend_country,’）’)<br>FROM vendors ORDER BY vend_name;<br>拼接  将值联结到一起构成单个值<br>比如以上的输出为<br>ACME (USA)<br>删除数据右侧多余的空格来整理数据<br>MySQL 的RTrim()可以去掉值右边的所有的空格<br>SELECT Concat(RTrim(vend_name),’(‘,RTrim(vend_country),’)’)<br>FROM vendors<br>ORDER BY vend_name;<br>LTrim() 去掉串左边的空格<br>Trim()去掉左右俩边的空格<br>SELECT Concat (RTrim(vend_name),’(‘,RTrim(vend_country),’)’)AS vend_title FROM vendors ORDER BY vend_name;<br>一个未命名的列不能用于客户机的应用中，因为客户机没有办法去引用它。<br>所以才出现了别名。AS 关键字来赋予别名 任何客户机应用都可以按名来引用这个列，就像它是一个实际的表列一样。</p>
 <p>执行算数运算<br>SELECT pro_id,quantity,item_price FROM oderitems WHERE order order_num =20005;<br>在算数运算中 检索200005中的所有物品<br>如果要计算汇总物品的价格<br>SELECT prod_id ,quantity,item_price, quantity*item_price  AS expanded_price FROM oderitems WHERE order_num =20005;<br>此时客户机可以使用这个新计算的列，就像其他列一样。<br>MYSQL 支持基本算术运算符</p>
 <ul>
 <li><ul>
@@ -392,6 +393,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-基础操作"><span class="nav-number">1.</span> <span class="nav-text">1 基础操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第一章"><span class="nav-number">2.</span> <span class="nav-text">第一章</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -415,14 +417,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">74</span>
+          <span class="site-state-item-count">81</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -468,12 +470,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">93k</span>
+    <span title="Symbols count total">107k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:24</span>
+    <span title="Reading time total">1:37</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
   </div>

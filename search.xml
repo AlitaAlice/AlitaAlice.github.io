@@ -42,23 +42,6 @@
       </tags>
   </entry>
   <entry>
-    <title>HashMap默认加载因子为什么选择0.75</title>
-    <url>/2020/05/13/HashMap%E9%BB%98%E8%AE%A4%E5%8A%A0%E8%BD%BD%E5%9B%A0%E5%AD%90%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A90.75/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍HashMap加载因子和初始容量</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>转载自<a href="https://www.cnblogs.com/aspirant/p/11470928.html" target="_blank" rel="noopener">https://www.cnblogs.com/aspirant/p/11470928.html</a></p>
-]]></content>
-      <categories>
-        <category>面试</category>
-      </categories>
-      <tags>
-        <tag>JAVA源码</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>HTTP协议</title>
     <url>/2020/05/18/HTTP%E5%8D%8F%E8%AE%AE/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -90,52 +73,20 @@
       </tags>
   </entry>
   <entry>
-    <title>HTTP状态码</title>
-    <url>/2020/05/13/HTTP%E7%8A%B6%E6%80%81%E7%A0%81/</url>
+    <title>HashMap默认加载因子为什么选择0.75</title>
+    <url>/2020/05/13/HashMap%E9%BB%98%E8%AE%A4%E5%8A%A0%E8%BD%BD%E5%9B%A0%E5%AD%90%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A90.75/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍返回结果的HTTP状态码。</p>
+<p>本章介绍HashMap加载因子和初始容量</p>
 </blockquote>
 <a id="more"></a>
 
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h1 id="1-状态码告知从服务器端返回的请求结果"><a href="#1-状态码告知从服务器端返回的请求结果" class="headerlink" title="1 状态码告知从服务器端返回的请求结果"></a>1 状态码告知从服务器端返回的请求结果</h1><p>状态码的职责是当客户端向服务器端发送请求时，描述返回的请求结果。借助状态码，用户可以知道服务器端是正常处理了请求，还是出现了错误  </p>
-<p><img src="https://photos.alitaalice.cn/image/20200513120418.png" alt=""></p>
-<p>状态码如 200 OK，以 3 位数字和原因短语组成。<br>数字中的第一位指定了响应类别，后两位无分类。响应类别有以下 5 种  </p>
-<p><img src="https://photos.alitaalice.cn/image/20200513120523.png" alt=""></p>
-<h2 id="2XX-成功"><a href="#2XX-成功" class="headerlink" title="2XX 成功"></a>2XX 成功</h2><h3 id="2-1-200-OK"><a href="#2-1-200-OK" class="headerlink" title="2.1 200 OK"></a>2.1 200 OK</h3><p><img src="https://photos.alitaalice.cn/image/20200513120936.png" alt=""></p>
-<p>表示从客户端发来的请求在服务器端被正常处理了。<br>在响应报文内，随状态码一起返回的信息会因方法的不同而发生改变。比如，使用 GET 方法时，对应请求资源的实体会作为响应返回；而使用 HEAD 方法时，对应请求资源的实体首部不随报文主体作为响应返回（即在响应中只返回首部，不会返回实体的主体部分）  </p>
-<h3 id="2-2-204-NOT-Content"><a href="#2-2-204-NOT-Content" class="headerlink" title="2.2 204 NOT Content"></a>2.2 204 NOT Content</h3><p><img src="https://photos.alitaalice.cn/image/20200513121124.png" alt=""></p>
-<p>该状态码代表服务器接收的请求已成功处理，但在返回的响应报文中不含实体的主体部分。另外，也不允许返回任何实体的主体。比如，当从浏览器发出请求处理后，返回 204 响应，那么浏览器显示的页面不发生更新。<br>一般在只需要从客户端往服务器发送信息，而对客户端不需要发送新信息内容的情况下使用。  </p>
-<h3 id="2-3-206-Partial-Content"><a href="#2-3-206-Partial-Content" class="headerlink" title="2.3 206 Partial Content"></a>2.3 206 Partial Content</h3><p><img src="https://photos.alitaalice.cn/image/20200513121229.png" alt=""></p>
-<p>该状态码表示客户端进行了范围请求，而服务器成功执行了这部分的 GET 请求。响应报文中包含由Content-Range 指定范围的实体内容。  </p>
-<h2 id="3-3XX-重定向"><a href="#3-3XX-重定向" class="headerlink" title="3 3XX 重定向"></a>3 3XX 重定向</h2><p>3XX 响应结果表明浏览器需要执行某些特殊的处理以正确处理请求。  </p>
-<h3 id="3-1-301-Moved-Permanently"><a href="#3-1-301-Moved-Permanently" class="headerlink" title="3.1 301 Moved Permanently"></a>3.1 301 Moved Permanently</h3><p><img src="https://photos.alitaalice.cn/image/20200513121404.png" alt=""></p>
-<p>永久性重定向。该状态码表示请求的资源已被分配了新的 URI，以后应使用资源现在所指的 URI。也就是说，如果已经把资源对应的 URI 保存为书签了，这时应该按 Location 首部字段提示的 URI 重新保存。像下方给出的请求 URI，当指定资源路径的最后忘记添加斜杠“/”，就会产生 301 状态码。  </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;example.com&#x2F;sample</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-2-302-Found"><a href="#3-2-302-Found" class="headerlink" title="3.2 302 Found"></a>3.2 302 Found</h3><p><img src="https://photos.alitaalice.cn/image/20200513121815.png" alt=""></p>
-<h3 id="3-3-303-See-Other"><a href="#3-3-303-See-Other" class="headerlink" title="3.3  303 See Other"></a>3.3  303 See Other</h3><p><img src="https://photos.alitaalice.cn/image/20200513122022.png" alt=""></p>
-<p>该状态码表示由于请求对应的资源存在着另一个 URI，应使用 GET 方法定向获取请求的资源。<br>303 状态码和 302 Found 状态码有着相同的功能，但 303 状态码明确表示客户端应当采用 GET 方法获取资源，这点与 302 状态码有区别。<br>比如，当使用 POST 方法访问 CGI 程序，其执行后的处理结果是希望客户端能以 GET 方法重定向到另一个 URI 上去时，返回 303 状态码。虽然 302 Found 状态码也可以实现相同的功能，但这里使用 303 状态码是最理想的。  </p>
-<h3 id="3-4-304-Not-Modified"><a href="#3-4-304-Not-Modified" class="headerlink" title="3.4 304 Not Modified"></a>3.4 304 Not Modified</h3><p><img src="C:%5CUsers%5C16508%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200513122317593.png" alt="image-20200513122317593"></p>
-<p>该状态码表示客户端发送附带条件的请求 2 时，服务器端允许请求访问资源，但未满足条件的情况。304状态码返回时，不包含任何响应的主体部分。304 虽然被划分在 3XX 类别中，但是和重定向没有关系。  </p>
-<h3 id="3-5-307-Temporary-Redirect"><a href="#3-5-307-Temporary-Redirect" class="headerlink" title="3.5 307 Temporary Redirect"></a>3.5 307 Temporary Redirect</h3><p>临时重定向。该状态码与 302 Found 有着相同的含义。尽管 302 标准禁止 POST 变换成 GET，但实际使用时大家并不遵守。<br>307 会遵照浏览器标准，不会从 POST 变成 GET。但是，对于处理响应时的行为，每种浏览器有可能出现不同的情况。</p>
-<h2 id="4-4XX客户端错误"><a href="#4-4XX客户端错误" class="headerlink" title="4 4XX客户端错误"></a>4 4XX客户端错误</h2><h3 id="4-1-400-Bad-Request"><a href="#4-1-400-Bad-Request" class="headerlink" title="4.1 400 Bad Request"></a>4.1 400 Bad Request</h3><p><img src="https://photos.alitaalice.cn/image/20200513122701.png" alt=""></p>
-<p>该状态码表示请求报文中存在语法错误。当错误发生时，需修改请求的内容后再次发送请求。另外，浏览器会像 200 OK 一样对待该状态码。  </p>
-<h3 id="4-2-401-Unauthorized"><a href="#4-2-401-Unauthorized" class="headerlink" title="4.2 401 Unauthorized"></a>4.2 401 Unauthorized</h3><p>-+<img src="https://photos.alitaalice.cn/image/20200513122941.png" alt=""></p>
-<p>该状态码表示发送的请求需要有通过 HTTP 认证（BASIC 认证、DIGEST 认证）的认证信息。另外若之前已进行过 1 次请求，则表示用户认证失败。  </p>
-<h3 id="4-3-403-Forbidden"><a href="#4-3-403-Forbidden" class="headerlink" title="4.3 403 Forbidden"></a>4.3 403 Forbidden</h3><p><img src="https://photos.alitaalice.cn/image/20200513123055.png" alt=""></p>
-<p>该状态码表明对请求资源的访问被服务器拒绝了。服务器端没有必要给出拒绝的详细理由，但如果想作说明的话，可以在实体的主体部分对原因进行描述，这样就能让用户看到了。<br>未获得文件系统的访问授权，访问权限出现某些问题（从未授权的发送源 IP 地址试图访问）等列举的情况都可能是发生 403 的原因。  </p>
-<h3 id="4-4-404-Not-Found"><a href="#4-4-404-Not-Found" class="headerlink" title="4.4 404 Not Found"></a>4.4 404 Not Found</h3><p><img src="https://photos.alitaalice.cn/image/20200513123152.png" alt=""></p>
-<p>该状态码表明服务器上无法找到请求的资源。除此之外，也可以在服务器端拒绝请求且不想说明理由时使用。  </p>
-<h2 id="5-5XX-服务器错误"><a href="#5-5XX-服务器错误" class="headerlink" title="5 5XX 服务器错误"></a>5 5XX 服务器错误</h2><p>5XX 的响应结果表明服务器本身发生错误。  </p>
-<h3 id="5-1-500-Internal-Server-Error"><a href="#5-1-500-Internal-Server-Error" class="headerlink" title="5.1 500 Internal Server Error"></a>5.1 500 Internal Server Error</h3><p>该状态码表明服务器端在执行请求时发生了错误。也有可能是 Web 应用存在的 bug 或某些临时的故障。  <img src="C:%5CUsers%5C16508%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200513123521561.png" alt="image-20200513123521561"></p>
-<h3 id="5-2-503-Service-Unavailable"><a href="#5-2-503-Service-Unavailable" class="headerlink" title="5.2 503 Service Unavailable"></a>5.2 503 Service Unavailable</h3><p><img src="https://photos.alitaalice.cn/image/20200513123558.png" alt=""></p>
-<p>该状态码表明服务器暂时处于超负载或正在进行停机维护，现在无法处理请求。如果事先得知解除以上状况需要的时间，最好写入 RetryAfter 首部字段再返回给客户端。  </p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>转载自<a href="https://www.cnblogs.com/aspirant/p/11470928.html" target="_blank" rel="noopener">https://www.cnblogs.com/aspirant/p/11470928.html</a></p>
 ]]></content>
       <categories>
-        <category>计网</category>
+        <category>面试</category>
       </categories>
       <tags>
-        <tag>HTTP</tag>
+        <tag>JAVA源码</tag>
       </tags>
   </entry>
   <entry>
@@ -205,102 +156,6 @@
       </tags>
   </entry>
   <entry>
-    <title>JAVA_String_API</title>
-    <url>/2020/05/06/JAVA-String-API/</url>
-    <content><![CDATA[<p>String API</p>
-<ul>
-<li>append()</li>
-</ul>
-<p>  在由许多小段的字符串构建一个字符串时，则使用StringBuilder类（字符串构造器）</p>
-<p>  首先构造一个空的字符串构造器：<br>  <a id="more"></a></p>
-  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">StringBuilder builder =<span class="keyword">new</span> StringBuilder();</span><br></pre></td></tr></table></figure>
-
-<p>  当需要添加一部分内容时，调用append()方法</p>
-  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">builder.append(ch);</span><br><span class="line">builder.append(str);</span><br><span class="line">String completedString=builder.toString(); <span class="comment">/*调用toString()方法，得到String对象。*/</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>char charAt(int index)</p>
-<p>返回给定位置的代码单元。</p>
-</li>
-<li><p>int length()</p>
-</li>
-</ul>
-<p>​         返回字符串代码单元的个数</p>
-<ul>
-<li><p>String repeat(int count)</p>
-<p>返回一个字符串，将当前字符重复count次</p>
-</li>
-<li><p>boolean equals() </p>
-<p>用来检测俩个字符串是否相等</p>
-<p>boolean equalsIgnoreCase() </p>
-<p>用来检测俩个字符串是否相等（不区分大小写）</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="string">"hello"</span>.equals(greeting);</span><br><span class="line"><span class="string">"HELLO"</span>.equalsIgnoreCase(<span class="string">"hello"</span>); <span class="comment">/* 不区分大小写 */</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>注意：</p>
-<p><strong>不要用==运算符检测是否相等。</strong></p>
-<p><strong>这个运算符只能够确定俩个字符串是否存放在同一个位置上。</strong>当然如果字符串存放在同一个位置上，它们必然相等，但是完全有可能把内容相同的多个字符串副本放置在不同的位置上。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String greeting=<span class="string">"Hello"</span>;</span><br><span class="line"><span class="keyword">if</span>(greeting ==<span class="string">"Hello"</span>)</span><br><span class="line">  -- <span class="keyword">true</span></span><br><span class="line"> <span class="keyword">if</span>(greeting.substring(<span class="number">0</span>,<span class="number">3</span>)==<span class="string">"Hel"</span>)</span><br><span class="line">  --<span class="keyword">false</span></span><br></pre></td></tr></table></figure>
-
-<p>实际上只有字符串字面量共享，而+或者substring操作得到的字符串并不共享。</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>JAVASE</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JAVA中的输入与输出</title>
-    <url>/2020/05/06/JAVA%E4%B8%AD%E7%9A%84%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA/</url>
-    <content><![CDATA[<h1 id="JAVA中的输入"><a href="#JAVA中的输入" class="headerlink" title="JAVA中的输入"></a>JAVA中的输入</h1><h2 id="读取输入"><a href="#读取输入" class="headerlink" title="读取输入"></a>读取输入</h2><p>  要想通过输入台进行输入，首先需要构造一个与“标准输入流”System.in关联的Scanner对象。<br>  <a id="more"></a></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Scanner scanner=<span class="keyword">new</span> Scanner(System.in);</span><br></pre></td></tr></table></figure>
-
-<p>Scanner类中的方法：</p>
-<p>API  JAVA.util.Scanner</p>
-<table>
-<thead>
-<tr>
-<th>String nextLine()</th>
-<th>读取输入的下一行内容  以enter作为结束符  能得到带空格的字符串</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>String next()</td>
-<td>读取输入的下一个单词（以空格作为分隔符）空格视而不见</td>
-</tr>
-<tr>
-<td>int nextInt()</td>
-<td>只读取int值</td>
-</tr>
-<tr>
-<td>double nextDouble()</td>
-<td>只读取double值</td>
-</tr>
-<tr>
-<td>boolean hasNext()</td>
-<td>检测输入中是否还有其他的单词</td>
-</tr>
-<tr>
-<td>boolean hasNextInt()</td>
-<td>检测输入中是否还有表示整数</td>
-</tr>
-<tr>
-<td>boolean hasNextDouble()</td>
-<td>检测输入中是否还有表示浮点数</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>JAVASE</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JAVA中this和super的用法总结</title>
     <url>/2020/05/09/JAVA%E4%B8%ADthis%E5%92%8Csuper%E7%9A%84%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -361,6 +216,173 @@
       </tags>
   </entry>
   <entry>
+    <title>HTTP状态码</title>
+    <url>/2020/05/13/HTTP%E7%8A%B6%E6%80%81%E7%A0%81/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍返回结果的HTTP状态码。</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h1 id="1-状态码告知从服务器端返回的请求结果"><a href="#1-状态码告知从服务器端返回的请求结果" class="headerlink" title="1 状态码告知从服务器端返回的请求结果"></a>1 状态码告知从服务器端返回的请求结果</h1><p>状态码的职责是当客户端向服务器端发送请求时，描述返回的请求结果。借助状态码，用户可以知道服务器端是正常处理了请求，还是出现了错误  </p>
+<p><img src="https://photos.alitaalice.cn/image/20200513120418.png" alt=""></p>
+<p>状态码如 200 OK，以 3 位数字和原因短语组成。<br>数字中的第一位指定了响应类别，后两位无分类。响应类别有以下 5 种  </p>
+<p><img src="https://photos.alitaalice.cn/image/20200513120523.png" alt=""></p>
+<h2 id="2XX-成功"><a href="#2XX-成功" class="headerlink" title="2XX 成功"></a>2XX 成功</h2><h3 id="2-1-200-OK"><a href="#2-1-200-OK" class="headerlink" title="2.1 200 OK"></a>2.1 200 OK</h3><p><img src="https://photos.alitaalice.cn/image/20200513120936.png" alt=""></p>
+<p>表示从客户端发来的请求在服务器端被正常处理了。<br>在响应报文内，随状态码一起返回的信息会因方法的不同而发生改变。比如，使用 GET 方法时，对应请求资源的实体会作为响应返回；而使用 HEAD 方法时，对应请求资源的实体首部不随报文主体作为响应返回（即在响应中只返回首部，不会返回实体的主体部分）  </p>
+<h3 id="2-2-204-NOT-Content"><a href="#2-2-204-NOT-Content" class="headerlink" title="2.2 204 NOT Content"></a>2.2 204 NOT Content</h3><p><img src="https://photos.alitaalice.cn/image/20200513121124.png" alt=""></p>
+<p>该状态码代表服务器接收的请求已成功处理，但在返回的响应报文中不含实体的主体部分。另外，也不允许返回任何实体的主体。比如，当从浏览器发出请求处理后，返回 204 响应，那么浏览器显示的页面不发生更新。<br>一般在只需要从客户端往服务器发送信息，而对客户端不需要发送新信息内容的情况下使用。  </p>
+<h3 id="2-3-206-Partial-Content"><a href="#2-3-206-Partial-Content" class="headerlink" title="2.3 206 Partial Content"></a>2.3 206 Partial Content</h3><p><img src="https://photos.alitaalice.cn/image/20200513121229.png" alt=""></p>
+<p>该状态码表示客户端进行了范围请求，而服务器成功执行了这部分的 GET 请求。响应报文中包含由Content-Range 指定范围的实体内容。  </p>
+<h2 id="3-3XX-重定向"><a href="#3-3XX-重定向" class="headerlink" title="3 3XX 重定向"></a>3 3XX 重定向</h2><p>3XX 响应结果表明浏览器需要执行某些特殊的处理以正确处理请求。  </p>
+<h3 id="3-1-301-Moved-Permanently"><a href="#3-1-301-Moved-Permanently" class="headerlink" title="3.1 301 Moved Permanently"></a>3.1 301 Moved Permanently</h3><p><img src="https://photos.alitaalice.cn/image/20200513121404.png" alt=""></p>
+<p>永久性重定向。该状态码表示请求的资源已被分配了新的 URI，以后应使用资源现在所指的 URI。也就是说，如果已经把资源对应的 URI 保存为书签了，这时应该按 Location 首部字段提示的 URI 重新保存。像下方给出的请求 URI，当指定资源路径的最后忘记添加斜杠“/”，就会产生 301 状态码。  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;example.com&#x2F;sample</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-302-Found"><a href="#3-2-302-Found" class="headerlink" title="3.2 302 Found"></a>3.2 302 Found</h3><p><img src="https://photos.alitaalice.cn/image/20200513121815.png" alt=""></p>
+<h3 id="3-3-303-See-Other"><a href="#3-3-303-See-Other" class="headerlink" title="3.3  303 See Other"></a>3.3  303 See Other</h3><p><img src="https://photos.alitaalice.cn/image/20200513122022.png" alt=""></p>
+<p>该状态码表示由于请求对应的资源存在着另一个 URI，应使用 GET 方法定向获取请求的资源。<br>303 状态码和 302 Found 状态码有着相同的功能，但 303 状态码明确表示客户端应当采用 GET 方法获取资源，这点与 302 状态码有区别。<br>比如，当使用 POST 方法访问 CGI 程序，其执行后的处理结果是希望客户端能以 GET 方法重定向到另一个 URI 上去时，返回 303 状态码。虽然 302 Found 状态码也可以实现相同的功能，但这里使用 303 状态码是最理想的。  </p>
+<h3 id="3-4-304-Not-Modified"><a href="#3-4-304-Not-Modified" class="headerlink" title="3.4 304 Not Modified"></a>3.4 304 Not Modified</h3><p><img src="C:%5CUsers%5C16508%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200513122317593.png" alt="image-20200513122317593"></p>
+<p>该状态码表示客户端发送附带条件的请求 2 时，服务器端允许请求访问资源，但未满足条件的情况。304状态码返回时，不包含任何响应的主体部分。304 虽然被划分在 3XX 类别中，但是和重定向没有关系。  </p>
+<h3 id="3-5-307-Temporary-Redirect"><a href="#3-5-307-Temporary-Redirect" class="headerlink" title="3.5 307 Temporary Redirect"></a>3.5 307 Temporary Redirect</h3><p>临时重定向。该状态码与 302 Found 有着相同的含义。尽管 302 标准禁止 POST 变换成 GET，但实际使用时大家并不遵守。<br>307 会遵照浏览器标准，不会从 POST 变成 GET。但是，对于处理响应时的行为，每种浏览器有可能出现不同的情况。</p>
+<h2 id="4-4XX客户端错误"><a href="#4-4XX客户端错误" class="headerlink" title="4 4XX客户端错误"></a>4 4XX客户端错误</h2><h3 id="4-1-400-Bad-Request"><a href="#4-1-400-Bad-Request" class="headerlink" title="4.1 400 Bad Request"></a>4.1 400 Bad Request</h3><p><img src="https://photos.alitaalice.cn/image/20200513122701.png" alt=""></p>
+<p>该状态码表示请求报文中存在语法错误。当错误发生时，需修改请求的内容后再次发送请求。另外，浏览器会像 200 OK 一样对待该状态码。  </p>
+<h3 id="4-2-401-Unauthorized"><a href="#4-2-401-Unauthorized" class="headerlink" title="4.2 401 Unauthorized"></a>4.2 401 Unauthorized</h3><p>-+<img src="https://photos.alitaalice.cn/image/20200513122941.png" alt=""></p>
+<p>该状态码表示发送的请求需要有通过 HTTP 认证（BASIC 认证、DIGEST 认证）的认证信息。另外若之前已进行过 1 次请求，则表示用户认证失败。  </p>
+<h3 id="4-3-403-Forbidden"><a href="#4-3-403-Forbidden" class="headerlink" title="4.3 403 Forbidden"></a>4.3 403 Forbidden</h3><p><img src="https://photos.alitaalice.cn/image/20200513123055.png" alt=""></p>
+<p>该状态码表明对请求资源的访问被服务器拒绝了。服务器端没有必要给出拒绝的详细理由，但如果想作说明的话，可以在实体的主体部分对原因进行描述，这样就能让用户看到了。<br>未获得文件系统的访问授权，访问权限出现某些问题（从未授权的发送源 IP 地址试图访问）等列举的情况都可能是发生 403 的原因。  </p>
+<h3 id="4-4-404-Not-Found"><a href="#4-4-404-Not-Found" class="headerlink" title="4.4 404 Not Found"></a>4.4 404 Not Found</h3><p><img src="https://photos.alitaalice.cn/image/20200513123152.png" alt=""></p>
+<p>该状态码表明服务器上无法找到请求的资源。除此之外，也可以在服务器端拒绝请求且不想说明理由时使用。  </p>
+<h2 id="5-5XX-服务器错误"><a href="#5-5XX-服务器错误" class="headerlink" title="5 5XX 服务器错误"></a>5 5XX 服务器错误</h2><p>5XX 的响应结果表明服务器本身发生错误。  </p>
+<h3 id="5-1-500-Internal-Server-Error"><a href="#5-1-500-Internal-Server-Error" class="headerlink" title="5.1 500 Internal Server Error"></a>5.1 500 Internal Server Error</h3><p>该状态码表明服务器端在执行请求时发生了错误。也有可能是 Web 应用存在的 bug 或某些临时的故障。  <img src="C:%5CUsers%5C16508%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200513123521561.png" alt="image-20200513123521561"></p>
+<h3 id="5-2-503-Service-Unavailable"><a href="#5-2-503-Service-Unavailable" class="headerlink" title="5.2 503 Service Unavailable"></a>5.2 503 Service Unavailable</h3><p><img src="https://photos.alitaalice.cn/image/20200513123558.png" alt=""></p>
+<p>该状态码表明服务器暂时处于超负载或正在进行停机维护，现在无法处理请求。如果事先得知解除以上状况需要的时间，最好写入 RetryAfter 首部字段再返回给客户端。  </p>
+]]></content>
+      <categories>
+        <category>计网</category>
+      </categories>
+      <tags>
+        <tag>HTTP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JAVA和C++的区别</title>
+    <url>/2020/05/11/JAVA%E5%92%8CC++%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍JAVA和C++的区别</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="JAVA和C-的区别"><a href="#JAVA和C-的区别" class="headerlink" title="JAVA和C++的区别"></a>JAVA和C++的区别</h2><ul>
+<li>都是面向对象的语言，并且都支持封装，继承和多态</li>
+<li>指针：JAVA不提供指针来直接访问内存，程序更加安全。</li>
+<li>继承：JAVA中的类是单继承的，但是C++允许多继承，JAVA中允许一个类实现多个接口来实现C++中的多冲继承。</li>
+<li>内存：JAVA有自动内存管理机制，不需要程序员手动释放无用内存。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>面试</category>
+      </categories>
+      <tags>
+        <tag>JAVASE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JAVA中的输入与输出</title>
+    <url>/2020/05/06/JAVA%E4%B8%AD%E7%9A%84%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA/</url>
+    <content><![CDATA[<h1 id="JAVA中的输入"><a href="#JAVA中的输入" class="headerlink" title="JAVA中的输入"></a>JAVA中的输入</h1><h2 id="读取输入"><a href="#读取输入" class="headerlink" title="读取输入"></a>读取输入</h2><p>  要想通过输入台进行输入，首先需要构造一个与“标准输入流”System.in关联的Scanner对象。<br>  <a id="more"></a></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Scanner scanner=<span class="keyword">new</span> Scanner(System.in);</span><br></pre></td></tr></table></figure>
+
+<p>Scanner类中的方法：</p>
+<p>API  JAVA.util.Scanner</p>
+<table>
+<thead>
+<tr>
+<th>String nextLine()</th>
+<th>读取输入的下一行内容  以enter作为结束符  能得到带空格的字符串</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>String next()</td>
+<td>读取输入的下一个单词（以空格作为分隔符）空格视而不见</td>
+</tr>
+<tr>
+<td>int nextInt()</td>
+<td>只读取int值</td>
+</tr>
+<tr>
+<td>double nextDouble()</td>
+<td>只读取double值</td>
+</tr>
+<tr>
+<td>boolean hasNext()</td>
+<td>检测输入中是否还有其他的单词</td>
+</tr>
+<tr>
+<td>boolean hasNextInt()</td>
+<td>检测输入中是否还有表示整数</td>
+</tr>
+<tr>
+<td>boolean hasNextDouble()</td>
+<td>检测输入中是否还有表示浮点数</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>JAVASE</category>
+      </categories>
+      <tags>
+        <tag>JAVASE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JAVA_String_API</title>
+    <url>/2020/05/06/JAVA-String-API/</url>
+    <content><![CDATA[<p>String API</p>
+<ul>
+<li>append()</li>
+</ul>
+<p>  在由许多小段的字符串构建一个字符串时，则使用StringBuilder类（字符串构造器）</p>
+<p>  首先构造一个空的字符串构造器：<br>  <a id="more"></a></p>
+  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">StringBuilder builder =<span class="keyword">new</span> StringBuilder();</span><br></pre></td></tr></table></figure>
+
+<p>  当需要添加一部分内容时，调用append()方法</p>
+  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">builder.append(ch);</span><br><span class="line">builder.append(str);</span><br><span class="line">String completedString=builder.toString(); <span class="comment">/*调用toString()方法，得到String对象。*/</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>char charAt(int index)</p>
+<p>返回给定位置的代码单元。</p>
+</li>
+<li><p>int length()</p>
+</li>
+</ul>
+<p>​         返回字符串代码单元的个数</p>
+<ul>
+<li><p>String repeat(int count)</p>
+<p>返回一个字符串，将当前字符重复count次</p>
+</li>
+<li><p>boolean equals() </p>
+<p>用来检测俩个字符串是否相等</p>
+<p>boolean equalsIgnoreCase() </p>
+<p>用来检测俩个字符串是否相等（不区分大小写）</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="string">"hello"</span>.equals(greeting);</span><br><span class="line"><span class="string">"HELLO"</span>.equalsIgnoreCase(<span class="string">"hello"</span>); <span class="comment">/* 不区分大小写 */</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注意：</p>
+<p><strong>不要用==运算符检测是否相等。</strong></p>
+<p><strong>这个运算符只能够确定俩个字符串是否存放在同一个位置上。</strong>当然如果字符串存放在同一个位置上，它们必然相等，但是完全有可能把内容相同的多个字符串副本放置在不同的位置上。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String greeting=<span class="string">"Hello"</span>;</span><br><span class="line"><span class="keyword">if</span>(greeting ==<span class="string">"Hello"</span>)</span><br><span class="line">  -- <span class="keyword">true</span></span><br><span class="line"> <span class="keyword">if</span>(greeting.substring(<span class="number">0</span>,<span class="number">3</span>)==<span class="string">"Hel"</span>)</span><br><span class="line">  --<span class="keyword">false</span></span><br></pre></td></tr></table></figure>
+
+<p>实际上只有字符串字面量共享，而+或者substring操作得到的字符串并不共享。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>JAVASE</category>
+      </categories>
+      <tags>
+        <tag>JAVASE</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JAVA内存区域与内存溢出异常</title>
     <url>/2020/05/15/JAVA%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F%E4%B8%8E%E5%86%85%E5%AD%98%E6%BA%A2%E5%87%BA%E5%BC%82%E5%B8%B8/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -385,6 +407,16 @@
       <tags>
         <tag>JVM</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>JAVA泛型</title>
+    <url>/2020/05/12/JAVA%E6%B3%9B%E5%9E%8B/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
   </entry>
   <entry>
     <title>JAVA多态</title>
@@ -418,28 +450,6 @@
 ]]></content>
       <categories>
         <category>后端</category>
-      </categories>
-      <tags>
-        <tag>JAVASE</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JAVA和C++的区别</title>
-    <url>/2020/05/11/JAVA%E5%92%8CC++%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍JAVA和C++的区别</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="JAVA和C-的区别"><a href="#JAVA和C-的区别" class="headerlink" title="JAVA和C++的区别"></a>JAVA和C++的区别</h2><ul>
-<li>都是面向对象的语言，并且都支持封装，继承和多态</li>
-<li>指针：JAVA不提供指针来直接访问内存，程序更加安全。</li>
-<li>继承：JAVA中的类是单继承的，但是C++允许多继承，JAVA中允许一个类实现多个接口来实现C++中的多冲继承。</li>
-<li>内存：JAVA有自动内存管理机制，不需要程序员手动释放无用内存。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>面试</category>
       </categories>
       <tags>
         <tag>JAVASE</tag>
@@ -571,14 +581,52 @@
       </tags>
   </entry>
   <entry>
-    <title>JAVA泛型</title>
-    <url>/2020/05/12/JAVA%E6%B3%9B%E5%9E%8B/</url>
+    <title>JAVA源码问题</title>
+    <url>/2020/05/14/JAVA%E6%BA%90%E7%A0%81%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍</p>
+<p>本章介绍JAVA源码问题</p>
 </blockquote>
 <a id="more"></a>
 
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="说说常见的集合有哪些吧？"><a href="#说说常见的集合有哪些吧？" class="headerlink" title="说说常见的集合有哪些吧？"></a>说说常见的集合有哪些吧？</h2><p>答：Map 接口和 Collection 接口是所有集合框架的父接口：</p>
+<ol>
+<li>Collection 接口的子接口包括：Set 接口和 List 接口；</li>
+<li>Map 接口的实现类主要有：HashMap、TreeMap、Hashtable、ConcurrentHashMap 以及 Properties 等；</li>
+<li>Set 接口的实现类主要有：HashSet、TreeSet、LinkedHashSet 等；</li>
+<li>List 接口的实现类主要有：ArrayList、LinkedList、Stack 以及 Vector 等。</li>
+</ol>
+<h3 id="当两个对象的hashcode相同时会发生什么，如何获取对象？"><a href="#当两个对象的hashcode相同时会发生什么，如何获取对象？" class="headerlink" title="当两个对象的hashcode相同时会发生什么，如何获取对象？"></a>当两个对象的hashcode相同时会发生什么，如何获取对象？</h3><p>因为hashcode相同，所以它们的bucket位置相同，‘碰撞’会发生。</p>
+<p>两个对象的hashCode相同所以它们的bucket位置相同，找到bucket位置之后，会调用keys.equals()方法去找到链表中正确的节点 <strong><code>(key != null &amp;&amp; key.equals(k)</code></strong>。</p>
+<p>因为HashMap使用链表存储对象，这个Entry(包含有键值对的Map.Entry对象)会存储在链表中。这个时候要理解根据hashcode来划分的数组，如果数组的坐标相同，则进入链表这个数据结构中了，一般的添加都在最前面，也就是和数组下标直接相连的地方，链表长度到达8的时候，jdk1.8上升为红黑树。</p>
+<h3 id="HashMap的大小超过了负载因子-load-factor-定义的容量，怎么办"><a href="#HashMap的大小超过了负载因子-load-factor-定义的容量，怎么办" class="headerlink" title="HashMap的大小超过了负载因子(load factor)定义的容量，怎么办"></a>HashMap的大小超过了负载因子(load factor)定义的容量，怎么办</h3><p>会调用<strong><code>resize()</code></strong>进行数组扩容。</p>
+<h2 id="HashMap中的tableSizeFor方法"><a href="#HashMap中的tableSizeFor方法" class="headerlink" title="HashMap中的tableSizeFor方法"></a>HashMap中的tableSizeFor方法</h2><p>在使用指定数组的初始容量时上面说过，数组容量必须是2的次方。所以就需要通过算法将我们给定的数值转换成2的次方。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 这个方法可以将任意一个整数转换成2的次方。</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> <span class="title">tableSizeFor</span><span class="params">(<span class="keyword">int</span> cap)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = cap - <span class="number">1</span>;</span><br><span class="line">    n |= n &gt;&gt;&gt; <span class="number">1</span>;</span><br><span class="line">    n |= n &gt;&gt;&gt; <span class="number">2</span>;</span><br><span class="line">    n |= n &gt;&gt;&gt; <span class="number">4</span>;</span><br><span class="line">    n |= n &gt;&gt;&gt; <span class="number">8</span>;</span><br><span class="line">    n |= n &gt;&gt;&gt; <span class="number">16</span>;</span><br><span class="line">    <span class="keyword">return</span> (n &lt; <span class="number">0</span>) ? <span class="number">1</span> : (n &gt;= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="HashMap是线程安全的吗，为什么"><a href="#HashMap是线程安全的吗，为什么" class="headerlink" title="HashMap是线程安全的吗，为什么"></a>HashMap是线程安全的吗，为什么</h2><p>HashMap底层是一个Entry数组，当发生hash冲突的时候，hashmap是采用链表的方式来解决的，在对应的数组位置存放链表的头结点。对链表而言，新加入的节点会从头结点加入。</p>
+<p>1</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addEntry</span><span class="params">(<span class="keyword">int</span> hash, K key, V value, <span class="keyword">int</span> bucketIndex)</span> </span>&#123;</span><br><span class="line">	Entry&lt;K,V&gt; e = table[bucketIndex];</span><br><span class="line">        table[bucketIndex] = <span class="keyword">new</span> Entry&lt;K,V&gt;(hash, key, value, e);</span><br><span class="line">        <span class="keyword">if</span> (size++ &gt;= threshold)</span><br><span class="line">            resize(<span class="number">2</span> * table.length);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>在hashmap做put操作的时候会调用到以上的方法。现在假如A线程和B线程同时对同一个数组位置调用addEntry，两个线程会同时得到现在的头结点，然后A写入新的头结点之后，B也写入新的头结点，那B的写入操作就会覆盖A的写入操作造成A的写入操作丢失</p>
+<p>2</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">final</span> Entry&lt;K,V&gt; <span class="title">removeEntryForKey</span><span class="params">(Object key)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> hash = (key == <span class="keyword">null</span>) ? <span class="number">0</span> : hash(key.hashCode());</span><br><span class="line">        <span class="keyword">int</span> i = indexFor(hash, table.length);</span><br><span class="line">        Entry&lt;K,V&gt; prev = table[i];</span><br><span class="line">        Entry&lt;K,V&gt; e = prev;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">while</span> (e != <span class="keyword">null</span>) &#123;</span><br><span class="line">            Entry&lt;K,V&gt; next = e.next;</span><br><span class="line">            Object k;</span><br><span class="line">            <span class="keyword">if</span> (e.hash == hash &amp;&amp;</span><br><span class="line">                ((k = e.key) == key || (key != <span class="keyword">null</span> &amp;&amp; key.equals(k)))) &#123;</span><br><span class="line">                modCount++;</span><br><span class="line">                size--;</span><br><span class="line">                <span class="keyword">if</span> (prev == e)</span><br><span class="line">                    table[i] = next;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    prev.next = next;</span><br><span class="line">                e.recordRemoval(<span class="keyword">this</span>);</span><br><span class="line">                <span class="keyword">return</span> e;</span><br><span class="line">            &#125;</span><br><span class="line">            prev = e;</span><br><span class="line">            e = next;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">return</span> e;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>删除键值对的代码如上：</p>
+<p>当多个线程同时操作同一个数组位置的时候，也都会先取得现在状态下该位置存储的头结点，然后各自去进行计算操作，之后再把结果写会到该数组位置去，其实写回的时候可能其他的线程已经就把这个位置给修改过了，就会覆盖其他线程的修改</p>
+<p>3、addEntry中当加入新的键值对后键值对总数量超过门限值的时候会调用一个resize操作，代码如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">resize</span><span class="params">(<span class="keyword">int</span> newCapacity)</span> </span>&#123;</span><br><span class="line">        Entry[] oldTable = table;</span><br><span class="line">        <span class="keyword">int</span> oldCapacity = oldTable.length;</span><br><span class="line">        <span class="keyword">if</span> (oldCapacity == MAXIMUM_CAPACITY) &#123;</span><br><span class="line">            threshold = Integer.MAX_VALUE;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        Entry[] newTable = <span class="keyword">new</span> Entry[newCapacity];</span><br><span class="line">        transfer(newTable);</span><br><span class="line">        table = newTable;</span><br><span class="line">        threshold = (<span class="keyword">int</span>)(newCapacity * loadFactor);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>这个操作会新生成一个新的容量的数组，然后对原数组的所有键值对重新进行计算和写入新的数组，之后指向新生成的数组。</p>
+<p>当多个线程同时检测到总数量超过门限值的时候就会同时调用resize操作，各自生成新的数组并rehash后赋给该map底层的数组table，结果最终只有最后一个线程生成的新数组被赋给table变量，其他线程的均会丢失。而且当某些线程已经完成赋值而其他线程刚开始的时候，就会用已经被赋值的table作为原始数组，这样也会有问题。</p>
+<h2 id="哪些是线程安全的容器"><a href="#哪些是线程安全的容器" class="headerlink" title="哪些是线程安全的容器"></a>哪些是线程安全的容器</h2><p>同步容器类：</p>
+<p>使用了synchronized<br>1.Vector<br>2.HashTable</p>
+<p>并发容器：<br>3.ConcurrentHashMap:分段<br>4.CopyOnWriteArrayList：写时复制<br>5.CopyOnWriteArraySet：写时复制</p>
+<h3 id="Hashtable和HashMap的区别"><a href="#Hashtable和HashMap的区别" class="headerlink" title="Hashtable和HashMap的区别"></a>Hashtable和HashMap的区别</h3><h3 id="HashMap多线程处理之快速失败机制"><a href="#HashMap多线程处理之快速失败机制" class="headerlink" title="HashMap多线程处理之快速失败机制"></a>HashMap多线程处理之快速失败机制</h3><h3 id="jdk7和jdk8的HashMap实现的区别"><a href="#jdk7和jdk8的HashMap实现的区别" class="headerlink" title="jdk7和jdk8的HashMap实现的区别"></a>jdk7和jdk8的HashMap实现的区别</h3><h3 id="HashMap与LinkedHashMap和TreeMap的区别"><a href="#HashMap与LinkedHashMap和TreeMap的区别" class="headerlink" title="HashMap与LinkedHashMap和TreeMap的区别"></a>HashMap与LinkedHashMap和TreeMap的区别</h3>]]></content>
+      <categories>
+        <category>JAVA源码</category>
+      </categories>
+      <tags>
+        <tag>JAVA源码</tag>
+      </tags>
   </entry>
   <entry>
     <title>JAVA注解</title>
@@ -664,54 +712,6 @@
       </tags>
   </entry>
   <entry>
-    <title>JAVA源码问题</title>
-    <url>/2020/05/14/JAVA%E6%BA%90%E7%A0%81%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍JAVA源码问题</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="说说常见的集合有哪些吧？"><a href="#说说常见的集合有哪些吧？" class="headerlink" title="说说常见的集合有哪些吧？"></a>说说常见的集合有哪些吧？</h2><p>答：Map 接口和 Collection 接口是所有集合框架的父接口：</p>
-<ol>
-<li>Collection 接口的子接口包括：Set 接口和 List 接口；</li>
-<li>Map 接口的实现类主要有：HashMap、TreeMap、Hashtable、ConcurrentHashMap 以及 Properties 等；</li>
-<li>Set 接口的实现类主要有：HashSet、TreeSet、LinkedHashSet 等；</li>
-<li>List 接口的实现类主要有：ArrayList、LinkedList、Stack 以及 Vector 等。</li>
-</ol>
-<h3 id="当两个对象的hashcode相同时会发生什么，如何获取对象？"><a href="#当两个对象的hashcode相同时会发生什么，如何获取对象？" class="headerlink" title="当两个对象的hashcode相同时会发生什么，如何获取对象？"></a>当两个对象的hashcode相同时会发生什么，如何获取对象？</h3><p>因为hashcode相同，所以它们的bucket位置相同，‘碰撞’会发生。</p>
-<p>两个对象的hashCode相同所以它们的bucket位置相同，找到bucket位置之后，会调用keys.equals()方法去找到链表中正确的节点 <strong><code>(key != null &amp;&amp; key.equals(k)</code></strong>。</p>
-<p>因为HashMap使用链表存储对象，这个Entry(包含有键值对的Map.Entry对象)会存储在链表中。这个时候要理解根据hashcode来划分的数组，如果数组的坐标相同，则进入链表这个数据结构中了，一般的添加都在最前面，也就是和数组下标直接相连的地方，链表长度到达8的时候，jdk1.8上升为红黑树。</p>
-<h3 id="HashMap的大小超过了负载因子-load-factor-定义的容量，怎么办"><a href="#HashMap的大小超过了负载因子-load-factor-定义的容量，怎么办" class="headerlink" title="HashMap的大小超过了负载因子(load factor)定义的容量，怎么办"></a>HashMap的大小超过了负载因子(load factor)定义的容量，怎么办</h3><p>会调用<strong><code>resize()</code></strong>进行数组扩容。</p>
-<h2 id="HashMap中的tableSizeFor方法"><a href="#HashMap中的tableSizeFor方法" class="headerlink" title="HashMap中的tableSizeFor方法"></a>HashMap中的tableSizeFor方法</h2><p>在使用指定数组的初始容量时上面说过，数组容量必须是2的次方。所以就需要通过算法将我们给定的数值转换成2的次方。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 这个方法可以将任意一个整数转换成2的次方。</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> <span class="title">tableSizeFor</span><span class="params">(<span class="keyword">int</span> cap)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = cap - <span class="number">1</span>;</span><br><span class="line">    n |= n &gt;&gt;&gt; <span class="number">1</span>;</span><br><span class="line">    n |= n &gt;&gt;&gt; <span class="number">2</span>;</span><br><span class="line">    n |= n &gt;&gt;&gt; <span class="number">4</span>;</span><br><span class="line">    n |= n &gt;&gt;&gt; <span class="number">8</span>;</span><br><span class="line">    n |= n &gt;&gt;&gt; <span class="number">16</span>;</span><br><span class="line">    <span class="keyword">return</span> (n &lt; <span class="number">0</span>) ? <span class="number">1</span> : (n &gt;= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="HashMap是线程安全的吗，为什么"><a href="#HashMap是线程安全的吗，为什么" class="headerlink" title="HashMap是线程安全的吗，为什么"></a>HashMap是线程安全的吗，为什么</h2><p>HashMap底层是一个Entry数组，当发生hash冲突的时候，hashmap是采用链表的方式来解决的，在对应的数组位置存放链表的头结点。对链表而言，新加入的节点会从头结点加入。</p>
-<p>1</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addEntry</span><span class="params">(<span class="keyword">int</span> hash, K key, V value, <span class="keyword">int</span> bucketIndex)</span> </span>&#123;</span><br><span class="line">	Entry&lt;K,V&gt; e = table[bucketIndex];</span><br><span class="line">        table[bucketIndex] = <span class="keyword">new</span> Entry&lt;K,V&gt;(hash, key, value, e);</span><br><span class="line">        <span class="keyword">if</span> (size++ &gt;= threshold)</span><br><span class="line">            resize(<span class="number">2</span> * table.length);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<p>在hashmap做put操作的时候会调用到以上的方法。现在假如A线程和B线程同时对同一个数组位置调用addEntry，两个线程会同时得到现在的头结点，然后A写入新的头结点之后，B也写入新的头结点，那B的写入操作就会覆盖A的写入操作造成A的写入操作丢失</p>
-<p>2</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">final</span> Entry&lt;K,V&gt; <span class="title">removeEntryForKey</span><span class="params">(Object key)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> hash = (key == <span class="keyword">null</span>) ? <span class="number">0</span> : hash(key.hashCode());</span><br><span class="line">        <span class="keyword">int</span> i = indexFor(hash, table.length);</span><br><span class="line">        Entry&lt;K,V&gt; prev = table[i];</span><br><span class="line">        Entry&lt;K,V&gt; e = prev;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">while</span> (e != <span class="keyword">null</span>) &#123;</span><br><span class="line">            Entry&lt;K,V&gt; next = e.next;</span><br><span class="line">            Object k;</span><br><span class="line">            <span class="keyword">if</span> (e.hash == hash &amp;&amp;</span><br><span class="line">                ((k = e.key) == key || (key != <span class="keyword">null</span> &amp;&amp; key.equals(k)))) &#123;</span><br><span class="line">                modCount++;</span><br><span class="line">                size--;</span><br><span class="line">                <span class="keyword">if</span> (prev == e)</span><br><span class="line">                    table[i] = next;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    prev.next = next;</span><br><span class="line">                e.recordRemoval(<span class="keyword">this</span>);</span><br><span class="line">                <span class="keyword">return</span> e;</span><br><span class="line">            &#125;</span><br><span class="line">            prev = e;</span><br><span class="line">            e = next;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">return</span> e;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<p>删除键值对的代码如上：</p>
-<p>当多个线程同时操作同一个数组位置的时候，也都会先取得现在状态下该位置存储的头结点，然后各自去进行计算操作，之后再把结果写会到该数组位置去，其实写回的时候可能其他的线程已经就把这个位置给修改过了，就会覆盖其他线程的修改</p>
-<p>3、addEntry中当加入新的键值对后键值对总数量超过门限值的时候会调用一个resize操作，代码如下：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">resize</span><span class="params">(<span class="keyword">int</span> newCapacity)</span> </span>&#123;</span><br><span class="line">        Entry[] oldTable = table;</span><br><span class="line">        <span class="keyword">int</span> oldCapacity = oldTable.length;</span><br><span class="line">        <span class="keyword">if</span> (oldCapacity == MAXIMUM_CAPACITY) &#123;</span><br><span class="line">            threshold = Integer.MAX_VALUE;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        Entry[] newTable = <span class="keyword">new</span> Entry[newCapacity];</span><br><span class="line">        transfer(newTable);</span><br><span class="line">        table = newTable;</span><br><span class="line">        threshold = (<span class="keyword">int</span>)(newCapacity * loadFactor);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<p>这个操作会新生成一个新的容量的数组，然后对原数组的所有键值对重新进行计算和写入新的数组，之后指向新生成的数组。</p>
-<p>当多个线程同时检测到总数量超过门限值的时候就会同时调用resize操作，各自生成新的数组并rehash后赋给该map底层的数组table，结果最终只有最后一个线程生成的新数组被赋给table变量，其他线程的均会丢失。而且当某些线程已经完成赋值而其他线程刚开始的时候，就会用已经被赋值的table作为原始数组，这样也会有问题。</p>
-<h2 id="哪些是线程安全的容器"><a href="#哪些是线程安全的容器" class="headerlink" title="哪些是线程安全的容器"></a>哪些是线程安全的容器</h2><p>同步容器类：</p>
-<p>使用了synchronized<br>1.Vector<br>2.HashTable</p>
-<p>并发容器：<br>3.ConcurrentHashMap:分段<br>4.CopyOnWriteArrayList：写时复制<br>5.CopyOnWriteArraySet：写时复制</p>
-<h3 id="Hashtable和HashMap的区别"><a href="#Hashtable和HashMap的区别" class="headerlink" title="Hashtable和HashMap的区别"></a>Hashtable和HashMap的区别</h3><h3 id="HashMap多线程处理之快速失败机制"><a href="#HashMap多线程处理之快速失败机制" class="headerlink" title="HashMap多线程处理之快速失败机制"></a>HashMap多线程处理之快速失败机制</h3><h3 id="jdk7和jdk8的HashMap实现的区别"><a href="#jdk7和jdk8的HashMap实现的区别" class="headerlink" title="jdk7和jdk8的HashMap实现的区别"></a>jdk7和jdk8的HashMap实现的区别</h3><h3 id="HashMap与LinkedHashMap和TreeMap的区别"><a href="#HashMap与LinkedHashMap和TreeMap的区别" class="headerlink" title="HashMap与LinkedHashMap和TreeMap的区别"></a>HashMap与LinkedHashMap和TreeMap的区别</h3>]]></content>
-      <categories>
-        <category>JAVA源码</category>
-      </categories>
-      <tags>
-        <tag>JAVA源码</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JAVA的静态方法不能被重写</title>
     <url>/2020/05/06/JAVA%E7%9A%84%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95%E4%B8%8D%E8%83%BD%E8%A2%AB%E9%87%8D%E5%86%99/</url>
     <content><![CDATA[<h1 id="JAVA的静态方法不能被重写"><a href="#JAVA的静态方法不能被重写" class="headerlink" title="JAVA的静态方法不能被重写"></a>JAVA的静态方法不能被重写</h1><p>堆区：</p>
@@ -727,7 +727,7 @@
 </ul>
 ]]></content>
       <categories>
-        <category>后端</category>
+        <category>JAVASE</category>
       </categories>
       <tags>
         <tag>JAVASE</tag>
@@ -799,6 +799,33 @@
       </tags>
   </entry>
   <entry>
+    <title>JVM内存模型概述</title>
+    <url>/2020/05/20/JVM%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E6%A6%82%E8%BF%B0/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍JVM内存模型概述</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>转<a href="https://blog.csdn.net/justloveyou_/article/details/71189093" target="_blank" rel="noopener">https://blog.csdn.net/justloveyou_/article/details/71189093</a></p>
+]]></content>
+      <categories>
+        <category>JVM</category>
+      </categories>
+      <tags>
+        <tag>JVM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java8函数式接口与Lambda表达式</title>
+    <url>/2020/05/28/Java8%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3%E4%B8%8ELambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
+  </entry>
+  <entry>
     <title>JDK和JRE</title>
     <url>/2020/05/09/JDK%E5%92%8CJRE/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -831,20 +858,44 @@
       </tags>
   </entry>
   <entry>
-    <title>JVM内存模型概述</title>
-    <url>/2020/05/20/JVM%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E6%A6%82%E8%BF%B0/</url>
+    <title>List接口</title>
+    <url>/2020/05/07/List%E6%8E%A5%E5%8F%A3/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍JVM内存模型概述</p>
+<p>List集合包括List接口和List接口所有的实现类</p>
 </blockquote>
 <a id="more"></a>
 
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>转<a href="https://blog.csdn.net/justloveyou_/article/details/71189093" target="_blank" rel="noopener">https://blog.csdn.net/justloveyou_/article/details/71189093</a></p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="List接口定义的方法"><a href="#List接口定义的方法" class="headerlink" title="List接口定义的方法"></a>List接口定义的方法</h2><p>除了继承Collection外，List接口还有俩个重要的方法。</p>
+<table>
+<thead>
+<tr>
+<th>get(int index)</th>
+<th>获得指定索引位置的元素</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>set(int index,Object obj)</td>
+<td>将集合中指定索引位置的对象修改为指定的对象</td>
+</tr>
+</tbody></table>
+<h2 id="List接口的实现类"><a href="#List接口的实现类" class="headerlink" title="List接口的实现类"></a>List接口的实现类</h2><ul>
+<li><p>ArrayList</p>
+<p>实现了可变的数组，允许保存所有元素包括null .并且可以根据索引的位置对集合进行快速的随机访问，缺点是向指向的索引位置插入对象或删除对象时的速度较慢</p>
+</li>
+<li><p>LinkedList </p>
+<p>采用链表的结构保存对象。优点是便于向集合中插入和删除对象</p>
+<p>分别用ArrayList 和LinkedList来实例化集合</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;E&gt; list=<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">List&lt;E&gt; list=<span class="keyword">new</span> LinkedList&lt;&gt;();</span><br></pre></td></tr></table></figure>
+
+<p>E是合法的JAVA数据类型，也可以是字符串String</p>
+</li>
+</ul>
 ]]></content>
       <categories>
-        <category>JVM</category>
+        <category>JAVA集合</category>
       </categories>
       <tags>
-        <tag>JVM</tag>
+        <tag>JAVA集合</tag>
       </tags>
   </entry>
   <entry>
@@ -893,44 +944,37 @@
       </tags>
   </entry>
   <entry>
-    <title>List接口</title>
-    <url>/2020/05/07/List%E6%8E%A5%E5%8F%A3/</url>
+    <title>OutOfMemeryError异常</title>
+    <url>/2020/05/25/OutOfMemeryError%E5%BC%82%E5%B8%B8/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>List集合包括List接口和List接口所有的实现类</p>
+<p>本章介绍OutOfMemeryError异常</p>
 </blockquote>
 <a id="more"></a>
 
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="List接口定义的方法"><a href="#List接口定义的方法" class="headerlink" title="List接口定义的方法"></a>List接口定义的方法</h2><p>除了继承Collection外，List接口还有俩个重要的方法。</p>
-<table>
-<thead>
-<tr>
-<th>get(int index)</th>
-<th>获得指定索引位置的元素</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>set(int index,Object obj)</td>
-<td>将集合中指定索引位置的对象修改为指定的对象</td>
-</tr>
-</tbody></table>
-<h2 id="List接口的实现类"><a href="#List接口的实现类" class="headerlink" title="List接口的实现类"></a>List接口的实现类</h2><ul>
-<li><p>ArrayList</p>
-<p>实现了可变的数组，允许保存所有元素包括null .并且可以根据索引的位置对集合进行快速的随机访问，缺点是向指向的索引位置插入对象或删除对象时的速度较慢</p>
-</li>
-<li><p>LinkedList </p>
-<p>采用链表的结构保存对象。优点是便于向集合中插入和删除对象</p>
-<p>分别用ArrayList 和LinkedList来实例化集合</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;E&gt; list=<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">List&lt;E&gt; list=<span class="keyword">new</span> LinkedList&lt;&gt;();</span><br></pre></td></tr></table></figure>
-
-<p>E是合法的JAVA数据类型，也可以是字符串String</p>
-</li>
-</ul>
-]]></content>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="1-Java堆溢出"><a href="#1-Java堆溢出" class="headerlink" title="1 Java堆溢出"></a>1 Java堆溢出</h3><p><img src="https://photos.alitaalice.cn/image/20200525171739.png" alt=""></p>
+<h3 id="2-虚拟机栈和本地方法栈溢出"><a href="#2-虚拟机栈和本地方法栈溢出" class="headerlink" title="2 虚拟机栈和本地方法栈溢出"></a>2 虚拟机栈和本地方法栈溢出</h3><p><img src="https://photos.alitaalice.cn/image/20200525171954.png" alt=""></p>
+<h3 id="3-方法区和运行时常量池溢出"><a href="#3-方法区和运行时常量池溢出" class="headerlink" title="3 方法区和运行时常量池溢出"></a>3 方法区和运行时常量池溢出</h3><h3 id="4-本地直接内存溢出"><a href="#4-本地直接内存溢出" class="headerlink" title="4 本地直接内存溢出"></a>4 本地直接内存溢出</h3>]]></content>
       <categories>
-        <category>JAVA集合</category>
+        <category>JVM</category>
       </categories>
       <tags>
-        <tag>JAVA集合</tag>
+        <tag>JVM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SSM基础</title>
+    <url>/2020/05/27/SSM%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
+      <categories>
+        <category>框架</category>
+      </categories>
+      <tags>
+        <tag>框架</tag>
       </tags>
   </entry>
   <entry>
@@ -1066,6 +1110,38 @@
       </tags>
   </entry>
   <entry>
+    <title>Mysql自定义函数</title>
+    <url>/2020/05/18/Mysql%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍Mysql自定义函数</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>创建函数语法：<br>CREATE FUNCTION fn_name(func_parameter[,…])<br>RETURNS type<br>[characteristic…]<br>routine_body</p>
+<p>eg:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">#创建一个函数</span><br><span class="line">DELIMITER $$ -- 定界符</span><br><span class="line">-- 开始创建函数</span><br><span class="line"><span class="function">CREATE FUNCTION <span class="title">user_main_fn</span><span class="params">(v_id INT)</span></span></span><br><span class="line"><span class="function">RETURNS <span class="title">VARCHAR</span><span class="params">(<span class="number">50</span>)</span></span></span><br><span class="line"><span class="function">BEGIN</span></span><br><span class="line"><span class="function">  -- 定义变量</span></span><br><span class="line"><span class="function">  DECLARE v_userName <span class="title">VARCHAR</span><span class="params">(<span class="number">50</span>)</span></span>;</span><br><span class="line">  -- 给定义的变量赋值</span><br><span class="line">  SELECT f_userName INTO v_userName FROM t_user_main </span><br><span class="line">  WHERE f_userId = v_id;</span><br><span class="line">  -- 返回函数处理结果</span><br><span class="line">  RETURN v_userName;</span><br><span class="line">END $$ -- 函数创建定界符</span><br><span class="line">DELIMITER;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">#创建第二个函数，使用第一个函数</span><br><span class="line">DELIMITER $$</span><br><span class="line"><span class="function">CREATE FUNCTION <span class="title">user_main_fn2</span><span class="params">(v_id INT)</span></span></span><br><span class="line"><span class="function">RETURNS <span class="title">VARCHAR</span><span class="params">(<span class="number">100</span>)</span></span></span><br><span class="line"><span class="function">BEGIN </span></span><br><span class="line"><span class="function">  #定义变量</span></span><br><span class="line"><span class="function">  DECLARE v_userName <span class="title">VARCHAR</span><span class="params">(<span class="number">50</span>)</span></span>;</span><br><span class="line">  <span class="function">DECLARE  v_userNameNew <span class="title">VARCHAR</span><span class="params">(<span class="number">50</span>)</span></span>;</span><br><span class="line">  #通过into赋值</span><br><span class="line">  SELECT f_userName INTO v_userName FROM t_user_main WHERE f_userId = v_id;</span><br><span class="line">  #使用函数</span><br><span class="line">  <span class="function">SELECT <span class="title">user_main_fn</span><span class="params">(v_id)</span> INTO v_userNameNew FROM DUAL</span>;</span><br><span class="line">  #返回函数处理结果</span><br><span class="line">  <span class="function">RETURN <span class="title">CONCAT</span><span class="params">(v_userName,<span class="string">'***'</span>,v_userNameNew)</span></span>;</span><br><span class="line">END $$</span><br><span class="line">DELIMITER;</span><br></pre></td></tr></table></figure>
+
+<p>DUAL 虚拟表</p>
+<h3 id="查看函数状态语法："><a href="#查看函数状态语法：" class="headerlink" title="查看函数状态语法："></a>查看函数状态语法：</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">SHOW FUNCTION STATUS [LIKE <span class="string">'pattern'</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="查看函数的定义语法："><a href="#查看函数的定义语法：" class="headerlink" title="查看函数的定义语法："></a>查看函数的定义语法：</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">SHOW CREATE FUNCTION fn_name;</span><br></pre></td></tr></table></figure>
+
+<p>eg:  输出第n高的工资</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">CREATE FUNCTION <span class="title">getNthHighestSalary</span><span class="params">(N INT)</span> RETURNS INT</span></span><br><span class="line"><span class="function">BEGIN</span></span><br><span class="line"><span class="function">  SET N</span>=N-<span class="number">1</span>;</span><br><span class="line">  RETURN (</span><br><span class="line">      # Write your MySQL query statement below.</span><br><span class="line">      SELECT  DISTINCT Salary  FROM Employee ORDER BY Salary DESC  limit N,<span class="number">1</span></span><br><span class="line">  );</span><br><span class="line">END</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>mysql</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Mysql用户变量和set语句</title>
     <url>/2020/05/19/Mysql%E7%94%A8%E6%88%B7%E5%8F%98%E9%87%8F%E5%92%8Cset%E8%AF%AD%E5%8F%A5/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -1104,56 +1180,6 @@
       </categories>
       <tags>
         <tag>mysql</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Mysql自定义函数</title>
-    <url>/2020/05/18/Mysql%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍Mysql自定义函数</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>创建函数语法：<br>CREATE FUNCTION fn_name(func_parameter[,…])<br>RETURNS type<br>[characteristic…]<br>routine_body</p>
-<p>eg:</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">#创建一个函数</span><br><span class="line">DELIMITER $$ -- 定界符</span><br><span class="line">-- 开始创建函数</span><br><span class="line"><span class="function">CREATE FUNCTION <span class="title">user_main_fn</span><span class="params">(v_id INT)</span></span></span><br><span class="line"><span class="function">RETURNS <span class="title">VARCHAR</span><span class="params">(<span class="number">50</span>)</span></span></span><br><span class="line"><span class="function">BEGIN</span></span><br><span class="line"><span class="function">  -- 定义变量</span></span><br><span class="line"><span class="function">  DECLARE v_userName <span class="title">VARCHAR</span><span class="params">(<span class="number">50</span>)</span></span>;</span><br><span class="line">  -- 给定义的变量赋值</span><br><span class="line">  SELECT f_userName INTO v_userName FROM t_user_main </span><br><span class="line">  WHERE f_userId = v_id;</span><br><span class="line">  -- 返回函数处理结果</span><br><span class="line">  RETURN v_userName;</span><br><span class="line">END $$ -- 函数创建定界符</span><br><span class="line">DELIMITER;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">#创建第二个函数，使用第一个函数</span><br><span class="line">DELIMITER $$</span><br><span class="line"><span class="function">CREATE FUNCTION <span class="title">user_main_fn2</span><span class="params">(v_id INT)</span></span></span><br><span class="line"><span class="function">RETURNS <span class="title">VARCHAR</span><span class="params">(<span class="number">100</span>)</span></span></span><br><span class="line"><span class="function">BEGIN </span></span><br><span class="line"><span class="function">  #定义变量</span></span><br><span class="line"><span class="function">  DECLARE v_userName <span class="title">VARCHAR</span><span class="params">(<span class="number">50</span>)</span></span>;</span><br><span class="line">  <span class="function">DECLARE  v_userNameNew <span class="title">VARCHAR</span><span class="params">(<span class="number">50</span>)</span></span>;</span><br><span class="line">  #通过into赋值</span><br><span class="line">  SELECT f_userName INTO v_userName FROM t_user_main WHERE f_userId = v_id;</span><br><span class="line">  #使用函数</span><br><span class="line">  <span class="function">SELECT <span class="title">user_main_fn</span><span class="params">(v_id)</span> INTO v_userNameNew FROM DUAL</span>;</span><br><span class="line">  #返回函数处理结果</span><br><span class="line">  <span class="function">RETURN <span class="title">CONCAT</span><span class="params">(v_userName,<span class="string">'***'</span>,v_userNameNew)</span></span>;</span><br><span class="line">END $$</span><br><span class="line">DELIMITER;</span><br></pre></td></tr></table></figure>
-
-<p>DUAL 虚拟表</p>
-<h3 id="查看函数状态语法："><a href="#查看函数状态语法：" class="headerlink" title="查看函数状态语法："></a>查看函数状态语法：</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">SHOW FUNCTION STATUS [LIKE <span class="string">'pattern'</span>]</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="查看函数的定义语法："><a href="#查看函数的定义语法：" class="headerlink" title="查看函数的定义语法："></a>查看函数的定义语法：</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">SHOW CREATE FUNCTION fn_name;</span><br></pre></td></tr></table></figure>
-
-<p>eg:  输出第n高的工资</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">CREATE FUNCTION <span class="title">getNthHighestSalary</span><span class="params">(N INT)</span> RETURNS INT</span></span><br><span class="line"><span class="function">BEGIN</span></span><br><span class="line"><span class="function">  SET N</span>=N-<span class="number">1</span>;</span><br><span class="line">  RETURN (</span><br><span class="line">      # Write your MySQL query statement below.</span><br><span class="line">      SELECT  DISTINCT Salary  FROM Employee ORDER BY Salary DESC  limit N,<span class="number">1</span></span><br><span class="line">  );</span><br><span class="line">END</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>mysql</category>
-      </categories>
-      <tags>
-        <tag>mysql</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>OutOfMemeryError异常</title>
-    <url>/2020/05/25/OutOfMemeryError%E5%BC%82%E5%B8%B8/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍OutOfMemeryError异常</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="1-Java堆溢出"><a href="#1-Java堆溢出" class="headerlink" title="1 Java堆溢出"></a>1 Java堆溢出</h3><p><img src="https://photos.alitaalice.cn/image/20200525171739.png" alt=""></p>
-<h3 id="2-虚拟机栈和本地方法栈溢出"><a href="#2-虚拟机栈和本地方法栈溢出" class="headerlink" title="2 虚拟机栈和本地方法栈溢出"></a>2 虚拟机栈和本地方法栈溢出</h3><p><img src="https://photos.alitaalice.cn/image/20200525171954.png" alt=""></p>
-<h3 id="3-方法区和运行时常量池溢出"><a href="#3-方法区和运行时常量池溢出" class="headerlink" title="3 方法区和运行时常量池溢出"></a>3 方法区和运行时常量池溢出</h3><h3 id="4-本地直接内存溢出"><a href="#4-本地直接内存溢出" class="headerlink" title="4 本地直接内存溢出"></a>4 本地直接内存溢出</h3>]]></content>
-      <categories>
-        <category>JVM</category>
-      </categories>
-      <tags>
-        <tag>JVM</tag>
       </tags>
   </entry>
   <entry>
@@ -1204,19 +1230,28 @@
       </tags>
   </entry>
   <entry>
-    <title>SSM基础</title>
-    <url>/2020/05/27/SSM%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍</p>
-</blockquote>
+    <title>char可以存储汉字吗？</title>
+    <url>/2020/05/06/char%E5%8F%AF%E4%BB%A5%E5%AD%98%E5%82%A8%E6%B1%89%E5%AD%97%E5%90%97%EF%BC%9F/</url>
+    <content><![CDATA[<h2 id="char存储汉字"><a href="#char存储汉字" class="headerlink" title="char存储汉字"></a>char存储汉字</h2><ul>
+<li><p>char是按照字符存储的，不管是英文还是中文，JAVA中固定占用2个字符，用来存储Unicode字符，范围在0-65535.</p>
+</li>
+<li><p>Unicode编码字符集中包含了汉字，所以char类型变量当然可以存储汉字拉。</p>
 <a id="more"></a>
 
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
+<h2 id="char和String的区别"><a href="#char和String的区别" class="headerlink" title="char和String的区别"></a>char和String的区别</h2><ul>
+<li>char表示字符，定义时用单引号，只能存储一个字符。如char c=‘x’ ;</li>
+<li>String表示的是字符串，可以存储一个或多个字符 如String name=”tom”;</li>
+<li></li>
+</ul>
+</li>
+</ul>
+<p>如name.length();</p>
+]]></content>
       <categories>
-        <category>框架</category>
+        <category>后端</category>
       </categories>
       <tags>
-        <tag>框架</tag>
+        <tag>JAVASE</tag>
       </tags>
   </entry>
   <entry>
@@ -1287,28 +1322,28 @@
       </tags>
   </entry>
   <entry>
-    <title>char可以存储汉字吗？</title>
-    <url>/2020/05/06/char%E5%8F%AF%E4%BB%A5%E5%AD%98%E5%82%A8%E6%B1%89%E5%AD%97%E5%90%97%EF%BC%9F/</url>
-    <content><![CDATA[<h2 id="char存储汉字"><a href="#char存储汉字" class="headerlink" title="char存储汉字"></a>char存储汉字</h2><ul>
-<li><p>char是按照字符存储的，不管是英文还是中文，JAVA中固定占用2个字符，用来存储Unicode字符，范围在0-65535.</p>
-</li>
-<li><p>Unicode编码字符集中包含了汉字，所以char类型变量当然可以存储汉字拉。</p>
+    <title>mysql必知必会</title>
+    <url>/2020/05/03/mysql%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/</url>
+    <content><![CDATA[<h3 id="1-基础操作"><a href="#1-基础操作" class="headerlink" title="1 基础操作"></a>1 基础操作</h3><p> 登录mysql -u root -p<br> Show databases;<br> Use databasename;<br>Show tables;  //显示行</p>
 <a id="more"></a>
-
-<h2 id="char和String的区别"><a href="#char和String的区别" class="headerlink" title="char和String的区别"></a>char和String的区别</h2><ul>
-<li>char表示字符，定义时用单引号，只能存储一个字符。如char c=‘x’ ;</li>
-<li>String表示的是字符串，可以存储一个或多个字符 如String name=”tom”;</li>
-<li></li>
+<p> Show columns from xxx;   //显示列 </p>
+<h3 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h3><p>SELECT DISTINCT  published FROM t_blog ;  DISTINCT此关键字指示只返回不同的值。<br> SELECT id FROM t_blog LIMIT 5;<br> SELECT id FROM t_blog LIMIT 3,3; //从第三行开始的后三行<br> SELECT t_blog.id FROM blog.t_blog;   完全限定的列名和表名 和之前的用法一样。<br> SELECT id,type_id,user_id FROM t_blog ORDER BY type_id,id;  先对type_id排序 再对id进行排序。<br> DESC 降序 ASC 升序  默认升序<br> SELECT id FROM t_blog ORDER BY type_id LIMIT 1; 此种方式找到了数值最大的一行。<br> <strong>在使用where 过滤时 ，order by 排序要在where的后面</strong><br> SELECT id FROM t_blog  where id &lt;&gt;10;   &lt;&gt; 不匹配检查<br> 范围值检查<br>  SELECT ID FROM T_BLOG WHERE ID BETWEEN 10 AND 20 :<br> Select id from t_blog where id is null;  空值检查<br> Select id,user_id from t_blog where id &lt;=10 and user_id &lt;=1;<br> Select prod_name,prod_price from products where vend_id=1002 or vend_id =1003 and<br>  Prod_price&gt;=10; SQL处理OR操作符和AND操作符时，优先处理AND操作符。<br> 故先处理 vend_id =1003 and prod_price&gt;=10  或者  vend_id=1002  ；<br>解决方法是<br>Select prod_name,prod_price from products where (vend_id =1002 or vend_id =1003) and prod_price &gt;=10    用( )来明确分组操作符。DBMS 首先过滤圆括号内的OR条件。<br>NOT 在MYSQL中的NOT中 MYSQL支持使用NOT 对IN,BETWEEN 和EXISTS子句取反。这与多数其他DBMS允许使用NOT对各种条件取反有很大区别。<br>######<br>通配符<br>用来匹配值的一部分的特殊字符<br>LIKE 指示MYSQL 后跟的搜索模式利用通配符匹配而不是直接相等匹配比较<br>SELECT prod_name FROM products WHERE prod_name REGEXP ‘[123] Ton’<br>ORDER BY prod_name;<br>正则表达式 [123]Ton 其中[123]定义一组字符<br>它的意思是匹配1或2或3  因此 1ton 和2ton 都匹配且返回了<br>[] 其实是另一种形式的OR语句<br>[1|2|3]Ton 的缩写 为 [123]Ton<br>1|2|3 Ton 的意思是检索出1或2或3 ton<br>[^123] 匹配除这些字符除外的任何东西<br> ^ 是REGEXP的否定符号<br>在匹配范围中<br>0到9  将由[0123456789] 等同于 [0-9]<br>.表示匹配一个字符<br>输入 SELECT vend_name FROM vendors WHERE vend_name REGEXP ‘.’ ORDER BY vend_name<br>.匹配任意字符  这时每一行都被检索出来 为了匹配特殊字符 必须用\ 作为前导<br>如<br>SELECT vend_name FROM vendors WHERE vend_name REGEXP ‘\.’ ORDER BY vend_name<br>这才是期望的输出 \.匹配. 这种处理就是所谓的转义。<br>？ 字符 ？匹配它前面的任何字符的0次或者1次出现。<br> 如 SELECT prod_name FROM products WHERE prod_name REGEXP ‘\([0-9] sticks?\)’<br> ORDER BY prod_name ;<br>Sticks 匹配 stick 和sticks s后的?使s可选<br>另外例如<br>SELECT prod_name FROM products WHERE prod_name REGEXP ‘[[:digit:]]{4}<br>ORDER BY prod_name；<br>[:digit:]匹配任意数字<br>因而它作为数字的一个集合<br>{4} 确切的要求它前面的字符 出现4次<br>匹配特定位置的文本，需要使用表9-4列出的定位符<br>^ 文本的开始<br>$ 文本的结尾<br>[[:&lt;:]] 词的开始<br>[[:&gt;;]] 词的结尾<br>‘^[0-9\.]’ 找出一个数 包括以小数点开始的数开始的所有产品。<br>SELECT prod_name FROM products WHERE prod_name REGEXP ‘^[0-9\.]’<br>ORDER BY prod_name;<br>在第10章 中 创建计算字段<br>MySQL 使用Concat() 函数来实现<br>SELECT Concat(vend_name,’（‘，vend_country,’）’)<br>FROM vendors ORDER BY vend_name;<br>拼接  将值联结到一起构成单个值<br>比如以上的输出为<br>ACME (USA)<br>删除数据右侧多余的空格来整理数据<br>MySQL 的RTrim()可以去掉值右边的所有的空格<br>SELECT Concat(RTrim(vend_name),’(‘,RTrim(vend_country),’)’)<br>FROM vendors<br>ORDER BY vend_name;<br>LTrim() 去掉串左边的空格<br>Trim()去掉左右俩边的空格<br>SELECT Concat (RTrim(vend_name),’(‘,RTrim(vend_country),’)’)AS vend_title FROM vendors ORDER BY vend_name;<br>一个未命名的列不能用于客户机的应用中，因为客户机没有办法去引用它。<br>所以才出现了别名。AS 关键字来赋予别名 任何客户机应用都可以按名来引用这个列，就像它是一个实际的表列一样。</p>
+<p>执行算数运算<br>SELECT pro_id,quantity,item_price FROM oderitems WHERE order order_num =20005;<br>在算数运算中 检索200005中的所有物品<br>如果要计算汇总物品的价格<br>SELECT prod_id ,quantity,item_price, quantity*item_price  AS expanded_price FROM oderitems WHERE order_num =20005;<br>此时客户机可以使用这个新计算的列，就像其他列一样。<br>MYSQL 支持基本算术运算符</p>
+<ul>
+<li><ul>
+<li>/ 圆括号可以用来区分优先顺序<br>第十一章 使用数据来处理函数<br>SELECT vend_name,Upper(vend_name) AS  vend_name_upcase FROM vendors ORDER BY vend_name;<br>Upper()将文本转换为大写<br>常用的文本处理函数：<br>Left() 返回串左边的字符<br>Length() 返回串的长度<br>Locate()返回串的一个子串<br>Lower()将串转换为小写<br>LTrim() 去掉左边的空格<br>Right()返回串右边的字符<br>RTrim() 去掉串右边的空格<br>Soundex()返回串的Soundex值<br>SubString() 返回子串的字符<br>Upper() 大写<br>Soundex（） 将任何文本串转换为描述其语音表示的字母数字模式的算法<br>如<br>SELECT cust_name ,cust_contact FROM customers WHERE cust_contact =’Y.Lie’;<br>其联系名是为Y.Lee 此时没办法搜索到<br>但是通过<br>SELECT cust_name,cust_contact FROM customers WHERE Soundex(cust_contact)=Soundex(‘Y.lie);<br>此时可以搜索到Y.Lee<br>日期和时间的处理函数<br>Date() 返回日期部分的日期部分<br>Year() 返回日期部分的年份部分<br>Day()<br>Month()</li>
 </ul>
 </li>
 </ul>
-<p>如name.length();</p>
+<p>如：<br>SELECT cust_id,oder_num FROM oders WHERE Date(order_date)=’2005-09-01’;<br>SELECT cust_id,order_num FROM orders WHERE Date(order_date) BETWEEN ‘2005-09-01’AND’2005-03-30’;<br>数值处理函数<br>Abs() 返回数的绝对值</p>
+<p>Cos() 角度的余弦<br>Exp() 返回一个数的指数值<br>Mod() 操作数的余数<br>……<br>第12章 汇总数据<br>12.1 聚集函数  运行在行组上，计算和返回单个值得函数<br>AVG() 返回某列的平均值<br>COUNT()  返回某列的行数<br>MAX() 返回某列的最大值<br>MIN() 返回某列的最小值<br>SUM() 返回某列值之和<br>SELECT AVG(prod_price) AS avg_price FROM products;<br>AVG() 也可以用来确定列或行当平均值<br>SELECT AVG(prod_price) AS avg_price FROM products WHERE vend_id =1003;<br>COUNT () 函数<br>COUNT(<em>)对表中的行的数目进行技术<br>COUNT(column) 对特定列中具有值的行进行计数<br>例如SELECT COUNT(</em>) AS num_cust FROM customers;<br>利用COUNT(<em>)对所有行计数<br>SELECT COUNT(cust_email) AS num_cust FROM customers;<br>对于cust_email中所有有值的行进行计数<br>MAX() 指定列中的最大值 MAX()要求指定列名。<br>MIN()<br>SUM() 也可以用来合计计算值 用来得出总的订单金额<br>SELECT SUM(item_price  *quantity) AS total_price FROM oderitems WHERE order_num=20005;<br>SUM(item_price *quantity) 返回订单中所有物品价钱之和<br>第13章 分组数据<br>SELECT vend_id ,COUNT(</em>) AS num_prods FROM products GROUP BY vend_id;<br>Vend_id num_prods<br>1001        3<br>1002        2<br>1003        7<br>1005        2<br>上述语句将vend_id进行分组，GROUP BY 对于分组的整个结果集进行聚集<br>使用ROLLUP 使用WITH ROLLUP 关键字，将得到每个分组以及分组汇总级别的值<br>2如何过滤分组?<br>HAVING<br>如： SELECT cust_id ,COUNT(<em>)AS orders FROM orders GROUP BY cust_id<br>HAVING COUNT(</em>) &gt;=2<br>它过滤COUNT(<em>)&gt;=2 的那些分组<br>输入： SELECT vend_id,COUNT(</em>) AS num_prods FROM products WHERE prod_price &gt;=10<br>GROUP BY vend_id HAVING COUNT(<em>)&gt;=2;<br>13.4 分组和排序<br>GROUP BY 和ORDER BY<br>GROUP BY  是在ORDER BY 之前，在where 之后<br>第14章 子查询<br>子查询：嵌套在其他查询中的查询<br>1 检索包含物品TNT2 的所有订单的编号<br> SELECT order_num FROM orderitems WHERE prod_id =’TNT2’；<br>2 检索具有前一步骤列出的订单编号的所有客户的ID<br> SELECT cust_id FROM orders WHERE order_num IN (20005,20007);<br>3 现在把第一个查询变为子查询 组合成俩个查询：<br> SELECT cust_id FROM oders WHERE order_num IN (SELECT order_num FROM orderitems WHERE prod_id =’TNT2’);<br>在SELECT 语句中，子查询总是从内向外查询处理。<br>检索这些客户的ID的客户信息，检索俩列的SQL语句为：<br>SELECT cust_name, cust_contact FROM customers WHERE cust_id IN (10001,10004);<br>则可以转换为：<br>SELECT cust_name ,cust_contact FROM customers WHERE cust_id IN (SELECT cust_id FROM orders WHERE order_num IN (SELECT order_num FROM orderitems WHERE prod_Id =’TNT2’))；<br>计算结果子查询：<br>SELECT cust_name,cust_state,(SELECT COUNT(</em>) FROM oders WHERE orders.cust_id=customers.cust_id)AS orders FROM customers ORDER BY cust_name;<br>第15 章  联结表  join 表<br>外键位某个表中的一列 它包含另一个表的主键值定义了俩个表之间的关系。<br>SELECT vent_name,prod_name,prod_price<br>FROM vendors ,products<br>WHERE vendors.vend_id=products.vend_id;<br>ORDER BY vend_name,prod_name ;<br>此种方法通过WHERE子句来限定了列名 ，如果要给出 vend_id 那么mysql_id 并不知道是哪个<br>存在一种状况是<br>笛卡尔积：<br>在不指定where子句时<br>：<br>SELECT vend_name ,prod_name,prod_price<br>FROM vendors,products ORDER BY vend_name,prod_name;<br>15.2.2 内部联结<br>目前为止所使用的联结称为 等值联结  它基于俩个表之间的相等测试 这种联结也叫内部联结。<br>SELECT vend_name , prod_name , prod_price FROM vendors INNER JOIN products ON vendors.vend_id =products.vend_id ;<br>此时使用的是INNER JOIN  联结条件用的是ON<br>联结多个表：<br>SELECT prod_name,vend_name,prod_price,quantity FROM orderitems,products,vendors WHERE products.vend_id =vendors.vend_id AND orderitems.prod_id =products.prod_id AND order_num =20005;<br>第16章 创建高级联结<br>使用表别名<br>SELECT Concat(RTrim(vend_name)，‘（’，RTrim（vend_country）,’）’) AS vend_title FROM vendors ORDER BY vend_name;<br>内部联结：<br>它基于俩个表之间的相等测试<br>SELECT vend_name .prod_name,prod_price FROM vendors INNER JOIN products ON vendors.vend_id =produces.vend_id;<br>自联结： 引用别名，自己联结自己<br>SELECT p1.prod_id,p1.prod_name FROM products AS p1,products AS p2<br>WHERE p1.vend_id =p2.vend_id AND p2.prod_id =’DTNTR’;<br>此查询种需要的俩个表实际上是相同的表。<br>因此products 表在from 子句中出现了俩次。虽然这是合法的，但是对products 的引用具有二义性。因此使用了别名。（用自联结而不用子查询。有时候处理联结要比处理查询要快的多）<br>自然联结：<br>其中你只能选择那些唯一的列。<br>通过对表使用通配符（SELECT <em>）对所有其他表的列使用明确的子集来完成的。<br>SELECT c.</em>,o.ordr_num,o.order_date,oi.prod_id,oi.quantity,OI.item_price FROM customers AS c,orders AS o,orderitems AS oi WHERE c.cust_id =o.cust_id AND oi.order_num =o.order_num<br>AND prod_id =’FB’;<br>通配符只对第一个表使用，所有其他列明确列出，所以没有重复的列被检索出来。<br>外部联结：<br>许多联结将一个表中的行与另外一个表中的行相关联，但有时候会需要包含没有关联行的那些行，例如  可能需要使用联结来完成以下的工作：<br>1对每个客户下了多少订单进行计数，包括那些至今未下订单的客户。<br>2列出所有产品以及订购数量，包括没有人订购的产品<br>3计算平均销售规模，包括那些至今未下订单的客户<br>联结包含了那些在相关表中没有关联行的行，这种叫做外部联结<br>内部联结检索所有客户及其订单：<br>SELECT customers.cust_id,order.orders.order_num FROM customers INNER JOIN orders ON<br>Customers.cust_id =orders.cust_id;<br>外部联结：<br>SELECT customers.cust_id ,orders.order_num FROM customers LEFT OUTER JOIN oders<br>ON customers.cust_id =orders.cust_id;<br>输出为：<br> cust_id   order_num<br>  10001      20005<br>  10001      20009<br>  10002       null<br> 10003       null<br>此时必须要用RIGHT 或LEFT 关键字指定包括其所有行的表<br>其实就是左外部联结和右外部联结<br>16.3 使用带聚集函数的联结<br>使用了COUNT（）函数的联结<br>SELECT customers.cust_name, customers.cust_id,COUNT(orders.order_num) AS num_ord FROM customers INNER JOIN orders ON customers.cust_id =orders.cust_id GROUP BY customers.cust_id;<br>SELECT 语句使用INNER JOIN 将customers和orders 表互相关联。 GROUP BY 子句按客户分组数据。<br>聚集函数也可以方便地与其他联结一起使用，<br>如 SELECT customers,cust_name,cusomers,cust_id,COUNT(orders,order_num)AS num_ord FROM customers LEFT OUTER JOIN orders ON customers.cust_id =orders.cust_id  GROUP BY customers.cust_id;<br>17 章 组合查询<br>利用UNION 操作符将多条SELECT 语句组合成一个结果集<br>执行多个查询，多个SELECT 语句 并将结果作为单个查询结果集返回。<br>这种称为并（union）或复合查询<br>使用UNION<br>输入<br>SELECT vend_id ,prod_id ,prod_price FROM products WHERE prod_price &lt;=5<br>UNION<br>SELECT vend_id,prod_id,prod_price FROM products WHERE vend_id IN(1001,1002);<br>也可以使用多个where<br>SELECT vend_id ,prod_id,prod_price FROM products WHERE prod_price &lt;=5 OR vend_id IN<br>(1001,1002);<br>从多个表中检索数据的情形，使用UNION 可能会处理更简单。<br>17.2.2 UNION 规则<br> 1   UNION 的每个查询必须包含相同的列，表达式，或聚集函数</p>
+<p> 2   UNION 的默认行为，如果想返回所有匹配行 可以使用UNION ALL 而不是UNION<br> 17.2.4 对组合查询结果排序<br>SELECT vend_id ,prod_id,prod_price FROM products WHERE prod_price &lt;=5<br>UNION<br>SELECT vend_id,prod_id,prod_price FROM products WHERE vend_id IN (1001,1002)<br>ORDER BY vend_id ,prod_price ;<br>18章 全文本搜素<br>18.1 理解全文本搜素</p>
 ]]></content>
       <categories>
-        <category>后端</category>
+        <category>mysql</category>
       </categories>
       <tags>
-        <tag>JAVASE</tag>
+        <tag>mysql</tag>
       </tags>
   </entry>
   <entry>
@@ -1367,30 +1402,6 @@
 4 SELECT note_text FROM productnotes WHERE Match(note_text) Against ('&gt;rabbit &lt;carrot' IN BOOLEAN MODE);</code></pre>
 </li>
 </ul>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>mysql</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>mysql必知必会</title>
-    <url>/2020/05/03/mysql%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/</url>
-    <content><![CDATA[<p> 登录mysql -h localhost -u root -p<br> Show databases;<br> Use databasename;<br>Show tables;  //显示行</p>
-<a id="more"></a>
-<p> Show columns from xxx;   //显示列<br>SELECT DISTINCT  published FROM t_blog ;  DISTINCT此关键字指示只返回不同的值。<br> SELECT id FROM t_blog LIMIT 5;<br> SELECT id FROM t_blog LIMIT 3,3; //从第三行开始的后三行<br> SELECT t_blog.id FROM blog.t_blog;   完全限定的列名和表名 和之前的用法一样。<br> SELECT id,type_id,user_id FROM t_blog ORDER BY type_id,id;  先对type_id排序 再对id进行排序。<br> DESC 降序 ASC 升序  没多大用处<br> SELECT id FROM t_blog ORDER BY type_id LIMIT 1; 此种方式找到了数值最大的一行。<br> 在使用where 过滤时 ，order by 排序要在where的后面<br>  SELECT id FROM t_blog  where id &lt;&gt;10;   &lt;&gt; 不匹配检查<br> 范围值检查<br>  SELECT ID FROM T_BLOG WHERE ID BETWEEN 10 AND 20 :<br> Select id from t_blog where id is null;  空值检查<br> Select id,user_id from t_blog where id &lt;=10 and user_id &lt;=1;<br> Select prod_name,prod_price from products where vend_id=1002 or vend_id =1003 and<br>  Prod_price&gt;=10; SQL处理OR操作符和AND操作符时，优先处理AND操作符。<br> 故先处理 vend_id =1003 and prod_price&gt;=10  或者  vend_id=1002  ；<br>解决方法是<br>Select prod_name,prod_price from products where (vend_id =1002 or vend_id =1003) and prod_price &gt;=10    用( )来明确分组操作符。DBMS 首先过滤圆括号内的OR条件。<br>NOT 在MYSQL中的NOT中 MYSQL支持使用NOT 对IN,BETWEEN 和EXISTS子句取反。这与多数其他DBMS允许使用NOT对各种条件取反有很大区别。<br>######<br>通配符<br>用来匹配值的一部分的特殊字符<br>LIKE 指示MYSQL 后跟的搜索模式利用通配符匹配而不是直接相等匹配比较<br>SELECT prod_name FROM products WHERE prod_name REGEXP ‘[123] Ton’<br>ORDER BY prod_name;<br>正则表达式 [123]Ton 其中[123]定义一组字符<br>它的意思是匹配1或2或3  因此 1ton 和2ton 都匹配且返回了<br>[] 其实是另一种形式的OR语句<br>[1|2|3]Ton 的缩写 为 [123]Ton<br>1|2|3 Ton 的意思是检索出1或2或3 ton<br>[^123] 匹配除这些字符除外的任何东西<br> ^ 是REGEXP的否定符号<br>在匹配范围中<br>0到9  将由[0123456789] 等同于 [0-9]<br>.表示匹配一个字符<br>输入 SELECT vend_name FROM vendors WHERE vend_name REGEXP ‘.’ ORDER BY vend_name<br>.匹配任意字符  这时每一行都被检索出来 为了匹配特殊字符 必须用\ 作为前导<br>如<br>SELECT vend_name FROM vendors WHERE vend_name REGEXP ‘\.’ ORDER BY vend_name<br>这才是期望的输出 \.匹配. 这种处理就是所谓的转义。<br>？ 字符 ？匹配它前面的任何字符的0次或者1次出现。<br> 如 SELECT prod_name FROM products WHERE prod_name REGEXP ‘\([0-9] sticks?\)’<br> ORDER BY prod_name ;<br>Sticks 匹配 stick 和sticks s后的?使s可选<br>另外例如<br>SELECT prod_name FROM products WHERE prod_name REGEXP ‘[[:digit:]]{4}<br>ORDER BY prod_name；<br>[:digit:]匹配任意数字<br>因而它作为数字的一个集合<br>{4} 确切的要求它前面的字符 出现4次<br>匹配特定位置的文本，需要使用表9-4列出的定位符<br>^ 文本的开始<br>$ 文本的结尾<br>[[:&lt;:]] 词的开始<br>[[:&gt;;]] 词的结尾<br>‘^[0-9\.]’ 找出一个数 包括以小数点开始的数开始的所有产品。<br>SELECT prod_name FROM products WHERE prod_name REGEXP ‘^[0-9\.]’<br>ORDER BY prod_name;<br>在第10章 中 创建计算字段<br>MySQL 使用Concat() 函数来实现<br>SELECT Concat(vend_name,’（‘，vend_country,’）’)<br>FROM vendors ORDER BY vend_name;<br>拼接  将值联结到一起构成单个值<br>比如以上的输出为<br>ACME (USA)<br>删除数据右侧多余的空格来整理数据<br>MySQL 的RTrim()可以去掉值右边的所有的空格<br>SELECT Concat(RTrim(vend_name),’(‘,RTrim(vend_country),’)’)<br>FROM vendors<br>ORDER BY vend_name;<br>LTrim() 去掉串左边的空格<br>Trim()去掉左右俩边的空格<br>SELECT Concat (RTrim(vend_name),’(‘,RTrim(vend_country),’)’)AS vend_title FROM vendors ORDER BY vend_name;<br>一个未命名的列不能用于客户机的应用中，因为客户机没有办法去引用它。<br>所以才出现了别名。AS 关键字来赋予别名 任何客户机应用都可以按名来引用这个列，就像它是一个实际的表列一样。</p>
-<p>执行算数运算<br>SELECT pro_id,quantity,item_price FROM oderitems WHERE order order_num =20005;<br>在算数运算中 检索200005中的所有物品<br>如果要计算汇总物品的价格<br>SELECT prod_id ,quantity,item_price, quantity*item_price  AS expanded_price FROM oderitems WHERE order_num =20005;<br>此时客户机可以使用这个新计算的列，就像其他列一样。<br>MYSQL 支持基本算术运算符</p>
-<ul>
-<li><ul>
-<li>/ 圆括号可以用来区分优先顺序<br>第十一章 使用数据来处理函数<br>SELECT vend_name,Upper(vend_name) AS  vend_name_upcase FROM vendors ORDER BY vend_name;<br>Upper()将文本转换为大写<br>常用的文本处理函数：<br>Left() 返回串左边的字符<br>Length() 返回串的长度<br>Locate()返回串的一个子串<br>Lower()将串转换为小写<br>LTrim() 去掉左边的空格<br>Right()返回串右边的字符<br>RTrim() 去掉串右边的空格<br>Soundex()返回串的Soundex值<br>SubString() 返回子串的字符<br>Upper() 大写<br>Soundex（） 将任何文本串转换为描述其语音表示的字母数字模式的算法<br>如<br>SELECT cust_name ,cust_contact FROM customers WHERE cust_contact =’Y.Lie’;<br>其联系名是为Y.Lee 此时没办法搜索到<br>但是通过<br>SELECT cust_name,cust_contact FROM customers WHERE Soundex(cust_contact)=Soundex(‘Y.lie);<br>此时可以搜索到Y.Lee<br>日期和时间的处理函数<br>Date() 返回日期部分的日期部分<br>Year() 返回日期部分的年份部分<br>Day()<br>Month()</li>
-</ul>
-</li>
-</ul>
-<p>如：<br>SELECT cust_id,oder_num FROM oders WHERE Date(order_date)=’2005-09-01’;<br>SELECT cust_id,order_num FROM orders WHERE Date(order_date) BETWEEN ‘2005-09-01’AND’2005-03-30’;<br>数值处理函数<br>Abs() 返回数的绝对值</p>
-<p>Cos() 角度的余弦<br>Exp() 返回一个数的指数值<br>Mod() 操作数的余数<br>……<br>第12章 汇总数据<br>12.1 聚集函数  运行在行组上，计算和返回单个值得函数<br>AVG() 返回某列的平均值<br>COUNT()  返回某列的行数<br>MAX() 返回某列的最大值<br>MIN() 返回某列的最小值<br>SUM() 返回某列值之和<br>SELECT AVG(prod_price) AS avg_price FROM products;<br>AVG() 也可以用来确定列或行当平均值<br>SELECT AVG(prod_price) AS avg_price FROM products WHERE vend_id =1003;<br>COUNT () 函数<br>COUNT(<em>)对表中的行的数目进行技术<br>COUNT(column) 对特定列中具有值的行进行计数<br>例如SELECT COUNT(</em>) AS num_cust FROM customers;<br>利用COUNT(<em>)对所有行计数<br>SELECT COUNT(cust_email) AS num_cust FROM customers;<br>对于cust_email中所有有值的行进行计数<br>MAX() 指定列中的最大值 MAX()要求指定列名。<br>MIN()<br>SUM() 也可以用来合计计算值 用来得出总的订单金额<br>SELECT SUM(item_price  *quantity) AS total_price FROM oderitems WHERE order_num=20005;<br>SUM(item_price *quantity) 返回订单中所有物品价钱之和<br>第13章 分组数据<br>SELECT vend_id ,COUNT(</em>) AS num_prods FROM products GROUP BY vend_id;<br>Vend_id num_prods<br>1001        3<br>1002        2<br>1003        7<br>1005        2<br>上述语句将vend_id进行分组，GROUP BY 对于分组的整个结果集进行聚集<br>使用ROLLUP 使用WITH ROLLUP 关键字，将得到每个分组以及分组汇总级别的值<br>2如何过滤分组?<br>HAVING<br>如： SELECT cust_id ,COUNT(<em>)AS orders FROM orders GROUP BY cust_id<br>HAVING COUNT(</em>) &gt;=2<br>它过滤COUNT(<em>)&gt;=2 的那些分组<br>输入： SELECT vend_id,COUNT(</em>) AS num_prods FROM products WHERE prod_price &gt;=10<br>GROUP BY vend_id HAVING COUNT(<em>)&gt;=2;<br>13.4 分组和排序<br>GROUP BY 和ORDER BY<br>GROUP BY  是在ORDER BY 之前，在where 之后<br>第14章 子查询<br>子查询：嵌套在其他查询中的查询<br>1 检索包含物品TNT2 的所有订单的编号<br> SELECT order_num FROM orderitems WHERE prod_id =’TNT2’；<br>2 检索具有前一步骤列出的订单编号的所有客户的ID<br> SELECT cust_id FROM orders WHERE order_num IN (20005,20007);<br>3 现在把第一个查询变为子查询 组合成俩个查询：<br> SELECT cust_id FROM oders WHERE order_num IN (SELECT order_num FROM orderitems WHERE prod_id =’TNT2’);<br>在SELECT 语句中，子查询总是从内向外查询处理。<br>检索这些客户的ID的客户信息，检索俩列的SQL语句为：<br>SELECT cust_name, cust_contact FROM customers WHERE cust_id IN (10001,10004);<br>则可以转换为：<br>SELECT cust_name ,cust_contact FROM customers WHERE cust_id IN (SELECT cust_id FROM orders WHERE order_num IN (SELECT order_num FROM orderitems WHERE prod_Id =’TNT2’))；<br>计算结果子查询：<br>SELECT cust_name,cust_state,(SELECT COUNT(</em>) FROM oders WHERE orders.cust_id=customers.cust_id)AS orders FROM customers ORDER BY cust_name;<br>第15 章  联结表  join 表<br>外键位某个表中的一列 它包含另一个表的主键值定义了俩个表之间的关系。<br>SELECT vent_name,prod_name,prod_price<br>FROM vendors ,products<br>WHERE vendors.vend_id=products.vend_id;<br>ORDER BY vend_name,prod_name ;<br>此种方法通过WHERE子句来限定了列名 ，如果要给出 vend_id 那么mysql_id 并不知道是哪个<br>存在一种状况是<br>笛卡尔积：<br>在不指定where子句时<br>：<br>SELECT vend_name ,prod_name,prod_price<br>FROM vendors,products ORDER BY vend_name,prod_name;<br>15.2.2 内部联结<br>目前为止所使用的联结称为 等值联结  它基于俩个表之间的相等测试 这种联结也叫内部联结。<br>SELECT vend_name , prod_name , prod_price FROM vendors INNER JOIN products ON vendors.vend_id =products.vend_id ;<br>此时使用的是INNER JOIN  联结条件用的是ON<br>联结多个表：<br>SELECT prod_name,vend_name,prod_price,quantity FROM orderitems,products,vendors WHERE products.vend_id =vendors.vend_id AND orderitems.prod_id =products.prod_id AND order_num =20005;<br>第16章 创建高级联结<br>使用表别名<br>SELECT Concat(RTrim(vend_name)，‘（’，RTrim（vend_country）,’）’) AS vend_title FROM vendors ORDER BY vend_name;<br>内部联结：<br>它基于俩个表之间的相等测试<br>SELECT vend_name .prod_name,prod_price FROM vendors INNER JOIN products ON vendors.vend_id =produces.vend_id;<br>自联结： 引用别名，自己联结自己<br>SELECT p1.prod_id,p1.prod_name FROM products AS p1,products AS p2<br>WHERE p1.vend_id =p2.vend_id AND p2.prod_id =’DTNTR’;<br>此查询种需要的俩个表实际上是相同的表。<br>因此products 表在from 子句中出现了俩次。虽然这是合法的，但是对products 的引用具有二义性。因此使用了别名。（用自联结而不用子查询。有时候处理联结要比处理查询要快的多）<br>自然联结：<br>其中你只能选择那些唯一的列。<br>通过对表使用通配符（SELECT <em>）对所有其他表的列使用明确的子集来完成的。<br>SELECT c.</em>,o.ordr_num,o.order_date,oi.prod_id,oi.quantity,OI.item_price FROM customers AS c,orders AS o,orderitems AS oi WHERE c.cust_id =o.cust_id AND oi.order_num =o.order_num<br>AND prod_id =’FB’;<br>通配符只对第一个表使用，所有其他列明确列出，所以没有重复的列被检索出来。<br>外部联结：<br>许多联结将一个表中的行与另外一个表中的行相关联，但有时候会需要包含没有关联行的那些行，例如  可能需要使用联结来完成以下的工作：<br>1对每个客户下了多少订单进行计数，包括那些至今未下订单的客户。<br>2列出所有产品以及订购数量，包括没有人订购的产品<br>3计算平均销售规模，包括那些至今未下订单的客户<br>联结包含了那些在相关表中没有关联行的行，这种叫做外部联结<br>内部联结检索所有客户及其订单：<br>SELECT customers.cust_id,order.orders.order_num FROM customers INNER JOIN orders ON<br>Customers.cust_id =orders.cust_id;<br>外部联结：<br>SELECT customers.cust_id ,orders.order_num FROM customers LEFT OUTER JOIN oders<br>ON customers.cust_id =orders.cust_id;<br>输出为：<br> cust_id   order_num<br>  10001      20005<br>  10001      20009<br>  10002       null<br> 10003       null<br>此时必须要用RIGHT 或LEFT 关键字指定包括其所有行的表<br>其实就是左外部联结和右外部联结<br>16.3 使用带聚集函数的联结<br>使用了COUNT（）函数的联结<br>SELECT customers.cust_name, customers.cust_id,COUNT(orders.order_num) AS num_ord FROM customers INNER JOIN orders ON customers.cust_id =orders.cust_id GROUP BY customers.cust_id;<br>SELECT 语句使用INNER JOIN 将customers和orders 表互相关联。 GROUP BY 子句按客户分组数据。<br>聚集函数也可以方便地与其他联结一起使用，<br>如 SELECT customers,cust_name,cusomers,cust_id,COUNT(orders,order_num)AS num_ord FROM customers LEFT OUTER JOIN orders ON customers.cust_id =orders.cust_id  GROUP BY customers.cust_id;<br>17 章 组合查询<br>利用UNION 操作符将多条SELECT 语句组合成一个结果集<br>执行多个查询，多个SELECT 语句 并将结果作为单个查询结果集返回。<br>这种称为并（union）或复合查询<br>使用UNION<br>输入<br>SELECT vend_id ,prod_id ,prod_price FROM products WHERE prod_price &lt;=5<br>UNION<br>SELECT vend_id,prod_id,prod_price FROM products WHERE vend_id IN(1001,1002);<br>也可以使用多个where<br>SELECT vend_id ,prod_id,prod_price FROM products WHERE prod_price &lt;=5 OR vend_id IN<br>(1001,1002);<br>从多个表中检索数据的情形，使用UNION 可能会处理更简单。<br>17.2.2 UNION 规则<br> 1   UNION 的每个查询必须包含相同的列，表达式，或聚集函数</p>
-<p> 2   UNION 的默认行为，如果想返回所有匹配行 可以使用UNION ALL 而不是UNION<br> 17.2.4 对组合查询结果排序<br>SELECT vend_id ,prod_id,prod_price FROM products WHERE prod_price &lt;=5<br>UNION<br>SELECT vend_id,prod_id,prod_price FROM products WHERE vend_id IN (1001,1002)<br>ORDER BY vend_id ,prod_price ;<br>18章 全文本搜素<br>18.1 理解全文本搜素</p>
 ]]></content>
       <categories>
         <category>后端</category>
@@ -1471,6 +1482,23 @@
       </categories>
       <tags>
         <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>synchronized关键字</title>
+    <url>/2020/05/25/synchronized%E5%85%B3%E9%94%AE%E5%AD%97/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍synchronized关键字</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>转自<a href="https://juejin.im/post/5adf14dcf265da0b7b358d58#heading-10" target="_blank" rel="noopener">https://juejin.im/post/5adf14dcf265da0b7b358d58#heading-10</a></p>
+]]></content>
+      <categories>
+        <category>并发编程</category>
+      </categories>
+      <tags>
+        <tag>并发编程</tag>
       </tags>
   </entry>
   <entry>
@@ -1616,23 +1644,6 @@
       </tags>
   </entry>
   <entry>
-    <title>synchronized关键字</title>
-    <url>/2020/05/25/synchronized%E5%85%B3%E9%94%AE%E5%AD%97/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍synchronized关键字</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>转自<a href="https://juejin.im/post/5adf14dcf265da0b7b358d58#heading-10" target="_blank" rel="noopener">https://juejin.im/post/5adf14dcf265da0b7b358d58#heading-10</a></p>
-]]></content>
-      <categories>
-        <category>并发编程</category>
-      </categories>
-      <tags>
-        <tag>并发编程</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>两数之和</title>
     <url>/2020/05/25/%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -1656,6 +1667,29 @@
       <tags>
         <tag>leetcode</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>二叉查找树</title>
+    <url>/2020/05/14/%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>定义：一棵二叉查找树 （BST）是一棵二叉树，其中每个结点都含有一个 Comparable 的键（以及相关联的值）且每个结点的键都大于其左子树中的任意结点的键而小于右子树的任意结点的键。  </p>
+<p><img src="https://photos.alitaalice.cn/image/20200514134241.png" alt=""></p>
+<h3 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h3><p>一般来说，在符号表中查找一个键可能得到两种结果。如果含有该键的结点存在于表中，我们的查找就命<br>中 了，然后返回相应的值。否则查找未命中 （并返回 null ）。根据数据表示的递归结构我们马上就能得到，在二叉查找树中查找一个键的递归算法：如果树是空的，则查找未命中；如果被查找的键和根结点的键相等，查找命中，否则我们就（递归地）在适当的子树中继续查找。如果被查找的键较小就选择左子树，较大则选择右子树。算法 3.3（续 1）中递归的 get() 方法完全实现了这段算法。它的第一个参 数是一个结点（子树的根结点），第二个参数是被查找的键。  </p>
+]]></content>
+  </entry>
+  <entry>
+    <title>代理模式</title>
+    <url>/2020/05/28/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
   </entry>
   <entry>
     <title>二叉树</title>
@@ -1733,63 +1767,6 @@
       </categories>
       <tags>
         <tag>DataStructure</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>二叉查找树</title>
-    <url>/2020/05/14/%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>定义：一棵二叉查找树 （BST）是一棵二叉树，其中每个结点都含有一个 Comparable 的键（以及相关联的值）且每个结点的键都大于其左子树中的任意结点的键而小于右子树的任意结点的键。  </p>
-<p><img src="https://photos.alitaalice.cn/image/20200514134241.png" alt=""></p>
-<h3 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h3><p>一般来说，在符号表中查找一个键可能得到两种结果。如果含有该键的结点存在于表中，我们的查找就命<br>中 了，然后返回相应的值。否则查找未命中 （并返回 null ）。根据数据表示的递归结构我们马上就能得到，在二叉查找树中查找一个键的递归算法：如果树是空的，则查找未命中；如果被查找的键和根结点的键相等，查找命中，否则我们就（递归地）在适当的子树中继续查找。如果被查找的键较小就选择左子树，较大则选择右子树。算法 3.3（续 1）中递归的 get() 方法完全实现了这段算法。它的第一个参 数是一个结点（子树的根结点），第二个参数是被查找的键。  </p>
-]]></content>
-  </entry>
-  <entry>
-    <title>使用事务处理</title>
-    <url>/2020/05/15/%E4%BD%BF%E7%94%A8%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍什么是事务处理以及如何利用COMMIT和ROLLBACK语句来管理事务处理  .</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>MyISAM和<strong>InnoDB</strong>是两种最常使用的引擎。前者不支持明确的事务处理管理，而后者支持。  </p>
-<p><strong>事务处理（transaction processing）可以用来维护数据库的完整性，它保证成批的MySQL操作要么完全执行，要么完全不执行。</strong>  </p>
-<p><strong>事务处理是一种机制，用来管理必须成批执行的MySQL操作，以保证数据库不包含不完整的操作结果。利用事务处理，可以保证一组操作不会中途停止，它们或者作为整体执行，或者完全不执行（除非明确指示）。如果没有错误发生，整组语句提交给（写到）数据库表。如果发生错误，则进行回退（撤销）以恢复数据库到某个已知且安全的状态 .</strong> </p>
-<p><img src="https://photos.alitaalice.cn/image/20200515163050.png" alt=""></p>
-<h2 id="1控制事务处理"><a href="#1控制事务处理" class="headerlink" title="1控制事务处理"></a>1控制事务处理</h2><p>MySQL-使用下面的语句来标识事务的开始  ：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">START TRANSACTION</span><br></pre></td></tr></table></figure>
-
-<p>MySQL的ROLLBACK命令用来回退（撤销） MySQL语句，请看下面的语句：  </p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">SELECT * FROM ordertotals;</span><br><span class="line">START TRANSACTION;</span><br><span class="line">DELETE FROM ordertotals;</span><br><span class="line">SELECL * FROM ordertotals;</span><br><span class="line">ROLLBACK;</span><br><span class="line">SELECT * FROM ordertotals;</span><br></pre></td></tr></table></figure>
-
-<p>ROLLBACK只能在一个事务处理内使用（在执行一条START<br> TRANSACTION命令之后）  .</p>
-<p>事务处理用来<strong>管理INSERT、 UPDATE和DELETE语</strong>句。你不能回退SELECT语句。（这样做也没有什么意义。）你不能<strong>回退CREATE或DROP</strong>操作。事务处理块中可以使用这两条语句，但如果你执行回退，它们不会被撤销。  </p>
-<h2 id="2-使用COMMIT"><a href="#2-使用COMMIT" class="headerlink" title="2 使用COMMIT"></a>2 使用COMMIT</h2><p>一般的MySQL语句都是直接针对数据库表执行和编写的。这就是<br>所谓的隐含提交（implicit commit），即提交（写或保存）操作是自动进行的。  </p>
-<p>在事务处理块中，提交不会隐含地进行。为进行明确的提交，<br>使用COMMIT语句 。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">START TRANSACTION;</span><br><span class="line">DELETE FROM orderitems WHERE order_num =<span class="number">20010</span>;</span><br><span class="line">DELETE FROM orders WHERE order_num=<span class="number">20010</span>;</span><br><span class="line">COMMIT;</span><br></pre></td></tr></table></figure>
-
-<p>隐含事务关闭 当COMMIT或ROLLBACK语句执行后，事务会自动关闭（将来的更改会隐含提交）。  </p>
-<h3 id="3-使用保留点"><a href="#3-使用保留点" class="headerlink" title="3 使用保留点"></a>3 使用保留点</h3><p>为了支持回退部分事务处理，必须能在事务处理块中合适的位置放<br>置占位符。这样，如果需要回退，可以回退到某个占位符。      </p>
-<p>这些占位符称为保留点。为了创建占位符，可如下使用SAVEPOINT<br>语句：  </p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">SAVEPOINT delete1;</span><br></pre></td></tr></table></figure>
-
-<p>每个保留点都取标识它的唯一名字，以便在回退时， MySQL知道要<br>回退到何处。为了回退到本例给出的保留点，可如下进行  :</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">ROLLBACK TO delete1;</span><br></pre></td></tr></table></figure>
-
-<p>留点在事务处理完成（执行一条ROLLBACK或COMMIT）后自动释放。自MySQL 5以来，也可以用RELEASE SAVEPOINT明确地释放保留点。</p>
-<h3 id="4-更改默认的提交行为"><a href="#4-更改默认的提交行为" class="headerlink" title="4 更改默认的提交行为"></a>4 更改默认的提交行为</h3><p>为指示MySQL不自动提交更改，需要使用以下语句 ：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">SET autocommit=<span class="number">0</span>;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>mysql</category>
-      </categories>
-      <tags>
-        <tag>mysql</tag>
       </tags>
   </entry>
   <entry>
@@ -2148,6 +2125,98 @@
       </tags>
   </entry>
   <entry>
+    <title>使用事务处理</title>
+    <url>/2020/05/15/%E4%BD%BF%E7%94%A8%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍什么是事务处理以及如何利用COMMIT和ROLLBACK语句来管理事务处理  .</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>MyISAM和<strong>InnoDB</strong>是两种最常使用的引擎。前者不支持明确的事务处理管理，而后者支持。  </p>
+<p><strong>事务处理（transaction processing）可以用来维护数据库的完整性，它保证成批的MySQL操作要么完全执行，要么完全不执行。</strong>  </p>
+<p><strong>事务处理是一种机制，用来管理必须成批执行的MySQL操作，以保证数据库不包含不完整的操作结果。利用事务处理，可以保证一组操作不会中途停止，它们或者作为整体执行，或者完全不执行（除非明确指示）。如果没有错误发生，整组语句提交给（写到）数据库表。如果发生错误，则进行回退（撤销）以恢复数据库到某个已知且安全的状态 .</strong> </p>
+<p><img src="https://photos.alitaalice.cn/image/20200515163050.png" alt=""></p>
+<h2 id="1控制事务处理"><a href="#1控制事务处理" class="headerlink" title="1控制事务处理"></a>1控制事务处理</h2><p>MySQL-使用下面的语句来标识事务的开始  ：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">START TRANSACTION</span><br></pre></td></tr></table></figure>
+
+<p>MySQL的ROLLBACK命令用来回退（撤销） MySQL语句，请看下面的语句：  </p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">SELECT * FROM ordertotals;</span><br><span class="line">START TRANSACTION;</span><br><span class="line">DELETE FROM ordertotals;</span><br><span class="line">SELECL * FROM ordertotals;</span><br><span class="line">ROLLBACK;</span><br><span class="line">SELECT * FROM ordertotals;</span><br></pre></td></tr></table></figure>
+
+<p>ROLLBACK只能在一个事务处理内使用（在执行一条START<br> TRANSACTION命令之后）  .</p>
+<p>事务处理用来<strong>管理INSERT、 UPDATE和DELETE语</strong>句。你不能回退SELECT语句。（这样做也没有什么意义。）你不能<strong>回退CREATE或DROP</strong>操作。事务处理块中可以使用这两条语句，但如果你执行回退，它们不会被撤销。  </p>
+<h2 id="2-使用COMMIT"><a href="#2-使用COMMIT" class="headerlink" title="2 使用COMMIT"></a>2 使用COMMIT</h2><p>一般的MySQL语句都是直接针对数据库表执行和编写的。这就是<br>所谓的隐含提交（implicit commit），即提交（写或保存）操作是自动进行的。  </p>
+<p>在事务处理块中，提交不会隐含地进行。为进行明确的提交，<br>使用COMMIT语句 。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">START TRANSACTION;</span><br><span class="line">DELETE FROM orderitems WHERE order_num =<span class="number">20010</span>;</span><br><span class="line">DELETE FROM orders WHERE order_num=<span class="number">20010</span>;</span><br><span class="line">COMMIT;</span><br></pre></td></tr></table></figure>
+
+<p>隐含事务关闭 当COMMIT或ROLLBACK语句执行后，事务会自动关闭（将来的更改会隐含提交）。  </p>
+<h3 id="3-使用保留点"><a href="#3-使用保留点" class="headerlink" title="3 使用保留点"></a>3 使用保留点</h3><p>为了支持回退部分事务处理，必须能在事务处理块中合适的位置放<br>置占位符。这样，如果需要回退，可以回退到某个占位符。      </p>
+<p>这些占位符称为保留点。为了创建占位符，可如下使用SAVEPOINT<br>语句：  </p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">SAVEPOINT delete1;</span><br></pre></td></tr></table></figure>
+
+<p>每个保留点都取标识它的唯一名字，以便在回退时， MySQL知道要<br>回退到何处。为了回退到本例给出的保留点，可如下进行  :</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">ROLLBACK TO delete1;</span><br></pre></td></tr></table></figure>
+
+<p>留点在事务处理完成（执行一条ROLLBACK或COMMIT）后自动释放。自MySQL 5以来，也可以用RELEASE SAVEPOINT明确地释放保留点。</p>
+<h3 id="4-更改默认的提交行为"><a href="#4-更改默认的提交行为" class="headerlink" title="4 更改默认的提交行为"></a>4 更改默认的提交行为</h3><p>为指示MySQL不自动提交更改，需要使用以下语句 ：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">SET autocommit=<span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>mysql</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用游标mysql</title>
+    <url>/2020/05/14/%E4%BD%BF%E7%94%A8%E6%B8%B8%E6%A0%87mysql/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍游标</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p> MySQL检索操作返回一组称为结果集的行。这组返回的行都是与SQL语句相匹配的行（零行或多行）。使用简单的SELECT语<br>句，例如，没有办法得到第一行、下一行或前10行，也不存在每次一行地处理所有行的简单方法（相对于成批地处理它们）  </p>
+<p>游标（cursor） 是一个存储在MySQL服务器上的数据库查询，<br>它不是一条SELECT语句，而是被该语句检索出来的结果集。在存储了游标之后，应用程序可以根据需要滚动或浏览其中的数据.  </p>
+<p>只能用于存储过程 不像多数DBMS， MySQL游标只能用于<br>存储过程（和函数）  </p>
+<h2 id="1-创建游标"><a href="#1-创建游标" class="headerlink" title="1 创建游标"></a>1 创建游标</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">CREATE PROCEDURE processorders()</span><br><span class="line">BEGIN </span><br><span class="line">   DECLARE ordernumbers CURSOR</span><br><span class="line">   FOR</span><br><span class="line">   SELECT order_num FROM orders</span><br><span class="line">END;</span><br></pre></td></tr></table></figure>
+
+<p>DECLARE语句用来定义和命名游标，这里为ordernumbers。 存储过程处理完成后，游标就消失（因为它局限于存储过程）  </p>
+<h2 id="2-打开和关闭游标"><a href="#2-打开和关闭游标" class="headerlink" title="2 打开和关闭游标"></a>2 打开和关闭游标</h2><p>输入：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">OPEN ordernumbers;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">关闭游标： CLOSE ordernumbers;</span><br></pre></td></tr></table></figure>
+
+<p>如果你不明确关闭游标，MySQL将会在到达END语句时自动关闭它。</p>
+<p>前面的例子修改版本：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">CREATE PROCEDURE <span class="title">processorders</span><span class="params">()</span></span></span><br><span class="line"><span class="function">BEGIN</span></span><br><span class="line"><span class="function">     --Declare the cursor</span></span><br><span class="line"><span class="function">     DECLARE ordernumbers CURSOR</span></span><br><span class="line"><span class="function">     FOR</span></span><br><span class="line"><span class="function">     SELECT order_num FROM orders</span>;</span><br><span class="line">     --Open the cursor</span><br><span class="line">     OPEN ordernumbers;</span><br><span class="line">     --Close the cursor</span><br><span class="line">     CLOSE ordernumbers;</span><br><span class="line">     </span><br><span class="line">     END;</span><br></pre></td></tr></table></figure>
+
+<p>声明打开和关闭一个游标。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">CREATE PROCEDURE <span class="title">processorders</span><span class="params">()</span></span></span><br><span class="line"><span class="function">BEGIN</span></span><br><span class="line"><span class="function">    --Delare local variables</span></span><br><span class="line"><span class="function">    DECLARE done BOOLEAN DEFAULT 0</span>;</span><br><span class="line">    DECLARE o INT;</span><br><span class="line">    --Declare the cursor</span><br><span class="line">    DECLARE ordernumbers CURSOR</span><br><span class="line">    FOR</span><br><span class="line">    SELECT order_num FROM orders;</span><br><span class="line">    --Declare <span class="keyword">continue</span> handler</span><br><span class="line">    DELARE CONTINUE HANDLER FOR SQLSTATE <span class="string">'02000'</span> SET done=<span class="number">1</span>;</span><br><span class="line">    --Open the cursor</span><br><span class="line">    OPEN ordernumbers;</span><br><span class="line">    --LOOP through all rows</span><br><span class="line">    REPEAT</span><br><span class="line">    </span><br><span class="line">    --GET order number</span><br><span class="line">    FETCH ordernumbers INTO o;</span><br><span class="line">    --End of loop</span><br><span class="line">    UNTIL done END REPEAT;</span><br><span class="line">    --Close the cursor</span><br><span class="line">    CLOSE ordernumbers;</span><br><span class="line">    END;</span><br></pre></td></tr></table></figure>
+
+<p>FETCH是在REPEAT内，因此它反复执行直到done为真（由UNTIL<br>done END REPEAT;规定）。为使它起作用，用一个DEFAULT 0（假，不结束）定义变量done。那么， done怎样才能在结束时被设置为真呢？答案是用以下语句：  </p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">DECLARE CONTINUE HANDLER FOR SQLSTATE <span class="string">'02000'</span> SET done=<span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<p>这条语句定义了一个CONTINUE HANDLER，它是在条件出现时被执行的代码。这里， 它指出当SQLSTATE ‘02000’出现时， SET done=1。SQLSTATE’02000’是一个未找到条件， 当REPEAT由于没有更多的行供循环而不能继续时，出现这个条件。  </p>
+]]></content>
+      <categories>
+        <category>mysql</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>创建表和操控表</title>
+    <url>/2020/05/08/%E5%88%9B%E5%BB%BA%E8%A1%A8%E5%92%8C%E6%93%8D%E6%8E%A7%E8%A1%A8/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍表的创建，更改和删除的基本知识。</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
+  </entry>
+  <entry>
     <title>内部类</title>
     <url>/2020/05/08/%E5%86%85%E9%83%A8%E7%B1%BB/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -2189,44 +2258,6 @@
 <h3 id="匿名内部类"><a href="#匿名内部类" class="headerlink" title="匿名内部类"></a>匿名内部类</h3></li>
 </ul>
 ]]></content>
-  </entry>
-  <entry>
-    <title>使用游标mysql</title>
-    <url>/2020/05/14/%E4%BD%BF%E7%94%A8%E6%B8%B8%E6%A0%87mysql/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍游标</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p> MySQL检索操作返回一组称为结果集的行。这组返回的行都是与SQL语句相匹配的行（零行或多行）。使用简单的SELECT语<br>句，例如，没有办法得到第一行、下一行或前10行，也不存在每次一行地处理所有行的简单方法（相对于成批地处理它们）  </p>
-<p>游标（cursor） 是一个存储在MySQL服务器上的数据库查询，<br>它不是一条SELECT语句，而是被该语句检索出来的结果集。在存储了游标之后，应用程序可以根据需要滚动或浏览其中的数据.  </p>
-<p>只能用于存储过程 不像多数DBMS， MySQL游标只能用于<br>存储过程（和函数）  </p>
-<h2 id="1-创建游标"><a href="#1-创建游标" class="headerlink" title="1 创建游标"></a>1 创建游标</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">CREATE PROCEDURE processorders()</span><br><span class="line">BEGIN </span><br><span class="line">   DECLARE ordernumbers CURSOR</span><br><span class="line">   FOR</span><br><span class="line">   SELECT order_num FROM orders</span><br><span class="line">END;</span><br></pre></td></tr></table></figure>
-
-<p>DECLARE语句用来定义和命名游标，这里为ordernumbers。 存储过程处理完成后，游标就消失（因为它局限于存储过程）  </p>
-<h2 id="2-打开和关闭游标"><a href="#2-打开和关闭游标" class="headerlink" title="2 打开和关闭游标"></a>2 打开和关闭游标</h2><p>输入：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">OPEN ordernumbers;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">关闭游标： CLOSE ordernumbers;</span><br></pre></td></tr></table></figure>
-
-<p>如果你不明确关闭游标，MySQL将会在到达END语句时自动关闭它。</p>
-<p>前面的例子修改版本：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">CREATE PROCEDURE <span class="title">processorders</span><span class="params">()</span></span></span><br><span class="line"><span class="function">BEGIN</span></span><br><span class="line"><span class="function">     --Declare the cursor</span></span><br><span class="line"><span class="function">     DECLARE ordernumbers CURSOR</span></span><br><span class="line"><span class="function">     FOR</span></span><br><span class="line"><span class="function">     SELECT order_num FROM orders</span>;</span><br><span class="line">     --Open the cursor</span><br><span class="line">     OPEN ordernumbers;</span><br><span class="line">     --Close the cursor</span><br><span class="line">     CLOSE ordernumbers;</span><br><span class="line">     </span><br><span class="line">     END;</span><br></pre></td></tr></table></figure>
-
-<p>声明打开和关闭一个游标。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">CREATE PROCEDURE <span class="title">processorders</span><span class="params">()</span></span></span><br><span class="line"><span class="function">BEGIN</span></span><br><span class="line"><span class="function">    --Delare local variables</span></span><br><span class="line"><span class="function">    DECLARE done BOOLEAN DEFAULT 0</span>;</span><br><span class="line">    DECLARE o INT;</span><br><span class="line">    --Declare the cursor</span><br><span class="line">    DECLARE ordernumbers CURSOR</span><br><span class="line">    FOR</span><br><span class="line">    SELECT order_num FROM orders;</span><br><span class="line">    --Declare <span class="keyword">continue</span> handler</span><br><span class="line">    DELARE CONTINUE HANDLER FOR SQLSTATE <span class="string">'02000'</span> SET done=<span class="number">1</span>;</span><br><span class="line">    --Open the cursor</span><br><span class="line">    OPEN ordernumbers;</span><br><span class="line">    --LOOP through all rows</span><br><span class="line">    REPEAT</span><br><span class="line">    </span><br><span class="line">    --GET order number</span><br><span class="line">    FETCH ordernumbers INTO o;</span><br><span class="line">    --End of loop</span><br><span class="line">    UNTIL done END REPEAT;</span><br><span class="line">    --Close the cursor</span><br><span class="line">    CLOSE ordernumbers;</span><br><span class="line">    END;</span><br></pre></td></tr></table></figure>
-
-<p>FETCH是在REPEAT内，因此它反复执行直到done为真（由UNTIL<br>done END REPEAT;规定）。为使它起作用，用一个DEFAULT 0（假，不结束）定义变量done。那么， done怎样才能在结束时被设置为真呢？答案是用以下语句：  </p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">DECLARE CONTINUE HANDLER FOR SQLSTATE <span class="string">'02000'</span> SET done=<span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-
-<p>这条语句定义了一个CONTINUE HANDLER，它是在条件出现时被执行的代码。这里， 它指出当SQLSTATE ‘02000’出现时， SET done=1。SQLSTATE’02000’是一个未找到条件， 当REPEAT由于没有更多的行供循环而不能继续时，出现这个条件。  </p>
-]]></content>
-      <categories>
-        <category>mysql</category>
-      </categories>
-      <tags>
-        <tag>mysql</tag>
-      </tags>
   </entry>
   <entry>
     <title>创建和操纵表</title>
@@ -2315,10 +2346,64 @@
       </tags>
   </entry>
   <entry>
-    <title>创建表和操控表</title>
-    <url>/2020/05/08/%E5%88%9B%E5%BB%BA%E8%A1%A8%E5%92%8C%E6%93%8D%E6%8E%A7%E8%A1%A8/</url>
+    <title>命令模式</title>
+    <url>/2020/05/28/%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍表的创建，更改和删除的基本知识。</p>
+<p>本章介绍命令模式</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>这个模式允许我们将动作封装成命令对象，这样一来，我们就可以随心所欲地储存，传递和调用他们。</p>
+<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>命令模式：</p>
+<p>将请求封装成对象，这可以让你使用不同的请求，队列或者日志请求来参数化其他对象，命令模式也可以支持撤销操作。</p>
+]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
+      <tags>
+        <tag>设计模式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>图解JAVA垃圾回收机制</title>
+    <url>/2020/05/20/%E5%9B%BE%E8%A7%A3JAVA%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>转<a href="https://blog.csdn.net/justloveyou_/article/details/71216049" target="_blank" rel="noopener">https://blog.csdn.net/justloveyou_/article/details/71216049</a></p>
+]]></content>
+      <categories>
+        <category>JVM</category>
+      </categories>
+      <tags>
+        <tag>JVM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>单件模式</title>
+    <url>/2020/05/27/%E5%8D%95%E4%BB%B6%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>单件模式 –&gt;  确保一个类只有一个实例，并提供全局访问点。</p>
+<p>当你需要确保程序中的某个类只有一个实例时，就采用单件模式吧</p>
+]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
+      <tags>
+        <tag>设计模式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>复合模式</title>
+    <url>/2020/05/28/%E5%A4%8D%E5%90%88%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍</p>
 </blockquote>
 <a id="more"></a>
 
@@ -2386,41 +2471,6 @@
       </tags>
   </entry>
   <entry>
-    <title>单件模式</title>
-    <url>/2020/05/27/%E5%8D%95%E4%BB%B6%E6%A8%A1%E5%BC%8F/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>单件模式 –&gt;  确保一个类只有一个实例，并提供全局访问点。</p>
-<p>当你需要确保程序中的某个类只有一个实例时，就采用单件模式吧</p>
-]]></content>
-      <categories>
-        <category>设计模式</category>
-      </categories>
-      <tags>
-        <tag>设计模式</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>图解JAVA垃圾回收机制</title>
-    <url>/2020/05/20/%E5%9B%BE%E8%A7%A3JAVA%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>转<a href="https://blog.csdn.net/justloveyou_/article/details/71216049" target="_blank" rel="noopener">https://blog.csdn.net/justloveyou_/article/details/71216049</a></p>
-]]></content>
-      <categories>
-        <category>JVM</category>
-      </categories>
-      <tags>
-        <tag>JVM</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>垃圾收集器与内存分配策略</title>
     <url>/2020/05/18/%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8%E4%B8%8E%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E7%AD%96%E7%95%A5/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -2454,6 +2504,31 @@
       </tags>
   </entry>
   <entry>
+    <title>学习方法</title>
+    <url>/2020/05/07/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>学习方法</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><ul>
+<li>慢一点，你理解的越多，需要记的就越少</li>
+<li>勤做练习，自己记笔记</li>
+<li>上床睡觉之前就不要再看别的书了，或者至少不能再看其他有难度的东西</li>
+<li>要喝水，要多喝水</li>
+<li>大声说出来</li>
+<li>听听你的大脑怎么说（注意大脑是不是负荷太重）</li>
+<li>要有点感觉（真正融入到书的故事中）</li>
+</ul>
+]]></content>
+      <categories>
+        <category>杂谈</category>
+      </categories>
+      <tags>
+        <tag>杂谈</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>基于拉链和线性探测法的散列表</title>
     <url>/2020/05/13/%E5%9F%BA%E4%BA%8E%E6%8B%89%E9%93%BE%E5%92%8C%E7%BA%BF%E6%80%A7%E6%8E%A2%E6%B5%8B%E6%B3%95%E7%9A%84%E6%95%A3%E5%88%97%E8%A1%A8/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -2482,28 +2557,42 @@
       </tags>
   </entry>
   <entry>
-    <title>学习方法</title>
-    <url>/2020/05/07/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/</url>
+    <title>归并排序</title>
+    <url>/2020/05/14/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>学习方法</p>
+<p>本章介绍归并排序</p>
 </blockquote>
 <a id="more"></a>
 
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><ul>
-<li>慢一点，你理解的越多，需要记的就越少</li>
-<li>勤做练习，自己记笔记</li>
-<li>上床睡觉之前就不要再看别的书了，或者至少不能再看其他有难度的东西</li>
-<li>要喝水，要多喝水</li>
-<li>大声说出来</li>
-<li>听听你的大脑怎么说（注意大脑是不是负荷太重）</li>
-<li>要有点感觉（真正融入到书的故事中）</li>
-</ul>
-]]></content>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>在本节中我们所讨论的算法都基于归并 这个简单的操作，即将两个有序的数组归并成一个更大的有序数组。很快人们就根据这个操作发明了一种简单的递归排序算法：<strong>归并排序</strong> 。  </p>
+<p><img src="https://photos.alitaalice.cn/image/20200514103423.png" alt=""></p>
+<p>​                                         归并排序示意图  </p>
+<h2 id="原地归并"><a href="#原地归并" class="headerlink" title="原地归并"></a>原地归并</h2>]]></content>
       <categories>
-        <category>杂谈</category>
+        <category>算法</category>
       </categories>
       <tags>
-        <tag>杂谈</tag>
+        <tag>DataStructure</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>工厂模式</title>
+    <url>/2020/05/22/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍工厂模式</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>工厂方法模式：通过让子类决定该创建的对象是什么，来达到将对象创建的过程封装的目的。</p>
+<p>创造者（Creator）类   抽象创建者类。定义抽象的工厂方法，让子类实现此方法制造产品。</p>
+<p>产品类  具体的产品，实际能制造的东西</p>
+<p><img src="https://photos.alitaalice.cn/image/20200525105633.png" alt=""> </p>
+]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
+      <tags>
+        <tag>设计模式</tag>
       </tags>
   </entry>
   <entry>
@@ -2550,33 +2639,13 @@
       </tags>
   </entry>
   <entry>
-    <title>工厂模式</title>
-    <url>/2020/05/22/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍工厂模式</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>工厂方法模式：通过让子类决定该创建的对象是什么，来达到将对象创建的过程封装的目的。</p>
-<p>创造者（Creator）类   抽象创建者类。定义抽象的工厂方法，让子类实现此方法制造产品。</p>
-<p>产品类  具体的产品，实际能制造的东西</p>
-<p><img src="https://photos.alitaalice.cn/image/20200525105633.png" alt=""> </p>
-]]></content>
-      <categories>
-        <category>设计模式</category>
-      </categories>
-      <tags>
-        <tag>设计模式</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>指针</title>
     <url>/2020/05/04/%E6%8C%87%E9%92%88/</url>
     <content><![CDATA[<h1 id="10-1-指针变量"><a href="#10-1-指针变量" class="headerlink" title="10.1 指针变量"></a>10.1 指针变量</h1><p> 由于通过地址能访问指定的内存存储单元。可以说地址“指向”该内存单元。地址可以形象地称为指针，意思是通过指针能够找到内存单元。<br> <a id="more"></a></p>
 <h2 id="1一个变量的地址称为该变量的指针，如果有一个变量专门用来存放另一个变量的地址，那么它就是指针变量。"><a href="#1一个变量的地址称为该变量的指针，如果有一个变量专门用来存放另一个变量的地址，那么它就是指针变量。" class="headerlink" title="1一个变量的地址称为该变量的指针，如果有一个变量专门用来存放另一个变量的地址，那么它就是指针变量。"></a>1一个变量的地址称为该变量的指针，如果有一个变量专门用来存放另一个变量的地址，那么它就是指针变量。</h2><p>一般形式为：<br>类型说明 * 变量名<br>int * q;<br>C语言中提供了地址运算符“&amp;”来表示变量的地址。其中一般形式为：<br>&amp;变量名;</p>
 <h2 id="2给指针变量赋值一般有俩个方法"><a href="#2给指针变量赋值一般有俩个方法" class="headerlink" title="2给指针变量赋值一般有俩个方法"></a>2给指针变量赋值一般有俩个方法</h2><p>1   </p>
 <pre><code>int a;
-int *p=&amp;a</code></pre><p>2       </p>
+int *p=&amp;a;</code></pre><p>2       </p>
 <pre><code>int a;
 int *p;
 p=&amp;a;</code></pre><h2 id="3-指针变量的引用"><a href="#3-指针变量的引用" class="headerlink" title="3 指针变量的引用"></a>3 指针变量的引用</h2><p>引用指针变量是对变量进行间接访问的一种形式</p>
@@ -2586,7 +2655,7 @@ p=&amp;a;</code></pre><h2 id="3-指针变量的引用"><a href="#3-指针变量�
 <p> *运算符是返回指定的地址内的变量的值，叫做指针运算符。</p>
 <h2 id="5-指针自增和自减运算"><a href="#5-指针自增和自减运算" class="headerlink" title="5 指针自增和自减运算"></a>5 指针自增和自减运算</h2><p>基本整型变量i在内存中占4个字节，指针P是指向变量i的地址的，p++是指向下一个存放基本整型数的地址。</p>
 <h2 id="6-数组与指针"><a href="#6-数组与指针" class="headerlink" title="6 数组与指针"></a>6 数组与指针</h2><p>在定义一个一维数组时，系统会在内存中为该数组分配一个存储空间，其数组的名称就是数组在内存中的首地址。<br>例如：</p>
-<p>1      </p>
+<p>1     </p>
 <pre><code>int *p,a[10]; 
  p=a;</code></pre><p>或</p>
 <p>2   </p>
@@ -2596,44 +2665,22 @@ p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数�
 <p>&amp;a[m][n]就是第m行n列元素的地址。而a[0]+n表示第0行第n个元素的地址。</p>
 <h2 id="8指针变量作为函数参数"><a href="#8指针变量作为函数参数" class="headerlink" title="8指针变量作为函数参数"></a>8指针变量作为函数参数</h2><p>指针变量也可以作为函数参数</p>
 <p>例<br>在swap（int <em>a,int</em> b)中</p>
-<p>在函数调用的过程中，主调用函数与被调用函数之间有一个数值传递的过程。函数调用中发生的数据传递是单向的，只能把实际参数的值传递给形式参数，在函数调用的过程中，形式参数的值发生改变，但是实际参数的值不会发生变化。如果swap(int a,int b) 则不能实现x与y值的互换。</p>
+<p>在函数调用的过程中，主调用函数与被调用函数之间有一个数值传递的过程。函数调用中发生的数据传递是单向的，只能把实际参数的值传递给形式参数，在函数调用的过程中，形式参数的值发生改变，但是实际参数的值不会发生变化。</p>
+<p>如果swap(int a,int b) 则不能实现x与y值的互换。</p>
 <p>通过指针传递参数可以减少值传递带来的开销，也可以使函数调用不产生值传递。</p>
 <h2 id="9返回指针值的函数"><a href="#9返回指针值的函数" class="headerlink" title="9返回指针值的函数"></a>9返回指针值的函数</h2><p>返回的值的类型为指针类型，返回指针值的函数简称为指针函数</p>
 <p>定义指针函数的一般形式为 </p>
 <p>类型名 *函数名（参数列表） </p>
 <p>如   int *fun(int x,int y)</p>
 <p>如 </p>
-<pre><code>int *per(int a,int b)
-{
- int *p;
- p=&amp;Perimeter;
- Perimeter=(a+b)*2;
- return p; 
-}</code></pre>]]></content>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> *per(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span><br><span class="line">&#123;</span><br><span class="line"> <span class="keyword">int</span> *p;</span><br><span class="line"> p=&amp;Perimeter;</span><br><span class="line"> Perimeter=(a+b)*<span class="number">2</span>;</span><br><span class="line"> <span class="keyword">return</span> p; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
       <categories>
-        <category>后端</category>
+        <category>C</category>
       </categories>
       <tags>
         <tag>C</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>归并排序</title>
-    <url>/2020/05/14/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍归并排序</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>在本节中我们所讨论的算法都基于归并 这个简单的操作，即将两个有序的数组归并成一个更大的有序数组。很快人们就根据这个操作发明了一种简单的递归排序算法：<strong>归并排序</strong> 。  </p>
-<p><img src="https://photos.alitaalice.cn/image/20200514103423.png" alt=""></p>
-<p>​                                         归并排序示意图  </p>
-<h2 id="原地归并"><a href="#原地归并" class="headerlink" title="原地归并"></a>原地归并</h2>]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>DataStructure</tag>
       </tags>
   </entry>
   <entry>
@@ -2748,6 +2795,32 @@ p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数�
       </tags>
   </entry>
   <entry>
+    <title>模板方法模式</title>
+    <url>/2020/05/28/%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍模板方法模式</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
+      <tags>
+        <tag>设计模式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>状态模式</title>
+    <url>/2020/05/28/%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
+  </entry>
+  <entry>
     <title>树</title>
     <url>/2020/05/07/%E6%A0%91/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -2812,6 +2885,26 @@ p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数�
       </tags>
   </entry>
   <entry>
+    <title>装饰者模式</title>
+    <url>/2020/05/18/%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍装饰者模式。</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="装饰者模式定义"><a href="#装饰者模式定义" class="headerlink" title="装饰者模式定义"></a>装饰者模式定义</h3><p><img src="https://photos.alitaalice.cn/image/20200518102539.png" alt=""></p>
+<p>设计原则：</p>
+<p>类应该对扩展开放，对修改关闭。</p>
+<p>我们的目标是允许类容易扩展，在不修改现有代码的情况下，就可搭配新的行为。如果能实现这样的目标，有什么好处呢？这样的设计具有弹性可以应对改变，可以接受新的功能来应对改变的需求。</p>
+]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
+      <tags>
+        <tag>设计模式</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>线性表</title>
     <url>/2020/05/05/%E7%BA%BF%E6%80%A7%E8%A1%A8/</url>
     <content><![CDATA[<h1 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h1><h2 id="线性表的定义："><a href="#线性表的定义：" class="headerlink" title="线性表的定义："></a>线性表的定义：</h2><ul>
@@ -2860,6 +2953,23 @@ p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数�
       </categories>
       <tags>
         <tag>DataStructure</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>观察者模式</title>
+    <url>/2020/05/14/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍观察者模式</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><img src="https://photos.alitaalice.cn/image/20200527204326.png" alt="">)<img src="C:%5CUsers%5C16508%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200527204301788.png" alt="image-20200527204301788"></p>
+]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
+      <tags>
+        <tag>设计模式</tag>
       </tags>
   </entry>
   <entry>
@@ -2933,59 +3043,6 @@ p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数�
       </tags>
   </entry>
   <entry>
-    <title>装饰者模式</title>
-    <url>/2020/05/18/%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍装饰者模式。</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="装饰者模式定义"><a href="#装饰者模式定义" class="headerlink" title="装饰者模式定义"></a>装饰者模式定义</h3><p><img src="https://photos.alitaalice.cn/image/20200518102539.png" alt=""></p>
-<p>设计原则：</p>
-<p>类应该对扩展开放，对修改关闭。</p>
-<p>我们的目标是允许类容易扩展，在不修改现有代码的情况下，就可搭配新的行为。如果能实现这样的目标，有什么好处呢？这样的设计具有弹性可以应对改变，可以接受新的功能来应对改变的需求。</p>
-]]></content>
-      <categories>
-        <category>设计模式</category>
-      </categories>
-      <tags>
-        <tag>设计模式</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>词法分析</title>
-    <url>/2020/05/21/%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
-      <categories>
-        <category>编译原理</category>
-      </categories>
-      <tags>
-        <tag>编译原理</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>观察者模式</title>
-    <url>/2020/05/14/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍观察者模式</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><img src="https://photos.alitaalice.cn/image/20200527204326.png" alt="">)<img src="C:%5CUsers%5C16508%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200527204301788.png" alt="image-20200527204301788"></p>
-]]></content>
-      <categories>
-        <category>设计模式</category>
-      </categories>
-      <tags>
-        <tag>设计模式</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>语法分析</title>
     <url>/2020/05/19/%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -3013,6 +3070,28 @@ p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数�
       </categories>
       <tags>
         <tag>编译原理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>适配器模式和外观模式</title>
+    <url>/2020/05/28/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F%E5%92%8C%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍适配器模式和外观模式</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>OO适配器将一个接口转换为另一个接口，就像转换电源插口的接口那样。</p>
+<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>适配器模式将一个类的接口，转换成客户期望的另一个接口。适配器让原本接口不兼容的类可以合作无间。</p>
+<h3 id="外观模式"><a href="#外观模式" class="headerlink" title="外观模式"></a>外观模式</h3><p><strong>提供了一个统一的接口，用来访问子系统的一群接口。外观定义了一个高层接口，让子系统更容易使用。</strong></p>
+<p>设计原则：</p>
+<p><strong>最少知识原则：只和你的密友谈话</strong></p>
+<p>我们要减少对象之间的交互，只留下几个密友。</p>
+]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
+      <tags>
+        <tag>设计模式</tag>
       </tags>
   </entry>
   <entry>
@@ -3128,6 +3207,735 @@ p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数�
       </categories>
       <tags>
         <tag>leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>词法分析</title>
+    <url>/2020/05/21/%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><div id="article_content" class="article_content clearfix" style="height: 2193px; overflow: hidden;">
+            <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-211130ba7a.css">
+                            <div id="content_views" class="markdown_views">
+                    <!-- flowchart 箭头图标 勿删 -->
+                    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                        <path stroke-linecap="round" d="M5,0 0,2.5 5,5z" id="raphael-marker-block" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+                    </svg>
+                                            <p><strong>摘要：</strong></p>
+
+<p>　　所谓排序，就是根据排序码的递增或者递减顺序把数据元素依次排列起来，使一组任意排列的元素变为一组按其排序码线性有序的元素。本文将介绍八种最为经典常用的内部排序算法的基本思想与实现，包括插入排序(直接插入排序，希尔排序)、选择排序(直接选择排序，堆排序)、交换排序(冒泡排序，快速排序)、归并排序、分配排序(基数排序)，并给出各种算法的时间复杂度、空间复杂度和稳定性。</p>
+
+<hr>
+
+<p><strong>版权声明：</strong></p>
+
+<p>　　本文原创作者：<a href="http://my.csdn.net/justloveyou_" rel="nofollow" target="_blank">书呆子Rico</a> <br>
+　　作者博客地址：<a href="http://blog.csdn.net/justloveyou_/" target="_blank">http://blog.csdn.net/justloveyou_/</a></p>
+
+<hr>
+
+<p><strong>友情提示：</strong></p>
+
+<p>　　若读者需要本博文相关完整代码，请移步我的Github自行获取，项目名为 DataStructure(具体算法实现在cn.tju.edu.rico.sort包)，项目链接地址为：<a href="https://github.com/githubofrico/DataStructure" target="_blank">https://github.com/githubofrico/DataStructure</a>。</p>
+
+<hr>
+
+
+
+<h2 id="一-排序算法概述"><a name="t0"></a><a name="t0"></a>一. 排序算法概述</h2>
+
+<p>　　所谓排序，就是根据排序码的递增或者递减顺序把数据元素依次排列起来，使一组任意排列的元素变为一组按其排序码线性有序的元素。本文将介绍八种最为经典常用的内部排序算法，包括插入排序(直接插入排序，希尔排序)、选择排序(直接选择排序，堆排序)、交换排序(冒泡排序，快速排序)、归并排序、分配排序(基数排序)。实际上，无论是基本排序方法(直接插入排序，直接选择排序，冒泡排序)，还是高效排序方法(快速排序，堆排序，归并排序)等，它们各有所长，都拥有特定的使用场景。因此，在实际应用中，我们必须根据实际任务的特点和各种排序算法的特性来做出最合适的选择。一般地，我们衡量一个算法的指标包括：</p>
+
+<ul>
+<li><p>时间复杂度 (在排序过程中需要比较和交换的次数)</p></li>
+<li><p>空间复杂度 (在排序过程中需要的辅助存储空间)</p></li>
+<li><p>稳定性 (该算法的实现是否可以保证排序后相等元素的初始顺序，只要该算法存在一种实现可以保证这种特征，那么该算法就是稳定的)</p></li>
+<li><p>内部排序/外部排序 (在排序过程中数据元素是否完全在内存)</p></li>
+</ul>
+
+
+
+<hr>
+
+<p>　　笔者将在本文着重探讨上述八种排序算法的思想和实现，并就各算法根据以上指标进行分析和归类，以便进一步熟悉它们各自的应用场景。</p>
+
+<hr>
+
+
+
+<h2 id="二-插入排序"><a name="t1"></a><a name="t1"></a>二. 插入排序</h2>
+
+<p>　　<font color="red"><b>插入排序的基本思想</b></font>：每步将一个待排序元素，按其排序码大小插入到前面已经排好序的一组元素中，直到元素全部插入为止。在这里，我们介绍三种具体的插入排序算法：直接插入排序，希尔排序与折半插入排序。</p>
+
+<hr>
+
+<p><strong>1、直接插入排序</strong></p>
+
+<p>　　<font color="red"><b>直接插入排序的思想：</b></font>当插入第i(i&gt;=1)个元素时，前面的V[0],…,V[i-1]等i-1个 元素已经有序。这时，将第i个元素与前i-1个元素V[i-1]，…，V[0]依次比较，找到插入位置即将V[i]插入，同时原来位置上的元素向后顺移。在这里，插入位置的查找是顺序查找。直接插入排序是一种稳定的排序算法，其实现如下：</p>
+
+
+
+<pre class="prettyprint" name="code"><code class="language-java hljs  has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="hljs-javadoc">/**        
+ * Title: 插入排序中的直接插入排序，依赖于初始序列    
+ * Description: 在有序序列中不断插入新的记录以达到扩大有序区到整个数组的目的
+ *              时间复杂度：最好情形O(n)，平均情形O(n^2)，最差情形O(n^2)
+ *              空间复杂度：O(1)
+ *              稳    定   性：稳定
+ *              内部排序(在排序过程中数据元素完全在内存)
+ *<span class="hljs-javadoctag"> @author</span> rico       
+ *<span class="hljs-javadoctag"> @created</span> 2017年5月20日 上午10:40:00    
+ */</span>      
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">StraightInsertionSort</span> {</span>
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span>[] <span class="hljs-title">insertSort</span>(<span class="hljs-keyword">int</span>[] target){
+
+        <span class="hljs-keyword">if</span>(target != <span class="hljs-keyword">null</span> &amp;&amp; target.length != <span class="hljs-number">1</span>){   <span class="hljs-comment">// 待排序数组不为空且长度大于1</span>
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; target.length; i++) { <span class="hljs-comment">// 不断扩大有序序列，直到扩展到整个数组</span>
+                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i; j &gt; <span class="hljs-number">0</span>; j--) {    <span class="hljs-comment">// 向有序序列中插入新的元素</span>
+                    <span class="hljs-keyword">if</span>(target[j]  &lt; target[j-<span class="hljs-number">1</span>]){  <span class="hljs-comment">// 交换</span>
+                        <span class="hljs-keyword">int</span> temp = target[j];
+                        target[j] = target[j-<span class="hljs-number">1</span>];
+                        target[j-<span class="hljs-number">1</span>] = temp;
+                    }
+                }
+            }
+        }
+        <span class="hljs-keyword">return</span> target;
+    }
+}<div class="hljs-button {2}" data-title="复制"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li><li style="color: rgb(153, 153, 153);">8</li><li style="color: rgb(153, 153, 153);">9</li><li style="color: rgb(153, 153, 153);">10</li><li style="color: rgb(153, 153, 153);">11</li><li style="color: rgb(153, 153, 153);">12</li><li style="color: rgb(153, 153, 153);">13</li><li style="color: rgb(153, 153, 153);">14</li><li style="color: rgb(153, 153, 153);">15</li><li style="color: rgb(153, 153, 153);">16</li><li style="color: rgb(153, 153, 153);">17</li><li style="color: rgb(153, 153, 153);">18</li><li style="color: rgb(153, 153, 153);">19</li><li style="color: rgb(153, 153, 153);">20</li><li style="color: rgb(153, 153, 153);">21</li><li style="color: rgb(153, 153, 153);">22</li><li style="color: rgb(153, 153, 153);">23</li><li style="color: rgb(153, 153, 153);">24</li><li style="color: rgb(153, 153, 153);">25</li><li style="color: rgb(153, 153, 153);">26</li><li style="color: rgb(153, 153, 153);">27</li><li style="color: rgb(153, 153, 153);">28</li></ul></pre>
+
+<hr>
+
+<p><strong>2、希尔排序</strong></p>
+
+<p>　　<font color="red"><b>希尔排序的思想：</b></font>设待排序序列共n个元素，首先取一个整数gap&lt;n作为间隔，将全部元素分为间隔为gap的gap个子序列并对每一个子序列进行直接插入排序。然后，缩小间隔gap，重复上述操作，直至gap缩小为1，此时所有元素位于同一个序列且有序。由于刚开始时，gap较大，每个子序列元素较少，排序速度较快；待到排序后期，gap变小，每个子序列元素较多，但大部分元素基本有序，所以排序速度仍较快。一般地，gap取 （gap/3 + 1）。希尔排序是一种不稳定的排序方法，其实现如下：</p>
+
+
+
+<pre class="prettyprint" name="code"><code class="language-java hljs  has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="hljs-javadoc">/**        
+ * Title: 插入排序中的希尔排序，依赖于初始序列    
+ * Description: 分别对间隔为gap的gap个子序列进行直接插入排序，不断缩小gap,直至为 1 
+ * 
+ *              刚开始时，gap较大，每个子序列元素较少，排序速度较快；
+ *              待到排序后期，gap变小，每个子序列元素较多，但大部分元素基本有序，所以排序速度仍较快。                
+ * 
+ *              时间复杂度：O(n) ~ O(n^2)
+ *              空间复杂度：O(1)
+ *              稳    定   性：不稳定
+ *              内部排序(在排序过程中数据元素完全在内存)
+ *<span class="hljs-javadoctag"> @author</span> rico       
+ *<span class="hljs-javadoctag"> @created</span> 2017年5月20日 上午10:40:00    
+ */</span>      
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ShellSort</span> {</span>
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">shellSort</span>(<span class="hljs-keyword">int</span>[] target) {
+        <span class="hljs-keyword">if</span> (target != <span class="hljs-keyword">null</span> &amp;&amp; target.length != <span class="hljs-number">1</span>) {
+            <span class="hljs-keyword">int</span> gap = target.length;    
+            <span class="hljs-keyword">while</span> (gap &gt; <span class="hljs-number">1</span>) {      <span class="hljs-comment">// gap为int型，自动取整</span>
+                gap = gap / <span class="hljs-number">3</span> + <span class="hljs-number">1</span>;
+                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = gap; i &lt; target.length; i++) {
+                    <span class="hljs-keyword">int</span> j = i - gap;
+                    <span class="hljs-keyword">while</span> (j &gt;= <span class="hljs-number">0</span>) {
+                        <span class="hljs-keyword">if</span> (target[j + gap] &lt; target[j]) {
+                            swap(target, j, j+gap);
+                            j -= gap;
+                        }<span class="hljs-keyword">else</span>{
+                            <span class="hljs-keyword">break</span>;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">swap</span>(<span class="hljs-keyword">int</span>[] target, <span class="hljs-keyword">int</span> i, <span class="hljs-keyword">int</span> j) {
+        <span class="hljs-keyword">int</span> temp = target[i];
+        target[i] = target[j];
+        target[j] = temp;
+    }
+}<div class="hljs-button {2}" data-title="复制"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li><li style="color: rgb(153, 153, 153);">8</li><li style="color: rgb(153, 153, 153);">9</li><li style="color: rgb(153, 153, 153);">10</li><li style="color: rgb(153, 153, 153);">11</li><li style="color: rgb(153, 153, 153);">12</li><li style="color: rgb(153, 153, 153);">13</li><li style="color: rgb(153, 153, 153);">14</li><li style="color: rgb(153, 153, 153);">15</li><li style="color: rgb(153, 153, 153);">16</li><li style="color: rgb(153, 153, 153);">17</li><li style="color: rgb(153, 153, 153);">18</li><li style="color: rgb(153, 153, 153);">19</li><li style="color: rgb(153, 153, 153);">20</li><li style="color: rgb(153, 153, 153);">21</li><li style="color: rgb(153, 153, 153);">22</li><li style="color: rgb(153, 153, 153);">23</li><li style="color: rgb(153, 153, 153);">24</li><li style="color: rgb(153, 153, 153);">25</li><li style="color: rgb(153, 153, 153);">26</li><li style="color: rgb(153, 153, 153);">27</li><li style="color: rgb(153, 153, 153);">28</li><li style="color: rgb(153, 153, 153);">29</li><li style="color: rgb(153, 153, 153);">30</li><li style="color: rgb(153, 153, 153);">31</li><li style="color: rgb(153, 153, 153);">32</li><li style="color: rgb(153, 153, 153);">33</li><li style="color: rgb(153, 153, 153);">34</li><li style="color: rgb(153, 153, 153);">35</li><li style="color: rgb(153, 153, 153);">36</li><li style="color: rgb(153, 153, 153);">37</li><li style="color: rgb(153, 153, 153);">38</li><li style="color: rgb(153, 153, 153);">39</li><li style="color: rgb(153, 153, 153);">40</li><li style="color: rgb(153, 153, 153);">41</li><li style="color: rgb(153, 153, 153);">42</li></ul></pre>
+
+<hr>
+
+<p><strong>3、折半插入排序</strong></p>
+
+<p>　　<font color="red"><b>折半插入排序的思想：</b></font>当插入第i(i&gt;=1)个元素时，前面的V[0],…,V[i-1]等i-1个 元素已经有序。这时，折半搜索第i个元素在前i-1个元素V[i-1]，…，V[0]中的插入位置，然后直接将V[i]插入，同时原来位置上的元素向后顺移。与直接插入排序不同的是，折半插入排序比直接插入排序明显减少了关键字之间的比较次数，但是移动次数是没有改变。所以，折半插入排序和插入排序的时间复杂度相同都是O（N^2），但其减少了比较次数，所以该算法仍然比直接插入排序好。折半插入排序是一种稳定的排序算法，其实现如下：</p>
+
+
+
+<pre class="prettyprint" name="code"><code class="language-java hljs  has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="hljs-javadoc">/**        
+ * Title: 插入排序中的折半插入排序，依赖于初始序列  
+ * Description: 折半搜索出插入位置，并直接插入;与直接插入搜索的区别是，后者的搜索要快于顺序搜索
+ *              时间复杂度：折半插入排序比直接插入排序明显减少了关键字之间的比较次数，但是移动次数是没有改变。所以，
+ *              折半插入排序和插入排序的时间复杂度相同都是O（N^2），在减少了比较次数方面它确实相当优秀，所以该算法仍然比直接插入排序好。
+ *              空间复杂度：O(1)
+ *              稳    定   性：稳定
+ *              内部排序(在排序过程中数据元素完全在内存)
+ *<span class="hljs-javadoctag"> @author</span> rico       
+ *<span class="hljs-javadoctag"> @created</span> 2017年5月25日 下午12:03:23    
+ */</span>      
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BinaryInsertSort</span> {</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span>[] <span class="hljs-title">binaryInsertSort</span>(<span class="hljs-keyword">int</span>[] target) {
+        <span class="hljs-keyword">if</span> (target != <span class="hljs-keyword">null</span> &amp;&amp; target.length &gt; <span class="hljs-number">1</span>) {
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; target.length; i++) {
+                <span class="hljs-keyword">int</span> left = <span class="hljs-number">0</span>;
+                <span class="hljs-keyword">int</span> right = i - <span class="hljs-number">1</span>;
+                <span class="hljs-keyword">int</span> mid;
+                <span class="hljs-keyword">int</span> temp = target[i];
+                <span class="hljs-keyword">if</span>(temp &lt; target[right]){   <span class="hljs-comment">// 当前值小于有序序列的最大值时，开始查找插入位置</span>
+                    <span class="hljs-keyword">while</span>(left &lt;= right){
+                        mid = (left + right)/<span class="hljs-number">2</span>;
+                        <span class="hljs-keyword">if</span>(target[mid] &lt; temp){
+                            left = mid + <span class="hljs-number">1</span>;    <span class="hljs-comment">// 缩小插入区间</span>
+                        }<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(target[mid] &gt; temp){
+                            right = mid - <span class="hljs-number">1</span>;    <span class="hljs-comment">// 缩小插入区间</span>
+                        }<span class="hljs-keyword">else</span>{        <span class="hljs-comment">// 待插入值与有序序列中的target[mid]相等，保证稳定性的处理</span>
+                            left = left + <span class="hljs-number">1</span>;   
+                        }
+                    }
+
+                    <span class="hljs-comment">// left及其后面的数据顺序向后移动，并在left位置插入</span>
+                    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i; j &gt; left; j--) {
+                        target[j] = target[j-<span class="hljs-number">1</span>];
+                    }
+                    target[left] = temp;
+                }
+            }
+        }
+        <span class="hljs-keyword">return</span> target;
+    }
+}<div class="hljs-button {2}" data-title="复制"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li><li style="color: rgb(153, 153, 153);">8</li><li style="color: rgb(153, 153, 153);">9</li><li style="color: rgb(153, 153, 153);">10</li><li style="color: rgb(153, 153, 153);">11</li><li style="color: rgb(153, 153, 153);">12</li><li style="color: rgb(153, 153, 153);">13</li><li style="color: rgb(153, 153, 153);">14</li><li style="color: rgb(153, 153, 153);">15</li><li style="color: rgb(153, 153, 153);">16</li><li style="color: rgb(153, 153, 153);">17</li><li style="color: rgb(153, 153, 153);">18</li><li style="color: rgb(153, 153, 153);">19</li><li style="color: rgb(153, 153, 153);">20</li><li style="color: rgb(153, 153, 153);">21</li><li style="color: rgb(153, 153, 153);">22</li><li style="color: rgb(153, 153, 153);">23</li><li style="color: rgb(153, 153, 153);">24</li><li style="color: rgb(153, 153, 153);">25</li><li style="color: rgb(153, 153, 153);">26</li><li style="color: rgb(153, 153, 153);">27</li><li style="color: rgb(153, 153, 153);">28</li><li style="color: rgb(153, 153, 153);">29</li><li style="color: rgb(153, 153, 153);">30</li><li style="color: rgb(153, 153, 153);">31</li><li style="color: rgb(153, 153, 153);">32</li><li style="color: rgb(153, 153, 153);">33</li><li style="color: rgb(153, 153, 153);">34</li><li style="color: rgb(153, 153, 153);">35</li><li style="color: rgb(153, 153, 153);">36</li><li style="color: rgb(153, 153, 153);">37</li><li style="color: rgb(153, 153, 153);">38</li><li style="color: rgb(153, 153, 153);">39</li><li style="color: rgb(153, 153, 153);">40</li><li style="color: rgb(153, 153, 153);">41</li><li style="color: rgb(153, 153, 153);">42</li></ul></pre>
+
+<hr>
+
+
+
+<h2 id="三-选择排序"><a name="t2"></a><a name="t2"></a>三. 选择排序</h2>
+
+<p>　　<font color="red"><b>选择排序的基本思想：</b></font>每一趟 (例如第i趟，i = 0,1,…)在后面第n-i个待排序元素中选出最小元素作为有序序列的第i个元素，直到第n-1趟结束后，所有元素有序。在这里，我们介绍两种具体的选择排序算法：直接选择排序与堆排序。</p>
+
+<hr>
+
+<p><strong>1、直接选择排序</strong></p>
+
+<p>　　<font color="red"><b>直接选择排序的思想：</b></font>第一次从R[0]~R[n-1]中选取最小值，与R[0]交换，第二次从R<a href="http://static.zybuluo.com/Rico123/ymihfm526o5xv5bo1btvm1fy/%E5%85%AB%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93.jpg" rel="nofollow" target="_blank">1</a>~R[n-1]中选取最小值，与R<a href="http://static.zybuluo.com/Rico123/ymihfm526o5xv5bo1btvm1fy/%E5%85%AB%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93.jpg" rel="nofollow" target="_blank">1</a>交换，….，第i次从R[i-1]~R[n-1]中选取最小值，与R[i-1]交换，…..，第n-1次从R[n-2]~R[n-1]中选取最小值，与R[n-2]交换，总共通过n-1次，得到一个按排序码从小到大排列的有序序列。直接选择排序是一种不稳定的排序算法，其实现如下：</p>
+
+
+
+<pre class="prettyprint" name="code"><code class="language-java hljs  has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="hljs-javadoc">/**        
+ * Title: 选择排序中的直接选择排序，依赖于初始序列     
+ * Description: 每一趟 (例如第i趟，i = 0,1,...)在后面第n-i个待排序元素中选出最小元素作为有序序列的第i个元素
+ *              时间复杂度：最好情形O(n^2)，平均情形O(n^2)，最差情形O(n^2)
+ *              空间复杂度：O(1)
+ *              稳    定   性：不稳定
+ *              内部排序(在排序过程中数据元素完全在内存)
+ *<span class="hljs-javadoctag"> @author</span> rico       
+ *<span class="hljs-javadoctag"> @created</span> 2017年5月20日 上午10:40:00    
+ */</span>      
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">StraightSelectSort</span> {</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span>[] <span class="hljs-title">selectSort</span>(<span class="hljs-keyword">int</span>[] target){
+        <span class="hljs-keyword">if</span>(target != <span class="hljs-keyword">null</span> &amp;&amp; target.length != <span class="hljs-number">1</span>){
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; target.length; i++) {
+                <span class="hljs-keyword">int</span> min_index = i;
+                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i + <span class="hljs-number">1</span>; j &lt; target.length; j++) {
+                    <span class="hljs-keyword">if</span>(target[min_index] &gt; target[j]){
+                        min_index = j;
+                    }
+                }
+                <span class="hljs-keyword">if</span>(target[min_index] != target[i]){  <span class="hljs-comment">// 导致不稳定的因素：交换</span>
+                    <span class="hljs-keyword">int</span> min = target[min_index];
+                    target[min_index] = target[i];
+                    target[i] = min;
+                }
+            }
+        }
+        <span class="hljs-keyword">return</span> target;
+    }
+}<div class="hljs-button {2}" data-title="复制"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li><li style="color: rgb(153, 153, 153);">8</li><li style="color: rgb(153, 153, 153);">9</li><li style="color: rgb(153, 153, 153);">10</li><li style="color: rgb(153, 153, 153);">11</li><li style="color: rgb(153, 153, 153);">12</li><li style="color: rgb(153, 153, 153);">13</li><li style="color: rgb(153, 153, 153);">14</li><li style="color: rgb(153, 153, 153);">15</li><li style="color: rgb(153, 153, 153);">16</li><li style="color: rgb(153, 153, 153);">17</li><li style="color: rgb(153, 153, 153);">18</li><li style="color: rgb(153, 153, 153);">19</li><li style="color: rgb(153, 153, 153);">20</li><li style="color: rgb(153, 153, 153);">21</li><li style="color: rgb(153, 153, 153);">22</li><li style="color: rgb(153, 153, 153);">23</li><li style="color: rgb(153, 153, 153);">24</li><li style="color: rgb(153, 153, 153);">25</li><li style="color: rgb(153, 153, 153);">26</li><li style="color: rgb(153, 153, 153);">27</li><li style="color: rgb(153, 153, 153);">28</li><li style="color: rgb(153, 153, 153);">29</li><li style="color: rgb(153, 153, 153);">30</li></ul></pre>
+
+<hr>
+
+<p><strong>2、堆排序</strong></p>
+
+<p>　　<font color="red"><b>堆排序的核心是堆调整算法。</b></font>首先根据初始输入数据，利用堆调整算法shiftDown()形成初始堆；然后，将堆顶元素与堆尾元素交换，缩小堆的范围并重新调整为堆，如此往复。堆排序是一种不稳定的排序算法，其实现如下：</p>
+
+
+
+<pre class="prettyprint" name="code"><code class="language-java hljs  has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="hljs-javadoc">/**        
+ * Title: 堆排序(选择排序)，升序排序(最大堆)，依赖于初始序列     
+ * Description: 现将给定序列调整为最大堆，然后每次将堆顶元素与堆尾元素交换并缩小堆的范围，直到将堆缩小至1
+ * 时间复杂度：O(nlgn)
+ * 空间复杂度：O(1) 
+ * 稳 定 性：不稳定
+ * 内部排序(在排序过程中数据元素完全在内存)
+ *<span class="hljs-javadoctag"> @author</span> rico       
+ *<span class="hljs-javadoctag"> @created</span> 2017年5月25日 上午9:48:06    
+ */</span>      
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HeapSort</span> {</span>
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span>[] <span class="hljs-title">heapSort</span>(<span class="hljs-keyword">int</span>[] target) {
+        <span class="hljs-keyword">if</span> (target != <span class="hljs-keyword">null</span> &amp;&amp; target.length &gt; <span class="hljs-number">1</span>) {
+
+            <span class="hljs-comment">// 调整为最大堆</span>
+            <span class="hljs-keyword">int</span> pos = (target.length - <span class="hljs-number">2</span>) / <span class="hljs-number">2</span>;
+            <span class="hljs-keyword">while</span> (pos &gt;= <span class="hljs-number">0</span>) {
+                shiftDown(target, pos, target.length - <span class="hljs-number">1</span>);
+                pos--;
+            }
+
+            <span class="hljs-comment">// 堆排序</span>
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = target.length-<span class="hljs-number">1</span>; i &gt; <span class="hljs-number">0</span>; i--) {
+                <span class="hljs-keyword">int</span> temp = target[i];
+                target[i] = target[<span class="hljs-number">0</span>];
+                target[<span class="hljs-number">0</span>] = temp;
+                shiftDown(target, <span class="hljs-number">0</span>, i-<span class="hljs-number">1</span>);
+            }
+            <span class="hljs-keyword">return</span> target;
+        }
+        <span class="hljs-keyword">return</span> target;
+    }
+
+
+    <span class="hljs-javadoc">/**     
+     *<span class="hljs-javadoctag"> @description</span> 自上而下调整为最大堆
+     *<span class="hljs-javadoctag"> @author</span> rico       
+     *<span class="hljs-javadoctag"> @created</span> 2017年5月25日 上午9:45:40     
+     *<span class="hljs-javadoctag"> @param</span> target
+     *<span class="hljs-javadoctag"> @param</span> start
+     *<span class="hljs-javadoctag"> @param</span> end     
+     */</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">shiftDown</span>(<span class="hljs-keyword">int</span>[] target, <span class="hljs-keyword">int</span> start, <span class="hljs-keyword">int</span> end) {
+        <span class="hljs-keyword">int</span> i = start;
+        <span class="hljs-keyword">int</span> j = <span class="hljs-number">2</span> * start + <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">int</span> temp = target[i];
+        <span class="hljs-keyword">while</span> (j &lt;= end) {   <span class="hljs-comment">// 迭代条件</span>
+            <span class="hljs-keyword">if</span> (j &lt; end &amp;&amp; target[j + <span class="hljs-number">1</span>] &gt; target[j]) {  <span class="hljs-comment">//找出较大子女</span>
+                j = j + <span class="hljs-number">1</span>;
+            }
+            <span class="hljs-keyword">if</span> (target[j] &lt;= temp) {  <span class="hljs-comment">// 父亲大于子女</span>
+                <span class="hljs-keyword">break</span>;
+            } <span class="hljs-keyword">else</span> {
+                target[i] = target[j];
+                i = j;
+                j = <span class="hljs-number">2</span> * j + <span class="hljs-number">1</span>;
+            }
+        }
+        target[i] = temp;
+    }
+}<div class="hljs-button {2}" data-title="复制"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li><li style="color: rgb(153, 153, 153);">8</li><li style="color: rgb(153, 153, 153);">9</li><li style="color: rgb(153, 153, 153);">10</li><li style="color: rgb(153, 153, 153);">11</li><li style="color: rgb(153, 153, 153);">12</li><li style="color: rgb(153, 153, 153);">13</li><li style="color: rgb(153, 153, 153);">14</li><li style="color: rgb(153, 153, 153);">15</li><li style="color: rgb(153, 153, 153);">16</li><li style="color: rgb(153, 153, 153);">17</li><li style="color: rgb(153, 153, 153);">18</li><li style="color: rgb(153, 153, 153);">19</li><li style="color: rgb(153, 153, 153);">20</li><li style="color: rgb(153, 153, 153);">21</li><li style="color: rgb(153, 153, 153);">22</li><li style="color: rgb(153, 153, 153);">23</li><li style="color: rgb(153, 153, 153);">24</li><li style="color: rgb(153, 153, 153);">25</li><li style="color: rgb(153, 153, 153);">26</li><li style="color: rgb(153, 153, 153);">27</li><li style="color: rgb(153, 153, 153);">28</li><li style="color: rgb(153, 153, 153);">29</li><li style="color: rgb(153, 153, 153);">30</li><li style="color: rgb(153, 153, 153);">31</li><li style="color: rgb(153, 153, 153);">32</li><li style="color: rgb(153, 153, 153);">33</li><li style="color: rgb(153, 153, 153);">34</li><li style="color: rgb(153, 153, 153);">35</li><li style="color: rgb(153, 153, 153);">36</li><li style="color: rgb(153, 153, 153);">37</li><li style="color: rgb(153, 153, 153);">38</li><li style="color: rgb(153, 153, 153);">39</li><li style="color: rgb(153, 153, 153);">40</li><li style="color: rgb(153, 153, 153);">41</li><li style="color: rgb(153, 153, 153);">42</li><li style="color: rgb(153, 153, 153);">43</li><li style="color: rgb(153, 153, 153);">44</li><li style="color: rgb(153, 153, 153);">45</li><li style="color: rgb(153, 153, 153);">46</li><li style="color: rgb(153, 153, 153);">47</li><li style="color: rgb(153, 153, 153);">48</li><li style="color: rgb(153, 153, 153);">49</li><li style="color: rgb(153, 153, 153);">50</li><li style="color: rgb(153, 153, 153);">51</li><li style="color: rgb(153, 153, 153);">52</li><li style="color: rgb(153, 153, 153);">53</li><li style="color: rgb(153, 153, 153);">54</li><li style="color: rgb(153, 153, 153);">55</li><li style="color: rgb(153, 153, 153);">56</li><li style="color: rgb(153, 153, 153);">57</li><li style="color: rgb(153, 153, 153);">58</li><li style="color: rgb(153, 153, 153);">59</li><li style="color: rgb(153, 153, 153);">60</li><li style="color: rgb(153, 153, 153);">61</li><li style="color: rgb(153, 153, 153);">62</li></ul></pre>
+
+<hr>
+
+
+
+<h2 id="四-交换排序"><a name="t3"></a><a name="t3"></a>四. 交换排序</h2>
+
+<p>　　<font color="red"><b>交换排序的基本思想：</b></font>根据序列中两个元素的比较结果来对换这两个记录在序列中的位置，也就是说，将键值较大的记录向序列的尾部移动，键值较小的记录向序列的前部移动。</p>
+
+<hr>
+
+<p><strong>1、冒泡排序</strong></p>
+
+<p>　　<font color="red"><b>冒泡排序的思想：</b></font>根据序列中两个元素的比较结果来对换这两个记录在序列中的位置，将键值较大的记录向序列的尾部移动，键值较小的记录向序列的前部移动。因此，每一趟都将较小的元素移到前面，较大的元素自然就逐渐沉到最后面了，也就是说，最大的元素最后才能确定，这就是冒泡。冒泡排序是一种稳定的排序算法，其实现如下：</p>
+
+
+
+<pre class="prettyprint" name="code"><code class="language-java hljs  has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="hljs-javadoc">/**
+ * Title: 交换排序中的冒泡排序 ，一般情形下指的是优化后的冒泡排序，最多进行n-1次比较，依赖于初始序列  
+ * Description:因为越大的元素会经由交换慢慢"浮"到数列的顶端(最后位置)，最大的数最后才确定下来，所以称为冒泡排序
+ * 时间复杂度：最好情形O(n)，平均情形O(n^2)，最差情形O(n^2) 
+ * 空间复杂度：O(1) 
+ * 稳 定 性：稳定
+ * 内部排序(在排序过程中数据元素完全在内存)
+ * 
+ *<span class="hljs-javadoctag"> @author</span> rico
+ *<span class="hljs-javadoctag"> @created</span> 2017年5月20日 上午10:40:00
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BubbleSort</span> {</span>
+
+    <span class="hljs-javadoc">/**     
+     *<span class="hljs-javadoctag"> @description</span> 朴素冒泡排序(共进行n-1次比较)
+     *<span class="hljs-javadoctag"> @author</span> rico         
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span>[] <span class="hljs-title">bubbleSort</span>(<span class="hljs-keyword">int</span>[] target) {
+        <span class="hljs-keyword">int</span> n = target.length;
+        <span class="hljs-keyword">if</span> (target != <span class="hljs-keyword">null</span> &amp;&amp; n != <span class="hljs-number">1</span>) {
+            <span class="hljs-comment">// 最多需要进行n-1躺，每一趟将比较小的元素移到前面，比较大的元素自然就逐渐沉到最后面了，这就是冒泡</span>
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n-<span class="hljs-number">1</span>; i++) {      
+                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = n-<span class="hljs-number">1</span>; j &gt; i; j--) {
+                    <span class="hljs-keyword">if</span>(target[j] &lt; target[j-<span class="hljs-number">1</span>]){
+                        <span class="hljs-keyword">int</span> temp = target[j];
+                        target[j] = target[j-<span class="hljs-number">1</span>];
+                        target[j-<span class="hljs-number">1</span>] = temp;
+                    }
+                }
+                System.out.println(Arrays.toString(target));
+            }
+        }
+        <span class="hljs-keyword">return</span> target;
+    }
+
+    <span class="hljs-javadoc">/**     
+     *<span class="hljs-javadoctag"> @description</span> 优化冒泡排序
+     *<span class="hljs-javadoctag"> @author</span> rico         
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span>[] <span class="hljs-title">optimizeBubbleSort</span>(<span class="hljs-keyword">int</span>[] target) {
+        <span class="hljs-keyword">int</span> n = target.length;
+        <span class="hljs-keyword">if</span> (target != <span class="hljs-keyword">null</span> &amp;&amp; n != <span class="hljs-number">1</span>) {
+            <span class="hljs-comment">// 最多需要进行n-1躺，每一趟将比较小的元素移到前面，比较大的元素自然就逐渐沉到最后面了，这就是冒泡</span>
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n-<span class="hljs-number">1</span>; i++) {      
+                <span class="hljs-keyword">boolean</span> exchange = <span class="hljs-keyword">false</span>;
+                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = n-<span class="hljs-number">1</span>; j &gt; i; j--) {
+                    <span class="hljs-keyword">if</span>(target[j] &lt; target[j-<span class="hljs-number">1</span>]){
+                        <span class="hljs-keyword">int</span> temp = target[j];
+                        target[j] = target[j-<span class="hljs-number">1</span>];
+                        target[j-<span class="hljs-number">1</span>] = temp;
+                        exchange = <span class="hljs-keyword">true</span>;
+                    }
+                }
+                System.out.println(Arrays.toString(target));
+                <span class="hljs-keyword">if</span> (!exchange){    <span class="hljs-comment">// 若 i 到 n-1 这部分元素已经有序，则直接返回</span>
+                    <span class="hljs-keyword">return</span> target;
+                }
+            }
+        }
+        <span class="hljs-keyword">return</span> target;
+    }
+}<div class="hljs-button {2}" data-title="复制"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li><li style="color: rgb(153, 153, 153);">8</li><li style="color: rgb(153, 153, 153);">9</li><li style="color: rgb(153, 153, 153);">10</li><li style="color: rgb(153, 153, 153);">11</li><li style="color: rgb(153, 153, 153);">12</li><li style="color: rgb(153, 153, 153);">13</li><li style="color: rgb(153, 153, 153);">14</li><li style="color: rgb(153, 153, 153);">15</li><li style="color: rgb(153, 153, 153);">16</li><li style="color: rgb(153, 153, 153);">17</li><li style="color: rgb(153, 153, 153);">18</li><li style="color: rgb(153, 153, 153);">19</li><li style="color: rgb(153, 153, 153);">20</li><li style="color: rgb(153, 153, 153);">21</li><li style="color: rgb(153, 153, 153);">22</li><li style="color: rgb(153, 153, 153);">23</li><li style="color: rgb(153, 153, 153);">24</li><li style="color: rgb(153, 153, 153);">25</li><li style="color: rgb(153, 153, 153);">26</li><li style="color: rgb(153, 153, 153);">27</li><li style="color: rgb(153, 153, 153);">28</li><li style="color: rgb(153, 153, 153);">29</li><li style="color: rgb(153, 153, 153);">30</li><li style="color: rgb(153, 153, 153);">31</li><li style="color: rgb(153, 153, 153);">32</li><li style="color: rgb(153, 153, 153);">33</li><li style="color: rgb(153, 153, 153);">34</li><li style="color: rgb(153, 153, 153);">35</li><li style="color: rgb(153, 153, 153);">36</li><li style="color: rgb(153, 153, 153);">37</li><li style="color: rgb(153, 153, 153);">38</li><li style="color: rgb(153, 153, 153);">39</li><li style="color: rgb(153, 153, 153);">40</li><li style="color: rgb(153, 153, 153);">41</li><li style="color: rgb(153, 153, 153);">42</li><li style="color: rgb(153, 153, 153);">43</li><li style="color: rgb(153, 153, 153);">44</li><li style="color: rgb(153, 153, 153);">45</li><li style="color: rgb(153, 153, 153);">46</li><li style="color: rgb(153, 153, 153);">47</li><li style="color: rgb(153, 153, 153);">48</li><li style="color: rgb(153, 153, 153);">49</li><li style="color: rgb(153, 153, 153);">50</li><li style="color: rgb(153, 153, 153);">51</li><li style="color: rgb(153, 153, 153);">52</li><li style="color: rgb(153, 153, 153);">53</li><li style="color: rgb(153, 153, 153);">54</li><li style="color: rgb(153, 153, 153);">55</li><li style="color: rgb(153, 153, 153);">56</li><li style="color: rgb(153, 153, 153);">57</li><li style="color: rgb(153, 153, 153);">58</li><li style="color: rgb(153, 153, 153);">59</li><li style="color: rgb(153, 153, 153);">60</li><li style="color: rgb(153, 153, 153);">61</li><li style="color: rgb(153, 153, 153);">62</li></ul></pre>
+
+<hr>
+
+<p><strong>2、快速排序</strong></p>
+
+<p>　　<font color="red"><b>快速排序的思想：</b></font>通过一趟排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据都要小(划分过程)，然后再按此方法对这两部分数据分别进行快速排序(快速排序过程)，整个排序过程可以递归进行，以此达到整个数据变成有序序列。快速排序是一种不稳定的排序算法。</p>
+
+
+
+<pre class="prettyprint" name="code"><code class="language-java hljs  has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="hljs-javadoc">/**
+ * Title: 交换排序中的快速排序，目前应用最为广泛的排序算法，是一个递归算法，依赖于初始序列  
+ * Description:快速排序包括两个过程：划分 和 快排
+ * "划分"是指将原序列按基准元素划分两个子序列
+ * "快排"是指分别对子序列进行快排
+ * 
+ * 就平均计算时间而言，快速排序是所有内部排序方法中最好的一个
+ * 
+ * 对大规模数据排序时，快排是快的；对小规模数据排序时，快排是慢的，甚至慢于简单选择排序等简单排序方法
+ * 
+ * 快速排序依赖于原始序列，因此其时间复杂度从O(nlgn)到O(n^2)不等
+ * 时间复杂度：最好情形O(nlgn)，平均情形O(nlgn)，最差情形O(n^2)
+ * 
+ * 递归所消耗的栈空间
+ * 空间复杂度：O(lgn)
+ * 
+ * 可选任一元素作为基准元素
+ * 稳 定 性：不稳定
+ * 
+ * 
+ * 内部排序(在排序过程中数据元素完全在内存)
+ * 
+ *<span class="hljs-javadoctag"> @author</span> rico
+ *<span class="hljs-javadoctag"> @created</span> 2017年5月20日 上午10:40:00
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">QuickSort</span> {</span>
+
+    <span class="hljs-javadoc">/**     
+     *<span class="hljs-javadoctag"> @description</span> 快排算法(递归算法)：在递去过程中就把问题解决了
+     *<span class="hljs-javadoctag"> @author</span> rico       
+     *<span class="hljs-javadoctag"> @created</span> 2017年5月20日 下午5:12:06     
+     *<span class="hljs-javadoctag"> @param</span> target
+     *<span class="hljs-javadoctag"> @param</span> left
+     *<span class="hljs-javadoctag"> @param</span> right
+     *<span class="hljs-javadoctag"> @return</span>     
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span>[] <span class="hljs-title">quickSort</span>(<span class="hljs-keyword">int</span>[] target, <span class="hljs-keyword">int</span> left, <span class="hljs-keyword">int</span> right) {
+
+        <span class="hljs-keyword">if</span>(right &gt; left){     <span class="hljs-comment">// 递归终止条件</span>
+            <span class="hljs-keyword">int</span> base_index = partition(target,left, right);  <span class="hljs-comment">// 原序列划分后基准元素的位置</span>
+            quickSort(target, left, base_index-<span class="hljs-number">1</span>);    <span class="hljs-comment">// 对第一个子序列快速排序，不包含基准元素！</span>
+            quickSort(target, base_index+<span class="hljs-number">1</span>, right);   <span class="hljs-comment">// 对第二个子序列快速排序，不包含基准元素！</span>
+            <span class="hljs-keyword">return</span> target;
+        }
+        <span class="hljs-keyword">return</span> target;
+    }
+
+
+    <span class="hljs-javadoc">/**     
+     *<span class="hljs-javadoctag"> @description</span> 序列划分，以第一个元素为基准元素
+     *<span class="hljs-javadoctag"> @author</span> rico       
+     *<span class="hljs-javadoctag"> @created</span> 2017年5月20日 下午5:10:54     
+     *<span class="hljs-javadoctag"> @param</span> target  序列
+     *<span class="hljs-javadoctag"> @param</span> left 序列左端
+     *<span class="hljs-javadoctag"> @param</span> right  序列右端
+     *<span class="hljs-javadoctag"> @return</span>     
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">partition</span>(<span class="hljs-keyword">int</span>[] target, <span class="hljs-keyword">int</span> left, <span class="hljs-keyword">int</span> right){
+
+        <span class="hljs-keyword">int</span> base = target[left];   <span class="hljs-comment">// 基准元素的值</span>
+        <span class="hljs-keyword">int</span> base_index = left;    <span class="hljs-comment">// 基准元素最终应该在的位置</span>
+
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = left+<span class="hljs-number">1</span>; i &lt;= right; i++) {  <span class="hljs-comment">// 从基准元素的下一个元素开始</span>
+            <span class="hljs-keyword">if</span>(target[i] &lt; base){       <span class="hljs-comment">//  若其小于基准元素</span>
+                base_index++;           <span class="hljs-comment">// 若其小于基准元素,则基准元素最终位置后移；否则不用移动</span>
+                <span class="hljs-keyword">if</span>(base_index != i){    <span class="hljs-comment">// 相等情况意味着i之前的元素都小于base,只需要换一次即可，不需要次次都换</span>
+                    <span class="hljs-keyword">int</span> temp = target[base_index];
+                    target[base_index] = target[i];
+                    target[i] = temp;
+                }
+            }
+        }
+
+        <span class="hljs-comment">// 将基准元素就位</span>
+        target[left] = target[base_index];   
+        target[base_index] = base;
+
+        System.out.println(Arrays.toString(target));
+
+        <span class="hljs-keyword">return</span> base_index;  <span class="hljs-comment">//返回划分后基准元素的位置</span>
+    }
+}<div class="hljs-button {2}" data-title="复制"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li><li style="color: rgb(153, 153, 153);">8</li><li style="color: rgb(153, 153, 153);">9</li><li style="color: rgb(153, 153, 153);">10</li><li style="color: rgb(153, 153, 153);">11</li><li style="color: rgb(153, 153, 153);">12</li><li style="color: rgb(153, 153, 153);">13</li><li style="color: rgb(153, 153, 153);">14</li><li style="color: rgb(153, 153, 153);">15</li><li style="color: rgb(153, 153, 153);">16</li><li style="color: rgb(153, 153, 153);">17</li><li style="color: rgb(153, 153, 153);">18</li><li style="color: rgb(153, 153, 153);">19</li><li style="color: rgb(153, 153, 153);">20</li><li style="color: rgb(153, 153, 153);">21</li><li style="color: rgb(153, 153, 153);">22</li><li style="color: rgb(153, 153, 153);">23</li><li style="color: rgb(153, 153, 153);">24</li><li style="color: rgb(153, 153, 153);">25</li><li style="color: rgb(153, 153, 153);">26</li><li style="color: rgb(153, 153, 153);">27</li><li style="color: rgb(153, 153, 153);">28</li><li style="color: rgb(153, 153, 153);">29</li><li style="color: rgb(153, 153, 153);">30</li><li style="color: rgb(153, 153, 153);">31</li><li style="color: rgb(153, 153, 153);">32</li><li style="color: rgb(153, 153, 153);">33</li><li style="color: rgb(153, 153, 153);">34</li><li style="color: rgb(153, 153, 153);">35</li><li style="color: rgb(153, 153, 153);">36</li><li style="color: rgb(153, 153, 153);">37</li><li style="color: rgb(153, 153, 153);">38</li><li style="color: rgb(153, 153, 153);">39</li><li style="color: rgb(153, 153, 153);">40</li><li style="color: rgb(153, 153, 153);">41</li><li style="color: rgb(153, 153, 153);">42</li><li style="color: rgb(153, 153, 153);">43</li><li style="color: rgb(153, 153, 153);">44</li><li style="color: rgb(153, 153, 153);">45</li><li style="color: rgb(153, 153, 153);">46</li><li style="color: rgb(153, 153, 153);">47</li><li style="color: rgb(153, 153, 153);">48</li><li style="color: rgb(153, 153, 153);">49</li><li style="color: rgb(153, 153, 153);">50</li><li style="color: rgb(153, 153, 153);">51</li><li style="color: rgb(153, 153, 153);">52</li><li style="color: rgb(153, 153, 153);">53</li><li style="color: rgb(153, 153, 153);">54</li><li style="color: rgb(153, 153, 153);">55</li><li style="color: rgb(153, 153, 153);">56</li><li style="color: rgb(153, 153, 153);">57</li><li style="color: rgb(153, 153, 153);">58</li><li style="color: rgb(153, 153, 153);">59</li><li style="color: rgb(153, 153, 153);">60</li><li style="color: rgb(153, 153, 153);">61</li><li style="color: rgb(153, 153, 153);">62</li><li style="color: rgb(153, 153, 153);">63</li><li style="color: rgb(153, 153, 153);">64</li><li style="color: rgb(153, 153, 153);">65</li><li style="color: rgb(153, 153, 153);">66</li><li style="color: rgb(153, 153, 153);">67</li><li style="color: rgb(153, 153, 153);">68</li><li style="color: rgb(153, 153, 153);">69</li><li style="color: rgb(153, 153, 153);">70</li><li style="color: rgb(153, 153, 153);">71</li><li style="color: rgb(153, 153, 153);">72</li><li style="color: rgb(153, 153, 153);">73</li><li style="color: rgb(153, 153, 153);">74</li><li style="color: rgb(153, 153, 153);">75</li><li style="color: rgb(153, 153, 153);">76</li><li style="color: rgb(153, 153, 153);">77</li><li style="color: rgb(153, 153, 153);">78</li><li style="color: rgb(153, 153, 153);">79</li><li style="color: rgb(153, 153, 153);">80</li><li style="color: rgb(153, 153, 153);">81</li><li style="color: rgb(153, 153, 153);">82</li></ul></pre>
+
+<hr>
+
+
+
+<h2 id="五-归并排序"><a name="t4"></a><a name="t4"></a>五. 归并排序</h2>
+
+<p>　　<font color="red"><b>归并排序包含两个过程：”归”和”并”。</b></font>其中，”归”是指将原序列分成半子序列，分别对子序列进行递归排序；”并”是指将排好序的各子序列合并成原序列。归并排序算法是一个典型的递归算法，因此也是概念上最为简单的排序算法。与快速排序算法相比，归并排序算法不依赖于初始序列，并且是一种稳定的排序算法，但需要与原序列一样大小的辅助存储空间。</p>
+
+
+
+<pre class="prettyprint" name="code"><code class="language-java hljs  has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="hljs-javadoc">/**
+ * Title: 归并排序 ，概念上最为简单的排序算法，是一个递归算法 Description:归并排序包括两个过程：归 和 并
+ * "归"是指将原序列分成半子序列，分别对子序列进行递归排序 "并"是指将排好序的各子序列合并成原序列
+ * 
+ * 归并排序的主要问题是：需要一个与原待排序数组一样大的辅助数组空间
+ * 
+ * 归并排序不依赖于原始序列，因此其最好情形、平均情形和最差情形时间复杂度都一样 时间复杂度：最好情形O(n)，平均情形O(n^2)，最差情形O(n^2)
+ * 空间复杂度：O(n) 稳 定 性：稳定 内部排序(在排序过程中数据元素完全在内存)
+ * 
+ *<span class="hljs-javadoctag"> @author</span> rico
+ *<span class="hljs-javadoctag"> @created</span> 2017年5月20日 上午10:40:00
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MergeSort</span> {</span>
+
+    <span class="hljs-javadoc">/**
+     *<span class="hljs-javadoctag"> @description</span> 归并排序算法(递归算法)：递去分解，归来合并
+     *<span class="hljs-javadoctag"> @author</span> rico
+     *<span class="hljs-javadoctag"> @created</span> 2017年5月20日 下午4:04:52
+     *<span class="hljs-javadoctag"> @param</span> target
+     *            待排序序列
+     *<span class="hljs-javadoctag"> @param</span> left
+     *            待排序序列起始位置
+     *<span class="hljs-javadoctag"> @param</span> right
+     *            待排序序列终止位置
+     *<span class="hljs-javadoctag"> @return</span>
+     */</span>
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">mergeSort</span>(<span class="hljs-keyword">int</span>[] target) {
+        <span class="hljs-keyword">int</span>[] copy = Arrays.copyOf(target, target.length);    <span class="hljs-comment">// 空间复杂度O(n)</span>
+        mergeSort(target, copy, <span class="hljs-number">0</span>, target.length - <span class="hljs-number">1</span>);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">mergeSort</span>(<span class="hljs-keyword">int</span>[] target, <span class="hljs-keyword">int</span>[] copy, <span class="hljs-keyword">int</span> left, <span class="hljs-keyword">int</span> right) {
+        <span class="hljs-keyword">if</span> (right &gt; left) { <span class="hljs-comment">// 递归终止条件</span>
+            <span class="hljs-keyword">int</span> mid = (left + right) / <span class="hljs-number">2</span>;
+            mergeSort(target, copy, left, mid); <span class="hljs-comment">// 归并排序第一个子序列</span>
+            mergeSort(target, copy, mid + <span class="hljs-number">1</span>, right); <span class="hljs-comment">// 归并排序第二个子序列</span>
+            merge(target, copy, left, mid, right); <span class="hljs-comment">// 合并子序列成原序列</span>
+        }
+    }
+
+    <span class="hljs-javadoc">/**
+     *<span class="hljs-javadoctag"> @description</span> 两路归并算法
+     *<span class="hljs-javadoctag"> @author</span> rico
+     *<span class="hljs-javadoctag"> @created</span> 2017年5月20日 下午3:59:16
+     *<span class="hljs-javadoctag"> @param</span> target
+     *            用于存储归并结果
+     *<span class="hljs-javadoctag"> @param</span> left
+     *            第一个有序表的第一个元素所在位置
+     *<span class="hljs-javadoctag"> @param</span> mid
+     *            第一个有序表的最后一个元素所在位置
+     *<span class="hljs-javadoctag"> @param</span> right
+     *            第二个有序表的最后一个元素所在位置
+     *<span class="hljs-javadoctag"> @return</span>
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">merge</span>(<span class="hljs-keyword">int</span>[] target, <span class="hljs-keyword">int</span>[] copy, <span class="hljs-keyword">int</span> left, <span class="hljs-keyword">int</span> mid,
+            <span class="hljs-keyword">int</span> right) {
+
+        <span class="hljs-comment">// s1,s2是检查指针，index 是存放指针</span>
+        <span class="hljs-keyword">int</span> s1 = left;
+        <span class="hljs-keyword">int</span> s2 = mid + <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">int</span> index = left;
+
+        <span class="hljs-comment">// 两个表都未检查完，两两比较</span>
+        <span class="hljs-keyword">while</span> (s1 &lt;= mid &amp;&amp; s2 &lt;= right) {
+            <span class="hljs-keyword">if</span> (copy[s1] &lt;= copy[s2]) { <span class="hljs-comment">// 稳定性</span>
+                target[index++] = copy[s1++];
+            } <span class="hljs-keyword">else</span> {
+                target[index++] = copy[s2++];
+            }
+        }
+
+        <span class="hljs-comment">// 若第一个表未检查完，复制</span>
+        <span class="hljs-keyword">while</span> (s1 &lt;= mid) {
+            target[index++] = copy[s1++];
+        }
+
+        <span class="hljs-comment">// 若第二个表未检查完，复制</span>
+        <span class="hljs-keyword">while</span> (s2 &lt;= right) {
+            target[index++] = copy[s2++];
+        }
+
+        <span class="hljs-comment">// 更新辅助数组 copy</span>
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = left; i &lt;= right; i++) {
+            copy[i] = target[i];
+        }
+    }<div class="hljs-button {2}" data-title="复制"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li><li style="color: rgb(153, 153, 153);">8</li><li style="color: rgb(153, 153, 153);">9</li><li style="color: rgb(153, 153, 153);">10</li><li style="color: rgb(153, 153, 153);">11</li><li style="color: rgb(153, 153, 153);">12</li><li style="color: rgb(153, 153, 153);">13</li><li style="color: rgb(153, 153, 153);">14</li><li style="color: rgb(153, 153, 153);">15</li><li style="color: rgb(153, 153, 153);">16</li><li style="color: rgb(153, 153, 153);">17</li><li style="color: rgb(153, 153, 153);">18</li><li style="color: rgb(153, 153, 153);">19</li><li style="color: rgb(153, 153, 153);">20</li><li style="color: rgb(153, 153, 153);">21</li><li style="color: rgb(153, 153, 153);">22</li><li style="color: rgb(153, 153, 153);">23</li><li style="color: rgb(153, 153, 153);">24</li><li style="color: rgb(153, 153, 153);">25</li><li style="color: rgb(153, 153, 153);">26</li><li style="color: rgb(153, 153, 153);">27</li><li style="color: rgb(153, 153, 153);">28</li><li style="color: rgb(153, 153, 153);">29</li><li style="color: rgb(153, 153, 153);">30</li><li style="color: rgb(153, 153, 153);">31</li><li style="color: rgb(153, 153, 153);">32</li><li style="color: rgb(153, 153, 153);">33</li><li style="color: rgb(153, 153, 153);">34</li><li style="color: rgb(153, 153, 153);">35</li><li style="color: rgb(153, 153, 153);">36</li><li style="color: rgb(153, 153, 153);">37</li><li style="color: rgb(153, 153, 153);">38</li><li style="color: rgb(153, 153, 153);">39</li><li style="color: rgb(153, 153, 153);">40</li><li style="color: rgb(153, 153, 153);">41</li><li style="color: rgb(153, 153, 153);">42</li><li style="color: rgb(153, 153, 153);">43</li><li style="color: rgb(153, 153, 153);">44</li><li style="color: rgb(153, 153, 153);">45</li><li style="color: rgb(153, 153, 153);">46</li><li style="color: rgb(153, 153, 153);">47</li><li style="color: rgb(153, 153, 153);">48</li><li style="color: rgb(153, 153, 153);">49</li><li style="color: rgb(153, 153, 153);">50</li><li style="color: rgb(153, 153, 153);">51</li><li style="color: rgb(153, 153, 153);">52</li><li style="color: rgb(153, 153, 153);">53</li><li style="color: rgb(153, 153, 153);">54</li><li style="color: rgb(153, 153, 153);">55</li><li style="color: rgb(153, 153, 153);">56</li><li style="color: rgb(153, 153, 153);">57</li><li style="color: rgb(153, 153, 153);">58</li><li style="color: rgb(153, 153, 153);">59</li><li style="color: rgb(153, 153, 153);">60</li><li style="color: rgb(153, 153, 153);">61</li><li style="color: rgb(153, 153, 153);">62</li><li style="color: rgb(153, 153, 153);">63</li><li style="color: rgb(153, 153, 153);">64</li><li style="color: rgb(153, 153, 153);">65</li><li style="color: rgb(153, 153, 153);">66</li><li style="color: rgb(153, 153, 153);">67</li><li style="color: rgb(153, 153, 153);">68</li><li style="color: rgb(153, 153, 153);">69</li><li style="color: rgb(153, 153, 153);">70</li><li style="color: rgb(153, 153, 153);">71</li><li style="color: rgb(153, 153, 153);">72</li><li style="color: rgb(153, 153, 153);">73</li><li style="color: rgb(153, 153, 153);">74</li><li style="color: rgb(153, 153, 153);">75</li><li style="color: rgb(153, 153, 153);">76</li><li style="color: rgb(153, 153, 153);">77</li><li style="color: rgb(153, 153, 153);">78</li><li style="color: rgb(153, 153, 153);">79</li><li style="color: rgb(153, 153, 153);">80</li><li style="color: rgb(153, 153, 153);">81</li><li style="color: rgb(153, 153, 153);">82</li><li style="color: rgb(153, 153, 153);">83</li><li style="color: rgb(153, 153, 153);">84</li><li style="color: rgb(153, 153, 153);">85</li><li style="color: rgb(153, 153, 153);">86</li><li style="color: rgb(153, 153, 153);">87</li></ul></pre>
+
+<p>　　Ps : 归并排序和快速排序都是典型的递归算法，因此它们比较容易理解和实现。关于递归思想和内涵深度剖析，请见博文<a href="http://blog.csdn.net/justloveyou_/article/details/71787149" target="_blank" rel="noopener">《算法设计方法：递归的内涵与经典应用》</a>。</p>
+
+<hr>
+
+<h2 id="六-分配排序基数排序"><a name="t5"></a><a name="t5"></a>六. 分配排序(基数排序)</h2>
+
+<p>　　<font color="red"><b>分配排序的基本思想</b></font>：用空间换时间。在整个排序过程中，无须比较关键字，而是通过用额外的空间来”分配”和”收集”来实现排序，它们的时间复杂度可达到线性阶：O(n)。其中，基数排序包括两个过程：首先，将目标序列各元素分配到各个桶中(分配过程)；然后，将各个桶中的元素按先进先出的顺序再放回去(收集过程)，如此往复，一共需要进行d趟，d为元素的位数。</p>
+
+
+
+<pre class="prettyprint" name="code"><code class="language-java hljs  has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="hljs-javadoc">/**        
+ * Title: 分配排序中的基数排序，不依赖于初始序列  
+ * Description: 不是在对元素进行比较的基础上进行排序，而是采用 "分配 + 收集" 的办法 
+ * 
+ *              首先，将目标序列各元素分配到各个桶中；
+ *              其次，将各个桶中的元素按先进先出的顺序再放回去
+ *              如此往复...             
+ * 
+ *              时间复杂度：O(d*(r+n))或者 O(dn),d 的大小一般会受到 n的影响
+ *              空间复杂度：O(rd + n)或者 O(n)
+ *              稳    定   性：稳定
+ *              内部排序(在排序过程中数据元素完全在内存)
+ *<span class="hljs-javadoctag"> @author</span> rico       
+ *<span class="hljs-javadoctag"> @created</span> 2017年5月20日 上午10:40:00    
+ */</span>   
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RadixSort</span> {</span>
+
+    <span class="hljs-javadoc">/**     
+     *<span class="hljs-javadoctag"> @description</span> 分配 + 收集
+     *<span class="hljs-javadoctag"> @author</span> rico       
+     *<span class="hljs-javadoctag"> @created</span> 2017年5月21日 下午9:25:52     
+     *<span class="hljs-javadoctag"> @param</span> target 待排序数组
+     *<span class="hljs-javadoctag"> @param</span> r 基数
+     *<span class="hljs-javadoctag"> @param</span> d 元素的位数
+     *<span class="hljs-javadoctag"> @param</span> n 待排序元素个数
+     *<span class="hljs-javadoctag"> @return</span>     
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span>[] <span class="hljs-title">radixSort</span>(<span class="hljs-keyword">int</span>[] target, <span class="hljs-keyword">int</span> r, <span class="hljs-keyword">int</span> d, <span class="hljs-keyword">int</span> n){
+        <span class="hljs-keyword">if</span> (target != <span class="hljs-keyword">null</span> &amp;&amp; target.length != <span class="hljs-number">1</span> ) {
+
+            <span class="hljs-keyword">int</span>[][] bucket = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[r][n];  <span class="hljs-comment">// 一共有基数r个桶，每个桶最多放n个元素</span>
+            <span class="hljs-keyword">int</span> digit;  <span class="hljs-comment">// 获取元素对应位上的数字，即装入那个桶</span>
+            <span class="hljs-keyword">int</span> divisor = <span class="hljs-number">1</span>;   <span class="hljs-comment">// 定义每一轮的除数，1, 10, 100, ...</span>
+            <span class="hljs-keyword">int</span>[] count = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[r];   <span class="hljs-comment">// 统计每个桶中实际存放元素的个数</span>
+
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; d; i++) {  <span class="hljs-comment">// d 位的元素，需要经过分配、收集d次即可完成排序</span>
+
+                <span class="hljs-comment">// 分配</span>
+                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> ele : target) {   
+                    digit = (ele/divisor) % <span class="hljs-number">10</span>;  <span class="hljs-comment">// 获取元素对应位上的数字(巧妙！！！)</span>
+                    bucket[digit][count[digit]++] = ele; <span class="hljs-comment">// 将元素放入对应桶，桶中元素数目加1</span>
+                }
+
+                <span class="hljs-comment">// 收集</span>
+                <span class="hljs-keyword">int</span> index = <span class="hljs-number">0</span>;  <span class="hljs-comment">// 目标数组的下标</span>
+                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; r; j++) {
+                    <span class="hljs-keyword">int</span> k = <span class="hljs-number">0</span>;    <span class="hljs-comment">// 用于按照先进先出顺序获取桶中元素</span>
+                    <span class="hljs-keyword">while</span>(k &lt; count[j]){
+                        target[index++] = bucket[j][k++];  <span class="hljs-comment">// 按照先进先出依次取出桶中的元素</span>
+                    }
+                    count[j] = <span class="hljs-number">0</span>;  <span class="hljs-comment">// 计数器归零</span>
+                }
+                divisor *= <span class="hljs-number">10</span>;  <span class="hljs-comment">//用于获取元素对应位数字</span>
+            }
+        }
+        <span class="hljs-keyword">return</span> target;
+    }
+}<div class="hljs-button {2}" data-title="复制"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li><li style="color: rgb(153, 153, 153);">8</li><li style="color: rgb(153, 153, 153);">9</li><li style="color: rgb(153, 153, 153);">10</li><li style="color: rgb(153, 153, 153);">11</li><li style="color: rgb(153, 153, 153);">12</li><li style="color: rgb(153, 153, 153);">13</li><li style="color: rgb(153, 153, 153);">14</li><li style="color: rgb(153, 153, 153);">15</li><li style="color: rgb(153, 153, 153);">16</li><li style="color: rgb(153, 153, 153);">17</li><li style="color: rgb(153, 153, 153);">18</li><li style="color: rgb(153, 153, 153);">19</li><li style="color: rgb(153, 153, 153);">20</li><li style="color: rgb(153, 153, 153);">21</li><li style="color: rgb(153, 153, 153);">22</li><li style="color: rgb(153, 153, 153);">23</li><li style="color: rgb(153, 153, 153);">24</li><li style="color: rgb(153, 153, 153);">25</li><li style="color: rgb(153, 153, 153);">26</li><li style="color: rgb(153, 153, 153);">27</li><li style="color: rgb(153, 153, 153);">28</li><li style="color: rgb(153, 153, 153);">29</li><li style="color: rgb(153, 153, 153);">30</li><li style="color: rgb(153, 153, 153);">31</li><li style="color: rgb(153, 153, 153);">32</li><li style="color: rgb(153, 153, 153);">33</li><li style="color: rgb(153, 153, 153);">34</li><li style="color: rgb(153, 153, 153);">35</li><li style="color: rgb(153, 153, 153);">36</li><li style="color: rgb(153, 153, 153);">37</li><li style="color: rgb(153, 153, 153);">38</li><li style="color: rgb(153, 153, 153);">39</li><li style="color: rgb(153, 153, 153);">40</li><li style="color: rgb(153, 153, 153);">41</li><li style="color: rgb(153, 153, 153);">42</li><li style="color: rgb(153, 153, 153);">43</li><li style="color: rgb(153, 153, 153);">44</li><li style="color: rgb(153, 153, 153);">45</li><li style="color: rgb(153, 153, 153);">46</li><li style="color: rgb(153, 153, 153);">47</li><li style="color: rgb(153, 153, 153);">48</li><li style="color: rgb(153, 153, 153);">49</li><li style="color: rgb(153, 153, 153);">50</li><li style="color: rgb(153, 153, 153);">51</li><li style="color: rgb(153, 153, 153);">52</li><li style="color: rgb(153, 153, 153);">53</li><li style="color: rgb(153, 153, 153);">54</li><li style="color: rgb(153, 153, 153);">55</li><li style="color: rgb(153, 153, 153);">56</li><li style="color: rgb(153, 153, 153);">57</li><li style="color: rgb(153, 153, 153);">58</li></ul></pre>
+
+<hr>
+
+
+
+<h2 id="七-总结"><a name="t6"></a><a name="t6"></a>七. 总结</h2>
+
+<p>　　 　　 　　 　　 　　 　<img src="http://static.zybuluo.com/Rico123/ymihfm526o5xv5bo1btvm1fy/%E5%85%AB%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93.jpg" alt="八大排序算法总结.jpg-201kB" title=""></p>
+
+<hr>
+
+<p>1、直接插入排序 Vs. 折半插入排序 Vs. 希尔排序</p>
+
+<p>　　这三种排序方法都属于插入排序的范畴。与直接插入排序的顺序搜索插入位置相比，折半插入排序通过折半搜索的方法搜索插入位置，因此，在搜索插入位置方面，折半插入排序要快于直接插入排序。实际上，折半插入排序比直接插入排序只是减少了关键字之间的比较次数，但是移动次数是没有改变。所以，折半插入排序和插入排序的时间复杂度相同都是O（n^2），但减少了比较次数，所以该算法要比直接插入排序好一点。希尔排序可以看作是对直接插入排序的一种优化，它将全部元素分为间隔为gap的gap个子序列并对每一个子序列进行直接插入排序，同时不断缩小间隔gap，直至所有元素位于同一个序列。使用这种方式可以保证排序效率，因为刚开始时，gap较大，每个子序列元素较少，排序速度较快；待到排序后期，gap变小，每个子序列元素较多，但大部分元素基本有序，所以排序速度仍较快。因此，希尔排序比直接插入排序 、折半插入排序都要高效，但它不是稳定的。</p>
+
+<hr>
+
+<p>2、直接选择排序 Vs. 堆排序</p>
+
+<p>　　这两种排序方法都属于插入选择排序的范畴，它们的核心思想都是每一趟都选择一个极值元素放在靠前/靠后位置，直到序列有序。与直接选择排序不同的是，堆排序不是“蛮力选择”，而是不断进行堆调整以取得每趟中的极值。因此，堆排序比直接选择排序要高效，不过它们都是不稳定的。</p>
+
+<hr>
+
+<p>3、冒泡排序 Vs. 快速排序</p>
+
+<p>　　这两种排序方法都属于选择排序的范畴，它们的核心思想都是元素的交换，冒泡排序中每一趟相邻元素互相比较，并将较小的交换到前面(较大的自然沉到后面)位置，快速排序则是以基准点为基础，将比它小的元素和比它大的元素分别交换到它的两边。因此，快速排序比冒泡排序要高效，但它不是稳定的。</p>
+
+<hr>
+
+<p>4、归并排序 Vs. 快速排序</p>
+
+<p>　　这两种排序方法都属于递归算法的范畴，因此，它们都比较容易让人理解和实现。与快速排序相比，归并排序不但是稳定的，还是与原始序列无关的(不依赖于原始序列的顺序，时间复杂度总是O(nlgn))，但是需要与原始序列一样大小的空间；而快速排序则一般情况下都要比其他高效排序算法（包括归并排序）快，而且空间复杂度只为O(1)。另外，我们从算法实现中可以看出这两种递归算法有以下区别和联系：</p>
+
+<ul>
+<li>二者的递归终止条件相同；</li>
+<li>二者的实现结构较为类似，归并排序是先归后并，快速排序是先分后排；</li>
+<li>归并排序的核心实现在于有序子序列的合并，而快速排序的核心实现在于对原始序列的划分；</li>
+</ul>
+
+<hr>
+
+<p>5、小结</p>
+
+<p>　　直接插入排序、直接选择排序和冒泡排序是基本的排序方法，它们平均情况下的时间复杂度都是O(n^2)，实现也比较简单，它们对规模较小的元素序列很有效。</p>
+
+<p>　　快速排序、堆排序和归并排序是高效的排序方法，它们平均情况下的时间复杂度都是O(nlgn)，其中快速排序是最通用的高效排序算法，但其是不稳定的；归并排序是上述几种排序算法中唯一与初始序列无关的，而且时间复杂度总是O(nlgn)，但其空间复杂度是O(n)，是一种稳定的排序算法；堆排序的时间复杂度总是O(nlgn)，空间复杂度是O(1)，也是不稳定的。它们对规模较大的元素序列很有效。</p>
+
+<p>　　希尔排序的效率介于基本排序方法与高效排序方法之间，是一种不稳定的排序算法。它们各有所长，都拥有特定的使用场景。基数排序虽然具有线性增长的时间复杂度，但实际上开销并不比快速排序小很多，应用相对不太广泛。</p>
+
+<p>　　因此，在实际应用中，我们必须根据实际任务的特点和各种排序算法的特性来做出最合适的选择。</p>
+
+<hr>
+
+
+
+<h2 id="八-更多"><a name="t7"></a><a name="t7"></a>八. 更多</h2>
+
+<p>　　归并排序和快速排序都是典型的递归算法，因此它们比较容易理解和实现。关于递归思想和内涵深度剖析，请见博文<a href="http://blog.csdn.net/justloveyou_/article/details/71787149" target="_blank">《算法设计方法：递归的内涵与经典应用》</a>。</p>
+
+<hr>
+
+<blockquote>
+  <h2 id="引用"><a name="t8"></a><a name="t8"></a>引用</h2>
+
+  <p><a href="http://blog.csdn.net/hguisu/article/details/7776068/" target="_blank">《八大排序算法》</a></p>
+</blockquote>                                    </div>
+                <link href="https://csdnimg.cn/release/phoenix/mdeditor/markdown_views-60ecaf1f42.css" rel="stylesheet">
+                                </div>]]></content>
+      <categories>
+        <category>编译原理</category>
+      </categories>
+      <tags>
+        <tag>编译原理</tag>
       </tags>
   </entry>
 </search>

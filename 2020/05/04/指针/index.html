@@ -28,7 +28,7 @@
 <meta property="og:description" content="10.1 指针变量 由于通过地址能访问指定的内存存储单元。可以说地址“指向”该内存单元。地址可以形象地称为指针，意思是通过指针能够找到内存单元。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-05-04T14:16:42.000Z">
-<meta property="article:modified_time" content="2020-05-06T16:12:26.705Z">
+<meta property="article:modified_time" content="2020-05-28T06:34:58.213Z">
 <meta property="article:author" content="Alita Alice">
 <meta property="article:tag" content="C">
 <meta name="twitter:card" content="summary">
@@ -223,7 +223,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-05-07 00:12:26" itemprop="dateModified" datetime="2020-05-07T00:12:26+08:00">2020-05-07</time>
+                <time title="Modified: 2020-05-28 14:34:58" itemprop="dateModified" datetime="2020-05-28T14:34:58+08:00">2020-05-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -231,7 +231,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%90%8E%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">后端</span></a>
+                  <a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C</span></a>
                 </span>
             </span>
 
@@ -285,7 +285,7 @@
 <h2 id="1一个变量的地址称为该变量的指针，如果有一个变量专门用来存放另一个变量的地址，那么它就是指针变量。"><a href="#1一个变量的地址称为该变量的指针，如果有一个变量专门用来存放另一个变量的地址，那么它就是指针变量。" class="headerlink" title="1一个变量的地址称为该变量的指针，如果有一个变量专门用来存放另一个变量的地址，那么它就是指针变量。"></a>1一个变量的地址称为该变量的指针，如果有一个变量专门用来存放另一个变量的地址，那么它就是指针变量。</h2><p>一般形式为：<br>类型说明 * 变量名<br>int * q;<br>C语言中提供了地址运算符“&amp;”来表示变量的地址。其中一般形式为：<br>&amp;变量名;</p>
 <h2 id="2给指针变量赋值一般有俩个方法"><a href="#2给指针变量赋值一般有俩个方法" class="headerlink" title="2给指针变量赋值一般有俩个方法"></a>2给指针变量赋值一般有俩个方法</h2><p>1   </p>
 <pre><code>int a;
-int *p=&amp;a</code></pre><p>2       </p>
+int *p=&amp;a;</code></pre><p>2       </p>
 <pre><code>int a;
 int *p;
 p=&amp;a;</code></pre><h2 id="3-指针变量的引用"><a href="#3-指针变量的引用" class="headerlink" title="3 指针变量的引用"></a>3 指针变量的引用</h2><p>引用指针变量是对变量进行间接访问的一种形式</p>
@@ -295,7 +295,7 @@ p=&amp;a;</code></pre><h2 id="3-指针变量的引用"><a href="#3-指针变量�
 <p> *运算符是返回指定的地址内的变量的值，叫做指针运算符。</p>
 <h2 id="5-指针自增和自减运算"><a href="#5-指针自增和自减运算" class="headerlink" title="5 指针自增和自减运算"></a>5 指针自增和自减运算</h2><p>基本整型变量i在内存中占4个字节，指针P是指向变量i的地址的，p++是指向下一个存放基本整型数的地址。</p>
 <h2 id="6-数组与指针"><a href="#6-数组与指针" class="headerlink" title="6 数组与指针"></a>6 数组与指针</h2><p>在定义一个一维数组时，系统会在内存中为该数组分配一个存储空间，其数组的名称就是数组在内存中的首地址。<br>例如：</p>
-<p>1      </p>
+<p>1     </p>
 <pre><code>int *p,a[10]; 
  p=a;</code></pre><p>或</p>
 <p>2   </p>
@@ -305,20 +305,17 @@ p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数�
 <p>&amp;a[m][n]就是第m行n列元素的地址。而a[0]+n表示第0行第n个元素的地址。</p>
 <h2 id="8指针变量作为函数参数"><a href="#8指针变量作为函数参数" class="headerlink" title="8指针变量作为函数参数"></a>8指针变量作为函数参数</h2><p>指针变量也可以作为函数参数</p>
 <p>例<br>在swap（int <em>a,int</em> b)中</p>
-<p>在函数调用的过程中，主调用函数与被调用函数之间有一个数值传递的过程。函数调用中发生的数据传递是单向的，只能把实际参数的值传递给形式参数，在函数调用的过程中，形式参数的值发生改变，但是实际参数的值不会发生变化。如果swap(int a,int b) 则不能实现x与y值的互换。</p>
+<p>在函数调用的过程中，主调用函数与被调用函数之间有一个数值传递的过程。函数调用中发生的数据传递是单向的，只能把实际参数的值传递给形式参数，在函数调用的过程中，形式参数的值发生改变，但是实际参数的值不会发生变化。</p>
+<p>如果swap(int a,int b) 则不能实现x与y值的互换。</p>
 <p>通过指针传递参数可以减少值传递带来的开销，也可以使函数调用不产生值传递。</p>
 <h2 id="9返回指针值的函数"><a href="#9返回指针值的函数" class="headerlink" title="9返回指针值的函数"></a>9返回指针值的函数</h2><p>返回的值的类型为指针类型，返回指针值的函数简称为指针函数</p>
 <p>定义指针函数的一般形式为 </p>
 <p>类型名 *函数名（参数列表） </p>
 <p>如   int *fun(int x,int y)</p>
 <p>如 </p>
-<pre><code>int *per(int a,int b)
-{
- int *p;
- p=&amp;Perimeter;
- Perimeter=(a+b)*2;
- return p; 
-}</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> *per(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span><br><span class="line">&#123;</span><br><span class="line"> <span class="keyword">int</span> *p;</span><br><span class="line"> p=&amp;Perimeter;</span><br><span class="line"> Perimeter=(a+b)*<span class="number">2</span>;</span><br><span class="line"> <span class="keyword">return</span> p; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
     </div>
 
     
@@ -443,14 +440,14 @@ p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数�
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">74</span>
+          <span class="site-state-item-count">81</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -496,12 +493,12 @@ p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数�
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">93k</span>
+    <span title="Symbols count total">107k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:24</span>
+    <span title="Reading time total">1:37</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
   </div>
