@@ -1,6 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>HTTP状态码</title>
+    <url>/2020/05/13/HTTP%E7%8A%B6%E6%80%81%E7%A0%81/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍返回结果的HTTP状态码。</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h1 id="1-状态码告知从服务器端返回的请求结果"><a href="#1-状态码告知从服务器端返回的请求结果" class="headerlink" title="1 状态码告知从服务器端返回的请求结果"></a>1 状态码告知从服务器端返回的请求结果</h1><p>状态码的职责是当客户端向服务器端发送请求时，描述返回的请求结果。借助状态码，用户可以知道服务器端是正常处理了请求，还是出现了错误  </p>
+<p><img src="https://photos.alitaalice.cn/image/20200513120418.png" alt=""></p>
+<p>状态码如 200 OK，以 3 位数字和原因短语组成。<br>数字中的第一位指定了响应类别，后两位无分类。响应类别有以下 5 种  </p>
+<p><img src="https://photos.alitaalice.cn/image/20200513120523.png" alt=""></p>
+<h2 id="2XX-成功"><a href="#2XX-成功" class="headerlink" title="2XX 成功"></a>2XX 成功</h2><h3 id="2-1-200-OK"><a href="#2-1-200-OK" class="headerlink" title="2.1 200 OK"></a>2.1 200 OK</h3><p><img src="https://photos.alitaalice.cn/image/20200513120936.png" alt=""></p>
+<p>表示从客户端发来的请求在服务器端被正常处理了。<br>在响应报文内，随状态码一起返回的信息会因方法的不同而发生改变。比如，使用 GET 方法时，对应请求资源的实体会作为响应返回；而使用 HEAD 方法时，对应请求资源的实体首部不随报文主体作为响应返回（即在响应中只返回首部，不会返回实体的主体部分）  </p>
+<h3 id="2-2-204-NOT-Content"><a href="#2-2-204-NOT-Content" class="headerlink" title="2.2 204 NOT Content"></a>2.2 204 NOT Content</h3><p><img src="https://photos.alitaalice.cn/image/20200513121124.png" alt=""></p>
+<p>该状态码代表服务器接收的请求已成功处理，但在返回的响应报文中不含实体的主体部分。另外，也不允许返回任何实体的主体。比如，当从浏览器发出请求处理后，返回 204 响应，那么浏览器显示的页面不发生更新。<br>一般在只需要从客户端往服务器发送信息，而对客户端不需要发送新信息内容的情况下使用。  </p>
+<h3 id="2-3-206-Partial-Content"><a href="#2-3-206-Partial-Content" class="headerlink" title="2.3 206 Partial Content"></a>2.3 206 Partial Content</h3><p><img src="https://photos.alitaalice.cn/image/20200513121229.png" alt=""></p>
+<p>该状态码表示客户端进行了范围请求，而服务器成功执行了这部分的 GET 请求。响应报文中包含由Content-Range 指定范围的实体内容。  </p>
+<h2 id="3-3XX-重定向"><a href="#3-3XX-重定向" class="headerlink" title="3 3XX 重定向"></a>3 3XX 重定向</h2><p>3XX 响应结果表明浏览器需要执行某些特殊的处理以正确处理请求。  </p>
+<h3 id="3-1-301-Moved-Permanently"><a href="#3-1-301-Moved-Permanently" class="headerlink" title="3.1 301 Moved Permanently"></a>3.1 301 Moved Permanently</h3><p><img src="https://photos.alitaalice.cn/image/20200513121404.png" alt=""></p>
+<p>永久性重定向。该状态码表示请求的资源已被分配了新的 URI，以后应使用资源现在所指的 URI。也就是说，如果已经把资源对应的 URI 保存为书签了，这时应该按 Location 首部字段提示的 URI 重新保存。像下方给出的请求 URI，当指定资源路径的最后忘记添加斜杠“/”，就会产生 301 状态码。  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;example.com&#x2F;sample</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-302-Found"><a href="#3-2-302-Found" class="headerlink" title="3.2 302 Found"></a>3.2 302 Found</h3><p><img src="https://photos.alitaalice.cn/image/20200513121815.png" alt=""></p>
+<h3 id="3-3-303-See-Other"><a href="#3-3-303-See-Other" class="headerlink" title="3.3  303 See Other"></a>3.3  303 See Other</h3><p><img src="https://photos.alitaalice.cn/image/20200513122022.png" alt=""></p>
+<p>该状态码表示由于请求对应的资源存在着另一个 URI，应使用 GET 方法定向获取请求的资源。<br>303 状态码和 302 Found 状态码有着相同的功能，但 303 状态码明确表示客户端应当采用 GET 方法获取资源，这点与 302 状态码有区别。<br>比如，当使用 POST 方法访问 CGI 程序，其执行后的处理结果是希望客户端能以 GET 方法重定向到另一个 URI 上去时，返回 303 状态码。虽然 302 Found 状态码也可以实现相同的功能，但这里使用 303 状态码是最理想的。  </p>
+<h3 id="3-4-304-Not-Modified"><a href="#3-4-304-Not-Modified" class="headerlink" title="3.4 304 Not Modified"></a>3.4 304 Not Modified</h3><p><img src="C:%5CUsers%5C16508%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200513122317593.png" alt="image-20200513122317593"></p>
+<p>该状态码表示客户端发送附带条件的请求 2 时，服务器端允许请求访问资源，但未满足条件的情况。304状态码返回时，不包含任何响应的主体部分。304 虽然被划分在 3XX 类别中，但是和重定向没有关系。  </p>
+<h3 id="3-5-307-Temporary-Redirect"><a href="#3-5-307-Temporary-Redirect" class="headerlink" title="3.5 307 Temporary Redirect"></a>3.5 307 Temporary Redirect</h3><p>临时重定向。该状态码与 302 Found 有着相同的含义。尽管 302 标准禁止 POST 变换成 GET，但实际使用时大家并不遵守。<br>307 会遵照浏览器标准，不会从 POST 变成 GET。但是，对于处理响应时的行为，每种浏览器有可能出现不同的情况。</p>
+<h2 id="4-4XX客户端错误"><a href="#4-4XX客户端错误" class="headerlink" title="4 4XX客户端错误"></a>4 4XX客户端错误</h2><h3 id="4-1-400-Bad-Request"><a href="#4-1-400-Bad-Request" class="headerlink" title="4.1 400 Bad Request"></a>4.1 400 Bad Request</h3><p><img src="https://photos.alitaalice.cn/image/20200513122701.png" alt=""></p>
+<p>该状态码表示请求报文中存在语法错误。当错误发生时，需修改请求的内容后再次发送请求。另外，浏览器会像 200 OK 一样对待该状态码。  </p>
+<h3 id="4-2-401-Unauthorized"><a href="#4-2-401-Unauthorized" class="headerlink" title="4.2 401 Unauthorized"></a>4.2 401 Unauthorized</h3><p>-+<img src="https://photos.alitaalice.cn/image/20200513122941.png" alt=""></p>
+<p>该状态码表示发送的请求需要有通过 HTTP 认证（BASIC 认证、DIGEST 认证）的认证信息。另外若之前已进行过 1 次请求，则表示用户认证失败。  </p>
+<h3 id="4-3-403-Forbidden"><a href="#4-3-403-Forbidden" class="headerlink" title="4.3 403 Forbidden"></a>4.3 403 Forbidden</h3><p><img src="https://photos.alitaalice.cn/image/20200513123055.png" alt=""></p>
+<p>该状态码表明对请求资源的访问被服务器拒绝了。服务器端没有必要给出拒绝的详细理由，但如果想作说明的话，可以在实体的主体部分对原因进行描述，这样就能让用户看到了。<br>未获得文件系统的访问授权，访问权限出现某些问题（从未授权的发送源 IP 地址试图访问）等列举的情况都可能是发生 403 的原因。  </p>
+<h3 id="4-4-404-Not-Found"><a href="#4-4-404-Not-Found" class="headerlink" title="4.4 404 Not Found"></a>4.4 404 Not Found</h3><p><img src="https://photos.alitaalice.cn/image/20200513123152.png" alt=""></p>
+<p>该状态码表明服务器上无法找到请求的资源。除此之外，也可以在服务器端拒绝请求且不想说明理由时使用。  </p>
+<h2 id="5-5XX-服务器错误"><a href="#5-5XX-服务器错误" class="headerlink" title="5 5XX 服务器错误"></a>5 5XX 服务器错误</h2><p>5XX 的响应结果表明服务器本身发生错误。  </p>
+<h3 id="5-1-500-Internal-Server-Error"><a href="#5-1-500-Internal-Server-Error" class="headerlink" title="5.1 500 Internal Server Error"></a>5.1 500 Internal Server Error</h3><p>该状态码表明服务器端在执行请求时发生了错误。也有可能是 Web 应用存在的 bug 或某些临时的故障。  <img src="C:%5CUsers%5C16508%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200513123521561.png" alt="image-20200513123521561"></p>
+<h3 id="5-2-503-Service-Unavailable"><a href="#5-2-503-Service-Unavailable" class="headerlink" title="5.2 503 Service Unavailable"></a>5.2 503 Service Unavailable</h3><p><img src="https://photos.alitaalice.cn/image/20200513123558.png" alt=""></p>
+<p>该状态码表明服务器暂时处于超负载或正在进行停机维护，现在无法处理请求。如果事先得知解除以上状况需要的时间，最好写入 RetryAfter 首部字段再返回给客户端。  </p>
+]]></content>
+      <categories>
+        <category>计网</category>
+      </categories>
+      <tags>
+        <tag>HTTP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HashMap默认加载因子为什么选择0.75</title>
+    <url>/2020/05/13/HashMap%E9%BB%98%E8%AE%A4%E5%8A%A0%E8%BD%BD%E5%9B%A0%E5%AD%90%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A90.75/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍HashMap加载因子和初始容量</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>转载自<a href="https://www.cnblogs.com/aspirant/p/11470928.html" target="_blank" rel="noopener">https://www.cnblogs.com/aspirant/p/11470928.html</a></p>
+]]></content>
+      <categories>
+        <category>面试</category>
+      </categories>
+      <tags>
+        <tag>JAVA源码</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ArrayList和LinkedList</title>
     <url>/2020/05/07/ArrayList%E5%92%8CLinkedList/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -70,138 +136,6 @@
       </categories>
       <tags>
         <tag>HTTP</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>HTTP状态码</title>
-    <url>/2020/05/13/HTTP%E7%8A%B6%E6%80%81%E7%A0%81/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍返回结果的HTTP状态码。</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h1 id="1-状态码告知从服务器端返回的请求结果"><a href="#1-状态码告知从服务器端返回的请求结果" class="headerlink" title="1 状态码告知从服务器端返回的请求结果"></a>1 状态码告知从服务器端返回的请求结果</h1><p>状态码的职责是当客户端向服务器端发送请求时，描述返回的请求结果。借助状态码，用户可以知道服务器端是正常处理了请求，还是出现了错误  </p>
-<p><img src="https://photos.alitaalice.cn/image/20200513120418.png" alt=""></p>
-<p>状态码如 200 OK，以 3 位数字和原因短语组成。<br>数字中的第一位指定了响应类别，后两位无分类。响应类别有以下 5 种  </p>
-<p><img src="https://photos.alitaalice.cn/image/20200513120523.png" alt=""></p>
-<h2 id="2XX-成功"><a href="#2XX-成功" class="headerlink" title="2XX 成功"></a>2XX 成功</h2><h3 id="2-1-200-OK"><a href="#2-1-200-OK" class="headerlink" title="2.1 200 OK"></a>2.1 200 OK</h3><p><img src="https://photos.alitaalice.cn/image/20200513120936.png" alt=""></p>
-<p>表示从客户端发来的请求在服务器端被正常处理了。<br>在响应报文内，随状态码一起返回的信息会因方法的不同而发生改变。比如，使用 GET 方法时，对应请求资源的实体会作为响应返回；而使用 HEAD 方法时，对应请求资源的实体首部不随报文主体作为响应返回（即在响应中只返回首部，不会返回实体的主体部分）  </p>
-<h3 id="2-2-204-NOT-Content"><a href="#2-2-204-NOT-Content" class="headerlink" title="2.2 204 NOT Content"></a>2.2 204 NOT Content</h3><p><img src="https://photos.alitaalice.cn/image/20200513121124.png" alt=""></p>
-<p>该状态码代表服务器接收的请求已成功处理，但在返回的响应报文中不含实体的主体部分。另外，也不允许返回任何实体的主体。比如，当从浏览器发出请求处理后，返回 204 响应，那么浏览器显示的页面不发生更新。<br>一般在只需要从客户端往服务器发送信息，而对客户端不需要发送新信息内容的情况下使用。  </p>
-<h3 id="2-3-206-Partial-Content"><a href="#2-3-206-Partial-Content" class="headerlink" title="2.3 206 Partial Content"></a>2.3 206 Partial Content</h3><p><img src="https://photos.alitaalice.cn/image/20200513121229.png" alt=""></p>
-<p>该状态码表示客户端进行了范围请求，而服务器成功执行了这部分的 GET 请求。响应报文中包含由Content-Range 指定范围的实体内容。  </p>
-<h2 id="3-3XX-重定向"><a href="#3-3XX-重定向" class="headerlink" title="3 3XX 重定向"></a>3 3XX 重定向</h2><p>3XX 响应结果表明浏览器需要执行某些特殊的处理以正确处理请求。  </p>
-<h3 id="3-1-301-Moved-Permanently"><a href="#3-1-301-Moved-Permanently" class="headerlink" title="3.1 301 Moved Permanently"></a>3.1 301 Moved Permanently</h3><p><img src="https://photos.alitaalice.cn/image/20200513121404.png" alt=""></p>
-<p>永久性重定向。该状态码表示请求的资源已被分配了新的 URI，以后应使用资源现在所指的 URI。也就是说，如果已经把资源对应的 URI 保存为书签了，这时应该按 Location 首部字段提示的 URI 重新保存。像下方给出的请求 URI，当指定资源路径的最后忘记添加斜杠“/”，就会产生 301 状态码。  </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;example.com&#x2F;sample</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-2-302-Found"><a href="#3-2-302-Found" class="headerlink" title="3.2 302 Found"></a>3.2 302 Found</h3><p><img src="https://photos.alitaalice.cn/image/20200513121815.png" alt=""></p>
-<h3 id="3-3-303-See-Other"><a href="#3-3-303-See-Other" class="headerlink" title="3.3  303 See Other"></a>3.3  303 See Other</h3><p><img src="https://photos.alitaalice.cn/image/20200513122022.png" alt=""></p>
-<p>该状态码表示由于请求对应的资源存在着另一个 URI，应使用 GET 方法定向获取请求的资源。<br>303 状态码和 302 Found 状态码有着相同的功能，但 303 状态码明确表示客户端应当采用 GET 方法获取资源，这点与 302 状态码有区别。<br>比如，当使用 POST 方法访问 CGI 程序，其执行后的处理结果是希望客户端能以 GET 方法重定向到另一个 URI 上去时，返回 303 状态码。虽然 302 Found 状态码也可以实现相同的功能，但这里使用 303 状态码是最理想的。  </p>
-<h3 id="3-4-304-Not-Modified"><a href="#3-4-304-Not-Modified" class="headerlink" title="3.4 304 Not Modified"></a>3.4 304 Not Modified</h3><p><img src="C:%5CUsers%5C16508%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200513122317593.png" alt="image-20200513122317593"></p>
-<p>该状态码表示客户端发送附带条件的请求 2 时，服务器端允许请求访问资源，但未满足条件的情况。304状态码返回时，不包含任何响应的主体部分。304 虽然被划分在 3XX 类别中，但是和重定向没有关系。  </p>
-<h3 id="3-5-307-Temporary-Redirect"><a href="#3-5-307-Temporary-Redirect" class="headerlink" title="3.5 307 Temporary Redirect"></a>3.5 307 Temporary Redirect</h3><p>临时重定向。该状态码与 302 Found 有着相同的含义。尽管 302 标准禁止 POST 变换成 GET，但实际使用时大家并不遵守。<br>307 会遵照浏览器标准，不会从 POST 变成 GET。但是，对于处理响应时的行为，每种浏览器有可能出现不同的情况。</p>
-<h2 id="4-4XX客户端错误"><a href="#4-4XX客户端错误" class="headerlink" title="4 4XX客户端错误"></a>4 4XX客户端错误</h2><h3 id="4-1-400-Bad-Request"><a href="#4-1-400-Bad-Request" class="headerlink" title="4.1 400 Bad Request"></a>4.1 400 Bad Request</h3><p><img src="https://photos.alitaalice.cn/image/20200513122701.png" alt=""></p>
-<p>该状态码表示请求报文中存在语法错误。当错误发生时，需修改请求的内容后再次发送请求。另外，浏览器会像 200 OK 一样对待该状态码。  </p>
-<h3 id="4-2-401-Unauthorized"><a href="#4-2-401-Unauthorized" class="headerlink" title="4.2 401 Unauthorized"></a>4.2 401 Unauthorized</h3><p>-+<img src="https://photos.alitaalice.cn/image/20200513122941.png" alt=""></p>
-<p>该状态码表示发送的请求需要有通过 HTTP 认证（BASIC 认证、DIGEST 认证）的认证信息。另外若之前已进行过 1 次请求，则表示用户认证失败。  </p>
-<h3 id="4-3-403-Forbidden"><a href="#4-3-403-Forbidden" class="headerlink" title="4.3 403 Forbidden"></a>4.3 403 Forbidden</h3><p><img src="https://photos.alitaalice.cn/image/20200513123055.png" alt=""></p>
-<p>该状态码表明对请求资源的访问被服务器拒绝了。服务器端没有必要给出拒绝的详细理由，但如果想作说明的话，可以在实体的主体部分对原因进行描述，这样就能让用户看到了。<br>未获得文件系统的访问授权，访问权限出现某些问题（从未授权的发送源 IP 地址试图访问）等列举的情况都可能是发生 403 的原因。  </p>
-<h3 id="4-4-404-Not-Found"><a href="#4-4-404-Not-Found" class="headerlink" title="4.4 404 Not Found"></a>4.4 404 Not Found</h3><p><img src="https://photos.alitaalice.cn/image/20200513123152.png" alt=""></p>
-<p>该状态码表明服务器上无法找到请求的资源。除此之外，也可以在服务器端拒绝请求且不想说明理由时使用。  </p>
-<h2 id="5-5XX-服务器错误"><a href="#5-5XX-服务器错误" class="headerlink" title="5 5XX 服务器错误"></a>5 5XX 服务器错误</h2><p>5XX 的响应结果表明服务器本身发生错误。  </p>
-<h3 id="5-1-500-Internal-Server-Error"><a href="#5-1-500-Internal-Server-Error" class="headerlink" title="5.1 500 Internal Server Error"></a>5.1 500 Internal Server Error</h3><p>该状态码表明服务器端在执行请求时发生了错误。也有可能是 Web 应用存在的 bug 或某些临时的故障。  <img src="C:%5CUsers%5C16508%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200513123521561.png" alt="image-20200513123521561"></p>
-<h3 id="5-2-503-Service-Unavailable"><a href="#5-2-503-Service-Unavailable" class="headerlink" title="5.2 503 Service Unavailable"></a>5.2 503 Service Unavailable</h3><p><img src="https://photos.alitaalice.cn/image/20200513123558.png" alt=""></p>
-<p>该状态码表明服务器暂时处于超负载或正在进行停机维护，现在无法处理请求。如果事先得知解除以上状况需要的时间，最好写入 RetryAfter 首部字段再返回给客户端。  </p>
-]]></content>
-      <categories>
-        <category>计网</category>
-      </categories>
-      <tags>
-        <tag>HTTP</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>HashMap默认加载因子为什么选择0.75</title>
-    <url>/2020/05/13/HashMap%E9%BB%98%E8%AE%A4%E5%8A%A0%E8%BD%BD%E5%9B%A0%E5%AD%90%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A90.75/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍HashMap加载因子和初始容量</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>转载自<a href="https://www.cnblogs.com/aspirant/p/11470928.html" target="_blank" rel="noopener">https://www.cnblogs.com/aspirant/p/11470928.html</a></p>
-]]></content>
-      <categories>
-        <category>面试</category>
-      </categories>
-      <tags>
-        <tag>JAVA源码</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>HashSet和TreeSet和LinkedHashSet</title>
-    <url>/2020/05/08/HashSet%E5%92%8CTreeSet%E5%92%8CLinkedHashSet/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍Set</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h2><p><strong>SET:注重独一无二的性质，该体系集合知道某物是否已经存在于集合中，不会存储重复的元素。</strong></p>
-<p>用于存储无序（存入和取出的顺序不一定相同）元素，值不能重复</p>
-<p>Set集合继承了Collection接口。</p>
-<h2 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h2><p>哈希表里面存放的是哈希值。HashSet存储元素的顺序并不是按照存入时的顺序（和List 显然不同）是按照哈希值来存，所以取也是按照哈希值来取得。</p>
-<p><strong>元素的哈希值是通过元素的hashcode方法来获取的，HashSet首先判断俩个元素的哈希值，如果哈希值一样，那么接着比较equals方法，如果equals结果为true。HashSet就会视作同一个元素。如果equals为false 就不是同一个元素。</strong></p>
-<h3 id="哈希值相同equals为flase的元素是怎么存储的呢？"><a href="#哈希值相同equals为flase的元素是怎么存储的呢？" class="headerlink" title="哈希值相同equals为flase的元素是怎么存储的呢？"></a>哈希值相同equals为flase的元素是怎么存储的呢？</h3><p>就是在同样的哈希值下顺延。也就是哈希值一样的存一列。</p>
-<p>HashTable</p>
-<p><img src="hashtable.png" alt=""></p>
-<p>图1：hashCode值不相同的情况</p>
-<p>图2：hashCode值相同，但equals不相同的情况。</p>
-<h3 id="HashSet到底是如何判断俩个元素重复"><a href="#HashSet到底是如何判断俩个元素重复" class="headerlink" title="HashSet到底是如何判断俩个元素重复"></a>HashSet到底是如何判断俩个元素重复</h3><p>通过hashCode方法和equals方法来保证元素的唯一性，add()返回的是boolean类型</p>
-<p>判断两个元素是否相同，先要判断元素的hashCode值是否一致，只有在该值一致的情况下，才会判断equals方法，如果存储在HashSet中的两个对象hashCode方法的值相同equals方法返回的结果是true，那么HashSet认为这两个元素是相同元素，只存储一个（重复元素无法存入）。</p>
-<p>注意：HashSet集合在判断元素是否相同先判断hashCode方法，如果相同才会判断equals。如果不相同，是不会调用equals方法的。</p>
-<h3 id="HashSet-和ArrayList集合都有判断元素是否相同的方法"><a href="#HashSet-和ArrayList集合都有判断元素是否相同的方法" class="headerlink" title="HashSet 和ArrayList集合都有判断元素是否相同的方法"></a>HashSet 和ArrayList集合都有判断元素是否相同的方法</h3><p>boolean contains(Object o)</p>
-<p>HashSet使用hashCode和equals方法，ArrayList使用了equals方法</p>
-<p>示例：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo1</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Set hs=<span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">        hs.add(<span class="string">"jack"</span>);</span><br><span class="line">        hs.add(<span class="string">"rose"</span>);</span><br><span class="line">        hs.add(<span class="string">"2020"</span>);</span><br><span class="line">        hs.add(<span class="string">"trip"</span>);</span><br><span class="line">        System.out.println(hs.size());</span><br><span class="line">        <span class="keyword">boolean</span> add=hs.add(<span class="string">"jack"</span>); <span class="comment">/* 如果set尚未包含指定元素，那么 返回true 此时返回false; */</span></span><br><span class="line">        System.out.println(add);</span><br><span class="line">        Iterator it=hs.iterator();</span><br><span class="line">        <span class="keyword">while</span> (it.hasNext())</span><br><span class="line">        &#123;</span><br><span class="line">            System.out.println(it.next());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.HashSet;</span><br><span class="line"><span class="keyword">import</span> java.util.Iterator;</span><br><span class="line"><span class="keyword">import</span> java.util.Objects;</span><br><span class="line"><span class="keyword">import</span> java.util.Set;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * This program demonstrates</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Alita Alice</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span>: Created in 21:13 2020/5/8</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo1</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        HashSet hs = <span class="keyword">new</span> HashSet();</span><br><span class="line">        hs.add(<span class="keyword">new</span> Person(<span class="string">"jack"</span>, <span class="number">20</span>));</span><br><span class="line">        hs.add(<span class="keyword">new</span> Person(<span class="string">"rose"</span>,<span class="number">20</span>));</span><br><span class="line">        hs.add(<span class="keyword">new</span> Person(<span class="string">"rose"</span>,<span class="number">20</span>));</span><br><span class="line">        Iterator it= hs.iterator();</span><br><span class="line">        <span class="keyword">while</span>(it.hasNext())</span><br><span class="line">        &#123;</span><br><span class="line">            System.out.println(it.next());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">    Person()&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name,<span class="keyword">int</span> age)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age=age;</span><br><span class="line">        <span class="keyword">this</span>.name=name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object o)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span> == o) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">if</span> (!(o <span class="keyword">instanceof</span> Person)) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        Person person = (Person) o;</span><br><span class="line">        <span class="keyword">return</span> getAge() == person.getAge() &amp;&amp;</span><br><span class="line">                getName().equals(person.getName());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> Objects.hash(getName(), getAge());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Person&#123;"</span> +</span><br><span class="line">                <span class="string">"name='"</span> + name + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">", age="</span> + age +</span><br><span class="line">                <span class="string">'&#125;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>其中在HashSet中存储自定义的对象，并尝试添加重复元素，需要override hashCode()和equls()方法。</strong></p>
-<h2 id="TreeSet"><a href="#TreeSet" class="headerlink" title="TreeSet"></a>TreeSet</h2><p>现在有一批数据，要求不能重复存储元素，而且要排序。</p>
-<p>ArrayList ，LinkList不能去除重复数据，HashSet可以去除重复，但是无序。</p>
-<p>示例：使用TreeSet集合存储字符串元素，并且遍历。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo5</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        TreeSet treeSet=<span class="keyword">new</span> TreeSet();</span><br><span class="line">        treeSet.add(<span class="string">"aaa"</span>);</span><br><span class="line">        treeSet.add(<span class="string">"bbb"</span>);</span><br><span class="line">        treeSet.add(<span class="string">"ccc"</span>);</span><br><span class="line">        treeSet.add(<span class="string">"ddd"</span>);</span><br><span class="line">        System.out.println(treeSet);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 输出</span></span><br><span class="line"><span class="comment">[aaa, bbb, ccc, ddd]</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="俩种比较器接口"><a href="#俩种比较器接口" class="headerlink" title="俩种比较器接口"></a>俩种比较器接口</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Comparable </span><br><span class="line">         compareTo(Object o)  元素自身具备比较性</span><br><span class="line">Comparator</span><br><span class="line">         compare(Object o1,Object o2) 给容器传入比较器</span><br></pre></td></tr></table></figure>
-
-<h3 id="TreeSet集合排序的俩种方式"><a href="#TreeSet集合排序的俩种方式" class="headerlink" title="TreeSet集合排序的俩种方式"></a>TreeSet集合排序的俩种方式</h3><ul>
-<li><p>让元素自身具备比较性</p>
-<p>元素需要实现Comparable接口，覆盖compareTo(Object o) 方法</p>
-<p>这种方式也被称为元素的自然排序，也可以称为默认排序</p>
-<p>年龄按照首要条件，年龄相同再比姓名</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> Set;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> sun.reflect.generics.tree.Tree;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Objects;</span><br><span class="line"><span class="keyword">import</span> java.util.TreeSet;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * This program demonstrates</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Alita Alice</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span>: Created in 10:23 2020/5/9</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo4</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        TreeSet ts=<span class="keyword">new</span> TreeSet();</span><br><span class="line">        ts.add(<span class="keyword">new</span> Person(<span class="string">"aa"</span>, <span class="number">20</span>, <span class="string">"男"</span>));</span><br><span class="line">        ts.add(<span class="keyword">new</span> Person(<span class="string">"bb"</span>, <span class="number">18</span>, <span class="string">"女"</span>));</span><br><span class="line">        ts.add(<span class="keyword">new</span> Person(<span class="string">"cc"</span>, <span class="number">17</span>, <span class="string">"男"</span>));</span><br><span class="line">        ts.add(<span class="keyword">new</span> Person(<span class="string">"dd"</span>, <span class="number">17</span>, <span class="string">"女"</span>));</span><br><span class="line">        ts.add(<span class="keyword">new</span> Person(<span class="string">"dd"</span>, <span class="number">15</span>, <span class="string">"女"</span>));</span><br><span class="line">        ts.add(<span class="keyword">new</span> Person(<span class="string">"dd"</span>, <span class="number">15</span>, <span class="string">"女"</span>));</span><br><span class="line">        System.out.println(ts);</span><br><span class="line">        System.out.println(ts.size());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> <span class="keyword">implements</span> <span class="title">Comparable</span></span></span><br><span class="line"><span class="class"> </span>&#123;</span><br><span class="line">     <span class="keyword">private</span> String name;</span><br><span class="line">     <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">     <span class="keyword">private</span> String gender;</span><br><span class="line"></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name, <span class="keyword">int</span> age, String gender)</span> </span>&#123;</span><br><span class="line">         <span class="keyword">this</span>.name = name;</span><br><span class="line">         <span class="keyword">this</span>.age = age;</span><br><span class="line">         <span class="keyword">this</span>.gender = gender;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">         <span class="keyword">return</span> name;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">         <span class="keyword">this</span>.name = name;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">         <span class="keyword">return</span> age;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">         <span class="keyword">this</span>.age = age;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="function"><span class="keyword">public</span> String <span class="title">getGender</span><span class="params">()</span> </span>&#123;</span><br><span class="line">         <span class="keyword">return</span> gender;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setGender</span><span class="params">(String gender)</span> </span>&#123;</span><br><span class="line">         <span class="keyword">this</span>.gender = gender;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="meta">@Override</span></span><br><span class="line">     <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">         <span class="keyword">return</span> <span class="string">"Person&#123;"</span> +</span><br><span class="line">                 <span class="string">"name='"</span> + name + <span class="string">'\''</span> +</span><br><span class="line">                 <span class="string">", age="</span> + age +</span><br><span class="line">                 <span class="string">", gender='"</span> + gender + <span class="string">'\''</span> +</span><br><span class="line">                 <span class="string">'&#125;'</span>;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="meta">@Override</span></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object o)</span> </span>&#123;</span><br><span class="line">         <span class="keyword">if</span> (<span class="keyword">this</span> == o) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">         <span class="keyword">if</span> (!(o <span class="keyword">instanceof</span> Person)) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">         Person person = (Person) o;</span><br><span class="line">         <span class="keyword">return</span> getAge() == person.getAge() &amp;&amp;</span><br><span class="line">                 getName().equals(person.getName()) &amp;&amp;</span><br><span class="line">                 getGender().equals(person.getGender());</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="meta">@Override</span></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">         <span class="keyword">return</span> Objects.hash(getName(), getAge(), getGender());</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="meta">@Override</span></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(Object o)</span> </span>&#123;</span><br><span class="line">         Person p = (Person) o;</span><br><span class="line">         System.out.println(<span class="keyword">this</span> + <span class="string">"compareTo:"</span> + p);</span><br><span class="line">         <span class="keyword">if</span> (<span class="keyword">this</span>.age &gt; p.age) &#123;</span><br><span class="line">             <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">         &#125;</span><br><span class="line">         <span class="keyword">if</span> (<span class="keyword">this</span>.age &lt; p.age) &#123;</span><br><span class="line">             <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">         &#125;</span><br><span class="line">         <span class="keyword">return</span> <span class="keyword">this</span>.name.compareTo(p.name);</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line"><span class="comment">/* out</span></span><br><span class="line"><span class="comment">Person&#123;name='aa', age=20, gender='男'&#125;compareTo:Person&#123;name='aa', age=20, gender='男'&#125;</span></span><br><span class="line"><span class="comment">Person&#123;name='bb', age=18, gender='女'&#125;compareTo:Person&#123;name='aa', age=20, gender='男'&#125;</span></span><br><span class="line"><span class="comment">Person&#123;name='cc', age=17, gender='男'&#125;compareTo:Person&#123;name='aa', age=20, gender='男'&#125;</span></span><br><span class="line"><span class="comment">Person&#123;name='cc', age=17, gender='男'&#125;compareTo:Person&#123;name='bb', age=18, gender='女'&#125;</span></span><br><span class="line"><span class="comment">Person&#123;name='dd', age=17, gender='女'&#125;compareTo:Person&#123;name='bb', age=18, gender='女'&#125;</span></span><br><span class="line"><span class="comment">Person&#123;name='dd', age=17, gender='女'&#125;compareTo:Person&#123;name='cc', age=17, gender='男'&#125;</span></span><br><span class="line"><span class="comment">Person&#123;name='dd', age=15, gender='女'&#125;compareTo:Person&#123;name='bb', age=18, gender='女'&#125;</span></span><br><span class="line"><span class="comment">Person&#123;name='dd', age=15, gender='女'&#125;compareTo:Person&#123;name='cc', age=17, gender='男'&#125;</span></span><br><span class="line"><span class="comment">Person&#123;name='dd', age=15, gender='女'&#125;compareTo:Person&#123;name='bb', age=18, gender='女'&#125;</span></span><br><span class="line"><span class="comment">Person&#123;name='dd', age=15, gender='女'&#125;compareTo:Person&#123;name='cc', age=17, gender='男'&#125;</span></span><br><span class="line"><span class="comment">Person&#123;name='dd', age=15, gender='女'&#125;compareTo:Person&#123;name='dd', age=15, gender='女'&#125;</span></span><br><span class="line"><span class="comment">[Person&#123;name='dd', age=15, gender='女'&#125;, Person&#123;name='cc', age=17, gender='男'&#125;, Person&#123;name='dd', age=17, gender='女'&#125;, Person&#123;name='bb', age=18, gender='女'&#125;, Person&#123;name='aa', age=20, gender='男'&#125;]</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="二-让容器自身具备比较性，自定义比较器"><a href="#二-让容器自身具备比较性，自定义比较器" class="headerlink" title="二 让容器自身具备比较性，自定义比较器"></a>二 让容器自身具备比较性，自定义比较器</h3><p>需求：当元素自身不具备比较性，或者元素自身具备的比较性不是所需。</p>
-<p>那么这时只能让容器自身具备</p>
-<p>定义一个类实现Comparetor接口，覆盖compare方法</p>
-<p>并将该接口的子类对象作为参数传递给TreeSet集合的构造函数。</p>
-<p>当Comparable 比较方式及Comparator比较方式同时存在， 以Com[arator比较方式为主。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> Set;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Comparator;</span><br><span class="line"><span class="keyword">import</span> java.util.Objects;</span><br><span class="line"><span class="keyword">import</span> java.util.TreeSet;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * This program demonstrates</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Alita Alice</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span>: Created in 10:54 2020/5/9</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo6</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        TreeSet ts=<span class="keyword">new</span> TreeSet(<span class="keyword">new</span> MyComparator());</span><br><span class="line">        ts.add(<span class="keyword">new</span> Book(<span class="string">"think in java"</span>, <span class="number">100</span>));</span><br><span class="line">        ts.add(<span class="keyword">new</span> Book(<span class="string">"java 核心技术"</span>, <span class="number">75</span>));</span><br><span class="line">        ts.add(<span class="keyword">new</span> Book(<span class="string">"现代操作系统"</span>, <span class="number">50</span>));</span><br><span class="line">        ts.add(<span class="keyword">new</span> Book(<span class="string">"java就业教程"</span>, <span class="number">35</span>));</span><br><span class="line">        ts.add(<span class="keyword">new</span> Book(<span class="string">"think in java"</span>, <span class="number">100</span>));</span><br><span class="line">        ts.add(<span class="keyword">new</span> Book(<span class="string">"ccc in java"</span>, <span class="number">100</span>));</span><br><span class="line"></span><br><span class="line">        System.out.println(ts);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyComparator</span> <span class="keyword">implements</span> <span class="title">Comparator</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Object o1, Object o2)</span> </span>&#123;</span><br><span class="line">                    Book b1=(Book) o1;</span><br><span class="line">                    Book b2=(Book) o2;</span><br><span class="line">        System.out.println(b1+<span class="string">"comparator"</span>+b2);</span><br><span class="line">        <span class="keyword">if</span>(b1.getPrice()&gt;b2.getPrice())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(b1.getPrice()&lt;b2.getPrice())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> b1.getName().compareTo(b2.getName());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Book</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">double</span> price;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Book</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Book</span><span class="params">(String name, <span class="keyword">double</span> price)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.price = price;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getPrice</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> price;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setPrice</span><span class="params">(<span class="keyword">double</span> price)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.price = price;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object o)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span> == o) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">if</span> (!(o <span class="keyword">instanceof</span> Book)) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        Book book = (Book) o;</span><br><span class="line">        <span class="keyword">return</span> Double.compare(book.getPrice(), getPrice()) == <span class="number">0</span> &amp;&amp;</span><br><span class="line">                getName().equals(book.getName());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> Objects.hash(getName(), getPrice());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Book&#123;"</span> +</span><br><span class="line">                <span class="string">"name='"</span> + name + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">", price="</span> + price +</span><br><span class="line">                <span class="string">'&#125;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* out</span></span><br><span class="line"><span class="comment">Book&#123;name='think in java', price=100.0&#125;comparatorBook&#123;name='think in java', price=100.0&#125;</span></span><br><span class="line"><span class="comment">Book&#123;name='java 核心技术', price=75.0&#125;comparatorBook&#123;name='think in java', price=100.0&#125;</span></span><br><span class="line"><span class="comment">Book&#123;name='现代操作系统', price=50.0&#125;comparatorBook&#123;name='think in java', price=100.0&#125;</span></span><br><span class="line"><span class="comment">Book&#123;name='现代操作系统', price=50.0&#125;comparatorBook&#123;name='java 核心技术', price=75.0&#125;</span></span><br><span class="line"><span class="comment">Book&#123;name='java就业教程', price=35.0&#125;comparatorBook&#123;name='java 核心技术', price=75.0&#125;</span></span><br><span class="line"><span class="comment">Book&#123;name='java就业教程', price=35.0&#125;comparatorBook&#123;name='现代操作系统', price=50.0&#125;</span></span><br><span class="line"><span class="comment">Book&#123;name='think in java', price=100.0&#125;comparatorBook&#123;name='java 核心技术', price=75.0&#125;</span></span><br><span class="line"><span class="comment">Book&#123;name='think in java', price=100.0&#125;comparatorBook&#123;name='think in java', price=100.0&#125;</span></span><br><span class="line"><span class="comment">Book&#123;name='ccc in java', price=100.0&#125;comparatorBook&#123;name='java 核心技术', price=75.0&#125;</span></span><br><span class="line"><span class="comment">Book&#123;name='ccc in java', price=100.0&#125;comparatorBook&#123;name='think in java', price=100.0&#125;</span></span><br><span class="line"><span class="comment">[Book&#123;name='java就业教程', price=35.0&#125;, Book&#123;name='现代操作系统', price=50.0&#125;, Book&#123;name='java 核心技术', price=75.0&#125;, Book&#123;name='ccc in java', price=100.0&#125;, Book&#123;name='think in java', price=100.0&#125;]</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="4-LinkedHashSet"><a href="#4-LinkedHashSet" class="headerlink" title="4.LinkedHashSet"></a>4.LinkedHashSet</h3><p>会保存插入的顺序</p>
-<p>看到array，就要想到角标</p>
-<p>看到link ，就要想到first,last</p>
-<p>看到hash,就要想到hashCode，equals</p>
-<p>看到tree，就要想到俩个接口。Comparable,Comparator </p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>JAVA集合</tag>
       </tags>
   </entry>
   <entry>
@@ -387,6 +321,72 @@
       </tags>
   </entry>
   <entry>
+    <title>HashSet和TreeSet和LinkedHashSet</title>
+    <url>/2020/05/08/HashSet%E5%92%8CTreeSet%E5%92%8CLinkedHashSet/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍Set</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h2><p><strong>SET:注重独一无二的性质，该体系集合知道某物是否已经存在于集合中，不会存储重复的元素。</strong></p>
+<p>用于存储无序（存入和取出的顺序不一定相同）元素，值不能重复</p>
+<p>Set集合继承了Collection接口。</p>
+<h2 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h2><p>哈希表里面存放的是哈希值。HashSet存储元素的顺序并不是按照存入时的顺序（和List 显然不同）是按照哈希值来存，所以取也是按照哈希值来取得。</p>
+<p><strong>元素的哈希值是通过元素的hashcode方法来获取的，HashSet首先判断俩个元素的哈希值，如果哈希值一样，那么接着比较equals方法，如果equals结果为true。HashSet就会视作同一个元素。如果equals为false 就不是同一个元素。</strong></p>
+<h3 id="哈希值相同equals为flase的元素是怎么存储的呢？"><a href="#哈希值相同equals为flase的元素是怎么存储的呢？" class="headerlink" title="哈希值相同equals为flase的元素是怎么存储的呢？"></a>哈希值相同equals为flase的元素是怎么存储的呢？</h3><p>就是在同样的哈希值下顺延。也就是哈希值一样的存一列。</p>
+<p>HashTable</p>
+<p><img src="hashtable.png" alt=""></p>
+<p>图1：hashCode值不相同的情况</p>
+<p>图2：hashCode值相同，但equals不相同的情况。</p>
+<h3 id="HashSet到底是如何判断俩个元素重复"><a href="#HashSet到底是如何判断俩个元素重复" class="headerlink" title="HashSet到底是如何判断俩个元素重复"></a>HashSet到底是如何判断俩个元素重复</h3><p>通过hashCode方法和equals方法来保证元素的唯一性，add()返回的是boolean类型</p>
+<p>判断两个元素是否相同，先要判断元素的hashCode值是否一致，只有在该值一致的情况下，才会判断equals方法，如果存储在HashSet中的两个对象hashCode方法的值相同equals方法返回的结果是true，那么HashSet认为这两个元素是相同元素，只存储一个（重复元素无法存入）。</p>
+<p>注意：HashSet集合在判断元素是否相同先判断hashCode方法，如果相同才会判断equals。如果不相同，是不会调用equals方法的。</p>
+<h3 id="HashSet-和ArrayList集合都有判断元素是否相同的方法"><a href="#HashSet-和ArrayList集合都有判断元素是否相同的方法" class="headerlink" title="HashSet 和ArrayList集合都有判断元素是否相同的方法"></a>HashSet 和ArrayList集合都有判断元素是否相同的方法</h3><p>boolean contains(Object o)</p>
+<p>HashSet使用hashCode和equals方法，ArrayList使用了equals方法</p>
+<p>示例：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo1</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Set hs=<span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">        hs.add(<span class="string">"jack"</span>);</span><br><span class="line">        hs.add(<span class="string">"rose"</span>);</span><br><span class="line">        hs.add(<span class="string">"2020"</span>);</span><br><span class="line">        hs.add(<span class="string">"trip"</span>);</span><br><span class="line">        System.out.println(hs.size());</span><br><span class="line">        <span class="keyword">boolean</span> add=hs.add(<span class="string">"jack"</span>); <span class="comment">/* 如果set尚未包含指定元素，那么 返回true 此时返回false; */</span></span><br><span class="line">        System.out.println(add);</span><br><span class="line">        Iterator it=hs.iterator();</span><br><span class="line">        <span class="keyword">while</span> (it.hasNext())</span><br><span class="line">        &#123;</span><br><span class="line">            System.out.println(it.next());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.HashSet;</span><br><span class="line"><span class="keyword">import</span> java.util.Iterator;</span><br><span class="line"><span class="keyword">import</span> java.util.Objects;</span><br><span class="line"><span class="keyword">import</span> java.util.Set;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * This program demonstrates</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Alita Alice</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span>: Created in 21:13 2020/5/8</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo1</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        HashSet hs = <span class="keyword">new</span> HashSet();</span><br><span class="line">        hs.add(<span class="keyword">new</span> Person(<span class="string">"jack"</span>, <span class="number">20</span>));</span><br><span class="line">        hs.add(<span class="keyword">new</span> Person(<span class="string">"rose"</span>,<span class="number">20</span>));</span><br><span class="line">        hs.add(<span class="keyword">new</span> Person(<span class="string">"rose"</span>,<span class="number">20</span>));</span><br><span class="line">        Iterator it= hs.iterator();</span><br><span class="line">        <span class="keyword">while</span>(it.hasNext())</span><br><span class="line">        &#123;</span><br><span class="line">            System.out.println(it.next());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">    Person()&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name,<span class="keyword">int</span> age)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age=age;</span><br><span class="line">        <span class="keyword">this</span>.name=name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object o)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span> == o) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">if</span> (!(o <span class="keyword">instanceof</span> Person)) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        Person person = (Person) o;</span><br><span class="line">        <span class="keyword">return</span> getAge() == person.getAge() &amp;&amp;</span><br><span class="line">                getName().equals(person.getName());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> Objects.hash(getName(), getAge());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Person&#123;"</span> +</span><br><span class="line">                <span class="string">"name='"</span> + name + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">", age="</span> + age +</span><br><span class="line">                <span class="string">'&#125;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>其中在HashSet中存储自定义的对象，并尝试添加重复元素，需要override hashCode()和equls()方法。</strong></p>
+<h2 id="TreeSet"><a href="#TreeSet" class="headerlink" title="TreeSet"></a>TreeSet</h2><p>现在有一批数据，要求不能重复存储元素，而且要排序。</p>
+<p>ArrayList ，LinkList不能去除重复数据，HashSet可以去除重复，但是无序。</p>
+<p>示例：使用TreeSet集合存储字符串元素，并且遍历。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo5</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        TreeSet treeSet=<span class="keyword">new</span> TreeSet();</span><br><span class="line">        treeSet.add(<span class="string">"aaa"</span>);</span><br><span class="line">        treeSet.add(<span class="string">"bbb"</span>);</span><br><span class="line">        treeSet.add(<span class="string">"ccc"</span>);</span><br><span class="line">        treeSet.add(<span class="string">"ddd"</span>);</span><br><span class="line">        System.out.println(treeSet);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 输出</span></span><br><span class="line"><span class="comment">[aaa, bbb, ccc, ddd]</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="俩种比较器接口"><a href="#俩种比较器接口" class="headerlink" title="俩种比较器接口"></a>俩种比较器接口</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Comparable </span><br><span class="line">         compareTo(Object o)  元素自身具备比较性</span><br><span class="line">Comparator</span><br><span class="line">         compare(Object o1,Object o2) 给容器传入比较器</span><br></pre></td></tr></table></figure>
+
+<h3 id="TreeSet集合排序的俩种方式"><a href="#TreeSet集合排序的俩种方式" class="headerlink" title="TreeSet集合排序的俩种方式"></a>TreeSet集合排序的俩种方式</h3><ul>
+<li><p>让元素自身具备比较性</p>
+<p>元素需要实现Comparable接口，覆盖compareTo(Object o) 方法</p>
+<p>这种方式也被称为元素的自然排序，也可以称为默认排序</p>
+<p>年龄按照首要条件，年龄相同再比姓名</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> Set;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> sun.reflect.generics.tree.Tree;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Objects;</span><br><span class="line"><span class="keyword">import</span> java.util.TreeSet;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * This program demonstrates</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Alita Alice</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span>: Created in 10:23 2020/5/9</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo4</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        TreeSet ts=<span class="keyword">new</span> TreeSet();</span><br><span class="line">        ts.add(<span class="keyword">new</span> Person(<span class="string">"aa"</span>, <span class="number">20</span>, <span class="string">"男"</span>));</span><br><span class="line">        ts.add(<span class="keyword">new</span> Person(<span class="string">"bb"</span>, <span class="number">18</span>, <span class="string">"女"</span>));</span><br><span class="line">        ts.add(<span class="keyword">new</span> Person(<span class="string">"cc"</span>, <span class="number">17</span>, <span class="string">"男"</span>));</span><br><span class="line">        ts.add(<span class="keyword">new</span> Person(<span class="string">"dd"</span>, <span class="number">17</span>, <span class="string">"女"</span>));</span><br><span class="line">        ts.add(<span class="keyword">new</span> Person(<span class="string">"dd"</span>, <span class="number">15</span>, <span class="string">"女"</span>));</span><br><span class="line">        ts.add(<span class="keyword">new</span> Person(<span class="string">"dd"</span>, <span class="number">15</span>, <span class="string">"女"</span>));</span><br><span class="line">        System.out.println(ts);</span><br><span class="line">        System.out.println(ts.size());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> <span class="keyword">implements</span> <span class="title">Comparable</span></span></span><br><span class="line"><span class="class"> </span>&#123;</span><br><span class="line">     <span class="keyword">private</span> String name;</span><br><span class="line">     <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">     <span class="keyword">private</span> String gender;</span><br><span class="line"></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name, <span class="keyword">int</span> age, String gender)</span> </span>&#123;</span><br><span class="line">         <span class="keyword">this</span>.name = name;</span><br><span class="line">         <span class="keyword">this</span>.age = age;</span><br><span class="line">         <span class="keyword">this</span>.gender = gender;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">         <span class="keyword">return</span> name;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">         <span class="keyword">this</span>.name = name;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">         <span class="keyword">return</span> age;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">         <span class="keyword">this</span>.age = age;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="function"><span class="keyword">public</span> String <span class="title">getGender</span><span class="params">()</span> </span>&#123;</span><br><span class="line">         <span class="keyword">return</span> gender;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setGender</span><span class="params">(String gender)</span> </span>&#123;</span><br><span class="line">         <span class="keyword">this</span>.gender = gender;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="meta">@Override</span></span><br><span class="line">     <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">         <span class="keyword">return</span> <span class="string">"Person&#123;"</span> +</span><br><span class="line">                 <span class="string">"name='"</span> + name + <span class="string">'\''</span> +</span><br><span class="line">                 <span class="string">", age="</span> + age +</span><br><span class="line">                 <span class="string">", gender='"</span> + gender + <span class="string">'\''</span> +</span><br><span class="line">                 <span class="string">'&#125;'</span>;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="meta">@Override</span></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object o)</span> </span>&#123;</span><br><span class="line">         <span class="keyword">if</span> (<span class="keyword">this</span> == o) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">         <span class="keyword">if</span> (!(o <span class="keyword">instanceof</span> Person)) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">         Person person = (Person) o;</span><br><span class="line">         <span class="keyword">return</span> getAge() == person.getAge() &amp;&amp;</span><br><span class="line">                 getName().equals(person.getName()) &amp;&amp;</span><br><span class="line">                 getGender().equals(person.getGender());</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="meta">@Override</span></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">         <span class="keyword">return</span> Objects.hash(getName(), getAge(), getGender());</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="meta">@Override</span></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(Object o)</span> </span>&#123;</span><br><span class="line">         Person p = (Person) o;</span><br><span class="line">         System.out.println(<span class="keyword">this</span> + <span class="string">"compareTo:"</span> + p);</span><br><span class="line">         <span class="keyword">if</span> (<span class="keyword">this</span>.age &gt; p.age) &#123;</span><br><span class="line">             <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">         &#125;</span><br><span class="line">         <span class="keyword">if</span> (<span class="keyword">this</span>.age &lt; p.age) &#123;</span><br><span class="line">             <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">         &#125;</span><br><span class="line">         <span class="keyword">return</span> <span class="keyword">this</span>.name.compareTo(p.name);</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line"><span class="comment">/* out</span></span><br><span class="line"><span class="comment">Person&#123;name='aa', age=20, gender='男'&#125;compareTo:Person&#123;name='aa', age=20, gender='男'&#125;</span></span><br><span class="line"><span class="comment">Person&#123;name='bb', age=18, gender='女'&#125;compareTo:Person&#123;name='aa', age=20, gender='男'&#125;</span></span><br><span class="line"><span class="comment">Person&#123;name='cc', age=17, gender='男'&#125;compareTo:Person&#123;name='aa', age=20, gender='男'&#125;</span></span><br><span class="line"><span class="comment">Person&#123;name='cc', age=17, gender='男'&#125;compareTo:Person&#123;name='bb', age=18, gender='女'&#125;</span></span><br><span class="line"><span class="comment">Person&#123;name='dd', age=17, gender='女'&#125;compareTo:Person&#123;name='bb', age=18, gender='女'&#125;</span></span><br><span class="line"><span class="comment">Person&#123;name='dd', age=17, gender='女'&#125;compareTo:Person&#123;name='cc', age=17, gender='男'&#125;</span></span><br><span class="line"><span class="comment">Person&#123;name='dd', age=15, gender='女'&#125;compareTo:Person&#123;name='bb', age=18, gender='女'&#125;</span></span><br><span class="line"><span class="comment">Person&#123;name='dd', age=15, gender='女'&#125;compareTo:Person&#123;name='cc', age=17, gender='男'&#125;</span></span><br><span class="line"><span class="comment">Person&#123;name='dd', age=15, gender='女'&#125;compareTo:Person&#123;name='bb', age=18, gender='女'&#125;</span></span><br><span class="line"><span class="comment">Person&#123;name='dd', age=15, gender='女'&#125;compareTo:Person&#123;name='cc', age=17, gender='男'&#125;</span></span><br><span class="line"><span class="comment">Person&#123;name='dd', age=15, gender='女'&#125;compareTo:Person&#123;name='dd', age=15, gender='女'&#125;</span></span><br><span class="line"><span class="comment">[Person&#123;name='dd', age=15, gender='女'&#125;, Person&#123;name='cc', age=17, gender='男'&#125;, Person&#123;name='dd', age=17, gender='女'&#125;, Person&#123;name='bb', age=18, gender='女'&#125;, Person&#123;name='aa', age=20, gender='男'&#125;]</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="二-让容器自身具备比较性，自定义比较器"><a href="#二-让容器自身具备比较性，自定义比较器" class="headerlink" title="二 让容器自身具备比较性，自定义比较器"></a>二 让容器自身具备比较性，自定义比较器</h3><p>需求：当元素自身不具备比较性，或者元素自身具备的比较性不是所需。</p>
+<p>那么这时只能让容器自身具备</p>
+<p>定义一个类实现Comparetor接口，覆盖compare方法</p>
+<p>并将该接口的子类对象作为参数传递给TreeSet集合的构造函数。</p>
+<p>当Comparable 比较方式及Comparator比较方式同时存在， 以Com[arator比较方式为主。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> Set;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Comparator;</span><br><span class="line"><span class="keyword">import</span> java.util.Objects;</span><br><span class="line"><span class="keyword">import</span> java.util.TreeSet;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * This program demonstrates</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Alita Alice</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span>: Created in 10:54 2020/5/9</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo6</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        TreeSet ts=<span class="keyword">new</span> TreeSet(<span class="keyword">new</span> MyComparator());</span><br><span class="line">        ts.add(<span class="keyword">new</span> Book(<span class="string">"think in java"</span>, <span class="number">100</span>));</span><br><span class="line">        ts.add(<span class="keyword">new</span> Book(<span class="string">"java 核心技术"</span>, <span class="number">75</span>));</span><br><span class="line">        ts.add(<span class="keyword">new</span> Book(<span class="string">"现代操作系统"</span>, <span class="number">50</span>));</span><br><span class="line">        ts.add(<span class="keyword">new</span> Book(<span class="string">"java就业教程"</span>, <span class="number">35</span>));</span><br><span class="line">        ts.add(<span class="keyword">new</span> Book(<span class="string">"think in java"</span>, <span class="number">100</span>));</span><br><span class="line">        ts.add(<span class="keyword">new</span> Book(<span class="string">"ccc in java"</span>, <span class="number">100</span>));</span><br><span class="line"></span><br><span class="line">        System.out.println(ts);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyComparator</span> <span class="keyword">implements</span> <span class="title">Comparator</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Object o1, Object o2)</span> </span>&#123;</span><br><span class="line">                    Book b1=(Book) o1;</span><br><span class="line">                    Book b2=(Book) o2;</span><br><span class="line">        System.out.println(b1+<span class="string">"comparator"</span>+b2);</span><br><span class="line">        <span class="keyword">if</span>(b1.getPrice()&gt;b2.getPrice())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(b1.getPrice()&lt;b2.getPrice())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> b1.getName().compareTo(b2.getName());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Book</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">double</span> price;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Book</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Book</span><span class="params">(String name, <span class="keyword">double</span> price)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.price = price;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getPrice</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> price;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setPrice</span><span class="params">(<span class="keyword">double</span> price)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.price = price;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object o)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span> == o) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">if</span> (!(o <span class="keyword">instanceof</span> Book)) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        Book book = (Book) o;</span><br><span class="line">        <span class="keyword">return</span> Double.compare(book.getPrice(), getPrice()) == <span class="number">0</span> &amp;&amp;</span><br><span class="line">                getName().equals(book.getName());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> Objects.hash(getName(), getPrice());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Book&#123;"</span> +</span><br><span class="line">                <span class="string">"name='"</span> + name + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">", price="</span> + price +</span><br><span class="line">                <span class="string">'&#125;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* out</span></span><br><span class="line"><span class="comment">Book&#123;name='think in java', price=100.0&#125;comparatorBook&#123;name='think in java', price=100.0&#125;</span></span><br><span class="line"><span class="comment">Book&#123;name='java 核心技术', price=75.0&#125;comparatorBook&#123;name='think in java', price=100.0&#125;</span></span><br><span class="line"><span class="comment">Book&#123;name='现代操作系统', price=50.0&#125;comparatorBook&#123;name='think in java', price=100.0&#125;</span></span><br><span class="line"><span class="comment">Book&#123;name='现代操作系统', price=50.0&#125;comparatorBook&#123;name='java 核心技术', price=75.0&#125;</span></span><br><span class="line"><span class="comment">Book&#123;name='java就业教程', price=35.0&#125;comparatorBook&#123;name='java 核心技术', price=75.0&#125;</span></span><br><span class="line"><span class="comment">Book&#123;name='java就业教程', price=35.0&#125;comparatorBook&#123;name='现代操作系统', price=50.0&#125;</span></span><br><span class="line"><span class="comment">Book&#123;name='think in java', price=100.0&#125;comparatorBook&#123;name='java 核心技术', price=75.0&#125;</span></span><br><span class="line"><span class="comment">Book&#123;name='think in java', price=100.0&#125;comparatorBook&#123;name='think in java', price=100.0&#125;</span></span><br><span class="line"><span class="comment">Book&#123;name='ccc in java', price=100.0&#125;comparatorBook&#123;name='java 核心技术', price=75.0&#125;</span></span><br><span class="line"><span class="comment">Book&#123;name='ccc in java', price=100.0&#125;comparatorBook&#123;name='think in java', price=100.0&#125;</span></span><br><span class="line"><span class="comment">[Book&#123;name='java就业教程', price=35.0&#125;, Book&#123;name='现代操作系统', price=50.0&#125;, Book&#123;name='java 核心技术', price=75.0&#125;, Book&#123;name='ccc in java', price=100.0&#125;, Book&#123;name='think in java', price=100.0&#125;]</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-LinkedHashSet"><a href="#4-LinkedHashSet" class="headerlink" title="4.LinkedHashSet"></a>4.LinkedHashSet</h3><p>会保存插入的顺序</p>
+<p>看到array，就要想到角标</p>
+<p>看到link ，就要想到first,last</p>
+<p>看到hash,就要想到hashCode，equals</p>
+<p>看到tree，就要想到俩个接口。Comparable,Comparator </p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>JAVA集合</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JAVA和C++的区别</title>
     <url>/2020/05/11/JAVA%E5%92%8CC++%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -444,6 +444,16 @@
       <tags>
         <tag>JAVASE</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>JAVA泛型</title>
+    <url>/2020/05/12/JAVA%E6%B3%9B%E5%9E%8B/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
   </entry>
   <entry>
     <title>JAVA容器分类andCollection</title>
@@ -569,16 +579,6 @@
       <tags>
         <tag>JAVA集合</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>JAVA泛型</title>
-    <url>/2020/05/12/JAVA%E6%B3%9B%E5%9E%8B/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
   </entry>
   <entry>
     <title>JAVA注解</title>
@@ -762,17 +762,6 @@
       </tags>
   </entry>
   <entry>
-    <title>JAVA面试</title>
-    <url>/2020/05/11/JAVA%E9%9D%A2%E8%AF%95/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><img src="E:%5Cdev%5CMYBLOG%5Cblog%5Csource_posts%5CJAVA%E9%9D%A2%E8%AF%95%5C2020-05-11_205422.png" alt=""></p>
-]]></content>
-  </entry>
-  <entry>
     <title>JDK中常用的包有哪些？</title>
     <url>/2020/05/11/JDK%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E5%8C%85%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -796,6 +785,34 @@
       </categories>
       <tags>
         <tag>JAVASE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JAVA面试</title>
+    <url>/2020/05/11/JAVA%E9%9D%A2%E8%AF%95/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><img src="E:%5Cdev%5CMYBLOG%5Cblog%5Csource_posts%5CJAVA%E9%9D%A2%E8%AF%95%5C2020-05-11_205422.png" alt=""></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>JVM内存模型概述</title>
+    <url>/2020/05/20/JVM%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E6%A6%82%E8%BF%B0/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍JVM内存模型概述</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>转<a href="https://blog.csdn.net/justloveyou_/article/details/71189093" target="_blank" rel="noopener">https://blog.csdn.net/justloveyou_/article/details/71189093</a></p>
+]]></content>
+      <categories>
+        <category>JVM</category>
+      </categories>
+      <tags>
+        <tag>JVM</tag>
       </tags>
   </entry>
   <entry>
@@ -828,23 +845,6 @@
       </categories>
       <tags>
         <tag>JAVASE</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JVM内存模型概述</title>
-    <url>/2020/05/20/JVM%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E6%A6%82%E8%BF%B0/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍JVM内存模型概述</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>转<a href="https://blog.csdn.net/justloveyou_/article/details/71189093" target="_blank" rel="noopener">https://blog.csdn.net/justloveyou_/article/details/71189093</a></p>
-]]></content>
-      <categories>
-        <category>JVM</category>
-      </categories>
-      <tags>
-        <tag>JVM</tag>
       </tags>
   </entry>
   <entry>
@@ -1255,73 +1255,6 @@
       </tags>
   </entry>
   <entry>
-    <title>mysql使用触发器</title>
-    <url>/2020/05/15/mysql%E4%BD%BF%E7%94%A8%E8%A7%A6%E5%8F%91%E5%99%A8/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍触发器</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>触发器是MySQL响应以下任意语句而自动执行的一条MySQL语句（或位于BEGIN和END语句之间的一组语句 。</p>
-<ul>
-<li><p>DELETE </p>
-</li>
-<li><p>INSERT </p>
-</li>
-<li><p>UPDATE</p>
-<p>在创建触发器时，需要给出4条信息 :</p>
-<p><img src="https://photos.alitaalice.cn/image/20200515154008.png" alt=""></p>
-</li>
-</ul>
-<p>Eg：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">CREATE TRIGGER newproduct AFTER INSERT ON products</span><br><span class="line">FOR EACH ROW SELECT <span class="string">'Product added'</span></span><br></pre></td></tr></table></figure>
-
-<p>CREATE TRIGGER用来创建名为newproduct的新触发器。触发器<br>可在一个操作发生之前或之后执行，这里给出了AFTER INSERT，<br>所以此触发器将在INSERT语句成功执行后执行。这个触发器还指定FOR EACH ROW，因此代码对每个插入行执行。在这个例子中，文本Product added将对每个插入的行显示一次.</p>
-<p>  每个表最多支持6个触发器（每条INSERT、 UPDATE和DELETE的之前和之后）。单一触发器不能与多个事件或多个表关联，所以，如果你需要一个对INSERT和UPDATE操作执行的触发器，则应该定义两个触发器  .</p>
-<h2 id="删除触发器"><a href="#删除触发器" class="headerlink" title="删除触发器"></a>删除触发器</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">DROP TRIGGER newproduct;</span><br></pre></td></tr></table></figure>
-
-<p>触发器不能更新或覆盖。为了修改一个触发器，必须先删除它，然后再重新创建。  </p>
-<h2 id="使用-触发器"><a href="#使用-触发器" class="headerlink" title="使用 触发器"></a>使用 触发器</h2><h3 id="1-INSERT-触发器"><a href="#1-INSERT-触发器" class="headerlink" title="1 INSERT 触发器"></a>1 INSERT 触发器</h3><p>INSERT触发器在INSERT语句执行之前或之后执行。  </p>
-<ul>
-<li>在INSERT触发器代码内，可引用一个名为NEW的虚拟表，访问被插入的行；</li>
-<li>在BEFORE INSERT触发器中， NEW中的值也可以被更新（允许更改被插入的值）；</li>
-<li>对于AUTO_INCREMENT列， NEW在INSERT执行之前包含0，在INSERT 执行之后包含新的自动生成值  </li>
-</ul>
-<p>eg：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">CREATE TRIGGER neworder AFTER INSERT ON orders</span><br><span class="line">FOR EACH ROW SELECT NEW.order_num;</span><br></pre></td></tr></table></figure>
-
-<p>此代码创建一个名为neworder的触发器，它按照AFTER INSERT<br>ON orders执行。在插入一个新订单到orders表时， MySQL生<br>成一个新订单号并保存到order_num中。触发器从NEW. order_num取得这个值并返回它。此触发器必须按照AFTER INSERT执行，因为在BEFORE INSERT语句执行之前，新order_num还没有生成。对于orders的每次插入使用这个触发器将总是返回新的订单号。  </p>
-<p>试着插入一下新行：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">INSERT INTO orders(order_date,cust_id) VALUES(NOW(),10001);</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://photos.alitaalice.cn/image/20200515155708.png" alt=""></p>
-<h3 id="DELETE-触发器"><a href="#DELETE-触发器" class="headerlink" title="DELETE 触发器"></a>DELETE 触发器</h3><ul>
-<li>在DELETE触发器代码内，你可以引用一个名为OLD的虚拟表，访问被删除的行；</li>
-<li>OLD中的值全都是只读的，不能更新。  </li>
-</ul>
-<p>下面例子用OLD保存将要被删除的行到一个存档表中</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">CREATE TRIGGER deleteorder BEFORE DELETE ON orders</span><br><span class="line">FOR EACH ROW</span><br><span class="line">BEGIN</span><br><span class="line">    <span class="function">INSERT INTO <span class="title">archive_orders</span><span class="params">(order_num, order_date,cust_id)</span> <span class="title">VALUES</span><span class="params">(OLD.order_num,OLD.order_date,OLD.cust_id)</span></span>;</span><br><span class="line">END;</span><br></pre></td></tr></table></figure>
-
-<p>在任意订单被删除前将执行此触发器。它使用一条INSERT语句将OLD中的值（要被删除的订单）保存到一个名为archive_orders的存档表中（为实际使用这个例子，你需要用与orders相同的列创建一个名为archive_orders的表）  </p>
-<h2 id="UPDATE-触发器"><a href="#UPDATE-触发器" class="headerlink" title="UPDATE 触发器"></a>UPDATE 触发器</h2><ul>
-<li><p>在UPDATE触发器代码中，你可以引用一个名为OLD的虚拟表访问以前（UPDATE语句前）的值，引用一个名为NEW的虚拟表访问新更新的值；</p>
-</li>
-<li><p>在BEFORE UPDATE触发器中， NEW中的值可能也被更新（允许更改将要用于UPDATE语句中的值）；</p>
-</li>
-<li><p>OLD中的值全都是只读的，不能更新  </p>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">CREATE TRIGGER updatevendor BERORE UPDATE ON vendors</span><br><span class="line">FOR EACH ROW SET NEW.vend_state=Upper(NEW.vend_state);</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>mysql</category>
-      </categories>
-      <tags>
-        <tag>mysql</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>mysql全文本搜索</title>
     <url>/2020/05/07/mysql%E5%85%A8%E6%96%87%E6%9C%AC%E6%90%9C%E7%B4%A2/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -1386,22 +1319,64 @@
       </tags>
   </entry>
   <entry>
-    <title>mysql必知必会</title>
-    <url>/2020/05/03/mysql%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/</url>
-    <content><![CDATA[<h3 id="1-基础操作"><a href="#1-基础操作" class="headerlink" title="1 基础操作"></a>1 基础操作</h3><p> 登录mysql -u root -p<br> Show databases;<br> Use databasename;<br>Show tables;  //显示行</p>
+    <title>mysql使用触发器</title>
+    <url>/2020/05/15/mysql%E4%BD%BF%E7%94%A8%E8%A7%A6%E5%8F%91%E5%99%A8/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍触发器</p>
+</blockquote>
 <a id="more"></a>
-<p> Show columns from xxx;   //显示列 </p>
-<h3 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h3><p>SELECT DISTINCT  published FROM t_blog ;  DISTINCT此关键字指示只返回不同的值。<br> SELECT id FROM t_blog LIMIT 5;<br> SELECT id FROM t_blog LIMIT 3,3; //从第三行开始的后三行<br> SELECT t_blog.id FROM blog.t_blog;   完全限定的列名和表名 和之前的用法一样。<br> SELECT id,type_id,user_id FROM t_blog ORDER BY type_id,id;  先对type_id排序 再对id进行排序。<br> DESC 降序 ASC 升序  默认升序<br> SELECT id FROM t_blog ORDER BY type_id LIMIT 1; 此种方式找到了数值最大的一行。<br> <strong>在使用where 过滤时 ，order by 排序要在where的后面</strong><br> SELECT id FROM t_blog  where id &lt;&gt;10;   &lt;&gt; 不匹配检查<br> 范围值检查<br>  SELECT ID FROM T_BLOG WHERE ID BETWEEN 10 AND 20 :<br> Select id from t_blog where id is null;  空值检查<br> Select id,user_id from t_blog where id &lt;=10 and user_id &lt;=1;<br> Select prod_name,prod_price from products where vend_id=1002 or vend_id =1003 and<br>  Prod_price&gt;=10; SQL处理OR操作符和AND操作符时，优先处理AND操作符。<br> 故先处理 vend_id =1003 and prod_price&gt;=10  或者  vend_id=1002  ；<br>解决方法是<br>Select prod_name,prod_price from products where (vend_id =1002 or vend_id =1003) and prod_price &gt;=10    用( )来明确分组操作符。DBMS 首先过滤圆括号内的OR条件。<br>NOT 在MYSQL中的NOT中 MYSQL支持使用NOT 对IN,BETWEEN 和EXISTS子句取反。这与多数其他DBMS允许使用NOT对各种条件取反有很大区别。<br>######<br>通配符<br>用来匹配值的一部分的特殊字符<br>LIKE 指示MYSQL 后跟的搜索模式利用通配符匹配而不是直接相等匹配比较<br>SELECT prod_name FROM products WHERE prod_name REGEXP ‘[123] Ton’<br>ORDER BY prod_name;<br>正则表达式 [123]Ton 其中[123]定义一组字符<br>它的意思是匹配1或2或3  因此 1ton 和2ton 都匹配且返回了<br>[] 其实是另一种形式的OR语句<br>[1|2|3]Ton 的缩写 为 [123]Ton<br>1|2|3 Ton 的意思是检索出1或2或3 ton<br>[^123] 匹配除这些字符除外的任何东西<br> ^ 是REGEXP的否定符号<br>在匹配范围中<br>0到9  将由[0123456789] 等同于 [0-9]<br>.表示匹配一个字符<br>输入 SELECT vend_name FROM vendors WHERE vend_name REGEXP ‘.’ ORDER BY vend_name<br>.匹配任意字符  这时每一行都被检索出来 为了匹配特殊字符 必须用\ 作为前导<br>如<br>SELECT vend_name FROM vendors WHERE vend_name REGEXP ‘\.’ ORDER BY vend_name<br>这才是期望的输出 \.匹配. 这种处理就是所谓的转义。<br>？ 字符 ？匹配它前面的任何字符的0次或者1次出现。<br> 如 SELECT prod_name FROM products WHERE prod_name REGEXP ‘\([0-9] sticks?\)’<br> ORDER BY prod_name ;<br>Sticks 匹配 stick 和sticks s后的?使s可选<br>另外例如<br>SELECT prod_name FROM products WHERE prod_name REGEXP ‘[[:digit:]]{4}<br>ORDER BY prod_name；<br>[:digit:]匹配任意数字<br>因而它作为数字的一个集合<br>{4} 确切的要求它前面的字符 出现4次<br>匹配特定位置的文本，需要使用表9-4列出的定位符<br>^ 文本的开始<br>$ 文本的结尾<br>[[:&lt;:]] 词的开始<br>[[:&gt;;]] 词的结尾<br>‘^[0-9\.]’ 找出一个数 包括以小数点开始的数开始的所有产品。<br>SELECT prod_name FROM products WHERE prod_name REGEXP ‘^[0-9\.]’<br>ORDER BY prod_name;<br>在第10章 中 创建计算字段<br>MySQL 使用Concat() 函数来实现<br>SELECT Concat(vend_name,’（‘，vend_country,’）’)<br>FROM vendors ORDER BY vend_name;<br>拼接  将值联结到一起构成单个值<br>比如以上的输出为<br>ACME (USA)<br>删除数据右侧多余的空格来整理数据<br>MySQL 的RTrim()可以去掉值右边的所有的空格<br>SELECT Concat(RTrim(vend_name),’(‘,RTrim(vend_country),’)’)<br>FROM vendors<br>ORDER BY vend_name;<br>LTrim() 去掉串左边的空格<br>Trim()去掉左右俩边的空格<br>SELECT Concat (RTrim(vend_name),’(‘,RTrim(vend_country),’)’)AS vend_title FROM vendors ORDER BY vend_name;<br>一个未命名的列不能用于客户机的应用中，因为客户机没有办法去引用它。<br>所以才出现了别名。AS 关键字来赋予别名 任何客户机应用都可以按名来引用这个列，就像它是一个实际的表列一样。</p>
-<p>执行算数运算<br>SELECT pro_id,quantity,item_price FROM oderitems WHERE order order_num =20005;<br>在算数运算中 检索200005中的所有物品<br>如果要计算汇总物品的价格<br>SELECT prod_id ,quantity,item_price, quantity*item_price  AS expanded_price FROM oderitems WHERE order_num =20005;<br>此时客户机可以使用这个新计算的列，就像其他列一样。<br>MYSQL 支持基本算术运算符</p>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>触发器是MySQL响应以下任意语句而自动执行的一条MySQL语句（或位于BEGIN和END语句之间的一组语句 。</p>
 <ul>
-<li><ul>
-<li>/ 圆括号可以用来区分优先顺序<br>第十一章 使用数据来处理函数<br>SELECT vend_name,Upper(vend_name) AS  vend_name_upcase FROM vendors ORDER BY vend_name;<br>Upper()将文本转换为大写<br>常用的文本处理函数：<br>Left() 返回串左边的字符<br>Length() 返回串的长度<br>Locate()返回串的一个子串<br>Lower()将串转换为小写<br>LTrim() 去掉左边的空格<br>Right()返回串右边的字符<br>RTrim() 去掉串右边的空格<br>Soundex()返回串的Soundex值<br>SubString() 返回子串的字符<br>Upper() 大写<br>Soundex（） 将任何文本串转换为描述其语音表示的字母数字模式的算法<br>如<br>SELECT cust_name ,cust_contact FROM customers WHERE cust_contact =’Y.Lie’;<br>其联系名是为Y.Lee 此时没办法搜索到<br>但是通过<br>SELECT cust_name,cust_contact FROM customers WHERE Soundex(cust_contact)=Soundex(‘Y.lie);<br>此时可以搜索到Y.Lee<br>日期和时间的处理函数<br>Date() 返回日期部分的日期部分<br>Year() 返回日期部分的年份部分<br>Day()<br>Month()</li>
-</ul>
+<li><p>DELETE </p>
+</li>
+<li><p>INSERT </p>
+</li>
+<li><p>UPDATE</p>
+<p>在创建触发器时，需要给出4条信息 :</p>
+<p><img src="https://photos.alitaalice.cn/image/20200515154008.png" alt=""></p>
 </li>
 </ul>
-<p>如：<br>SELECT cust_id,oder_num FROM oders WHERE Date(order_date)=’2005-09-01’;<br>SELECT cust_id,order_num FROM orders WHERE Date(order_date) BETWEEN ‘2005-09-01’AND’2005-03-30’;<br>数值处理函数<br>Abs() 返回数的绝对值</p>
-<p>Cos() 角度的余弦<br>Exp() 返回一个数的指数值<br>Mod() 操作数的余数<br>……<br>第12章 汇总数据<br>12.1 聚集函数  运行在行组上，计算和返回单个值得函数<br>AVG() 返回某列的平均值<br>COUNT()  返回某列的行数<br>MAX() 返回某列的最大值<br>MIN() 返回某列的最小值<br>SUM() 返回某列值之和<br>SELECT AVG(prod_price) AS avg_price FROM products;<br>AVG() 也可以用来确定列或行当平均值<br>SELECT AVG(prod_price) AS avg_price FROM products WHERE vend_id =1003;<br>COUNT () 函数<br>COUNT(<em>)对表中的行的数目进行技术<br>COUNT(column) 对特定列中具有值的行进行计数<br>例如SELECT COUNT(</em>) AS num_cust FROM customers;<br>利用COUNT(<em>)对所有行计数<br>SELECT COUNT(cust_email) AS num_cust FROM customers;<br>对于cust_email中所有有值的行进行计数<br>MAX() 指定列中的最大值 MAX()要求指定列名。<br>MIN()<br>SUM() 也可以用来合计计算值 用来得出总的订单金额<br>SELECT SUM(item_price  *quantity) AS total_price FROM oderitems WHERE order_num=20005;<br>SUM(item_price *quantity) 返回订单中所有物品价钱之和<br>第13章 分组数据<br>SELECT vend_id ,COUNT(</em>) AS num_prods FROM products GROUP BY vend_id;<br>Vend_id num_prods<br>1001        3<br>1002        2<br>1003        7<br>1005        2<br>上述语句将vend_id进行分组，GROUP BY 对于分组的整个结果集进行聚集<br>使用ROLLUP 使用WITH ROLLUP 关键字，将得到每个分组以及分组汇总级别的值<br>2如何过滤分组?<br>HAVING<br>如： SELECT cust_id ,COUNT(<em>)AS orders FROM orders GROUP BY cust_id<br>HAVING COUNT(</em>) &gt;=2<br>它过滤COUNT(<em>)&gt;=2 的那些分组<br>输入： SELECT vend_id,COUNT(</em>) AS num_prods FROM products WHERE prod_price &gt;=10<br>GROUP BY vend_id HAVING COUNT(<em>)&gt;=2;<br>13.4 分组和排序<br>GROUP BY 和ORDER BY<br>GROUP BY  是在ORDER BY 之前，在where 之后<br>第14章 子查询<br>子查询：嵌套在其他查询中的查询<br>1 检索包含物品TNT2 的所有订单的编号<br> SELECT order_num FROM orderitems WHERE prod_id =’TNT2’；<br>2 检索具有前一步骤列出的订单编号的所有客户的ID<br> SELECT cust_id FROM orders WHERE order_num IN (20005,20007);<br>3 现在把第一个查询变为子查询 组合成俩个查询：<br> SELECT cust_id FROM oders WHERE order_num IN (SELECT order_num FROM orderitems WHERE prod_id =’TNT2’);<br>在SELECT 语句中，子查询总是从内向外查询处理。<br>检索这些客户的ID的客户信息，检索俩列的SQL语句为：<br>SELECT cust_name, cust_contact FROM customers WHERE cust_id IN (10001,10004);<br>则可以转换为：<br>SELECT cust_name ,cust_contact FROM customers WHERE cust_id IN (SELECT cust_id FROM orders WHERE order_num IN (SELECT order_num FROM orderitems WHERE prod_Id =’TNT2’))；<br>计算结果子查询：<br>SELECT cust_name,cust_state,(SELECT COUNT(</em>) FROM oders WHERE orders.cust_id=customers.cust_id)AS orders FROM customers ORDER BY cust_name;<br>第15 章  联结表  join 表<br>外键位某个表中的一列 它包含另一个表的主键值定义了俩个表之间的关系。<br>SELECT vent_name,prod_name,prod_price<br>FROM vendors ,products<br>WHERE vendors.vend_id=products.vend_id;<br>ORDER BY vend_name,prod_name ;<br>此种方法通过WHERE子句来限定了列名 ，如果要给出 vend_id 那么mysql_id 并不知道是哪个<br>存在一种状况是<br>笛卡尔积：<br>在不指定where子句时<br>：<br>SELECT vend_name ,prod_name,prod_price<br>FROM vendors,products ORDER BY vend_name,prod_name;<br>15.2.2 内部联结<br>目前为止所使用的联结称为 等值联结  它基于俩个表之间的相等测试 这种联结也叫内部联结。<br>SELECT vend_name , prod_name , prod_price FROM vendors INNER JOIN products ON vendors.vend_id =products.vend_id ;<br>此时使用的是INNER JOIN  联结条件用的是ON<br>联结多个表：<br>SELECT prod_name,vend_name,prod_price,quantity FROM orderitems,products,vendors WHERE products.vend_id =vendors.vend_id AND orderitems.prod_id =products.prod_id AND order_num =20005;<br>第16章 创建高级联结<br>使用表别名<br>SELECT Concat(RTrim(vend_name)，‘（’，RTrim（vend_country）,’）’) AS vend_title FROM vendors ORDER BY vend_name;<br>内部联结：<br>它基于俩个表之间的相等测试<br>SELECT vend_name .prod_name,prod_price FROM vendors INNER JOIN products ON vendors.vend_id =produces.vend_id;<br>自联结： 引用别名，自己联结自己<br>SELECT p1.prod_id,p1.prod_name FROM products AS p1,products AS p2<br>WHERE p1.vend_id =p2.vend_id AND p2.prod_id =’DTNTR’;<br>此查询种需要的俩个表实际上是相同的表。<br>因此products 表在from 子句中出现了俩次。虽然这是合法的，但是对products 的引用具有二义性。因此使用了别名。（用自联结而不用子查询。有时候处理联结要比处理查询要快的多）<br>自然联结：<br>其中你只能选择那些唯一的列。<br>通过对表使用通配符（SELECT <em>）对所有其他表的列使用明确的子集来完成的。<br>SELECT c.</em>,o.ordr_num,o.order_date,oi.prod_id,oi.quantity,OI.item_price FROM customers AS c,orders AS o,orderitems AS oi WHERE c.cust_id =o.cust_id AND oi.order_num =o.order_num<br>AND prod_id =’FB’;<br>通配符只对第一个表使用，所有其他列明确列出，所以没有重复的列被检索出来。<br>外部联结：<br>许多联结将一个表中的行与另外一个表中的行相关联，但有时候会需要包含没有关联行的那些行，例如  可能需要使用联结来完成以下的工作：<br>1对每个客户下了多少订单进行计数，包括那些至今未下订单的客户。<br>2列出所有产品以及订购数量，包括没有人订购的产品<br>3计算平均销售规模，包括那些至今未下订单的客户<br>联结包含了那些在相关表中没有关联行的行，这种叫做外部联结<br>内部联结检索所有客户及其订单：<br>SELECT customers.cust_id,order.orders.order_num FROM customers INNER JOIN orders ON<br>Customers.cust_id =orders.cust_id;<br>外部联结：<br>SELECT customers.cust_id ,orders.order_num FROM customers LEFT OUTER JOIN oders<br>ON customers.cust_id =orders.cust_id;<br>输出为：<br> cust_id   order_num<br>  10001      20005<br>  10001      20009<br>  10002       null<br> 10003       null<br>此时必须要用RIGHT 或LEFT 关键字指定包括其所有行的表<br>其实就是左外部联结和右外部联结<br>16.3 使用带聚集函数的联结<br>使用了COUNT（）函数的联结<br>SELECT customers.cust_name, customers.cust_id,COUNT(orders.order_num) AS num_ord FROM customers INNER JOIN orders ON customers.cust_id =orders.cust_id GROUP BY customers.cust_id;<br>SELECT 语句使用INNER JOIN 将customers和orders 表互相关联。 GROUP BY 子句按客户分组数据。<br>聚集函数也可以方便地与其他联结一起使用，<br>如 SELECT customers,cust_name,cusomers,cust_id,COUNT(orders,order_num)AS num_ord FROM customers LEFT OUTER JOIN orders ON customers.cust_id =orders.cust_id  GROUP BY customers.cust_id;<br>17 章 组合查询<br>利用UNION 操作符将多条SELECT 语句组合成一个结果集<br>执行多个查询，多个SELECT 语句 并将结果作为单个查询结果集返回。<br>这种称为并（union）或复合查询<br>使用UNION<br>输入<br>SELECT vend_id ,prod_id ,prod_price FROM products WHERE prod_price &lt;=5<br>UNION<br>SELECT vend_id,prod_id,prod_price FROM products WHERE vend_id IN(1001,1002);<br>也可以使用多个where<br>SELECT vend_id ,prod_id,prod_price FROM products WHERE prod_price &lt;=5 OR vend_id IN<br>(1001,1002);<br>从多个表中检索数据的情形，使用UNION 可能会处理更简单。<br>17.2.2 UNION 规则<br> 1   UNION 的每个查询必须包含相同的列，表达式，或聚集函数</p>
-<p> 2   UNION 的默认行为，如果想返回所有匹配行 可以使用UNION ALL 而不是UNION<br> 17.2.4 对组合查询结果排序<br>SELECT vend_id ,prod_id,prod_price FROM products WHERE prod_price &lt;=5<br>UNION<br>SELECT vend_id,prod_id,prod_price FROM products WHERE vend_id IN (1001,1002)<br>ORDER BY vend_id ,prod_price ;<br>18章 全文本搜素<br>18.1 理解全文本搜素</p>
+<p>Eg：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">CREATE TRIGGER newproduct AFTER INSERT ON products</span><br><span class="line">FOR EACH ROW SELECT <span class="string">'Product added'</span></span><br></pre></td></tr></table></figure>
+
+<p>CREATE TRIGGER用来创建名为newproduct的新触发器。触发器<br>可在一个操作发生之前或之后执行，这里给出了AFTER INSERT，<br>所以此触发器将在INSERT语句成功执行后执行。这个触发器还指定FOR EACH ROW，因此代码对每个插入行执行。在这个例子中，文本Product added将对每个插入的行显示一次.</p>
+<p>  每个表最多支持6个触发器（每条INSERT、 UPDATE和DELETE的之前和之后）。单一触发器不能与多个事件或多个表关联，所以，如果你需要一个对INSERT和UPDATE操作执行的触发器，则应该定义两个触发器  .</p>
+<h2 id="删除触发器"><a href="#删除触发器" class="headerlink" title="删除触发器"></a>删除触发器</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">DROP TRIGGER newproduct;</span><br></pre></td></tr></table></figure>
+
+<p>触发器不能更新或覆盖。为了修改一个触发器，必须先删除它，然后再重新创建。  </p>
+<h2 id="使用-触发器"><a href="#使用-触发器" class="headerlink" title="使用 触发器"></a>使用 触发器</h2><h3 id="1-INSERT-触发器"><a href="#1-INSERT-触发器" class="headerlink" title="1 INSERT 触发器"></a>1 INSERT 触发器</h3><p>INSERT触发器在INSERT语句执行之前或之后执行。  </p>
+<ul>
+<li>在INSERT触发器代码内，可引用一个名为NEW的虚拟表，访问被插入的行；</li>
+<li>在BEFORE INSERT触发器中， NEW中的值也可以被更新（允许更改被插入的值）；</li>
+<li>对于AUTO_INCREMENT列， NEW在INSERT执行之前包含0，在INSERT 执行之后包含新的自动生成值  </li>
+</ul>
+<p>eg：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">CREATE TRIGGER neworder AFTER INSERT ON orders</span><br><span class="line">FOR EACH ROW SELECT NEW.order_num;</span><br></pre></td></tr></table></figure>
+
+<p>此代码创建一个名为neworder的触发器，它按照AFTER INSERT<br>ON orders执行。在插入一个新订单到orders表时， MySQL生<br>成一个新订单号并保存到order_num中。触发器从NEW. order_num取得这个值并返回它。此触发器必须按照AFTER INSERT执行，因为在BEFORE INSERT语句执行之前，新order_num还没有生成。对于orders的每次插入使用这个触发器将总是返回新的订单号。  </p>
+<p>试着插入一下新行：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">INSERT INTO orders(order_date,cust_id) VALUES(NOW(),10001);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://photos.alitaalice.cn/image/20200515155708.png" alt=""></p>
+<h3 id="DELETE-触发器"><a href="#DELETE-触发器" class="headerlink" title="DELETE 触发器"></a>DELETE 触发器</h3><ul>
+<li>在DELETE触发器代码内，你可以引用一个名为OLD的虚拟表，访问被删除的行；</li>
+<li>OLD中的值全都是只读的，不能更新。  </li>
+</ul>
+<p>下面例子用OLD保存将要被删除的行到一个存档表中</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">CREATE TRIGGER deleteorder BEFORE DELETE ON orders</span><br><span class="line">FOR EACH ROW</span><br><span class="line">BEGIN</span><br><span class="line">    <span class="function">INSERT INTO <span class="title">archive_orders</span><span class="params">(order_num, order_date,cust_id)</span> <span class="title">VALUES</span><span class="params">(OLD.order_num,OLD.order_date,OLD.cust_id)</span></span>;</span><br><span class="line">END;</span><br></pre></td></tr></table></figure>
+
+<p>在任意订单被删除前将执行此触发器。它使用一条INSERT语句将OLD中的值（要被删除的订单）保存到一个名为archive_orders的存档表中（为实际使用这个例子，你需要用与orders相同的列创建一个名为archive_orders的表）  </p>
+<h2 id="UPDATE-触发器"><a href="#UPDATE-触发器" class="headerlink" title="UPDATE 触发器"></a>UPDATE 触发器</h2><ul>
+<li><p>在UPDATE触发器代码中，你可以引用一个名为OLD的虚拟表访问以前（UPDATE语句前）的值，引用一个名为NEW的虚拟表访问新更新的值；</p>
+</li>
+<li><p>在BEFORE UPDATE触发器中， NEW中的值可能也被更新（允许更改将要用于UPDATE语句中的值）；</p>
+</li>
+<li><p>OLD中的值全都是只读的，不能更新  </p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">CREATE TRIGGER updatevendor BERORE UPDATE ON vendors</span><br><span class="line">FOR EACH ROW SET NEW.vend_state=Upper(NEW.vend_state);</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>mysql</category>
@@ -1479,6 +1454,31 @@
 ]]></content>
       <categories>
         <category>后端</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mysql必知必会</title>
+    <url>/2020/05/03/mysql%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/</url>
+    <content><![CDATA[<h3 id="1-基础操作"><a href="#1-基础操作" class="headerlink" title="1 基础操作"></a>1 基础操作</h3><p> 登录mysql -u root -p<br> Show databases;<br> Use databasename;<br>Show tables;  //显示行</p>
+<a id="more"></a>
+<p> Show columns from xxx;   //显示列 </p>
+<h3 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h3><p>SELECT DISTINCT  published FROM t_blog ;  DISTINCT此关键字指示只返回不同的值。<br> SELECT id FROM t_blog LIMIT 5;<br> SELECT id FROM t_blog LIMIT 3,3; //从第三行开始的后三行<br> SELECT t_blog.id FROM blog.t_blog;   完全限定的列名和表名 和之前的用法一样。<br> SELECT id,type_id,user_id FROM t_blog ORDER BY type_id,id;  先对type_id排序 再对id进行排序。<br> DESC 降序 ASC 升序  默认升序<br> SELECT id FROM t_blog ORDER BY type_id LIMIT 1; 此种方式找到了数值最大的一行。<br> <strong>在使用where 过滤时 ，order by 排序要在where的后面</strong><br> SELECT id FROM t_blog  where id &lt;&gt;10;   &lt;&gt; 不匹配检查<br> 范围值检查<br>  SELECT ID FROM T_BLOG WHERE ID BETWEEN 10 AND 20 :<br> Select id from t_blog where id is null;  空值检查<br> Select id,user_id from t_blog where id &lt;=10 and user_id &lt;=1;<br> Select prod_name,prod_price from products where vend_id=1002 or vend_id =1003 and<br>  Prod_price&gt;=10; SQL处理OR操作符和AND操作符时，优先处理AND操作符。<br> 故先处理 vend_id =1003 and prod_price&gt;=10  或者  vend_id=1002  ；<br>解决方法是<br>Select prod_name,prod_price from products where (vend_id =1002 or vend_id =1003) and prod_price &gt;=10    用( )来明确分组操作符。DBMS 首先过滤圆括号内的OR条件。<br>NOT 在MYSQL中的NOT中 MYSQL支持使用NOT 对IN,BETWEEN 和EXISTS子句取反。这与多数其他DBMS允许使用NOT对各种条件取反有很大区别。<br>######<br>通配符<br>用来匹配值的一部分的特殊字符<br>LIKE 指示MYSQL 后跟的搜索模式利用通配符匹配而不是直接相等匹配比较<br>SELECT prod_name FROM products WHERE prod_name REGEXP ‘[123] Ton’<br>ORDER BY prod_name;<br>正则表达式 [123]Ton 其中[123]定义一组字符<br>它的意思是匹配1或2或3  因此 1ton 和2ton 都匹配且返回了<br>[] 其实是另一种形式的OR语句<br>[1|2|3]Ton 的缩写 为 [123]Ton<br>1|2|3 Ton 的意思是检索出1或2或3 ton<br>[^123] 匹配除这些字符除外的任何东西<br> ^ 是REGEXP的否定符号<br>在匹配范围中<br>0到9  将由[0123456789] 等同于 [0-9]<br>.表示匹配一个字符<br>输入 SELECT vend_name FROM vendors WHERE vend_name REGEXP ‘.’ ORDER BY vend_name<br>.匹配任意字符  这时每一行都被检索出来 为了匹配特殊字符 必须用\ 作为前导<br>如<br>SELECT vend_name FROM vendors WHERE vend_name REGEXP ‘\.’ ORDER BY vend_name<br>这才是期望的输出 \.匹配. 这种处理就是所谓的转义。<br>？ 字符 ？匹配它前面的任何字符的0次或者1次出现。<br> 如 SELECT prod_name FROM products WHERE prod_name REGEXP ‘\([0-9] sticks?\)’<br> ORDER BY prod_name ;<br>Sticks 匹配 stick 和sticks s后的?使s可选<br>另外例如<br>SELECT prod_name FROM products WHERE prod_name REGEXP ‘[[:digit:]]{4}<br>ORDER BY prod_name；<br>[:digit:]匹配任意数字<br>因而它作为数字的一个集合<br>{4} 确切的要求它前面的字符 出现4次<br>匹配特定位置的文本，需要使用表9-4列出的定位符<br>^ 文本的开始<br>$ 文本的结尾<br>[[:&lt;:]] 词的开始<br>[[:&gt;;]] 词的结尾<br>‘^[0-9\.]’ 找出一个数 包括以小数点开始的数开始的所有产品。<br>SELECT prod_name FROM products WHERE prod_name REGEXP ‘^[0-9\.]’<br>ORDER BY prod_name;<br>在第10章 中 创建计算字段<br>MySQL 使用Concat() 函数来实现<br>SELECT Concat(vend_name,’（‘，vend_country,’）’)<br>FROM vendors ORDER BY vend_name;<br>拼接  将值联结到一起构成单个值<br>比如以上的输出为<br>ACME (USA)<br>删除数据右侧多余的空格来整理数据<br>MySQL 的RTrim()可以去掉值右边的所有的空格<br>SELECT Concat(RTrim(vend_name),’(‘,RTrim(vend_country),’)’)<br>FROM vendors<br>ORDER BY vend_name;<br>LTrim() 去掉串左边的空格<br>Trim()去掉左右俩边的空格<br>SELECT Concat (RTrim(vend_name),’(‘,RTrim(vend_country),’)’)AS vend_title FROM vendors ORDER BY vend_name;<br>一个未命名的列不能用于客户机的应用中，因为客户机没有办法去引用它。<br>所以才出现了别名。AS 关键字来赋予别名 任何客户机应用都可以按名来引用这个列，就像它是一个实际的表列一样。</p>
+<p>执行算数运算<br>SELECT pro_id,quantity,item_price FROM oderitems WHERE order order_num =20005;<br>在算数运算中 检索200005中的所有物品<br>如果要计算汇总物品的价格<br>SELECT prod_id ,quantity,item_price, quantity*item_price  AS expanded_price FROM oderitems WHERE order_num =20005;<br>此时客户机可以使用这个新计算的列，就像其他列一样。<br>MYSQL 支持基本算术运算符</p>
+<ul>
+<li><ul>
+<li>/ 圆括号可以用来区分优先顺序<br>第十一章 使用数据来处理函数<br>SELECT vend_name,Upper(vend_name) AS  vend_name_upcase FROM vendors ORDER BY vend_name;<br>Upper()将文本转换为大写<br>常用的文本处理函数：<br>Left() 返回串左边的字符<br>Length() 返回串的长度<br>Locate()返回串的一个子串<br>Lower()将串转换为小写<br>LTrim() 去掉左边的空格<br>Right()返回串右边的字符<br>RTrim() 去掉串右边的空格<br>Soundex()返回串的Soundex值<br>SubString() 返回子串的字符<br>Upper() 大写<br>Soundex（） 将任何文本串转换为描述其语音表示的字母数字模式的算法<br>如<br>SELECT cust_name ,cust_contact FROM customers WHERE cust_contact =’Y.Lie’;<br>其联系名是为Y.Lee 此时没办法搜索到<br>但是通过<br>SELECT cust_name,cust_contact FROM customers WHERE Soundex(cust_contact)=Soundex(‘Y.lie);<br>此时可以搜索到Y.Lee<br>日期和时间的处理函数<br>Date() 返回日期部分的日期部分<br>Year() 返回日期部分的年份部分<br>Day()<br>Month()</li>
+</ul>
+</li>
+</ul>
+<p>如：<br>SELECT cust_id,oder_num FROM oders WHERE Date(order_date)=’2005-09-01’;<br>SELECT cust_id,order_num FROM orders WHERE Date(order_date) BETWEEN ‘2005-09-01’AND’2005-03-30’;<br>数值处理函数<br>Abs() 返回数的绝对值</p>
+<p>Cos() 角度的余弦<br>Exp() 返回一个数的指数值<br>Mod() 操作数的余数<br>……<br>第12章 汇总数据<br>12.1 聚集函数  运行在行组上，计算和返回单个值得函数<br>AVG() 返回某列的平均值<br>COUNT()  返回某列的行数<br>MAX() 返回某列的最大值<br>MIN() 返回某列的最小值<br>SUM() 返回某列值之和<br>SELECT AVG(prod_price) AS avg_price FROM products;<br>AVG() 也可以用来确定列或行当平均值<br>SELECT AVG(prod_price) AS avg_price FROM products WHERE vend_id =1003;<br>COUNT () 函数<br>COUNT(<em>)对表中的行的数目进行技术<br>COUNT(column) 对特定列中具有值的行进行计数<br>例如SELECT COUNT(</em>) AS num_cust FROM customers;<br>利用COUNT(<em>)对所有行计数<br>SELECT COUNT(cust_email) AS num_cust FROM customers;<br>对于cust_email中所有有值的行进行计数<br>MAX() 指定列中的最大值 MAX()要求指定列名。<br>MIN()<br>SUM() 也可以用来合计计算值 用来得出总的订单金额<br>SELECT SUM(item_price  *quantity) AS total_price FROM oderitems WHERE order_num=20005;<br>SUM(item_price *quantity) 返回订单中所有物品价钱之和<br>第13章 分组数据<br>SELECT vend_id ,COUNT(</em>) AS num_prods FROM products GROUP BY vend_id;<br>Vend_id num_prods<br>1001        3<br>1002        2<br>1003        7<br>1005        2<br>上述语句将vend_id进行分组，GROUP BY 对于分组的整个结果集进行聚集<br>使用ROLLUP 使用WITH ROLLUP 关键字，将得到每个分组以及分组汇总级别的值<br>2如何过滤分组?<br>HAVING<br>如： SELECT cust_id ,COUNT(<em>)AS orders FROM orders GROUP BY cust_id<br>HAVING COUNT(</em>) &gt;=2<br>它过滤COUNT(<em>)&gt;=2 的那些分组<br>输入： SELECT vend_id,COUNT(</em>) AS num_prods FROM products WHERE prod_price &gt;=10<br>GROUP BY vend_id HAVING COUNT(<em>)&gt;=2;<br>13.4 分组和排序<br>GROUP BY 和ORDER BY<br>GROUP BY  是在ORDER BY 之前，在where 之后<br>第14章 子查询<br>子查询：嵌套在其他查询中的查询<br>1 检索包含物品TNT2 的所有订单的编号<br> SELECT order_num FROM orderitems WHERE prod_id =’TNT2’；<br>2 检索具有前一步骤列出的订单编号的所有客户的ID<br> SELECT cust_id FROM orders WHERE order_num IN (20005,20007);<br>3 现在把第一个查询变为子查询 组合成俩个查询：<br> SELECT cust_id FROM oders WHERE order_num IN (SELECT order_num FROM orderitems WHERE prod_id =’TNT2’);<br>在SELECT 语句中，子查询总是从内向外查询处理。<br>检索这些客户的ID的客户信息，检索俩列的SQL语句为：<br>SELECT cust_name, cust_contact FROM customers WHERE cust_id IN (10001,10004);<br>则可以转换为：<br>SELECT cust_name ,cust_contact FROM customers WHERE cust_id IN (SELECT cust_id FROM orders WHERE order_num IN (SELECT order_num FROM orderitems WHERE prod_Id =’TNT2’))；<br>计算结果子查询：<br>SELECT cust_name,cust_state,(SELECT COUNT(</em>) FROM oders WHERE orders.cust_id=customers.cust_id)AS orders FROM customers ORDER BY cust_name;<br>第15 章  联结表  join 表<br>外键位某个表中的一列 它包含另一个表的主键值定义了俩个表之间的关系。<br>SELECT vent_name,prod_name,prod_price<br>FROM vendors ,products<br>WHERE vendors.vend_id=products.vend_id;<br>ORDER BY vend_name,prod_name ;<br>此种方法通过WHERE子句来限定了列名 ，如果要给出 vend_id 那么mysql_id 并不知道是哪个<br>存在一种状况是<br>笛卡尔积：<br>在不指定where子句时<br>：<br>SELECT vend_name ,prod_name,prod_price<br>FROM vendors,products ORDER BY vend_name,prod_name;<br>15.2.2 内部联结<br>目前为止所使用的联结称为 等值联结  它基于俩个表之间的相等测试 这种联结也叫内部联结。<br>SELECT vend_name , prod_name , prod_price FROM vendors INNER JOIN products ON vendors.vend_id =products.vend_id ;<br>此时使用的是INNER JOIN  联结条件用的是ON<br>联结多个表：<br>SELECT prod_name,vend_name,prod_price,quantity FROM orderitems,products,vendors WHERE products.vend_id =vendors.vend_id AND orderitems.prod_id =products.prod_id AND order_num =20005;<br>第16章 创建高级联结<br>使用表别名<br>SELECT Concat(RTrim(vend_name)，‘（’，RTrim（vend_country）,’）’) AS vend_title FROM vendors ORDER BY vend_name;<br>内部联结：<br>它基于俩个表之间的相等测试<br>SELECT vend_name .prod_name,prod_price FROM vendors INNER JOIN products ON vendors.vend_id =produces.vend_id;<br>自联结： 引用别名，自己联结自己<br>SELECT p1.prod_id,p1.prod_name FROM products AS p1,products AS p2<br>WHERE p1.vend_id =p2.vend_id AND p2.prod_id =’DTNTR’;<br>此查询种需要的俩个表实际上是相同的表。<br>因此products 表在from 子句中出现了俩次。虽然这是合法的，但是对products 的引用具有二义性。因此使用了别名。（用自联结而不用子查询。有时候处理联结要比处理查询要快的多）<br>自然联结：<br>其中你只能选择那些唯一的列。<br>通过对表使用通配符（SELECT <em>）对所有其他表的列使用明确的子集来完成的。<br>SELECT c.</em>,o.ordr_num,o.order_date,oi.prod_id,oi.quantity,OI.item_price FROM customers AS c,orders AS o,orderitems AS oi WHERE c.cust_id =o.cust_id AND oi.order_num =o.order_num<br>AND prod_id =’FB’;<br>通配符只对第一个表使用，所有其他列明确列出，所以没有重复的列被检索出来。<br>外部联结：<br>许多联结将一个表中的行与另外一个表中的行相关联，但有时候会需要包含没有关联行的那些行，例如  可能需要使用联结来完成以下的工作：<br>1对每个客户下了多少订单进行计数，包括那些至今未下订单的客户。<br>2列出所有产品以及订购数量，包括没有人订购的产品<br>3计算平均销售规模，包括那些至今未下订单的客户<br>联结包含了那些在相关表中没有关联行的行，这种叫做外部联结<br>内部联结检索所有客户及其订单：<br>SELECT customers.cust_id,order.orders.order_num FROM customers INNER JOIN orders ON<br>Customers.cust_id =orders.cust_id;<br>外部联结：<br>SELECT customers.cust_id ,orders.order_num FROM customers LEFT OUTER JOIN oders<br>ON customers.cust_id =orders.cust_id;<br>输出为：<br> cust_id   order_num<br>  10001      20005<br>  10001      20009<br>  10002       null<br> 10003       null<br>此时必须要用RIGHT 或LEFT 关键字指定包括其所有行的表<br>其实就是左外部联结和右外部联结<br>16.3 使用带聚集函数的联结<br>使用了COUNT（）函数的联结<br>SELECT customers.cust_name, customers.cust_id,COUNT(orders.order_num) AS num_ord FROM customers INNER JOIN orders ON customers.cust_id =orders.cust_id GROUP BY customers.cust_id;<br>SELECT 语句使用INNER JOIN 将customers和orders 表互相关联。 GROUP BY 子句按客户分组数据。<br>聚集函数也可以方便地与其他联结一起使用，<br>如 SELECT customers,cust_name,cusomers,cust_id,COUNT(orders,order_num)AS num_ord FROM customers LEFT OUTER JOIN orders ON customers.cust_id =orders.cust_id  GROUP BY customers.cust_id;<br>17 章 组合查询<br>利用UNION 操作符将多条SELECT 语句组合成一个结果集<br>执行多个查询，多个SELECT 语句 并将结果作为单个查询结果集返回。<br>这种称为并（union）或复合查询<br>使用UNION<br>输入<br>SELECT vend_id ,prod_id ,prod_price FROM products WHERE prod_price &lt;=5<br>UNION<br>SELECT vend_id,prod_id,prod_price FROM products WHERE vend_id IN(1001,1002);<br>也可以使用多个where<br>SELECT vend_id ,prod_id,prod_price FROM products WHERE prod_price &lt;=5 OR vend_id IN<br>(1001,1002);<br>从多个表中检索数据的情形，使用UNION 可能会处理更简单。<br>17.2.2 UNION 规则<br> 1   UNION 的每个查询必须包含相同的列，表达式，或聚集函数</p>
+<p> 2   UNION 的默认行为，如果想返回所有匹配行 可以使用UNION ALL 而不是UNION<br> 17.2.4 对组合查询结果排序<br>SELECT vend_id ,prod_id,prod_price FROM products WHERE prod_price &lt;=5<br>UNION<br>SELECT vend_id,prod_id,prod_price FROM products WHERE vend_id IN (1001,1002)<br>ORDER BY vend_id ,prod_price ;<br>18章 全文本搜素<br>18.1 理解全文本搜素</p>
+]]></content>
+      <categories>
+        <category>mysql</category>
       </categories>
       <tags>
         <tag>mysql</tag>
@@ -1758,6 +1758,16 @@
       <tags>
         <tag>DataStructure</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>代理模式</title>
+    <url>/2020/05/28/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
   </entry>
   <entry>
     <title>二叉树的遍历</title>
@@ -2080,16 +2090,6 @@
       </tags>
   </entry>
   <entry>
-    <title>代理模式</title>
-    <url>/2020/05/28/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
-  </entry>
-  <entry>
     <title>使用存储过程</title>
     <url>/2020/05/12/%E4%BD%BF%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B-1/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -2169,44 +2169,6 @@
       </tags>
   </entry>
   <entry>
-    <title>使用游标mysql</title>
-    <url>/2020/05/14/%E4%BD%BF%E7%94%A8%E6%B8%B8%E6%A0%87mysql/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍游标</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p> MySQL检索操作返回一组称为结果集的行。这组返回的行都是与SQL语句相匹配的行（零行或多行）。使用简单的SELECT语<br>句，例如，没有办法得到第一行、下一行或前10行，也不存在每次一行地处理所有行的简单方法（相对于成批地处理它们）  </p>
-<p>游标（cursor） 是一个存储在MySQL服务器上的数据库查询，<br>它不是一条SELECT语句，而是被该语句检索出来的结果集。在存储了游标之后，应用程序可以根据需要滚动或浏览其中的数据.  </p>
-<p>只能用于存储过程 不像多数DBMS， MySQL游标只能用于<br>存储过程（和函数）  </p>
-<h2 id="1-创建游标"><a href="#1-创建游标" class="headerlink" title="1 创建游标"></a>1 创建游标</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">CREATE PROCEDURE processorders()</span><br><span class="line">BEGIN </span><br><span class="line">   DECLARE ordernumbers CURSOR</span><br><span class="line">   FOR</span><br><span class="line">   SELECT order_num FROM orders</span><br><span class="line">END;</span><br></pre></td></tr></table></figure>
-
-<p>DECLARE语句用来定义和命名游标，这里为ordernumbers。 存储过程处理完成后，游标就消失（因为它局限于存储过程）  </p>
-<h2 id="2-打开和关闭游标"><a href="#2-打开和关闭游标" class="headerlink" title="2 打开和关闭游标"></a>2 打开和关闭游标</h2><p>输入：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">OPEN ordernumbers;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">关闭游标： CLOSE ordernumbers;</span><br></pre></td></tr></table></figure>
-
-<p>如果你不明确关闭游标，MySQL将会在到达END语句时自动关闭它。</p>
-<p>前面的例子修改版本：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">CREATE PROCEDURE <span class="title">processorders</span><span class="params">()</span></span></span><br><span class="line"><span class="function">BEGIN</span></span><br><span class="line"><span class="function">     --Declare the cursor</span></span><br><span class="line"><span class="function">     DECLARE ordernumbers CURSOR</span></span><br><span class="line"><span class="function">     FOR</span></span><br><span class="line"><span class="function">     SELECT order_num FROM orders</span>;</span><br><span class="line">     --Open the cursor</span><br><span class="line">     OPEN ordernumbers;</span><br><span class="line">     --Close the cursor</span><br><span class="line">     CLOSE ordernumbers;</span><br><span class="line">     </span><br><span class="line">     END;</span><br></pre></td></tr></table></figure>
-
-<p>声明打开和关闭一个游标。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">CREATE PROCEDURE <span class="title">processorders</span><span class="params">()</span></span></span><br><span class="line"><span class="function">BEGIN</span></span><br><span class="line"><span class="function">    --Delare local variables</span></span><br><span class="line"><span class="function">    DECLARE done BOOLEAN DEFAULT 0</span>;</span><br><span class="line">    DECLARE o INT;</span><br><span class="line">    --Declare the cursor</span><br><span class="line">    DECLARE ordernumbers CURSOR</span><br><span class="line">    FOR</span><br><span class="line">    SELECT order_num FROM orders;</span><br><span class="line">    --Declare <span class="keyword">continue</span> handler</span><br><span class="line">    DELARE CONTINUE HANDLER FOR SQLSTATE <span class="string">'02000'</span> SET done=<span class="number">1</span>;</span><br><span class="line">    --Open the cursor</span><br><span class="line">    OPEN ordernumbers;</span><br><span class="line">    --LOOP through all rows</span><br><span class="line">    REPEAT</span><br><span class="line">    </span><br><span class="line">    --GET order number</span><br><span class="line">    FETCH ordernumbers INTO o;</span><br><span class="line">    --End of loop</span><br><span class="line">    UNTIL done END REPEAT;</span><br><span class="line">    --Close the cursor</span><br><span class="line">    CLOSE ordernumbers;</span><br><span class="line">    END;</span><br></pre></td></tr></table></figure>
-
-<p>FETCH是在REPEAT内，因此它反复执行直到done为真（由UNTIL<br>done END REPEAT;规定）。为使它起作用，用一个DEFAULT 0（假，不结束）定义变量done。那么， done怎样才能在结束时被设置为真呢？答案是用以下语句：  </p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">DECLARE CONTINUE HANDLER FOR SQLSTATE <span class="string">'02000'</span> SET done=<span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-
-<p>这条语句定义了一个CONTINUE HANDLER，它是在条件出现时被执行的代码。这里， 它指出当SQLSTATE ‘02000’出现时， SET done=1。SQLSTATE’02000’是一个未找到条件， 当REPEAT由于没有更多的行供循环而不能继续时，出现这个条件。  </p>
-]]></content>
-      <categories>
-        <category>mysql</category>
-      </categories>
-      <tags>
-        <tag>mysql</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>内部类</title>
     <url>/2020/05/08/%E5%86%85%E9%83%A8%E7%B1%BB/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -2248,6 +2210,44 @@
 <h3 id="匿名内部类"><a href="#匿名内部类" class="headerlink" title="匿名内部类"></a>匿名内部类</h3></li>
 </ul>
 ]]></content>
+  </entry>
+  <entry>
+    <title>使用游标mysql</title>
+    <url>/2020/05/14/%E4%BD%BF%E7%94%A8%E6%B8%B8%E6%A0%87mysql/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍游标</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p> MySQL检索操作返回一组称为结果集的行。这组返回的行都是与SQL语句相匹配的行（零行或多行）。使用简单的SELECT语<br>句，例如，没有办法得到第一行、下一行或前10行，也不存在每次一行地处理所有行的简单方法（相对于成批地处理它们）  </p>
+<p>游标（cursor） 是一个存储在MySQL服务器上的数据库查询，<br>它不是一条SELECT语句，而是被该语句检索出来的结果集。在存储了游标之后，应用程序可以根据需要滚动或浏览其中的数据.  </p>
+<p>只能用于存储过程 不像多数DBMS， MySQL游标只能用于<br>存储过程（和函数）  </p>
+<h2 id="1-创建游标"><a href="#1-创建游标" class="headerlink" title="1 创建游标"></a>1 创建游标</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">CREATE PROCEDURE processorders()</span><br><span class="line">BEGIN </span><br><span class="line">   DECLARE ordernumbers CURSOR</span><br><span class="line">   FOR</span><br><span class="line">   SELECT order_num FROM orders</span><br><span class="line">END;</span><br></pre></td></tr></table></figure>
+
+<p>DECLARE语句用来定义和命名游标，这里为ordernumbers。 存储过程处理完成后，游标就消失（因为它局限于存储过程）  </p>
+<h2 id="2-打开和关闭游标"><a href="#2-打开和关闭游标" class="headerlink" title="2 打开和关闭游标"></a>2 打开和关闭游标</h2><p>输入：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">OPEN ordernumbers;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">关闭游标： CLOSE ordernumbers;</span><br></pre></td></tr></table></figure>
+
+<p>如果你不明确关闭游标，MySQL将会在到达END语句时自动关闭它。</p>
+<p>前面的例子修改版本：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">CREATE PROCEDURE <span class="title">processorders</span><span class="params">()</span></span></span><br><span class="line"><span class="function">BEGIN</span></span><br><span class="line"><span class="function">     --Declare the cursor</span></span><br><span class="line"><span class="function">     DECLARE ordernumbers CURSOR</span></span><br><span class="line"><span class="function">     FOR</span></span><br><span class="line"><span class="function">     SELECT order_num FROM orders</span>;</span><br><span class="line">     --Open the cursor</span><br><span class="line">     OPEN ordernumbers;</span><br><span class="line">     --Close the cursor</span><br><span class="line">     CLOSE ordernumbers;</span><br><span class="line">     </span><br><span class="line">     END;</span><br></pre></td></tr></table></figure>
+
+<p>声明打开和关闭一个游标。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">CREATE PROCEDURE <span class="title">processorders</span><span class="params">()</span></span></span><br><span class="line"><span class="function">BEGIN</span></span><br><span class="line"><span class="function">    --Delare local variables</span></span><br><span class="line"><span class="function">    DECLARE done BOOLEAN DEFAULT 0</span>;</span><br><span class="line">    DECLARE o INT;</span><br><span class="line">    --Declare the cursor</span><br><span class="line">    DECLARE ordernumbers CURSOR</span><br><span class="line">    FOR</span><br><span class="line">    SELECT order_num FROM orders;</span><br><span class="line">    --Declare <span class="keyword">continue</span> handler</span><br><span class="line">    DELARE CONTINUE HANDLER FOR SQLSTATE <span class="string">'02000'</span> SET done=<span class="number">1</span>;</span><br><span class="line">    --Open the cursor</span><br><span class="line">    OPEN ordernumbers;</span><br><span class="line">    --LOOP through all rows</span><br><span class="line">    REPEAT</span><br><span class="line">    </span><br><span class="line">    --GET order number</span><br><span class="line">    FETCH ordernumbers INTO o;</span><br><span class="line">    --End of loop</span><br><span class="line">    UNTIL done END REPEAT;</span><br><span class="line">    --Close the cursor</span><br><span class="line">    CLOSE ordernumbers;</span><br><span class="line">    END;</span><br></pre></td></tr></table></figure>
+
+<p>FETCH是在REPEAT内，因此它反复执行直到done为真（由UNTIL<br>done END REPEAT;规定）。为使它起作用，用一个DEFAULT 0（假，不结束）定义变量done。那么， done怎样才能在结束时被设置为真呢？答案是用以下语句：  </p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">DECLARE CONTINUE HANDLER FOR SQLSTATE <span class="string">'02000'</span> SET done=<span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<p>这条语句定义了一个CONTINUE HANDLER，它是在条件出现时被执行的代码。这里， 它指出当SQLSTATE ‘02000’出现时， SET done=1。SQLSTATE’02000’是一个未找到条件， 当REPEAT由于没有更多的行供循环而不能继续时，出现这个条件。  </p>
+]]></content>
+      <categories>
+        <category>mysql</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
   </entry>
   <entry>
     <title>创建和操纵表</title>
@@ -2494,16 +2494,6 @@
       </tags>
   </entry>
   <entry>
-    <title>复合模式</title>
-    <url>/2020/05/28/%E5%A4%8D%E5%90%88%E6%A8%A1%E5%BC%8F/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
-  </entry>
-  <entry>
     <title>基于拉链和线性探测法的散列表</title>
     <url>/2020/05/13/%E5%9F%BA%E4%BA%8E%E6%8B%89%E9%93%BE%E5%92%8C%E7%BA%BF%E6%80%A7%E6%8E%A2%E6%B5%8B%E6%B3%95%E7%9A%84%E6%95%A3%E5%88%97%E8%A1%A8/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -2530,6 +2520,16 @@
       <tags>
         <tag>DataStructure</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>复合模式</title>
+    <url>/2020/05/28/%E5%A4%8D%E5%90%88%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
   </entry>
   <entry>
     <title>学习方法</title>
@@ -2600,6 +2600,26 @@
       </tags>
   </entry>
   <entry>
+    <title>工厂模式</title>
+    <url>/2020/05/22/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍工厂模式</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>工厂方法模式：通过让子类决定该创建的对象是什么，来达到将对象创建的过程封装的目的。</p>
+<p>创造者（Creator）类   抽象创建者类。定义抽象的工厂方法，让子类实现此方法制造产品。</p>
+<p>产品类  具体的产品，实际能制造的东西</p>
+<p><img src="https://photos.alitaalice.cn/image/20200525105633.png" alt=""> </p>
+]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
+      <tags>
+        <tag>设计模式</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>归并排序</title>
     <url>/2020/05/14/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -2619,23 +2639,39 @@
       </tags>
   </entry>
   <entry>
-    <title>工厂模式</title>
-    <url>/2020/05/22/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</url>
+    <title>抽象类和接口的区别详解</title>
+    <url>/2020/05/11/%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%8C%BA%E5%88%AB%E8%AF%A6%E8%A7%A3/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍工厂模式</p>
+<p>本章介绍抽象类和接口</p>
 </blockquote>
 <a id="more"></a>
 
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>工厂方法模式：通过让子类决定该创建的对象是什么，来达到将对象创建的过程封装的目的。</p>
-<p>创造者（Creator）类   抽象创建者类。定义抽象的工厂方法，让子类实现此方法制造产品。</p>
-<p>产品类  具体的产品，实际能制造的东西</p>
-<p><img src="https://photos.alitaalice.cn/image/20200525105633.png" alt=""> </p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h2><p>它不能被实例化，只能被用作 子类的超类。抽象类是被用来创建继承层级里子类的模板。</p>
+<p>以JDK中的GenericServlet为例：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">GenericServlet</span> <span class="keyword">implements</span> <span class="title">Servlet</span>, <span class="title">ServletConfig</span>, <span class="title">Serializable</span> </span>&#123;</span><br><span class="line">    <span class="comment">// abstract method</span></span><br><span class="line">    <span class="function"><span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(ServletRequest req, ServletResponse res)</span></span>;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// Its implementation</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// other method related to Servlet</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当HttpServlet类继承GenericServlet时，它提供了<strong>service</strong>方法的实现。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HttpServlet</span> <span class="keyword">extends</span> <span class="title">GenericServlet</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">service</span><span class="params">(ServletRequest req, ServletResponse res)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// implementation</span></span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// Implementation</span></span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// Implementation</span></span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">// some other methods related to HttpServlet</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><p>接口是抽象方法的集合，如果一个类实现了某个接口，那么它就继承了这个接口的抽象方法，这就像契约的模式，如果实现了这个接口，那么就必须确保使用了这些方法，接口只是一种形式，它本身不能实现任何方法，以Externalizable接口为例：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Externalizable</span> <span class="keyword">extends</span> <span class="title">Serializable</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">writeExternal</span><span class="params">(ObjectOutput out)</span> <span class="keyword">throws</span> IOException</span>;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">readExternal</span><span class="params">(ObjectInput in)</span> <span class="keyword">throws</span> IOException, ClassNotFoundException</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当你继承这个接口时，你就必须实现上面的俩个方法：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Employee</span> <span class="keyword">implements</span> <span class="title">Externalizable</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">int</span> employeeId;</span><br><span class="line">    String employeeName;</span><br><span class="line"> </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">readExternal</span><span class="params">(ObjectInput in)</span> <span class="keyword">throws</span> IOException, ClassNotFoundException </span>&#123;</span><br><span class="line">        employeeId = in.readInt();</span><br><span class="line">        employeeName = (String) in.readObject();</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">writeExternal</span><span class="params">(ObjectOutput out)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line"> </span><br><span class="line">        out.writeInt(employeeId);</span><br><span class="line">        out.writeObject(employeeName);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="什么时候使用抽象类和接口？"><a href="#什么时候使用抽象类和接口？" class="headerlink" title="什么时候使用抽象类和接口？"></a>什么时候使用抽象类和接口？</h2><ul>
+<li>如果你拥有一些方法，并且想让它们中的一些有默认实现，那么使用抽象类吧</li>
+<li>如果你想实现多重继承，那么请使用接口，抽象类不允许多重继承</li>
+<li>如果基本功能在不断的进行改变，那么你就需要使用抽象类。如果不断改变基本功能，并且使用接口，那么就需要改变所有实现了该接口的类。</li>
+</ul>
+<h2 id="JAVA8中的默认方法和静态方法"><a href="#JAVA8中的默认方法和静态方法" class="headerlink" title="JAVA8中的默认方法和静态方法"></a>JAVA8中的默认方法和静态方法</h2><p>Oracle已经开始尝试向接口中引入默认方法和静态方法，依次来减少抽象类和接口之间的差异。</p>
+<p>现在我们可以为接口提供默认实现的方法并且不用强制子类来实现它。default方法。</p>
 ]]></content>
       <categories>
-        <category>设计模式</category>
+        <category>面试</category>
       </categories>
       <tags>
-        <tag>设计模式</tag>
+        <tag>JAVASE</tag>
       </tags>
   </entry>
   <entry>
@@ -2684,73 +2720,6 @@ p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数�
       </tags>
   </entry>
   <entry>
-    <title>抽象类和接口的区别详解</title>
-    <url>/2020/05/11/%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%8C%BA%E5%88%AB%E8%AF%A6%E8%A7%A3/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍抽象类和接口</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h2><p>它不能被实例化，只能被用作 子类的超类。抽象类是被用来创建继承层级里子类的模板。</p>
-<p>以JDK中的GenericServlet为例：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">GenericServlet</span> <span class="keyword">implements</span> <span class="title">Servlet</span>, <span class="title">ServletConfig</span>, <span class="title">Serializable</span> </span>&#123;</span><br><span class="line">    <span class="comment">// abstract method</span></span><br><span class="line">    <span class="function"><span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(ServletRequest req, ServletResponse res)</span></span>;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// Its implementation</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// other method related to Servlet</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>当HttpServlet类继承GenericServlet时，它提供了<strong>service</strong>方法的实现。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HttpServlet</span> <span class="keyword">extends</span> <span class="title">GenericServlet</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">service</span><span class="params">(ServletRequest req, ServletResponse res)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// implementation</span></span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// Implementation</span></span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// Implementation</span></span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">// some other methods related to HttpServlet</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><p>接口是抽象方法的集合，如果一个类实现了某个接口，那么它就继承了这个接口的抽象方法，这就像契约的模式，如果实现了这个接口，那么就必须确保使用了这些方法，接口只是一种形式，它本身不能实现任何方法，以Externalizable接口为例：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Externalizable</span> <span class="keyword">extends</span> <span class="title">Serializable</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">writeExternal</span><span class="params">(ObjectOutput out)</span> <span class="keyword">throws</span> IOException</span>;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">readExternal</span><span class="params">(ObjectInput in)</span> <span class="keyword">throws</span> IOException, ClassNotFoundException</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>当你继承这个接口时，你就必须实现上面的俩个方法：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Employee</span> <span class="keyword">implements</span> <span class="title">Externalizable</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">int</span> employeeId;</span><br><span class="line">    String employeeName;</span><br><span class="line"> </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">readExternal</span><span class="params">(ObjectInput in)</span> <span class="keyword">throws</span> IOException, ClassNotFoundException </span>&#123;</span><br><span class="line">        employeeId = in.readInt();</span><br><span class="line">        employeeName = (String) in.readObject();</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">writeExternal</span><span class="params">(ObjectOutput out)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line"> </span><br><span class="line">        out.writeInt(employeeId);</span><br><span class="line">        out.writeObject(employeeName);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="什么时候使用抽象类和接口？"><a href="#什么时候使用抽象类和接口？" class="headerlink" title="什么时候使用抽象类和接口？"></a>什么时候使用抽象类和接口？</h2><ul>
-<li>如果你拥有一些方法，并且想让它们中的一些有默认实现，那么使用抽象类吧</li>
-<li>如果你想实现多重继承，那么请使用接口，抽象类不允许多重继承</li>
-<li>如果基本功能在不断的进行改变，那么你就需要使用抽象类。如果不断改变基本功能，并且使用接口，那么就需要改变所有实现了该接口的类。</li>
-</ul>
-<h2 id="JAVA8中的默认方法和静态方法"><a href="#JAVA8中的默认方法和静态方法" class="headerlink" title="JAVA8中的默认方法和静态方法"></a>JAVA8中的默认方法和静态方法</h2><p>Oracle已经开始尝试向接口中引入默认方法和静态方法，依次来减少抽象类和接口之间的差异。</p>
-<p>现在我们可以为接口提供默认实现的方法并且不用强制子类来实现它。default方法。</p>
-]]></content>
-      <categories>
-        <category>面试</category>
-      </categories>
-      <tags>
-        <tag>JAVASE</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>散列表详解</title>
-    <url>/2020/05/13/%E6%95%A3%E5%88%97%E8%A1%A8%E8%AF%A6%E8%A7%A3/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍散列表。</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="散列函数"><a href="#散列函数" class="headerlink" title="散列函数"></a>散列函数</h2><p>我们面对的第一个问题就是散列函数的计算，这个过程会将键转化为数组的索引。如果我们有一个能够保存 M个键值对的数组，那么我们就需要一个能够将任意键转化为该数组范围内的索引([0,M-1] 范围内的整数）的散列函数 -</p>
-<p>散列函数和键的类型有关。<strong>严格地说，对于每种类型的键都我们都需要一个与之对应的散列函数 。</strong>如果键是一个数，比如社会保险号，我们就可以直接使用这个数；如果键是一个字符串，比如一个人的名字，<br>我们就需要将这个字符串转化为一个数；<strong>如果键含有多个部分，比如邮件地址，我们需要用某种方法将这些部分结合起来</strong>。对于许多常见类型的键，我们可以利用 Java 提供的默认实现。我们会简略讨论多种数<br>据类型的散列函数。你应该看看它们是如何实现的，因为你也需要为自定义的类型实现散列函数。  </p>
-<h3 id="正整数"><a href="#正整数" class="headerlink" title="正整数"></a>正整数</h3><p>将整数散列最常用方法是<strong>除留余数法</strong> 。我们选择大小为素数 的数组，对于任意正整数 ，计算除以 的余数。这个函数的计算非常容易（在 Java 中为 k% M ）并能够有效地将键散布在 0 到M-1的范围内。  </p>
-<p><img src="https://photos.alitaalice.cn/image/20200513162105.png" alt=""></p>
-<h3 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h3><p>如果键是 0 到 1 之间的实数，我们可以将它乘以 并四舍五入得到一个 0 至 之间的索引值。<br>尽管这个方法很容易理解，但它是有缺陷的，因为这种情况下键的高位起的作用更大，最低位对散列的结果没有影响。修正这个问题的办法是将键表示为二进制数然后再使用除留余数法（Java 就是这么做的）  </p>
-<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><h2 id="组合键"><a href="#组合键" class="headerlink" title="组合键"></a>组合键</h2><h2 id="JAVA的约定"><a href="#JAVA的约定" class="headerlink" title="JAVA的约定"></a>JAVA的约定</h2><p>每种数据类型都需要相应的散列函数，于是 Java 令所有数据类型都继承了一个能够返回一个 32 比特整数的 hashCode() 方法。每一种数据类型的 hashCode() 方法都必须和 equals() 方法一致 。也就是说，如果 a.equals(b) 返回 true ，那么 a.hashCode() 的返回值必然和 b.hashCode()的返回值相同。相反，如果两个对象的 hashCode() 方法的返回值不同，那么我们就知道这两个对象是不同的。但如果两个对象的 hashCode() 方法的返回值相同，这两个对象也有可能不同，我们还需要用equals() 方法进行判断。请注意，这说明如果你要为自定义的数据类型定义散列函数，你需要同时重写 hashCode() 和 equals() 两个方法。默认散列函数会返回对象的内存地址，但这只适用于很少的情况。Java 为很多常用的数据类型重写了 hashCode() 方法（包括 String 、Integer 、Double、File 和 URL ）。  </p>
-<h3 id="将hashCode-的返回值转化为一个数组索引"><a href="#将hashCode-的返回值转化为一个数组索引" class="headerlink" title="将hashCode()的返回值转化为一个数组索引"></a>将hashCode()的返回值转化为一个数组索引</h3><p>因为我们需要的是数组的索引而不是一个 32 位的整数，我们在实现中会将默认的 hashCode() 方法和除留余数法结合起来产生一个 0 到M-1 的整数，方法如下：  </p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">hash</span><span class="params">(Key x)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="keyword">return</span> (x.hashCode() &amp; <span class="number">0x7fffffff</span>) % M; &#125;</span><br></pre></td></tr></table></figure>
-
-<p>这段代码会将符号位屏蔽（将一个 32 位整数变为一个 31 位非负整数），然后用除留余数法计算它除以M 的余数。在使用这样的代码时我们一般会将数组的大小 M 取为素数 以充分利用原散列值的所有位。  </p>
-<h3 id="自定义的hashCode-方法"><a href="#自定义的hashCode-方法" class="headerlink" title="自定义的hashCode()方法"></a>自定义的hashCode()方法</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Transaction</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">...</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> String who;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> Date when;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">double</span> amount;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> hash = <span class="number">17</span>;</span><br><span class="line">hash = <span class="number">31</span> * hash + who.hashCode();</span><br><span class="line">hash = <span class="number">31</span> * hash + when.hashCode();</span><br><span class="line">hash = <span class="number">31</span> * hash+ ((Double) amount).hashCode();</span><br><span class="line"><span class="keyword">return</span> hash;</span><br><span class="line">&#125;</span><br><span class="line">...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>自定义类型中 hashCode() 方法的实现  </p>
-<p>对于原始类型的对象，可以将其转化为对应的数据类型然后再调用 hashCode() 方法。和以前一样，系数的具体值（这里是 31）并不是很重要。  </p>
-<h3 id="软缓存"><a href="#软缓存" class="headerlink" title="软缓存"></a>软缓存</h3><p>如果散列值的计算很耗时，那么我们或许可以将每个键的散列值缓存起来 ，即在每个键中使用一个hash 变量来保存它的 hashCode() 的返回值（请见练习 3.4.25）。第一次调用 hashCode() 方法时，我们需要计算对象的散列值，但之后对 hashCode() 方法的调用会直接返回 hash 变量的值。<br>Java 的 String 对象的 hashCode() 方法就使用了这种方法来减少计算量。  </p>
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>DataStructure</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>时间复杂度</title>
     <url>/2020/05/05/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/</url>
     <content><![CDATA[<h1 id="算法时间复杂度"><a href="#算法时间复杂度" class="headerlink" title="算法时间复杂度"></a>算法时间复杂度</h1><h2 id="算法时间复杂度定义"><a href="#算法时间复杂度定义" class="headerlink" title="算法时间复杂度定义"></a>算法时间复杂度定义</h2><ul>
@@ -2795,14 +2764,35 @@ p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数�
       </tags>
   </entry>
   <entry>
-    <title>状态模式</title>
-    <url>/2020/05/28/%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F/</url>
+    <title>散列表详解</title>
+    <url>/2020/05/13/%E6%95%A3%E5%88%97%E8%A1%A8%E8%AF%A6%E8%A7%A3/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍</p>
+<p>本章介绍散列表。</p>
 </blockquote>
 <a id="more"></a>
 
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="散列函数"><a href="#散列函数" class="headerlink" title="散列函数"></a>散列函数</h2><p>我们面对的第一个问题就是散列函数的计算，这个过程会将键转化为数组的索引。如果我们有一个能够保存 M个键值对的数组，那么我们就需要一个能够将任意键转化为该数组范围内的索引([0,M-1] 范围内的整数）的散列函数 -</p>
+<p>散列函数和键的类型有关。<strong>严格地说，对于每种类型的键都我们都需要一个与之对应的散列函数 。</strong>如果键是一个数，比如社会保险号，我们就可以直接使用这个数；如果键是一个字符串，比如一个人的名字，<br>我们就需要将这个字符串转化为一个数；<strong>如果键含有多个部分，比如邮件地址，我们需要用某种方法将这些部分结合起来</strong>。对于许多常见类型的键，我们可以利用 Java 提供的默认实现。我们会简略讨论多种数<br>据类型的散列函数。你应该看看它们是如何实现的，因为你也需要为自定义的类型实现散列函数。  </p>
+<h3 id="正整数"><a href="#正整数" class="headerlink" title="正整数"></a>正整数</h3><p>将整数散列最常用方法是<strong>除留余数法</strong> 。我们选择大小为素数 的数组，对于任意正整数 ，计算除以 的余数。这个函数的计算非常容易（在 Java 中为 k% M ）并能够有效地将键散布在 0 到M-1的范围内。  </p>
+<p><img src="https://photos.alitaalice.cn/image/20200513162105.png" alt=""></p>
+<h3 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h3><p>如果键是 0 到 1 之间的实数，我们可以将它乘以 并四舍五入得到一个 0 至 之间的索引值。<br>尽管这个方法很容易理解，但它是有缺陷的，因为这种情况下键的高位起的作用更大，最低位对散列的结果没有影响。修正这个问题的办法是将键表示为二进制数然后再使用除留余数法（Java 就是这么做的）  </p>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><h2 id="组合键"><a href="#组合键" class="headerlink" title="组合键"></a>组合键</h2><h2 id="JAVA的约定"><a href="#JAVA的约定" class="headerlink" title="JAVA的约定"></a>JAVA的约定</h2><p>每种数据类型都需要相应的散列函数，于是 Java 令所有数据类型都继承了一个能够返回一个 32 比特整数的 hashCode() 方法。每一种数据类型的 hashCode() 方法都必须和 equals() 方法一致 。也就是说，如果 a.equals(b) 返回 true ，那么 a.hashCode() 的返回值必然和 b.hashCode()的返回值相同。相反，如果两个对象的 hashCode() 方法的返回值不同，那么我们就知道这两个对象是不同的。但如果两个对象的 hashCode() 方法的返回值相同，这两个对象也有可能不同，我们还需要用equals() 方法进行判断。请注意，这说明如果你要为自定义的数据类型定义散列函数，你需要同时重写 hashCode() 和 equals() 两个方法。默认散列函数会返回对象的内存地址，但这只适用于很少的情况。Java 为很多常用的数据类型重写了 hashCode() 方法（包括 String 、Integer 、Double、File 和 URL ）。  </p>
+<h3 id="将hashCode-的返回值转化为一个数组索引"><a href="#将hashCode-的返回值转化为一个数组索引" class="headerlink" title="将hashCode()的返回值转化为一个数组索引"></a>将hashCode()的返回值转化为一个数组索引</h3><p>因为我们需要的是数组的索引而不是一个 32 位的整数，我们在实现中会将默认的 hashCode() 方法和除留余数法结合起来产生一个 0 到M-1 的整数，方法如下：  </p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">hash</span><span class="params">(Key x)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="keyword">return</span> (x.hashCode() &amp; <span class="number">0x7fffffff</span>) % M; &#125;</span><br></pre></td></tr></table></figure>
+
+<p>这段代码会将符号位屏蔽（将一个 32 位整数变为一个 31 位非负整数），然后用除留余数法计算它除以M 的余数。在使用这样的代码时我们一般会将数组的大小 M 取为素数 以充分利用原散列值的所有位。  </p>
+<h3 id="自定义的hashCode-方法"><a href="#自定义的hashCode-方法" class="headerlink" title="自定义的hashCode()方法"></a>自定义的hashCode()方法</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Transaction</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">...</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> String who;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> Date when;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">double</span> amount;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> hash = <span class="number">17</span>;</span><br><span class="line">hash = <span class="number">31</span> * hash + who.hashCode();</span><br><span class="line">hash = <span class="number">31</span> * hash + when.hashCode();</span><br><span class="line">hash = <span class="number">31</span> * hash+ ((Double) amount).hashCode();</span><br><span class="line"><span class="keyword">return</span> hash;</span><br><span class="line">&#125;</span><br><span class="line">...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>自定义类型中 hashCode() 方法的实现  </p>
+<p>对于原始类型的对象，可以将其转化为对应的数据类型然后再调用 hashCode() 方法。和以前一样，系数的具体值（这里是 31）并不是很重要。  </p>
+<h3 id="软缓存"><a href="#软缓存" class="headerlink" title="软缓存"></a>软缓存</h3><p>如果散列值的计算很耗时，那么我们或许可以将每个键的散列值缓存起来 ，即在每个键中使用一个hash 变量来保存它的 hashCode() 的返回值（请见练习 3.4.25）。第一次调用 hashCode() 方法时，我们需要计算对象的散列值，但之后对 hashCode() 方法的调用会直接返回 hash 变量的值。<br>Java 的 String 对象的 hashCode() 方法就使用了这种方法来减少计算量。  </p>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>DataStructure</tag>
+      </tags>
   </entry>
   <entry>
     <title>树</title>
@@ -2833,23 +2823,6 @@ p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数�
       </tags>
   </entry>
   <entry>
-    <title>类加载的过程</title>
-    <url>/2020/05/25/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E7%9A%84%E8%BF%87%E7%A8%8B/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍类加载的过程</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><img src="https://photos.alitaalice.cn/image/20200525210206.png" alt=""></p>
-]]></content>
-      <categories>
-        <category>JVM</category>
-      </categories>
-      <tags>
-        <tag>JVM</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>模板方法模式</title>
     <url>/2020/05/28/%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -2864,6 +2837,16 @@ p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数�
       <tags>
         <tag>设计模式</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>状态模式</title>
+    <url>/2020/05/28/%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
   </entry>
   <entry>
     <title>策略模式</title>
@@ -2882,6 +2865,59 @@ p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数�
       </categories>
       <tags>
         <tag>设计模式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>类加载的过程</title>
+    <url>/2020/05/25/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E7%9A%84%E8%BF%87%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍类加载的过程</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><img src="https://photos.alitaalice.cn/image/20200525210206.png" alt=""></p>
+]]></content>
+      <categories>
+        <category>JVM</category>
+      </categories>
+      <tags>
+        <tag>JVM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>线程安全性</title>
+    <url>/2020/05/17/%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E6%80%A7/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍线程安全性</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="1-并发与并行"><a href="#1-并发与并行" class="headerlink" title="1 并发与并行"></a>1 并发与并行</h3><p>你吃饭吃到一半，电话来了，你一直到吃完了以后才去接，这就说明你不支持并发也不支持并行。<br>你吃饭吃到一半，电话来了，你停了下来接了电话，接完后继续吃饭，这说明你支持并发。<br>你吃饭吃到一半，电话来了，你一边打电话一边吃饭，这说明你支持并行。</p>
+<p>并发的关键是你有处理多个任务的能力，不一定要同时。<br>并行的关键是你有同时处理多个任务的能力。</p>
+<p>所以我认为它们最关键的点就是：是否是『同时』。</p>
+<h3 id="2-原子性"><a href="#2-原子性" class="headerlink" title="2 原子性"></a>2 原子性</h3><p><strong>即一个操作或者多个操作，要么全部执行并且执行的过程不会被任何因素打断，要么就都不执行。原子性就像数据库里面的事务一样，他们是一个团队，同生共死。</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">i = <span class="number">0</span>;       <span class="comment">//1</span></span><br><span class="line">j = i ;      <span class="comment">//2</span></span><br><span class="line">i++;         <span class="comment">//3</span></span><br><span class="line">i = j + <span class="number">1</span>;   <span class="comment">//4</span></span><br></pre></td></tr></table></figure>
+
+<p>上面四个操作，有哪个几个是原子操作，那几个不是？如果不是很理解，可能会认为都是原子性操作，其实只有1才是原子操作，其余均不是。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="number">1</span>在Java中，对基本数据类型的变量和赋值操作都是原子性操作； </span><br><span class="line"><span class="number">2</span>中包含了两个操作：读取i，将i值赋值给j </span><br><span class="line"><span class="number">3</span>中包含了三个操作：读取i值、i + <span class="number">1</span> 、将+<span class="number">1</span>结果赋值给i； </span><br><span class="line"><span class="number">4</span>中同三一样</span><br></pre></td></tr></table></figure>
+
+<p>在单线程环境下我们可以认为整个步骤都是原子性操作，但是在多线程环境下则不同，Java只保证了基本数据类型的变量和赋值操作才是原子性的（注：在32位的JDK环境下，对64位数据的读取不是原子性操作*，如long、double）。</p>
+<p>要想在多线程环境下保证原子性，则可以通过锁、synchronized来确保。volatile是无法保证复合操作的原子性。</p>
+<h3 id="3可见性"><a href="#3可见性" class="headerlink" title="3可见性"></a>3可见性</h3><p><strong>可见性是指当多个线程访问同一个变量时，一个线程修改了这个变量的值，其他线程能够立即看得到修改的值。</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//线程1执行的代码</span></span><br><span class="line"><span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">i = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//线程2执行的代码</span></span><br><span class="line">j = i;</span><br></pre></td></tr></table></figure>
+
+<p>假若执行线程1的是CPU1，执行线程2的是CPU2。由上面的分析可知，当线程1执行 i = 10这句时，会先把i的初始值加载到CPU1的高速缓存中，然后赋值为10，那么在CPU1的高速缓存当中i的值变为10了，却没有立即写入到主存当中。此时线程2执行 j = i，它会先去主存读取i的值并加载到CPU2的缓存当中，注意此时内存当中i的值还是0，那么就会使得j的值为0，而不是10。这就是可见性问题，线程1对变量i修改了之后，线程2没有立即看到线程1修改的值。</p>
+<p>在上面已经分析了，在多线程环境下，一个线程对共享变量的操作对其他线程是不可见的。<br>对于可见性，Java提供了volatile关键字来保证可见性。当一个共享变量被volatile修饰时，它会保证修改的值会立即被更新到主存，当有其他线程需要读取时，它会去内存中读取新值。而普通的共享变量不能保证可见性，因为普通共享变量被修改之后，什么时候被写入主存是不确定的，当其他线程去读取时，此时内存中可能还是原来的旧值，因此无法保证可见性。另外，通过synchronized和Lock也能够保证可见性，synchronized和Lock能保证同一时刻只有一个线程获取锁然后执行同步代码，并且在释放锁之前会将对变量的修改刷新到主存当中。因此可以保证可见性。</p>
+<h3 id="4有序性"><a href="#4有序性" class="headerlink" title="4有序性"></a>4有序性</h3><p><strong>程序执行的顺序按照代码的先后顺序执行</strong></p>
+<p><strong>在Java里面，可以通过volatile关键字来保证一定的“有序性”</strong>。另外可以通过synchronized和Lock来保证有序性，很显然，synchronized和Lock保证每个时刻是有一个线程执行同步代码，相当于是让线程顺序执行同步代码，自然就保证了有序性。</p>
+<h4 id="3-竞态条件"><a href="#3-竞态条件" class="headerlink" title="3 竞态条件"></a>3 竞态条件</h4><p>在并发编程中，这种由于不恰当的执行时序而出现不正确的结果是一种非常。重要的情况，它有一个正式的名字：竞态条件  </p>
+<p>最常见的竞态条件类型就是“先检查后执行（Check-Then-Act）”操作，即通过一个可能失效的观测结果来决定下一步的动作  </p>
+]]></content>
+      <categories>
+        <category>并发编程</category>
+      </categories>
+      <tags>
+        <tag>并发编程</tag>
       </tags>
   </entry>
   <entry>
@@ -2933,42 +2969,6 @@ p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数�
       </categories>
       <tags>
         <tag>DataStructure</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>线程安全性</title>
-    <url>/2020/05/17/%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E6%80%A7/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍线程安全性</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="1-并发与并行"><a href="#1-并发与并行" class="headerlink" title="1 并发与并行"></a>1 并发与并行</h3><p>你吃饭吃到一半，电话来了，你一直到吃完了以后才去接，这就说明你不支持并发也不支持并行。<br>你吃饭吃到一半，电话来了，你停了下来接了电话，接完后继续吃饭，这说明你支持并发。<br>你吃饭吃到一半，电话来了，你一边打电话一边吃饭，这说明你支持并行。</p>
-<p>并发的关键是你有处理多个任务的能力，不一定要同时。<br>并行的关键是你有同时处理多个任务的能力。</p>
-<p>所以我认为它们最关键的点就是：是否是『同时』。</p>
-<h3 id="2-原子性"><a href="#2-原子性" class="headerlink" title="2 原子性"></a>2 原子性</h3><p><strong>即一个操作或者多个操作，要么全部执行并且执行的过程不会被任何因素打断，要么就都不执行。原子性就像数据库里面的事务一样，他们是一个团队，同生共死。</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">i = <span class="number">0</span>;       <span class="comment">//1</span></span><br><span class="line">j = i ;      <span class="comment">//2</span></span><br><span class="line">i++;         <span class="comment">//3</span></span><br><span class="line">i = j + <span class="number">1</span>;   <span class="comment">//4</span></span><br></pre></td></tr></table></figure>
-
-<p>上面四个操作，有哪个几个是原子操作，那几个不是？如果不是很理解，可能会认为都是原子性操作，其实只有1才是原子操作，其余均不是。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="number">1</span>在Java中，对基本数据类型的变量和赋值操作都是原子性操作； </span><br><span class="line"><span class="number">2</span>中包含了两个操作：读取i，将i值赋值给j </span><br><span class="line"><span class="number">3</span>中包含了三个操作：读取i值、i + <span class="number">1</span> 、将+<span class="number">1</span>结果赋值给i； </span><br><span class="line"><span class="number">4</span>中同三一样</span><br></pre></td></tr></table></figure>
-
-<p>在单线程环境下我们可以认为整个步骤都是原子性操作，但是在多线程环境下则不同，Java只保证了基本数据类型的变量和赋值操作才是原子性的（注：在32位的JDK环境下，对64位数据的读取不是原子性操作*，如long、double）。</p>
-<p>要想在多线程环境下保证原子性，则可以通过锁、synchronized来确保。volatile是无法保证复合操作的原子性。</p>
-<h3 id="3可见性"><a href="#3可见性" class="headerlink" title="3可见性"></a>3可见性</h3><p><strong>可见性是指当多个线程访问同一个变量时，一个线程修改了这个变量的值，其他线程能够立即看得到修改的值。</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//线程1执行的代码</span></span><br><span class="line"><span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">i = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//线程2执行的代码</span></span><br><span class="line">j = i;</span><br></pre></td></tr></table></figure>
-
-<p>假若执行线程1的是CPU1，执行线程2的是CPU2。由上面的分析可知，当线程1执行 i = 10这句时，会先把i的初始值加载到CPU1的高速缓存中，然后赋值为10，那么在CPU1的高速缓存当中i的值变为10了，却没有立即写入到主存当中。此时线程2执行 j = i，它会先去主存读取i的值并加载到CPU2的缓存当中，注意此时内存当中i的值还是0，那么就会使得j的值为0，而不是10。这就是可见性问题，线程1对变量i修改了之后，线程2没有立即看到线程1修改的值。</p>
-<p>在上面已经分析了，在多线程环境下，一个线程对共享变量的操作对其他线程是不可见的。<br>对于可见性，Java提供了volatile关键字来保证可见性。当一个共享变量被volatile修饰时，它会保证修改的值会立即被更新到主存，当有其他线程需要读取时，它会去内存中读取新值。而普通的共享变量不能保证可见性，因为普通共享变量被修改之后，什么时候被写入主存是不确定的，当其他线程去读取时，此时内存中可能还是原来的旧值，因此无法保证可见性。另外，通过synchronized和Lock也能够保证可见性，synchronized和Lock能保证同一时刻只有一个线程获取锁然后执行同步代码，并且在释放锁之前会将对变量的修改刷新到主存当中。因此可以保证可见性。</p>
-<h3 id="4有序性"><a href="#4有序性" class="headerlink" title="4有序性"></a>4有序性</h3><p><strong>程序执行的顺序按照代码的先后顺序执行</strong></p>
-<p><strong>在Java里面，可以通过volatile关键字来保证一定的“有序性”</strong>。另外可以通过synchronized和Lock来保证有序性，很显然，synchronized和Lock保证每个时刻是有一个线程执行同步代码，相当于是让线程顺序执行同步代码，自然就保证了有序性。</p>
-<h4 id="3-竞态条件"><a href="#3-竞态条件" class="headerlink" title="3 竞态条件"></a>3 竞态条件</h4><p>在并发编程中，这种由于不恰当的执行时序而出现不正确的结果是一种非常。重要的情况，它有一个正式的名字：竞态条件  </p>
-<p>最常见的竞态条件类型就是“先检查后执行（Check-Then-Act）”操作，即通过一个可能失效的观测结果来决定下一步的动作  </p>
-]]></content>
-      <categories>
-        <category>并发编程</category>
-      </categories>
-      <tags>
-        <tag>并发编程</tag>
       </tags>
   </entry>
   <entry>
@@ -3026,23 +3026,6 @@ p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数�
       </tags>
   </entry>
   <entry>
-    <title>观察者模式</title>
-    <url>/2020/05/14/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍观察者模式</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><img src="https://photos.alitaalice.cn/image/20200527204326.png" alt="">)<img src="C:%5CUsers%5C16508%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200527204301788.png" alt="image-20200527204301788"></p>
-]]></content>
-      <categories>
-        <category>设计模式</category>
-      </categories>
-      <tags>
-        <tag>设计模式</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>语法分析</title>
     <url>/2020/05/19/%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
@@ -3070,6 +3053,23 @@ p=&amp;a[0];</code></pre><h2 id="7-二维数组与指针"><a href="#7-二维数�
       </categories>
       <tags>
         <tag>编译原理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>观察者模式</title>
+    <url>/2020/05/14/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本章介绍观察者模式</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><img src="https://photos.alitaalice.cn/image/20200527204326.png" alt="">)<img src="C:%5CUsers%5C16508%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200527204301788.png" alt="image-20200527204301788"></p>
+]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
+      <tags>
+        <tag>设计模式</tag>
       </tags>
   </entry>
   <entry>
