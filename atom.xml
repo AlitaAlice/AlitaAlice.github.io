@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.alitaalice.cn/"/>
-  <updated>2020-05-29T03:56:07.215Z</updated>
+  <updated>2020-05-29T07:37:58.649Z</updated>
   <id>https://www.alitaalice.cn/</id>
   
   <author>
@@ -15,6 +15,98 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Arrays类相关</title>
+    <link href="https://www.alitaalice.cn/2020/05/29/Arrays%E7%B1%BB%E7%9B%B8%E5%85%B3/"/>
+    <id>https://www.alitaalice.cn/2020/05/29/Arrays%E7%B1%BB%E7%9B%B8%E5%85%B3/</id>
+    <published>2020-05-29T07:36:17.000Z</published>
+    <updated>2020-05-29T07:37:58.649Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;本章介绍Arrays类相关&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="JAVASE" scheme="https://www.alitaalice.cn/categories/JAVASE/"/>
+    
+    
+      <category term="JAVASE" scheme="https://www.alitaalice.cn/tags/JAVASE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>String为什么设置成不可变类</title>
+    <link href="https://www.alitaalice.cn/2020/05/29/String%E4%B8%BA%E4%BB%80%E4%B9%88%E8%AE%BE%E7%BD%AE%E6%88%90%E4%B8%8D%E5%8F%AF%E5%8F%98%E7%B1%BB/"/>
+    <id>https://www.alitaalice.cn/2020/05/29/String%E4%B8%BA%E4%BB%80%E4%B9%88%E8%AE%BE%E7%BD%AE%E6%88%90%E4%B8%8D%E5%8F%AF%E5%8F%98%E7%B1%BB/</id>
+    <published>2020-05-29T07:27:44.000Z</published>
+    <updated>2020-05-29T07:32:00.439Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;本章介绍String为什么设置成不可变类&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="JAVASE" scheme="https://www.alitaalice.cn/categories/JAVASE/"/>
+    
+    
+      <category term="JAVASE" scheme="https://www.alitaalice.cn/tags/JAVASE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>String,StringBuffer,StringBuilder的区别</title>
+    <link href="https://www.alitaalice.cn/2020/05/29/String-StringBuffer-StringBuilder%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+    <id>https://www.alitaalice.cn/2020/05/29/String-StringBuffer-StringBuilder%E7%9A%84%E5%8C%BA%E5%88%AB/</id>
+    <published>2020-05-29T07:16:12.000Z</published>
+    <updated>2020-05-29T07:27:31.329Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;本章介绍String,StringBuffer,StringBuilder的区别&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="JAVASE" scheme="https://www.alitaalice.cn/categories/JAVASE/"/>
+    
+    
+      <category term="JAVASE" scheme="https://www.alitaalice.cn/tags/JAVASE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>for_each循环</title>
+    <link href="https://www.alitaalice.cn/2020/05/29/for-each%E5%BE%AA%E7%8E%AF/"/>
+    <id>https://www.alitaalice.cn/2020/05/29/for-each%E5%BE%AA%E7%8E%AF/</id>
+    <published>2020-05-29T07:07:26.000Z</published>
+    <updated>2020-05-29T07:11:28.546Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;本章介绍for_each循环&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="JAVASE" scheme="https://www.alitaalice.cn/categories/JAVASE/"/>
+    
+    
+      <category term="JAVASE" scheme="https://www.alitaalice.cn/tags/JAVASE/"/>
+    
+  </entry>
   
   <entry>
     <title>HashMap相关</title>
@@ -369,98 +461,6 @@
     
     
       <category term="leetcode" scheme="https://www.alitaalice.cn/tags/leetcode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>类加载的过程</title>
-    <link href="https://www.alitaalice.cn/2020/05/25/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E7%9A%84%E8%BF%87%E7%A8%8B/"/>
-    <id>https://www.alitaalice.cn/2020/05/25/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E7%9A%84%E8%BF%87%E7%A8%8B/</id>
-    <published>2020-05-25T12:59:55.000Z</published>
-    <updated>2020-05-25T13:04:20.161Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;本章介绍类加载的过程&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="JVM" scheme="https://www.alitaalice.cn/categories/JVM/"/>
-    
-    
-      <category term="JVM" scheme="https://www.alitaalice.cn/tags/JVM/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>OutOfMemeryError异常</title>
-    <link href="https://www.alitaalice.cn/2020/05/25/OutOfMemeryError%E5%BC%82%E5%B8%B8/"/>
-    <id>https://www.alitaalice.cn/2020/05/25/OutOfMemeryError%E5%BC%82%E5%B8%B8/</id>
-    <published>2020-05-25T08:45:50.000Z</published>
-    <updated>2020-05-25T09:51:37.631Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;本章介绍OutOfMemeryError异常&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="JVM" scheme="https://www.alitaalice.cn/categories/JVM/"/>
-    
-    
-      <category term="JVM" scheme="https://www.alitaalice.cn/tags/JVM/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>synchronized关键字</title>
-    <link href="https://www.alitaalice.cn/2020/05/25/synchronized%E5%85%B3%E9%94%AE%E5%AD%97/"/>
-    <id>https://www.alitaalice.cn/2020/05/25/synchronized%E5%85%B3%E9%94%AE%E5%AD%97/</id>
-    <published>2020-05-25T03:54:39.000Z</published>
-    <updated>2020-05-26T10:11:21.680Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;本章介绍synchronized关键字&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="并发编程" scheme="https://www.alitaalice.cn/categories/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
-    
-    
-      <category term="并发编程" scheme="https://www.alitaalice.cn/tags/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>工厂模式</title>
-    <link href="https://www.alitaalice.cn/2020/05/22/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
-    <id>https://www.alitaalice.cn/2020/05/22/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</id>
-    <published>2020-05-22T09:48:47.000Z</published>
-    <updated>2020-05-25T03:04:11.452Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;本章介绍工厂模式&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="设计模式" scheme="https://www.alitaalice.cn/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-      <category term="设计模式" scheme="https://www.alitaalice.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
