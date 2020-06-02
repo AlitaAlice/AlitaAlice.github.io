@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.alitaalice.cn/"/>
-  <updated>2020-05-30T02:27:41.544Z</updated>
+  <updated>2020-06-02T01:40:43.457Z</updated>
   <id>https://www.alitaalice.cn/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JAVA程序的编译和运行过程</title>
+    <link href="https://www.alitaalice.cn/2020/06/02/JAVA%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%BC%96%E8%AF%91%E5%92%8C%E8%BF%90%E8%A1%8C%E8%BF%87%E7%A8%8B/"/>
+    <id>https://www.alitaalice.cn/2020/06/02/JAVA%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%BC%96%E8%AF%91%E5%92%8C%E8%BF%90%E8%A1%8C%E8%BF%87%E7%A8%8B/</id>
+    <published>2020-06-02T01:17:07.000Z</published>
+    <updated>2020-06-02T01:40:43.457Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;本章介绍&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="JAVASE" scheme="https://www.alitaalice.cn/categories/JAVASE/"/>
+    
+    
+      <category term="JAVASE" scheme="https://www.alitaalice.cn/tags/JAVASE/"/>
+    
+  </entry>
   
   <entry>
     <title>final关键字</title>
@@ -63,7 +86,7 @@
     <link href="https://www.alitaalice.cn/2020/05/29/JDK7%E5%92%8CJDK8%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
     <id>https://www.alitaalice.cn/2020/05/29/JDK7%E5%92%8CJDK8%E7%9A%84%E5%8C%BA%E5%88%AB/</id>
     <published>2020-05-29T14:01:16.000Z</published>
-    <updated>2020-05-29T15:07:34.042Z</updated>
+    <updated>2020-05-30T02:45:13.333Z</updated>
     
     <summary type="html">
     
@@ -109,7 +132,7 @@
     <link href="https://www.alitaalice.cn/2020/05/29/Arrays%E7%B1%BB%E7%9B%B8%E5%85%B3/"/>
     <id>https://www.alitaalice.cn/2020/05/29/Arrays%E7%B1%BB%E7%9B%B8%E5%85%B3/</id>
     <published>2020-05-29T07:36:17.000Z</published>
-    <updated>2020-05-29T07:37:58.649Z</updated>
+    <updated>2020-06-01T09:09:10.514Z</updated>
     
     <summary type="html">
     
@@ -132,7 +155,7 @@
     <link href="https://www.alitaalice.cn/2020/05/29/String%E4%B8%BA%E4%BB%80%E4%B9%88%E8%AE%BE%E7%BD%AE%E6%88%90%E4%B8%8D%E5%8F%AF%E5%8F%98%E7%B1%BB/"/>
     <id>https://www.alitaalice.cn/2020/05/29/String%E4%B8%BA%E4%BB%80%E4%B9%88%E8%AE%BE%E7%BD%AE%E6%88%90%E4%B8%8D%E5%8F%AF%E5%8F%98%E7%B1%BB/</id>
     <published>2020-05-29T07:27:44.000Z</published>
-    <updated>2020-05-29T07:32:00.439Z</updated>
+    <updated>2020-05-30T03:04:22.018Z</updated>
     
     <summary type="html">
     
@@ -201,7 +224,7 @@
     <link href="https://www.alitaalice.cn/2020/05/29/HashMap%E7%9B%B8%E5%85%B3/"/>
     <id>https://www.alitaalice.cn/2020/05/29/HashMap%E7%9B%B8%E5%85%B3/</id>
     <published>2020-05-29T03:40:36.000Z</published>
-    <updated>2020-05-29T08:01:29.283Z</updated>
+    <updated>2020-06-01T10:01:00.590Z</updated>
     
     <summary type="html">
     
@@ -434,29 +457,6 @@
     
     
       <category term="设计模式" scheme="https://www.alitaalice.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java8函数式接口与lambda表达式</title>
-    <link href="https://www.alitaalice.cn/2020/05/28/Java8%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3%E4%B8%8ELambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
-    <id>https://www.alitaalice.cn/2020/05/28/Java8%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3%E4%B8%8ELambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/</id>
-    <published>2020-05-28T03:18:17.000Z</published>
-    <updated>2020-05-29T02:46:30.884Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;本章介绍lambda&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="JAVASE" scheme="https://www.alitaalice.cn/categories/JAVASE/"/>
-    
-    
-      <category term="JAVASE" scheme="https://www.alitaalice.cn/tags/JAVASE/"/>
     
   </entry>
   

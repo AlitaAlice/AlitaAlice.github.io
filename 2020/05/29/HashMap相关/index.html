@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"www.alitaalice.cn","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":"default","style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":7,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
+    var CONFIG = {"hostname":"www.alitaalice.cn","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":"default","style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":7,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
   </script>
 
   <meta name="description" content="概述 本章介绍HashMap相关">
@@ -27,11 +27,14 @@
 <meta property="og:site_name" content="Alita&#39;s blog">
 <meta property="og:description" content="概述 本章介绍HashMap相关">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://photos.alitaalice.cn/image/20200601154028.png">
+<meta property="og:image" content="https://photos.alitaalice.cn/image/20200601154120.png">
 <meta property="article:published_time" content="2020-05-29T03:40:36.000Z">
-<meta property="article:modified_time" content="2020-05-29T08:01:29.283Z">
+<meta property="article:modified_time" content="2020-06-01T10:01:00.590Z">
 <meta property="article:author" content="Alita Alice">
 <meta property="article:tag" content="JAVA集合">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://photos.alitaalice.cn/image/20200601154028.png">
 
 <link rel="canonical" href="https://www.alitaalice.cn/2020/05/29/HashMap%E7%9B%B8%E5%85%B3/">
 
@@ -106,7 +109,6 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
-        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -141,38 +143,11 @@
     <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a>
 
   </li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
-        </a>
-      </li>
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
-           placeholder="Searching..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
-  <span class="popup-btn-close">
-    <i class="fa fa-times-circle"></i>
-  </span>
-</div>
-<div id="search-result">
-  <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
-  </div>
-</div>
-
-    </div>
-  </div>
 
 </div>
     </header>
@@ -215,10 +190,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-05-29 11:40:36 / Modified: 16:01:29" itemprop="dateCreated datePublished" datetime="2020-05-29T11:40:36+08:00">2020-05-29</time>
+              <time title="Created: 2020-05-29 11:40:36" itemprop="dateCreated datePublished" datetime="2020-05-29T11:40:36+08:00">2020-05-29</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-06-01 18:01:00" itemprop="dateModified" datetime="2020-06-01T18:01:00+08:00">2020-06-01</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -256,14 +237,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>360</span>
+              <span>3.1k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
+              <span>3 mins.</span>
             </span>
 
         </div>
@@ -280,10 +261,36 @@
 </blockquote>
 <a id="more"></a>
 
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="3-基于拉链和线性探测法的散列表"><a href="#3-基于拉链和线性探测法的散列表" class="headerlink" title="3 基于拉链和线性探测法的散列表"></a>3 基于拉链和线性探测法的散列表</h2><p><a href="https://www.alitaalice.cn/2020/05/13/%E5%9F%BA%E4%BA%8E%E6%8B%89%E9%93%BE%E5%92%8C%E7%BA%BF%E6%80%A7%E6%8E%A2%E6%B5%8B%E6%B3%95%E7%9A%84%E6%95%A3%E5%88%97%E8%A1%A8/">https://www.alitaalice.cn/2020/05/13/%E5%9F%BA%E4%BA%8E%E6%8B%89%E9%93%BE%E5%92%8C%E7%BA%BF%E6%80%A7%E6%8E%A2%E6%B5%8B%E6%B3%95%E7%9A%84%E6%95%A3%E5%88%97%E8%A1%A8/</a></p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="1-基于拉链和线性探测法的散列表"><a href="#1-基于拉链和线性探测法的散列表" class="headerlink" title="1 基于拉链和线性探测法的散列表"></a>1 基于拉链和线性探测法的散列表</h2><p><a href="https://www.alitaalice.cn/2020/05/13/%E5%9F%BA%E4%BA%8E%E6%8B%89%E9%93%BE%E5%92%8C%E7%BA%BF%E6%80%A7%E6%8E%A2%E6%B5%8B%E6%B3%95%E7%9A%84%E6%95%A3%E5%88%97%E8%A1%A8/">https://www.alitaalice.cn/2020/05/13/%E5%9F%BA%E4%BA%8E%E6%8B%89%E9%93%BE%E5%92%8C%E7%BA%BF%E6%80%A7%E6%8E%A2%E6%B5%8B%E6%B3%95%E7%9A%84%E6%95%A3%E5%88%97%E8%A1%A8/</a></p>
 <h2 id="2-hashcode"><a href="#2-hashcode" class="headerlink" title="2 hashcode()"></a>2 hashcode()</h2><p><a href="https://www.alitaalice.cn/2020/05/13/%E6%95%A3%E5%88%97%E8%A1%A8%E8%AF%A6%E8%A7%A3/">https://www.alitaalice.cn/2020/05/13/%E6%95%A3%E5%88%97%E8%A1%A8%E8%AF%A6%E8%A7%A3/</a></p>
 <h2 id="3-HashMap加载因子和初始容量"><a href="#3-HashMap加载因子和初始容量" class="headerlink" title="3 HashMap加载因子和初始容量"></a>3 HashMap加载因子和初始容量</h2><p>转载自<a href="https://www.cnblogs.com/aspirant/p/11470928.html4">https://www.cnblogs.com/aspirant/p/11470928.html4</a></p>
-<p>4 </p>
+<h3 id="4-当两个对象的hashcode相同时会发生什么，如何获取对象"><a href="#4-当两个对象的hashcode相同时会发生什么，如何获取对象" class="headerlink" title="4 当两个对象的hashcode相同时会发生什么，如何获取对象"></a>4 当两个对象的hashcode相同时会发生什么，如何获取对象</h3><p>因为hashcode相同，所以它们的bucket位置相同，‘碰撞’会发生。因为HashMap使用链表存储对象，这个Entry(包含有键值对的Map.Entry对象)会存储在链表中。这个时候要理解根据hashcode来划分的数组，如果数组的坐标相同，则进入链表这个数据结构中了，一般的添加都在最前面，也就是和数组下标直接相连的地方，链表长度到达8的时候，jdk1.8上升为红黑树.</p>
+<h3 id="5-HashMap中的tableSizeFor方法"><a href="#5-HashMap中的tableSizeFor方法" class="headerlink" title="5  HashMap中的tableSizeFor方法"></a>5  HashMap中的tableSizeFor方法</h3><p>在使用指定数组的初始容量时上面说过，<strong>数组容量必须是2的次方。所以就需要通过算法将我们给定的数值转换成2的次方。</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这个方法可以将任意一个整数转换成2的次方。</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> <span class="title">tableSizeFor</span><span class="params">(<span class="keyword">int</span> cap)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = cap - <span class="number">1</span>;</span><br><span class="line">    n |= n &gt;&gt;&gt; <span class="number">1</span>;</span><br><span class="line">    n |= n &gt;&gt;&gt; <span class="number">2</span>;</span><br><span class="line">    n |= n &gt;&gt;&gt; <span class="number">4</span>;</span><br><span class="line">    n |= n &gt;&gt;&gt; <span class="number">8</span>;</span><br><span class="line">    n |= n &gt;&gt;&gt; <span class="number">16</span>;</span><br><span class="line">    <span class="keyword">return</span> (n &lt; <span class="number">0</span>) ? <span class="number">1</span> : (n &gt;= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-重新调整HashMap大小存在什么问题吗"><a href="#6-重新调整HashMap大小存在什么问题吗" class="headerlink" title="6 重新调整HashMap大小存在什么问题吗"></a>6 重新调整HashMap大小存在什么问题吗</h3><p>当重新调整HashMap大小的时候，确实存在条件竞争，因为如果两个线程都发现HashMap需要重新调整大小了，它们会同时试着调整大小。在调整大小的过程中，存储在链表中的元素的次序会反过来，因为移动到新的bucket位置的时候，HashMap并不会将元素放在链表的尾部，而是放在头部，这是为了避免尾部遍历(tail traversing)。如果条件竞争发生了，那么就死循环了。(多线程的环境下不使用HashMap）</p>
+<p>HashMap的容量是有限的。当经过多次元素插入，使得HashMap达到一定饱和度时，Key映射位置发生冲突的几率会逐渐提高。这时候，HashMap需要扩展它的长度，也就是进行Resize。</p>
+<ol>
+<li>扩容：创建一个新的Entry空数组，长度是原数组的2倍。</li>
+<li>ReHash：遍历原Entry数组，把所有的Entry重新Hash到新数组。</li>
+</ol>
+<h3 id="7-如果HashMap的大小超过了负载因子-load-factor-定义的容量，怎么办？"><a href="#7-如果HashMap的大小超过了负载因子-load-factor-定义的容量，怎么办？" class="headerlink" title="7 如果HashMap的大小超过了负载因子(load factor)定义的容量，怎么办？"></a>7 如果HashMap的大小超过了负载因子(load factor)定义的容量，怎么办？</h3><p>默认的负载因子大小为0.75，也就是说，当一个map填满了75%的bucket时候，和其它集合类(如ArrayList等)一样，将会创建原来HashMap大小的两倍的bucket数组，来重新调整map的大小，并将原来的对象放入新的bucket数组中。这个过程叫作rehashing，因为它调用hash方法找到新的bucket位置。这个值只可能在两个地方，一个是原下标的位置，另一种是在下标为&lt;原下标+原容量&gt;的位置</p>
+<h3 id="8-我们可以使用自定义的对象作为HashMap的键吗"><a href="#8-我们可以使用自定义的对象作为HashMap的键吗" class="headerlink" title="8 我们可以使用自定义的对象作为HashMap的键吗"></a>8 我们可以使用自定义的对象作为HashMap的键吗</h3><p>作为HashMap的key的自定义类需要重写hashCode()和equals()</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.xxx.demo;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 使用HashMap集合,存储自定义的对象。 如果自定义的对象作为键(键不能重复),需要重写自定义类型的hashCode()和equals()方法。</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		function();</span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">		HashMap&lt;Person, String&gt; map = <span class="keyword">new</span> HashMap&lt;Person, String&gt;();</span><br><span class="line">		map.put(<span class="keyword">new</span> Person(<span class="string">"a"</span>,<span class="number">20</span>), <span class="string">"里约热内卢"</span>);</span><br><span class="line">		map.put(<span class="keyword">new</span> Person(<span class="string">"b"</span>,<span class="number">18</span>), <span class="string">"索马里"</span>);</span><br><span class="line">		map.put(<span class="keyword">new</span> Person(<span class="string">"b"</span>,<span class="number">18</span>), <span class="string">"索马里"</span>);</span><br><span class="line">		map.put(<span class="keyword">new</span> Person(<span class="string">"c"</span>,<span class="number">19</span>), <span class="string">"百慕大"</span>);</span><br><span class="line">		<span class="keyword">for</span>(Person key : map.keySet())&#123;  <span class="comment">// 通过keySet()遍历</span></span><br><span class="line">			String value = map.get(key);</span><br><span class="line">			System.out.println(key+<span class="string">"..."</span>+value);</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(<span class="string">"==================="</span>);</span><br><span class="line">		<span class="keyword">for</span>(Map.Entry&lt;Person, String&gt; entry : map.entrySet())&#123;  <span class="comment">// 通过entrySet()遍历</span></span><br><span class="line">			System.out.println(entry.getKey()+<span class="string">"..."</span>+entry.getValue());</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="9-jdk7和jdk8的HashMap实现的区别"><a href="#9-jdk7和jdk8的HashMap实现的区别" class="headerlink" title="9 jdk7和jdk8的HashMap实现的区别"></a>9 jdk7和jdk8的HashMap实现的区别</h3><p>JDK7中的HashMap</p>
+<p>基于链表+数组实现,底层维护一个Entry数组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Entry&lt;K,V&gt;[] table;</span><br></pre></td></tr></table></figure>
+
+<p>根据计算的hashCode将对应的KV键值对存储到该table中，一旦发生hashCode冲突，那么就会将该KV键值对放到对应的已有元素的后面， 此时，形成了一个链表式的存储结构,如下图<img src="https://photos.alitaalice.cn/image/20200601154028.png" alt=""></p>
+<p>JDK8中的HashMap</p>
+<p>基于位桶+链表/红黑树的方式实现,底层维护一个Node数组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Node&lt;K,V&gt;[] table;</span><br></pre></td></tr></table></figure>
+
+<p>在JDK7中HashMap,当成百上千个节点在hash时发生碰撞，存储一个链表中，那么如果要查找其中一个节点，那就不可避免的花费O(N)的查找时间，这将是多么大的性能损失,这个问题终于在JDK8中得到了解决。</p>
+<p>JDK8中,HashMap采用的是位桶+链表/红黑树的方式,当链表的存储的数据个数大于等于8的时候，不再采用链表存储，而采用了红黑树存储结构。这是JDK7与JDK8中HashMap实现的最大区别。 如下图所示：<img src="https://photos.alitaalice.cn/image/20200601154120.png" alt=""></p>
+<h3 id="10-HashMap与LinkedHashMap和TreeMap-Hashtable的区别"><a href="#10-HashMap与LinkedHashMap和TreeMap-Hashtable的区别" class="headerlink" title="10  HashMap与LinkedHashMap和TreeMap Hashtable的区别"></a>10  HashMap与LinkedHashMap和TreeMap Hashtable的区别</h3><h3 id="11-为什么-HashMap-中-String、Integer-这样的包装类适合作为-key-键，即为什么使用它们可以减少哈希碰撞？"><a href="#11-为什么-HashMap-中-String、Integer-这样的包装类适合作为-key-键，即为什么使用它们可以减少哈希碰撞？" class="headerlink" title="11 为什么 HashMap 中 String、Integer 这样的包装类适合作为 key 键，即为什么使用它们可以减少哈希碰撞？"></a>11 为什么 HashMap 中 String、Integer 这样的包装类适合作为 key 键，即为什么使用它们可以减少哈希碰撞？</h3><p>答：因为 String、Integer 等包装类是 <strong>final 类型的，具有不可变性，而且已经重写了 equals() 和 hashCode() 方法。</strong>不可变性保证了计算 hashCode() 后键值的唯一性和缓存特性，不会出现放入和获取时哈希码不同的情况且读取哈希值的高效性，此外官方实现的 equals() 和 hashCode() 都是严格遵守相关规范的，不会出现错误。</p>
+<p>12 </p>
 
     </div>
 
@@ -385,7 +392,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-基于拉链和线性探测法的散列表"><span class="nav-number">3.</span> <span class="nav-text">3 基于拉链和线性探测法的散列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-hashcode"><span class="nav-number">4.</span> <span class="nav-text">2 hashcode()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-HashMap加载因子和初始容量"><span class="nav-number">5.</span> <span class="nav-text">3 HashMap加载因子和初始容量</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-基于拉链和线性探测法的散列表"><span class="nav-number">3.</span> <span class="nav-text">1 基于拉链和线性探测法的散列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-hashcode"><span class="nav-number">4.</span> <span class="nav-text">2 hashcode()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-HashMap加载因子和初始容量"><span class="nav-number">5.</span> <span class="nav-text">3 HashMap加载因子和初始容量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-当两个对象的hashcode相同时会发生什么，如何获取对象"><span class="nav-number">5.1.</span> <span class="nav-text">4 当两个对象的hashcode相同时会发生什么，如何获取对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-HashMap中的tableSizeFor方法"><span class="nav-number">5.2.</span> <span class="nav-text">5  HashMap中的tableSizeFor方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-重新调整HashMap大小存在什么问题吗"><span class="nav-number">5.3.</span> <span class="nav-text">6 重新调整HashMap大小存在什么问题吗</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-如果HashMap的大小超过了负载因子-load-factor-定义的容量，怎么办？"><span class="nav-number">5.4.</span> <span class="nav-text">7 如果HashMap的大小超过了负载因子(load factor)定义的容量，怎么办？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-我们可以使用自定义的对象作为HashMap的键吗"><span class="nav-number">5.5.</span> <span class="nav-text">8 我们可以使用自定义的对象作为HashMap的键吗</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-jdk7和jdk8的HashMap实现的区别"><span class="nav-number">5.6.</span> <span class="nav-text">9 jdk7和jdk8的HashMap实现的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-HashMap与LinkedHashMap和TreeMap-Hashtable的区别"><span class="nav-number">5.7.</span> <span class="nav-text">10  HashMap与LinkedHashMap和TreeMap Hashtable的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-为什么-HashMap-中-String、Integer-这样的包装类适合作为-key-键，即为什么使用它们可以减少哈希碰撞？"><span class="nav-number">5.8.</span> <span class="nav-text">11 为什么 HashMap 中 String、Integer 这样的包装类适合作为 key 键，即为什么使用它们可以减少哈希碰撞？</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -409,7 +416,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">94</span>
+          <span class="site-state-item-count">95</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -462,12 +469,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">114k</span>
+    <span title="Symbols count total">118k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:43</span>
+    <span title="Reading time total">1:47</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
   </div>
@@ -542,10 +549,6 @@
   </script>
 
 
-
-
-  
-<script src="/js/local-search.js"></script>
 
 
 

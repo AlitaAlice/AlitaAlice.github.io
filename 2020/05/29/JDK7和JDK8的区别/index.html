@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"www.alitaalice.cn","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":"default","style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":7,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
+    var CONFIG = {"hostname":"www.alitaalice.cn","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":"default","style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":7,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
   </script>
 
   <meta name="description" content="概述 本章介绍JDK7和JDK8的区别">
@@ -28,7 +28,7 @@
 <meta property="og:description" content="概述 本章介绍JDK7和JDK8的区别">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-05-29T14:01:16.000Z">
-<meta property="article:modified_time" content="2020-05-29T15:07:34.042Z">
+<meta property="article:modified_time" content="2020-05-30T02:45:13.333Z">
 <meta property="article:author" content="Alita Alice">
 <meta property="article:tag" content="JAVASE">
 <meta name="twitter:card" content="summary">
@@ -106,7 +106,6 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
-        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -141,38 +140,11 @@
     <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a>
 
   </li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
-        </a>
-      </li>
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
-           placeholder="Searching..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
-  <span class="popup-btn-close">
-    <i class="fa fa-times-circle"></i>
-  </span>
-</div>
-<div id="search-result">
-  <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
-  </div>
-</div>
-
-    </div>
-  </div>
 
 </div>
     </header>
@@ -215,10 +187,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-05-29 22:01:16 / Modified: 23:07:34" itemprop="dateCreated datePublished" datetime="2020-05-29T22:01:16+08:00">2020-05-29</time>
+              <time title="Created: 2020-05-29 22:01:16" itemprop="dateCreated datePublished" datetime="2020-05-29T22:01:16+08:00">2020-05-29</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-05-30 10:45:13" itemprop="dateModified" datetime="2020-05-30T10:45:13+08:00">2020-05-30</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -256,7 +234,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>561</span>
+              <span>705</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -293,7 +271,10 @@
 <li>Boolean类型反转，空指针安全,参与位运算；</li>
 <li>新增一些取环境信息的工具方法；</li>
 </ol>
-<h2 id="JDK-8"><a href="#JDK-8" class="headerlink" title="JDK 8"></a>JDK 8</h2><p>1、<strong>接口可以添加默认方法，default;</strong><br>2、lambda表达式，对于接口可以直接用()-&gt;{}方式来表达，小括号表示方法入参，花括号内表示方法返回值，如Collections的sort()方法：<br>3、<strong>函数式接口</strong><br>4、新的日期和时间API<br>5、并发增强<br>6、支持多重注解<br>7、<strong>特性四、反射的加强 。JDK8加强了反射，它允许你直接通过反射获取参数的名字</strong><br>8、 <strong>Stream API</strong><br>9、  JavaScript引擎Nashorn<br>10、Java虚拟机（JVM）的新特性<br>PermGen空间被移除了，取而代之的是Metaspace（JEP 122）。JVM选项-XX:PermSize与-XX:MaxPermSize分别被-XX:MetaSpaceSize与-XX:MaxMetaspaceSize所代替。</p>
+<h2 id="JDK-8"><a href="#JDK-8" class="headerlink" title="JDK 8"></a>JDK 8</h2><p>1、<strong>接口可以添加默认方法，default;</strong><br>2、<strong>lambda表达式，对于接口可以直接用()-&gt;{}方式来表达，小括号表示方法入参，花括号内表示方法返回值，如Collections的sort()方法</strong>：<br>3、<strong>函数式接口</strong><br>4、新的日期和时间API<br>5、并发增强<br>6、支持多重注解<br>7、<strong>特性四、反射的加强 。JDK8加强了反射，它允许你直接通过反射获取参数的名字</strong><br>8、 <strong>Stream API</strong> </p>
+<p>Java 8 API添加了一个新的抽象称为流Stream，可以让你以一种声明的方式处理数据。</p>
+<p>Stream 使用一种类似用 SQL 语句从数据库查询数据的直观方式来提供一种对 Java 集合运算和表达的高阶抽象。</p>
+<p>Stream API可以极大提高Java程序员的生产力，让程序员写出高效率、干净、简洁的代码。 9、  JavaScript引擎Nashorn<br>10、Java虚拟机（JVM）的新特性<br>PermGen空间被移除了，取而代之的是Metaspace（JEP 122）。JVM选项-XX:PermSize与-XX:MaxPermSize分别被-XX:MetaSpaceSize与-XX:MaxMetaspaceSize所代替。</p>
 
     </div>
 
@@ -419,7 +400,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">94</span>
+          <span class="site-state-item-count">95</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -472,12 +453,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">114k</span>
+    <span title="Symbols count total">118k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:43</span>
+    <span title="Reading time total">1:47</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
   </div>
@@ -552,10 +533,6 @@
   </script>
 
 
-
-
-  
-<script src="/js/local-search.js"></script>
 
 
 
