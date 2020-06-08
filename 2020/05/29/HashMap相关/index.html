@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://photos.alitaalice.cn/image/20200601154028.png">
 <meta property="og:image" content="https://photos.alitaalice.cn/image/20200601154120.png">
 <meta property="article:published_time" content="2020-05-29T03:40:36.000Z">
-<meta property="article:modified_time" content="2020-06-02T15:05:34.554Z">
+<meta property="article:modified_time" content="2020-06-03T06:48:22.789Z">
 <meta property="article:author" content="Alita Alice">
 <meta property="article:tag" content="JAVA集合">
 <meta name="twitter:card" content="summary">
@@ -198,7 +198,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-02 23:05:34" itemprop="dateModified" datetime="2020-06-02T23:05:34+08:00">2020-06-02</time>
+                <time title="Modified: 2020-06-03 14:48:22" itemprop="dateModified" datetime="2020-06-03T14:48:22+08:00">2020-06-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -237,7 +237,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>3.1k</span>
+              <span>3.8k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -289,8 +289,16 @@
 
 <p>在JDK7中HashMap,当成百上千个节点在hash时发生碰撞，存储一个链表中，那么如果要查找其中一个节点，那就不可避免的花费O(N)的查找时间，这将是多么大的性能损失,这个问题终于在JDK8中得到了解决。</p>
 <p>JDK8中,HashMap采用的是位桶+链表/红黑树的方式,当链表的存储的数据个数大于等于8的时候，不再采用链表存储，而采用了红黑树存储结构。这是JDK7与JDK8中HashMap实现的最大区别。 如下图所示：<img src="https://photos.alitaalice.cn/image/20200601154120.png" alt=""></p>
-<h3 id="10-HashMap与LinkedHashMap和TreeMap-Hashtable的区别"><a href="#10-HashMap与LinkedHashMap和TreeMap-Hashtable的区别" class="headerlink" title="10  HashMap与LinkedHashMap和TreeMap Hashtable的区别"></a>10  HashMap与LinkedHashMap和TreeMap Hashtable的区别</h3><h3 id="11-为什么-HashMap-中-String、Integer-这样的包装类适合作为-key-键，即为什么使用它们可以减少哈希碰撞？"><a href="#11-为什么-HashMap-中-String、Integer-这样的包装类适合作为-key-键，即为什么使用它们可以减少哈希碰撞？" class="headerlink" title="11 为什么 HashMap 中 String、Integer 这样的包装类适合作为 key 键，即为什么使用它们可以减少哈希碰撞？"></a>11 为什么 HashMap 中 String、Integer 这样的包装类适合作为 key 键，即为什么使用它们可以减少哈希碰撞？</h3><p>答：因为 String、Integer 等包装类是 <strong>final 类型的，具有不可变性，而且已经重写了 equals() 和 hashCode() 方法。</strong>不可变性保证了计算 hashCode() 后键值的唯一性和缓存特性，不会出现放入和获取时哈希码不同的情况且读取哈希值的高效性，此外官方实现的 equals() 和 hashCode() 都是严格遵守相关规范的，不会出现错误。</p>
-<p>12 </p>
+<h3 id="10-HashMap与LinkedHashMap和TreeMap-Hashtable的区别"><a href="#10-HashMap与LinkedHashMap和TreeMap-Hashtable的区别" class="headerlink" title="10  HashMap与LinkedHashMap和TreeMap Hashtable的区别"></a>10  HashMap与LinkedHashMap和TreeMap Hashtable的区别</h3><p><strong>HashMap</strong>: 最常用的Map,它根据键的HashCode 值存储数据,根据键可以直接获取它的值，具有很快的访问速度。HashMap最多只允许一条记录的键为Null(多条会覆盖);允许多条记录的值为 Null。非同步的。 </p>
+<p><strong>TreeMap</strong>: 能够把它保存的记录根据键(key)排序,默认是按升序排序，也可以指定排序的比较器，当用Iterator 遍历TreeMap时，得到的记录是排过序的。TreeMap不允许key的值为null。非同步的。 </p>
+<p><strong>Hashtable:</strong> 与 HashMap类似,不同的是:key和value的值均不允许为null;它支持线程的同步，即任一时刻只有一个线程能写Hashtable,因此也导致了Hashtable在写入时会比较慢。 </p>
+<p><strong>LinkedHashMap</strong>: 保存了记录的插入顺序，在用Iterator遍历LinkedHashMap时，先得到的记录肯定是先插入的.在遍历的时候会比HashMap慢。key和value均允许为空，非同步的。 </p>
+<h3 id="11-为什么-HashMap-中-String、Integer-这样的包装类适合作为-key-键，即为什么使用它们可以减少哈希碰撞？"><a href="#11-为什么-HashMap-中-String、Integer-这样的包装类适合作为-key-键，即为什么使用它们可以减少哈希碰撞？" class="headerlink" title="11 为什么 HashMap 中 String、Integer 这样的包装类适合作为 key 键，即为什么使用它们可以减少哈希碰撞？"></a>11 为什么 HashMap 中 String、Integer 这样的包装类适合作为 key 键，即为什么使用它们可以减少哈希碰撞？</h3><p>答：因为 String、Integer 等包装类是 <strong>final 类型的，具有不可变性，而且已经重写了 equals() 和 hashCode() 方法。</strong>不可变性保证了计算 hashCode() 后键值的唯一性和缓存特性，不会出现放入和获取时哈希码不同的情况且读取哈希值的高效性，此外官方实现的 equals() 和 hashCode() 都是严格遵守相关规范的，不会出现错误</p>
+<p>12.HashMap是线程安全的吗，为什么</p>
+<p>13.哪些是线程安全的容器</p>
+<p>同步容器类：</p>
+<p>使用了synchronized<br>1.Vector<br>2.HashTable</p>
+<p>并发容器：<br>3.ConcurrentHashMap:　底层哈希实现的同步Map(Set)。效率高，线程安全。使用系统底层技术实现线程安全。量级较synchronized低。key和value不能为null<br>4.CopyOnWriteArrayList：写时复制<br>5.CopyOnWriteArraySet：写时复制</p>
 
     </div>
 
@@ -416,20 +424,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">104</span>
+          <span class="site-state-item-count">111</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">20</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -469,12 +477,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">120k</span>
+    <span title="Symbols count total">129k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:49</span>
+    <span title="Reading time total">1:57</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
   </div>

@@ -29,7 +29,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://photos.alitaalice.cn/image/20200525210206.png">
 <meta property="article:published_time" content="2020-05-25T12:59:55.000Z">
-<meta property="article:modified_time" content="2020-05-25T13:04:20.161Z">
+<meta property="article:modified_time" content="2020-06-04T03:44:27.287Z">
 <meta property="article:author" content="Alita Alice">
 <meta property="article:tag" content="JVM">
 <meta name="twitter:card" content="summary">
@@ -189,10 +189,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-05-25 20:59:55 / Modified: 21:04:20" itemprop="dateCreated datePublished" datetime="2020-05-25T20:59:55+08:00">2020-05-25</time>
+              <time title="Created: 2020-05-25 20:59:55" itemprop="dateCreated datePublished" datetime="2020-05-25T20:59:55+08:00">2020-05-25</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-06-04 11:44:27" itemprop="dateModified" datetime="2020-06-04T11:44:27+08:00">2020-06-04</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -230,7 +236,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>14</span>
+              <span>541</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -255,6 +261,22 @@
 <a id="more"></a>
 
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><img src="https://photos.alitaalice.cn/image/20200525210206.png" alt=""></p>
+<h3 id="1-加载"><a href="#1-加载" class="headerlink" title="1 加载"></a>1 加载</h3><p>JAVA虚拟机需要完成：</p>
+<p>1 通过一个类的全限定名来获取定义此类的二进制字节流</p>
+<p>2 通过这个字节流所代表的静态存储结构转化为方法区的运行时数据结构</p>
+<p>3 在内存中生成一个代表这个类的java.lang.Class对象 作为方法区这个类的各种数据的访问入口。</p>
+<h3 id="2-验证"><a href="#2-验证" class="headerlink" title="2 验证"></a>2 验证</h3><p>验证是连接阶段的第一步，这么做是确保Class文件的字节流中包含的信息符合《JAVA虚拟机规范》的全部约束要求，保证这些信息被当作代码运行后不会危害虚拟机自身的安全</p>
+<p>分为：</p>
+<p>1 文件格式验证</p>
+<p>2 元数据验证</p>
+<p>3 字节码验证</p>
+<p>4 符号引用验证</p>
+<h3 id="3-准备"><a href="#3-准备" class="headerlink" title="3 准备"></a>3 准备</h3><p>准备阶段是正式为类中定义的变量（静态变量、被static修饰的变量）分配内存并设置类变量初始值的阶段，从概念上讲，这些变量所使用的内存都应当在方法区中进行分配</p>
+<h3 id="4-解析"><a href="#4-解析" class="headerlink" title="4 解析"></a>4 解析</h3><p>解析阶段是JAVA虚拟机将常量池内的符号引用替换为直接引用的过程。</p>
+<p>符号引用：符号引用以一组符号来描述所引用的目标，符号可以是任何形式的字面量</p>
+<p>直接引用：直接引用是可以直接指向目标的指针</p>
+<h3 id="5-初始化"><a href="#5-初始化" class="headerlink" title="5 初始化"></a>5 初始化</h3><p>直到初始化阶段，JAVA虚拟机菜真正开始执行类中编写的JAVA程序代码，将主导权移交给应用程序。</p>
+<p>初始化阶段就是执行类构造器<clinit>()方法的过程。<clinit>()并不是程序员在JAVA代码中直接编写的方法，它是JAVAC编译器的自动生成物，</p>
 
     </div>
 
@@ -356,7 +378,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-加载"><span class="nav-number">2.1.</span> <span class="nav-text">1 加载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-验证"><span class="nav-number">2.2.</span> <span class="nav-text">2 验证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-准备"><span class="nav-number">2.3.</span> <span class="nav-text">3 准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-解析"><span class="nav-number">2.4.</span> <span class="nav-text">4 解析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-初始化"><span class="nav-number">2.5.</span> <span class="nav-text">5 初始化</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -380,20 +402,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">104</span>
+          <span class="site-state-item-count">111</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">20</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -433,12 +455,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">120k</span>
+    <span title="Symbols count total">129k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:49</span>
+    <span title="Reading time total">1:57</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
   </div>
