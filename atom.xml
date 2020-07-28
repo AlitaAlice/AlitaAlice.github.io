@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.alitaalice.cn/"/>
-  <updated>2020-07-07T01:06:45.771Z</updated>
+  <updated>2020-07-28T13:54:59.982Z</updated>
   <id>https://www.alitaalice.cn/</id>
   
   <author>
@@ -15,6 +15,204 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>@ResponseBody</title>
+    <link href="https://www.alitaalice.cn/2020/07/28/ResponseBody/"/>
+    <id>https://www.alitaalice.cn/2020/07/28/ResponseBody/</id>
+    <published>2020-07-28T13:50:27.000Z</published>
+    <updated>2020-07-28T13:54:59.982Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;本章介绍&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>continue</title>
+    <link href="https://www.alitaalice.cn/2020/07/27/continue/"/>
+    <id>https://www.alitaalice.cn/2020/07/27/continue/</id>
+    <published>2020-07-27T08:18:28.000Z</published>
+    <updated>2020-07-27T08:18:50.627Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>待学习的点</title>
+    <link href="https://www.alitaalice.cn/2020/07/24/%E5%BE%85%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%82%B9/"/>
+    <id>https://www.alitaalice.cn/2020/07/24/%E5%BE%85%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%82%B9/</id>
+    <published>2020-07-24T09:19:26.000Z</published>
+    <updated>2020-07-24T09:19:26.429Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;本章介绍&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>自动化测试手册</title>
+    <link href="https://www.alitaalice.cn/2020/07/24/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%89%8B%E5%86%8C/"/>
+    <id>https://www.alitaalice.cn/2020/07/24/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%89%8B%E5%86%8C/</id>
+    <published>2020-07-24T01:55:12.000Z</published>
+    <updated>2020-07-24T01:55:31.785Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;本章介绍自动化测试手册&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>计算机网络概述</title>
+    <link href="https://www.alitaalice.cn/2020/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%BF%B0/"/>
+    <id>https://www.alitaalice.cn/2020/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%BF%B0/</id>
+    <published>2020-07-12T12:48:20.000Z</published>
+    <updated>2020-07-16T01:59:28.305Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;本章介绍计算机网络概述&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="计算机网络" scheme="https://www.alitaalice.cn/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+      <category term="计算机网络" scheme="https://www.alitaalice.cn/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>互联网概述</title>
+    <link href="https://www.alitaalice.cn/2020/07/11/%E4%BA%92%E8%81%94%E7%BD%91%E6%A6%82%E8%BF%B0/"/>
+    <id>https://www.alitaalice.cn/2020/07/11/%E4%BA%92%E8%81%94%E7%BD%91%E6%A6%82%E8%BF%B0/</id>
+    <published>2020-07-11T13:25:10.000Z</published>
+    <updated>2020-07-11T14:09:03.124Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;本章介绍&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>stream</title>
+    <link href="https://www.alitaalice.cn/2020/07/09/stream/"/>
+    <id>https://www.alitaalice.cn/2020/07/09/stream/</id>
+    <published>2020-07-09T13:12:42.000Z</published>
+    <updated>2020-07-09T13:12:42.421Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;本章介绍&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>序列化</title>
+    <link href="https://www.alitaalice.cn/2020/07/09/%E5%BA%8F%E5%88%97%E5%8C%96/"/>
+    <id>https://www.alitaalice.cn/2020/07/09/%E5%BA%8F%E5%88%97%E5%8C%96/</id>
+    <published>2020-07-09T13:12:23.000Z</published>
+    <updated>2020-07-09T13:12:23.145Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;本章介绍&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>I/O</title>
+    <link href="https://www.alitaalice.cn/2020/07/09/I-O/"/>
+    <id>https://www.alitaalice.cn/2020/07/09/I-O/</id>
+    <published>2020-07-09T13:10:17.000Z</published>
+    <updated>2020-07-09T13:10:17.791Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;本章介绍&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>工厂模式详解</title>
+    <link href="https://www.alitaalice.cn/2020/07/09/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E8%AF%A6%E8%A7%A3/"/>
+    <id>https://www.alitaalice.cn/2020/07/09/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E8%AF%A6%E8%A7%A3/</id>
+    <published>2020-07-09T13:09:38.000Z</published>
+    <updated>2020-07-09T13:09:38.306Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;本章介绍&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>ajax</title>
@@ -243,232 +441,6 @@
     
     
       <category term="springmvc" scheme="https://www.alitaalice.cn/tags/springmvc/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SpringMVC流程</title>
-    <link href="https://www.alitaalice.cn/2020/06/15/SpringMVC%E6%B5%81%E7%A8%8B/"/>
-    <id>https://www.alitaalice.cn/2020/06/15/SpringMVC%E6%B5%81%E7%A8%8B/</id>
-    <published>2020-06-15T01:18:49.000Z</published>
-    <updated>2020-06-15T01:24:57.623Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;本章介绍SpringMVC流程&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="SpringMVC" scheme="https://www.alitaalice.cn/categories/SpringMVC/"/>
-    
-    
-      <category term="SpringMVC" scheme="https://www.alitaalice.cn/tags/SpringMVC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>springmvc的原理</title>
-    <link href="https://www.alitaalice.cn/2020/06/13/springmvc%E7%9A%84%E5%8E%9F%E7%90%86/"/>
-    <id>https://www.alitaalice.cn/2020/06/13/springmvc%E7%9A%84%E5%8E%9F%E7%90%86/</id>
-    <published>2020-06-13T11:42:50.000Z</published>
-    <updated>2020-06-13T12:00:20.672Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;本章介绍springmvc的原理&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="springmvc" scheme="https://www.alitaalice.cn/categories/springmvc/"/>
-    
-    
-      <category term="springmvc" scheme="https://www.alitaalice.cn/tags/springmvc/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>jQuery入门</title>
-    <link href="https://www.alitaalice.cn/2020/06/13/jQuery%E5%85%A5%E9%97%A8/"/>
-    <id>https://www.alitaalice.cn/2020/06/13/jQuery%E5%85%A5%E9%97%A8/</id>
-    <published>2020-06-13T03:01:39.000Z</published>
-    <updated>2020-07-09T01:34:25.274Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;本章介绍jQuery入门&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="jQuery" scheme="https://www.alitaalice.cn/categories/jQuery/"/>
-    
-    
-      <category term="jQuery" scheme="https://www.alitaalice.cn/tags/jQuery/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>get和post的区别</title>
-    <link href="https://www.alitaalice.cn/2020/06/13/get%E5%92%8Cpost%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
-    <id>https://www.alitaalice.cn/2020/06/13/get%E5%92%8Cpost%E7%9A%84%E5%8C%BA%E5%88%AB/</id>
-    <published>2020-06-13T01:28:24.000Z</published>
-    <updated>2020-06-14T03:57:13.762Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;本章介绍get和post的区别&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="HTTP" scheme="https://www.alitaalice.cn/categories/HTTP/"/>
-    
-    
-      <category term="HTTP" scheme="https://www.alitaalice.cn/tags/HTTP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>js作用域</title>
-    <link href="https://www.alitaalice.cn/2020/06/13/js%E4%BD%9C%E7%94%A8%E5%9F%9F/"/>
-    <id>https://www.alitaalice.cn/2020/06/13/js%E4%BD%9C%E7%94%A8%E5%9F%9F/</id>
-    <published>2020-06-13T01:08:41.000Z</published>
-    <updated>2020-06-13T01:18:07.630Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;本章介绍js作用域&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="javascript" scheme="https://www.alitaalice.cn/categories/javascript/"/>
-    
-    
-      <category term="javascript" scheme="https://www.alitaalice.cn/tags/javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript语法</title>
-    <link href="https://www.alitaalice.cn/2020/06/13/JavaScript%E8%AF%AD%E6%B3%95/"/>
-    <id>https://www.alitaalice.cn/2020/06/13/JavaScript%E8%AF%AD%E6%B3%95/</id>
-    <published>2020-06-13T00:23:08.000Z</published>
-    <updated>2020-06-13T01:08:10.185Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;本章介绍JavaScript语法&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="javascript" scheme="https://www.alitaalice.cn/categories/javascript/"/>
-    
-    
-      <category term="javascript" scheme="https://www.alitaalice.cn/tags/javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>js入门</title>
-    <link href="https://www.alitaalice.cn/2020/06/13/js%E5%85%A5%E9%97%A8/"/>
-    <id>https://www.alitaalice.cn/2020/06/13/js%E5%85%A5%E9%97%A8/</id>
-    <published>2020-06-12T23:13:23.000Z</published>
-    <updated>2020-06-14T04:50:15.649Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;本章介绍javascript&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="javascript" scheme="https://www.alitaalice.cn/categories/javascript/"/>
-    
-    
-      <category term="javascript" scheme="https://www.alitaalice.cn/tags/javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>springboot中controller的使用</title>
-    <link href="https://www.alitaalice.cn/2020/06/12/springboot%E4%B8%ADcontroller%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
-    <id>https://www.alitaalice.cn/2020/06/12/springboot%E4%B8%ADcontroller%E7%9A%84%E4%BD%BF%E7%94%A8/</id>
-    <published>2020-06-12T11:41:53.000Z</published>
-    <updated>2020-06-21T15:19:59.835Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;本章介绍springboot中controller的使用&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="springboot" scheme="https://www.alitaalice.cn/categories/springboot/"/>
-    
-    
-      <category term="springboot" scheme="https://www.alitaalice.cn/tags/springboot/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>基本索引类型</title>
-    <link href="https://www.alitaalice.cn/2020/06/09/%E5%9F%BA%E6%9C%AC%E7%B4%A2%E5%BC%95%E7%B1%BB%E5%9E%8B/"/>
-    <id>https://www.alitaalice.cn/2020/06/09/%E5%9F%BA%E6%9C%AC%E7%B4%A2%E5%BC%95%E7%B1%BB%E5%9E%8B/</id>
-    <published>2020-06-09T07:29:50.000Z</published>
-    <updated>2020-06-09T08:45:11.233Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;本章介绍&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>线程和进程的区别</title>
-    <link href="https://www.alitaalice.cn/2020/06/09/%E7%BA%BF%E7%A8%8B%E5%92%8C%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
-    <id>https://www.alitaalice.cn/2020/06/09/%E7%BA%BF%E7%A8%8B%E5%92%8C%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB/</id>
-    <published>2020-06-09T01:38:05.000Z</published>
-    <updated>2020-06-09T02:57:04.617Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;本章介绍线程和进程的区别。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="并发" scheme="https://www.alitaalice.cn/categories/%E5%B9%B6%E5%8F%91/"/>
-    
-    
-      <category term="并发" scheme="https://www.alitaalice.cn/tags/%E5%B9%B6%E5%8F%91/"/>
     
   </entry>
   
