@@ -4,6 +4,320 @@
   
     
     <entry>
+      <title>substring</title>
+      <link href="/2020/08/16/substring/"/>
+      <url>/2020/08/16/substring/</url>
+      
+        <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote><p>本章介绍substring</p></blockquote><a id="more"></a><h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>substring(x)是从字符串的的第x个字符截取,到最后；</p><p>substring(x,y）是从x到y前的位置停止，含头不含尾</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> javase </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> javase </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>redis</title>
+      <link href="/2020/08/15/redis/"/>
+      <url>/2020/08/15/redis/</url>
+      
+        <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote><p>本章介绍redis</p></blockquote><a id="more"></a><h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h2 id="测试性能"><a href="#测试性能" class="headerlink" title="测试性能"></a>测试性能</h2><p>redis-benchmark</p><p><img src="https://photos.alitaalice.cn/image/20200815195127.png" alt=""></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure><p>默认16个数据库</p><p><img src="https://photos.alitaalice.cn/image/20200815200339.png" alt=""></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">查看所有的key</span><br><span class="line">keys *</span><br><span class="line">清除当前数据库</span><br><span class="line">flushdb</span><br><span class="line">清除所有数据库</span><br><span class="line">flushall</span><br></pre></td></tr></table></figure><blockquote><p>redis 是单线程的！</p></blockquote><p>redis是很快的，Redis是基于内存操作，cpu不少redis性能瓶颈</p><p>redis的瓶颈是根据机器的内存和网络带宽</p><p>既然可以使用单线程 就使用单线程 </p><blockquote><p>Redis 为什么单线程还那么快</p></blockquote><blockquote><p><img src="https://photos.alitaalice.cn/image/20200815210502.png" alt=""></p></blockquote><p>对于内存系统来说，如果没有上下文切换效率是最高的，多次读写都是在一个CPU上的，在内存情况上，这个是最佳的方案。</p><p><img src="https://photos.alitaalice.cn/image/20200816094836.png" alt=""></p><p><img src="https://photos.alitaalice.cn/image/20200816095704.png" alt=""></p><p><img src="https://photos.alitaalice.cn/image/20200816100042.png" alt=""></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; <span class="built_in">set</span> key1 <span class="string">"hello,zhangxl"</span></span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; get key1</span><br><span class="line"><span class="string">"hello,zhangxl"</span></span><br><span class="line">127.0.0.1:6379&gt; GETRANGE key1 0 3  截取字符串</span><br><span class="line"><span class="string">"hell"</span></span><br><span class="line">127.0.0.1:6379&gt; GETRANGE key1 0 -1</span><br><span class="line"><span class="string">"hello,zhangxl"</span></span><br><span class="line">127.0.0.1:6379&gt;</span><br></pre></td></tr></table></figure><p><img src="https://photos.alitaalice.cn/image/20200816100459.png" alt=""></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; SETEX key3 30 hello  <span class="comment">#设置过期时间</span></span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; ttl key3</span><br><span class="line">(<span class="built_in">integer</span>) 27</span><br><span class="line">127.0.0.1:6379&gt; ttl key3</span><br><span class="line">(<span class="built_in">integer</span>) 21</span><br><span class="line">127.0.0.1:6379&gt; SETNX mykey redis    <span class="comment">#如果mykey不存在 创建mykey</span></span><br><span class="line">(<span class="built_in">integer</span>) 1</span><br><span class="line">127.0.0.1:6379&gt; keys *</span><br><span class="line">1) <span class="string">"keys"</span></span><br><span class="line">2) <span class="string">"key2"</span></span><br><span class="line">3) <span class="string">"key1"</span></span><br><span class="line">4) <span class="string">"mykey"</span></span><br><span class="line">127.0.0.1:6379&gt; SETNX mykey xx    <span class="comment">#如果mykey存在 创建失败</span></span><br><span class="line">(<span class="built_in">integer</span>) 0</span><br><span class="line">127.0.0.1:6379&gt; get mykey</span><br><span class="line"><span class="string">"redis"</span></span><br><span class="line">127.0.0.1:6379&gt;</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; MSET k1 v1 k2 v2 k3 v3</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; get keys *</span><br><span class="line">(error) ERR wrong number of arguments <span class="keyword">for</span> <span class="string">'get'</span> <span class="built_in">command</span></span><br><span class="line">127.0.0.1:6379&gt; keys *</span><br><span class="line">1) <span class="string">"k1"</span></span><br><span class="line">2) <span class="string">"k3"</span></span><br><span class="line">3) <span class="string">"k2"</span></span><br><span class="line">127.0.0.1:6379&gt; mget k1 k2 k3  <span class="comment">#同时获取多个值</span></span><br><span class="line">1) <span class="string">"v1"</span></span><br><span class="line">2) <span class="string">"v2"</span></span><br><span class="line">3) <span class="string">"v3"</span></span><br><span class="line">127.0.0.1:6379&gt; msetnx k1 v1 k4 v4 <span class="comment">#msetnx 是一个原子性的操作</span></span><br><span class="line">(<span class="built_in">integer</span>) 0</span><br><span class="line">127.0.0.1:6379&gt; get k4</span><br><span class="line">(nil)</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> nosql </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> nosql </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>linux_grep_ps命令</title>
+      <link href="/2020/08/15/linux-grep-ps%E5%91%BD%E4%BB%A4/"/>
+      <url>/2020/08/15/linux-grep-ps%E5%91%BD%E4%BB%A4/</url>
+      
+        <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote><p>本章介绍</p></blockquote><a id="more"></a><h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><img src="https://photos.alitaalice.cn/image/20200815184145.png" alt=""></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>linux解压命令</title>
+      <link href="/2020/08/15/linux%E8%A7%A3%E5%8E%8B%E5%91%BD%E4%BB%A4/"/>
+      <url>/2020/08/15/linux%E8%A7%A3%E5%8E%8B%E5%91%BD%E4%BB%A4/</url>
+      
+        <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote><p>本章介绍linux解压命令</p></blockquote><a id="more"></a><h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>tar cvf etcbak.tar etc/ 打包一个tar</p><p>tar xvf etcbak.tar 解开一个tar</p><hr><p>tar zcvf etcbak.tar.gz etc/ 打包压缩一个 tar.gz</p><p>tar zxvf etcbak.tar.gz 解压一个tar.gz</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Nosql</title>
+      <link href="/2020/08/15/Nosql/"/>
+      <url>/2020/08/15/Nosql/</url>
+      
+        <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote><p>本章介绍</p></blockquote><a id="more"></a><h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><blockquote><p>NOSQL 的特点    </p></blockquote><p>1 方便扩展（数据之间没有关系，很好扩展）</p><p>2 大数据量高性能(Redis 读11W 写 8W  ，Nosql的缓存记录及，是一种细粒度的缓存，性能比较高)</p><p>3 数据类型是多样型的（不需要事先设计数据库！随取随用，如果是数据量十分大的表，很多人无法设计了）</p><p><img src="https://photos.alitaalice.cn/image/20200815100825.png" alt=""></p><p>4 传统RDBMS和NOSQL的区别</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">传统的RDBMS</span><br><span class="line">-结构化组织</span><br><span class="line">sql</span><br><span class="line">数据和关系存在单独的表中 row column</span><br><span class="line">操作操作，数据定义语言 </span><br><span class="line">严格的一致性</span><br><span class="line">基础的事务</span><br><span class="line">...</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">nosql</span><br><span class="line">-不仅仅是数据</span><br><span class="line">-没有固定的查询语言</span><br><span class="line">-键值对存储，列存储，文档存储，图形数据库</span><br><span class="line">-最终一致性</span><br><span class="line">-CAP定理 和BASE（异地多活） </span><br><span class="line">-高性能高可用高可扩</span><br></pre></td></tr></table></figure><blockquote><p>了解：3V+3高</p></blockquote><p><img src="https://photos.alitaalice.cn/image/20200815101725.png" alt=""></p><p>真正在公司中的实践：NOSQL+RDBMS</p><h2 id="阿里巴巴演进分析"><a href="#阿里巴巴演进分析" class="headerlink" title="阿里巴巴演进分析"></a>阿里巴巴演进分析</h2><p><img src="https://photos.alitaalice.cn/image/20200815103607.png" alt=""></p><p><img src="https://photos.alitaalice.cn/image/20200815103826.png" alt=""> </p><h3 id="NOSqL的四大分类"><a href="#NOSqL的四大分类" class="headerlink" title="NOSqL的四大分类"></a>NOSqL的四大分类</h3><p><img src="https://photos.alitaalice.cn/image/20200815105535.png" alt=""></p><p><img src="https://photos.alitaalice.cn/image/20200815105609.png" alt=""></p><p>他不是存储图形的，放的是关系，比如朋友圈社交网络，广告推荐0</p><h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><p><img src="https://photos.alitaalice.cn/image/20200815105745.png" alt=""> </p><h3 id="Redis入门"><a href="#Redis入门" class="headerlink" title="Redis入门"></a>Redis入门</h3><blockquote><p>redis是什么？</p></blockquote><p>Remote Dictionary Server 远程字典服务  </p><p>key-value数据库 </p><p>并提供多种语言的API</p><p>最热门的NOSQL技术之一  也被人们称为结构化数据库</p><p><img src="https://photos.alitaalice.cn/image/20200815160754.png" alt=""></p><p><img src="https://photos.alitaalice.cn/image/20200815160856.png" alt=""></p><h3 id="windows安装"><a href="#windows安装" class="headerlink" title="windows安装"></a>windows安装</h3><p><img src="https://photos.alitaalice.cn/image/20200815162024.png" alt=""></p><p>推荐使用linux学习</p><h3 id="linux安装"><a href="#linux安装" class="headerlink" title="linux安装"></a>linux安装</h3>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>wangqy规划</title>
+      <link href="/2020/08/14/wangqy%E8%A7%84%E5%88%92/"/>
+      <url>/2020/08/14/wangqy%E8%A7%84%E5%88%92/</url>
+      
+        <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote><p>本章介绍wangqy规划</p></blockquote><a id="more"></a><h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>1 开学之前问父母异地找工作，要么大四上或者大四下实习</p><p>2 考教师资格证和磨练画技</p><p>3 明年看一下公务员的情况，或者考编的情况</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 人生规划 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 人生规划 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>费曼学习法</title>
+      <link href="/2020/08/14/%E8%B4%B9%E6%9B%BC%E5%AD%A6%E4%B9%A0%E6%B3%95/"/>
+      <url>/2020/08/14/%E8%B4%B9%E6%9B%BC%E5%AD%A6%E4%B9%A0%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote><p>本章介绍费曼学习法</p></blockquote><a id="more"></a><h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>该技巧主要包含四步：</p><h3 id="第一步：把它教给一个小孩子。"><a href="#第一步：把它教给一个小孩子。" class="headerlink" title="第一步：把它教给一个小孩子。"></a><strong>第一步：把它教给一个小孩子</strong>。</h3><p>拿出一张白纸，在上方写下你想要学习的主题。想一下，如果你要把它教给一个孩子，你会讲哪些，并写下来。这里你的教授对象不是你自己那些聪明的成年朋友，而是一个8岁的孩子，他的词汇量和注意力刚好能够理解基本概念和关系。</p><p>许多人会倾向于使用复杂的词汇和行话来掩盖他们不明白的东西。问题是我们只在糊弄自己，因为我们不知道自己也不明白。另外，使用行话会隐藏周围人对我们的误解。</p><p>当你自始至终都用孩子可以理解的简单的语言写出一个想法（提示：只用最常见的单词），那么你便迫使自己在更深层次上理解了该概念，并简化了观点之间的关系和联系。如果你努力，就会清楚地知道自己在哪里还有不明白的地方。这种紧张状态很好——预示着学习的机会到来了。</p><h3 id="第二步：回顾。"><a href="#第二步：回顾。" class="headerlink" title="第二步：回顾。"></a>第二步：回顾。</h3><h5 id="在第一步中，你不可避免地会卡壳，忘记重要的点，不能解释，或者说不能将重要的概念联系起来。"><a href="#在第一步中，你不可避免地会卡壳，忘记重要的点，不能解释，或者说不能将重要的概念联系起来。" class="headerlink" title="在第一步中，你不可避免地会卡壳，忘记重要的点，不能解释，或者说不能将重要的概念联系起来。"></a>在第一步中，你不可避免地会卡壳，忘记重要的点，不能<a href="https://baike.baidu.com/item/解释">解释</a>，或者说不能将重要的概念联系起来。</h5><p>这一反馈相当宝贵，因为你已经发现了自己<a href="https://baike.baidu.com/item/知识">知识</a>的边缘。懂得自己能力的界限也是一种能力，你刚刚就确定了一个！</p><p>这是学习开始的地方。现在你知道自己在哪里卡住了，那么就回到原始<a href="https://baike.baidu.com/item/材料">材料</a>，重新学习，直到你可以用基本的术语解释这一概念。</p><p>认定自己知识的界限，会限制你可能犯的错误，并且在应用该知识时，可以增加成功的几率。</p><h3 id="第三步：将语言条理化，简化。"><a href="#第三步：将语言条理化，简化。" class="headerlink" title="第三步：将语言条理化，简化。"></a>第三步：将语言条理化，简化。</h3><p>现在你手上有一套自己手写笔记，检查一下确保自己没有从<a href="https://baike.baidu.com/item/原材料">原材料</a>中借用任何行话。将这些笔记用简单的语言组织成一个流畅的故事。</p><p>将这个故事大声读出来，如果这些解释不够简单，或者听起来比较混乱，很好，这意味着你想要理解该领域，还<a href="https://baike.baidu.com/item/需要">需要</a>做一些<a href="https://baike.baidu.com/item/工作">工作</a>。</p><h3 id="第四步（可选）：传授"><a href="#第四步（可选）：传授" class="headerlink" title="第四步（可选）：传授"></a>第四步（可选）：传授</h3><p>如果你真的想确保你的理解没什么问题，就把它教给另一个人（<a href="https://baike.baidu.com/item/理想">理想</a>状态下，这个人<a href="https://baike.baidu.com/item/应该">应该</a>对这个话题知之甚少，或者就找个 8 岁的孩子）。检测知识最终的途径是你能有能力把它<a href="https://baike.baidu.com/item/传播">传播</a>给另一个人。</p><p>这不仅是学习的妙方，还是窥探不同<a href="https://baike.baidu.com/item/思维方式">思维方式</a>的窗口，它让你将想法撕开揉碎，从头<a href="https://baike.baidu.com/item/重组">重组</a>。这种学习方法会让你对观点和概念有更为深入的理解。重要的是，以这种方式解决问题，你可以在别人不知道他们自己在说什么的情况下，理解这个问题。</p><p>费曼的方法直观地认为<a href="https://baike.baidu.com/item/智力">智力</a>是一个增长的过程，这与 Carol Dweck 的研究非常吻合，Carol Dweck 精确地描述了停滞型<a href="https://baike.baidu.com/item/思维">思维</a>（fixed mindset）和成长型思维（growth mindset）之间的区别。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习心得 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 学习心得 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>javai/o</title>
+      <link href="/2020/08/14/javai-o/"/>
+      <url>/2020/08/14/javai-o/</url>
+      
+        <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote><p>本章介绍java i-o</p></blockquote><a id="more"></a><h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><img src="https://photos.alitaalice.cn/image/20200814165347.png" alt=""></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>字节与字符</title>
+      <link href="/2020/08/14/%E5%AD%97%E8%8A%82%E4%B8%8E%E5%AD%97%E7%AC%A6/"/>
+      <url>/2020/08/14/%E5%AD%97%E8%8A%82%E4%B8%8E%E5%AD%97%E7%AC%A6/</url>
+      
+        <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote><p>本章介绍字节与字符</p></blockquote><a id="more"></a><h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>字节(Byte)是计量单位，表示数据量多少，是计算机存储容量的计量单位。一个字节占8位。</p><p>字符(Character)计算机中使用的文字和符号，比如’A’、’B’、’$’、’&amp;’等。</p><p>字节与字符：</p><p>①ASCII码中，一个英文字母（不分大小写）占一个字节的空间，一个中文汉字占两个字节的空间。</p><p>②UTF-8编码中，一个英文字符等于一个字节，一个中文等于三个字节。</p><p>③Unicode编码中，一个英文等于两个字节，一个中文等于两个字节。</p><p>符号：英文标点占一个字节，中文标点占两个字节。举例：英文句号“.”占1个字节的大小，中文句号“。”占2个字节的大小。</p><p>④UTF-16编码中，一个英文字母字符或一个汉字字符存储都需要2个字节（Unicode扩展区的一些汉字存储需要4个字节）。</p><p>⑤UTF-32编码中，世界上任何字符的存储都需要4个字节。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>软件测试基本理论</title>
+      <link href="/2020/08/11/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%9F%BA%E6%9C%AC%E7%90%86%E8%AE%BA/"/>
+      <url>/2020/08/11/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%9F%BA%E6%9C%AC%E7%90%86%E8%AE%BA/</url>
+      
+        <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote><p>本章介绍软件测试基本理论</p></blockquote><a id="more"></a><h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="黑盒测试-白盒测试-灰盒测试"><a href="#黑盒测试-白盒测试-灰盒测试" class="headerlink" title="黑盒测试 白盒测试 灰盒测试"></a>黑盒测试 白盒测试 灰盒测试</h3><p><strong>目标</strong> ：确保软件的质量、提高软件质量</p><h4 id="一、黑盒测试"><a href="#一、黑盒测试" class="headerlink" title="一、黑盒测试"></a>一、黑盒测试</h4><p>黑盒测试也称功能测试，它是通过测试来检测每个功能是否都能正常使用。在测试中，把程序看作一个不能打开的黑盒子，在完全不考虑程序内部结构和内部特性的情况下，在程序接口进行测试，它只检查程序功能是否按照需求规格说明书的规定正常使用，程序是否能适当地接收输入数据而产生正确的输出信息。</p><p><strong>黑盒测试方法</strong>：等价类划分法；边界值分析法；因果图法；场景法；正交实验设计法；判定表驱动分析法；错误推测法；功能图分析法。</p><h4 id="二、白盒测试"><a href="#二、白盒测试" class="headerlink" title="二、白盒测试"></a>二、白盒测试</h4><p>白盒测试也称为结构测试或逻辑驱动测试。”白盒”法全面了解程序内部逻辑结构、<strong>对所有逻辑路径进行测试</strong>。”白盒”法是穷举路径测试。按照程序内部的结构测试程序，检验程序中的每条通路是否都有能按预定要求正确工作，而不顾它的功能。</p><p><strong>白盒测试方法</strong>：主要有<strong>代码检查法</strong>、<strong>逻辑覆盖法</strong>(语句覆盖、判定覆盖、条件覆盖、判定/条件覆盖、条件组合覆盖、路径覆盖)、基本路径测试法。<br>白盒测试工具是对源代码进行的测试，测试的<strong>主要内容</strong>包括词法分析与语法分析、静态错误分析、动态检测等。</p><p>白盒测试的基本步骤包括测试者对被测试的源代码有一个深层次的理解。程序员必须对应用有一个深度理解，以清楚的知道应创建哪种测试用例，从而使得测试中的所有可见路径都可以被执行。源代码被理解之后才可以被分析，以创造测试用例。以下是白盒测试创建测试用例的三个基本步骤：</p><ul><li>输入包括不同种类的需求，功能方面，文档中的详细设计，合适的源码，安全方面。<a href="https://zh.wikipedia.org/wiki/白盒测试#cite_note-method-1">[1]</a>这是白盒测试列出所有基本信息的准备阶段。</li><li>过程包括风险分析来导向整个测试过程，合适的测试计划，执行测试用例和交流过程。<a href="https://zh.wikipedia.org/wiki/白盒测试#cite_note-method-1">[1]</a> 这是创建测试用例的阶段，以确保他们彻底的测试了应用程序，并且记录下了相应的测试结果。</li><li>输出包括准备最后报告，其中包含了以上所有准备材料和结果</li></ul><h4 id="三、灰盒测试"><a href="#三、灰盒测试" class="headerlink" title="三、灰盒测试"></a>三、灰盒测试</h4><p>灰盒测试是介于白盒测试与黑盒测试之间的一种测试，灰盒测试多用于 集成测试 阶段，不仅关注输出、输入的正确性，同时也关注程序内部的情况。灰盒测试不像白盒那样详细、完整，但又比黑盒测试更关注程序的内部逻辑，常常是通过一些表征性的现象、事件、标志来判断内部的运行状态。</p><h3 id="1-何为-冒烟测试"><a href="#1-何为-冒烟测试" class="headerlink" title="1.何为\冒烟测试****"></a><strong>1.何为\</strong>冒烟测试****</h3><p>　　冒烟测试是自由测试的一种。冒烟测试在测试中发现问题，找到了一个bug，然后开发人员会来修复这个bug。这时想知道这次修复是否真的解决了程序的bug，或者是否会对其它模块造成影响，就需要针对此问题进行专门测试，这个过程就被称为冒烟测试。在很多情况下，做冒烟测试是开发人员在试图解决一个问题的时候，造成了其它功能模块一系列的连锁反应，原因可能是只集中考虑了一开始的那个问题，而忽略其它的问题，这就可能引起了新的bug。</p><p>　　冒烟测试引入到<strong>软件测试</strong>中，是指测试人员在正规测试一个新版本之前，先投入较少的人力和时间验证一个软件的主要功能，如果主要功能都没有实现，则打回开发组重新开发。这样做的好处是可以节省大量的时间成本和人力成本。</p><h3 id="2-何为-回归测试"><a href="#2-何为-回归测试" class="headerlink" title="2.何为\回归测试****"></a><strong>2.何为\</strong>回归测试****</h3><p>　　回归测试是指修改了旧代码后，重新进行测试以确认修改没有引入新的错误或导致其他代码产生错误。回归测试作为软件生命周期的一个组成部分，在整个软件测试过程中占有很大的工作量比重，<strong>软件开发</strong>的各个阶段都会进行多次回归测试。在渐进和快速迭代开发中，新版本的连续发布使回归测试进行的更加频繁，而在极端编程方法中，更是要求每天都进行若干次回归测试。因此，通过选择正确的回归测试策略来改进回归测试的效率和有效性是非常有意义的。</p><p>　　回归测试一般是在进行软件的第二轮测试开始的，验证第一轮中发现的问题是否得到修复。当然回归也是一个循环的过程，穿插在软件测试整个生命周期里面。如果回归的问题不通过，则需要开发人员修改后再次回归，直到通过为止。</p><h3 id="3-两者有何区别"><a href="#3-两者有何区别" class="headerlink" title="3.两者有何区别"></a><strong>3.两者有何区别</strong></h3><p>　　冒烟测试就是完成一个新版本的开发后，对该版本最基本的功能进行测试，保证基本的功能和流程能走通。如果不通过，则打回开发那边重新开发；如果通过测试，才会进行下一步的测试(<strong>功能测试</strong>，集成测试，<strong>系统测试</strong>等等)。冒烟测试优点是节省测试时间，防止build失败。缺点是覆盖率还是比较低。</p><p>　　回归测试我有两层理解，一是就是当你修复一个bug后，把之前的<strong>测试用例</strong>再次应用到修复后的版本上进行测试。二是当一个新版本开发好后，而且冒烟测试通过，此时可以先用上一个版本的测试用例对新版本进行测试，看是否有bug！其实回归测试用的很多，比如新增加一个功能模块等等，所以<strong>自动化测试</strong>可以高效率的进行回归测试。</p><blockquote></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 软件测试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 软件测试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>单例模式</title>
+      <link href="/2020/08/11/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"/>
+      <url>/2020/08/11/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</url>
+      
+        <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote><p>本章介绍单例模式</p></blockquote><a id="more"></a><h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>单例模式的示例代码：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SingleTon</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> SingleTon singleTon = <span class="keyword">new</span> SingleTon();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> SingleTon <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> singleTon;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span>  <span class="keyword">void</span> <span class="title">doSomething</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"i am singleTon pattern"</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Minister</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;<span class="number">3</span> ; i++) &#123;</span><br><span class="line">            SingleTon singleTon = SingleTon.getInstance();</span><br><span class="line">            singleTon.doSomething();</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><img src="https://photos.alitaalice.cn/image/20200813204156.png" alt=""></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 设计模式 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 设计模式 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>try_with_resource</title>
+      <link href="/2020/08/05/try-with-resource/"/>
+      <url>/2020/08/05/try-with-resource/</url>
+      
+        <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote><p>本章介绍</p></blockquote><a id="more"></a><h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>try_catch</title>
+      <link href="/2020/08/05/try-catch/"/>
+      <url>/2020/08/05/try-catch/</url>
+      
+        <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote><p>本章介绍try_catch</p></blockquote><a id="more"></a><h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><a href="https://blog.csdn.net/weixin_42617262/article/details/86554182">https://blog.csdn.net/weixin_42617262/article/details/86554182</a></p><p><img src="https://photos.alitaalice.cn/image/20200805163115.png" alt=""></p><p>1 throw手动抛出异常，抛出到上层，本层只是抛出，但并不处理</p><p>2 throws 声明方法可能要抛出的异常，但是也是抛出到上层。</p><p><a href="https://blog.csdn.net/Alexwym/article/details/81239692?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.edu_weight&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.edu_weight">https://blog.csdn.net/Alexwym/article/details/81239692?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.edu_weight&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.edu_weight</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>tcp/ip</title>
+      <link href="/2020/07/29/tcp-ip/"/>
+      <url>/2020/07/29/tcp-ip/</url>
+      
+        <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote><p>本章介绍tcp/ip</p></blockquote><a id="more"></a><h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>先说一下这些协议，在互联网还没普及时，这些协议就已经出来，随着后来数据日渐丰富，协议种类也在累加。</p><p>对于我们来说网络世界丰富多彩，对于互联网来说也就是数据<strong>根据相应的规则</strong>在跑来跑去。（这些规则就是协议）。就像早上你开车到公司，路上遵守交通规则。然后安全抵达公司。就相当于完成了一次信息发送。废话多啦，开始正题！</p><p>楼上说的OSI模型是一种接近完美的理论，注意这种模型只出现在教课书里，这种模型是在TCP/IP协议已经成熟之后提出的，可以理解为升级版。但是并没有流行出来，主要有以下几个原因！</p><p>1、出现时间较晚。</p><p>2、参杂了太多政策的考量，并没有单单从技术角度出发。</p><p>3、…………还有几点给忘啦，反正就是没流行起来。</p><p>所以网络数据传输是TCP/IP的天下。</p><p>TCP/IP协议是一大堆协议的集合，TCP/IP协议分为四层（也就是数据传输一次主要经历以下4个步骤），分别是从上到下为：应用层，传输层，Internet，物理层。</p><p>假如你给你的基友发一个消息，数据开始传输，这时数据就要遵循TCP/IP协议啦，你的电脑会做出以下动作，这些动作你是看不到的。</p><p><strong>1、应用层先把你的消息进行格式转换,你的消息是文字还是图片，还是成人视频并进行加密等操作交给传输层。（这时的数据单元（单位）是信息）</strong></p><p><strong>2、传输层将数据切割成一段一段的，便与传输并往里加上一些标记，比如当前应用的端口号等，交给Internet。（这时的数据单元（单位）是数据流）</strong></p><p><strong>3、Internet开始在将数据进行分组，分组头部包含目标地址的IP及一些相关信息交给物理层。（这时的数据单元（单位）是分组）</strong></p><p><strong>4、物理层将数据转换为比特流开始查找主机真实物理地址进行校验等操作，校验通过，开始嗖<del>嗖</del>嗖~的住目的地跑。（这时的数据单元（单位）是比特）</strong></p><p><strong>到达目的地后，对方设备会将上面的顺序反向的操作一遍，最后呈现出来。</strong></p><p><img src="https://photos.alitaalice.cn/image/20200729213124.png" alt=""></p><p>1 什么是数据包？</p><p>2 什么是数据帧？</p><p>TCP:</p><p>1 保持会话，服务器端和客户端一直要维持会话，直到通话结束。</p><p>2 需要将传输的文件分段，传输时，需要建立会话，进行可靠传输。</p><p>3 并且有流量控制功能，如果传输速度过快。控制速度。</p><p>UDP：</p><p>1 一个数据包就能完成数据通信，不需要建立会话。 不需要分段，不需要流量控制，进行不可靠传输，你没收到，我再传输一遍。比如解析DNS服务器时，如果失败了，再发一次。</p><p>​     qq聊天用的也是udp协议  qq传文件用的是tcp协议</p><p>2 </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机网络 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 计算机网络 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>@ResponseBody</title>
       <link href="/2020/07/28/ResponseBody/"/>
       <url>/2020/07/28/ResponseBody/</url>
