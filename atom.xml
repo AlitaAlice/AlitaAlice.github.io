@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.alitaalice.cn/"/>
-  <updated>2020-08-16T01:56:01.076Z</updated>
+  <updated>2020-08-18T07:07:39.324Z</updated>
   <id>https://www.alitaalice.cn/</id>
   
   <author>
@@ -15,6 +15,48 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>uml类图</title>
+    <link href="https://www.alitaalice.cn/2020/08/18/uml%E7%B1%BB%E5%9B%BE/"/>
+    <id>https://www.alitaalice.cn/2020/08/18/uml%E7%B1%BB%E5%9B%BE/</id>
+    <published>2020-08-18T07:04:28.000Z</published>
+    <updated>2020-08-18T07:07:39.324Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;本章介绍&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>redis_list类型详解</title>
+    <link href="https://www.alitaalice.cn/2020/08/18/redis-list%E7%B1%BB%E5%9E%8B%E8%AF%A6%E8%A7%A3/"/>
+    <id>https://www.alitaalice.cn/2020/08/18/redis-list%E7%B1%BB%E5%9E%8B%E8%AF%A6%E8%A7%A3/</id>
+    <published>2020-08-18T03:09:39.000Z</published>
+    <updated>2020-08-18T08:29:57.704Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;本章介绍redis_list类型详解&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="redis" scheme="https://www.alitaalice.cn/categories/redis/"/>
+    
+    
+      <category term="redis" scheme="https://www.alitaalice.cn/tags/redis/"/>
+    
+  </entry>
   
   <entry>
     <title>substring</title>
@@ -44,7 +86,7 @@
     <link href="https://www.alitaalice.cn/2020/08/15/redis/"/>
     <id>https://www.alitaalice.cn/2020/08/15/redis/</id>
     <published>2020-08-15T11:49:30.000Z</published>
-    <updated>2020-08-16T02:20:17.100Z</updated>
+    <updated>2020-08-18T03:09:16.262Z</updated>
     
     <summary type="html">
     
@@ -398,48 +440,6 @@
     
       &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;本章介绍自动化测试手册&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>计算机网络概述</title>
-    <link href="https://www.alitaalice.cn/2020/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%BF%B0/"/>
-    <id>https://www.alitaalice.cn/2020/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%BF%B0/</id>
-    <published>2020-07-12T12:48:20.000Z</published>
-    <updated>2020-07-16T01:59:28.305Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;本章介绍计算机网络概述&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="计算机网络" scheme="https://www.alitaalice.cn/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    
-    
-      <category term="计算机网络" scheme="https://www.alitaalice.cn/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>互联网概述</title>
-    <link href="https://www.alitaalice.cn/2020/07/11/%E4%BA%92%E8%81%94%E7%BD%91%E6%A6%82%E8%BF%B0/"/>
-    <id>https://www.alitaalice.cn/2020/07/11/%E4%BA%92%E8%81%94%E7%BD%91%E6%A6%82%E8%BF%B0/</id>
-    <published>2020-07-11T13:25:10.000Z</published>
-    <updated>2020-07-11T14:09:03.124Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;本章介绍&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>

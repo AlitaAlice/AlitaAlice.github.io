@@ -1,5 +1,5 @@
+https://www.alitaalice.cn/2020/08/18/uml%E7%B1%BB%E5%9B%BE/
+https://www.alitaalice.cn/2020/08/18/redis-list%E7%B1%BB%E5%9E%8B%E8%AF%A6%E8%A7%A3/
 https://www.alitaalice.cn/2020/08/16/substring/
 https://www.alitaalice.cn/2020/08/15/redis/
 https://www.alitaalice.cn/2020/08/15/linux-grep-ps%E5%91%BD%E4%BB%A4/
-https://www.alitaalice.cn/2020/08/15/linux%E8%A7%A3%E5%8E%8B%E5%91%BD%E4%BB%A4/
-https://www.alitaalice.cn/2020/08/15/Nosql/
