@@ -20,16 +20,17 @@
     var CONFIG = {"hostname":"www.alitaalice.cn","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":"default","style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":7,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
   </script>
 
-  <meta name="description" content="概述 本章介绍">
+  <meta name="description" content="概述 本章介绍I&#x2F;O">
 <meta property="og:type" content="article">
 <meta property="og:title" content="I&#x2F;O">
 <meta property="og:url" content="https://www.alitaalice.cn/2020/07/09/I-O/index.html">
 <meta property="og:site_name" content="Alita&#39;s blog">
-<meta property="og:description" content="概述 本章介绍">
+<meta property="og:description" content="概述 本章介绍I&#x2F;O">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-07-09T13:10:17.000Z">
-<meta property="article:modified_time" content="2020-07-09T13:10:17.791Z">
+<meta property="article:modified_time" content="2020-08-19T13:27:54.559Z">
 <meta property="article:author" content="Alita Alice">
+<meta property="article:tag" content="JAVASE">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://www.alitaalice.cn/2020/07/09/I-O/">
@@ -217,6 +218,22 @@
 
               <time title="Created: 2020-07-09 21:10:17" itemprop="dateCreated datePublished" datetime="2020-07-09T21:10:17+08:00">2020-07-09</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-19 21:27:54" itemprop="dateModified" datetime="2020-08-19T21:27:54+08:00">2020-08-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JAVASE/" itemprop="url" rel="index"><span itemprop="name">JAVASE</span></a>
+                </span>
+            </span>
 
           
             <span id="/2020/07/09/I-O/" class="post-meta-item leancloud_visitors" data-flag-title="I/O" title="Views">
@@ -245,14 +262,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>8</span>
+              <span>3.5k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
+              <span>3 mins.</span>
             </span>
 
         </div>
@@ -265,11 +282,42 @@
 
       
         <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>本章介绍</p>
+<p>本章介绍I/O</p>
 </blockquote>
 <a id="more"></a>
 
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h1 id="字符流和字节流"><a href="#字符流和字节流" class="headerlink" title="字符流和字节流"></a>字符流和字节流</h1><ul>
+<li>字节流：一次读入或读出是8位二进制。</li>
+<li>字符流：一次读入或读出是16位二进制。</li>
+</ul>
+<p><strong>设备上的数据无论是图片或者视频，文字，它们都以二进制存储的。二进制的最终都是以一个8位为数据单元进行体现，所以计算机中的最小数据单元就是字节。意味着，字节流可以处理设备上的所有数据，所以字节流一样可以处理字符数据。</strong></p>
+<h4 id="结论：只要是处理纯文本数据，就优先考虑使用字符流。-除此之外都使用字节流。"><a href="#结论：只要是处理纯文本数据，就优先考虑使用字符流。-除此之外都使用字节流。" class="headerlink" title="结论：只要是处理纯文本数据，就优先考虑使用字符流。 除此之外都使用字节流。"></a><strong>结论：只要是处理纯文本数据，就优先考虑使用字符流。 除此之外都使用字节流。</strong></h4><h1 id="输入流和输出流"><a href="#输入流和输出流" class="headerlink" title="输入流和输出流"></a>输入流和输出流</h1><h2 id="输入字节流-InputStream"><a href="#输入字节流-InputStream" class="headerlink" title="输入字节流 InputStream"></a>输入字节流 InputStream</h2><ul>
+<li><code>InputStream</code> 是所有的输入字节流的父类，它是一个抽象类。</li>
+<li><code>ByteArrayInputStream</code>、<code>StringBufferInputStream</code>、<code>FileInputStream</code> 是三种基本的介质流，它们分别从<code>Byte 数组</code>、<code>StringBuffer</code>、和<code>本地文件</code>中读取数据。</li>
+<li><code>PipedInputStream</code> 是从与其它线程共用的管道中读取数据，与Piped 相关的知识后续单独介绍。</li>
+<li><code>ObjectInputStream</code> 和所有<code>FilterInputStream</code> 的子类都是装饰流（装饰器模式的主角）。</li>
+</ul>
+<h2 id="输出字节流-OutputStream"><a href="#输出字节流-OutputStream" class="headerlink" title="输出字节流 OutputStream"></a>输出字节流 OutputStream</h2><ul>
+<li><code>OutputStream</code> 是所有的输出字节流的父类，它是一个抽象类。</li>
+<li><code>ByteArrayOutputStream</code>、<code>FileOutputStream</code> 是两种基本的介质流，它们分别向<code>Byte 数组</code>、和<code>本地文件</code>中写入数据。</li>
+<li><code>PipedOutputStream</code> 是向与其它线程共用的管道中写入数据。</li>
+<li><code>ObjectOutputStream</code> 和所有<code>FilterOutputStream</code> 的子类都是装饰流。</li>
+</ul>
+<p><strong>总结：</strong></p>
+<ul>
+<li>输入流：InputStream或者Reader：从文件中读到程序中；</li>
+<li>输出流：OutputStream或者Writer：从程序中输出到文件中；</li>
+</ul>
+<h1 id="流必须要关闭的原因"><a href="#流必须要关闭的原因" class="headerlink" title="流必须要关闭的原因"></a>流必须要关闭的原因</h1><p>java相对C,C++来说不需要手动释放内存,在对象引用被消除之后,正常情况下内存资源是会被垃圾回收,那么在使用完IO流之后为什么需要手动关闭.<br>这是<strong>为了回收系统资源</strong>,比如<strong>释放占用的端口,文件句柄,网络操作数据库应用</strong>等.对Unix系统来说,所有的资源都可以抽象成文件,所以可以通过lsof来观察。</p>
+<p>看下面这个例子,我们创建许多的IO流，但是不关闭</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hello</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) &#123;</span><br><span class="line">            FileInputStream is = <span class="keyword">new</span> FileInputStream(<span class="string">"/tmp/data/data"</span>+i);</span><br><span class="line">            <span class="keyword">byte</span>[] bs = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">512</span>];</span><br><span class="line">            <span class="keyword">int</span> len;</span><br><span class="line">            <span class="keyword">while</span> ((len = is.read(bs)) != -<span class="number">1</span>) ;</span><br><span class="line">            Thread.sleep(<span class="number">1000L</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        Thread.sleep(<span class="number">10000L</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运行这个程序之后,使用losf命令查看相关的文件句柄,会发现文件句柄始终在增长,当积累到一定时间之后会出现too many open files错误</p>
+<h1 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.alita.demo.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.FileInputStream;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Title:</span></span><br><span class="line"><span class="comment"> * Description:</span></span><br><span class="line"><span class="comment"> * Company:</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> im.alitaalice@gmail.com</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> Created in 20:08 2020/8/19</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FileInputStreamController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        FileInputStreamController fileInputStreamController = <span class="keyword">new</span> FileInputStreamController();</span><br><span class="line">        String filePath = <span class="string">"E:/Demo/abc.txt"</span>;</span><br><span class="line">        String result = fileInputStreamController.readFile(filePath);</span><br><span class="line">        System.out.println(result);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">readFile</span><span class="params">(String filePath)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        FileInputStream fileInputStream = <span class="keyword">null</span>;</span><br><span class="line">        String result = <span class="string">""</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            fileInputStream = <span class="keyword">new</span> FileInputStream(filePath);</span><br><span class="line">            <span class="comment">/**</span></span><br><span class="line"><span class="comment">             * available():返回与之关联的文件的字节数</span></span><br><span class="line"><span class="comment">             */</span></span><br><span class="line">            <span class="keyword">int</span> lenth = fileInputStream.available();</span><br><span class="line">            <span class="keyword">byte</span>[] array = <span class="keyword">new</span> <span class="keyword">byte</span>[lenth];</span><br><span class="line">            <span class="comment">/**</span></span><br><span class="line"><span class="comment">             * 把数据读到数组中去</span></span><br><span class="line"><span class="comment">             */</span></span><br><span class="line">            fileInputStream.read(array);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            <span class="comment">/**</span></span><br><span class="line"><span class="comment">             * 根据获取到的Byte数组新建一个字符串，然后输出</span></span><br><span class="line"><span class="comment">             */</span></span><br><span class="line">            result = <span class="keyword">new</span> String(array);</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="keyword">try</span></span><br><span class="line">            &#123;</span><br><span class="line">                fileInputStream.close();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">catch</span> (Exception e)</span><br><span class="line">            &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">############################</span><br><span class="line">    abcsdadasd</span><br><span class="line"></span><br><span class="line">Process finished with exit code <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.alita.demo.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.FileOutputStream;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Title:</span></span><br><span class="line"><span class="comment"> * Description:</span></span><br><span class="line"><span class="comment"> * Company:</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> im.alitaalice@gmail.com</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> Created in 20:33 2020/8/19</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FileOutputSteamController</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        FileOutputSteamController fileOutputSteamController = <span class="keyword">new</span> FileOutputSteamController();</span><br><span class="line">        String filePath = <span class="string">"E:/Demo/abc.txt"</span>;</span><br><span class="line">        String content = <span class="string">"今天天气很好，hello world"</span>;</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * it will replace</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        fileOutputSteamController.writeFile(filePath, content);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">writeFile</span><span class="params">(String filePath, String content)</span> </span>&#123;</span><br><span class="line">        FileOutputStream fileOutputStream = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            fileOutputStream = <span class="keyword">new</span> FileOutputStream(filePath);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">byte</span>[] array = content.getBytes();</span><br><span class="line"></span><br><span class="line">            <span class="comment">/**</span></span><br><span class="line"><span class="comment">             * array写入到filePath</span></span><br><span class="line"><span class="comment">             */</span></span><br><span class="line">            fileOutputStream.write(array);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">catch</span> (Exception e)</span><br><span class="line">        &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="keyword">try</span></span><br><span class="line">            &#123;</span><br><span class="line">                fileOutputStream.close();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">catch</span> (Exception e)</span><br><span class="line">            &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">#############################</span><br><span class="line">    今天天气很好，hello world</span><br></pre></td></tr></table></figure>
+
+
     </div>
 
     
@@ -294,6 +342,9 @@
 
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/JAVASE/" rel="tag"># JAVASE</a>
+          </div>
 
         
 
@@ -367,7 +418,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字符流和字节流"><span class="nav-number"></span> <span class="nav-text">字符流和字节流</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#结论：只要是处理纯文本数据，就优先考虑使用字符流。-除此之外都使用字节流。"><span class="nav-number">0.0.1.</span> <span class="nav-text">结论：只要是处理纯文本数据，就优先考虑使用字符流。 除此之外都使用字节流。</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输入流和输出流"><span class="nav-number"></span> <span class="nav-text">输入流和输出流</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#输入字节流-InputStream"><span class="nav-number">1.</span> <span class="nav-text">输入字节流 InputStream</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出字节流-OutputStream"><span class="nav-number">2.</span> <span class="nav-text">输出字节流 OutputStream</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#流必须要关闭的原因"><span class="nav-number"></span> <span class="nav-text">流必须要关闭的原因</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#举例"><span class="nav-number"></span> <span class="nav-text">举例</span></a></div>
       </div>
       <!--/noindex-->
 
@@ -391,20 +442,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">157</span>
+          <span class="site-state-item-count">168</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-count">40</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">37</span>
+        <span class="site-state-item-count">39</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -444,12 +495,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">156k</span>
+    <span title="Symbols count total">165k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:22</span>
+    <span title="Reading time total">2:30</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
   </div>
