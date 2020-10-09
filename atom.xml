@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.alitaalice.cn/"/>
-  <updated>2020-08-30T12:57:48.118Z</updated>
+  <updated>2020-09-29T07:25:55.290Z</updated>
   <id>https://www.alitaalice.cn/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>nnnn</title>
-    <link href="https://www.alitaalice.cn/2020/08/30/nnnn/"/>
-    <id>https://www.alitaalice.cn/2020/08/30/nnnn/</id>
-    <published>2020-08-30T12:57:48.000Z</published>
-    <updated>2020-08-30T12:57:48.118Z</updated>
+    <title>synchronized底层如何实现</title>
+    <link href="https://www.alitaalice.cn/2020/09/29/synchronized%E5%BA%95%E5%B1%82%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0/"/>
+    <id>https://www.alitaalice.cn/2020/09/29/synchronized%E5%BA%95%E5%B1%82%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0/</id>
+    <published>2020-09-29T07:25:24.000Z</published>
+    <updated>2020-09-29T07:25:55.290Z</updated>
     
     <summary type="html">
     
@@ -36,11 +36,11 @@
   </entry>
   
   <entry>
-    <title>快速排序</title>
-    <link href="https://www.alitaalice.cn/2020/08/29/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/"/>
-    <id>https://www.alitaalice.cn/2020/08/29/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/</id>
-    <published>2020-08-29T13:00:21.000Z</published>
-    <updated>2020-08-29T13:00:21.387Z</updated>
+    <title>AQS</title>
+    <link href="https://www.alitaalice.cn/2020/09/29/AQS/"/>
+    <id>https://www.alitaalice.cn/2020/09/29/AQS/</id>
+    <published>2020-09-29T07:24:49.000Z</published>
+    <updated>2020-09-29T07:25:09.365Z</updated>
     
     <summary type="html">
     
@@ -55,39 +55,35 @@
   </entry>
   
   <entry>
-    <title>计网专业知识</title>
-    <link href="https://www.alitaalice.cn/2020/08/28/%E8%AE%A1%E7%BD%91%E4%B8%93%E4%B8%9A%E7%9F%A5%E8%AF%86/"/>
-    <id>https://www.alitaalice.cn/2020/08/28/%E8%AE%A1%E7%BD%91%E4%B8%93%E4%B8%9A%E7%9F%A5%E8%AF%86/</id>
-    <published>2020-08-28T08:08:56.000Z</published>
-    <updated>2020-08-28T08:15:40.440Z</updated>
+    <title>线程池</title>
+    <link href="https://www.alitaalice.cn/2020/09/28/%E7%BA%BF%E7%A8%8B%E6%B1%A0/"/>
+    <id>https://www.alitaalice.cn/2020/09/28/%E7%BA%BF%E7%A8%8B%E6%B1%A0/</id>
+    <published>2020-09-28T09:06:51.000Z</published>
+    <updated>2020-09-28T12:52:22.212Z</updated>
     
     <summary type="html">
     
       &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;本章介绍计算机网络&lt;/p&gt;
+&lt;p&gt;本章介绍&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>
     
     
-      <category term="计算机网络" scheme="https://www.alitaalice.cn/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    
-    
-      <category term="计算机网络" scheme="https://www.alitaalice.cn/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   
   <entry>
-    <title>测试端口是否打开</title>
-    <link href="https://www.alitaalice.cn/2020/08/28/%E6%B5%8B%E8%AF%95%E7%AB%AF%E5%8F%A3%E6%98%AF%E5%90%A6%E6%89%93%E5%BC%80/"/>
-    <id>https://www.alitaalice.cn/2020/08/28/%E6%B5%8B%E8%AF%95%E7%AB%AF%E5%8F%A3%E6%98%AF%E5%90%A6%E6%89%93%E5%BC%80/</id>
-    <published>2020-08-28T07:35:29.000Z</published>
-    <updated>2020-08-28T07:40:51.010Z</updated>
+    <title>Socket通信协议</title>
+    <link href="https://www.alitaalice.cn/2020/09/28/Socket%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/"/>
+    <id>https://www.alitaalice.cn/2020/09/28/Socket%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/</id>
+    <published>2020-09-28T06:05:14.000Z</published>
+    <updated>2020-09-28T06:32:30.833Z</updated>
     
     <summary type="html">
     
       &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;本章介绍如何测试端口是否打开&lt;/p&gt;
+&lt;p&gt;本章介绍Socket&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>
@@ -101,57 +97,80 @@
   </entry>
   
   <entry>
-    <title>DFA_NFA</title>
-    <link href="https://www.alitaalice.cn/2020/08/24/DFA-NFA/"/>
-    <id>https://www.alitaalice.cn/2020/08/24/DFA-NFA/</id>
-    <published>2020-08-24T03:51:55.000Z</published>
-    <updated>2020-08-24T07:44:46.395Z</updated>
+    <title>mybatis的缓存机制</title>
+    <link href="https://www.alitaalice.cn/2020/09/26/mybatis%E7%9A%84%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6/"/>
+    <id>https://www.alitaalice.cn/2020/09/26/mybatis%E7%9A%84%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6/</id>
+    <published>2020-09-26T06:06:09.000Z</published>
+    <updated>2020-09-26T07:30:41.492Z</updated>
     
     <summary type="html">
     
       &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;本章介绍DFA_NFA&lt;/p&gt;
+&lt;p&gt;本章介绍mybatis的缓存机制&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>
     
     
-      <category term="编译原理" scheme="https://www.alitaalice.cn/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
+      <category term="mybatis" scheme="https://www.alitaalice.cn/categories/mybatis/"/>
     
     
-      <category term="编译原理" scheme="https://www.alitaalice.cn/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
+      <category term="mybatis" scheme="https://www.alitaalice.cn/tags/mybatis/"/>
     
   </entry>
   
   <entry>
-    <title>LR分析法</title>
-    <link href="https://www.alitaalice.cn/2020/08/23/LR%E5%88%86%E6%9E%90%E6%B3%95/"/>
-    <id>https://www.alitaalice.cn/2020/08/23/LR%E5%88%86%E6%9E%90%E6%B3%95/</id>
-    <published>2020-08-23T14:46:08.000Z</published>
-    <updated>2020-08-24T15:30:23.315Z</updated>
+    <title>dubbo的容错机制</title>
+    <link href="https://www.alitaalice.cn/2020/09/26/dubbo%E7%9A%84%E5%AE%B9%E9%94%99%E6%9C%BA%E5%88%B6/"/>
+    <id>https://www.alitaalice.cn/2020/09/26/dubbo%E7%9A%84%E5%AE%B9%E9%94%99%E6%9C%BA%E5%88%B6/</id>
+    <published>2020-09-26T05:52:54.000Z</published>
+    <updated>2020-09-26T06:03:14.937Z</updated>
     
     <summary type="html">
     
       &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;本章介绍LR分析法&lt;/p&gt;
+&lt;p&gt;本章介绍 dubbo的容错机制&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>
     
     
-      <category term="编译原理" scheme="https://www.alitaalice.cn/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
+      <category term="dubbo" scheme="https://www.alitaalice.cn/categories/dubbo/"/>
     
     
-      <category term="编译原理" scheme="https://www.alitaalice.cn/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
+      <category term="dubbo" scheme="https://www.alitaalice.cn/tags/dubbo/"/>
     
   </entry>
   
   <entry>
-    <title>已投递的简历</title>
-    <link href="https://www.alitaalice.cn/2020/08/21/%E5%B7%B2%E6%8A%95%E9%80%92%E7%9A%84%E7%AE%80%E5%8E%86/"/>
-    <id>https://www.alitaalice.cn/2020/08/21/%E5%B7%B2%E6%8A%95%E9%80%92%E7%9A%84%E7%AE%80%E5%8E%86/</id>
-    <published>2020-08-21T09:01:21.000Z</published>
-    <updated>2020-08-21T09:05:52.340Z</updated>
+    <title>CMS垃圾收集器</title>
+    <link href="https://www.alitaalice.cn/2020/09/26/CMS%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/"/>
+    <id>https://www.alitaalice.cn/2020/09/26/CMS%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/</id>
+    <published>2020-09-26T02:56:14.000Z</published>
+    <updated>2020-09-26T05:51:33.041Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;本章介绍CMS垃圾收集器&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="JVMS" scheme="https://www.alitaalice.cn/categories/JVMS/"/>
+    
+    
+      <category term="JVM" scheme="https://www.alitaalice.cn/tags/JVM/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>leetcode118</title>
+    <link href="https://www.alitaalice.cn/2020/09/23/leetcode118/"/>
+    <id>https://www.alitaalice.cn/2020/09/23/leetcode118/</id>
+    <published>2020-09-23T03:38:15.000Z</published>
+    <updated>2020-09-23T08:25:58.403Z</updated>
     
     <summary type="html">
     
@@ -166,34 +185,11 @@
   </entry>
   
   <entry>
-    <title>http_https</title>
-    <link href="https://www.alitaalice.cn/2020/08/20/http-https/"/>
-    <id>https://www.alitaalice.cn/2020/08/20/http-https/</id>
-    <published>2020-08-20T15:00:39.000Z</published>
-    <updated>2020-08-21T09:26:36.151Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;本章介绍http_https&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="计算机网络" scheme="https://www.alitaalice.cn/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    
-    
-      <category term="计算机网络" scheme="https://www.alitaalice.cn/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>linkedlist</title>
-    <link href="https://www.alitaalice.cn/2020/08/20/linkedlist/"/>
-    <id>https://www.alitaalice.cn/2020/08/20/linkedlist/</id>
-    <published>2020-08-20T09:28:56.000Z</published>
-    <updated>2020-08-20T13:07:21.506Z</updated>
+    <title>数据结构1</title>
+    <link href="https://www.alitaalice.cn/2020/09/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%841/"/>
+    <id>https://www.alitaalice.cn/2020/09/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%841/</id>
+    <published>2020-09-23T02:43:32.000Z</published>
+    <updated>2020-09-28T12:52:13.669Z</updated>
     
     <summary type="html">
     
@@ -204,116 +200,77 @@
     </summary>
     
     
-      <category term="linkedlist" scheme="https://www.alitaalice.cn/categories/linkedlist/"/>
-    
-    
-      <category term="linkedlist" scheme="https://www.alitaalice.cn/tags/linkedlist/"/>
     
   </entry>
   
   <entry>
-    <title>编译原理-语法分析</title>
-    <link href="https://www.alitaalice.cn/2020/08/20/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/"/>
-    <id>https://www.alitaalice.cn/2020/08/20/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/</id>
-    <published>2020-08-20T03:45:25.000Z</published>
-    <updated>2020-08-24T10:00:45.244Z</updated>
+    <title>索引失效</title>
+    <link href="https://www.alitaalice.cn/2020/09/22/%E7%B4%A2%E5%BC%95%E5%A4%B1%E6%95%88/"/>
+    <id>https://www.alitaalice.cn/2020/09/22/%E7%B4%A2%E5%BC%95%E5%A4%B1%E6%95%88/</id>
+    <published>2020-09-22T14:01:31.000Z</published>
+    <updated>2020-09-22T14:01:32.003Z</updated>
     
     <summary type="html">
     
       &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;本章介绍编译原理_语法分析&lt;/p&gt;
+&lt;p&gt;本章介绍&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>
     
     
-      <category term="编译原理" scheme="https://www.alitaalice.cn/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
-    
-    
-      <category term="编译原理" scheme="https://www.alitaalice.cn/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
     
   </entry>
   
   <entry>
-    <title>OSI参考模型</title>
-    <link href="https://www.alitaalice.cn/2020/08/20/OSI%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B/"/>
-    <id>https://www.alitaalice.cn/2020/08/20/OSI%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B/</id>
-    <published>2020-08-20T02:25:45.000Z</published>
-    <updated>2020-08-20T05:35:09.008Z</updated>
+    <title>类加载的错误</title>
+    <link href="https://www.alitaalice.cn/2020/09/22/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E7%9A%84%E9%94%99%E8%AF%AF/"/>
+    <id>https://www.alitaalice.cn/2020/09/22/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E7%9A%84%E9%94%99%E8%AF%AF/</id>
+    <published>2020-09-22T14:01:00.000Z</published>
+    <updated>2020-09-22T14:01:00.212Z</updated>
     
     <summary type="html">
     
       &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;本章介绍OSI参考模型&lt;/p&gt;
+&lt;p&gt;本章介绍&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>
     
     
-      <category term="计算机网络" scheme="https://www.alitaalice.cn/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    
-    
-      <category term="计算机网络" scheme="https://www.alitaalice.cn/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   
   <entry>
-    <title>文件路径</title>
-    <link href="https://www.alitaalice.cn/2020/08/19/%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84/"/>
-    <id>https://www.alitaalice.cn/2020/08/19/%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84/</id>
-    <published>2020-08-19T12:28:31.000Z</published>
-    <updated>2020-08-19T13:27:57.472Z</updated>
+    <title>cpu的三级缓存</title>
+    <link href="https://www.alitaalice.cn/2020/09/22/cpu%E7%9A%84%E4%B8%89%E7%BA%A7%E7%BC%93%E5%AD%98/"/>
+    <id>https://www.alitaalice.cn/2020/09/22/cpu%E7%9A%84%E4%B8%89%E7%BA%A7%E7%BC%93%E5%AD%98/</id>
+    <published>2020-09-22T03:16:59.000Z</published>
+    <updated>2020-09-22T08:53:03.895Z</updated>
     
     <summary type="html">
     
       &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;本章介绍文件路径中，“/”、“\”与“\”三种符号的区别&lt;/p&gt;
+&lt;p&gt;本章介绍&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>
     
     
-      <category term="杂谈" scheme="https://www.alitaalice.cn/categories/%E6%9D%82%E8%B0%88/"/>
-    
-    
-      <category term="杂谈" scheme="https://www.alitaalice.cn/tags/%E6%9D%82%E8%B0%88/"/>
     
   </entry>
   
   <entry>
-    <title>编译原理第一章</title>
-    <link href="https://www.alitaalice.cn/2020/08/19/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%B8%80%E7%AB%A0/"/>
-    <id>https://www.alitaalice.cn/2020/08/19/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%B8%80%E7%AB%A0/</id>
-    <published>2020-08-19T03:54:42.000Z</published>
-    <updated>2020-08-24T10:24:12.325Z</updated>
+    <title>Redis的CAP</title>
+    <link href="https://www.alitaalice.cn/2020/09/22/Redis%E7%9A%84CAP/"/>
+    <id>https://www.alitaalice.cn/2020/09/22/Redis%E7%9A%84CAP/</id>
+    <published>2020-09-22T02:59:04.000Z</published>
+    <updated>2020-09-22T03:11:42.793Z</updated>
     
     <summary type="html">
     
       &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;本章介绍编译原理&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="编译原理" scheme="https://www.alitaalice.cn/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
-    
-    
-      <category term="编译原理" scheme="https://www.alitaalice.cn/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Redis_Set</title>
-    <link href="https://www.alitaalice.cn/2020/08/19/Redis-Set/"/>
-    <id>https://www.alitaalice.cn/2020/08/19/Redis-Set/</id>
-    <published>2020-08-19T02:20:03.000Z</published>
-    <updated>2020-08-20T13:12:48.891Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;本章介绍Redis_Set&lt;/p&gt;
+&lt;p&gt;本章介绍CAP理论和实现&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>
@@ -327,11 +284,34 @@
   </entry>
   
   <entry>
-    <title>uml类图</title>
-    <link href="https://www.alitaalice.cn/2020/08/18/uml%E7%B1%BB%E5%9B%BE/"/>
-    <id>https://www.alitaalice.cn/2020/08/18/uml%E7%B1%BB%E5%9B%BE/</id>
-    <published>2020-08-18T07:04:28.000Z</published>
-    <updated>2020-08-18T07:07:39.324Z</updated>
+    <title>索引聚簇非聚簇</title>
+    <link href="https://www.alitaalice.cn/2020/09/22/%E7%B4%A2%E5%BC%95%E8%81%9A%E7%B0%87%E9%9D%9E%E8%81%9A%E7%B0%87/"/>
+    <id>https://www.alitaalice.cn/2020/09/22/%E7%B4%A2%E5%BC%95%E8%81%9A%E7%B0%87%E9%9D%9E%E8%81%9A%E7%B0%87/</id>
+    <published>2020-09-22T01:39:43.000Z</published>
+    <updated>2020-09-22T13:52:06.662Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;本章介绍聚簇索引 &amp;amp; 非聚簇索引&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="mysql" scheme="https://www.alitaalice.cn/categories/mysql/"/>
+    
+    
+      <category term="mysql" scheme="https://www.alitaalice.cn/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>编译原理总复习</title>
+    <link href="https://www.alitaalice.cn/2020/09/14/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E6%80%BB%E5%A4%8D%E4%B9%A0/"/>
+    <id>https://www.alitaalice.cn/2020/09/14/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E6%80%BB%E5%A4%8D%E4%B9%A0/</id>
+    <published>2020-09-14T11:52:39.000Z</published>
+    <updated>2020-09-15T03:14:34.531Z</updated>
     
     <summary type="html">
     
@@ -346,80 +326,81 @@
   </entry>
   
   <entry>
-    <title>redis_list类型详解</title>
-    <link href="https://www.alitaalice.cn/2020/08/18/redis-list%E7%B1%BB%E5%9E%8B%E8%AF%A6%E8%A7%A3/"/>
-    <id>https://www.alitaalice.cn/2020/08/18/redis-list%E7%B1%BB%E5%9E%8B%E8%AF%A6%E8%A7%A3/</id>
-    <published>2020-08-18T03:09:39.000Z</published>
-    <updated>2020-08-18T08:29:57.704Z</updated>
+    <title>JVM详解</title>
+    <link href="https://www.alitaalice.cn/2020/09/11/JVM%E8%AF%A6%E8%A7%A3/"/>
+    <id>https://www.alitaalice.cn/2020/09/11/JVM%E8%AF%A6%E8%A7%A3/</id>
+    <published>2020-09-11T12:52:45.000Z</published>
+    <updated>2020-09-11T13:22:40.000Z</updated>
     
     <summary type="html">
     
       &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;本章介绍redis_list类型详解&lt;/p&gt;
+&lt;p&gt;本章介绍JVM&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>
     
     
-      <category term="redis" scheme="https://www.alitaalice.cn/categories/redis/"/>
+      <category term="JVM" scheme="https://www.alitaalice.cn/categories/JVM/"/>
     
     
-      <category term="redis" scheme="https://www.alitaalice.cn/tags/redis/"/>
+      <category term="JVM" scheme="https://www.alitaalice.cn/tags/JVM/"/>
     
   </entry>
   
   <entry>
-    <title>substring</title>
-    <link href="https://www.alitaalice.cn/2020/08/16/substring/"/>
-    <id>https://www.alitaalice.cn/2020/08/16/substring/</id>
-    <published>2020-08-16T01:55:47.000Z</published>
-    <updated>2020-08-16T01:56:01.076Z</updated>
+    <title>考试安排</title>
+    <link href="https://www.alitaalice.cn/2020/09/10/%E8%80%83%E8%AF%95%E5%AE%89%E6%8E%92/"/>
+    <id>https://www.alitaalice.cn/2020/09/10/%E8%80%83%E8%AF%95%E5%AE%89%E6%8E%92/</id>
+    <published>2020-09-10T08:09:29.000Z</published>
+    <updated>2020-09-12T07:44:17.801Z</updated>
     
     <summary type="html">
     
       &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;本章介绍substring&lt;/p&gt;
+&lt;p&gt;本章介绍&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>
     
     
-      <category term="javase" scheme="https://www.alitaalice.cn/categories/javase/"/>
+      <category term="考试" scheme="https://www.alitaalice.cn/categories/%E8%80%83%E8%AF%95/"/>
     
     
-      <category term="javase" scheme="https://www.alitaalice.cn/tags/javase/"/>
+      <category term="考试" scheme="https://www.alitaalice.cn/tags/%E8%80%83%E8%AF%95/"/>
     
   </entry>
   
   <entry>
-    <title>redis</title>
-    <link href="https://www.alitaalice.cn/2020/08/15/redis/"/>
-    <id>https://www.alitaalice.cn/2020/08/15/redis/</id>
-    <published>2020-08-15T11:49:30.000Z</published>
-    <updated>2020-08-18T03:09:16.262Z</updated>
+    <title>数据库总复习</title>
+    <link href="https://www.alitaalice.cn/2020/09/10/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%80%BB%E5%A4%8D%E4%B9%A0/"/>
+    <id>https://www.alitaalice.cn/2020/09/10/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%80%BB%E5%A4%8D%E4%B9%A0/</id>
+    <published>2020-09-10T06:36:19.000Z</published>
+    <updated>2020-09-12T05:10:16.424Z</updated>
     
     <summary type="html">
     
       &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;本章介绍redis&lt;/p&gt;
+&lt;p&gt;本章介绍数据库总复习&lt;/p&gt;
+&lt;p&gt;总复习2   1小时后的做题讲解&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>
     
     
-      <category term="nosql" scheme="https://www.alitaalice.cn/categories/nosql/"/>
+      <category term="mysql" scheme="https://www.alitaalice.cn/categories/mysql/"/>
     
     
-      <category term="nosql" scheme="https://www.alitaalice.cn/tags/nosql/"/>
+      <category term="mysql" scheme="https://www.alitaalice.cn/tags/mysql/"/>
     
   </entry>
   
   <entry>
-    <title>linux_grep_ps命令</title>
-    <link href="https://www.alitaalice.cn/2020/08/15/linux-grep-ps%E5%91%BD%E4%BB%A4/"/>
-    <id>https://www.alitaalice.cn/2020/08/15/linux-grep-ps%E5%91%BD%E4%BB%A4/</id>
-    <published>2020-08-15T10:41:14.000Z</published>
-    <updated>2020-08-15T11:08:38.475Z</updated>
+    <title>软件测试复习</title>
+    <link href="https://www.alitaalice.cn/2020/09/10/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%A4%8D%E4%B9%A0/"/>
+    <id>https://www.alitaalice.cn/2020/09/10/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%A4%8D%E4%B9%A0/</id>
+    <published>2020-09-10T06:16:32.000Z</published>
+    <updated>2020-09-10T06:31:16.000Z</updated>
     
     <summary type="html">
     
@@ -434,25 +415,25 @@
   </entry>
   
   <entry>
-    <title>linux解压命令</title>
-    <link href="https://www.alitaalice.cn/2020/08/15/linux%E8%A7%A3%E5%8E%8B%E5%91%BD%E4%BB%A4/"/>
-    <id>https://www.alitaalice.cn/2020/08/15/linux%E8%A7%A3%E5%8E%8B%E5%91%BD%E4%BB%A4/</id>
-    <published>2020-08-15T08:45:46.000Z</published>
-    <updated>2020-08-15T10:20:01.770Z</updated>
+    <title>Dp动态规划</title>
+    <link href="https://www.alitaalice.cn/2020/09/09/Dp%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    <id>https://www.alitaalice.cn/2020/09/09/Dp%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</id>
+    <published>2020-09-09T13:16:39.000Z</published>
+    <updated>2020-09-09T13:17:20.000Z</updated>
     
     <summary type="html">
     
       &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;本章介绍linux解压命令&lt;/p&gt;
+&lt;p&gt;本章介绍&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>
     
     
-      <category term="linux" scheme="https://www.alitaalice.cn/categories/linux/"/>
+      <category term="算法" scheme="https://www.alitaalice.cn/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="linux" scheme="https://www.alitaalice.cn/tags/linux/"/>
+      <category term="算法" scheme="https://www.alitaalice.cn/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
