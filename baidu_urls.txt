@@ -1,5 +1,5 @@
-https://www.alitaalice.cn/2020/10/09/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%8F%82%E6%95%B0%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE/
-https://www.alitaalice.cn/2020/10/09/springboot%E4%B8%AD%E7%9A%84yaml%E6%96%87%E4%BB%B6/
-https://www.alitaalice.cn/2020/10/09/sleep%E5%92%8Cyield%E5%92%8Cwait%E7%9A%84%E5%8C%BA%E5%88%AB/
-https://www.alitaalice.cn/2020/10/08/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%9A%84%E7%A8%B3%E5%AE%9A%E6%80%A7/
-https://www.alitaalice.cn/2020/10/08/%E8%BE%93%E5%85%A5url%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88/
+https://www.alitaalice.cn/2020/10/19/string%E6%95%B0%E7%BB%84%E8%BD%ACint%E6%95%B0%E7%BB%84/
+https://www.alitaalice.cn/2020/10/19/requestbody%E5%92%8CrequestParam%E6%B3%A8%E8%A7%A3/
+https://www.alitaalice.cn/2020/10/19/mongodb%E7%9A%84%E6%96%87%E6%A1%A3%E6%93%8D%E4%BD%9C/
+https://www.alitaalice.cn/2020/10/19/Stream-0/
+https://www.alitaalice.cn/2020/10/19/Security/
